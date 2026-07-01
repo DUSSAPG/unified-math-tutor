@@ -1,0 +1,2702 @@
+[
+  {
+    "id": "t001",
+    "question": "En Buur het 17 Schaaf. Alli ussert 9 laufed ewäg. Wie vieli blibid übrig?",
+    "answer": "9 Schaaf.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t002",
+    "question": "En Rechteck het e Längi vo 10 cm und e Breiti vo 11 cm. Was isch sin Umfang?",
+    "answer": "42 cm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t003",
+    "question": "En Rechteck het e Längi vo 10 cm und e Breiti vo 21 cm. Was isch sin Umfang?",
+    "answer": "62 cm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t004",
+    "question": "En Rechteck het e Längi vo 10 cm und e Breiti vo 24 cm. Was isch sin Umfang?",
+    "answer": "68 cm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t005",
+    "question": "En Rechteck het e Längi vo 11 cm und e Breiti vo 21 cm. Was isch sin Umfang?",
+    "answer": "64 cm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t006",
+    "question": "En Rechteck het e Längi vo 11 cm und e Breiti vo 7 cm. Was isch sin Umfang?",
+    "answer": "36 cm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t007",
+    "question": "En Rechteck het e Längi vo 12 cm und e Breiti vo 24 cm. Was isch sin Umfang?",
+    "answer": "72 cm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t008",
+    "question": "En Rechteck het e Längi vo 13 cm und e Breiti vo 14 cm. Was isch sin Umfang?",
+    "answer": "54 cm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t009",
+    "question": "En Rechteck het e Längi vo 13 cm und e Breiti vo 3 cm. Was isch sin Umfang?",
+    "answer": "32 cm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t010",
+    "question": "En Rechteck het e Längi vo 14 cm und e Breiti vo 16 cm. Was isch sin Umfang?",
+    "answer": "60 cm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t011",
+    "question": "En Rechteck het e Längi vo 15 cm und e Breiti vo 24 cm. Was isch sin Umfang?",
+    "answer": "78 cm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t012",
+    "question": "En Rechteck het e Längi vo 16 cm und e Breiti vo 10 cm. Was isch sin Umfang?",
+    "answer": "52 cm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t013",
+    "question": "En Rechteck het e Längi vo 16 cm und e Breiti vo 5 cm. Was isch sin Umfang?",
+    "answer": "42 cm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t014",
+    "question": "En Rechteck het e Längi vo 17 cm und e Breiti vo 16 cm. Was isch sin Umfang?",
+    "answer": "66 cm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t015",
+    "question": "En Rechteck het e Längi vo 18 cm und e Breiti vo 23 cm. Was isch sin Umfang?",
+    "answer": "82 cm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t016",
+    "question": "En Rechteck het e Längi vo 18 cm und e Breiti vo 8 cm. Was isch sin Umfang?",
+    "answer": "52 cm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t017",
+    "question": "En Rechteck het e Längi vo 22 cm und e Breiti vo 13 cm. Was isch sin Umfang?",
+    "answer": "70 cm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t018",
+    "question": "En Rechteck het e Längi vo 22 cm und e Breiti vo 16 cm. Was isch sin Umfang?",
+    "answer": "76 cm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t019",
+    "question": "En Rechteck het e Längi vo 23 cm und e Breiti vo 11 cm. Was isch sin Umfang?",
+    "answer": "68 cm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t020",
+    "question": "En Rechteck het e Längi vo 23 cm und e Breiti vo 17 cm. Was isch sin Umfang?",
+    "answer": "80 cm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t021",
+    "question": "En Rechteck het e Längi vo 24 cm und e Breiti vo 24 cm. Was isch sin Umfang?",
+    "answer": "96 cm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t022",
+    "question": "En Rechteck het e Längi vo 25 cm und e Breiti vo 8 cm. Was isch sin Umfang?",
+    "answer": "66 cm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t023",
+    "question": "En Rechteck het e Längi vo 3 cm und e Breiti vo 22 cm. Was isch sin Umfang?",
+    "answer": "50 cm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t024",
+    "question": "En Rechteck het e Längi vo 3 cm und e Breiti vo 24 cm. Was isch sin Umfang?",
+    "answer": "54 cm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t025",
+    "question": "En Rechteck het e Längi vo 3 cm und e Breiti vo 5 cm. Was isch sin Umfang?",
+    "answer": "16 cm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t026",
+    "question": "En Rechteck het e Längi vo 5 cm und e Breiti vo 21 cm. Was isch sin Umfang?",
+    "answer": "52 cm. Umfang = 2×(5+21).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t027",
+    "question": "En Rechteck het e Längi vo 6 cm und e Breiti vo 23 cm. Was isch sin Umfang?",
+    "answer": "58 cm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t028",
+    "question": "En Rechteck het e Längi vo 6 cm und e Breiti vo 4 cm. Was isch sin Umfang?",
+    "answer": "20 cm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t029",
+    "question": "En Rechteck het e Längi vo 7 cm und e Breiti vo 11 cm. Was isch sin Umfang?",
+    "answer": "36 cm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t030",
+    "question": "En Rechteck het e Längi vo 7 cm und e Breiti vo 7 cm. Was isch sin Umfang?",
+    "answer": "28 cm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t031",
+    "question": "Ergänze: 10 + 19 = ___",
+    "answer": "29",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t032",
+    "question": "Ergänze: 13 − 94 = ___",
+    "answer": "−81",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t033",
+    "question": "Ergänze: 17 + 84 = ___",
+    "answer": "101",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t034",
+    "question": "Ergänze: 18 + 14 = ___",
+    "answer": "32",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t035",
+    "question": "Ergänze: 19 × 85 = ___",
+    "answer": "1615",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t036",
+    "question": "Ergänze: 21 + 45 = ___",
+    "answer": "66",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t037",
+    "question": "Ergänze: 23 × 99 = ___",
+    "answer": "2277",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t038",
+    "question": "Ergänze: 25 + 34 = ___",
+    "answer": "59",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t039",
+    "question": "Ergänze: 27 + 75 = ___",
+    "answer": "102",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t040",
+    "question": "Ergänze: 27 × 23 = ___",
+    "answer": "621",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t041",
+    "question": "Ergänze: 29 × 57 = ___",
+    "answer": "1653",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t042",
+    "question": "Ergänze: 30 + 49 = ___",
+    "answer": "79",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t043",
+    "question": "Ergänze: 30 − 69 = ___",
+    "answer": "−39",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t044",
+    "question": "Ergänze: 31 − 62 = ___",
+    "answer": "−31",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t045",
+    "question": "Ergänze: 32 + 80 = ___",
+    "answer": "112",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t046",
+    "question": "Ergänze: 32 − 99 = ___",
+    "answer": "−67",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t047",
+    "question": "Ergänze: 34 + 78 = ___",
+    "answer": "112",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t048",
+    "question": "Ergänze: 37 × 71 = ___",
+    "answer": "2627",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t049",
+    "question": "Ergänze: 43 × 60 = ___",
+    "answer": "2580",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t050",
+    "question": "Ergänze: 45 × 66 = ___",
+    "answer": "2970",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t051",
+    "question": "Ergänze: 46 − 46 = ___",
+    "answer": "0",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t052",
+    "question": "Ergänze: 47 + 20 = ___",
+    "answer": "67",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t053",
+    "question": "Ergänze: 56 + 32 = ___",
+    "answer": "88",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t054",
+    "question": "Ergänze: 56 × 65 = ___",
+    "answer": "3640",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t055",
+    "question": "Ergänze: 61 − 17 = ___",
+    "answer": "44",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t056",
+    "question": "Ergänze: 62 + 72 = ___",
+    "answer": "134",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t057",
+    "question": "Ergänze: 63 × 95 = ___",
+    "answer": "5985",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t058",
+    "question": "Ergänze: 68 − 51 = ___",
+    "answer": "17",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t059",
+    "question": "Ergänze: 69 − 99 = ___",
+    "answer": "−30",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t060",
+    "question": "Ergänze: 79 × 98 = ___",
+    "answer": "7742",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t061",
+    "question": "Ergänze: 93 + 18 = ___",
+    "answer": "111",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t062",
+    "question": "Ergänze: 95 × 23 = ___",
+    "answer": "2185",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t063",
+    "question": "Es Drüeck het Siite vo 3 cm, 4 cm und 5 cm. Was für en Winkel het's?",
+    "answer": "En rechte Winkel.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t064",
+    "question": "Finde d'nächste Zahl: 10, 17, 26, 37, 50, ?",
+    "answer": "65. Das sind d'Quadrate vo 3² bis 8² plus 1.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t065",
+    "question": "Finde d'nächste Zahl: 11, 14, 19, 26, 35, 46, ?",
+    "answer": "59. Das sind d'Quadrate vo 1² bis 7² plus 10.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t066",
+    "question": "Finde d'nächste Zahl: 11, 18, 27, 38, 51, ?",
+    "answer": "66. Das sind d'Quadrate vo 3² bis 8² plus 2.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t067",
+    "question": "Finde d'nächste Zahl: 12, 19, 28, 39, 52, 67, 84, ?",
+    "answer": "103. Das sind d'Quadrate vo 3² bis 10² plus 3.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t068",
+    "question": "Finde d'nächste Zahl: 14, 19, 26, 35, 46, 59, ?",
+    "answer": "74. Das sind d'Quadrate vo 2² bis 8² plus 10.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t069",
+    "question": "Finde d'nächste Zahl: 14, 19, 26, 35, 46, ?",
+    "answer": "59. Das sind d'Quadrate vo 2² bis 7² plus 10.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t070",
+    "question": "Finde d'nächste Zahl: 14, 21, 30, 41, 54, 69, 86, ?",
+    "answer": "105. Das sind d'Quadrate vo 3² bis 10² plus 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t071",
+    "question": "Finde d'nächste Zahl: 16, 25, 36, 49, 64, ?",
+    "answer": "81. Das sind d'Quadrate vo 4² bis 9².",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t072",
+    "question": "Finde d'nächste Zahl: 19, 26, 35, 46, 59, 74, ?",
+    "answer": "91. Das sind d'Quadrate vo 3² bis 9² plus 10.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t073",
+    "question": "Finde d'nächste Zahl: 19, 28, 39, 52, 67, 84, 103, ?",
+    "answer": "124. Das sind d'Quadrate vo 4² bis 11² plus 3.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t074",
+    "question": "Finde d'nächste Zahl: 19, 28, 39, 52, 67, 84, ?",
+    "answer": "103. Das sind d'Quadrate vo 4² bis 10² plus 3.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t075",
+    "question": "Finde d'nächste Zahl: 2, 5, 10, 17, 26, 37, 50, ?",
+    "answer": "65. Das sind d'Quadrate vo 1² bis 8² plus 1.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t076",
+    "question": "Finde d'nächste Zahl: 21, 30, 41, 54, 69, 86, ?",
+    "answer": "105. Das sind d'Quadrate vo 4² bis 10² plus 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t077",
+    "question": "Finde d'nächste Zahl: 21, 30, 41, 54, 69, ?",
+    "answer": "86. Das sind d'Quadrate vo 4² bis 9² plus 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t078",
+    "question": "Finde d'nächste Zahl: 25, 36, 49, 64, 81, ?",
+    "answer": "100. Das sind d'Quadrate vo 5² bis 10².",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t079",
+    "question": "Finde d'nächste Zahl: 26, 37, 50, 65, 82, 101, 122, ?",
+    "answer": "145. Das sind d'Quadrate vo 5² bis 12² plus 1.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t080",
+    "question": "Finde d'nächste Zahl: 27, 38, 51, 66, 83, 102, 123, ?",
+    "answer": "146. Das sind d'Quadrate vo 5² bis 12² plus 2.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t081",
+    "question": "Finde d'nächste Zahl: 3, 6, 11, 18, 27, 38, 51, ?",
+    "answer": "66. Das sind d'Quadrate vo 1² bis 8² plus 2.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t082",
+    "question": "Finde d'nächste Zahl: 30, 41, 54, 69, 86, ?",
+    "answer": "105. Das sind d'Quadrate vo 5² bis 10² plus 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t083",
+    "question": "Finde d'nächste Zahl: 4, 7, 12, 19, 28, 39, 52, ?",
+    "answer": "67. Das sind d'Quadrate vo 1² bis 8² plus 3.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t084",
+    "question": "Finde d'nächste Zahl: 4, 9, 16, 25, 36, 49, ?",
+    "answer": "64. Das sind d'Quadrate vo 2² bis 8².",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t085",
+    "question": "Finde d'nächste Zahl: 5, 10, 17, 26, 37, 50, 65, ?",
+    "answer": "82. Das sind d'Quadrate vo 2² bis 9² plus 1.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t086",
+    "question": "Finde d'nächste Zahl: 5, 8, 13, 20, 29, 40, ?",
+    "answer": "53. Das sind d'Quadrate vo 1² bis 7² plus 4.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t087",
+    "question": "Finde d'nächste Zahl: 6, 11, 18, 27, 38, 51, 66, ?",
+    "answer": "83. Das sind d'Quadrate vo 2² bis 9² plus 2.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t088",
+    "question": "Finde d'nächste Zahl: 8, 13, 20, 29, 40, 53, 68, ?",
+    "answer": "85. Das sind d'Quadrate vo 2² bis 9² plus 4.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t089",
+    "question": "Finde d'nächste Zahl: 9, 14, 21, 30, 41, 54, ?",
+    "answer": "69. Das sind d'Quadrate vo 2² bis 8² plus 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t090",
+    "question": "Finde d'nächste Zahl: 9, 16, 25, 36, 49, ?",
+    "answer": "64. Das sind d'Quadrate vo 3² bis 8².",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t091",
+    "question": "Hüt isch en Eltere 26 und s'Chind 6. In 10 Joor, wie alt sind si zäme?",
+    "answer": "52.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t092",
+    "question": "Hüt isch en Eltere 27 und s'Chind 6. In 6 Joor, wie alt sind si zäme?",
+    "answer": "45.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t093",
+    "question": "Hüt isch en Eltere 27 und s'Chind 6. In 7 Joor, wie alt sind si zäme?",
+    "answer": "47.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t094",
+    "question": "Hüt isch en Eltere 27 und s'Chind 6. In 8 Joor, wie alt sind si zäme?",
+    "answer": "49.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t095",
+    "question": "Hüt isch en Eltere 29 und s'Chind 7. In 8 Joor, wie alt sind si zäme?",
+    "answer": "52.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t096",
+    "question": "Hüt isch en Eltere 31 und s'Chind 7. In 10 Joor, wie alt sind si zäme?",
+    "answer": "58.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t097",
+    "question": "Hüt isch en Eltere 33 und s'Chind 6. In 6 Joor, wie alt sind si zäme?",
+    "answer": "51.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t098",
+    "question": "Hüt isch en Eltere 33 und s'Chind 7. In 7 Joor, wie alt sind si zäme?",
+    "answer": "54.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t099",
+    "question": "Hüt isch en Eltere 34 und s'Chind 11. In 10 Joor, wie alt sind si zäme?",
+    "answer": "65.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t100",
+    "question": "Hüt isch en Eltere 35 und s'Chind 10. In 7 Joor, wie alt sind si zäme?",
+    "answer": "59.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t101",
+    "question": "Hüt isch en Eltere 35 und s'Chind 7. In 8 Joor, wie alt sind si zäme?",
+    "answer": "58.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t102",
+    "question": "Hüt isch en Eltere 36 und s'Chind 6. In 7 Joor, wie alt sind si zäme?",
+    "answer": "56.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t103",
+    "question": "Hüt isch en Eltere 37 und s'Chind 6. In 7 Joor, wie alt sind si zäme?",
+    "answer": "57.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t104",
+    "question": "Hüt isch en Eltere 37 und s'Chind 8. In 6 Joor, wie alt sind si zäme?",
+    "answer": "57.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t105",
+    "question": "Hüt isch en Eltere 37 und s'Chind 8. In 7 Joor, wie alt sind si zäme?",
+    "answer": "59.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t106",
+    "question": "Hüt isch en Eltere 38 und s'Chind 10. In 10 Joor, wie alt sind si zäme?",
+    "answer": "68.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t107",
+    "question": "Hüt isch en Eltere 38 und s'Chind 10. In 5 Joor, wie alt sind si zäme?",
+    "answer": "58.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t108",
+    "question": "Hüt isch en Eltere 38 und s'Chind 6. In 7 Joor, wie alt sind si zäme?",
+    "answer": "58.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t109",
+    "question": "Hüt isch en Eltere 38 und s'Chind 9. In 10 Joor, wie alt sind si zäme?",
+    "answer": "67.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t110",
+    "question": "Hüt isch en Eltere 39 und s'Chind 9. In 6 Joor, wie alt sind si zäme?",
+    "answer": "60.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t111",
+    "question": "Hüt isch en Eltere 41 und s'Chind 12. In 10 Joor, wie alt sind si zäme?",
+    "answer": "73.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t112",
+    "question": "Hüt isch en Eltere 41 und s'Chind 6. In 7 Joor, wie alt sind si zäme?",
+    "answer": "61.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t113",
+    "question": "Hüt isch en Eltere 41 und s'Chind 7. In 10 Joor, wie alt sind si zäme?",
+    "answer": "68.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t114",
+    "question": "Hüt isch en Eltere 42 und s'Chind 10. In 7 Joor, wie alt sind si zäme?",
+    "answer": "66.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t115",
+    "question": "Hüt isch en Eltere 42 und s'Chind 7. In 8 Joor, wie alt sind si zäme?",
+    "answer": "65.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t116",
+    "question": "Hüt isch en Eltere 43 und s'Chind 10. In 10 Joor, wie alt sind si zäme?",
+    "answer": "73.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t117",
+    "question": "Hüt isch en Eltere 43 und s'Chind 9. In 6 Joor, wie alt sind si zäme?",
+    "answer": "64.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t118",
+    "question": "Hüt isch en Eltere 46 und s'Chind 11. In 8 Joor, wie alt sind si zäme?",
+    "answer": "73.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t119",
+    "question": "Ich addier füüf zu nüün und krieg zwei. Das stimmt. Wie?",
+    "answer": "Uf em Zifferblatt: füüf Stund nach 9 Uhr isch 2 Uhr.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t120",
+    "question": "Ich bin e ungerade Zahl. Nimmsch mr e Buechstabe weg, wird i grad. Weli Zahl bin ich? (Wortspiil uf Änglisch: „seven\" → „even\")",
+    "answer": "Seve (seven). (Uf Änglisch: nimmt mer s „s\" vo „seven\" weg, blibt „even\" = grad.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t121",
+    "question": "Ich ha Zeiger, aber ich chan nöd klasche. Was bin ich?",
+    "answer": "E Uhr.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t122",
+    "question": "In eme Schubled sind 12 Socke: 6 blaui und 6 roti. Wie vieli mues me im Dunkle use neh, um sicher es passendes Paar z'ha?",
+    "answer": "3 Socke.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t123",
+    "question": "Ohni Tascherechner: 10 + 9 × 6 = ?",
+    "answer": "64.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t124",
+    "question": "Ohni Tascherechner: 11 + 6 × 10 = ?",
+    "answer": "71.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t125",
+    "question": "Ohni Tascherechner: 12 + 10 × 11 = ?",
+    "answer": "122.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t126",
+    "question": "Ohni Tascherechner: 12 + 11 × 7 = ?",
+    "answer": "89.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t127",
+    "question": "Ohni Tascherechner: 12 + 12 × 3 = ?",
+    "answer": "48.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t128",
+    "question": "Ohni Tascherechner: 12 + 3 × 4 = ?",
+    "answer": "24.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t129",
+    "question": "Ohni Tascherechner: 12 + 7 × 3 = ?",
+    "answer": "33.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t130",
+    "question": "Ohni Tascherechner: 12 + 8 × 7 = ?",
+    "answer": "68.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t131",
+    "question": "Ohni Tascherechner: 2 + 2 × 7 = ?",
+    "answer": "16.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t132",
+    "question": "Ohni Tascherechner: 2 + 3 × 11 = ?",
+    "answer": "35.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t133",
+    "question": "Ohni Tascherechner: 2 + 9 × 10 = ?",
+    "answer": "92.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t134",
+    "question": "Ohni Tascherechner: 4 + 11 × 8 = ?",
+    "answer": "92.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t135",
+    "question": "Ohni Tascherechner: 4 + 5 × 10 = ?",
+    "answer": "54.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t136",
+    "question": "Ohni Tascherechner: 4 + 5 × 7 = ?",
+    "answer": "39. Zerscht multipliziere: 5×7=35, denn 4 addiere.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t137",
+    "question": "Ohni Tascherechner: 5 + 12 × 6 = ?",
+    "answer": "77.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t138",
+    "question": "Ohni Tascherechner: 5 + 12 × 7 = ?",
+    "answer": "89.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t139",
+    "question": "Ohni Tascherechner: 5 + 5 × 4 = ?",
+    "answer": "25.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t140",
+    "question": "Ohni Tascherechner: 5 + 6 × 7 = ?",
+    "answer": "47.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t141",
+    "question": "Ohni Tascherechner: 6 + 11 × 5 = ?",
+    "answer": "61.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t142",
+    "question": "Ohni Tascherechner: 6 + 5 × 8 = ?",
+    "answer": "46.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t143",
+    "question": "Ohni Tascherechner: 8 + 10 × 12 = ?",
+    "answer": "128.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t144",
+    "question": "Ohni Tascherechner: 8 + 10 × 2 = ?",
+    "answer": "28.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t145",
+    "question": "Ohni Tascherechner: 8 + 12 × 12 = ?",
+    "answer": "152.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t146",
+    "question": "Ohni Tascherechner: 8 + 4 × 9 = ?",
+    "answer": "44.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t147",
+    "question": "Ohni Tascherechner: 8 + 6 × 3 = ?",
+    "answer": "26.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t148",
+    "question": "Ohni Tascherechner: 9 + 7 × 3 = ?",
+    "answer": "30.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t149",
+    "question": "Was chan d'Welt umrundiere und blibt doch in eme Eck?",
+    "answer": "En Brifmarkä.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t150",
+    "question": "Was chan en ganze Ruum fülle, aber nimmt kein Platz ii?",
+    "answer": "s'Liecht.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t151",
+    "question": "Was chan me cracke, mache, verzelle und spiele?",
+    "answer": "En Witz.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t152",
+    "question": "Was chan me erwüsche, aber nöd wärfe?",
+    "answer": "En Schnupfe.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t153",
+    "question": "Was chunnt als nächschts: 1, 4, 9, 16, 25, 36, 49, ?",
+    "answer": "64.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t154",
+    "question": "Was chunnt als nächschts: 1, 4, 9, 16, 25, …?",
+    "answer": "36. Das sind Quadratzahle.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t155",
+    "question": "Was chunnt als nächschts: 10, 13, 18, 25, 34, 45, 58, ?",
+    "answer": "73.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t156",
+    "question": "Was chunnt als nächschts: 10, 13, 18, 25, 34, 45, ?",
+    "answer": "58.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t157",
+    "question": "Was chunnt als nächschts: 2, 5, 10, 17, 26, 37, ?",
+    "answer": "50.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t158",
+    "question": "Was chunnt als nächschts: 3, 6, 11, 18, 27, 38, ?",
+    "answer": "51.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t159",
+    "question": "Was chunnt als nächschts: 3, 6, 11, 18, 27, ?",
+    "answer": "38.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t160",
+    "question": "Was chunnt als nächschts: 5, 8, 13, 20, 29, 40, ?",
+    "answer": "53.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t161",
+    "question": "Was chunnt als nächschts: 5, 8, 13, 20, 29, ?",
+    "answer": "40.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t162",
+    "question": "Was chunnt als nächschts: 7, 10, 15, 22, 31, 42, 55, ?",
+    "answer": "70.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t163",
+    "question": "Was chunnt als nächschts: 7, 10, 15, 22, 31, 42, ?",
+    "answer": "55. Me addiert ufenanderfolgendi ungerade Zahle.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t164",
+    "question": "Was chunnt als nächschts: 7, 10, 15, 22, 31, ?",
+    "answer": "42.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t165",
+    "question": "Was chunnt als nächschts: 8, 11, 16, 23, 32, ?",
+    "answer": "43.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t166",
+    "question": "Was chunnt als nächschts: 9, 12, 17, 24, 33, ?",
+    "answer": "44.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t167",
+    "question": "Was chunnt einisch in „Minute\", zweimol in „Moment\" und nie in „tuusig Joor\"?",
+    "answer": "De Buechstab „m\".",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t168",
+    "question": "Was chunnt immer, aber chunnt nie aa?",
+    "answer": "De Morge.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t169",
+    "question": "Was fangt mit T aa, hört mit T uuf und het Tee drin?",
+    "answer": "E Teekanne.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t170",
+    "question": "Was gaht uuf, aber chunnt nie meh abe?",
+    "answer": "Dis Alter.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t171",
+    "question": "Was het Bei, aber gaht nöd?",
+    "answer": "Es Tisch.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t172",
+    "question": "Was het e Rinde, aber bisst nöd?",
+    "answer": "En Baum.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t173",
+    "question": "Was het en Bode oobe?",
+    "answer": "Dini Bei.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t174",
+    "question": "Was het en Chopf, en Schwanz, isch bruu und het kei Bei?",
+    "answer": "E Münz.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t175",
+    "question": "Was het en Daume und vier Finger, aber isch kei Hand?",
+    "answer": "En Handschue.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t176",
+    "question": "Was het en Hals, aber kei Chopf?",
+    "answer": "E Flasche.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t177",
+    "question": "Was het en Rügge, aber kein Chnooche?",
+    "answer": "Es Buech.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t178",
+    "question": "Was het en Schwanz, aber kei Bei und chan trotzdem springe?",
+    "answer": "En Drache (Lenkdrache).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t179",
+    "question": "Was het es Auge, aber kein Körper?",
+    "answer": "En Hurrikan.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t180",
+    "question": "Was het es Bett, aber schloft nie?",
+    "answer": "En Fluss.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t181",
+    "question": "Was het es End, aber kein Afang?",
+    "answer": "En Stecke.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t182",
+    "question": "Was het es Lüüte, aber kein Finger?",
+    "answer": "Es Telefon.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t183",
+    "question": "Was het es Zifferblatt und zwei Zeiger, aber keni Arm und keni Bei?",
+    "answer": "E Uhr.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t184",
+    "question": "Was het es Öhr, aber gseht nüüt?",
+    "answer": "E Nadel.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t185",
+    "question": "Was het vieli Taste, aber chan kei Schloss ufmache?",
+    "answer": "Es Klavier (oder e Tastatur).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t186",
+    "question": "Was het vier Reder und fliegt?",
+    "answer": "En Güselwage („fliegt\" mit em Abfall).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t187",
+    "question": "Was het Wörter, redt aber nie?",
+    "answer": "Es Buech.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t188",
+    "question": "Was het Zähn, aber bisst nöd?",
+    "answer": "En Kamm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t189",
+    "question": "Was isch d'Hälfte vo 24?",
+    "answer": "12.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t190",
+    "question": "Was isch d'Hälfte vo 84?",
+    "answer": "42.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t191",
+    "question": "Was isch d'Hälfte vo 96?",
+    "answer": "48.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t192",
+    "question": "Was isch immer vor dir, aber chan nöd gsee werde?",
+    "answer": "D'Zukunft.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t193",
+    "question": "Was isch liicht zum Hebe, aber schwer zum Wärfe?",
+    "answer": "En Federe.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t194",
+    "question": "Was isch schwarz, wenn's sauber isch, und wiiss, wenn's dreckig isch?",
+    "answer": "En Schultafe.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t195",
+    "question": "Was isch so zerbrechlich, dass wenn me's usspricht, es zerbricht?",
+    "answer": "D'Stilli.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t196",
+    "question": "Was isch volle Löcher, haltet aber trotzdem Wasser?",
+    "answer": "En Schwamm.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t197",
+    "question": "Was isch ¼ vo 96?",
+    "answer": "24.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t198",
+    "question": "Was isch ⅓ vo 24?",
+    "answer": "8.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t199",
+    "question": "Was isch ⅓ vo 30?",
+    "answer": "10.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t200",
+    "question": "Was isch ⅓ vo 48?",
+    "answer": "16.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t201",
+    "question": "Was isch ⅕ vo 40?",
+    "answer": "8.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t202",
+    "question": "Was mues kaputtgah, bevor me's bruuche chan?",
+    "answer": "Es Ei.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t203",
+    "question": "Was rünnt, aber gaht nie?",
+    "answer": "s'Wasser (en Fluss).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t204",
+    "question": "Was sind 10 % vo 240?",
+    "answer": "24.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t205",
+    "question": "Was sind 10 % vo 300?",
+    "answer": "30.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t206",
+    "question": "Was sind 10 % vo 80?",
+    "answer": "8.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t207",
+    "question": "Was sind 12 % vo 100?",
+    "answer": "12.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t208",
+    "question": "Was sind 12 % vo 80?",
+    "answer": "9,6.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t209",
+    "question": "Was sind 15 % vo 200?",
+    "answer": "30.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t210",
+    "question": "Was sind 15 % vo 50?",
+    "answer": "7,5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t211",
+    "question": "Was sind 15 % vo 60?",
+    "answer": "9.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t212",
+    "question": "Was sind 2/5 vo 24?",
+    "answer": "9,6.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t213",
+    "question": "Was sind 2/5 vo 30?",
+    "answer": "12.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t214",
+    "question": "Was sind 2/5 vo 48?",
+    "answer": "19,2.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t215",
+    "question": "Was sind 20 % vo 240?",
+    "answer": "48.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t216",
+    "question": "Was sind 20 % vo 60?",
+    "answer": "12.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t217",
+    "question": "Was sind 20 % vo 80?",
+    "answer": "16.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t218",
+    "question": "Was sind 25 % vo 100?",
+    "answer": "25.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t219",
+    "question": "Was sind 25 % vo 120?",
+    "answer": "30.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t220",
+    "question": "Was sind 25 % vo 200?",
+    "answer": "50.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t221",
+    "question": "Was sind 25 % vo 300?",
+    "answer": "75.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t222",
+    "question": "Was sind 30 % vo 40?",
+    "answer": "12.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t223",
+    "question": "Was sind 30 % vo 80?",
+    "answer": "24.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t224",
+    "question": "Was sind 40 % vo 100?",
+    "answer": "40.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t225",
+    "question": "Was sind 40 % vo 120?",
+    "answer": "48.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t226",
+    "question": "Was sind 40 % vo 200?",
+    "answer": "80.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t227",
+    "question": "Was sind 40 % vo 60?",
+    "answer": "24.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t228",
+    "question": "Was sind 5 % vo 100?",
+    "answer": "5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t229",
+    "question": "Was sind 5 % vo 300?",
+    "answer": "15.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t230",
+    "question": "Was sind 5 % vo 40?",
+    "answer": "2.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t231",
+    "question": "Was sind ¾ vo 120?",
+    "answer": "90.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t232",
+    "question": "Was sind ¾ vo 30?",
+    "answer": "22,5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t233",
+    "question": "Was sind ¾ vo 60?",
+    "answer": "45.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t234",
+    "question": "Was sind ¾ vo 84?",
+    "answer": "63.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t235",
+    "question": "Was sind ⅔ vo 120?",
+    "answer": "80.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t236",
+    "question": "Was sind ⅔ vo 36?",
+    "answer": "24.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t237",
+    "question": "Was sind ⅔ vo 48?",
+    "answer": "32.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t238",
+    "question": "Was wird nässer, je meh's trochnet?",
+    "answer": "Es Tuech (Handtuch).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t239",
+    "question": "Weli Band spielt nie Musik?",
+    "answer": "Es Gummibändel.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t240",
+    "question": "Weli drei positive Zahle gänd dasselb Ergebnis, wenn me si addiert und multipliziert?",
+    "answer": "1, 2 und 3. Bedi Ergebnis sind 6.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t241",
+    "question": "Weli Erfindung löt eim dur e Wand luege?",
+    "answer": "Es Fänschter.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t242",
+    "question": "Weli Zahl chunnt als nächschts: 10, 17, 24, 31, 38, ?",
+    "answer": "45. Me addiert jedes Mol 7.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t243",
+    "question": "Weli Zahl chunnt als nächschts: 11, 19, 27, 35, 43, 51, ?",
+    "answer": "59. Me addiert jedes Mol 8.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t244",
+    "question": "Weli Zahl chunnt als nächschts: 13, 19, 25, 31, 37, 43, ?",
+    "answer": "49. Me addiert jedes Mol 6.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t245",
+    "question": "Weli Zahl chunnt als nächschts: 13, 24, 35, 46, 57, 68, 79, ?",
+    "answer": "90. Me addiert jedes Mol 11.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t246",
+    "question": "Weli Zahl chunnt als nächschts: 14, 16, 18, 20, 22, 24, 26, ?",
+    "answer": "28. Me addiert jedes Mol 2.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t247",
+    "question": "Weli Zahl chunnt als nächschts: 14, 23, 32, 41, 50, 59, 68, ?",
+    "answer": "77. Me addiert jedes Mol 9.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t248",
+    "question": "Weli Zahl chunnt als nächschts: 15, 26, 37, 48, 59, 70, 81, ?",
+    "answer": "92. Me addiert jedes Mol 11.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t249",
+    "question": "Weli Zahl chunnt als nächschts: 16, 21, 26, 31, 36, ?",
+    "answer": "41. Me addiert jedes Mol 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t250",
+    "question": "Weli Zahl chunnt als nächschts: 16, 31, 46, 61, 76, 91, ?",
+    "answer": "106. Me addiert jedes Mol 15.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t251",
+    "question": "Weli Zahl chunnt als nächschts: 17, 22, 27, 32, 37, ?",
+    "answer": "42. Me addiert jedes Mol 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t252",
+    "question": "Weli Zahl chunnt als nächschts: 18, 23, 28, 33, 38, ?",
+    "answer": "43. Me addiert jedes Mol 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t253",
+    "question": "Weli Zahl chunnt als nächschts: 19, 25, 31, 37, 43, 49, ?",
+    "answer": "55. Me addiert jedes Mol 6.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t254",
+    "question": "Weli Zahl chunnt als nächschts: 2, 12, 22, 32, 42, 52, ?",
+    "answer": "62. Me addiert jedes Mol 10.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t255",
+    "question": "Weli Zahl chunnt als nächschts: 2, 7, 12, 17, 22, 27, ?",
+    "answer": "32. Me addiert jedes Mol 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t256",
+    "question": "Weli Zahl chunnt als nächschts: 3, 15, 27, 39, 51, 63, ?",
+    "answer": "75. Me addiert jedes Mol 12.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t257",
+    "question": "Weli Zahl chunnt als nächschts: 3, 8, 13, 18, 23, 28, 33, ?",
+    "answer": "38. Me addiert jedes Mol 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t258",
+    "question": "Weli Zahl chunnt als nächschts: 3, 9, 15, 21, 27, ?",
+    "answer": "33. Me addiert jedes Mol 6.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t259",
+    "question": "Weli Zahl chunnt als nächschts: 4, 16, 28, 40, 52, 64, 76, ?",
+    "answer": "88. Me addiert jedes Mol 12.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t260",
+    "question": "Weli Zahl chunnt als nächschts: 4, 18, 32, 46, 60, 74, ?",
+    "answer": "88. Me addiert jedes Mol 14.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t261",
+    "question": "Weli Zahl chunnt als nächschts: 4, 6, 8, 10, 12, 14, ?",
+    "answer": "16. Me addiert jedes Mol 2.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t262",
+    "question": "Weli Zahl chunnt als nächschts: 4, 7, 10, 13, 16, 19, 22, ?",
+    "answer": "25. Me addiert jedes Mol 3.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t263",
+    "question": "Weli Zahl chunnt als nächschts: 4, 8, 12, 16, 20, 24, 28, ?",
+    "answer": "32. Me addiert jedes Mol 4.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t264",
+    "question": "Weli Zahl chunnt als nächschts: 6, 19, 32, 45, 58, 71, ?",
+    "answer": "84. Me addiert jedes Mol 13.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t265",
+    "question": "Weli Zahl chunnt als nächschts: 7, 13, 19, 25, 31, 37, 43, ?",
+    "answer": "49. Me addiert jedes Mol 6.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t266",
+    "question": "Weli Zahl chunnt als nächschts: 7, 17, 27, 37, 47, 57, ?",
+    "answer": "67. Me addiert jedes Mol 10.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t267",
+    "question": "Weli Zahl chunnt als nächschts: 7, 22, 37, 52, 67, 82, ?",
+    "answer": "97. Me addiert jedes Mol 15.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t268",
+    "question": "Weli Zahl chunnt als nächschts: 8, 13, 18, 23, 28, ?",
+    "answer": "33. Me addiert jedes Mol 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t269",
+    "question": "Weli Zahl chunnt als nächschts: 8, 19, 30, 41, 52, ?",
+    "answer": "63. Me addiert jedes Mol 11.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t270",
+    "question": "Weli Zahl chunnt als nächschts: 9, 17, 25, 33, 41, 49, ?",
+    "answer": "57. Me addiert jedes Mol 8.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t271",
+    "question": "Weli Zahl chunnt als nächschts: 9, 19, 29, 39, 49, ?",
+    "answer": "59. Me addiert jedes Mol 10.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t272",
+    "question": "Weli Zahl chunnt als nächschts: 9, 24, 39, 54, 69, 84, ?",
+    "answer": "99. Me addiert jedes Mol 15.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t273",
+    "question": "Weli Zahl het gliich vil Buechstabe wie ihri Wert?",
+    "answer": "(Uf Änglisch isch's „four\" mit 4 Buechstabe. Uf Dütsch passt's nöd gnau — am nächschte chunnt „drei\" oder „vier\".)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t274",
+    "question": "Wenn me mich fallenlot, zerbrech i; lachsch me mich aa, lach i immer zruck. Was bin ich?",
+    "answer": "En Spiegel.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t275",
+    "question": "Wenn zwei e Gsellschaft sind und drei e Gedränge, was sind vier und füüf?",
+    "answer": "Nüün. (vier + füüf = nüün)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t276",
+    "question": "Wenn's 10:05 Uhr isch, wie spät isch's in 15 Minute?",
+    "answer": "10:20 Uhr.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t277",
+    "question": "Wenn's 10:05 Uhr isch, wie spät isch's in 30 Minute?",
+    "answer": "10:35 Uhr.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t278",
+    "question": "Wenn's 10:25 Uhr isch, wie spät isch's in 45 Minute?",
+    "answer": "11:10 Uhr.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t279",
+    "question": "Wenn's 10:55 Uhr isch, wie spät isch's in 35 Minute?",
+    "answer": "11:30 Uhr.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t280",
+    "question": "Wenn's 11:15 Uhr isch, wie spät isch's in 50 Minute?",
+    "answer": "12:05 Uhr.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t281",
+    "question": "Wenn's 11:20 Uhr isch, wie spät isch's in 40 Minute?",
+    "answer": "12:00 Uhr.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t282",
+    "question": "Wenn's 11:35 Uhr isch, wie spät isch's in 40 Minute?",
+    "answer": "12:15 Uhr.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t283",
+    "question": "Wenn's 1:15 Uhr isch, wie spät isch's in 45 Minute?",
+    "answer": "2:00 Uhr.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t284",
+    "question": "Wenn's 1:45 Uhr isch, wie spät isch's in 25 Minute?",
+    "answer": "2:10 Uhr.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t285",
+    "question": "Wenn's 2:20 Uhr isch, wie spät isch's in 25 Minute?",
+    "answer": "2:45 Uhr.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t286",
+    "question": "Wenn's 2:40 Uhr isch, wie spät isch's in 40 Minute?",
+    "answer": "3:20 Uhr.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t287",
+    "question": "Wenn's 2:50 Uhr isch, wie spät isch's in 10 Minute?",
+    "answer": "3:00 Uhr.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t288",
+    "question": "Wenn's 2:55 Uhr isch, wie spät isch's in 25 Minute?",
+    "answer": "3:20 Uhr.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t289",
+    "question": "Wenn's 3:20 Uhr isch, wie spät isch's in 20 Minute?",
+    "answer": "3:40 Uhr.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t290",
+    "question": "Wenn's 4:10 Uhr isch, wie spät isch's in 10 Minute?",
+    "answer": "4:20 Uhr.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t291",
+    "question": "Wenn's 4:35 Uhr isch, wie spät isch's in 45 Minute?",
+    "answer": "5:20 Uhr.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t292",
+    "question": "Wenn's 6:10 Uhr isch, wie spät isch's in 25 Minute?",
+    "answer": "6:35 Uhr.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t293",
+    "question": "Wenn's 6:40 Uhr isch, wie spät isch's in 50 Minute?",
+    "answer": "7:30 Uhr.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t294",
+    "question": "Wenn's 8:20 Uhr isch, wie spät isch's in 45 Minute?",
+    "answer": "9:05 Uhr.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t295",
+    "question": "Wenn's 8:25 Uhr isch, wie spät isch's in 10 Minute?",
+    "answer": "8:35 Uhr.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t296",
+    "question": "Wenn's 8:45 Uhr isch, wie spät isch's in 50 Minute?",
+    "answer": "9:35 Uhr.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t297",
+    "question": "Wenn's 8:55 Uhr isch, wie spät isch's in 45 Minute?",
+    "answer": "9:40 Uhr.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t298",
+    "question": "Wenn's 9:40 Uhr isch, wie spät isch's in 45 Minute?",
+    "answer": "10:25 Uhr.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t299",
+    "question": "Wenn's 9:50 Uhr isch, wie spät isch's in 30 Minute?",
+    "answer": "10:20 Uhr.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t300",
+    "question": "Wie oft chan me 10 vo 100 abzieh?",
+    "answer": "Einisch. Dernach zieht me vo 90 ab.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  }
+]

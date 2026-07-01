@@ -1,0 +1,16 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_shared_ui/flutter_shared_ui.dart';
+
+class OxfordBadge extends StatelessWidget {
+  const OxfordBadge({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppScaffold(
+      title: 'Oxford Badge',
+      child: const Center(
+        child: Text('Oxford Badge'),
+      ),
+    );
+  }
+}

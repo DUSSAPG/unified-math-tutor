@@ -1,0 +1,16 @@
+schema_version: 1
+
+# KS4 remains accepted for compatibility with the existing premium pipeline.
+ks4:
+  skills: []
+
+ks5:
+  skills:
+    - trig_identities
+    - trig_equations
+    - radians
+    - stats_distributions
+    - hypothesis_testing_basic
+    - mechanics_suvat
+    - mechanics_forces
+    - mechanics_projectiles

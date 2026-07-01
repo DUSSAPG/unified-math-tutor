@@ -1,0 +1,16 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_shared_ui/flutter_shared_ui.dart';
+
+class RadioGroup extends StatelessWidget {
+  const RadioGroup({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppScaffold(
+      title: 'Radio Group',
+      child: const Center(
+        child: Text('Radio Group'),
+      ),
+    );
+  }
+}

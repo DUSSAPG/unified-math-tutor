@@ -1,0 +1,16 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_shared_ui/flutter_shared_ui.dart';
+
+class Separator extends StatelessWidget {
+  const Separator({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppScaffold(
+      title: 'Separator',
+      child: const Center(
+        child: Text('Separator'),
+      ),
+    );
+  }
+}

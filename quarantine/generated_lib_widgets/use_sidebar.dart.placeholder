@@ -1,0 +1,16 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_shared_ui/flutter_shared_ui.dart';
+
+class UseSidebar extends StatelessWidget {
+  const UseSidebar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppScaffold(
+      title: 'use Sidebar',
+      child: const Center(
+        child: Text('use Sidebar'),
+      ),
+    );
+  }
+}

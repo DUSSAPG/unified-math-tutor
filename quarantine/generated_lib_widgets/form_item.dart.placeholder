@@ -1,0 +1,16 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_shared_ui/flutter_shared_ui.dart';
+
+class FormItem extends StatelessWidget {
+  const FormItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppScaffold(
+      title: 'Form Item',
+      child: const Center(
+        child: Text('Form Item'),
+      ),
+    );
+  }
+}

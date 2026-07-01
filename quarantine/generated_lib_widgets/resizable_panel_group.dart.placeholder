@@ -1,0 +1,16 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_shared_ui/flutter_shared_ui.dart';
+
+class ResizablePanelGroup extends StatelessWidget {
+  const ResizablePanelGroup({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppScaffold(
+      title: 'Resizable Panel Group',
+      child: const Center(
+        child: Text('Resizable Panel Group'),
+      ),
+    );
+  }
+}

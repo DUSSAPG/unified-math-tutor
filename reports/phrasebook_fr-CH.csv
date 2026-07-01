@@ -1,0 +1,11 @@
+﻿pattern_id,translated_template
+pattern_aa2782851062605e,Calcule : {n} + {n}
+pattern_7ff18e40a2436b84,Calcule : {n} - {n}
+pattern_1cce29c7f3d0780a,Calcule : {n} × {n}
+pattern_d153cc12f45c131a,Calcule : {n} ÷ {n}
+pattern_c7f84da7444091d7,Convertis {frac} en pourcentage.
+pattern_93d60f1afe4228dd,Une valeur de {n} est augmentée de {n} %.
+pattern_d653b6f0d39c0526,Une valeur de {n} est diminuée de {n} %.
+pattern_9168ad728275b9e7,"Sachant que densité = masse / volume, densité={n}, masse={n}. Trouve le volume."
+pattern_42df8efc44ecb3f0,Une suite commence à {n} et augmente de {n} à chaque fois. Quel est son {n}e terme ?
+pattern_72f94fad55778645,Développe et simplifie : (x+{n})(x-{n})

@@ -1,0 +1,10 @@
+{
+  "stage": "KS2",
+  "total_seen": 20000,
+  "sympy_ok": 20000,
+  "sympy_rejected": 0,
+  "reject_reasons": {},
+  "in_path": "/mnt/d/AI/Quantumlab/apps/edex/unified_math_tutor/content/raw_generated/ks2/ks2.jsonl",
+  "out_ok": "/mnt/d/AI/Quantumlab/apps/edex/unified_math_tutor/content/verified/en-GB/KS2_sympy_ok.jsonl",
+  "out_rejects": "/mnt/d/AI/Quantumlab/apps/edex/unified_math_tutor/content/verified/reports/KS2_sympy_rejects.jsonl"
+}

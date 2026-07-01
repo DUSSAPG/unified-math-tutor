@@ -1,0 +1,29 @@
+{
+  "ts_utc": "2026-03-31T19:18:46Z",
+  "cwd": "/mnt/d/AI/Quantumlab/apps/edex/unified_math_tutor",
+  "targets": {
+    "ks2_target": 5000,
+    "ks3_target": 5000
+  },
+  "generated": {
+    "ks2_gen": 10000,
+    "ks3_gen": 10000
+  },
+  "paths": {
+    "ks2_final_ok": "content/verified/en-GB/KS2_final_ok.jsonl",
+    "ks2_sympy_ok": "content/verified/en-GB/KS2_sympy_ok.jsonl",
+    "ks2_bank": "content/verified/en-GB/KS2_bank_ok_5000.jsonl",
+    "ks3_final_ok": "content/verified/en-GB/KS3_final_ok.jsonl",
+    "ks3_sympy_ok": "content/verified/en-GB/KS3_sympy_ok.jsonl",
+    "ks3_bank": "content/verified/en-GB/KS3_bank_ok_5000.jsonl"
+  },
+  "counts": {
+    "ks2_final_ok": 500,
+    "ks2_sympy_ok": 10000,
+    "ks2_bank": 5000,
+    "ks3_final_ok": 423,
+    "ks3_sympy_ok": 8526,
+    "ks3_bank": 5000
+  },
+  "notes": []
+}

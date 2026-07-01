@@ -1,0 +1,16 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_shared_ui/flutter_shared_ui.dart';
+
+class ScrollArea extends StatelessWidget {
+  const ScrollArea({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppScaffold(
+      title: 'Scroll Area',
+      child: const Center(
+        child: Text('Scroll Area'),
+      ),
+    );
+  }
+}

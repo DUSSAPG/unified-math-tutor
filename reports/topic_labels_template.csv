@@ -1,0 +1,23 @@
+topic_id,field,en,en-GB,fr-CH,de-CH,it-CH
+algebra,title,Algebra,Algebra,Algebre,Algebraische Terme,Algebra e variabili
+algebra,subtitle,"Equations, expressions & variables","Equations, expressions & variables","Equations, expressions et variables","Gleichungen, Terme und Variablen","Equazioni, espressioni e variabili"
+calculus,title,Calculus,Calculus,Analyse,Analysis,Analisi
+calculus,subtitle,Differentiation & integration,Differentiation & integration,Derivation et integration,Differenzieren und Integrieren,Derivazione e integrazione
+decimals,title,Decimals,Decimals,Nombres decimaux,Dezimalzahlen,Numeri decimali
+decimals,subtitle,Decimal operations & conversions,Decimal operations & conversions,Operations et conversions decimales,Rechnen und Umwandeln mit Dezimalzahlen,Operazioni e conversioni decimali
+fractions,title,Fractions,Fractions,Les fractions,Brueche,Frazioni
+fractions,subtitle,Operations with fractions,Operations with fractions,Operations avec les fractions,Rechnen mit Bruechen,Operazioni con le frazioni
+geometry_measures,title,Geometry & Measures,Geometry & Measures,Geometrie et mesures,Geometrie und Messen,Geometria e misure
+geometry_measures,subtitle,"Shapes, angles & spatial reasoning","Shapes, angles & spatial reasoning","Formes, angles et raisonnement spatial","Formen, Winkel und raeumliches Denken","Figure, angoli e ragionamento spaziale"
+mixed_review,title,General Practice,General Practice,Entrainement general,Allgemeines Ueben,Esercizio generale
+mixed_review,subtitle,Mixed review across topics,Mixed review across topics,Revision mixte de plusieurs themes,Gemischte Wiederholung mehrerer Themen,Ripasso misto di piu argomenti
+number_place_value,title,Number & Place Value,Number & Place Value,Nombres et valeur de position,Zahlen und Stellenwert,Numeri e valore posizionale
+number_place_value,subtitle,"Place value, rounding & estimation","Place value, rounding & estimation","Valeur de position, arrondi et estimation","Stellenwert, Runden und Schatzen","Valore posizionale, arrotondamento e stime"
+percentages,title,Percentages,Percentages,Pourcentages,Prozente,Percentuali
+percentages,subtitle,"Percentages, increase & decrease","Percentages, increase & decrease","Pourcentages, augmentation et diminution","Prozente, Zunahme und Abnahme","Percentuali, aumenti e diminuzioni"
+ratio_proportion,title,Ratio & Proportion,Ratio & Proportion,Rapports et proportionnalite,Verhaeltnisse und Proportionen,Rapporti e proporzioni
+ratio_proportion,subtitle,"Ratios, rates & proportional reasoning","Ratios, rates & proportional reasoning","Rapports, taux et raisonnement proportionnel","Verhaeltnisse, Raten und proportionales Denken","Rapporti, tassi e ragionamento proporzionale"
+statistics_probability,title,Statistics & Probability,Statistics & Probability,Statistiques et probabilites,Statistik und Wahrscheinlichkeit,Statistica e probabilita
+statistics_probability,subtitle,Data handling & probability,Data handling & probability,Traitement des donnees et probabilites,Daten auswerten und Wahrscheinlichkeiten,Gestione dei dati e probabilita
+trigonometry,title,Trigonometry,Trigonometry,Trigonometrie,Trigonometrie,Trigonometria
+trigonometry,subtitle,"Sin, cos, tan & triangle geometry","Sin, cos, tan & triangle geometry","Sinus, cosinus, tangente et geometrie des triangles","Sinus, Kosinus, Tangens und Dreiecksgeometrie","Seno, coseno, tangente e geometria dei triangoli"

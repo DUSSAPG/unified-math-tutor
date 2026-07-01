@@ -1,0 +1,16 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_shared_ui/flutter_shared_ui.dart';
+
+class Checkbox extends StatelessWidget {
+  const Checkbox({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppScaffold(
+      title: 'Checkbox',
+      child: const Center(
+        child: Text('Checkbox'),
+      ),
+    );
+  }
+}

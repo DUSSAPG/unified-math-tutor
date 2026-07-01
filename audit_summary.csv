@@ -1,0 +1,37 @@
+file,stage,skill,issue_type,count,recommended_fix
+KS2_bank_ok_10000.jsonl,KS2,multiplication_division,MISSING_EXPLANATION,3437,Add a concise rationale (1-2 sentences) explaining the method.
+KS2_bank_ok_10000.jsonl,KS2,addition_subtraction,MISSING_EXPLANATION,3342,Add a concise rationale (1-2 sentences) explaining the method.
+KS2_bank_ok_10000.jsonl,KS2,fractions_of_amount,MISSING_EXPLANATION,3221,Add a concise rationale (1-2 sentences) explaining the method.
+KS3_bank_ok_10000.jsonl,KS3,sequences_linear,MISSING_EXPLANATION,1844,Add a concise rationale (1-2 sentences) explaining the method.
+KS3_bank_ok_10000.jsonl,KS3,integers_directed_numbers,MISSING_EXPLANATION,1793,Add a concise rationale (1-2 sentences) explaining the method.
+KS3_bank_ok_10000.jsonl,KS3,linear_equations_basic,MISSING_EXPLANATION,1780,Add a concise rationale (1-2 sentences) explaining the method.
+KS3_bank_ok_10000.jsonl,KS3,ratio_proportion,MISSING_EXPLANATION,1748,Add a concise rationale (1-2 sentences) explaining the method.
+KS3_bank_ok_10000.jsonl,KS3,fractions_decimals_percent,MISSING_EXPLANATION,1538,Add a concise rationale (1-2 sentences) explaining the method.
+KS3_bank_ok_10000.jsonl,KS3,algebra_simplify_substitute,MISSING_EXPLANATION,1297,Add a concise rationale (1-2 sentences) explaining the method.
+KS4_merged_deduped.jsonl,KS4,Expand expressions,PYTHON_EXPONENT,1193,Replace ** with ^ in stem; replace x**n with x^n in options. Deduplicate options where both notations appear.
+KS5_merged_deduped.jsonl,KS5,Differentiate polynomials,DUPLICATE_OPTIONS,800,Remove the ** variant; keep the ^ variant. Replace removed option with a new distinct distractor.
+KS5_merged_deduped.jsonl,KS5,Differentiate polynomials,PYTHON_EXPONENT,800,Replace ** with ^ in stem; replace x**n with x^n in options. Deduplicate options where both notations appear.
+KS5_merged_deduped.jsonl,KS5,Integrate polynomials,DUPLICATE_OPTIONS,800,Remove the ** variant; keep the ^ variant. Replace removed option with a new distinct distractor.
+KS5_merged_deduped.jsonl,KS5,Integrate polynomials,PYTHON_EXPONENT,800,Replace ** with ^ in stem; replace x**n with x^n in options. Deduplicate options where both notations appear.
+KS4_merged_deduped.jsonl,KS4,Expand expressions,DUPLICATE_OPTIONS,640,Remove the ** variant; keep the ^ variant. Replace removed option with a new distinct distractor.
+KS5_merged_deduped.jsonl,KS5,Differentiate polynomials (power rule),DUPLICATE_OPTIONS,531,Remove the ** variant; keep the ^ variant. Replace removed option with a new distinct distractor.
+KS4_merged_deduped.jsonl,KS4,Circles (circumference/area),PLACEHOLDER_QUESTION,432,Replace with a real question matching the skill label (e.g. circumference/area of a circle using pi).
+KS4_merged_deduped.jsonl,KS4,Averages,PLACEHOLDER_QUESTION,420,Replace with a real question matching the skill label (e.g. circumference/area of a circle using pi).
+KS4_merged_deduped.jsonl,KS4,Direct proportion,PLACEHOLDER_QUESTION,354,Replace with a real question matching the skill label (e.g. circumference/area of a circle using pi).
+KS4_merged_deduped.jsonl,KS4,Bounds & error intervals,PLACEHOLDER_QUESTION,324,Replace with a real question matching the skill label (e.g. circumference/area of a circle using pi).
+KS4_merged_deduped.jsonl,KS4,Best buys,PLACEHOLDER_QUESTION,288,Replace with a real question matching the skill label (e.g. circumference/area of a circle using pi).
+KS4_merged_deduped.jsonl,KS4,Cumulative frequency,PLACEHOLDER_QUESTION,252,Replace with a real question matching the skill label (e.g. circumference/area of a circle using pi).
+KS5_merged_deduped.jsonl,KS5,Chain rule,DUPLICATE_OPTIONS,164,Remove the ** variant; keep the ^ variant. Replace removed option with a new distinct distractor.
+KS5_merged_deduped.jsonl,KS5,Differentiate exponentials & logs,DUPLICATE_OPTIONS,67,Remove the ** variant; keep the ^ variant. Replace removed option with a new distinct distractor.
+KS4_merged_deduped.jsonl,KS4,Rearrange formulas,DUPLICATE_OPTIONS,50,Remove the ** variant; keep the ^ variant. Replace removed option with a new distinct distractor.
+KS5_merged_deduped.jsonl,KS5,Moments & equilibrium,DUPLICATE_OPTIONS,49,Remove the ** variant; keep the ^ variant. Replace removed option with a new distinct distractor.
+KS5_merged_deduped.jsonl,KS5,Differentiate trig functions,DUPLICATE_OPTIONS,43,Remove the ** variant; keep the ^ variant. Replace removed option with a new distinct distractor.
+KS5_merged_deduped.jsonl,KS5,Integration by substitution,DUPLICATE_OPTIONS,37,Remove the ** variant; keep the ^ variant. Replace removed option with a new distinct distractor.
+KS5_merged_deduped.jsonl,KS5,"Kinematics using calculus (v,a from s)",DUPLICATE_OPTIONS,34,Remove the ** variant; keep the ^ variant. Replace removed option with a new distinct distractor.
+KS5_merged_deduped.jsonl,KS5,Product & quotient rule,DUPLICATE_OPTIONS,25,Remove the ** variant; keep the ^ variant. Replace removed option with a new distinct distractor.
+KS5_merged_deduped.jsonl,KS5,Forces & Newton's laws,DUPLICATE_OPTIONS,21,Remove the ** variant; keep the ^ variant. Replace removed option with a new distinct distractor.
+KS5_merged_deduped.jsonl,KS5,Radians + arc length/sector area,DUPLICATE_OPTIONS,18,Remove the ** variant; keep the ^ variant. Replace removed option with a new distinct distractor.
+KS5_merged_deduped.jsonl,KS5,"Work, energy, power",DUPLICATE_OPTIONS,4,Remove the ** variant; keep the ^ variant. Replace removed option with a new distinct distractor.
+KS5_merged_deduped.jsonl,KS5,SUVAT kinematics,DUPLICATE_OPTIONS,3,Remove the ** variant; keep the ^ variant. Replace removed option with a new distinct distractor.
+KS5_merged_deduped.jsonl,KS5,Volumes of revolution (intro),DUPLICATE_OPTIONS,2,Remove the ** variant; keep the ^ variant. Replace removed option with a new distinct distractor.
+KS5_merged_deduped.jsonl,KS5,Parametric differentiation,DUPLICATE_OPTIONS,1,Remove the ** variant; keep the ^ variant. Replace removed option with a new distinct distractor.

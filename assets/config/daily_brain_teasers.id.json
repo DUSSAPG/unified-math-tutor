@@ -1,0 +1,2102 @@
+[
+  {
+    "id": "t001",
+    "question": "Seorang petani memiliki 17 domba. Semua kecuali 9 ekor pergi. Berapa yang tersisa?",
+    "answer": "9 domba tersisa.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t002",
+    "question": "Sebuah persegi panjang memiliki panjang 10 cm dan lebar 11 cm. Berapa kelilingnya?",
+    "answer": "42 cm. Keliling = 2×(10+11).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t003",
+    "question": "Sebuah persegi panjang memiliki panjang 10 cm dan lebar 21 cm. Berapa kelilingnya?",
+    "answer": "62 cm. Keliling = 2×(10+21).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t004",
+    "question": "Sebuah persegi panjang memiliki panjang 10 cm dan lebar 24 cm. Berapa kelilingnya?",
+    "answer": "68 cm. Keliling = 2×(10+24).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t005",
+    "question": "Sebuah persegi panjang memiliki panjang 11 cm dan lebar 21 cm. Berapa kelilingnya?",
+    "answer": "64 cm. Keliling = 2×(11+21).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t006",
+    "question": "Sebuah persegi panjang memiliki panjang 11 cm dan lebar 7 cm. Berapa kelilingnya?",
+    "answer": "36 cm. Keliling = 2×(11+7).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t007",
+    "question": "Sebuah persegi panjang memiliki panjang 12 cm dan lebar 24 cm. Berapa kelilingnya?",
+    "answer": "72 cm. Keliling = 2×(12+24).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t008",
+    "question": "Sebuah persegi panjang memiliki panjang 13 cm dan lebar 14 cm. Berapa kelilingnya?",
+    "answer": "54 cm. Keliling = 2×(13+14).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t009",
+    "question": "Sebuah persegi panjang memiliki panjang 13 cm dan lebar 3 cm. Berapa kelilingnya?",
+    "answer": "32 cm. Keliling = 2×(13+3).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t010",
+    "question": "Sebuah persegi panjang memiliki panjang 14 cm dan lebar 16 cm. Berapa kelilingnya?",
+    "answer": "60 cm. Keliling = 2×(14+16).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t011",
+    "question": "Sebuah persegi panjang memiliki panjang 15 cm dan lebar 24 cm. Berapa kelilingnya?",
+    "answer": "78 cm. Keliling = 2×(15+24).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t012",
+    "question": "Sebuah persegi panjang memiliki panjang 16 cm dan lebar 10 cm. Berapa kelilingnya?",
+    "answer": "52 cm. Keliling = 2×(16+10).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t013",
+    "question": "Sebuah persegi panjang memiliki panjang 16 cm dan lebar 5 cm. Berapa kelilingnya?",
+    "answer": "42 cm. Keliling = 2×(16+5).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t014",
+    "question": "Sebuah persegi panjang memiliki panjang 17 cm dan lebar 16 cm. Berapa kelilingnya?",
+    "answer": "66 cm. Keliling = 2×(17+16).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t015",
+    "question": "Sebuah persegi panjang memiliki panjang 18 cm dan lebar 23 cm. Berapa kelilingnya?",
+    "answer": "82 cm. Keliling = 2×(18+23).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t016",
+    "question": "Sebuah persegi panjang memiliki panjang 18 cm dan lebar 8 cm. Berapa kelilingnya?",
+    "answer": "52 cm. Keliling = 2×(18+8).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t017",
+    "question": "Sebuah persegi panjang memiliki panjang 22 cm dan lebar 13 cm. Berapa kelilingnya?",
+    "answer": "70 cm. Keliling = 2×(22+13).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t018",
+    "question": "Sebuah persegi panjang memiliki panjang 22 cm dan lebar 16 cm. Berapa kelilingnya?",
+    "answer": "76 cm. Keliling = 2×(22+16).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t019",
+    "question": "Sebuah persegi panjang memiliki panjang 23 cm dan lebar 11 cm. Berapa kelilingnya?",
+    "answer": "68 cm. Keliling = 2×(23+11).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t020",
+    "question": "Sebuah persegi panjang memiliki panjang 23 cm dan lebar 17 cm. Berapa kelilingnya?",
+    "answer": "80 cm. Keliling = 2×(23+17).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t021",
+    "question": "Sebuah persegi panjang memiliki panjang 24 cm dan lebar 24 cm. Berapa kelilingnya?",
+    "answer": "96 cm. Keliling = 2×(24+24).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t022",
+    "question": "Sebuah persegi panjang memiliki panjang 25 cm dan lebar 8 cm. Berapa kelilingnya?",
+    "answer": "66 cm. Keliling = 2×(25+8).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t023",
+    "question": "Sebuah persegi panjang memiliki panjang 3 cm dan lebar 22 cm. Berapa kelilingnya?",
+    "answer": "50 cm. Keliling = 2×(3+22).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t024",
+    "question": "Sebuah persegi panjang memiliki panjang 3 cm dan lebar 24 cm. Berapa kelilingnya?",
+    "answer": "54 cm. Keliling = 2×(3+24).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t025",
+    "question": "Sebuah persegi panjang memiliki panjang 3 cm dan lebar 5 cm. Berapa kelilingnya?",
+    "answer": "16 cm. Keliling = 2×(3+5).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t026",
+    "question": "Sebuah persegi panjang memiliki panjang 5 cm dan lebar 21 cm. Berapa kelilingnya?",
+    "answer": "52 cm. Keliling = 2×(5+21).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t027",
+    "question": "Sebuah persegi panjang memiliki panjang 6 cm dan lebar 23 cm. Berapa kelilingnya?",
+    "answer": "58 cm. Keliling = 2×(6+23).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t028",
+    "question": "Sebuah persegi panjang memiliki panjang 6 cm dan lebar 4 cm. Berapa kelilingnya?",
+    "answer": "20 cm. Keliling = 2×(6+4).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t029",
+    "question": "Sebuah persegi panjang memiliki panjang 7 cm dan lebar 11 cm. Berapa kelilingnya?",
+    "answer": "36 cm. Keliling = 2×(7+11).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t030",
+    "question": "Sebuah persegi panjang memiliki panjang 7 cm dan lebar 7 cm. Berapa kelilingnya?",
+    "answer": "28 cm. Keliling = 2×(7+7).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t031",
+    "question": "Sebuah segitiga memiliki sisi 3 cm, 4 cm, dan 5 cm. Jenis sudut apa yang dimilikinya?",
+    "answer": "Sudut siku-siku.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t032",
+    "question": "Isi titik-titik: 10 + 19 = ___.",
+    "answer": "29",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t033",
+    "question": "Isi titik-titik: 13 - 94 = ___.",
+    "answer": "-81",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t034",
+    "question": "Isi titik-titik: 17 + 84 = ___.",
+    "answer": "101",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t035",
+    "question": "Isi titik-titik: 18 + 14 = ___.",
+    "answer": "32",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t036",
+    "question": "Isi titik-titik: 19 × 85 = ___.",
+    "answer": "1615",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t037",
+    "question": "Isi titik-titik: 21 + 45 = ___.",
+    "answer": "66",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t038",
+    "question": "Isi titik-titik: 23 × 99 = ___.",
+    "answer": "2277",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t039",
+    "question": "Isi titik-titik: 25 + 34 = ___.",
+    "answer": "59",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t040",
+    "question": "Isi titik-titik: 27 + 75 = ___.",
+    "answer": "102",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t041",
+    "question": "Isi titik-titik: 27 × 23 = ___.",
+    "answer": "621",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t042",
+    "question": "Isi titik-titik: 29 × 57 = ___.",
+    "answer": "1653",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t043",
+    "question": "Isi titik-titik: 30 + 49 = ___.",
+    "answer": "79",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t044",
+    "question": "Isi titik-titik: 30 - 69 = ___.",
+    "answer": "-39",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t045",
+    "question": "Isi titik-titik: 31 - 62 = ___.",
+    "answer": "-31",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t046",
+    "question": "Isi titik-titik: 32 + 80 = ___.",
+    "answer": "112",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t047",
+    "question": "Isi titik-titik: 32 - 99 = ___.",
+    "answer": "-67",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t048",
+    "question": "Isi titik-titik: 34 + 78 = ___.",
+    "answer": "112",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t049",
+    "question": "Isi titik-titik: 37 × 71 = ___.",
+    "answer": "2627",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t050",
+    "question": "Isi titik-titik: 43 × 60 = ___.",
+    "answer": "2580",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t051",
+    "question": "Isi titik-titik: 45 × 66 = ___.",
+    "answer": "2970",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t052",
+    "question": "Isi titik-titik: 46 - 46 = ___.",
+    "answer": "0",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t053",
+    "question": "Isi titik-titik: 47 + 20 = ___.",
+    "answer": "67",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t054",
+    "question": "Isi titik-titik: 56 + 32 = ___.",
+    "answer": "88",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t055",
+    "question": "Isi titik-titik: 56 × 65 = ___.",
+    "answer": "3640",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t056",
+    "question": "Isi titik-titik: 61 - 17 = ___.",
+    "answer": "44",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t057",
+    "question": "Isi titik-titik: 62 + 72 = ___.",
+    "answer": "134",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t058",
+    "question": "Isi titik-titik: 63 × 95 = ___.",
+    "answer": "5985",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t059",
+    "question": "Isi titik-titik: 68 - 51 = ___.",
+    "answer": "17",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t060",
+    "question": "Isi titik-titik: 69 - 99 = ___.",
+    "answer": "-30",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t061",
+    "question": "Isi titik-titik: 79 × 98 = ___.",
+    "answer": "7742",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t062",
+    "question": "Isi titik-titik: 93 + 18 = ___.",
+    "answer": "111",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t063",
+    "question": "Isi titik-titik: 95 × 23 = ___.",
+    "answer": "2185",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t064",
+    "question": "Temukan angka berikutnya: 10, 17, 26, 37, 50, ?",
+    "answer": "65. Ini adalah kuadrat 3² hingga 8² ditambah 1.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t065",
+    "question": "Temukan angka berikutnya: 11, 14, 19, 26, 35, 46, ?",
+    "answer": "59. Ini adalah kuadrat 1² hingga 7² ditambah 10.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t066",
+    "question": "Temukan angka berikutnya: 11, 18, 27, 38, 51, ?",
+    "answer": "66. Ini adalah kuadrat 3² hingga 8² ditambah 2.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t067",
+    "question": "Temukan angka berikutnya: 12, 19, 28, 39, 52, 67, 84, ?",
+    "answer": "103. Ini adalah kuadrat 3² hingga 10² ditambah 3.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t068",
+    "question": "Temukan angka berikutnya: 14, 19, 26, 35, 46, 59, ?",
+    "answer": "74. Ini adalah kuadrat 2² hingga 8² ditambah 10.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t069",
+    "question": "Temukan angka berikutnya: 14, 19, 26, 35, 46, ?",
+    "answer": "59. Ini adalah kuadrat 2² hingga 7² ditambah 10.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t070",
+    "question": "Temukan angka berikutnya: 14, 21, 30, 41, 54, 69, 86, ?",
+    "answer": "105. Ini adalah kuadrat 3² hingga 10² ditambah 5.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t071",
+    "question": "Temukan angka berikutnya: 16, 25, 36, 49, 64, ?",
+    "answer": "81. Ini adalah kuadrat 4² hingga 9².",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t072",
+    "question": "Temukan angka berikutnya: 19, 26, 35, 46, 59, 74, ?",
+    "answer": "91. Ini adalah kuadrat 3² hingga 9² ditambah 10.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t073",
+    "question": "Temukan angka berikutnya: 19, 28, 39, 52, 67, 84, 103, ?",
+    "answer": "124. Ini adalah kuadrat 4² hingga 11² ditambah 3.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t074",
+    "question": "Temukan angka berikutnya: 19, 28, 39, 52, 67, 84, ?",
+    "answer": "103. Ini adalah kuadrat 4² hingga 10² ditambah 3.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t075",
+    "question": "Temukan angka berikutnya: 2, 5, 10, 17, 26, 37, 50, ?",
+    "answer": "65. Ini adalah kuadrat 1² hingga 8² ditambah 1.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t076",
+    "question": "Temukan angka berikutnya: 21, 30, 41, 54, 69, 86, ?",
+    "answer": "105. Ini adalah kuadrat 4² hingga 10² ditambah 5.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t077",
+    "question": "Temukan angka berikutnya: 21, 30, 41, 54, 69, ?",
+    "answer": "86. Ini adalah kuadrat 4² hingga 9² ditambah 5.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t078",
+    "question": "Temukan angka berikutnya: 25, 36, 49, 64, 81, ?",
+    "answer": "100. Ini adalah kuadrat 5² hingga 10².",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t079",
+    "question": "Temukan angka berikutnya: 26, 37, 50, 65, 82, 101, 122, ?",
+    "answer": "145. Ini adalah kuadrat 5² hingga 12² ditambah 1.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t080",
+    "question": "Temukan angka berikutnya: 27, 38, 51, 66, 83, 102, 123, ?",
+    "answer": "146. Ini adalah kuadrat 5² hingga 12² ditambah 2.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t081",
+    "question": "Temukan angka berikutnya: 3, 6, 11, 18, 27, 38, 51, ?",
+    "answer": "66. Ini adalah kuadrat 1² hingga 8² ditambah 2.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t082",
+    "question": "Temukan angka berikutnya: 30, 41, 54, 69, 86, ?",
+    "answer": "105. Ini adalah kuadrat 5² hingga 10² ditambah 5.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t083",
+    "question": "Temukan angka berikutnya: 4, 7, 12, 19, 28, 39, 52, ?",
+    "answer": "67. Ini adalah kuadrat 1² hingga 8² ditambah 3.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t084",
+    "question": "Temukan angka berikutnya: 4, 9, 16, 25, 36, 49, ?",
+    "answer": "64. Ini adalah kuadrat 2² hingga 8².",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t085",
+    "question": "Temukan angka berikutnya: 5, 10, 17, 26, 37, 50, 65, ?",
+    "answer": "82. Ini adalah kuadrat 2² hingga 9² ditambah 1.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t086",
+    "question": "Temukan angka berikutnya: 5, 8, 13, 20, 29, 40, ?",
+    "answer": "53. Ini adalah kuadrat 1² hingga 7² ditambah 4.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t087",
+    "question": "Temukan angka berikutnya: 6, 11, 18, 27, 38, 51, 66, ?",
+    "answer": "83. Ini adalah kuadrat 2² hingga 9² ditambah 2.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t088",
+    "question": "Temukan angka berikutnya: 8, 13, 20, 29, 40, 53, 68, ?",
+    "answer": "85. Ini adalah kuadrat 2² hingga 9² ditambah 4.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t089",
+    "question": "Temukan angka berikutnya: 9, 14, 21, 30, 41, 54, ?",
+    "answer": "69. Ini adalah kuadrat 2² hingga 8² ditambah 5.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t090",
+    "question": "Temukan angka berikutnya: 9, 16, 25, 36, 49, ?",
+    "answer": "64. Ini adalah kuadrat 3² hingga 8².",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t091",
+    "question": "Berapa kali kamu bisa mengurangi 10 dari 100?",
+    "answer": "Sekali. Setelah itu, kamu mengurangi dari 90.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t092",
+    "question": "Aku menambahkan lima ke sembilan dan mendapat dua. Jawabannya benar. Bagaimana?",
+    "answer": "Pada jam: lima jam setelah pukul 9 adalah pukul 2.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t093",
+    "question": "Aku adalah bilangan ganjil. Hapus satu huruf dan aku menjadi genap. Angka apakah aku?",
+    "answer": "Seven (tujuh). Hapus 's' dan menjadi 'even' (genap).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t094",
+    "question": "Aku punya jarum jam tetapi tidak bisa bertepuk tangan. Apa aku?",
+    "answer": "Jam.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t095",
+    "question": "Jika sekarang pukul 10:05, pukul berapa 15 menit lagi?",
+    "answer": "10:20.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t096",
+    "question": "Jika sekarang pukul 10:05, pukul berapa 30 menit lagi?",
+    "answer": "10:35.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t097",
+    "question": "Jika sekarang pukul 10:25, pukul berapa 45 menit lagi?",
+    "answer": "11:10.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t098",
+    "question": "Jika sekarang pukul 10:55, pukul berapa 35 menit lagi?",
+    "answer": "11:30.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t099",
+    "question": "Jika sekarang pukul 11:15, pukul berapa 50 menit lagi?",
+    "answer": "12:05.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t100",
+    "question": "Jika sekarang pukul 11:20, pukul berapa 40 menit lagi?",
+    "answer": "12:00.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t101",
+    "question": "Jika sekarang pukul 11:35, pukul berapa 40 menit lagi?",
+    "answer": "12:15.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t102",
+    "question": "Jika sekarang pukul 1:15, pukul berapa 45 menit lagi?",
+    "answer": "2:00.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t103",
+    "question": "Jika sekarang pukul 1:45, pukul berapa 25 menit lagi?",
+    "answer": "2:10.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t104",
+    "question": "Jika sekarang pukul 2:20, pukul berapa 25 menit lagi?",
+    "answer": "2:45.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t105",
+    "question": "Jika sekarang pukul 2:40, pukul berapa 40 menit lagi?",
+    "answer": "3:20.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t106",
+    "question": "Jika sekarang pukul 2:50, pukul berapa 10 menit lagi?",
+    "answer": "3:00.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t107",
+    "question": "Jika sekarang pukul 2:55, pukul berapa 25 menit lagi?",
+    "answer": "3:20.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t108",
+    "question": "Jika sekarang pukul 3:20, pukul berapa 20 menit lagi?",
+    "answer": "3:40.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t109",
+    "question": "Jika sekarang pukul 4:10, pukul berapa 10 menit lagi?",
+    "answer": "4:20.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t110",
+    "question": "Jika sekarang pukul 4:35, pukul berapa 45 menit lagi?",
+    "answer": "5:20.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t111",
+    "question": "Jika sekarang pukul 6:10, pukul berapa 25 menit lagi?",
+    "answer": "6:35.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t112",
+    "question": "Jika sekarang pukul 6:40, pukul berapa 50 menit lagi?",
+    "answer": "7:30.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t113",
+    "question": "Jika sekarang pukul 8:20, pukul berapa 45 menit lagi?",
+    "answer": "9:05.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t114",
+    "question": "Jika sekarang pukul 8:25, pukul berapa 10 menit lagi?",
+    "answer": "8:35.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t115",
+    "question": "Jika sekarang pukul 8:45, pukul berapa 50 menit lagi?",
+    "answer": "9:35.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t116",
+    "question": "Jika sekarang pukul 8:55, pukul berapa 45 menit lagi?",
+    "answer": "9:40.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t117",
+    "question": "Jika sekarang pukul 9:40, pukul berapa 45 menit lagi?",
+    "answer": "10:25.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t118",
+    "question": "Jika sekarang pukul 9:50, pukul berapa 30 menit lagi?",
+    "answer": "10:20.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t119",
+    "question": "Jika dua adalah teman dan tiga adalah keramaian, apa itu empat dan lima?",
+    "answer": "Sembilan.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t120",
+    "question": "Jika aku jatuh, aku pasti retak, tapi beri aku senyuman dan aku akan selalu tersenyum balik. Apa aku?",
+    "answer": "Cermin.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t121",
+    "question": "Ada 12 kaus kaki di laci: 6 biru dan 6 merah. Berapa yang harus kamu ambil dalam gelap untuk memastikan mendapat sepasang yang cocok?",
+    "answer": "3 kaus kaki.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t122",
+    "question": "Hari ini seorang orang tua berusia 26 tahun dan anaknya berusia 6 tahun. Dalam 10 tahun, berapa total usia mereka berdua?",
+    "answer": "52. Tambahkan 10 ke setiap usia.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t123",
+    "question": "Hari ini seorang orang tua berusia 27 tahun dan anaknya berusia 6 tahun. Dalam 6 tahun, berapa total usia mereka berdua?",
+    "answer": "45. Tambahkan 6 ke setiap usia.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t124",
+    "question": "Hari ini seorang orang tua berusia 27 tahun dan anaknya berusia 6 tahun. Dalam 7 tahun, berapa total usia mereka berdua?",
+    "answer": "47. Tambahkan 7 ke setiap usia.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t125",
+    "question": "Hari ini seorang orang tua berusia 27 tahun dan anaknya berusia 6 tahun. Dalam 8 tahun, berapa total usia mereka berdua?",
+    "answer": "49. Tambahkan 8 ke setiap usia.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t126",
+    "question": "Hari ini seorang orang tua berusia 29 tahun dan anaknya berusia 7 tahun. Dalam 8 tahun, berapa total usia mereka berdua?",
+    "answer": "52. Tambahkan 8 ke setiap usia.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t127",
+    "question": "Hari ini seorang orang tua berusia 31 tahun dan anaknya berusia 7 tahun. Dalam 10 tahun, berapa total usia mereka berdua?",
+    "answer": "58. Tambahkan 10 ke setiap usia.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t128",
+    "question": "Hari ini seorang orang tua berusia 33 tahun dan anaknya berusia 6 tahun. Dalam 6 tahun, berapa total usia mereka berdua?",
+    "answer": "51. Tambahkan 6 ke setiap usia.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t129",
+    "question": "Hari ini seorang orang tua berusia 33 tahun dan anaknya berusia 7 tahun. Dalam 7 tahun, berapa total usia mereka berdua?",
+    "answer": "54. Tambahkan 7 ke setiap usia.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t130",
+    "question": "Hari ini seorang orang tua berusia 34 tahun dan anaknya berusia 11 tahun. Dalam 10 tahun, berapa total usia mereka berdua?",
+    "answer": "65. Tambahkan 10 ke setiap usia.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t131",
+    "question": "Hari ini seorang orang tua berusia 35 tahun dan anaknya berusia 10 tahun. Dalam 7 tahun, berapa total usia mereka berdua?",
+    "answer": "59. Tambahkan 7 ke setiap usia.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t132",
+    "question": "Hari ini seorang orang tua berusia 35 tahun dan anaknya berusia 7 tahun. Dalam 8 tahun, berapa total usia mereka berdua?",
+    "answer": "58. Tambahkan 8 ke setiap usia.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t133",
+    "question": "Hari ini seorang orang tua berusia 36 tahun dan anaknya berusia 6 tahun. Dalam 7 tahun, berapa total usia mereka berdua?",
+    "answer": "56. Tambahkan 7 ke setiap usia.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t134",
+    "question": "Hari ini seorang orang tua berusia 37 tahun dan anaknya berusia 6 tahun. Dalam 7 tahun, berapa total usia mereka berdua?",
+    "answer": "57. Tambahkan 7 ke setiap usia.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t135",
+    "question": "Hari ini seorang orang tua berusia 37 tahun dan anaknya berusia 8 tahun. Dalam 6 tahun, berapa total usia mereka berdua?",
+    "answer": "57. Tambahkan 6 ke setiap usia.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t136",
+    "question": "Hari ini seorang orang tua berusia 37 tahun dan anaknya berusia 8 tahun. Dalam 7 tahun, berapa total usia mereka berdua?",
+    "answer": "59. Tambahkan 7 ke setiap usia.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t137",
+    "question": "Hari ini seorang orang tua berusia 38 tahun dan anaknya berusia 10 tahun. Dalam 10 tahun, berapa total usia mereka berdua?",
+    "answer": "68. Tambahkan 10 ke setiap usia.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t138",
+    "question": "Hari ini seorang orang tua berusia 38 tahun dan anaknya berusia 10 tahun. Dalam 5 tahun, berapa total usia mereka berdua?",
+    "answer": "58. Tambahkan 5 ke setiap usia.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t139",
+    "question": "Hari ini seorang orang tua berusia 38 tahun dan anaknya berusia 6 tahun. Dalam 7 tahun, berapa total usia mereka berdua?",
+    "answer": "58. Tambahkan 7 ke setiap usia.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t140",
+    "question": "Hari ini seorang orang tua berusia 38 tahun dan anaknya berusia 9 tahun. Dalam 10 tahun, berapa total usia mereka berdua?",
+    "answer": "67. Tambahkan 10 ke setiap usia.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t141",
+    "question": "Hari ini seorang orang tua berusia 39 tahun dan anaknya berusia 9 tahun. Dalam 6 tahun, berapa total usia mereka berdua?",
+    "answer": "60. Tambahkan 6 ke setiap usia.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t142",
+    "question": "Hari ini seorang orang tua berusia 41 tahun dan anaknya berusia 12 tahun. Dalam 10 tahun, berapa total usia mereka berdua?",
+    "answer": "73. Tambahkan 10 ke setiap usia.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t143",
+    "question": "Hari ini seorang orang tua berusia 41 tahun dan anaknya berusia 6 tahun. Dalam 7 tahun, berapa total usia mereka berdua?",
+    "answer": "61. Tambahkan 7 ke setiap usia.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t144",
+    "question": "Hari ini seorang orang tua berusia 41 tahun dan anaknya berusia 7 tahun. Dalam 10 tahun, berapa total usia mereka berdua?",
+    "answer": "68. Tambahkan 10 ke setiap usia.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t145",
+    "question": "Hari ini seorang orang tua berusia 42 tahun dan anaknya berusia 10 tahun. Dalam 7 tahun, berapa total usia mereka berdua?",
+    "answer": "66. Tambahkan 7 ke setiap usia.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t146",
+    "question": "Hari ini seorang orang tua berusia 42 tahun dan anaknya berusia 7 tahun. Dalam 8 tahun, berapa total usia mereka berdua?",
+    "answer": "65. Tambahkan 8 ke setiap usia.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t147",
+    "question": "Hari ini seorang orang tua berusia 43 tahun dan anaknya berusia 10 tahun. Dalam 10 tahun, berapa total usia mereka berdua?",
+    "answer": "73. Tambahkan 10 ke setiap usia.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t148",
+    "question": "Hari ini seorang orang tua berusia 43 tahun dan anaknya berusia 9 tahun. Dalam 6 tahun, berapa total usia mereka berdua?",
+    "answer": "64. Tambahkan 6 ke setiap usia.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t149",
+    "question": "Hari ini seorang orang tua berusia 46 tahun dan anaknya berusia 11 tahun. Dalam 8 tahun, berapa total usia mereka berdua?",
+    "answer": "73. Tambahkan 8 ke setiap usia.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t150",
+    "question": "Apa yang dimulai dengan T, diakhiri dengan T, dan ada T di dalamnya?",
+    "answer": "Teko (teapot).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t151",
+    "question": "Apa yang bisa dipecahkan, dibuat, diceritakan, dan dimainkan?",
+    "answer": "Lelucon.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t152",
+    "question": "Apa yang bisa memenuhi ruangan tetapi tidak memakan tempat?",
+    "answer": "Cahaya.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t153",
+    "question": "Apa yang bisa mengelilingi dunia sambil tetap berada di sudut?",
+    "answer": "Perangko.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t154",
+    "question": "Apa yang bisa kamu tangkap tetapi tidak bisa kamu lempar?",
+    "answer": "Pilek.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t155",
+    "question": "Apa yang berikutnya: 1, 4, 9, 16, 25, 36, 49, ?",
+    "answer": "64. Tambahkan bilangan ganjil berurutan.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t156",
+    "question": "Apa yang berikutnya: 10, 13, 18, 25, 34, 45, 58, ?",
+    "answer": "73. Tambahkan bilangan ganjil berurutan.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t157",
+    "question": "Apa yang berikutnya: 10, 13, 18, 25, 34, 45, ?",
+    "answer": "58. Tambahkan bilangan ganjil berurutan.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t158",
+    "question": "Apa yang berikutnya: 2, 5, 10, 17, 26, 37, ?",
+    "answer": "50. Tambahkan bilangan ganjil berurutan.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t159",
+    "question": "Apa yang berikutnya: 3, 6, 11, 18, 27, 38, ?",
+    "answer": "51. Tambahkan bilangan ganjil berurutan.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t160",
+    "question": "Apa yang berikutnya: 3, 6, 11, 18, 27, ?",
+    "answer": "38. Tambahkan bilangan ganjil berurutan.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t161",
+    "question": "Apa yang berikutnya: 5, 8, 13, 20, 29, 40, ?",
+    "answer": "53. Tambahkan bilangan ganjil berurutan.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t162",
+    "question": "Apa yang berikutnya: 5, 8, 13, 20, 29, ?",
+    "answer": "40. Tambahkan bilangan ganjil berurutan.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t163",
+    "question": "Apa yang berikutnya: 7, 10, 15, 22, 31, 42, 55, ?",
+    "answer": "70. Tambahkan bilangan ganjil berurutan.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t164",
+    "question": "Apa yang berikutnya: 7, 10, 15, 22, 31, 42, ?",
+    "answer": "55. Tambahkan bilangan ganjil berurutan.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t165",
+    "question": "Apa yang berikutnya: 7, 10, 15, 22, 31, ?",
+    "answer": "42. Tambahkan bilangan ganjil berurutan.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t166",
+    "question": "Apa yang berikutnya: 8, 11, 16, 23, 32, ?",
+    "answer": "43. Tambahkan bilangan ganjil berurutan.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t167",
+    "question": "Apa yang berikutnya: 9, 12, 17, 24, 33, ?",
+    "answer": "44. Tambahkan bilangan ganjil berurutan.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t168",
+    "question": "Apa yang muncul sekali dalam semenit, dua kali dalam sejenak, dan tidak pernah dalam seribu tahun?",
+    "answer": "Huruf 'm'.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t169",
+    "question": "Apa yang semakin basah semakin banyak ia mengeringkan?",
+    "answer": "Handuk.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t170",
+    "question": "Apa yang naik tetapi tidak pernah turun?",
+    "answer": "Usiamu.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t171",
+    "question": "Apa yang memiliki kulit tetapi tidak menggigit?",
+    "answer": "Pohon.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t172",
+    "question": "Apa yang memiliki tempat tidur tetapi tidak pernah tidur?",
+    "answer": "Sungai.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t173",
+    "question": "Apa yang memiliki bagian bawah di bagian atas?",
+    "answer": "Kakimu.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t174",
+    "question": "Apa yang memiliki wajah dan dua jarum tetapi tidak memiliki lengan atau kaki?",
+    "answer": "Jam.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t175",
+    "question": "Apa yang memiliki kepala, ekor, berwarna coklat, dan tidak memiliki kaki?",
+    "answer": "Koin (penny).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t176",
+    "question": "Apa yang memiliki leher tetapi tidak memiliki kepala?",
+    "answer": "Botol.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t177",
+    "question": "Apa yang memiliki dering tetapi tidak memiliki jari?",
+    "answer": "Telepon.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t178",
+    "question": "Apa yang memiliki tulang punggung tetapi tidak memiliki tulang?",
+    "answer": "Buku.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t179",
+    "question": "Apa yang memiliki ekor tetapi tidak memiliki kaki dan tetap bisa melompat?",
+    "answer": "Layang-layang.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t180",
+    "question": "Apa yang memiliki ibu jari dan empat jari tetapi bukan tangan?",
+    "answer": "Sarung tangan.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t181",
+    "question": "Apa yang memiliki ujung tetapi tidak memiliki awal?",
+    "answer": "Tongkat.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t182",
+    "question": "Apa yang memiliki mata tetapi tidak memiliki tubuh?",
+    "answer": "Badai (hurikan).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t183",
+    "question": "Apa yang memiliki empat roda dan terbang?",
+    "answer": "Truk sampah (ia 'terbang' dengan sampah).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t184",
+    "question": "Apa yang memiliki kaki tetapi tidak berjalan?",
+    "answer": "Meja.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t185",
+    "question": "Apa yang memiliki banyak tuts tetapi tidak bisa membuka satu pun kunci?",
+    "answer": "Piano (atau keyboard).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t186",
+    "question": "Apa yang memiliki satu mata tetapi tidak bisa melihat?",
+    "answer": "Jarum.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t187",
+    "question": "Apa yang memiliki gigi tetapi tidak bisa menggigit?",
+    "answer": "Sisir.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t188",
+    "question": "Apa yang harus dipecahkan sebelum bisa digunakan?",
+    "answer": "Telur.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t189",
+    "question": "Apa yang memiliki kata-kata tetapi tidak pernah berbicara?",
+    "answer": "Buku.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t190",
+    "question": "Penemuan apa yang memungkinkanmu melihat langsung menembus dinding?",
+    "answer": "Jendela.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t191",
+    "question": "Berapa 1/2 dari 24?",
+    "answer": "12.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t192",
+    "question": "Berapa 1/2 dari 84?",
+    "answer": "42.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t193",
+    "question": "Berapa 1/2 dari 96?",
+    "answer": "48.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t194",
+    "question": "Berapa 1/3 dari 24?",
+    "answer": "8.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t195",
+    "question": "Berapa 1/3 dari 30?",
+    "answer": "10.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t196",
+    "question": "Berapa 1/3 dari 48?",
+    "answer": "16.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t197",
+    "question": "Berapa 1/4 dari 96?",
+    "answer": "24.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t198",
+    "question": "Berapa 1/5 dari 40?",
+    "answer": "8.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t199",
+    "question": "Berapa 10% dari 240?",
+    "answer": "24. (10% berarti 10/100 dari 240.)",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t200",
+    "question": "Berapa 10% dari 300?",
+    "answer": "30. (10% berarti 10/100 dari 300.)",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t201",
+    "question": "Berapa 10% dari 80?",
+    "answer": "8. (10% berarti 10/100 dari 80.)",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t202",
+    "question": "Berapa 12% dari 100?",
+    "answer": "12. (12% berarti 12/100 dari 100.)",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t203",
+    "question": "Berapa 12% dari 80?",
+    "answer": "9.6. (12% berarti 12/100 dari 80.)",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t204",
+    "question": "Berapa 15% dari 200?",
+    "answer": "30. (15% berarti 15/100 dari 200.)",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t205",
+    "question": "Berapa 15% dari 50?",
+    "answer": "7.5. (15% berarti 15/100 dari 50.)",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t206",
+    "question": "Berapa 15% dari 60?",
+    "answer": "9. (15% berarti 15/100 dari 60.)",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t207",
+    "question": "Berapa 2/3 dari 120?",
+    "answer": "80.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t208",
+    "question": "Berapa 2/3 dari 36?",
+    "answer": "24.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t209",
+    "question": "Berapa 2/3 dari 48?",
+    "answer": "32.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t210",
+    "question": "Berapa 2/5 dari 24?",
+    "answer": "9.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t211",
+    "question": "Berapa 2/5 dari 30?",
+    "answer": "12.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t212",
+    "question": "Berapa 2/5 dari 48?",
+    "answer": "19.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t213",
+    "question": "Berapa 20% dari 240?",
+    "answer": "48. (20% berarti 20/100 dari 240.)",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t214",
+    "question": "Berapa 20% dari 60?",
+    "answer": "12. (20% berarti 20/100 dari 60.)",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t215",
+    "question": "Berapa 20% dari 80?",
+    "answer": "16. (20% berarti 20/100 dari 80.)",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t216",
+    "question": "Berapa 25% dari 100?",
+    "answer": "25. (25% berarti 25/100 dari 100.)",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t217",
+    "question": "Berapa 25% dari 120?",
+    "answer": "30. (25% berarti 25/100 dari 120.)",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t218",
+    "question": "Berapa 25% dari 200?",
+    "answer": "50. (25% berarti 25/100 dari 200.)",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t219",
+    "question": "Berapa 25% dari 300?",
+    "answer": "75. (25% berarti 25/100 dari 300.)",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t220",
+    "question": "Berapa 3/4 dari 120?",
+    "answer": "90.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t221",
+    "question": "Berapa 3/4 dari 30?",
+    "answer": "22.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t222",
+    "question": "Berapa 3/4 dari 60?",
+    "answer": "45.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t223",
+    "question": "Berapa 3/4 dari 84?",
+    "answer": "63.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t224",
+    "question": "Berapa 30% dari 40?",
+    "answer": "12. (30% berarti 30/100 dari 40.)",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t225",
+    "question": "Berapa 30% dari 80?",
+    "answer": "24. (30% berarti 30/100 dari 80.)",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t226",
+    "question": "Berapa 40% dari 100?",
+    "answer": "40. (40% berarti 40/100 dari 100.)",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t227",
+    "question": "Berapa 40% dari 120?",
+    "answer": "48. (40% berarti 40/100 dari 120.)",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t228",
+    "question": "Berapa 40% dari 200?",
+    "answer": "80. (40% berarti 40/100 dari 200.)",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t229",
+    "question": "Berapa 40% dari 60?",
+    "answer": "24. (40% berarti 40/100 dari 60.)",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t230",
+    "question": "Berapa 5% dari 100?",
+    "answer": "5. (5% berarti 5/100 dari 100.)",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t231",
+    "question": "Berapa 5% dari 300?",
+    "answer": "15. (5% berarti 5/100 dari 300.)",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t232",
+    "question": "Berapa 5% dari 40?",
+    "answer": "2. (5% berarti 5/100 dari 40.)",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t233",
+    "question": "Apa yang selalu datang tetapi tidak pernah tiba?",
+    "answer": "Hari esok.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t234",
+    "question": "Apa yang selalu ada di depanmu tetapi tidak bisa dilihat?",
+    "answer": "Masa depan.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t235",
+    "question": "Apa yang hitam saat bersih dan putih saat kotor?",
+    "answer": "Papan tulis.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t236",
+    "question": "Apa yang mudah diangkat tetapi sulit dilempar?",
+    "answer": "Bulu.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t237",
+    "question": "Apa yang penuh lubang tetapi masih bisa menahan air?",
+    "answer": "Spons.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t238",
+    "question": "Apa yang begitu rapuh sehingga menyebut namanya saja bisa memecahkannya?",
+    "answer": "Keheningan.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t239",
+    "question": "Apa angka berikutnya: 1, 4, 9, 16, 25, ...?",
+    "answer": "36. Ini adalah bilangan kuadrat.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t240",
+    "question": "Jenis band apa yang tidak pernah memainkan musik?",
+    "answer": "Karet gelang (rubber band).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t241",
+    "question": "Angka apa yang berikutnya: 10, 17, 24, 31, 38, ?",
+    "answer": "45. Tambahkan 7 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t242",
+    "question": "Angka apa yang berikutnya: 11, 19, 27, 35, 43, 51, ?",
+    "answer": "59. Tambahkan 8 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t243",
+    "question": "Angka apa yang berikutnya: 13, 19, 25, 31, 37, 43, ?",
+    "answer": "49. Tambahkan 6 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t244",
+    "question": "Angka apa yang berikutnya: 13, 24, 35, 46, 57, 68, 79, ?",
+    "answer": "90. Tambahkan 11 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t245",
+    "question": "Angka apa yang berikutnya: 14, 16, 18, 20, 22, 24, 26, ?",
+    "answer": "28. Tambahkan 2 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t246",
+    "question": "Angka apa yang berikutnya: 14, 23, 32, 41, 50, 59, 68, ?",
+    "answer": "77. Tambahkan 9 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t247",
+    "question": "Angka apa yang berikutnya: 15, 26, 37, 48, 59, 70, 81, ?",
+    "answer": "92. Tambahkan 11 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t248",
+    "question": "Angka apa yang berikutnya: 16, 21, 26, 31, 36, ?",
+    "answer": "41. Tambahkan 5 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t249",
+    "question": "Angka apa yang berikutnya: 16, 31, 46, 61, 76, 91, ?",
+    "answer": "106. Tambahkan 15 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t250",
+    "question": "Angka apa yang berikutnya: 17, 22, 27, 32, 37, ?",
+    "answer": "42. Tambahkan 5 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t251",
+    "question": "Angka apa yang berikutnya: 18, 23, 28, 33, 38, ?",
+    "answer": "43. Tambahkan 5 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t252",
+    "question": "Angka apa yang berikutnya: 19, 25, 31, 37, 43, 49, ?",
+    "answer": "55. Tambahkan 6 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t253",
+    "question": "Angka apa yang berikutnya: 2, 12, 22, 32, 42, 52, ?",
+    "answer": "62. Tambahkan 10 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t254",
+    "question": "Angka apa yang berikutnya: 2, 7, 12, 17, 22, 27, ?",
+    "answer": "32. Tambahkan 5 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t255",
+    "question": "Angka apa yang berikutnya: 3, 15, 27, 39, 51, 63, ?",
+    "answer": "75. Tambahkan 12 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t256",
+    "question": "Angka apa yang berikutnya: 3, 8, 13, 18, 23, 28, 33, ?",
+    "answer": "38. Tambahkan 5 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t257",
+    "question": "Angka apa yang berikutnya: 3, 9, 15, 21, 27, ?",
+    "answer": "33. Tambahkan 6 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t258",
+    "question": "Angka apa yang berikutnya: 4, 16, 28, 40, 52, 64, 76, ?",
+    "answer": "88. Tambahkan 12 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t259",
+    "question": "Angka apa yang berikutnya: 4, 18, 32, 46, 60, 74, ?",
+    "answer": "88. Tambahkan 14 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t260",
+    "question": "Angka apa yang berikutnya: 4, 6, 8, 10, 12, 14, ?",
+    "answer": "16. Tambahkan 2 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t261",
+    "question": "Angka apa yang berikutnya: 4, 7, 10, 13, 16, 19, 22, ?",
+    "answer": "25. Tambahkan 3 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t262",
+    "question": "Angka apa yang berikutnya: 4, 8, 12, 16, 20, 24, 28, ?",
+    "answer": "32. Tambahkan 4 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t263",
+    "question": "Angka apa yang berikutnya: 6, 19, 32, 45, 58, 71, ?",
+    "answer": "84. Tambahkan 13 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t264",
+    "question": "Angka apa yang berikutnya: 7, 13, 19, 25, 31, 37, 43, ?",
+    "answer": "49. Tambahkan 6 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t265",
+    "question": "Angka apa yang berikutnya: 7, 17, 27, 37, 47, 57, ?",
+    "answer": "67. Tambahkan 10 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t266",
+    "question": "Angka apa yang berikutnya: 7, 22, 37, 52, 67, 82, ?",
+    "answer": "97. Tambahkan 15 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t267",
+    "question": "Angka apa yang berikutnya: 8, 13, 18, 23, 28, ?",
+    "answer": "33. Tambahkan 5 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t268",
+    "question": "Angka apa yang berikutnya: 8, 19, 30, 41, 52, ?",
+    "answer": "63. Tambahkan 11 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t269",
+    "question": "Angka apa yang berikutnya: 9, 17, 25, 33, 41, 49, ?",
+    "answer": "57. Tambahkan 8 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t270",
+    "question": "Angka apa yang berikutnya: 9, 19, 29, 39, 49, ?",
+    "answer": "59. Tambahkan 10 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t271",
+    "question": "Angka apa yang berikutnya: 9, 24, 39, 54, 69, 84, ?",
+    "answer": "99. Tambahkan 15 setiap kali.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t272",
+    "question": "Angka apa yang memiliki jumlah huruf yang sama dengan nilainya?",
+    "answer": "Empat.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t273",
+    "question": "Apa yang berlari tetapi tidak pernah berjalan?",
+    "answer": "Air (sungai).",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t274",
+    "question": "Tiga bilangan positif mana yang memberikan hasil yang sama ketika dijumlahkan dan dikalikan?",
+    "answer": "1, 2, dan 3. Kedua hasilnya adalah 6.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t275",
+    "question": "Tanpa kalkulator, berapa 10 + 9 × 6?",
+    "answer": "64. Kalikan dulu: 9×6=54, lalu tambahkan 10.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t276",
+    "question": "Tanpa kalkulator, berapa 11 + 6 × 10?",
+    "answer": "71. Kalikan dulu: 6×10=60, lalu tambahkan 11.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t277",
+    "question": "Tanpa kalkulator, berapa 12 + 10 × 11?",
+    "answer": "122. Kalikan dulu: 10×11=110, lalu tambahkan 12.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t278",
+    "question": "Tanpa kalkulator, berapa 12 + 11 × 7?",
+    "answer": "89. Kalikan dulu: 11×7=77, lalu tambahkan 12.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t279",
+    "question": "Tanpa kalkulator, berapa 12 + 12 × 3?",
+    "answer": "48. Kalikan dulu: 12×3=36, lalu tambahkan 12.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t280",
+    "question": "Tanpa kalkulator, berapa 12 + 3 × 4?",
+    "answer": "24. Kalikan dulu: 3×4=12, lalu tambahkan 12.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t281",
+    "question": "Tanpa kalkulator, berapa 12 + 7 × 3?",
+    "answer": "33. Kalikan dulu: 7×3=21, lalu tambahkan 12.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t282",
+    "question": "Tanpa kalkulator, berapa 12 + 8 × 7?",
+    "answer": "68. Kalikan dulu: 8×7=56, lalu tambahkan 12.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t283",
+    "question": "Tanpa kalkulator, berapa 2 + 2 × 7?",
+    "answer": "16. Kalikan dulu: 2×7=14, lalu tambahkan 2.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t284",
+    "question": "Tanpa kalkulator, berapa 2 + 3 × 11?",
+    "answer": "35. Kalikan dulu: 3×11=33, lalu tambahkan 2.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t285",
+    "question": "Tanpa kalkulator, berapa 2 + 9 × 10?",
+    "answer": "92. Kalikan dulu: 9×10=90, lalu tambahkan 2.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t286",
+    "question": "Tanpa kalkulator, berapa 4 + 11 × 8?",
+    "answer": "92. Kalikan dulu: 11×8=88, lalu tambahkan 4.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t287",
+    "question": "Tanpa kalkulator, berapa 4 + 5 × 10?",
+    "answer": "54. Kalikan dulu: 5×10=50, lalu tambahkan 4.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t288",
+    "question": "Tanpa kalkulator, berapa 4 + 5 × 7?",
+    "answer": "39. Kalikan dulu: 5×7=35, lalu tambahkan 4.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t289",
+    "question": "Tanpa kalkulator, berapa 5 + 12 × 6?",
+    "answer": "77. Kalikan dulu: 12×6=72, lalu tambahkan 5.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t290",
+    "question": "Tanpa kalkulator, berapa 5 + 12 × 7?",
+    "answer": "89. Kalikan dulu: 12×7=84, lalu tambahkan 5.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t291",
+    "question": "Tanpa kalkulator, berapa 5 + 5 × 4?",
+    "answer": "25. Kalikan dulu: 5×4=20, lalu tambahkan 5.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t292",
+    "question": "Tanpa kalkulator, berapa 5 + 6 × 7?",
+    "answer": "47. Kalikan dulu: 6×7=42, lalu tambahkan 5.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t293",
+    "question": "Tanpa kalkulator, berapa 6 + 11 × 5?",
+    "answer": "61. Kalikan dulu: 11×5=55, lalu tambahkan 6.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t294",
+    "question": "Tanpa kalkulator, berapa 6 + 5 × 8?",
+    "answer": "46. Kalikan dulu: 5×8=40, lalu tambahkan 6.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t295",
+    "question": "Tanpa kalkulator, berapa 8 + 10 × 12?",
+    "answer": "128. Kalikan dulu: 10×12=120, lalu tambahkan 8.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t296",
+    "question": "Tanpa kalkulator, berapa 8 + 10 × 2?",
+    "answer": "28. Kalikan dulu: 10×2=20, lalu tambahkan 8.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t297",
+    "question": "Tanpa kalkulator, berapa 8 + 12 × 12?",
+    "answer": "152. Kalikan dulu: 12×12=144, lalu tambahkan 8.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t298",
+    "question": "Tanpa kalkulator, berapa 8 + 4 × 9?",
+    "answer": "44. Kalikan dulu: 4×9=36, lalu tambahkan 8.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t299",
+    "question": "Tanpa kalkulator, berapa 8 + 6 × 3?",
+    "answer": "26. Kalikan dulu: 6×3=18, lalu tambahkan 8.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  },
+  {
+    "id": "t300",
+    "question": "Tanpa kalkulator, berapa 9 + 7 × 3?",
+    "answer": "30. Kalikan dulu: 7×3=21, lalu tambahkan 9.",
+    "difficulty": "easy",
+    "tags": ["all-ages"]
+  }
+]

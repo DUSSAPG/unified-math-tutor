@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "defaultMarket": "UK",
+  "markets": [
+    {
+      "id": "UK",
+      "label": "United Kingdom",
+      "defaultLocale": "en-GB",
+      "locales": ["en-GB"]
+    },
+    {
+      "id": "CH",
+      "label": "Switzerland",
+      "defaultLocale": "de-CH",
+      "locales": ["de-CH", "fr-CH", "it-CH"]
+    },
+    {
+      "id": "US",
+      "label": "United States",
+      "defaultLocale": "en",
+      "effectiveLocale": "en",
+      "packLocale": "en-GB",
+      "locales": ["en"]
+    },
+    {
+      "id": "SE",
+      "label": "Sweden",
+      "defaultLocale": "sv-SE",
+      "locales": ["sv-SE"],
+      "enabled": false,
+      "devOnly": true
+    },
+    {
+      "id": "NO",
+      "label": "Norway",
+      "defaultLocale": "nb-NO",
+      "locales": ["nb-NO"],
+      "enabled": false,
+      "devOnly": true
+    },
+    {
+      "id": "DK",
+      "label": "Denmark",
+      "defaultLocale": "da-DK",
+      "locales": ["da-DK"],
+      "enabled": false,
+      "devOnly": true
+    },
+    {
+      "id": "KR",
+      "label": "Korea",
+      "defaultLocale": "ko-KR",
+      "locales": ["ko-KR"],
+      "enabled": false,
+      "devOnly": true
+    },
+    {
+      "id": "SG",
+      "label": "Singapore",
+      "defaultLocale": "en",
+      "effectiveLocale": "en",
+      "packLocale": "en-GB",
+      "locales": ["en"]
+    },
+    {
+      "id": "AR",
+      "label": "Arabic UI Preview",
+      "defaultLocale": "ar",
+      "locales": ["ar"],
+      "enabled": false,
+      "devOnly": true
+    }
+  ]
+}

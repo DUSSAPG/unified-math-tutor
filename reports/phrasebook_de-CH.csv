@@ -1,0 +1,11 @@
+﻿pattern_id,translated_template
+pattern_aa2782851062605e,Berechne: {n} + {n}
+pattern_7ff18e40a2436b84,Berechne: {n} - {n}
+pattern_1cce29c7f3d0780a,Berechne: {n} × {n}
+pattern_d153cc12f45c131a,Berechne: {n} ÷ {n}
+pattern_c7f84da7444091d7,Wandle {frac} in eine Prozentzahl um.
+pattern_93d60f1afe4228dd,Ein Wert von {n} wird um {n}% erhöht.
+pattern_d653b6f0d39c0526,Ein Wert von {n} wird um {n}% verringert.
+pattern_9168ad728275b9e7,"Gegeben: Dichte = Masse / Volumen, Dichte={n}, Masse={n}. Bestimme das Volumen."
+pattern_42df8efc44ecb3f0,Eine Folge beginnt bei {n} und nimmt jedes Mal um {n} zu. Wie lautet das {n}. Glied?
+pattern_72f94fad55778645,Multipliziere aus und vereinfache: (x+{n})(x-{n})

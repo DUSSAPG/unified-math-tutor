@@ -1,0 +1,2277 @@
+import 'dart:async';
+
+import 'package:flutter/foundation.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:intl/intl.dart' as intl;
+
+import 'app_localizations_ar.dart';
+import 'app_localizations_da.dart';
+import 'app_localizations_de.dart';
+import 'app_localizations_en.dart';
+import 'app_localizations_es.dart';
+import 'app_localizations_fr.dart';
+import 'app_localizations_id.dart';
+import 'app_localizations_it.dart';
+import 'app_localizations_ko.dart';
+import 'app_localizations_nb.dart';
+import 'app_localizations_pt.dart';
+import 'app_localizations_sv.dart';
+
+// ignore_for_file: type=lint
+
+/// Callers can lookup localized strings with an instance of AppLocalizations
+/// returned by `AppLocalizations.of(context)`.
+///
+/// Applications need to include `AppLocalizations.delegate()` in their app's
+/// `localizationDelegates` list, and the locales they support in the app's
+/// `supportedLocales` list. For example:
+///
+/// ```dart
+/// import 'l10n/app_localizations.dart';
+///
+/// return MaterialApp(
+///   localizationsDelegates: AppLocalizations.localizationsDelegates,
+///   supportedLocales: AppLocalizations.supportedLocales,
+///   home: MyApplicationHome(),
+/// );
+/// ```
+///
+/// ## Update pubspec.yaml
+///
+/// Please make sure to update your pubspec.yaml to include the following
+/// packages:
+///
+/// ```yaml
+/// dependencies:
+///   # Internationalization support.
+///   flutter_localizations:
+///     sdk: flutter
+///   intl: any # Use the pinned version from flutter_localizations
+///
+///   # Rest of dependencies
+/// ```
+///
+/// ## iOS Applications
+///
+/// iOS applications define key application metadata, including supported
+/// locales, in an Info.plist file that is built into the application bundle.
+/// To configure the locales supported by your app, you’ll need to edit this
+/// file.
+///
+/// First, open your project’s ios/Runner.xcworkspace Xcode workspace file.
+/// Then, in the Project Navigator, open the Info.plist file under the Runner
+/// project’s Runner folder.
+///
+/// Next, select the Information Property List item, select Add Item from the
+/// Editor menu, then select Localizations from the pop-up menu.
+///
+/// Select and expand the newly-created Localizations item then, for each
+/// locale your application supports, add a new item and select the locale
+/// you wish to add from the pop-up menu in the Value field. This list should
+/// be consistent with the languages listed in the AppLocalizations.supportedLocales
+/// property.
+abstract class AppLocalizations {
+  AppLocalizations(String locale)
+      : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+
+  final String localeName;
+
+  static AppLocalizations of(BuildContext context) {
+    return Localizations.of<AppLocalizations>(context, AppLocalizations)!;
+  }
+
+  static const LocalizationsDelegate<AppLocalizations> delegate =
+      _AppLocalizationsDelegate();
+
+  /// A list of this localizations delegate along with the default localizations
+  /// delegates.
+  ///
+  /// Returns a list of localizations delegates containing this delegate along with
+  /// GlobalMaterialLocalizations.delegate, GlobalCupertinoLocalizations.delegate,
+  /// and GlobalWidgetsLocalizations.delegate.
+  ///
+  /// Additional delegates can be added by appending to this list in
+  /// MaterialApp. This list does not have to be used at all if a custom list
+  /// of delegates is preferred or required.
+  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
+      <LocalizationsDelegate<dynamic>>[
+    delegate,
+    GlobalMaterialLocalizations.delegate,
+    GlobalCupertinoLocalizations.delegate,
+    GlobalWidgetsLocalizations.delegate,
+  ];
+
+  /// A list of this localizations delegate's supported locales.
+  static const List<Locale> supportedLocales = <Locale>[
+    Locale('ar'),
+    Locale('da'),
+    Locale('da', 'DK'),
+    Locale('de'),
+    Locale('de', 'CH'),
+    Locale('en'),
+    Locale('en', 'GB'),
+    Locale('es'),
+    Locale('fr'),
+    Locale('fr', 'CH'),
+    Locale('id'),
+    Locale('it'),
+    Locale('it', 'CH'),
+    Locale('ko'),
+    Locale('ko', 'KR'),
+    Locale('nb'),
+    Locale('nb', 'NO'),
+    Locale('pt'),
+    Locale('sv'),
+    Locale('sv', 'SE')
+  ];
+
+  /// Bottom nav label for Home tab
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get navHome;
+
+  /// Bottom nav label for Topics tab
+  ///
+  /// In en, this message translates to:
+  /// **'Topics'**
+  String get navTopics;
+
+  /// Bottom nav label for Practice tab
+  ///
+  /// In en, this message translates to:
+  /// **'Practice'**
+  String get navPractice;
+
+  /// Bottom nav label for Profile tab
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get navProfile;
+
+  /// Bottom nav label for Tutor tab
+  ///
+  /// In en, this message translates to:
+  /// **'Tutor'**
+  String get navTutor;
+
+  /// Bottom nav label for Help tab
+  ///
+  /// In en, this message translates to:
+  /// **'Help'**
+  String get navHelp;
+
+  /// Placeholder in topics search bar
+  ///
+  /// In en, this message translates to:
+  /// **'Search topics...'**
+  String get topicsSearchHint;
+
+  /// No description provided for @topicsFilterAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get topicsFilterAll;
+
+  /// No description provided for @topicsFilterPractice.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice'**
+  String get topicsFilterPractice;
+
+  /// No description provided for @topicsFilterRecommended.
+  ///
+  /// In en, this message translates to:
+  /// **'Recommended'**
+  String get topicsFilterRecommended;
+
+  /// No description provided for @topicsFilterOxfordTrack.
+  ///
+  /// In en, this message translates to:
+  /// **'Oxford Track'**
+  String get topicsFilterOxfordTrack;
+
+  /// No description provided for @topicsFilterGcse.
+  ///
+  /// In en, this message translates to:
+  /// **'GCSE'**
+  String get topicsFilterGcse;
+
+  /// No description provided for @topicsFilterMore.
+  ///
+  /// In en, this message translates to:
+  /// **'More'**
+  String get topicsFilterMore;
+
+  /// Title of the track selection panel
+  ///
+  /// In en, this message translates to:
+  /// **'Select Track'**
+  String get topicsSelectTrack;
+
+  /// No description provided for @topicsTrackStandard.
+  ///
+  /// In en, this message translates to:
+  /// **'Standard'**
+  String get topicsTrackStandard;
+
+  /// No description provided for @topicsTrackStandardSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Core curriculum for all Key Stages'**
+  String get topicsTrackStandardSub;
+
+  /// No description provided for @topicsTrackGcseFoundation.
+  ///
+  /// In en, this message translates to:
+  /// **'GCSE Foundation'**
+  String get topicsTrackGcseFoundation;
+
+  /// No description provided for @topicsTrackGcseFoundationSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Foundation tier GCSE preparation'**
+  String get topicsTrackGcseFoundationSub;
+
+  /// No description provided for @topicsTrackGcseHigher.
+  ///
+  /// In en, this message translates to:
+  /// **'GCSE Higher'**
+  String get topicsTrackGcseHigher;
+
+  /// No description provided for @topicsTrackGcseHigherSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Higher tier GCSE preparation'**
+  String get topicsTrackGcseHigherSub;
+
+  /// No description provided for @topicsTrackOxford.
+  ///
+  /// In en, this message translates to:
+  /// **'Oxford Track'**
+  String get topicsTrackOxford;
+
+  /// No description provided for @topicsTrackOxfordSub.
+  ///
+  /// In en, this message translates to:
+  /// **'11+ prep, stretch questions & competition math'**
+  String get topicsTrackOxfordSub;
+
+  /// No description provided for @topicsPremiumComingSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium feature'**
+  String get topicsPremiumComingSoon;
+
+  /// No description provided for @topicsPremiumLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'PREMIUM'**
+  String get topicsPremiumLabel;
+
+  /// No description provided for @practiceChooseMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose your practice mode'**
+  String get practiceChooseMode;
+
+  /// Section header above practice mode cards
+  ///
+  /// In en, this message translates to:
+  /// **'MODE'**
+  String get practiceModeLabel;
+
+  /// Section header above question count selector
+  ///
+  /// In en, this message translates to:
+  /// **'QUESTIONS'**
+  String get practiceQuestionsLabel;
+
+  /// No description provided for @practiceStartButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Practice'**
+  String get practiceStartButton;
+
+  /// No description provided for @practiceModeQuickStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick Start'**
+  String get practiceModeQuickStart;
+
+  /// No description provided for @practiceModeQuickStartSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Mixed review, 10 questions'**
+  String get practiceModeQuickStartSub;
+
+  /// No description provided for @practiceModeTopicDrill.
+  ///
+  /// In en, this message translates to:
+  /// **'Topic Drill'**
+  String get practiceModeTopicDrill;
+
+  /// No description provided for @practiceModeTopicDrillSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a specific topic'**
+  String get practiceModeTopicDrillSub;
+
+  /// No description provided for @practiceModeTimedChallenge.
+  ///
+  /// In en, this message translates to:
+  /// **'Timed Challenge'**
+  String get practiceModeTimedChallenge;
+
+  /// No description provided for @practiceModeTimedChallengeSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Race against the clock'**
+  String get practiceModeTimedChallengeSub;
+
+  /// No description provided for @practiceModeExamSimulator.
+  ///
+  /// In en, this message translates to:
+  /// **'Exam Simulator'**
+  String get practiceModeExamSimulator;
+
+  /// No description provided for @practiceModeExamSimulatorSub.
+  ///
+  /// In en, this message translates to:
+  /// **'GCSE-style mock test'**
+  String get practiceModeExamSimulatorSub;
+
+  /// Exam Simulator subtitle naming the selected curriculum/exam
+  ///
+  /// In en, this message translates to:
+  /// **'{examLabel}-style mock test'**
+  String practiceModeExamSimulatorSubFor(String examLabel);
+
+  /// No description provided for @practiceExamSimulatorSelectPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Select an exam to begin'**
+  String get practiceExamSimulatorSelectPrompt;
+
+  /// Section header above the exam choice chips in Exam Simulator mode
+  ///
+  /// In en, this message translates to:
+  /// **'SELECT EXAM'**
+  String get practiceSelectExamLabel;
+
+  /// No description provided for @practiceExamSwissGymnasium.
+  ///
+  /// In en, this message translates to:
+  /// **'Swiss Gymnasium'**
+  String get practiceExamSwissGymnasium;
+
+  /// No description provided for @practiceExit.
+  ///
+  /// In en, this message translates to:
+  /// **'Exit'**
+  String get practiceExit;
+
+  /// Question counter shown during a practice session
+  ///
+  /// In en, this message translates to:
+  /// **'Question {current} of {total}'**
+  String practiceQuestionOf(int current, int total);
+
+  /// Topic pill label when topic is empty
+  ///
+  /// In en, this message translates to:
+  /// **'Mixed Review'**
+  String get practiceMixedReview;
+
+  /// No description provided for @practiceExplanation.
+  ///
+  /// In en, this message translates to:
+  /// **'Explanation'**
+  String get practiceExplanation;
+
+  /// No description provided for @practiceCheckAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'Check Answer'**
+  String get practiceCheckAnswer;
+
+  /// No description provided for @practiceNextQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'Next Question →'**
+  String get practiceNextQuestion;
+
+  /// No description provided for @practiceFinishSession.
+  ///
+  /// In en, this message translates to:
+  /// **'Finish Session'**
+  String get practiceFinishSession;
+
+  /// No description provided for @tutorBotName.
+  ///
+  /// In en, this message translates to:
+  /// **'TutorBot'**
+  String get tutorBotName;
+
+  /// No description provided for @tutorBotSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Get hints, explanations and step-by-step support.'**
+  String get tutorBotSubtitle;
+
+  /// Usage pill showing remaining free tips
+  ///
+  /// In en, this message translates to:
+  /// **'Free tips left today: {count}'**
+  String tutorFreeTipsLeft(int count);
+
+  /// No description provided for @tutorChipExplain.
+  ///
+  /// In en, this message translates to:
+  /// **'Explain this'**
+  String get tutorChipExplain;
+
+  /// No description provided for @tutorChipHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Give me a hint'**
+  String get tutorChipHint;
+
+  /// No description provided for @tutorChipSteps.
+  ///
+  /// In en, this message translates to:
+  /// **'Show steps'**
+  String get tutorChipSteps;
+
+  /// No description provided for @tutorChipCheckMistake.
+  ///
+  /// In en, this message translates to:
+  /// **'Check my mistake'**
+  String get tutorChipCheckMistake;
+
+  /// No description provided for @tutorInputHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask TutorBot a question...'**
+  String get tutorInputHint;
+
+  /// No description provided for @tutorNeedMoreHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Need more help?'**
+  String get tutorNeedMoreHelp;
+
+  /// No description provided for @tutorUnlockDeeper.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock deeper explanations with Tutor credits or a paid math pack.'**
+  String get tutorUnlockDeeper;
+
+  /// No description provided for @tutorBuyCredits.
+  ///
+  /// In en, this message translates to:
+  /// **'Buy Tutor Credits'**
+  String get tutorBuyCredits;
+
+  /// No description provided for @tutorViewPacks.
+  ///
+  /// In en, this message translates to:
+  /// **'View Packs'**
+  String get tutorViewPacks;
+
+  /// No description provided for @profileSettingsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'SETTINGS'**
+  String get profileSettingsLabel;
+
+  /// No description provided for @profileAppearance.
+  ///
+  /// In en, this message translates to:
+  /// **'Appearance'**
+  String get profileAppearance;
+
+  /// No description provided for @profileAppearanceSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Theme and visual settings'**
+  String get profileAppearanceSub;
+
+  /// No description provided for @profileAccessibility.
+  ///
+  /// In en, this message translates to:
+  /// **'Accessibility'**
+  String get profileAccessibility;
+
+  /// No description provided for @profileAccessibilitySub.
+  ///
+  /// In en, this message translates to:
+  /// **'Text size, contrast & animations'**
+  String get profileAccessibilitySub;
+
+  /// No description provided for @profileSubscription.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscription'**
+  String get profileSubscription;
+
+  /// No description provided for @profileSubscriptionSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage your plan'**
+  String get profileSubscriptionSub;
+
+  /// No description provided for @profileCurriculumSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Curriculum Settings'**
+  String get profileCurriculumSettings;
+
+  /// No description provided for @profileCurriculumSettingsSub.
+  ///
+  /// In en, this message translates to:
+  /// **'KS2 · School Support · ks2'**
+  String get profileCurriculumSettingsSub;
+
+  /// No description provided for @profilePrivacyData.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy & Data'**
+  String get profilePrivacyData;
+
+  /// No description provided for @profilePrivacyDataSub.
+  ///
+  /// In en, this message translates to:
+  /// **'GDPR compliant · No ads · No third-party sharing'**
+  String get profilePrivacyDataSub;
+
+  /// No description provided for @profileSignOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Out'**
+  String get profileSignOut;
+
+  /// No description provided for @profileSignOutSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear session and return to welcome'**
+  String get profileSignOutSub;
+
+  /// No description provided for @profileVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'Version 1.0.0 · © 2026 Sterling Math'**
+  String get profileVersion;
+
+  /// No description provided for @profileHeaderTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profileHeaderTitle;
+
+  /// No description provided for @profileHeaderSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings & preferences'**
+  String get profileHeaderSubtitle;
+
+  /// No description provided for @helpHeaderTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Help & Support'**
+  String get helpHeaderTitle;
+
+  /// No description provided for @helpHeaderSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Support, safety & app information'**
+  String get helpHeaderSubtitle;
+
+  /// No description provided for @helpFaqTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Frequently Asked Questions'**
+  String get helpFaqTitle;
+
+  /// No description provided for @helpFaq1Q.
+  ///
+  /// In en, this message translates to:
+  /// **'How does the Key Stage selection work?'**
+  String get helpFaq1Q;
+
+  /// No description provided for @helpFaq1A.
+  ///
+  /// In en, this message translates to:
+  /// **'During onboarding you choose your Key Stage (KS2–KS5). This tailors topics, difficulty, and exam packs to your curriculum level. You can change it anytime in Curriculum Settings.'**
+  String get helpFaq1A;
+
+  /// No description provided for @helpFaq2Q.
+  ///
+  /// In en, this message translates to:
+  /// **'Is my data secure?'**
+  String get helpFaq2Q;
+
+  /// No description provided for @helpFaq2A.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes. We collect only what is needed to personalize your learning. No data is sold or shared with third parties. All data is deletable at any time.'**
+  String get helpFaq2A;
+
+  /// No description provided for @helpFaq3Q.
+  ///
+  /// In en, this message translates to:
+  /// **'Can I add multiple children?'**
+  String get helpFaq3Q;
+
+  /// No description provided for @helpFaq3A.
+  ///
+  /// In en, this message translates to:
+  /// **'Multi-profile support is on our roadmap. Currently each installation supports one learner profile. Parental controls and progress reports are available via the Profile screen.'**
+  String get helpFaq3A;
+
+  /// No description provided for @helpFaq4Q.
+  ///
+  /// In en, this message translates to:
+  /// **'How do GCSE exam packs work?'**
+  String get helpFaq4Q;
+
+  /// No description provided for @helpFaq4A.
+  ///
+  /// In en, this message translates to:
+  /// **'Exam packs are curated sets of past-paper style questions grouped by topic and difficulty tier. Tap Practice → Exam Simulator to start a GCSE-style timed session.'**
+  String get helpFaq4A;
+
+  /// No description provided for @helpContactTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact'**
+  String get helpContactTitle;
+
+  /// No description provided for @helpContactIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'For questions or issues, contact us:'**
+  String get helpContactIntro;
+
+  /// No description provided for @helpContactEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'support@mathtutor.app'**
+  String get helpContactEmail;
+
+  /// No description provided for @helpPrivacyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy & Safety'**
+  String get helpPrivacyTitle;
+
+  /// No description provided for @helpPrivacyHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'Minimal data. No ads. GDPR compliant.'**
+  String get helpPrivacyHeadline;
+
+  /// No description provided for @helpPrivacyBullet1.
+  ///
+  /// In en, this message translates to:
+  /// **'We only collect necessary data'**
+  String get helpPrivacyBullet1;
+
+  /// No description provided for @helpPrivacyBullet2.
+  ///
+  /// In en, this message translates to:
+  /// **'No sharing with third parties'**
+  String get helpPrivacyBullet2;
+
+  /// No description provided for @helpPrivacyBullet3.
+  ///
+  /// In en, this message translates to:
+  /// **'Parental controls available'**
+  String get helpPrivacyBullet3;
+
+  /// No description provided for @helpPrivacyBullet4.
+  ///
+  /// In en, this message translates to:
+  /// **'Deletable at any time'**
+  String get helpPrivacyBullet4;
+
+  /// No description provided for @helpTermsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of Use'**
+  String get helpTermsTitle;
+
+  /// No description provided for @helpTermsBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Free for students and parents. By using Sterling Math you agree to our terms of service. No payment is required for standard access.'**
+  String get helpTermsBody;
+
+  /// No description provided for @helpParentalTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Parental Controls'**
+  String get helpParentalTitle;
+
+  /// No description provided for @helpParentalHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'Monitor your child\'s progress.'**
+  String get helpParentalHeadline;
+
+  /// No description provided for @helpParentalBullet1.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily progress reports'**
+  String get helpParentalBullet1;
+
+  /// No description provided for @helpParentalBullet2.
+  ///
+  /// In en, this message translates to:
+  /// **'Weakness overview'**
+  String get helpParentalBullet2;
+
+  /// No description provided for @helpParentalBullet3.
+  ///
+  /// In en, this message translates to:
+  /// **'Set time limits'**
+  String get helpParentalBullet3;
+
+  /// No description provided for @helpParentalBullet4.
+  ///
+  /// In en, this message translates to:
+  /// **'View activity logs'**
+  String get helpParentalBullet4;
+
+  /// No description provided for @helpReportButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Report a Problem'**
+  String get helpReportButton;
+
+  /// No description provided for @helpFooter.
+  ///
+  /// In en, this message translates to:
+  /// **'Minimal data. No ads. Parental controls available.'**
+  String get helpFooter;
+
+  /// No description provided for @swissChooseLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Switzerland • Choose language'**
+  String get swissChooseLanguage;
+
+  /// No description provided for @tutorChipDeepExplanation.
+  ///
+  /// In en, this message translates to:
+  /// **'Deep Explanation'**
+  String get tutorChipDeepExplanation;
+
+  /// No description provided for @tutorChipStepByStep.
+  ///
+  /// In en, this message translates to:
+  /// **'Step-by-step'**
+  String get tutorChipStepByStep;
+
+  /// No description provided for @tutorChipMistakeAnalysis.
+  ///
+  /// In en, this message translates to:
+  /// **'Mistake Analysis'**
+  String get tutorChipMistakeAnalysis;
+
+  /// No description provided for @tutorCreditBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'1 credit'**
+  String get tutorCreditBadge;
+
+  /// Credit balance displayed in the usage pill
+  ///
+  /// In en, this message translates to:
+  /// **'{count} credits'**
+  String tutorCreditBalance(int count);
+
+  /// No description provided for @tutorProLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium'**
+  String get tutorProLabel;
+
+  /// No description provided for @tutorExhaustedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Free tips used up'**
+  String get tutorExhaustedTitle;
+
+  /// No description provided for @tutorExhaustedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ve used all 3 free tips. Buy credits or upgrade to continue.'**
+  String get tutorExhaustedBody;
+
+  /// No description provided for @tutorCreditRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Requires 1 credit'**
+  String get tutorCreditRequired;
+
+  /// No description provided for @tutorPracticeContextLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Practising'**
+  String get tutorPracticeContextLabel;
+
+  /// No description provided for @tutorContextHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Hint'**
+  String get tutorContextHint;
+
+  /// No description provided for @tutorContextExplain.
+  ///
+  /// In en, this message translates to:
+  /// **'Explanation'**
+  String get tutorContextExplain;
+
+  /// Home screen greeting
+  ///
+  /// In en, this message translates to:
+  /// **'Good evening, Gabriel'**
+  String get homeGreeting;
+
+  /// No description provided for @homeStreakGoalMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'· 10 minutes to hit your streak goal'**
+  String get homeStreakGoalMessage;
+
+  /// No description provided for @homeSectionContinueLearning.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue Learning'**
+  String get homeSectionContinueLearning;
+
+  /// No description provided for @homeViewAll.
+  ///
+  /// In en, this message translates to:
+  /// **'View all'**
+  String get homeViewAll;
+
+  /// No description provided for @homeSectionProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Progress'**
+  String get homeSectionProgress;
+
+  /// No description provided for @homeStreakHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'Streak'**
+  String get homeStreakHeader;
+
+  /// No description provided for @homeStreakFirstDay.
+  ///
+  /// In en, this message translates to:
+  /// **'First day of your streak'**
+  String get homeStreakFirstDay;
+
+  /// No description provided for @homeThisWeekHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'This week'**
+  String get homeThisWeekHeader;
+
+  /// No description provided for @homeDaysActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Days active'**
+  String get homeDaysActive;
+
+  /// No description provided for @homeSectionAchievements.
+  ///
+  /// In en, this message translates to:
+  /// **'Achievements'**
+  String get homeSectionAchievements;
+
+  /// No description provided for @homeAchievementStreakTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly streak reached!'**
+  String get homeAchievementStreakTitle;
+
+  /// No description provided for @homeAchievementStreakSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'7 days of learning in a row'**
+  String get homeAchievementStreakSubtitle;
+
+  /// No description provided for @homeSectionOxfordTrack.
+  ///
+  /// In en, this message translates to:
+  /// **'Oxford Track'**
+  String get homeSectionOxfordTrack;
+
+  /// No description provided for @homePremiumRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'PREMIUM REQUIRED'**
+  String get homePremiumRequired;
+
+  /// No description provided for @homeOxfordTrackSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'11+ prep, advanced challenges & competition math'**
+  String get homeOxfordTrackSubtitle;
+
+  /// No description provided for @homeSectionLearningPaths.
+  ///
+  /// In en, this message translates to:
+  /// **'Learning Paths'**
+  String get homeSectionLearningPaths;
+
+  /// No description provided for @homeSectionExamPacks.
+  ///
+  /// In en, this message translates to:
+  /// **'Exam Packs'**
+  String get homeSectionExamPacks;
+
+  /// No description provided for @homeExamPacksSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Targeted exam preparation'**
+  String get homeExamPacksSubtitle;
+
+  /// No description provided for @homeViewExamPacks.
+  ///
+  /// In en, this message translates to:
+  /// **'View Exam Packs'**
+  String get homeViewExamPacks;
+
+  /// No description provided for @homeStartPracticeSession.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Practice Session'**
+  String get homeStartPracticeSession;
+
+  /// No description provided for @onboardingWelcomeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Helping every learner build confidence in mathematics.'**
+  String get onboardingWelcomeTitle;
+
+  /// No description provided for @onboardingWelcomeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Personalized math learning, built for results'**
+  String get onboardingWelcomeSubtitle;
+
+  /// No description provided for @onboardingWhoLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'WHO IS USING THE APP?'**
+  String get onboardingWhoLabel;
+
+  /// No description provided for @onboardingStudentLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'m a Student'**
+  String get onboardingStudentLabel;
+
+  /// No description provided for @onboardingStudentSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice maths, build confidence and prepare for exams.'**
+  String get onboardingStudentSub;
+
+  /// No description provided for @onboardingParentLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'m a Parent or Teacher'**
+  String get onboardingParentLabel;
+
+  /// No description provided for @onboardingParentSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Monitor progress, guide learning and celebrate achievement.'**
+  String get onboardingParentSub;
+
+  /// No description provided for @onboardingSelectError.
+  ///
+  /// In en, this message translates to:
+  /// **'Please select an option'**
+  String get onboardingSelectError;
+
+  /// No description provided for @onboardingSignInPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Already have an account?'**
+  String get onboardingSignInPrompt;
+
+  /// No description provided for @onboardingSignIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign In'**
+  String get onboardingSignIn;
+
+  /// No description provided for @onboardingGuestMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Guest Mode'**
+  String get onboardingGuestMode;
+
+  /// No description provided for @onboardingGuestModeSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Try a limited practice session.'**
+  String get onboardingGuestModeSub;
+
+  /// No description provided for @onboardingContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get onboardingContinue;
+
+  /// No description provided for @onboardingFooter.
+  ///
+  /// In en, this message translates to:
+  /// **'Minimal data. No ads. Parental controls available.'**
+  String get onboardingFooter;
+
+  /// No description provided for @onboardingWelcomeStepTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome'**
+  String get onboardingWelcomeStepTitle;
+
+  /// No description provided for @onboardingWelcomeStepBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s personalise your learning journey.'**
+  String get onboardingWelcomeStepBody;
+
+  /// No description provided for @onboardingStageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose your level'**
+  String get onboardingStageTitle;
+
+  /// No description provided for @onboardingStageSub.
+  ///
+  /// In en, this message translates to:
+  /// **'We\'ll tailor the content to the right level'**
+  String get onboardingStageSub;
+
+  /// Number of stage options to display — varies by market
+  ///
+  /// In en, this message translates to:
+  /// **'4'**
+  String get onboardingStageCount;
+
+  /// No description provided for @onboardingStage1Label.
+  ///
+  /// In en, this message translates to:
+  /// **'KS2 (Years 3–6)'**
+  String get onboardingStage1Label;
+
+  /// No description provided for @onboardingStage1Sub.
+  ///
+  /// In en, this message translates to:
+  /// **'Primary school math'**
+  String get onboardingStage1Sub;
+
+  /// No description provided for @onboardingStage2Label.
+  ///
+  /// In en, this message translates to:
+  /// **'KS3 (Years 7–9)'**
+  String get onboardingStage2Label;
+
+  /// No description provided for @onboardingStage2Sub.
+  ///
+  /// In en, this message translates to:
+  /// **'Secondary school math'**
+  String get onboardingStage2Sub;
+
+  /// No description provided for @onboardingStage3Label.
+  ///
+  /// In en, this message translates to:
+  /// **'KS4 GCSE (Years 10–11)'**
+  String get onboardingStage3Label;
+
+  /// No description provided for @onboardingStage3Sub.
+  ///
+  /// In en, this message translates to:
+  /// **'GCSE math preparation'**
+  String get onboardingStage3Sub;
+
+  /// No description provided for @onboardingStage4Label.
+  ///
+  /// In en, this message translates to:
+  /// **'KS5 (Years 12–13)'**
+  String get onboardingStage4Label;
+
+  /// No description provided for @onboardingStage4Sub.
+  ///
+  /// In en, this message translates to:
+  /// **'Advanced math'**
+  String get onboardingStage4Sub;
+
+  /// No description provided for @onboardingGoalTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What\'s the goal?'**
+  String get onboardingGoalTitle;
+
+  /// No description provided for @onboardingGoalSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose the learning focus'**
+  String get onboardingGoalSub;
+
+  /// No description provided for @onboardingGoal1Label.
+  ///
+  /// In en, this message translates to:
+  /// **'Build confidence'**
+  String get onboardingGoal1Label;
+
+  /// No description provided for @onboardingGoal1Sub.
+  ///
+  /// In en, this message translates to:
+  /// **'Steady, low-pressure practice at your own pace'**
+  String get onboardingGoal1Sub;
+
+  /// No description provided for @onboardingGoal2Label.
+  ///
+  /// In en, this message translates to:
+  /// **'Improve school maths'**
+  String get onboardingGoal2Label;
+
+  /// No description provided for @onboardingGoal2Sub.
+  ///
+  /// In en, this message translates to:
+  /// **'Strengthen everyday classroom topics'**
+  String get onboardingGoal2Sub;
+
+  /// No description provided for @onboardingGoal3Label.
+  ///
+  /// In en, this message translates to:
+  /// **'Prepare for exams'**
+  String get onboardingGoal3Label;
+
+  /// No description provided for @onboardingGoal3Sub.
+  ///
+  /// In en, this message translates to:
+  /// **'Targeted GCSE practice & timed sets'**
+  String get onboardingGoal3Sub;
+
+  /// No description provided for @onboardingGoal4Label.
+  ///
+  /// In en, this message translates to:
+  /// **'Challenge myself'**
+  String get onboardingGoal4Label;
+
+  /// No description provided for @onboardingGoal4Sub.
+  ///
+  /// In en, this message translates to:
+  /// **'Stretch challenges and advanced problems'**
+  String get onboardingGoal4Sub;
+
+  /// No description provided for @onboardingProfileTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose your level'**
+  String get onboardingProfileTitle;
+
+  /// No description provided for @onboardingProfileSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Select the right tier for School Support'**
+  String get onboardingProfileSub;
+
+  /// Show KS level picker in study profile — false for markets using age-based stage selection
+  ///
+  /// In en, this message translates to:
+  /// **'true'**
+  String get onboardingShowLevelPicker;
+
+  /// No description provided for @onboardingLevel1Label.
+  ///
+  /// In en, this message translates to:
+  /// **'KS2'**
+  String get onboardingLevel1Label;
+
+  /// No description provided for @onboardingLevel1Sub.
+  ///
+  /// In en, this message translates to:
+  /// **'Years 3-6 curriculum support'**
+  String get onboardingLevel1Sub;
+
+  /// No description provided for @onboardingLevel2Label.
+  ///
+  /// In en, this message translates to:
+  /// **'KS3'**
+  String get onboardingLevel2Label;
+
+  /// No description provided for @onboardingLevel2Sub.
+  ///
+  /// In en, this message translates to:
+  /// **'Years 7-9 curriculum support'**
+  String get onboardingLevel2Sub;
+
+  /// No description provided for @onboardingLevel3Label.
+  ///
+  /// In en, this message translates to:
+  /// **'KS4'**
+  String get onboardingLevel3Label;
+
+  /// No description provided for @onboardingLevel3Sub.
+  ///
+  /// In en, this message translates to:
+  /// **'Years 10-11 curriculum support'**
+  String get onboardingLevel3Sub;
+
+  /// No description provided for @onboardingLanguageLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Selected Language'**
+  String get onboardingLanguageLabel;
+
+  /// No description provided for @onboardingLanguageValue.
+  ///
+  /// In en, this message translates to:
+  /// **'English (UK)'**
+  String get onboardingLanguageValue;
+
+  /// No description provided for @onboardingParentEmailLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Parent Email (optional)'**
+  String get onboardingParentEmailLabel;
+
+  /// No description provided for @onboardingParentEmailHint.
+  ///
+  /// In en, this message translates to:
+  /// **'parent@example.co.uk'**
+  String get onboardingParentEmailHint;
+
+  /// No description provided for @onboardingParentEmailSub.
+  ///
+  /// In en, this message translates to:
+  /// **'For progress reports and important updates'**
+  String get onboardingParentEmailSub;
+
+  /// No description provided for @onboardingPrivacyNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Your data is kept private. For reports only, no spam.'**
+  String get onboardingPrivacyNote;
+
+  /// No description provided for @onboardingStartLearning.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Learning'**
+  String get onboardingStartLearning;
+
+  /// No description provided for @onboardingSkipEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip for now'**
+  String get onboardingSkipEmail;
+
+  /// No description provided for @appearanceLanguageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get appearanceLanguageTitle;
+
+  /// No description provided for @appearanceLanguageSub.
+  ///
+  /// In en, this message translates to:
+  /// **'App display language'**
+  String get appearanceLanguageSub;
+
+  /// No description provided for @upgradeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock Premium'**
+  String get upgradeTitle;
+
+  /// No description provided for @upgradeBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock Premium features with a subscription.'**
+  String get upgradeBody;
+
+  /// No description provided for @upgradeViewPacks.
+  ///
+  /// In en, this message translates to:
+  /// **'View Exam Packs'**
+  String get upgradeViewPacks;
+
+  /// No description provided for @upgradeMaybeLater.
+  ///
+  /// In en, this message translates to:
+  /// **'Maybe Later'**
+  String get upgradeMaybeLater;
+
+  /// No description provided for @termsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of Use'**
+  String get termsTitle;
+
+  /// No description provided for @termsSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Please read before using this app'**
+  String get termsSub;
+
+  /// No description provided for @tutorCreditComingSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Available in exam packs.'**
+  String get tutorCreditComingSoon;
+
+  /// No description provided for @upgradeWhatsIncluded.
+  ///
+  /// In en, this message translates to:
+  /// **'What you\'ll get'**
+  String get upgradeWhatsIncluded;
+
+  /// No description provided for @upgradeBenefit1Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlimited AI Tutor'**
+  String get upgradeBenefit1Title;
+
+  /// No description provided for @upgradeBenefit1Sub.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask unlimited questions, get step-by-step explanations, and receive personalized hints without credit limits.'**
+  String get upgradeBenefit1Sub;
+
+  /// No description provided for @upgradeBenefit2Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Oxford-Style Track'**
+  String get upgradeBenefit2Title;
+
+  /// No description provided for @upgradeBenefit2Sub.
+  ///
+  /// In en, this message translates to:
+  /// **'Access the structured Oxford curriculum track with curated problem sets and guided progression from KS3 to A-Level.'**
+  String get upgradeBenefit2Sub;
+
+  /// No description provided for @upgradeBenefit3Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Advanced Analytics'**
+  String get upgradeBenefit3Title;
+
+  /// No description provided for @upgradeBenefit3Sub.
+  ///
+  /// In en, this message translates to:
+  /// **'Track your progress with detailed performance charts, weakness detection, and personalized study recommendations.'**
+  String get upgradeBenefit3Sub;
+
+  /// No description provided for @upgradeComingSoonLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Included in Premium'**
+  String get upgradeComingSoonLabel;
+
+  /// No description provided for @upgradeComingSoon1.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly & annual subscription plans'**
+  String get upgradeComingSoon1;
+
+  /// No description provided for @upgradeComingSoon2.
+  ///
+  /// In en, this message translates to:
+  /// **'Multi-profile family accounts'**
+  String get upgradeComingSoon2;
+
+  /// No description provided for @upgradeComingSoon3.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily streak reminders & push notifications'**
+  String get upgradeComingSoon3;
+
+  /// No description provided for @upgradeComingSoon4.
+  ///
+  /// In en, this message translates to:
+  /// **'Achievements and milestone rewards'**
+  String get upgradeComingSoon4;
+
+  /// No description provided for @upgradeJoinEarlyAccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Join Early Access'**
+  String get upgradeJoinEarlyAccess;
+
+  /// No description provided for @upgradeEarlyAccessSnackbar.
+  ///
+  /// In en, this message translates to:
+  /// **'Early access sign-up is coming soon. Stay tuned!'**
+  String get upgradeEarlyAccessSnackbar;
+
+  /// No description provided for @profileAboutLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'About'**
+  String get profileAboutLabel;
+
+  /// No description provided for @profileReleaseNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Release Notes'**
+  String get profileReleaseNotes;
+
+  /// No description provided for @tutorEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No messages yet'**
+  String get tutorEmptyTitle;
+
+  /// No description provided for @tutorEmptySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask a question about any topic and your AI tutor will help you step by step.'**
+  String get tutorEmptySubtitle;
+
+  /// No description provided for @homeStreakDays.
+  ///
+  /// In en, this message translates to:
+  /// **'5 Day Streak'**
+  String get homeStreakDays;
+
+  /// No description provided for @homeAchievementUnlocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlocked'**
+  String get homeAchievementUnlocked;
+
+  /// No description provided for @homeBadgeLocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Locked'**
+  String get homeBadgeLocked;
+
+  /// No description provided for @homeWhatsNewTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What\'s New in v1.0'**
+  String get homeWhatsNewTitle;
+
+  /// No description provided for @homeWhatsNewBody.
+  ///
+  /// In en, this message translates to:
+  /// **'AI Tutor, Oxford Track, and GCSE exam packs are now live.'**
+  String get homeWhatsNewBody;
+
+  /// No description provided for @homeDailyGoalTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily Goal'**
+  String get homeDailyGoalTitle;
+
+  /// No description provided for @homeDailyGoalSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Solve 15 questions today'**
+  String get homeDailyGoalSubtitle;
+
+  /// No description provided for @homeDailyGoalProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'7 / 15 completed'**
+  String get homeDailyGoalProgress;
+
+  /// No description provided for @tutorHowItWorksTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'How Tutor Works'**
+  String get tutorHowItWorksTitle;
+
+  /// No description provided for @tutorHowItWorksStep1Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask any question'**
+  String get tutorHowItWorksStep1Title;
+
+  /// No description provided for @tutorHowItWorksStep1Sub.
+  ///
+  /// In en, this message translates to:
+  /// **'Type a math question or tap a quick action above.'**
+  String get tutorHowItWorksStep1Sub;
+
+  /// No description provided for @tutorHowItWorksStep2Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Get a step-by-step answer'**
+  String get tutorHowItWorksStep2Title;
+
+  /// No description provided for @tutorHowItWorksStep2Sub.
+  ///
+  /// In en, this message translates to:
+  /// **'The AI breaks down the solution so you understand every step.'**
+  String get tutorHowItWorksStep2Sub;
+
+  /// No description provided for @tutorHowItWorksStep3Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice what you learn'**
+  String get tutorHowItWorksStep3Title;
+
+  /// No description provided for @tutorHowItWorksStep3Sub.
+  ///
+  /// In en, this message translates to:
+  /// **'Head to Practice to apply what you\'ve just learned.'**
+  String get tutorHowItWorksStep3Sub;
+
+  /// No description provided for @practiceSummaryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Session Complete'**
+  String get practiceSummaryTitle;
+
+  /// No description provided for @practiceSummaryAccuracy.
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}% accuracy'**
+  String practiceSummaryAccuracy(int percent);
+
+  /// No description provided for @practiceSummaryCorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'{correct} / {total} correct'**
+  String practiceSummaryCorrect(int correct, int total);
+
+  /// No description provided for @practiceSummaryEncouragement.
+  ///
+  /// In en, this message translates to:
+  /// **'Great work! Keep practising to improve your score.'**
+  String get practiceSummaryEncouragement;
+
+  /// No description provided for @practiceSummaryClose.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to Practice'**
+  String get practiceSummaryClose;
+
+  /// No description provided for @helpFeatureRequestButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Request a Feature'**
+  String get helpFeatureRequestButton;
+
+  /// No description provided for @helpFeatureRequestSnackbar.
+  ///
+  /// In en, this message translates to:
+  /// **'Feature requests coming soon — thanks for your interest!'**
+  String get helpFeatureRequestSnackbar;
+
+  /// No description provided for @helpReportSnackbar.
+  ///
+  /// In en, this message translates to:
+  /// **'Thanks for your report! We\'ll look into it soon.'**
+  String get helpReportSnackbar;
+
+  /// No description provided for @mentalMathVaultTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Mental Math Vault'**
+  String get mentalMathVaultTitle;
+
+  /// No description provided for @mentalMathVaultSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn powerful calculation shortcuts'**
+  String get mentalMathVaultSubtitle;
+
+  /// No description provided for @homeFormulaLibraryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Formula Library'**
+  String get homeFormulaLibraryTitle;
+
+  /// No description provided for @homeFormulaLibrarySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick reference for key maths formulas'**
+  String get homeFormulaLibrarySubtitle;
+
+  /// No description provided for @comingSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Coming Soon'**
+  String get comingSoon;
+
+  /// No description provided for @dailyBrainTeaser.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily Brain Teaser'**
+  String get dailyBrainTeaser;
+
+  /// No description provided for @revealAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'Reveal Answer'**
+  String get revealAnswer;
+
+  /// No description provided for @captainNumberFuel.
+  ///
+  /// In en, this message translates to:
+  /// **'Captain Number Fuel'**
+  String get captainNumberFuel;
+
+  /// No description provided for @dailyMissionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Captain Number needs fuel!'**
+  String get dailyMissionTitle;
+
+  /// No description provided for @dailyMissionSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Solve 5 questions to power today\'s mission.'**
+  String get dailyMissionSubtitle;
+
+  /// No description provided for @workedExample.
+  ///
+  /// In en, this message translates to:
+  /// **'Worked example'**
+  String get workedExample;
+
+  /// No description provided for @practiceExample.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice example'**
+  String get practiceExample;
+
+  /// No description provided for @loading.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading...'**
+  String get loading;
+
+  /// No description provided for @practiceNoQuestions.
+  ///
+  /// In en, this message translates to:
+  /// **'No practice questions are available.'**
+  String get practiceNoQuestions;
+
+  /// No description provided for @practiceTopicDrillEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No questions found for this topic at this stage yet. Try a different topic or stage.'**
+  String get practiceTopicDrillEmpty;
+
+  /// No description provided for @mascotGreeting.
+  ///
+  /// In en, this message translates to:
+  /// **'Ready to power up your maths?'**
+  String get mascotGreeting;
+
+  /// No description provided for @mascotThinking.
+  ///
+  /// In en, this message translates to:
+  /// **'Take your time. Think it through!'**
+  String get mascotThinking;
+
+  /// No description provided for @mascotSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Great calculation! Fuel added.'**
+  String get mascotSuccess;
+
+  /// No description provided for @mascotEncouragement.
+  ///
+  /// In en, this message translates to:
+  /// **'Good try. The next one is yours!'**
+  String get mascotEncouragement;
+
+  /// No description provided for @mascotLevelUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Mission powered! Captain Number is ready!'**
+  String get mascotLevelUp;
+
+  /// No description provided for @homeTopicFractionsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Fractions & Percentages'**
+  String get homeTopicFractionsTitle;
+
+  /// No description provided for @homeTopicFractionsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Basics & conversion'**
+  String get homeTopicFractionsSubtitle;
+
+  /// No description provided for @homeTopicAlgebraTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Algebra Basics'**
+  String get homeTopicAlgebraTitle;
+
+  /// No description provided for @homeTopicAlgebraSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Equations & variables'**
+  String get homeTopicAlgebraSubtitle;
+
+  /// No description provided for @homeTopicStatisticsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Statistics & Probability'**
+  String get homeTopicStatisticsTitle;
+
+  /// No description provided for @homeTopicStatisticsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Data handling & chance'**
+  String get homeTopicStatisticsSubtitle;
+
+  /// No description provided for @homeLearningFractionsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Fractions'**
+  String get homeLearningFractionsTitle;
+
+  /// No description provided for @homeLearningFractionsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn fractions and conversions'**
+  String get homeLearningFractionsSubtitle;
+
+  /// No description provided for @homeLearningStatisticsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Statistics'**
+  String get homeLearningStatisticsTitle;
+
+  /// No description provided for @homeLearningStatisticsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Introduction to data and probability'**
+  String get homeLearningStatisticsSubtitle;
+
+  /// No description provided for @topicsStandardSelected.
+  ///
+  /// In en, this message translates to:
+  /// **'Standard track selected.'**
+  String get topicsStandardSelected;
+
+  /// No description provided for @topicsNoResults.
+  ///
+  /// In en, this message translates to:
+  /// **'No topics found'**
+  String get topicsNoResults;
+
+  /// No description provided for @topicsClearFilters.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear filters'**
+  String get topicsClearFilters;
+
+  /// No description provided for @examPacksCtaSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock GCSE Foundation, GCSE Higher, Oxford Track and Tutor Credits.'**
+  String get examPacksCtaSubtitle;
+
+  /// No description provided for @examPacksIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a pack to unlock focused practice and Tutor support.'**
+  String get examPacksIntro;
+
+  /// No description provided for @examPackSelected.
+  ///
+  /// In en, this message translates to:
+  /// **'{stage} selected'**
+  String examPackSelected(String stage);
+
+  /// No description provided for @examPackKs2Title.
+  ///
+  /// In en, this message translates to:
+  /// **'KS2 Maths'**
+  String get examPackKs2Title;
+
+  /// No description provided for @examPackKs3Title.
+  ///
+  /// In en, this message translates to:
+  /// **'KS3 Maths'**
+  String get examPackKs3Title;
+
+  /// No description provided for @examPackKs4Title.
+  ///
+  /// In en, this message translates to:
+  /// **'KS4 GCSE Maths'**
+  String get examPackKs4Title;
+
+  /// No description provided for @examPackKs5Title.
+  ///
+  /// In en, this message translates to:
+  /// **'KS5 Maths'**
+  String get examPackKs5Title;
+
+  /// No description provided for @examPackPrimarySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Primary school practice'**
+  String get examPackPrimarySubtitle;
+
+  /// No description provided for @examPackSecondarySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Secondary school practice'**
+  String get examPackSecondarySubtitle;
+
+  /// No description provided for @examPackGcseSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'GCSE preparation'**
+  String get examPackGcseSubtitle;
+
+  /// No description provided for @examPackAdvancedSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Advanced maths practice'**
+  String get examPackAdvancedSubtitle;
+
+  /// No description provided for @examPackTutorCreditsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Tutor Credits'**
+  String get examPackTutorCreditsTitle;
+
+  /// No description provided for @examPackTutorCreditsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Extra hints, explanations and step-by-step support'**
+  String get examPackTutorCreditsSubtitle;
+
+  /// No description provided for @examPackIncluded.
+  ///
+  /// In en, this message translates to:
+  /// **'Included'**
+  String get examPackIncluded;
+
+  /// No description provided for @examPackTopUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Top-up'**
+  String get examPackTopUp;
+
+  /// No description provided for @homeStreakCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{days} day streak'**
+  String homeStreakCount(int days);
+
+  /// No description provided for @homeMilestone.
+  ///
+  /// In en, this message translates to:
+  /// **'{days}-day milestone'**
+  String homeMilestone(int days);
+
+  /// No description provided for @homeRewardsOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Rewards on'**
+  String get homeRewardsOn;
+
+  /// No description provided for @homeRewardsOff.
+  ///
+  /// In en, this message translates to:
+  /// **'Rewards off'**
+  String get homeRewardsOff;
+
+  /// No description provided for @homeBadgeFirstSession.
+  ///
+  /// In en, this message translates to:
+  /// **'First session'**
+  String get homeBadgeFirstSession;
+
+  /// No description provided for @homeBadgeTenQuestions.
+  ///
+  /// In en, this message translates to:
+  /// **'10 questions'**
+  String get homeBadgeTenQuestions;
+
+  /// No description provided for @homeBadgeAlgebraStarter.
+  ///
+  /// In en, this message translates to:
+  /// **'Algebra starter'**
+  String get homeBadgeAlgebraStarter;
+
+  /// No description provided for @homeContinueKs2Topic.
+  ///
+  /// In en, this message translates to:
+  /// **'Fractions'**
+  String get homeContinueKs2Topic;
+
+  /// No description provided for @homeContinueKs2Subtopic.
+  ///
+  /// In en, this message translates to:
+  /// **'Equivalent fractions'**
+  String get homeContinueKs2Subtopic;
+
+  /// No description provided for @homeContinueKs3Topic.
+  ///
+  /// In en, this message translates to:
+  /// **'Algebra'**
+  String get homeContinueKs3Topic;
+
+  /// No description provided for @homeContinueKs3Subtopic.
+  ///
+  /// In en, this message translates to:
+  /// **'Solving equations'**
+  String get homeContinueKs3Subtopic;
+
+  /// No description provided for @homeContinueKs4Topic.
+  ///
+  /// In en, this message translates to:
+  /// **'GCSE Maths'**
+  String get homeContinueKs4Topic;
+
+  /// No description provided for @homeContinueKs4Subtopic.
+  ///
+  /// In en, this message translates to:
+  /// **'Quadratics & functions'**
+  String get homeContinueKs4Subtopic;
+
+  /// No description provided for @homeContinueKs5Topic.
+  ///
+  /// In en, this message translates to:
+  /// **'Pure Maths'**
+  String get homeContinueKs5Topic;
+
+  /// No description provided for @homeContinueKs5Subtopic.
+  ///
+  /// In en, this message translates to:
+  /// **'Differentiation'**
+  String get homeContinueKs5Subtopic;
+
+  /// No description provided for @quietStudyModeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiet Study Mode'**
+  String get quietStudyModeLabel;
+
+  /// No description provided for @quietStudyModeTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Inspired by Nyepi, a Balinese tradition of reflection, stillness and focus.'**
+  String get quietStudyModeTooltip;
+
+  /// No description provided for @nextUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Next up: {topic}'**
+  String nextUp(String topic);
+
+  /// No description provided for @settingsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settingsTitle;
+
+  /// No description provided for @settingsParentToolsRewards.
+  ///
+  /// In en, this message translates to:
+  /// **'Parent tools and rewards animations'**
+  String get settingsParentToolsRewards;
+
+  /// No description provided for @enableParentTools.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable Parent Tools'**
+  String get enableParentTools;
+
+  /// No description provided for @parentToolsLocalOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow local-only Parent & Teacher Tools'**
+  String get parentToolsLocalOnly;
+
+  /// No description provided for @unlockParentTools.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock Parent Tools'**
+  String get unlockParentTools;
+
+  /// No description provided for @parentToolsPinPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Create or enter the local 4-digit PIN'**
+  String get parentToolsPinPrompt;
+
+  /// No description provided for @parentTeacherTools.
+  ///
+  /// In en, this message translates to:
+  /// **'Parent & Teacher Tools'**
+  String get parentTeacherTools;
+
+  /// No description provided for @createParentPin.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Parent PIN'**
+  String get createParentPin;
+
+  /// No description provided for @parentPinStorageNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'The 4-digit PIN is stored locally as a SHA-256 hash. No data leaves this device.'**
+  String get parentPinStorageNotice;
+
+  /// No description provided for @fourDigitPin.
+  ///
+  /// In en, this message translates to:
+  /// **'4-digit PIN'**
+  String get fourDigitPin;
+
+  /// No description provided for @openCheatSheet.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Cheat Sheet'**
+  String get openCheatSheet;
+
+  /// No description provided for @unlockWithPremium.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock with Premium'**
+  String get unlockWithPremium;
+
+  /// No description provided for @rewardsAnimations.
+  ///
+  /// In en, this message translates to:
+  /// **'Rewards animations'**
+  String get rewardsAnimations;
+
+  /// No description provided for @rewardsAnimationsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Show celebrations after correct answers and milestones'**
+  String get rewardsAnimationsSubtitle;
+
+  /// No description provided for @premiumLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium'**
+  String get premiumLabel;
+
+  /// No description provided for @rewardsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Rewards'**
+  String get rewardsLabel;
+
+  /// No description provided for @premiumFeature.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium feature'**
+  String get premiumFeature;
+
+  /// No description provided for @includedInPremium.
+  ///
+  /// In en, this message translates to:
+  /// **'Included in Premium'**
+  String get includedInPremium;
+
+  /// No description provided for @availableInExamPacks.
+  ///
+  /// In en, this message translates to:
+  /// **'Available in exam packs'**
+  String get availableInExamPacks;
+
+  /// No description provided for @unlockWithSubscription.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock with subscription'**
+  String get unlockWithSubscription;
+
+  /// No description provided for @enterParentPin.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter Parent PIN'**
+  String get enterParentPin;
+
+  /// No description provided for @resetParentPin.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset Parent PIN'**
+  String get resetParentPin;
+
+  /// No description provided for @currentPin.
+  ///
+  /// In en, this message translates to:
+  /// **'Current PIN'**
+  String get currentPin;
+
+  /// No description provided for @resetLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset'**
+  String get resetLabel;
+
+  /// No description provided for @vaultLoadError.
+  ///
+  /// In en, this message translates to:
+  /// **'The vault could not be loaded.'**
+  String get vaultLoadError;
+
+  /// No description provided for @pinMustBeFourDigits.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter exactly 4 digits.'**
+  String get pinMustBeFourDigits;
+
+  /// No description provided for @pinIncorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'Incorrect PIN.'**
+  String get pinIncorrect;
+
+  /// No description provided for @pinResetFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'PIN reset failed.'**
+  String get pinResetFailed;
+}
+
+class _AppLocalizationsDelegate
+    extends LocalizationsDelegate<AppLocalizations> {
+  const _AppLocalizationsDelegate();
+
+  @override
+  Future<AppLocalizations> load(Locale locale) {
+    return SynchronousFuture<AppLocalizations>(lookupAppLocalizations(locale));
+  }
+
+  @override
+  bool isSupported(Locale locale) => <String>[
+        'ar',
+        'da',
+        'de',
+        'en',
+        'es',
+        'fr',
+        'id',
+        'it',
+        'ko',
+        'nb',
+        'pt',
+        'sv'
+      ].contains(locale.languageCode);
+
+  @override
+  bool shouldReload(_AppLocalizationsDelegate old) => false;
+}
+
+AppLocalizations lookupAppLocalizations(Locale locale) {
+  // Lookup logic when language+country codes are specified.
+  switch (locale.languageCode) {
+    case 'da':
+      {
+        switch (locale.countryCode) {
+          case 'DK':
+            return AppLocalizationsDaDk();
+        }
+        break;
+      }
+    case 'de':
+      {
+        switch (locale.countryCode) {
+          case 'CH':
+            return AppLocalizationsDeCh();
+        }
+        break;
+      }
+    case 'en':
+      {
+        switch (locale.countryCode) {
+          case 'GB':
+            return AppLocalizationsEnGb();
+        }
+        break;
+      }
+    case 'fr':
+      {
+        switch (locale.countryCode) {
+          case 'CH':
+            return AppLocalizationsFrCh();
+        }
+        break;
+      }
+    case 'it':
+      {
+        switch (locale.countryCode) {
+          case 'CH':
+            return AppLocalizationsItCh();
+        }
+        break;
+      }
+    case 'ko':
+      {
+        switch (locale.countryCode) {
+          case 'KR':
+            return AppLocalizationsKoKr();
+        }
+        break;
+      }
+    case 'nb':
+      {
+        switch (locale.countryCode) {
+          case 'NO':
+            return AppLocalizationsNbNo();
+        }
+        break;
+      }
+    case 'sv':
+      {
+        switch (locale.countryCode) {
+          case 'SE':
+            return AppLocalizationsSvSe();
+        }
+        break;
+      }
+  }
+
+  // Lookup logic when only language code is specified.
+  switch (locale.languageCode) {
+    case 'ar':
+      return AppLocalizationsAr();
+    case 'da':
+      return AppLocalizationsDa();
+    case 'de':
+      return AppLocalizationsDe();
+    case 'en':
+      return AppLocalizationsEn();
+    case 'es':
+      return AppLocalizationsEs();
+    case 'fr':
+      return AppLocalizationsFr();
+    case 'id':
+      return AppLocalizationsId();
+    case 'it':
+      return AppLocalizationsIt();
+    case 'ko':
+      return AppLocalizationsKo();
+    case 'nb':
+      return AppLocalizationsNb();
+    case 'pt':
+      return AppLocalizationsPt();
+    case 'sv':
+      return AppLocalizationsSv();
+  }
+
+  throw FlutterError(
+      'AppLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
+      'an issue with the localizations generation tool. Please file an issue '
+      'on GitHub with a reproducible sample app and the gen-l10n configuration '
+      'that was used.');
+}

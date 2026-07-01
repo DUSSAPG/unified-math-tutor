@@ -1,0 +1,73 @@
+﻿row_type,locale,pack,input_rows,output_rows,translated_segments,sample_id,field,source_text,translated_text,status
+summary,de-CH,KS2_bank_ok_10000.jsonl,10000,10000,10000,,,,,generated
+sample,de-CH,KS2_bank_ok_10000.jsonl,,,,ks2_fractions_of_amount_011efdb103,stem,Find 1/4 of 76.,Bestimme 1/4 of 76.,qa_required
+sample,de-CH,KS2_bank_ok_10000.jsonl,,,,ks2_fractions_of_amount_8bdea8ff21,stem,Find 2/3 of 27.,Bestimme 2/3 of 27.,qa_required
+sample,de-CH,KS2_bank_ok_10000.jsonl,,,,ks2_addition_subtraction_f4a3aeddc0,stem,Calculate: 87 + 13,Berechne: 87 + 13,qa_required
+sample,de-CH,KS2_bank_ok_10000.jsonl,,,,ks2_addition_subtraction_0eae97ed2b,stem,Calculate: 724 - 263,Berechne: 724 - 263,qa_required
+sample,de-CH,KS2_bank_ok_10000.jsonl,,,,ks2_addition_subtraction_4c49d02fe2,stem,Calculate: 55 - 22,Berechne: 55 - 22,qa_required
+summary,de-CH,KS3_bank_ok_10000.jsonl,10000,10000,10000,,,,,generated
+sample,de-CH,KS3_bank_ok_10000.jsonl,,,,ks3_integers_directed_numbers_aa4383d661,stem,Calculate: 2 - 11,Berechne: 2 - 11,qa_required
+sample,de-CH,KS3_bank_ok_10000.jsonl,,,,ks3_linear_equations_basic_0c3a4a7252,stem,Solve for x: 3x +5 = 26,Solve for x: 3x +5 = 26,qa_required
+sample,de-CH,KS3_bank_ok_10000.jsonl,,,,ks3_algebra_simplify_substitute_988d415bdb,stem,Evaluate: 4x^2 -7x -5 when x = 1.,Evaluate: 4x^2 -7x -5 when x = 1.,qa_required
+sample,de-CH,KS3_bank_ok_10000.jsonl,,,,ks3_fractions_decimals_percent_abc79a992d,stem,Convert 1/4 to a decimal.,Convert 1/4 to a decimal.,qa_required
+sample,de-CH,KS3_bank_ok_10000.jsonl,,,,ks3_integers_directed_numbers_d36e9042c0,stem,Calculate: 10 - -2,Berechne: 10 - -2,qa_required
+summary,de-CH,KS4_merged_deduped.jsonl,18432,18432,34561,,,,,generated
+sample,de-CH,KS4_merged_deduped.jsonl,,,,ks4_angles_parallel_lines_6465f081df,question,Two parallel lines are cut by a transversal. A corresponding angle is 70°. What is the matching corresponding angle?,Two parallel lines are cut by a transversal. A corresponding angle is 70°. What is the matching corresponding angle?,qa_required
+sample,de-CH,KS4_merged_deduped.jsonl,,,,ks4_angles_parallel_lines_6465f081df,rationale,Corresponding angles are equal.,Corresponding angles are equal.,qa_required
+sample,de-CH,KS4_merged_deduped.jsonl,,,,ks4_angles_parallel_lines_d99b66394e,question,Two parallel lines are cut by a transversal. An alternate angle is 115°. What is the matching alternate angle?,Two parallel lines are cut by a transversal. An alternate angle is 115°. What is the matching alternate angle?,qa_required
+sample,de-CH,KS4_merged_deduped.jsonl,,,,ks4_angles_parallel_lines_d99b66394e,rationale,Alternate angles are equal.,Alternate angles are equal.,qa_required
+sample,de-CH,KS4_merged_deduped.jsonl,,,,ks4_angles_parallel_lines_243333ca70,question,Two parallel lines are cut by a transversal. A corresponding angle is 27°. What is the matching corresponding angle?,Two parallel lines are cut by a transversal. A corresponding angle is 27°. What is the matching corresponding angle?,qa_required
+summary,de-CH,KS5_merged_deduped.jsonl,8987,8987,19146,,,,,generated
+sample,de-CH,KS5_merged_deduped.jsonl,,,,ks5_diff_poly_8d08a667,question,Differentiate with respect to x: f(x) = -2x^4 + 2x^3 - 5x^2 - 6x - 4,Differentiate with respect to x: f(x) = -2x^4 + 2x^3 - 5x^2 - 6x - 4,qa_required
+sample,de-CH,KS5_merged_deduped.jsonl,,,,ks5_diff_poly_8d08a667,rationale,Use power rule: d/dx(ax^n)=anx^(n-1).,Use power rule: d/dx(ax^n)=anx^(n-1).,qa_required
+sample,de-CH,KS5_merged_deduped.jsonl,,,,ks5_diff_poly_cc33df66,question,Differentiate with respect to x: f(x) = 5x^4 - 3x^3 - 7,Differentiate with respect to x: f(x) = 5x^4 - 3x^3 - 7,qa_required
+sample,de-CH,KS5_merged_deduped.jsonl,,,,ks5_diff_poly_cc33df66,rationale,Use power rule: d/dx(ax^n)=anx^(n-1).,Use power rule: d/dx(ax^n)=anx^(n-1).,qa_required
+sample,de-CH,KS5_merged_deduped.jsonl,,,,ks5_diff_poly_4e724199,question,Differentiate with respect to x: f(x) = -x^3 - 4x^2 + 8,Differentiate with respect to x: f(x) = -x^3 - 4x^2 + 8,qa_required
+summary,fr-CH,KS2_bank_ok_10000.jsonl,10000,10000,10000,,,,,generated
+sample,fr-CH,KS2_bank_ok_10000.jsonl,,,,ks2_fractions_of_amount_011efdb103,stem,Find 1/4 of 76.,Trouve 1/4 of 76.,qa_required
+sample,fr-CH,KS2_bank_ok_10000.jsonl,,,,ks2_fractions_of_amount_8bdea8ff21,stem,Find 2/3 of 27.,Trouve 2/3 of 27.,qa_required
+sample,fr-CH,KS2_bank_ok_10000.jsonl,,,,ks2_addition_subtraction_f4a3aeddc0,stem,Calculate: 87 + 13,Calcule : 87 + 13,qa_required
+sample,fr-CH,KS2_bank_ok_10000.jsonl,,,,ks2_addition_subtraction_0eae97ed2b,stem,Calculate: 724 - 263,Calcule : 724 - 263,qa_required
+sample,fr-CH,KS2_bank_ok_10000.jsonl,,,,ks2_addition_subtraction_4c49d02fe2,stem,Calculate: 55 - 22,Calcule : 55 - 22,qa_required
+summary,fr-CH,KS3_bank_ok_10000.jsonl,10000,10000,10000,,,,,generated
+sample,fr-CH,KS3_bank_ok_10000.jsonl,,,,ks3_integers_directed_numbers_aa4383d661,stem,Calculate: 2 - 11,Calcule : 2 - 11,qa_required
+sample,fr-CH,KS3_bank_ok_10000.jsonl,,,,ks3_linear_equations_basic_0c3a4a7252,stem,Solve for x: 3x +5 = 26,Solve for x: 3x +5 = 26,qa_required
+sample,fr-CH,KS3_bank_ok_10000.jsonl,,,,ks3_algebra_simplify_substitute_988d415bdb,stem,Evaluate: 4x^2 -7x -5 when x = 1.,Evaluate: 4x^2 -7x -5 when x = 1.,qa_required
+sample,fr-CH,KS3_bank_ok_10000.jsonl,,,,ks3_fractions_decimals_percent_abc79a992d,stem,Convert 1/4 to a decimal.,Convert 1/4 to a decimal.,qa_required
+sample,fr-CH,KS3_bank_ok_10000.jsonl,,,,ks3_integers_directed_numbers_d36e9042c0,stem,Calculate: 10 - -2,Calcule : 10 - -2,qa_required
+summary,fr-CH,KS4_merged_deduped.jsonl,18432,18432,34561,,,,,generated
+sample,fr-CH,KS4_merged_deduped.jsonl,,,,ks4_angles_parallel_lines_6465f081df,question,Two parallel lines are cut by a transversal. A corresponding angle is 70°. What is the matching corresponding angle?,Two parallel lines are cut by a transversal. A corresponding angle is 70°. What is the matching corresponding angle?,qa_required
+sample,fr-CH,KS4_merged_deduped.jsonl,,,,ks4_angles_parallel_lines_6465f081df,rationale,Corresponding angles are equal.,Corresponding angles are equal.,qa_required
+sample,fr-CH,KS4_merged_deduped.jsonl,,,,ks4_angles_parallel_lines_d99b66394e,question,Two parallel lines are cut by a transversal. An alternate angle is 115°. What is the matching alternate angle?,Two parallel lines are cut by a transversal. An alternate angle is 115°. What is the matching alternate angle?,qa_required
+sample,fr-CH,KS4_merged_deduped.jsonl,,,,ks4_angles_parallel_lines_d99b66394e,rationale,Alternate angles are equal.,Alternate angles are equal.,qa_required
+sample,fr-CH,KS4_merged_deduped.jsonl,,,,ks4_angles_parallel_lines_243333ca70,question,Two parallel lines are cut by a transversal. A corresponding angle is 27°. What is the matching corresponding angle?,Two parallel lines are cut by a transversal. A corresponding angle is 27°. What is the matching corresponding angle?,qa_required
+summary,fr-CH,KS5_merged_deduped.jsonl,8987,8987,19146,,,,,generated
+sample,fr-CH,KS5_merged_deduped.jsonl,,,,ks5_diff_poly_8d08a667,question,Differentiate with respect to x: f(x) = -2x^4 + 2x^3 - 5x^2 - 6x - 4,Differentiate with respect to x: f(x) = -2x^4 + 2x^3 - 5x^2 - 6x - 4,qa_required
+sample,fr-CH,KS5_merged_deduped.jsonl,,,,ks5_diff_poly_8d08a667,rationale,Use power rule: d/dx(ax^n)=anx^(n-1).,Use power rule: d/dx(ax^n)=anx^(n-1).,qa_required
+sample,fr-CH,KS5_merged_deduped.jsonl,,,,ks5_diff_poly_cc33df66,question,Differentiate with respect to x: f(x) = 5x^4 - 3x^3 - 7,Differentiate with respect to x: f(x) = 5x^4 - 3x^3 - 7,qa_required
+sample,fr-CH,KS5_merged_deduped.jsonl,,,,ks5_diff_poly_cc33df66,rationale,Use power rule: d/dx(ax^n)=anx^(n-1).,Use power rule: d/dx(ax^n)=anx^(n-1).,qa_required
+sample,fr-CH,KS5_merged_deduped.jsonl,,,,ks5_diff_poly_4e724199,question,Differentiate with respect to x: f(x) = -x^3 - 4x^2 + 8,Differentiate with respect to x: f(x) = -x^3 - 4x^2 + 8,qa_required
+summary,it-CH,KS2_bank_ok_10000.jsonl,10000,10000,10000,,,,,generated
+sample,it-CH,KS2_bank_ok_10000.jsonl,,,,ks2_fractions_of_amount_011efdb103,stem,Find 1/4 of 76.,Trova 1/4 of 76.,qa_required
+sample,it-CH,KS2_bank_ok_10000.jsonl,,,,ks2_fractions_of_amount_8bdea8ff21,stem,Find 2/3 of 27.,Trova 2/3 of 27.,qa_required
+sample,it-CH,KS2_bank_ok_10000.jsonl,,,,ks2_addition_subtraction_f4a3aeddc0,stem,Calculate: 87 + 13,Calcola: 87 + 13,qa_required
+sample,it-CH,KS2_bank_ok_10000.jsonl,,,,ks2_addition_subtraction_0eae97ed2b,stem,Calculate: 724 - 263,Calcola: 724 - 263,qa_required
+sample,it-CH,KS2_bank_ok_10000.jsonl,,,,ks2_addition_subtraction_4c49d02fe2,stem,Calculate: 55 - 22,Calcola: 55 - 22,qa_required
+summary,it-CH,KS3_bank_ok_10000.jsonl,10000,10000,10000,,,,,generated
+sample,it-CH,KS3_bank_ok_10000.jsonl,,,,ks3_integers_directed_numbers_aa4383d661,stem,Calculate: 2 - 11,Calcola: 2 - 11,qa_required
+sample,it-CH,KS3_bank_ok_10000.jsonl,,,,ks3_linear_equations_basic_0c3a4a7252,stem,Solve for x: 3x +5 = 26,Solve for x: 3x +5 = 26,qa_required
+sample,it-CH,KS3_bank_ok_10000.jsonl,,,,ks3_algebra_simplify_substitute_988d415bdb,stem,Evaluate: 4x^2 -7x -5 when x = 1.,Evaluate: 4x^2 -7x -5 when x = 1.,qa_required
+sample,it-CH,KS3_bank_ok_10000.jsonl,,,,ks3_fractions_decimals_percent_abc79a992d,stem,Convert 1/4 to a decimal.,Convert 1/4 to a decimal.,qa_required
+sample,it-CH,KS3_bank_ok_10000.jsonl,,,,ks3_integers_directed_numbers_d36e9042c0,stem,Calculate: 10 - -2,Calcola: 10 - -2,qa_required
+summary,it-CH,KS4_merged_deduped.jsonl,18432,18432,34561,,,,,generated
+sample,it-CH,KS4_merged_deduped.jsonl,,,,ks4_angles_parallel_lines_6465f081df,question,Two parallel lines are cut by a transversal. A corresponding angle is 70°. What is the matching corresponding angle?,Two parallel lines are cut by a transversal. A corresponding angle is 70°. What is the matching corresponding angle?,qa_required
+sample,it-CH,KS4_merged_deduped.jsonl,,,,ks4_angles_parallel_lines_6465f081df,rationale,Corresponding angles are equal.,Corresponding angles are equal.,qa_required
+sample,it-CH,KS4_merged_deduped.jsonl,,,,ks4_angles_parallel_lines_d99b66394e,question,Two parallel lines are cut by a transversal. An alternate angle is 115°. What is the matching alternate angle?,Two parallel lines are cut by a transversal. An alternate angle is 115°. What is the matching alternate angle?,qa_required
+sample,it-CH,KS4_merged_deduped.jsonl,,,,ks4_angles_parallel_lines_d99b66394e,rationale,Alternate angles are equal.,Alternate angles are equal.,qa_required
+sample,it-CH,KS4_merged_deduped.jsonl,,,,ks4_angles_parallel_lines_243333ca70,question,Two parallel lines are cut by a transversal. A corresponding angle is 27°. What is the matching corresponding angle?,Two parallel lines are cut by a transversal. A corresponding angle is 27°. What is the matching corresponding angle?,qa_required
+summary,it-CH,KS5_merged_deduped.jsonl,8987,8987,19146,,,,,generated
+sample,it-CH,KS5_merged_deduped.jsonl,,,,ks5_diff_poly_8d08a667,question,Differentiate with respect to x: f(x) = -2x^4 + 2x^3 - 5x^2 - 6x - 4,Differentiate with respect to x: f(x) = -2x^4 + 2x^3 - 5x^2 - 6x - 4,qa_required
+sample,it-CH,KS5_merged_deduped.jsonl,,,,ks5_diff_poly_8d08a667,rationale,Use power rule: d/dx(ax^n)=anx^(n-1).,Use power rule: d/dx(ax^n)=anx^(n-1).,qa_required
+sample,it-CH,KS5_merged_deduped.jsonl,,,,ks5_diff_poly_cc33df66,question,Differentiate with respect to x: f(x) = 5x^4 - 3x^3 - 7,Differentiate with respect to x: f(x) = 5x^4 - 3x^3 - 7,qa_required
+sample,it-CH,KS5_merged_deduped.jsonl,,,,ks5_diff_poly_cc33df66,rationale,Use power rule: d/dx(ax^n)=anx^(n-1).,Use power rule: d/dx(ax^n)=anx^(n-1).,qa_required
+sample,it-CH,KS5_merged_deduped.jsonl,,,,ks5_diff_poly_4e724199,question,Differentiate with respect to x: f(x) = -x^3 - 4x^2 + 8,Differentiate with respect to x: f(x) = -x^3 - 4x^2 + 8,qa_required

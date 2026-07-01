@@ -1,0 +1,16 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_shared_ui/flutter_shared_ui.dart';
+
+class Popover extends StatelessWidget {
+  const Popover({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppScaffold(
+      title: 'Popover',
+      child: const Center(
+        child: Text('Popover'),
+      ),
+    );
+  }
+}

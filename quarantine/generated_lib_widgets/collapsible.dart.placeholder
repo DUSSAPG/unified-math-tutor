@@ -1,0 +1,16 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_shared_ui/flutter_shared_ui.dart';
+
+class Collapsible extends StatelessWidget {
+  const Collapsible({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppScaffold(
+      title: 'Collapsible',
+      child: const Center(
+        child: Text('Collapsible'),
+      ),
+    );
+  }
+}

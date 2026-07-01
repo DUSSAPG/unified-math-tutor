@@ -1,0 +1,16 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_shared_ui/flutter_shared_ui.dart';
+
+class UseCarousel extends StatelessWidget {
+  const UseCarousel({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppScaffold(
+      title: 'use Carousel',
+      child: const Center(
+        child: Text('use Carousel'),
+      ),
+    );
+  }
+}

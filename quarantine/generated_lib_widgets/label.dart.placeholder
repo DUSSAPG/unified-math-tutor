@@ -1,0 +1,16 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_shared_ui/flutter_shared_ui.dart';
+
+class Label extends StatelessWidget {
+  const Label({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppScaffold(
+      title: 'Label',
+      child: const Center(
+        child: Text('Label'),
+      ),
+    );
+  }
+}

@@ -1,0 +1,2702 @@
+[
+  {
+    "id": "t001",
+    "question": "A farmer has 17 sheep. All but 9 wander away. How many remain?",
+    "answer": "9 sheep remain.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t002",
+    "question": "A rectangle has length 10 cm and width 11 cm. What is its perimeter?",
+    "answer": "42 cm. Perimeter = 2×(10+11).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t003",
+    "question": "A rectangle has length 10 cm and width 21 cm. What is its perimeter?",
+    "answer": "62 cm. Perimeter = 2×(10+21).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t004",
+    "question": "A rectangle has length 10 cm and width 24 cm. What is its perimeter?",
+    "answer": "68 cm. Perimeter = 2×(10+24).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t005",
+    "question": "A rectangle has length 11 cm and width 21 cm. What is its perimeter?",
+    "answer": "64 cm. Perimeter = 2×(11+21).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t006",
+    "question": "A rectangle has length 11 cm and width 7 cm. What is its perimeter?",
+    "answer": "36 cm. Perimeter = 2×(11+7).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t007",
+    "question": "A rectangle has length 12 cm and width 24 cm. What is its perimeter?",
+    "answer": "72 cm. Perimeter = 2×(12+24).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t008",
+    "question": "A rectangle has length 13 cm and width 14 cm. What is its perimeter?",
+    "answer": "54 cm. Perimeter = 2×(13+14).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t009",
+    "question": "A rectangle has length 13 cm and width 3 cm. What is its perimeter?",
+    "answer": "32 cm. Perimeter = 2×(13+3).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t010",
+    "question": "A rectangle has length 14 cm and width 16 cm. What is its perimeter?",
+    "answer": "60 cm. Perimeter = 2×(14+16).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t011",
+    "question": "A rectangle has length 15 cm and width 24 cm. What is its perimeter?",
+    "answer": "78 cm. Perimeter = 2×(15+24).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t012",
+    "question": "A rectangle has length 16 cm and width 10 cm. What is its perimeter?",
+    "answer": "52 cm. Perimeter = 2×(16+10).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t013",
+    "question": "A rectangle has length 16 cm and width 5 cm. What is its perimeter?",
+    "answer": "42 cm. Perimeter = 2×(16+5).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t014",
+    "question": "A rectangle has length 17 cm and width 16 cm. What is its perimeter?",
+    "answer": "66 cm. Perimeter = 2×(17+16).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t015",
+    "question": "A rectangle has length 18 cm and width 23 cm. What is its perimeter?",
+    "answer": "82 cm. Perimeter = 2×(18+23).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t016",
+    "question": "A rectangle has length 18 cm and width 8 cm. What is its perimeter?",
+    "answer": "52 cm. Perimeter = 2×(18+8).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t017",
+    "question": "A rectangle has length 22 cm and width 13 cm. What is its perimeter?",
+    "answer": "70 cm. Perimeter = 2×(22+13).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t018",
+    "question": "A rectangle has length 22 cm and width 16 cm. What is its perimeter?",
+    "answer": "76 cm. Perimeter = 2×(22+16).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t019",
+    "question": "A rectangle has length 23 cm and width 11 cm. What is its perimeter?",
+    "answer": "68 cm. Perimeter = 2×(23+11).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t020",
+    "question": "A rectangle has length 23 cm and width 17 cm. What is its perimeter?",
+    "answer": "80 cm. Perimeter = 2×(23+17).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t021",
+    "question": "A rectangle has length 24 cm and width 24 cm. What is its perimeter?",
+    "answer": "96 cm. Perimeter = 2×(24+24).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t022",
+    "question": "A rectangle has length 25 cm and width 8 cm. What is its perimeter?",
+    "answer": "66 cm. Perimeter = 2×(25+8).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t023",
+    "question": "A rectangle has length 3 cm and width 22 cm. What is its perimeter?",
+    "answer": "50 cm. Perimeter = 2×(3+22).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t024",
+    "question": "A rectangle has length 3 cm and width 24 cm. What is its perimeter?",
+    "answer": "54 cm. Perimeter = 2×(3+24).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t025",
+    "question": "A rectangle has length 3 cm and width 5 cm. What is its perimeter?",
+    "answer": "16 cm. Perimeter = 2×(3+5).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t026",
+    "question": "A rectangle has length 5 cm and width 21 cm. What is its perimeter?",
+    "answer": "52 cm. Perimeter = 2×(5+21).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t027",
+    "question": "A rectangle has length 6 cm and width 23 cm. What is its perimeter?",
+    "answer": "58 cm. Perimeter = 2×(6+23).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t028",
+    "question": "A rectangle has length 6 cm and width 4 cm. What is its perimeter?",
+    "answer": "20 cm. Perimeter = 2×(6+4).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t029",
+    "question": "A rectangle has length 7 cm and width 11 cm. What is its perimeter?",
+    "answer": "36 cm. Perimeter = 2×(7+11).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t030",
+    "question": "A rectangle has length 7 cm and width 7 cm. What is its perimeter?",
+    "answer": "28 cm. Perimeter = 2×(7+7).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t031",
+    "question": "A triangle has sides of 3 cm, 4 cm, and 5 cm. What kind of angle does it contain?",
+    "answer": "A right angle.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t032",
+    "question": "Fill the blank: 10 + 19 = ___.",
+    "answer": "29",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t033",
+    "question": "Fill the blank: 13 - 94 = ___.",
+    "answer": "-81",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t034",
+    "question": "Fill the blank: 17 + 84 = ___.",
+    "answer": "101",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t035",
+    "question": "Fill the blank: 18 + 14 = ___.",
+    "answer": "32",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t036",
+    "question": "Fill the blank: 19 × 85 = ___.",
+    "answer": "1615",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t037",
+    "question": "Fill the blank: 21 + 45 = ___.",
+    "answer": "66",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t038",
+    "question": "Fill the blank: 23 × 99 = ___.",
+    "answer": "2277",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t039",
+    "question": "Fill the blank: 25 + 34 = ___.",
+    "answer": "59",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t040",
+    "question": "Fill the blank: 27 + 75 = ___.",
+    "answer": "102",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t041",
+    "question": "Fill the blank: 27 × 23 = ___.",
+    "answer": "621",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t042",
+    "question": "Fill the blank: 29 × 57 = ___.",
+    "answer": "1653",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t043",
+    "question": "Fill the blank: 30 + 49 = ___.",
+    "answer": "79",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t044",
+    "question": "Fill the blank: 30 - 69 = ___.",
+    "answer": "-39",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t045",
+    "question": "Fill the blank: 31 - 62 = ___.",
+    "answer": "-31",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t046",
+    "question": "Fill the blank: 32 + 80 = ___.",
+    "answer": "112",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t047",
+    "question": "Fill the blank: 32 - 99 = ___.",
+    "answer": "-67",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t048",
+    "question": "Fill the blank: 34 + 78 = ___.",
+    "answer": "112",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t049",
+    "question": "Fill the blank: 37 × 71 = ___.",
+    "answer": "2627",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t050",
+    "question": "Fill the blank: 43 × 60 = ___.",
+    "answer": "2580",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t051",
+    "question": "Fill the blank: 45 × 66 = ___.",
+    "answer": "2970",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t052",
+    "question": "Fill the blank: 46 - 46 = ___.",
+    "answer": "0",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t053",
+    "question": "Fill the blank: 47 + 20 = ___.",
+    "answer": "67",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t054",
+    "question": "Fill the blank: 56 + 32 = ___.",
+    "answer": "88",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t055",
+    "question": "Fill the blank: 56 × 65 = ___.",
+    "answer": "3640",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t056",
+    "question": "Fill the blank: 61 - 17 = ___.",
+    "answer": "44",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t057",
+    "question": "Fill the blank: 62 + 72 = ___.",
+    "answer": "134",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t058",
+    "question": "Fill the blank: 63 × 95 = ___.",
+    "answer": "5985",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t059",
+    "question": "Fill the blank: 68 - 51 = ___.",
+    "answer": "17",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t060",
+    "question": "Fill the blank: 69 - 99 = ___.",
+    "answer": "-30",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t061",
+    "question": "Fill the blank: 79 × 98 = ___.",
+    "answer": "7742",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t062",
+    "question": "Fill the blank: 93 + 18 = ___.",
+    "answer": "111",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t063",
+    "question": "Fill the blank: 95 × 23 = ___.",
+    "answer": "2185",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t064",
+    "question": "Find the next number: 10, 17, 26, 37, 50, ?",
+    "answer": "65. These are squares 3² to 8² plus 1.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t065",
+    "question": "Find the next number: 11, 14, 19, 26, 35, 46, ?",
+    "answer": "59. These are squares 1² to 7² plus 10.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t066",
+    "question": "Find the next number: 11, 18, 27, 38, 51, ?",
+    "answer": "66. These are squares 3² to 8² plus 2.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t067",
+    "question": "Find the next number: 12, 19, 28, 39, 52, 67, 84, ?",
+    "answer": "103. These are squares 3² to 10² plus 3.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t068",
+    "question": "Find the next number: 14, 19, 26, 35, 46, 59, ?",
+    "answer": "74. These are squares 2² to 8² plus 10.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t069",
+    "question": "Find the next number: 14, 19, 26, 35, 46, ?",
+    "answer": "59. These are squares 2² to 7² plus 10.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t070",
+    "question": "Find the next number: 14, 21, 30, 41, 54, 69, 86, ?",
+    "answer": "105. These are squares 3² to 10² plus 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t071",
+    "question": "Find the next number: 16, 25, 36, 49, 64, ?",
+    "answer": "81. These are squares 4² to 9².",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t072",
+    "question": "Find the next number: 19, 26, 35, 46, 59, 74, ?",
+    "answer": "91. These are squares 3² to 9² plus 10.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t073",
+    "question": "Find the next number: 19, 28, 39, 52, 67, 84, 103, ?",
+    "answer": "124. These are squares 4² to 11² plus 3.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t074",
+    "question": "Find the next number: 19, 28, 39, 52, 67, 84, ?",
+    "answer": "103. These are squares 4² to 10² plus 3.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t075",
+    "question": "Find the next number: 2, 5, 10, 17, 26, 37, 50, ?",
+    "answer": "65. These are squares 1² to 8² plus 1.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t076",
+    "question": "Find the next number: 21, 30, 41, 54, 69, 86, ?",
+    "answer": "105. These are squares 4² to 10² plus 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t077",
+    "question": "Find the next number: 21, 30, 41, 54, 69, ?",
+    "answer": "86. These are squares 4² to 9² plus 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t078",
+    "question": "Find the next number: 25, 36, 49, 64, 81, ?",
+    "answer": "100. These are squares 5² to 10².",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t079",
+    "question": "Find the next number: 26, 37, 50, 65, 82, 101, 122, ?",
+    "answer": "145. These are squares 5² to 12² plus 1.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t080",
+    "question": "Find the next number: 27, 38, 51, 66, 83, 102, 123, ?",
+    "answer": "146. These are squares 5² to 12² plus 2.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t081",
+    "question": "Find the next number: 3, 6, 11, 18, 27, 38, 51, ?",
+    "answer": "66. These are squares 1² to 8² plus 2.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t082",
+    "question": "Find the next number: 30, 41, 54, 69, 86, ?",
+    "answer": "105. These are squares 5² to 10² plus 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t083",
+    "question": "Find the next number: 4, 7, 12, 19, 28, 39, 52, ?",
+    "answer": "67. These are squares 1² to 8² plus 3.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t084",
+    "question": "Find the next number: 4, 9, 16, 25, 36, 49, ?",
+    "answer": "64. These are squares 2² to 8².",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t085",
+    "question": "Find the next number: 5, 10, 17, 26, 37, 50, 65, ?",
+    "answer": "82. These are squares 2² to 9² plus 1.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t086",
+    "question": "Find the next number: 5, 8, 13, 20, 29, 40, ?",
+    "answer": "53. These are squares 1² to 7² plus 4.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t087",
+    "question": "Find the next number: 6, 11, 18, 27, 38, 51, 66, ?",
+    "answer": "83. These are squares 2² to 9² plus 2.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t088",
+    "question": "Find the next number: 8, 13, 20, 29, 40, 53, 68, ?",
+    "answer": "85. These are squares 2² to 9² plus 4.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t089",
+    "question": "Find the next number: 9, 14, 21, 30, 41, 54, ?",
+    "answer": "69. These are squares 2² to 8² plus 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t090",
+    "question": "Find the next number: 9, 16, 25, 36, 49, ?",
+    "answer": "64. These are squares 3² to 8².",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t091",
+    "question": "How many times can you subtract 10 from 100?",
+    "answer": "Once. After that, you are subtracting from 90.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t092",
+    "question": "I add five to nine and get two. The answer is correct. How?",
+    "answer": "On a clock: five hours after 9 o'clock is 2 o'clock.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t093",
+    "question": "I am an odd number. Remove one letter and I become even. What number am I?",
+    "answer": "Seven. Remove the s and it becomes even.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t094",
+    "question": "I have hands but cannot clap. What am I?",
+    "answer": "A clock.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t095",
+    "question": "If the time is 10:05, what time will it be in 15 minutes?",
+    "answer": "10:20.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t096",
+    "question": "If the time is 10:05, what time will it be in 30 minutes?",
+    "answer": "10:35.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t097",
+    "question": "If the time is 10:25, what time will it be in 45 minutes?",
+    "answer": "11:10.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t098",
+    "question": "If the time is 10:55, what time will it be in 35 minutes?",
+    "answer": "11:30.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t099",
+    "question": "If the time is 11:15, what time will it be in 50 minutes?",
+    "answer": "12:05.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t100",
+    "question": "If the time is 11:20, what time will it be in 40 minutes?",
+    "answer": "12:00.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t101",
+    "question": "If the time is 11:35, what time will it be in 40 minutes?",
+    "answer": "12:15.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t102",
+    "question": "If the time is 1:15, what time will it be in 45 minutes?",
+    "answer": "2:00.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t103",
+    "question": "If the time is 1:45, what time will it be in 25 minutes?",
+    "answer": "2:10.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t104",
+    "question": "If the time is 2:20, what time will it be in 25 minutes?",
+    "answer": "2:45.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t105",
+    "question": "If the time is 2:40, what time will it be in 40 minutes?",
+    "answer": "3:20.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t106",
+    "question": "If the time is 2:50, what time will it be in 10 minutes?",
+    "answer": "3:00.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t107",
+    "question": "If the time is 2:55, what time will it be in 25 minutes?",
+    "answer": "3:20.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t108",
+    "question": "If the time is 3:20, what time will it be in 20 minutes?",
+    "answer": "3:40.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t109",
+    "question": "If the time is 4:10, what time will it be in 10 minutes?",
+    "answer": "4:20.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t110",
+    "question": "If the time is 4:35, what time will it be in 45 minutes?",
+    "answer": "5:20.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t111",
+    "question": "If the time is 6:10, what time will it be in 25 minutes?",
+    "answer": "6:35.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t112",
+    "question": "If the time is 6:40, what time will it be in 50 minutes?",
+    "answer": "7:30.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t113",
+    "question": "If the time is 8:20, what time will it be in 45 minutes?",
+    "answer": "9:05.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t114",
+    "question": "If the time is 8:25, what time will it be in 10 minutes?",
+    "answer": "8:35.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t115",
+    "question": "If the time is 8:45, what time will it be in 50 minutes?",
+    "answer": "9:35.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t116",
+    "question": "If the time is 8:55, what time will it be in 45 minutes?",
+    "answer": "9:40.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t117",
+    "question": "If the time is 9:40, what time will it be in 45 minutes?",
+    "answer": "10:25.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t118",
+    "question": "If the time is 9:50, what time will it be in 30 minutes?",
+    "answer": "10:20.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t119",
+    "question": "If two is company and three is a crowd, what are four and five?",
+    "answer": "Nine.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t120",
+    "question": "If you drop me I’m sure to crack, but give me a smile and I’ll always smile back. What am I?",
+    "answer": "A mirror.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t121",
+    "question": "There are 12 socks in a drawer: 6 blue and 6 red. How many must you take in the dark to guarantee a matching pair?",
+    "answer": "3 socks.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t122",
+    "question": "Today a parent is 26 years old and their child is 6. In 10 years, how old will they be together?",
+    "answer": "52. Add 10 to each age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t123",
+    "question": "Today a parent is 27 years old and their child is 6. In 6 years, how old will they be together?",
+    "answer": "45. Add 6 to each age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t124",
+    "question": "Today a parent is 27 years old and their child is 6. In 7 years, how old will they be together?",
+    "answer": "47. Add 7 to each age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t125",
+    "question": "Today a parent is 27 years old and their child is 6. In 8 years, how old will they be together?",
+    "answer": "49. Add 8 to each age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t126",
+    "question": "Today a parent is 29 years old and their child is 7. In 8 years, how old will they be together?",
+    "answer": "52. Add 8 to each age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t127",
+    "question": "Today a parent is 31 years old and their child is 7. In 10 years, how old will they be together?",
+    "answer": "58. Add 10 to each age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t128",
+    "question": "Today a parent is 33 years old and their child is 6. In 6 years, how old will they be together?",
+    "answer": "51. Add 6 to each age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t129",
+    "question": "Today a parent is 33 years old and their child is 7. In 7 years, how old will they be together?",
+    "answer": "54. Add 7 to each age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t130",
+    "question": "Today a parent is 34 years old and their child is 11. In 10 years, how old will they be together?",
+    "answer": "65. Add 10 to each age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t131",
+    "question": "Today a parent is 35 years old and their child is 10. In 7 years, how old will they be together?",
+    "answer": "59. Add 7 to each age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t132",
+    "question": "Today a parent is 35 years old and their child is 7. In 8 years, how old will they be together?",
+    "answer": "58. Add 8 to each age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t133",
+    "question": "Today a parent is 36 years old and their child is 6. In 7 years, how old will they be together?",
+    "answer": "56. Add 7 to each age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t134",
+    "question": "Today a parent is 37 years old and their child is 6. In 7 years, how old will they be together?",
+    "answer": "57. Add 7 to each age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t135",
+    "question": "Today a parent is 37 years old and their child is 8. In 6 years, how old will they be together?",
+    "answer": "57. Add 6 to each age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t136",
+    "question": "Today a parent is 37 years old and their child is 8. In 7 years, how old will they be together?",
+    "answer": "59. Add 7 to each age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t137",
+    "question": "Today a parent is 38 years old and their child is 10. In 10 years, how old will they be together?",
+    "answer": "68. Add 10 to each age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t138",
+    "question": "Today a parent is 38 years old and their child is 10. In 5 years, how old will they be together?",
+    "answer": "58. Add 5 to each age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t139",
+    "question": "Today a parent is 38 years old and their child is 6. In 7 years, how old will they be together?",
+    "answer": "58. Add 7 to each age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t140",
+    "question": "Today a parent is 38 years old and their child is 9. In 10 years, how old will they be together?",
+    "answer": "67. Add 10 to each age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t141",
+    "question": "Today a parent is 39 years old and their child is 9. In 6 years, how old will they be together?",
+    "answer": "60. Add 6 to each age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t142",
+    "question": "Today a parent is 41 years old and their child is 12. In 10 years, how old will they be together?",
+    "answer": "73. Add 10 to each age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t143",
+    "question": "Today a parent is 41 years old and their child is 6. In 7 years, how old will they be together?",
+    "answer": "61. Add 7 to each age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t144",
+    "question": "Today a parent is 41 years old and their child is 7. In 10 years, how old will they be together?",
+    "answer": "68. Add 10 to each age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t145",
+    "question": "Today a parent is 42 years old and their child is 10. In 7 years, how old will they be together?",
+    "answer": "66. Add 7 to each age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t146",
+    "question": "Today a parent is 42 years old and their child is 7. In 8 years, how old will they be together?",
+    "answer": "65. Add 8 to each age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t147",
+    "question": "Today a parent is 43 years old and their child is 10. In 10 years, how old will they be together?",
+    "answer": "73. Add 10 to each age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t148",
+    "question": "Today a parent is 43 years old and their child is 9. In 6 years, how old will they be together?",
+    "answer": "64. Add 6 to each age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t149",
+    "question": "Today a parent is 46 years old and their child is 11. In 8 years, how old will they be together?",
+    "answer": "73. Add 8 to each age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t150",
+    "question": "What begins with T, ends with T, and has T in it?",
+    "answer": "A teapot.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t151",
+    "question": "What can be cracked, made, told, and played?",
+    "answer": "A joke.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t152",
+    "question": "What can fill a room but takes up no space?",
+    "answer": "Light.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t153",
+    "question": "What can travel around the world while staying in a corner?",
+    "answer": "A stamp.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t154",
+    "question": "What can you catch but not throw?",
+    "answer": "A cold.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t155",
+    "question": "What comes next: 1, 4, 9, 16, 25, 36, 49, ?",
+    "answer": "64. Add consecutive odd numbers.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t156",
+    "question": "What comes next: 10, 13, 18, 25, 34, 45, 58, ?",
+    "answer": "73. Add consecutive odd numbers.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t157",
+    "question": "What comes next: 10, 13, 18, 25, 34, 45, ?",
+    "answer": "58. Add consecutive odd numbers.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t158",
+    "question": "What comes next: 2, 5, 10, 17, 26, 37, ?",
+    "answer": "50. Add consecutive odd numbers.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t159",
+    "question": "What comes next: 3, 6, 11, 18, 27, 38, ?",
+    "answer": "51. Add consecutive odd numbers.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t160",
+    "question": "What comes next: 3, 6, 11, 18, 27, ?",
+    "answer": "38. Add consecutive odd numbers.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t161",
+    "question": "What comes next: 5, 8, 13, 20, 29, 40, ?",
+    "answer": "53. Add consecutive odd numbers.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t162",
+    "question": "What comes next: 5, 8, 13, 20, 29, ?",
+    "answer": "40. Add consecutive odd numbers.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t163",
+    "question": "What comes next: 7, 10, 15, 22, 31, 42, 55, ?",
+    "answer": "70. Add consecutive odd numbers.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t164",
+    "question": "What comes next: 7, 10, 15, 22, 31, 42, ?",
+    "answer": "55. Add consecutive odd numbers.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t165",
+    "question": "What comes next: 7, 10, 15, 22, 31, ?",
+    "answer": "42. Add consecutive odd numbers.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t166",
+    "question": "What comes next: 8, 11, 16, 23, 32, ?",
+    "answer": "43. Add consecutive odd numbers.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t167",
+    "question": "What comes next: 9, 12, 17, 24, 33, ?",
+    "answer": "44. Add consecutive odd numbers.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t168",
+    "question": "What comes once in a minute, twice in a moment, and never in a thousand years?",
+    "answer": "The letter 'm'.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t169",
+    "question": "What gets wetter the more it dries?",
+    "answer": "A towel.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t170",
+    "question": "What goes up but never comes down?",
+    "answer": "Your age.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t171",
+    "question": "What has a bark but no bite?",
+    "answer": "A tree.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t172",
+    "question": "What has a bed but never sleeps?",
+    "answer": "A river.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t173",
+    "question": "What has a bottom at the top?",
+    "answer": "Your legs.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t174",
+    "question": "What has a face and two hands but no arms or legs?",
+    "answer": "A clock.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t175",
+    "question": "What has a head, a tail, is brown, and has no legs?",
+    "answer": "A penny (coin).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t176",
+    "question": "What has a neck but no head?",
+    "answer": "A bottle.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t177",
+    "question": "What has a ring but no finger?",
+    "answer": "A phone.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t178",
+    "question": "What has a spine but no bones?",
+    "answer": "A book.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t179",
+    "question": "What has a tail but no legs and can still jump?",
+    "answer": "A kite.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t180",
+    "question": "What has a thumb and four fingers but is not a hand?",
+    "answer": "A glove.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t181",
+    "question": "What has an end but no beginning?",
+    "answer": "A stick.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t182",
+    "question": "What has an eye but no body?",
+    "answer": "A hurricane.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t183",
+    "question": "What has four wheels and flies?",
+    "answer": "A garbage truck (it 'flies' with garbage).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t184",
+    "question": "What has legs but doesn’t walk?",
+    "answer": "A table.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t185",
+    "question": "What has many keys but can’t open a single lock?",
+    "answer": "A piano (or keyboard).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t186",
+    "question": "What has one eye but can’t see?",
+    "answer": "A needle.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t187",
+    "question": "What has teeth but can’t bite?",
+    "answer": "A comb.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t188",
+    "question": "What has to be broken before you can use it?",
+    "answer": "An egg.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t189",
+    "question": "What has words but never speaks?",
+    "answer": "A book.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t190",
+    "question": "What invention lets you look right through a wall?",
+    "answer": "A window.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t191",
+    "question": "What is 1/2 of 24?",
+    "answer": "12.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t192",
+    "question": "What is 1/2 of 84?",
+    "answer": "42.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t193",
+    "question": "What is 1/2 of 96?",
+    "answer": "48.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t194",
+    "question": "What is 1/3 of 24?",
+    "answer": "8.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t195",
+    "question": "What is 1/3 of 30?",
+    "answer": "10.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t196",
+    "question": "What is 1/3 of 48?",
+    "answer": "16.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t197",
+    "question": "What is 1/4 of 96?",
+    "answer": "24.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t198",
+    "question": "What is 1/5 of 40?",
+    "answer": "8.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t199",
+    "question": "What is 10% of 240?",
+    "answer": "24. (10% means 10/100 of 240.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t200",
+    "question": "What is 10% of 300?",
+    "answer": "30. (10% means 10/100 of 300.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t201",
+    "question": "What is 10% of 80?",
+    "answer": "8. (10% means 10/100 of 80.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t202",
+    "question": "What is 12% of 100?",
+    "answer": "12. (12% means 12/100 of 100.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t203",
+    "question": "What is 12% of 80?",
+    "answer": "9.6. (12% means 12/100 of 80.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t204",
+    "question": "What is 15% of 200?",
+    "answer": "30. (15% means 15/100 of 200.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t205",
+    "question": "What is 15% of 50?",
+    "answer": "7.5. (15% means 15/100 of 50.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t206",
+    "question": "What is 15% of 60?",
+    "answer": "9. (15% means 15/100 of 60.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t207",
+    "question": "What is 2/3 of 120?",
+    "answer": "80.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t208",
+    "question": "What is 2/3 of 36?",
+    "answer": "24.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t209",
+    "question": "What is 2/3 of 48?",
+    "answer": "32.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t210",
+    "question": "What is 2/5 of 24?",
+    "answer": "9.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t211",
+    "question": "What is 2/5 of 30?",
+    "answer": "12.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t212",
+    "question": "What is 2/5 of 48?",
+    "answer": "19.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t213",
+    "question": "What is 20% of 240?",
+    "answer": "48. (20% means 20/100 of 240.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t214",
+    "question": "What is 20% of 60?",
+    "answer": "12. (20% means 20/100 of 60.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t215",
+    "question": "What is 20% of 80?",
+    "answer": "16. (20% means 20/100 of 80.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t216",
+    "question": "What is 25% of 100?",
+    "answer": "25. (25% means 25/100 of 100.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t217",
+    "question": "What is 25% of 120?",
+    "answer": "30. (25% means 25/100 of 120.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t218",
+    "question": "What is 25% of 200?",
+    "answer": "50. (25% means 25/100 of 200.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t219",
+    "question": "What is 25% of 300?",
+    "answer": "75. (25% means 25/100 of 300.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t220",
+    "question": "What is 3/4 of 120?",
+    "answer": "90.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t221",
+    "question": "What is 3/4 of 30?",
+    "answer": "22.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t222",
+    "question": "What is 3/4 of 60?",
+    "answer": "45.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t223",
+    "question": "What is 3/4 of 84?",
+    "answer": "63.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t224",
+    "question": "What is 30% of 40?",
+    "answer": "12. (30% means 30/100 of 40.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t225",
+    "question": "What is 30% of 80?",
+    "answer": "24. (30% means 30/100 of 80.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t226",
+    "question": "What is 40% of 100?",
+    "answer": "40. (40% means 40/100 of 100.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t227",
+    "question": "What is 40% of 120?",
+    "answer": "48. (40% means 40/100 of 120.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t228",
+    "question": "What is 40% of 200?",
+    "answer": "80. (40% means 40/100 of 200.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t229",
+    "question": "What is 40% of 60?",
+    "answer": "24. (40% means 40/100 of 60.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t230",
+    "question": "What is 5% of 100?",
+    "answer": "5. (5% means 5/100 of 100.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t231",
+    "question": "What is 5% of 300?",
+    "answer": "15. (5% means 5/100 of 300.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t232",
+    "question": "What is 5% of 40?",
+    "answer": "2. (5% means 5/100 of 40.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t233",
+    "question": "What is always coming but never arrives?",
+    "answer": "Tomorrow.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t234",
+    "question": "What is always in front of you but can’t be seen?",
+    "answer": "The future.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t235",
+    "question": "What is black when it’s clean and white when it’s dirty?",
+    "answer": "A chalkboard.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t236",
+    "question": "What is easy to lift but hard to throw?",
+    "answer": "A feather.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t237",
+    "question": "What is full of holes but still holds water?",
+    "answer": "A sponge.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t238",
+    "question": "What is so fragile that saying its name breaks it?",
+    "answer": "Silence.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t239",
+    "question": "What is the next number: 1, 4, 9, 16, 25, ...?",
+    "answer": "36. These are square numbers.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t240",
+    "question": "What kind of band never plays music?",
+    "answer": "A rubber band.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t241",
+    "question": "What number comes next: 10, 17, 24, 31, 38, ?",
+    "answer": "45. Add 7 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t242",
+    "question": "What number comes next: 11, 19, 27, 35, 43, 51, ?",
+    "answer": "59. Add 8 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t243",
+    "question": "What number comes next: 13, 19, 25, 31, 37, 43, ?",
+    "answer": "49. Add 6 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t244",
+    "question": "What number comes next: 13, 24, 35, 46, 57, 68, 79, ?",
+    "answer": "90. Add 11 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t245",
+    "question": "What number comes next: 14, 16, 18, 20, 22, 24, 26, ?",
+    "answer": "28. Add 2 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t246",
+    "question": "What number comes next: 14, 23, 32, 41, 50, 59, 68, ?",
+    "answer": "77. Add 9 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t247",
+    "question": "What number comes next: 15, 26, 37, 48, 59, 70, 81, ?",
+    "answer": "92. Add 11 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t248",
+    "question": "What number comes next: 16, 21, 26, 31, 36, ?",
+    "answer": "41. Add 5 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t249",
+    "question": "What number comes next: 16, 31, 46, 61, 76, 91, ?",
+    "answer": "106. Add 15 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t250",
+    "question": "What number comes next: 17, 22, 27, 32, 37, ?",
+    "answer": "42. Add 5 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t251",
+    "question": "What number comes next: 18, 23, 28, 33, 38, ?",
+    "answer": "43. Add 5 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t252",
+    "question": "What number comes next: 19, 25, 31, 37, 43, 49, ?",
+    "answer": "55. Add 6 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t253",
+    "question": "What number comes next: 2, 12, 22, 32, 42, 52, ?",
+    "answer": "62. Add 10 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t254",
+    "question": "What number comes next: 2, 7, 12, 17, 22, 27, ?",
+    "answer": "32. Add 5 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t255",
+    "question": "What number comes next: 3, 15, 27, 39, 51, 63, ?",
+    "answer": "75. Add 12 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t256",
+    "question": "What number comes next: 3, 8, 13, 18, 23, 28, 33, ?",
+    "answer": "38. Add 5 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t257",
+    "question": "What number comes next: 3, 9, 15, 21, 27, ?",
+    "answer": "33. Add 6 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t258",
+    "question": "What number comes next: 4, 16, 28, 40, 52, 64, 76, ?",
+    "answer": "88. Add 12 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t259",
+    "question": "What number comes next: 4, 18, 32, 46, 60, 74, ?",
+    "answer": "88. Add 14 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t260",
+    "question": "What number comes next: 4, 6, 8, 10, 12, 14, ?",
+    "answer": "16. Add 2 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t261",
+    "question": "What number comes next: 4, 7, 10, 13, 16, 19, 22, ?",
+    "answer": "25. Add 3 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t262",
+    "question": "What number comes next: 4, 8, 12, 16, 20, 24, 28, ?",
+    "answer": "32. Add 4 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t263",
+    "question": "What number comes next: 6, 19, 32, 45, 58, 71, ?",
+    "answer": "84. Add 13 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t264",
+    "question": "What number comes next: 7, 13, 19, 25, 31, 37, 43, ?",
+    "answer": "49. Add 6 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t265",
+    "question": "What number comes next: 7, 17, 27, 37, 47, 57, ?",
+    "answer": "67. Add 10 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t266",
+    "question": "What number comes next: 7, 22, 37, 52, 67, 82, ?",
+    "answer": "97. Add 15 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t267",
+    "question": "What number comes next: 8, 13, 18, 23, 28, ?",
+    "answer": "33. Add 5 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t268",
+    "question": "What number comes next: 8, 19, 30, 41, 52, ?",
+    "answer": "63. Add 11 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t269",
+    "question": "What number comes next: 9, 17, 25, 33, 41, 49, ?",
+    "answer": "57. Add 8 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t270",
+    "question": "What number comes next: 9, 19, 29, 39, 49, ?",
+    "answer": "59. Add 10 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t271",
+    "question": "What number comes next: 9, 24, 39, 54, 69, 84, ?",
+    "answer": "99. Add 15 each time.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t272",
+    "question": "What number has the same number of letters as its value?",
+    "answer": "Four.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t273",
+    "question": "What runs but never walks?",
+    "answer": "Water (a river).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t274",
+    "question": "Which three positive numbers give the same result when added and multiplied?",
+    "answer": "1, 2, and 3. Both results are 6.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t275",
+    "question": "Without a calculator, what is 10 + 9 × 6?",
+    "answer": "64. Multiply first: 9×6=54, then add 10.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t276",
+    "question": "Without a calculator, what is 11 + 6 × 10?",
+    "answer": "71. Multiply first: 6×10=60, then add 11.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t277",
+    "question": "Without a calculator, what is 12 + 10 × 11?",
+    "answer": "122. Multiply first: 10×11=110, then add 12.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t278",
+    "question": "Without a calculator, what is 12 + 11 × 7?",
+    "answer": "89. Multiply first: 11×7=77, then add 12.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t279",
+    "question": "Without a calculator, what is 12 + 12 × 3?",
+    "answer": "48. Multiply first: 12×3=36, then add 12.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t280",
+    "question": "Without a calculator, what is 12 + 3 × 4?",
+    "answer": "24. Multiply first: 3×4=12, then add 12.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t281",
+    "question": "Without a calculator, what is 12 + 7 × 3?",
+    "answer": "33. Multiply first: 7×3=21, then add 12.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t282",
+    "question": "Without a calculator, what is 12 + 8 × 7?",
+    "answer": "68. Multiply first: 8×7=56, then add 12.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t283",
+    "question": "Without a calculator, what is 2 + 2 × 7?",
+    "answer": "16. Multiply first: 2×7=14, then add 2.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t284",
+    "question": "Without a calculator, what is 2 + 3 × 11?",
+    "answer": "35. Multiply first: 3×11=33, then add 2.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t285",
+    "question": "Without a calculator, what is 2 + 9 × 10?",
+    "answer": "92. Multiply first: 9×10=90, then add 2.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t286",
+    "question": "Without a calculator, what is 4 + 11 × 8?",
+    "answer": "92. Multiply first: 11×8=88, then add 4.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t287",
+    "question": "Without a calculator, what is 4 + 5 × 10?",
+    "answer": "54. Multiply first: 5×10=50, then add 4.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t288",
+    "question": "Without a calculator, what is 4 + 5 × 7?",
+    "answer": "39. Multiply first: 5×7=35, then add 4.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t289",
+    "question": "Without a calculator, what is 5 + 12 × 6?",
+    "answer": "77. Multiply first: 12×6=72, then add 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t290",
+    "question": "Without a calculator, what is 5 + 12 × 7?",
+    "answer": "89. Multiply first: 12×7=84, then add 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t291",
+    "question": "Without a calculator, what is 5 + 5 × 4?",
+    "answer": "25. Multiply first: 5×4=20, then add 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t292",
+    "question": "Without a calculator, what is 5 + 6 × 7?",
+    "answer": "47. Multiply first: 6×7=42, then add 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t293",
+    "question": "Without a calculator, what is 6 + 11 × 5?",
+    "answer": "61. Multiply first: 11×5=55, then add 6.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t294",
+    "question": "Without a calculator, what is 6 + 5 × 8?",
+    "answer": "46. Multiply first: 5×8=40, then add 6.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t295",
+    "question": "Without a calculator, what is 8 + 10 × 12?",
+    "answer": "128. Multiply first: 10×12=120, then add 8.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t296",
+    "question": "Without a calculator, what is 8 + 10 × 2?",
+    "answer": "28. Multiply first: 10×2=20, then add 8.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t297",
+    "question": "Without a calculator, what is 8 + 12 × 12?",
+    "answer": "152. Multiply first: 12×12=144, then add 8.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t298",
+    "question": "Without a calculator, what is 8 + 4 × 9?",
+    "answer": "44. Multiply first: 4×9=36, then add 8.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t299",
+    "question": "Without a calculator, what is 8 + 6 × 3?",
+    "answer": "26. Multiply first: 6×3=18, then add 8.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t300",
+    "question": "Without a calculator, what is 9 + 7 × 3?",
+    "answer": "30. Multiply first: 7×3=21, then add 9.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  }
+]

@@ -1,0 +1,79 @@
+cat > prompts/ollama_generate.txt << 'TXT'
+You generate ONE maths multiple-choice question. Output STRICT SINGLE-LINE JSON ONLY (no markdown, no extra text).
+
+ABSOLUTE RULES:
+- Output must be ONE LINE of JSON (no newline characters in any string).
+- type must be "mcq"
+- Provide exactly 4 options.
+- Exactly ONE option is correct.
+- options must be raw values ONLY (no "A)", "B.", "(C)", "Option D:" anywhere).
+- stem must not contain A/B/C/D labels or option text.
+- The correct option must be unique (no equivalent forms like 0.5 and 1/2 in the same list).
+- If rounding is required, explicitly state it in the stem (e.g., "nearest whole number", "to 2 decimal places").
+- No diagrams/images required. No proof questions.
+
+ASCII-ONLY RULE (MANDATORY):
+- Use ASCII characters only in stem, options, check_expr, check_answer.
+- Use "*" for multiply, "-" for minus, "/" for divide.
+- Use "**" for powers. NEVER use "^", "²", "³", or any Unicode superscripts.
+- NEVER output special math symbols like "×", "·", "–", "−", or invisible characters.
+- If you violate ASCII-only, regenerate.
+
+CRITICAL CONSISTENCY (MUST HOLD):
+- answer_value MUST EXACTLY EQUAL options[answer_index] (same characters).
+- solution MUST EXACTLY EQUAL answer_value.
+- check_answer MUST EXACTLY EQUAL answer_value.
+- The check fields must allow deterministic verification.
+
+CHECK FIELDS (REQUIRED):
+- check_type must be one of:
+  "expr"         (pure numeric expression like 4.75+2.60; NO x)
+  "linear_eq"    (solve equation in x, single solution; MUST include '=' and x)
+  "expand"       (expand algebraic expression in x; NO '=')
+  "pythagoras"   (right triangle legs -> hypotenuse; perfect-square cases only)
+- check_expr must be Sympy-friendly ASCII:
+  - Use * for multiply, / for divide, ** for powers, x as variable.
+  - For linear_eq: "3*x - 5 = 16"
+  - For expr: "(4.75 + 2.60)"
+  - For expand: "4*(2*x - 3)"
+  - For pythagoras: "legs:6,8"
+- check_answer is the canonical answer string Sympy should compute (must equal answer_value).
+
+SKILL → CHECK RULES (MUST FOLLOW):
+- linear_equations_hard, rearrange_formulas: check_type="linear_eq"
+- expand_factorise: check_type="expand"
+- graphs_linear: check_type="expr" AND SUBSTITUTE x so check_expr is numeric-only.
+  Example stem: "For y = 3x - 2, find y when x = 7."
+  check_expr: "3*7 - 2"
+  check_answer: "19"
+- quadratics_evaluate: check_type="expr" AND SUBSTITUTE x so check_expr is numeric-only.
+  Example stem: "For y = 2x^2 - 5x + 1, find y when x = 3."
+  check_expr: "2*(3**2) - 5*3 + 1"
+  check_answer: "4"
+Do NOT output check_expr containing x when check_type="expr".
+
+JSON schema (ALL keys required):
+{
+  "id": "<auto>",
+  "stage": "<KS2|KS3|KS4>",
+  "skill": "<skill>",
+  "difficulty": <1|2|3>,
+  "type": "mcq",
+  "stem": "<question text>",
+  "options": ["<raw>","<raw>","<raw>","<raw>"],
+  "answer_index": <0-3>,
+  "answer_value": "<exactly options[answer_index]>",
+  "hint": "<1 short sentence>",
+  "method": "<2-4 short sentences>",
+  "solution": "<exactly answer_value>",
+  "rationale": "<2-4 short sentences>",
+  "check_type": "<expr|linear_eq|expand|pythagoras>",
+  "check_expr": "<string>",
+  "check_answer": "<exactly answer_value>"
+}
+
+Now generate for:
+stage={{STAGE}}
+skill={{SKILL}}
+difficulty={{DIFFICULTY}}
+TXT

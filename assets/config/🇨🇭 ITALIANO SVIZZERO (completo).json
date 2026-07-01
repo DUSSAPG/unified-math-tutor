@@ -1,0 +1,302 @@
+| ID | Domanda | Risposta |
+| --- | --- | --- |
+| t1 | Sono un numero dispari. Togli una lettera e divento pari. Che numero sono? (gioco di parole inglese: "seven" → "even") | Sette. (In inglese: togli la "s" da "seven" e rimane "even" = pari.) |
+| t2 | Quali tre numeri positivi danno lo stesso risultato sia sommati che moltiplicati? | 1, 2 e 3. Entrambi i risultati sono 6. |
+| t3 | Un contadino ha 17 pecore. Tutte tranne 9 se ne vanno. Quante ne rimangono? | 9 pecore. |
+| t4 | Qual è il prossimo numero: 1, 4, 9, 16, 25, …? | 36. Sono quadrati perfetti. |
+| t5 | Se due sono compagnia e tre sono folla, cosa sono quattro e cinque? | Nove. (quattro + cinque = nove) |
+| t6 | Aggiungo cinque a nove e ottengo due. È corretto. Come? | Su un orologio: cinque ore dopo le 9 sono le 2. |
+| t7 | Quante volte si può sottrarre 10 da 100? | Una volta sola. Dopo si sottrae da 90. |
+| t8 | Un triangolo ha lati di 3 cm, 4 cm e 5 cm. Che tipo di angolo contiene? | Un angolo retto. |
+| t9 | Quale numero ha tante lettere quante il suo valore? | Tre. («tre» ha 3 lettere — adattamento italiano del gioco di parole originale inglese) |
+| t10 | In un cassetto ci sono 12 calzini: 6 blu e 6 rossi. Quanti bisogna prendere al buio per avere un paio abbinato? | 3 calzini. |
+| t11 | Ho le lancette ma non posso applaudire. Cosa sono? | Un orologio. |
+| t12 | Cosa deve essere rotto prima di poter essere usato? | Un uovo. |
+| t13 | Cosa ha un quadrante e due lancette ma né braccia né gambe? | Un orologio. |
+| t14 | Cosa diventa più bagnato più asciuga? | Un asciugamano. |
+| t15 | Cosa ha un collo ma non una testa? | Una bottiglia. |
+| t16 | Cosa ha molti tasti ma non apre nessuna serratura? | Un pianoforte (o una tastiera). |
+| t17 | Cosa può girare il mondo restando in un angolo? | Un francobollo. |
+| t18 | Cosa ha parole ma non parla mai? | Un libro. |
+| t19 | Cosa ha una cruna ma non vede? | Un ago. |
+| t20 | Cosa ha le gambe ma non cammina? | Un tavolo. |
+| t21 | Cosa è pieno di buchi ma trattiene l'acqua? | Una spugna. |
+| t22 | Cosa appare una volta in «minuto», due volte in «momento» e mai in «mille anni»? | La lettera «m». |
+| t23 | Se mi lasci cadere mi rompo; sorridi e ti sorriderò sempre. Cosa sono? | Uno specchio. |
+| t24 | Cosa ha un pollice e quattro dita ma non è una mano? | Un guanto. |
+| t25 | Cosa si può prendere ma non lanciare? | Un raffreddore. |
+| t26 | Cosa sale ma non scende mai? | La tua età. |
+| t27 | Cosa è sempre davanti a te ma non si può vedere? | Il futuro. |
+| t28 | Cosa ha una fine ma non un inizio? | Un bastone. |
+| t29 | Cosa scorre ma non cammina mai? | L'acqua (un fiume). |
+| t30 | Cosa ha un letto ma non dorme mai? | Un fiume. |
+| t31 | Cosa ha una testa, una coda, è marrone e non ha zampe? | Una moneta. |
+| t32 | Cosa inizia con T, finisce con T e contiene tè? | Una teiera. |
+| t33 | Cosa è così fragile che pronunciarne il nome la rompe? | Il silenzio. |
+| t34 | Cosa può riempire una stanza senza occupare spazio? | La luce. |
+| t35 | Quale invenzione permette di vedere attraverso un muro? | Una finestra. |
+| t36 | Cosa è nera quando è pulita e bianca quando è sporca? | Una lavagna. |
+| t37 | Cosa è facile da sollevare ma difficile da lanciare? | Una piuma. |
+| t38 | Cosa ha i denti ma non morde? | Un pettine. |
+| t39 | Quale gruppo non suona mai musica? | Un elastico. |
+| t40 | Cosa ha uno squillo ma non un dito? | Un telefono. |
+| t41 | Cosa ha la corteccia ma non morde? | Un albero. |
+| t42 | Cosa ha una spina dorsale ma non le ossa? | Un libro. |
+| t43 | Cosa ha un occhio ma non un corpo? | Un uragano. |
+| t44 | Cosa ha una coda ma non le zampe e può comunque saltare? | Un aquilone. |
+| t45 | Cosa ha quattro ruote e vola? | Un camion della spazzatura («vola» con i rifiuti). |
+| t46 | Cosa ha un fondo in cima? | Le tue gambe. |
+| t47 | Cosa è sempre in arrivo ma non arriva mai? | Il domani. |
+| t48 | Cosa si può spaccare, fare, raccontare e giocare? | Una barzelletta. |
+| t49 | Trova il prossimo numero: 9, 16, 25, 36, 49, ? | 64. Sono i quadrati da 3² a 8². |
+| t50 | Completa: 27 × 23 = ___ | 621 |
+| t51 | Un rettangolo ha lunghezza 5 cm e larghezza 21 cm. Qual è il suo perimetro? | 52 cm. Perimetro = 2×(5+21). |
+| t52 | Quanto fa il 5% di 40? | 2. |
+| t53 | Trova il prossimo numero: 5, 10, 17, 26, 37, 50, 65, ? | 82. Sono i quadrati da 2² a 9² più 1. |
+| t54 | Se sono le 1:45, che ora sarà tra 25 minuti? | Le 2:10. |
+| t55 | Un rettangolo ha lunghezza 16 cm e larghezza 10 cm. Qual è il suo perimetro? | 52 cm. |
+| t56 | Oggi un genitore ha 38 anni e il figlio 10. Fra 5 anni, quanti anni avranno in totale? | 58. |
+| t57 | Cosa viene dopo: 7, 10, 15, 22, 31, 42, ? | 55. Si aggiungono numeri dispari consecutivi. |
+| t58 | Senza calcolatrice: 4 + 5 × 7 = ? | 39. Prima la moltiplicazione: 5×7=35, poi si aggiunge 4. |
+| t59 | Trova il prossimo numero: 16, 25, 36, 49, 64, ? | 81. Sono i quadrati da 4² a 9². |
+| t60 | Quanto fa ¾ di 60? | 45. |
+| t61 | Senza calcolatrice: 2 + 9 × 10 = ? | 92. |
+| t62 | Trova il prossimo numero: 4, 7, 12, 19, 28, 39, 52, ? | 67. Sono i quadrati da 1² a 8² più 3. |
+| t63 | Senza calcolatrice: 12 + 11 × 7 = ? | 89. |
+| t64 | Se sono le 4:10, che ora sarà tra 10 minuti? | Le 4:20. |
+| t65 | Completa: 47 + 20 = ___ | 67 |
+| t66 | Quanto fa il 40% di 100? | 40. |
+| t67 | Quanto fa ⅔ di 36? | 24. |
+| t68 | Quanto fa ⅕ di 40? | 8. |
+| t69 | Senza calcolatrice: 12 + 12 × 3 = ? | 48. |
+| t70 | Se sono le 11:15, che ora sarà tra 50 minuti? | Le 12:05. |
+| t71 | Completa: 30 − 69 = ___ | −39 |
+| t72 | Un rettangolo ha lunghezza 10 cm e larghezza 24 cm. Qual è il suo perimetro? | 68 cm. |
+| t73 | Quanto fa ⅓ di 24? | 8. |
+| t74 | Quale numero viene dopo: 11, 19, 27, 35, 43, 51, ? | 59. Si aggiunge 8 ogni volta. |
+| t75 | Trova il prossimo numero: 26, 37, 50, 65, 82, 101, 122, ? | 145. Sono i quadrati da 5² a 12² più 1. |
+| t76 | Oggi un genitore ha 43 anni e il figlio 9. Fra 6 anni, quanti anni avranno in totale? | 64. |
+| t77 | Senza calcolatrice: 4 + 5 × 10 = ? | 54. |
+| t78 | Un rettangolo ha lunghezza 11 cm e larghezza 21 cm. Qual è il suo perimetro? | 64 cm. |
+| t79 | Quanto fa il 25% di 200? | 50. |
+| t80 | Completa: 27 + 75 = ___ | 102 |
+| t81 | Quale numero viene dopo: 4, 8, 12, 16, 20, 24, 28, ? | 32. Si aggiunge 4 ogni volta. |
+| t82 | Cosa viene dopo: 7, 10, 15, 22, 31, 42, 55, ? | 70. |
+| t83 | Trova il prossimo numero: 19, 28, 39, 52, 67, 84, 103, ? | 124. Sono i quadrati da 4² a 11² più 3. |
+| t84 | Oggi un genitore ha 38 anni e il figlio 10. Fra 10 anni, quanti anni avranno in totale? | 68. |
+| t85 | Quale numero viene dopo: 4, 16, 28, 40, 52, 64, 76, ? | 88. Si aggiunge 12 ogni volta. |
+| t86 | Senza calcolatrice: 12 + 7 × 3 = ? | 33. |
+| t87 | Senza calcolatrice: 8 + 4 × 9 = ? | 44. |
+| t88 | Quale numero viene dopo: 9, 19, 29, 39, 49, ? | 59. Si aggiunge 10 ogni volta. |
+| t89 | Un rettangolo ha lunghezza 6 cm e larghezza 23 cm. Qual è il suo perimetro? | 58 cm. |
+| t90 | Senza calcolatrice: 12 + 10 × 11 = ? | 122. |
+| t91 | Completa: 29 × 57 = ___ | 1653 |
+| t92 | Un rettangolo ha lunghezza 3 cm e larghezza 22 cm. Qual è il suo perimetro? | 50 cm. |
+| t93 | Quanto fa la metà di 84? | 42. |
+| t94 | Trova il prossimo numero: 11, 18, 27, 38, 51, ? | 66. Sono i quadrati da 3² a 8² più 2. |
+| t95 | Quale numero viene dopo: 8, 19, 30, 41, 52, ? | 63. Si aggiunge 11 ogni volta. |
+| t96 | Trova il prossimo numero: 21, 30, 41, 54, 69, ? | 86. Sono i quadrati da 4² a 9² più 5. |
+| t97 | Un rettangolo ha lunghezza 7 cm e larghezza 7 cm. Qual è il suo perimetro? | 28 cm. |
+| t98 | Oggi un genitore ha 35 anni e il figlio 10. Fra 7 anni, quanti anni avranno in totale? | 59. |
+| t99 | Un rettangolo ha lunghezza 22 cm e larghezza 16 cm. Qual è il suo perimetro? | 76 cm. |
+| t100 | Completa: 79 × 98 = ___ | 7742 |
+| t101 | Senza calcolatrice: 8 + 12 × 12 = ? | 152. |
+| t102 | Quanto fa ¾ di 84? | 63. |
+| t103 | Oggi un genitore ha 33 anni e il figlio 6. Fra 6 anni, quanti anni avranno in totale? | 51. |
+| t104 | Trova il prossimo numero: 3, 6, 11, 18, 27, 38, 51, ? | 66. Sono i quadrati da 1² a 8² più 2. |
+| t105 | Un rettangolo ha lunghezza 10 cm e larghezza 21 cm. Qual è il suo perimetro? | 62 cm. |
+| t106 | Completa: 10 + 19 = ___ | 29 |
+| t107 | Completa: 18 + 14 = ___ | 32 |
+| t108 | Un rettangolo ha lunghezza 10 cm e larghezza 11 cm. Qual è il suo perimetro? | 42 cm. |
+| t109 | Oggi un genitore ha 31 anni e il figlio 7. Fra 10 anni, quanti anni avranno in totale? | 58. |
+| t110 | Se sono le 8:20, che ora sarà tra 45 minuti? | Le 9:05. |
+| t111 | Quanto fa il 10% di 80? | 8. |
+| t112 | Trova il prossimo numero: 21, 30, 41, 54, 69, 86, ? | 105. Sono i quadrati da 4² a 10² più 5. |
+| t113 | Quanto fa il 40% di 200? | 80. |
+| t114 | Quale numero viene dopo: 4, 6, 8, 10, 12, 14, ? | 16. Si aggiunge 2 ogni volta. |
+| t115 | Quanto fa ⅓ di 30? | 10. |
+| t116 | Completa: 34 + 78 = ___ | 112 |
+| t117 | Quanto fa il 20% di 60? | 12. |
+| t118 | Oggi un genitore ha 29 anni e il figlio 7. Fra 8 anni, quanti anni avranno in totale? | 52. |
+| t119 | Un rettangolo ha lunghezza 6 cm e larghezza 4 cm. Qual è il suo perimetro? | 20 cm. |
+| t120 | Un rettangolo ha lunghezza 3 cm e larghezza 5 cm. Qual è il suo perimetro? | 16 cm. |
+| t121 | Completa: 31 − 62 = ___ | −31 |
+| t122 | Completa: 61 − 17 = ___ | 44 |
+| t123 | Quale numero viene dopo: 13, 19, 25, 31, 37, 43, ? | 49. Si aggiunge 6 ogni volta. |
+| t124 | Senza calcolatrice: 8 + 10 × 12 = ? | 128. |
+| t125 | Oggi un genitore ha 33 anni e il figlio 7. Fra 7 anni, quanti anni avranno in totale? | 54. |
+| t126 | Completa: 17 + 84 = ___ | 101 |
+| t127 | Quanto fa la metà di 24? | 12. |
+| t128 | Se sono le 8:45, che ora sarà tra 50 minuti? | Le 9:35. |
+| t129 | Cosa viene dopo: 1, 4, 9, 16, 25, 36, 49, ? | 64. |
+| t130 | Trova il prossimo numero: 14, 19, 26, 35, 46, ? | 59. Sono i quadrati da 2² a 7² più 10. |
+| t131 | Se sono le 2:55, che ora sarà tra 25 minuti? | Le 3:20. |
+| t132 | Quanto fa il 15% di 50? | 7,5. |
+| t133 | Se sono le 10:05, che ora sarà tra 15 minuti? | Le 10:20. |
+| t134 | Quanto fa il 25% di 300? | 75. |
+| t135 | Senza calcolatrice: 5 + 12 × 7 = ? | 89. |
+| t136 | Completa: 43 × 60 = ___ | 2580 |
+| t137 | Senza calcolatrice: 9 + 7 × 3 = ? | 30. |
+| t138 | Quale numero viene dopo: 15, 26, 37, 48, 59, 70, 81, ? | 92. Si aggiunge 11 ogni volta. |
+| t139 | Trova il prossimo numero: 25, 36, 49, 64, 81, ? | 100. Sono i quadrati da 5² a 10². |
+| t140 | Un rettangolo ha lunghezza 11 cm e larghezza 7 cm. Qual è il suo perimetro? | 36 cm. |
+| t141 | Quanto fa ⅓ di 48? | 16. |
+| t142 | Oggi un genitore ha 41 anni e il figlio 12. Fra 10 anni, quanti anni avranno in totale? | 73. |
+| t143 | Un rettangolo ha lunghezza 3 cm e larghezza 24 cm. Qual è il suo perimetro? | 54 cm. |
+| t144 | Un rettangolo ha lunghezza 12 cm e larghezza 24 cm. Qual è il suo perimetro? | 72 cm. |
+| t145 | Trova il prossimo numero: 10, 17, 26, 37, 50, ? | 65. Sono i quadrati da 3² a 8² più 1. |
+| t146 | Trova il prossimo numero: 30, 41, 54, 69, 86, ? | 105. Sono i quadrati da 5² a 10² più 5. |
+| t147 | Senza calcolatrice: 6 + 11 × 5 = ? | 61. |
+| t148 | Senza calcolatrice: 10 + 9 × 6 = ? | 64. |
+| t149 | Quale numero viene dopo: 3, 15, 27, 39, 51, 63, ? | 75. Si aggiunge 12 ogni volta. |
+| t150 | Senza calcolatrice: 2 + 2 × 7 = ? | 16. |
+| t151 | Cosa viene dopo: 5, 8, 13, 20, 29, ? | 40. |
+| t152 | Oggi un genitore ha 43 anni e il figlio 10. Fra 10 anni, quanti anni avranno in totale? | 73. |
+| t153 | Quale numero viene dopo: 4, 7, 10, 13, 16, 19, 22, ? | 25. Si aggiunge 3 ogni volta. |
+| t154 | Cosa viene dopo: 9, 12, 17, 24, 33, ? | 44. |
+| t155 | Quanto fa ¾ di 120? | 90. |
+| t156 | Cosa viene dopo: 7, 10, 15, 22, 31, ? | 42. |
+| t157 | Quale numero viene dopo: 10, 17, 24, 31, 38, ? | 45. Si aggiunge 7 ogni volta. |
+| t158 | Completa: 95 × 23 = ___ | 2185 |
+| t159 | Quanto fa il 15% di 60? | 9. |
+| t160 | Cosa viene dopo: 3, 6, 11, 18, 27, 38, ? | 51. |
+| t161 | Quale numero viene dopo: 6, 19, 32, 45, 58, 71, ? | 84. Si aggiunge 13 ogni volta. |
+| t162 | Quanto fa il 20% di 80? | 16. |
+| t163 | Cosa viene dopo: 2, 5, 10, 17, 26, 37, ? | 50. |
+| t164 | Quale numero viene dopo: 16, 21, 26, 31, 36, ? | 41. Si aggiunge 5 ogni volta. |
+| t165 | Oggi un genitore ha 37 anni e il figlio 8. Fra 6 anni, quanti anni avranno in totale? | 57. |
+| t166 | Completa: 13 − 94 = ___ | −81 |
+| t167 | Quanto fa 2/5 di 48? | 19,2. |
+| t168 | Trova il prossimo numero: 19, 26, 35, 46, 59, 74, ? | 91. Sono i quadrati da 3² a 9² più 10. |
+| t169 | Un rettangolo ha lunghezza 15 cm e larghezza 24 cm. Qual è il suo perimetro? | 78 cm. |
+| t170 | Un rettangolo ha lunghezza 13 cm e larghezza 3 cm. Qual è il suo perimetro? | 32 cm. |
+| t171 | Trova il prossimo numero: 6, 11, 18, 27, 38, 51, 66, ? | 83. Sono i quadrati da 2² a 9² più 2. |
+| t172 | Senza calcolatrice: 2 + 3 × 11 = ? | 35. |
+| t173 | Quanto fa il 25% di 120? | 30. |
+| t174 | Quanto fa il 10% di 300? | 30. |
+| t175 | Quale numero viene dopo: 14, 16, 18, 20, 22, 24, 26, ? | 28. Si aggiunge 2 ogni volta. |
+| t176 | Un rettangolo ha lunghezza 24 cm e larghezza 24 cm. Qual è il suo perimetro? | 96 cm. |
+| t177 | Completa: 56 × 65 = ___ | 3640 |
+| t178 | Quanto fa ⅔ di 120? | 80. |
+| t179 | Trova il prossimo numero: 14, 21, 30, 41, 54, 69, 86, ? | 105. Sono i quadrati da 3² a 10² più 5. |
+| t180 | Senza calcolatrice: 12 + 8 × 7 = ? | 68. |
+| t181 | Quanto fa il 12% di 100? | 12. |
+| t182 | Completa: 63 × 95 = ___ | 5985 |
+| t183 | Cosa viene dopo: 10, 13, 18, 25, 34, 45, 58, ? | 73. |
+| t184 | Senza calcolatrice: 8 + 10 × 2 = ? | 28. |
+| t185 | Senza calcolatrice: 6 + 5 × 8 = ? | 46. |
+| t186 | Se sono le 10:55, che ora sarà tra 35 minuti? | Le 11:30. |
+| t187 | Un rettangolo ha lunghezza 18 cm e larghezza 8 cm. Qual è il suo perimetro? | 52 cm. |
+| t188 | Trova il prossimo numero: 27, 38, 51, 66, 83, 102, 123, ? | 146. Sono i quadrati da 5² a 12² più 2. |
+| t189 | Se sono le 6:10, che ora sarà tra 25 minuti? | Le 6:35. |
+| t190 | Senza calcolatrice: 5 + 5 × 4 = ? | 25. |
+| t191 | Quale numero viene dopo: 2, 7, 12, 17, 22, 27, ? | 32. Si aggiunge 5 ogni volta. |
+| t192 | Se sono le 2:40, che ora sarà tra 40 minuti? | Le 3:20. |
+| t193 | Se sono le 4:35, che ora sarà tra 45 minuti? | Le 5:20. |
+| t194 | Quanto fa il 12% di 80? | 9,6. |
+| t195 | Quale numero viene dopo: 4, 18, 32, 46, 60, 74, ? | 88. Si aggiunge 14 ogni volta. |
+| t196 | Completa: 32 − 99 = ___ | −67 |
+| t197 | Quale numero viene dopo: 18, 23, 28, 33, 38, ? | 43. Si aggiunge 5 ogni volta. |
+| t198 | Oggi un genitore ha 41 anni e il figlio 7. Fra 10 anni, quanti anni avranno in totale? | 68. |
+| t199 | Un rettangolo ha lunghezza 22 cm e larghezza 13 cm. Qual è il suo perimetro? | 70 cm. |
+| t200 | Oggi un genitore ha 42 anni e il figlio 7. Fra 8 anni, quanti anni avranno in totale? | 65. |
+| t201 | Senza calcolatrice: 5 + 12 × 6 = ? | 77. |
+| t202 | Un rettangolo ha lunghezza 18 cm e larghezza 23 cm. Qual è il suo perimetro? | 82 cm. |
+| t203 | Completa: 45 × 66 = ___ | 2970 |
+| t204 | Senza calcolatrice: 5 + 6 × 7 = ? | 47. |
+| t205 | Quanto fa la metà di 96? | 48. |
+| t206 | Cosa viene dopo: 3, 6, 11, 18, 27, ? | 38. |
+| t207 | Trova il prossimo numero: 19, 28, 39, 52, 67, 84, ? | 103. Sono i quadrati da 4² a 10² più 3. |
+| t208 | Un rettangolo ha lunghezza 17 cm e larghezza 16 cm. Qual è il suo perimetro? | 66 cm. |
+| t209 | Quale numero viene dopo: 7, 22, 37, 52, 67, 82, ? | 97. Si aggiunge 15 ogni volta. |
+| t210 | Quanto fa il 30% di 40? | 12. |
+| t211 | Oggi un genitore ha 37 anni e il figlio 6. Fra 7 anni, quanti anni avranno in totale? | 57. |
+| t212 | Quanto fa il 15% di 200? | 30. |
+| t213 | Oggi un genitore ha 35 anni e il figlio 7. Fra 8 anni, quanti anni avranno in totale? | 58. |
+| t214 | Oggi un genitore ha 38 anni e il figlio 6. Fra 7 anni, quanti anni avranno in totale? | 58. |
+| t215 | Quanto fa il 40% di 60? | 24. |
+| t216 | Quale numero viene dopo: 13, 24, 35, 46, 57, 68, 79, ? | 90. Si aggiunge 11 ogni volta. |
+| t217 | Cosa viene dopo: 8, 11, 16, 23, 32, ? | 43. |
+| t218 | Quale numero viene dopo: 9, 17, 25, 33, 41, 49, ? | 57. Si aggiunge 8 ogni volta. |
+| t219 | Completa: 68 − 51 = ___ | 17 |
+| t220 | Senza calcolatrice: 8 + 6 × 3 = ? | 26. |
+| t221 | Oggi un genitore ha 27 anni e il figlio 6. Fra 7 anni, quanti anni avranno in totale? | 47. |
+| t222 | Completa: 93 + 18 = ___ | 111 |
+| t223 | Quale numero viene dopo: 8, 13, 18, 23, 28, ? | 33. Si aggiunge 5 ogni volta. |
+| t224 | Se sono le 3:20, che ora sarà tra 20 minuti? | Le 3:40. |
+| t225 | Oggi un genitore ha 34 anni e il figlio 11. Fra 10 anni, quanti anni avranno in totale? | 65. |
+| t226 | Completa: 69 − 99 = ___ | −30 |
+| t227 | Trova il prossimo numero: 14, 19, 26, 35, 46, 59, ? | 74. Sono i quadrati da 2² a 8² più 10. |
+| t228 | Trova il prossimo numero: 5, 8, 13, 20, 29, 40, ? | 53. Sono i quadrati da 1² a 7² più 4. |
+| t229 | Se sono le 11:35, che ora sarà tra 40 minuti? | Le 12:15. |
+| t230 | Completa: 19 × 85 = ___ | 1615 |
+| t231 | Completa: 23 × 99 = ___ | 2277 |
+| t232 | Se sono le 2:50, che ora sarà tra 10 minuti? | Le 3:00. |
+| t233 | Quanto fa ¼ di 96? | 24. |
+| t234 | Quanto fa ¾ di 30? | 22,5. |
+| t235 | Quanto fa 2/5 di 24? | 9,6. |
+| t236 | Quanto fa il 10% di 240? | 24. |
+| t237 | Quanto fa il 40% di 120? | 48. |
+| t238 | Un rettangolo ha lunghezza 23 cm e larghezza 11 cm. Qual è il suo perimetro? | 68 cm. |
+| t239 | Se sono le 9:40, che ora sarà tra 45 minuti? | Le 10:25. |
+| t240 | Quanto fa il 25% di 100? | 25. |
+| t241 | Completa: 21 + 45 = ___ | 66 |
+| t242 | Oggi un genitore ha 42 anni e il figlio 10. Fra 7 anni, quanti anni avranno in totale? | 66. |
+| t243 | Quale numero viene dopo: 16, 31, 46, 61, 76, 91, ? | 106. Si aggiunge 15 ogni volta. |
+| t244 | Quanto fa ⅔ di 48? | 32. |
+| t245 | Senza calcolatrice: 11 + 6 × 10 = ? | 71. |
+| t246 | Quale numero viene dopo: 17, 22, 27, 32, 37, ? | 42. Si aggiunge 5 ogni volta. |
+| t247 | Completa: 62 + 72 = ___ | 134 |
+| t248 | Oggi un genitore ha 46 anni e il figlio 11. Fra 8 anni, quanti anni avranno in totale? | 73. |
+| t249 | Quale numero viene dopo: 3, 9, 15, 21, 27, ? | 33. Si aggiunge 6 ogni volta. |
+| t250 | Se sono le 6:40, che ora sarà tra 50 minuti? | Le 7:30. |
+| t251 | Un rettangolo ha lunghezza 14 cm e larghezza 16 cm. Qual è il suo perimetro? | 60 cm. |
+| t252 | Un rettangolo ha lunghezza 13 cm e larghezza 14 cm. Qual è il suo perimetro? | 54 cm. |
+| t253 | Oggi un genitore ha 37 anni e il figlio 8. Fra 7 anni, quanti anni avranno in totale? | 59. |
+| t254 | Completa: 25 + 34 = ___ | 59 |
+| t255 | Un rettangolo ha lunghezza 25 cm e larghezza 8 cm. Qual è il suo perimetro? | 66 cm. |
+| t256 | Completa: 37 × 71 = ___ | 2627 |
+| t257 | Se sono le 9:50, che ora sarà tra 30 minuti? | Le 10:20. |
+| t258 | Completa: 56 + 32 = ___ | 88 |
+| t259 | Un rettangolo ha lunghezza 7 cm e larghezza 11 cm. Qual è il suo perimetro? | 36 cm. |
+| t260 | Quale numero viene dopo: 2, 12, 22, 32, 42, 52, ? | 62. Si aggiunge 10 ogni volta. |
+| t261 | Quale numero viene dopo: 19, 25, 31, 37, 43, 49, ? | 55. Si aggiunge 6 ogni volta. |
+| t262 | Oggi un genitore ha 39 anni e il figlio 9. Fra 6 anni, quanti anni avranno in totale? | 60. |
+| t263 | Quale numero viene dopo: 9, 24, 39, 54, 69, 84, ? | 99. Si aggiunge 15 ogni volta. |
+| t264 | Trova il prossimo numero: 11, 14, 19, 26, 35, 46, ? | 59. Sono i quadrati da 1² a 7² più 10. |
+| t265 | Oggi un genitore ha 27 anni e il figlio 6. Fra 6 anni, quanti anni avranno in totale? | 45. |
+| t266 | Cosa viene dopo: 10, 13, 18, 25, 34, 45, ? | 58. |
+| t267 | Trova il prossimo numero: 2, 5, 10, 17, 26, 37, 50, ? | 65. Sono i quadrati da 1² a 8² più 1. |
+| t268 | Quanto fa il 30% di 80? | 24. |
+| t269 | Oggi un genitore ha 38 anni e il figlio 9. Fra 10 anni, quanti anni avranno in totale? | 67. |
+| t270 | Quanto fa il 5% di 100? | 5. |
+| t271 | Se sono le 2:20, che ora sarà tra 25 minuti? | Le 2:45. |
+| t272 | Senza calcolatrice: 12 + 3 × 4 = ? | 24. |
+| t273 | Completa: 32 + 80 = ___ | 112 |
+| t274 | Quale numero viene dopo: 14, 23, 32, 41, 50, 59, 68, ? | 77. Si aggiunge 9 ogni volta. |
+| t275 | Se sono le 8:25, che ora sarà tra 10 minuti? | Le 8:35. |
+| t276 | Completa: 46 − 46 = ___ | 0 |
+| t277 | Trova il prossimo numero: 9, 14, 21, 30, 41, 54, ? | 69. Sono i quadrati da 2² a 8² più 5. |
+| t278 | Se sono le 11:20, che ora sarà tra 40 minuti? | Le 12:00. |
+| t279 | Trova il prossimo numero: 8, 13, 20, 29, 40, 53, 68, ? | 85. Sono i quadrati da 2² a 9² più 4. |
+| t280 | Trova il prossimo numero: 4, 9, 16, 25, 36, 49, ? | 64. Sono i quadrati da 2² a 8². |
+| t281 | Se sono le 10:25, che ora sarà tra 45 minuti? | Le 11:10. |
+| t282 | Trova il prossimo numero: 12, 19, 28, 39, 52, 67, 84, ? | 103. Sono i quadrati da 3² a 10² più 3. |
+| t283 | Oggi un genitore ha 27 anni e il figlio 6. Fra 8 anni, quanti anni avranno in totale? | 49. |
+| t284 | Quale numero viene dopo: 3, 8, 13, 18, 23, 28, 33, ? | 38. Si aggiunge 5 ogni volta. |
+| t285 | Se sono le 10:05, che ora sarà tra 30 minuti? | Le 10:35. |
+| t286 | Se sono le 1:15, che ora sarà tra 45 minuti? | Le 2:00. |
+| t287 | Un rettangolo ha lunghezza 23 cm e larghezza 17 cm. Qual è il suo perimetro? | 80 cm. |
+| t288 | Senza calcolatrice: 4 + 11 × 8 = ? | 92. |
+| t289 | Oggi un genitore ha 41 anni e il figlio 6. Fra 7 anni, quanti anni avranno in totale? | 61. |
+| t290 | Quanto fa il 20% di 240? | 48. |
+| t291 | Quanto fa il 5% di 300? | 15. |
+| t292 | Oggi un genitore ha 36 anni e il figlio 6. Fra 7 anni, quanti anni avranno in totale? | 56. |
+| t293 | Quanto fa 2/5 di 30? | 12. |
+| t294 | Quale numero viene dopo: 7, 17, 27, 37, 47, 57, ? | 67. Si aggiunge 10 ogni volta. |
+| t295 | Se sono le 8:55, che ora sarà tra 45 minuti? | Le 9:40. |
+| t296 | Quale numero viene dopo: 7, 13, 19, 25, 31, 37, 43, ? | 49. Si aggiunge 6 ogni volta. |
+| t297 | Cosa viene dopo: 5, 8, 13, 20, 29, 40, ? | 53. |
+| t298 | Oggi un genitore ha 26 anni e il figlio 6. Fra 10 anni, quanti anni avranno in totale? | 52. |
+| t299 | Completa: 30 + 49 = ___ | 79 |
+| t300 | Un rettangolo ha lunghezza 16 cm e larghezza 5 cm. Qual è il suo perimetro? | 42 cm. |

@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "topics": [
+    {
+      "id": "number_place_value",
+      "aliases": ["Number & Place Value", "Number", "Place value"],
+      "locales": {
+        "en": {
+          "title": "Number & Place Value",
+          "subtitle": "Place value, rounding & estimation"
+        },
+        "en-GB": {
+          "title": "Number & Place Value",
+          "subtitle": "Place value, rounding & estimation"
+        },
+        "fr-CH": {
+          "title": "Nombres et valeur de position",
+          "subtitle": "Valeur de position, arrondi et estimation"
+        },
+        "de-CH": {
+          "title": "Zahlen und Stellenwert",
+          "subtitle": "Stellenwert, Runden und Schatzen"
+        },
+        "it-CH": {
+          "title": "Numeri e valore posizionale",
+          "subtitle": "Valore posizionale, arrotondamento e stime"
+        }
+      }
+    },
+    {
+      "id": "fractions",
+      "aliases": ["Fractions", "Fraction", "Fractions multiply/divide"],
+      "locales": {
+        "en": {"title": "Fractions", "subtitle": "Operations with fractions"},
+        "en-GB": {"title": "Fractions", "subtitle": "Operations with fractions"},
+        "fr-CH": {"title": "Les fractions", "subtitle": "Operations avec les fractions"},
+        "de-CH": {"title": "Brueche", "subtitle": "Rechnen mit Bruechen"},
+        "it-CH": {"title": "Frazioni", "subtitle": "Operazioni con le frazioni"}
+      }
+    },
+    {
+      "id": "decimals",
+      "aliases": ["Decimals", "Decimal"],
+      "locales": {
+        "en": {"title": "Decimals", "subtitle": "Decimal operations & conversions"},
+        "en-GB": {"title": "Decimals", "subtitle": "Decimal operations & conversions"},
+        "fr-CH": {"title": "Nombres decimaux", "subtitle": "Operations et conversions decimales"},
+        "de-CH": {"title": "Dezimalzahlen", "subtitle": "Rechnen und Umwandeln mit Dezimalzahlen"},
+        "it-CH": {"title": "Numeri decimali", "subtitle": "Operazioni e conversioni decimali"}
+      }
+    },
+    {
+      "id": "percentages",
+      "aliases": ["Percentages", "Percentage"],
+      "locales": {
+        "en": {"title": "Percentages", "subtitle": "Percentages, increase & decrease"},
+        "en-GB": {"title": "Percentages", "subtitle": "Percentages, increase & decrease"},
+        "fr-CH": {"title": "Pourcentages", "subtitle": "Pourcentages, augmentation et diminution"},
+        "de-CH": {"title": "Prozente", "subtitle": "Prozente, Zunahme und Abnahme"},
+        "it-CH": {"title": "Percentuali", "subtitle": "Percentuali, aumenti e diminuzioni"}
+      }
+    },
+    {
+      "id": "ratio_proportion",
+      "aliases": ["Ratio & Proportion", "Ratio", "Proportion"],
+      "locales": {
+        "en": {"title": "Ratio & Proportion", "subtitle": "Ratios, rates & proportional reasoning"},
+        "en-GB": {"title": "Ratio & Proportion", "subtitle": "Ratios, rates & proportional reasoning"},
+        "fr-CH": {"title": "Rapports et proportionnalite", "subtitle": "Rapports, taux et raisonnement proportionnel"},
+        "de-CH": {"title": "Verhaeltnisse und Proportionen", "subtitle": "Verhaeltnisse, Raten und proportionales Denken"},
+        "it-CH": {"title": "Rapporti e proporzioni", "subtitle": "Rapporti, tassi e ragionamento proporzionale"}
+      }
+    },
+    {
+      "id": "algebra",
+      "aliases": ["Algebra", "Equations", "Expressions"],
+      "locales": {
+        "en": {"title": "Algebra", "subtitle": "Equations, expressions & variables"},
+        "en-GB": {"title": "Algebra", "subtitle": "Equations, expressions & variables"},
+        "fr-CH": {"title": "Algebre", "subtitle": "Equations, expressions et variables"},
+        "de-CH": {"title": "Algebraische Terme", "subtitle": "Gleichungen, Terme und Variablen"},
+        "it-CH": {"title": "Algebra e variabili", "subtitle": "Equazioni, espressioni e variabili"}
+      }
+    },
+    {
+      "id": "geometry_measures",
+      "aliases": ["Geometry & Measures", "Geometry", "Measures", "Shapes", "Angles"],
+      "locales": {
+        "en": {"title": "Geometry & Measures", "subtitle": "Shapes, angles & spatial reasoning"},
+        "en-GB": {"title": "Geometry & Measures", "subtitle": "Shapes, angles & spatial reasoning"},
+        "fr-CH": {"title": "Geometrie et mesures", "subtitle": "Formes, angles et raisonnement spatial"},
+        "de-CH": {"title": "Geometrie und Messen", "subtitle": "Formen, Winkel und raeumliches Denken"},
+        "it-CH": {"title": "Geometria e misure", "subtitle": "Figure, angoli e ragionamento spaziale"}
+      }
+    },
+    {
+      "id": "statistics_probability",
+      "aliases": ["Statistics & Probability", "Statistics", "Probability", "Data handling"],
+      "locales": {
+        "en": {"title": "Statistics & Probability", "subtitle": "Data handling & probability"},
+        "en-GB": {"title": "Statistics & Probability", "subtitle": "Data handling & probability"},
+        "fr-CH": {"title": "Statistiques et probabilites", "subtitle": "Traitement des donnees et probabilites"},
+        "de-CH": {"title": "Statistik und Wahrscheinlichkeit", "subtitle": "Daten auswerten und Wahrscheinlichkeiten"},
+        "it-CH": {"title": "Statistica e probabilita", "subtitle": "Gestione dei dati e probabilita"}
+      }
+    },
+    {
+      "id": "calculus",
+      "aliases": ["Calculus", "Differentiation", "Integration"],
+      "locales": {
+        "en": {"title": "Calculus", "subtitle": "Differentiation & integration"},
+        "en-GB": {"title": "Calculus", "subtitle": "Differentiation & integration"},
+        "fr-CH": {"title": "Analyse", "subtitle": "Derivation et integration"},
+        "de-CH": {"title": "Analysis", "subtitle": "Differenzieren und Integrieren"},
+        "it-CH": {"title": "Analisi", "subtitle": "Derivazione e integrazione"}
+      }
+    },
+    {
+      "id": "trigonometry",
+      "aliases": ["Trigonometry", "Sin", "Cos", "Tan"],
+      "locales": {
+        "en": {"title": "Trigonometry", "subtitle": "Sin, cos, tan & triangle geometry"},
+        "en-GB": {"title": "Trigonometry", "subtitle": "Sin, cos, tan & triangle geometry"},
+        "fr-CH": {"title": "Trigonometrie", "subtitle": "Sinus, cosinus, tangente et geometrie des triangles"},
+        "de-CH": {"title": "Trigonometrie", "subtitle": "Sinus, Kosinus, Tangens und Dreiecksgeometrie"},
+        "it-CH": {"title": "Trigonometria", "subtitle": "Seno, coseno, tangente e geometria dei triangoli"}
+      }
+    },
+    {
+      "id": "mixed_review",
+      "aliases": ["General Practice", "Mixed Review", "Mixed review"],
+      "locales": {
+        "en": {"title": "General Practice", "subtitle": "Mixed review across topics"},
+        "en-GB": {"title": "General Practice", "subtitle": "Mixed review across topics"},
+        "fr-CH": {"title": "Entrainement general", "subtitle": "Revision mixte de plusieurs themes"},
+        "de-CH": {"title": "Allgemeines Ueben", "subtitle": "Gemischte Wiederholung mehrerer Themen"},
+        "it-CH": {"title": "Esercizio generale", "subtitle": "Ripasso misto di piu argomenti"}
+      }
+    }
+  ]
+}

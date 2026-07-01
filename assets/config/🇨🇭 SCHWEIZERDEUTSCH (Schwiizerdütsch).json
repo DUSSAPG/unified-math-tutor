@@ -1,0 +1,302 @@
+| ID | Frag | Antwort |
+| --- | --- | --- |
+| t1 | Ich bin e ungerade Zahl. Nimmsch mr e Buechstabe weg, wird i grad. Weli Zahl bin ich? (Wortspiil uf Änglisch: „seven" → „even") | Seve (seven). (Uf Änglisch: nimmt mer s „s" vo „seven" weg, blibt „even" = grad.) |
+| t2 | Weli drei positive Zahle gänd dasselb Ergebnis, wenn me si addiert und multipliziert? | 1, 2 und 3. Bedi Ergebnis sind 6. |
+| t3 | En Buur het 17 Schaaf. Alli ussert 9 laufed ewäg. Wie vieli blibid übrig? | 9 Schaaf. |
+| t4 | Was chunnt als nächschts: 1, 4, 9, 16, 25, …? | 36. Das sind Quadratzahle. |
+| t5 | Wenn zwei e Gsellschaft sind und drei e Gedränge, was sind vier und füüf? | Nüün. (vier + füüf = nüün) |
+| t6 | Ich addier füüf zu nüün und krieg zwei. Das stimmt. Wie? | Uf em Zifferblatt: füüf Stund nach 9 Uhr isch 2 Uhr. |
+| t7 | Wie oft chan me 10 vo 100 abzieh? | Einisch. Dernach zieht me vo 90 ab. |
+| t8 | Es Drüeck het Siite vo 3 cm, 4 cm und 5 cm. Was für en Winkel het's? | En rechte Winkel. |
+| t9 | Weli Zahl het gliich vil Buechstabe wie ihri Wert? | (Uf Änglisch isch's „four" mit 4 Buechstabe. Uf Dütsch passt's nöd gnau — am nächschte chunnt „drei" oder „vier".) |
+| t10 | In eme Schubled sind 12 Socke: 6 blaui und 6 roti. Wie vieli mues me im Dunkle use neh, um sicher es passendes Paar z'ha? | 3 Socke. |
+| t11 | Ich ha Zeiger, aber ich chan nöd klasche. Was bin ich? | E Uhr. |
+| t12 | Was mues kaputtgah, bevor me's bruuche chan? | Es Ei. |
+| t13 | Was het es Zifferblatt und zwei Zeiger, aber keni Arm und keni Bei? | E Uhr. |
+| t14 | Was wird nässer, je meh's trochnet? | Es Tuech (Handtuch). |
+| t15 | Was het en Hals, aber kei Chopf? | E Flasche. |
+| t16 | Was het vieli Taste, aber chan kei Schloss ufmache? | Es Klavier (oder e Tastatur). |
+| t17 | Was chan d'Welt umrundiere und blibt doch in eme Eck? | En Brifmarkä. |
+| t18 | Was het Wörter, redt aber nie? | Es Buech. |
+| t19 | Was het es Öhr, aber gseht nüüt? | E Nadel. |
+| t20 | Was het Bei, aber gaht nöd? | Es Tisch. |
+| t21 | Was isch volle Löcher, haltet aber trotzdem Wasser? | En Schwamm. |
+| t22 | Was chunnt einisch in „Minute", zweimol in „Moment" und nie in „tuusig Joor"? | De Buechstab „m". |
+| t23 | Wenn me mich fallenlot, zerbrech i; lachsch me mich aa, lach i immer zruck. Was bin ich? | En Spiegel. |
+| t24 | Was het en Daume und vier Finger, aber isch kei Hand? | En Handschue. |
+| t25 | Was chan me erwüsche, aber nöd wärfe? | En Schnupfe. |
+| t26 | Was gaht uuf, aber chunnt nie meh abe? | Dis Alter. |
+| t27 | Was isch immer vor dir, aber chan nöd gsee werde? | D'Zukunft. |
+| t28 | Was het es End, aber kein Afang? | En Stecke. |
+| t29 | Was rünnt, aber gaht nie? | s'Wasser (en Fluss). |
+| t30 | Was het es Bett, aber schloft nie? | En Fluss. |
+| t31 | Was het en Chopf, en Schwanz, isch bruu und het kei Bei? | E Münz. |
+| t32 | Was fangt mit T aa, hört mit T uuf und het Tee drin? | E Teekanne. |
+| t33 | Was isch so zerbrechlich, dass wenn me's usspricht, es zerbricht? | D'Stilli. |
+| t34 | Was chan en ganze Ruum fülle, aber nimmt kein Platz ii? | s'Liecht. |
+| t35 | Weli Erfindung löt eim dur e Wand luege? | Es Fänschter. |
+| t36 | Was isch schwarz, wenn's sauber isch, und wiiss, wenn's dreckig isch? | En Schultafe. |
+| t37 | Was isch liicht zum Hebe, aber schwer zum Wärfe? | En Federe. |
+| t38 | Was het Zähn, aber bisst nöd? | En Kamm. |
+| t39 | Weli Band spielt nie Musik? | Es Gummibändel. |
+| t40 | Was het es Lüüte, aber kein Finger? | Es Telefon. |
+| t41 | Was het e Rinde, aber bisst nöd? | En Baum. |
+| t42 | Was het en Rügge, aber kein Chnooche? | Es Buech. |
+| t43 | Was het es Auge, aber kein Körper? | En Hurrikan. |
+| t44 | Was het en Schwanz, aber kei Bei und chan trotzdem springe? | En Drache (Lenkdrache). |
+| t45 | Was het vier Reder und fliegt? | En Güselwage („fliegt" mit em Abfall). |
+| t46 | Was het en Bode oobe? | Dini Bei. |
+| t47 | Was chunnt immer, aber chunnt nie aa? | De Morge. |
+| t48 | Was chan me cracke, mache, verzelle und spiele? | En Witz. |
+| t49 | Finde d'nächste Zahl: 9, 16, 25, 36, 49, ? | 64. Das sind d'Quadrate vo 3² bis 8². |
+| t50 | Ergänze: 27 × 23 = ___ | 621 |
+| t51 | En Rechteck het e Längi vo 5 cm und e Breiti vo 21 cm. Was isch sin Umfang? | 52 cm. Umfang = 2×(5+21). |
+| t52 | Was sind 5 % vo 40? | 2. |
+| t53 | Finde d'nächste Zahl: 5, 10, 17, 26, 37, 50, 65, ? | 82. Das sind d'Quadrate vo 2² bis 9² plus 1. |
+| t54 | Wenn's 1:45 Uhr isch, wie spät isch's in 25 Minute? | 2:10 Uhr. |
+| t55 | En Rechteck het e Längi vo 16 cm und e Breiti vo 10 cm. Was isch sin Umfang? | 52 cm. |
+| t56 | Hüt isch en Eltere 38 und s'Chind 10. In 5 Joor, wie alt sind si zäme? | 58. |
+| t57 | Was chunnt als nächschts: 7, 10, 15, 22, 31, 42, ? | 55. Me addiert ufenanderfolgendi ungerade Zahle. |
+| t58 | Ohni Tascherechner: 4 + 5 × 7 = ? | 39. Zerscht multipliziere: 5×7=35, denn 4 addiere. |
+| t59 | Finde d'nächste Zahl: 16, 25, 36, 49, 64, ? | 81. Das sind d'Quadrate vo 4² bis 9². |
+| t60 | Was sind ¾ vo 60? | 45. |
+| t61 | Ohni Tascherechner: 2 + 9 × 10 = ? | 92. |
+| t62 | Finde d'nächste Zahl: 4, 7, 12, 19, 28, 39, 52, ? | 67. Das sind d'Quadrate vo 1² bis 8² plus 3. |
+| t63 | Ohni Tascherechner: 12 + 11 × 7 = ? | 89. |
+| t64 | Wenn's 4:10 Uhr isch, wie spät isch's in 10 Minute? | 4:20 Uhr. |
+| t65 | Ergänze: 47 + 20 = ___ | 67 |
+| t66 | Was sind 40 % vo 100? | 40. |
+| t67 | Was sind ⅔ vo 36? | 24. |
+| t68 | Was isch ⅕ vo 40? | 8. |
+| t69 | Ohni Tascherechner: 12 + 12 × 3 = ? | 48. |
+| t70 | Wenn's 11:15 Uhr isch, wie spät isch's in 50 Minute? | 12:05 Uhr. |
+| t71 | Ergänze: 30 − 69 = ___ | −39 |
+| t72 | En Rechteck het e Längi vo 10 cm und e Breiti vo 24 cm. Was isch sin Umfang? | 68 cm. |
+| t73 | Was isch ⅓ vo 24? | 8. |
+| t74 | Weli Zahl chunnt als nächschts: 11, 19, 27, 35, 43, 51, ? | 59. Me addiert jedes Mol 8. |
+| t75 | Finde d'nächste Zahl: 26, 37, 50, 65, 82, 101, 122, ? | 145. Das sind d'Quadrate vo 5² bis 12² plus 1. |
+| t76 | Hüt isch en Eltere 43 und s'Chind 9. In 6 Joor, wie alt sind si zäme? | 64. |
+| t77 | Ohni Tascherechner: 4 + 5 × 10 = ? | 54. |
+| t78 | En Rechteck het e Längi vo 11 cm und e Breiti vo 21 cm. Was isch sin Umfang? | 64 cm. |
+| t79 | Was sind 25 % vo 200? | 50. |
+| t80 | Ergänze: 27 + 75 = ___ | 102 |
+| t81 | Weli Zahl chunnt als nächschts: 4, 8, 12, 16, 20, 24, 28, ? | 32. Me addiert jedes Mol 4. |
+| t82 | Was chunnt als nächschts: 7, 10, 15, 22, 31, 42, 55, ? | 70. |
+| t83 | Finde d'nächste Zahl: 19, 28, 39, 52, 67, 84, 103, ? | 124. Das sind d'Quadrate vo 4² bis 11² plus 3. |
+| t84 | Hüt isch en Eltere 38 und s'Chind 10. In 10 Joor, wie alt sind si zäme? | 68. |
+| t85 | Weli Zahl chunnt als nächschts: 4, 16, 28, 40, 52, 64, 76, ? | 88. Me addiert jedes Mol 12. |
+| t86 | Ohni Tascherechner: 12 + 7 × 3 = ? | 33. |
+| t87 | Ohni Tascherechner: 8 + 4 × 9 = ? | 44. |
+| t88 | Weli Zahl chunnt als nächschts: 9, 19, 29, 39, 49, ? | 59. Me addiert jedes Mol 10. |
+| t89 | En Rechteck het e Längi vo 6 cm und e Breiti vo 23 cm. Was isch sin Umfang? | 58 cm. |
+| t90 | Ohni Tascherechner: 12 + 10 × 11 = ? | 122. |
+| t91 | Ergänze: 29 × 57 = ___ | 1653 |
+| t92 | En Rechteck het e Längi vo 3 cm und e Breiti vo 22 cm. Was isch sin Umfang? | 50 cm. |
+| t93 | Was isch d'Hälfte vo 84? | 42. |
+| t94 | Finde d'nächste Zahl: 11, 18, 27, 38, 51, ? | 66. Das sind d'Quadrate vo 3² bis 8² plus 2. |
+| t95 | Weli Zahl chunnt als nächschts: 8, 19, 30, 41, 52, ? | 63. Me addiert jedes Mol 11. |
+| t96 | Finde d'nächste Zahl: 21, 30, 41, 54, 69, ? | 86. Das sind d'Quadrate vo 4² bis 9² plus 5. |
+| t97 | En Rechteck het e Längi vo 7 cm und e Breiti vo 7 cm. Was isch sin Umfang? | 28 cm. |
+| t98 | Hüt isch en Eltere 35 und s'Chind 10. In 7 Joor, wie alt sind si zäme? | 59. |
+| t99 | En Rechteck het e Längi vo 22 cm und e Breiti vo 16 cm. Was isch sin Umfang? | 76 cm. |
+| t100 | Ergänze: 79 × 98 = ___ | 7742 |
+| t101 | Ohni Tascherechner: 8 + 12 × 12 = ? | 152. |
+| t102 | Was sind ¾ vo 84? | 63. |
+| t103 | Hüt isch en Eltere 33 und s'Chind 6. In 6 Joor, wie alt sind si zäme? | 51. |
+| t104 | Finde d'nächste Zahl: 3, 6, 11, 18, 27, 38, 51, ? | 66. Das sind d'Quadrate vo 1² bis 8² plus 2. |
+| t105 | En Rechteck het e Längi vo 10 cm und e Breiti vo 21 cm. Was isch sin Umfang? | 62 cm. |
+| t106 | Ergänze: 10 + 19 = ___ | 29 |
+| t107 | Ergänze: 18 + 14 = ___ | 32 |
+| t108 | En Rechteck het e Längi vo 10 cm und e Breiti vo 11 cm. Was isch sin Umfang? | 42 cm. |
+| t109 | Hüt isch en Eltere 31 und s'Chind 7. In 10 Joor, wie alt sind si zäme? | 58. |
+| t110 | Wenn's 8:20 Uhr isch, wie spät isch's in 45 Minute? | 9:05 Uhr. |
+| t111 | Was sind 10 % vo 80? | 8. |
+| t112 | Finde d'nächste Zahl: 21, 30, 41, 54, 69, 86, ? | 105. Das sind d'Quadrate vo 4² bis 10² plus 5. |
+| t113 | Was sind 40 % vo 200? | 80. |
+| t114 | Weli Zahl chunnt als nächschts: 4, 6, 8, 10, 12, 14, ? | 16. Me addiert jedes Mol 2. |
+| t115 | Was isch ⅓ vo 30? | 10. |
+| t116 | Ergänze: 34 + 78 = ___ | 112 |
+| t117 | Was sind 20 % vo 60? | 12. |
+| t118 | Hüt isch en Eltere 29 und s'Chind 7. In 8 Joor, wie alt sind si zäme? | 52. |
+| t119 | En Rechteck het e Längi vo 6 cm und e Breiti vo 4 cm. Was isch sin Umfang? | 20 cm. |
+| t120 | En Rechteck het e Längi vo 3 cm und e Breiti vo 5 cm. Was isch sin Umfang? | 16 cm. |
+| t121 | Ergänze: 31 − 62 = ___ | −31 |
+| t122 | Ergänze: 61 − 17 = ___ | 44 |
+| t123 | Weli Zahl chunnt als nächschts: 13, 19, 25, 31, 37, 43, ? | 49. Me addiert jedes Mol 6. |
+| t124 | Ohni Tascherechner: 8 + 10 × 12 = ? | 128. |
+| t125 | Hüt isch en Eltere 33 und s'Chind 7. In 7 Joor, wie alt sind si zäme? | 54. |
+| t126 | Ergänze: 17 + 84 = ___ | 101 |
+| t127 | Was isch d'Hälfte vo 24? | 12. |
+| t128 | Wenn's 8:45 Uhr isch, wie spät isch's in 50 Minute? | 9:35 Uhr. |
+| t129 | Was chunnt als nächschts: 1, 4, 9, 16, 25, 36, 49, ? | 64. |
+| t130 | Finde d'nächste Zahl: 14, 19, 26, 35, 46, ? | 59. Das sind d'Quadrate vo 2² bis 7² plus 10. |
+| t131 | Wenn's 2:55 Uhr isch, wie spät isch's in 25 Minute? | 3:20 Uhr. |
+| t132 | Was sind 15 % vo 50? | 7,5. |
+| t133 | Wenn's 10:05 Uhr isch, wie spät isch's in 15 Minute? | 10:20 Uhr. |
+| t134 | Was sind 25 % vo 300? | 75. |
+| t135 | Ohni Tascherechner: 5 + 12 × 7 = ? | 89. |
+| t136 | Ergänze: 43 × 60 = ___ | 2580 |
+| t137 | Ohni Tascherechner: 9 + 7 × 3 = ? | 30. |
+| t138 | Weli Zahl chunnt als nächschts: 15, 26, 37, 48, 59, 70, 81, ? | 92. Me addiert jedes Mol 11. |
+| t139 | Finde d'nächste Zahl: 25, 36, 49, 64, 81, ? | 100. Das sind d'Quadrate vo 5² bis 10². |
+| t140 | En Rechteck het e Längi vo 11 cm und e Breiti vo 7 cm. Was isch sin Umfang? | 36 cm. |
+| t141 | Was isch ⅓ vo 48? | 16. |
+| t142 | Hüt isch en Eltere 41 und s'Chind 12. In 10 Joor, wie alt sind si zäme? | 73. |
+| t143 | En Rechteck het e Längi vo 3 cm und e Breiti vo 24 cm. Was isch sin Umfang? | 54 cm. |
+| t144 | En Rechteck het e Längi vo 12 cm und e Breiti vo 24 cm. Was isch sin Umfang? | 72 cm. |
+| t145 | Finde d'nächste Zahl: 10, 17, 26, 37, 50, ? | 65. Das sind d'Quadrate vo 3² bis 8² plus 1. |
+| t146 | Finde d'nächste Zahl: 30, 41, 54, 69, 86, ? | 105. Das sind d'Quadrate vo 5² bis 10² plus 5. |
+| t147 | Ohni Tascherechner: 6 + 11 × 5 = ? | 61. |
+| t148 | Ohni Tascherechner: 10 + 9 × 6 = ? | 64. |
+| t149 | Weli Zahl chunnt als nächschts: 3, 15, 27, 39, 51, 63, ? | 75. Me addiert jedes Mol 12. |
+| t150 | Ohni Tascherechner: 2 + 2 × 7 = ? | 16. |
+| t151 | Was chunnt als nächschts: 5, 8, 13, 20, 29, ? | 40. |
+| t152 | Hüt isch en Eltere 43 und s'Chind 10. In 10 Joor, wie alt sind si zäme? | 73. |
+| t153 | Weli Zahl chunnt als nächschts: 4, 7, 10, 13, 16, 19, 22, ? | 25. Me addiert jedes Mol 3. |
+| t154 | Was chunnt als nächschts: 9, 12, 17, 24, 33, ? | 44. |
+| t155 | Was sind ¾ vo 120? | 90. |
+| t156 | Was chunnt als nächschts: 7, 10, 15, 22, 31, ? | 42. |
+| t157 | Weli Zahl chunnt als nächschts: 10, 17, 24, 31, 38, ? | 45. Me addiert jedes Mol 7. |
+| t158 | Ergänze: 95 × 23 = ___ | 2185 |
+| t159 | Was sind 15 % vo 60? | 9. |
+| t160 | Was chunnt als nächschts: 3, 6, 11, 18, 27, 38, ? | 51. |
+| t161 | Weli Zahl chunnt als nächschts: 6, 19, 32, 45, 58, 71, ? | 84. Me addiert jedes Mol 13. |
+| t162 | Was sind 20 % vo 80? | 16. |
+| t163 | Was chunnt als nächschts: 2, 5, 10, 17, 26, 37, ? | 50. |
+| t164 | Weli Zahl chunnt als nächschts: 16, 21, 26, 31, 36, ? | 41. Me addiert jedes Mol 5. |
+| t165 | Hüt isch en Eltere 37 und s'Chind 8. In 6 Joor, wie alt sind si zäme? | 57. |
+| t166 | Ergänze: 13 − 94 = ___ | −81 |
+| t167 | Was sind 2/5 vo 48? | 19,2. |
+| t168 | Finde d'nächste Zahl: 19, 26, 35, 46, 59, 74, ? | 91. Das sind d'Quadrate vo 3² bis 9² plus 10. |
+| t169 | En Rechteck het e Längi vo 15 cm und e Breiti vo 24 cm. Was isch sin Umfang? | 78 cm. |
+| t170 | En Rechteck het e Längi vo 13 cm und e Breiti vo 3 cm. Was isch sin Umfang? | 32 cm. |
+| t171 | Finde d'nächste Zahl: 6, 11, 18, 27, 38, 51, 66, ? | 83. Das sind d'Quadrate vo 2² bis 9² plus 2. |
+| t172 | Ohni Tascherechner: 2 + 3 × 11 = ? | 35. |
+| t173 | Was sind 25 % vo 120? | 30. |
+| t174 | Was sind 10 % vo 300? | 30. |
+| t175 | Weli Zahl chunnt als nächschts: 14, 16, 18, 20, 22, 24, 26, ? | 28. Me addiert jedes Mol 2. |
+| t176 | En Rechteck het e Längi vo 24 cm und e Breiti vo 24 cm. Was isch sin Umfang? | 96 cm. |
+| t177 | Ergänze: 56 × 65 = ___ | 3640 |
+| t178 | Was sind ⅔ vo 120? | 80. |
+| t179 | Finde d'nächste Zahl: 14, 21, 30, 41, 54, 69, 86, ? | 105. Das sind d'Quadrate vo 3² bis 10² plus 5. |
+| t180 | Ohni Tascherechner: 12 + 8 × 7 = ? | 68. |
+| t181 | Was sind 12 % vo 100? | 12. |
+| t182 | Ergänze: 63 × 95 = ___ | 5985 |
+| t183 | Was chunnt als nächschts: 10, 13, 18, 25, 34, 45, 58, ? | 73. |
+| t184 | Ohni Tascherechner: 8 + 10 × 2 = ? | 28. |
+| t185 | Ohni Tascherechner: 6 + 5 × 8 = ? | 46. |
+| t186 | Wenn's 10:55 Uhr isch, wie spät isch's in 35 Minute? | 11:30 Uhr. |
+| t187 | En Rechteck het e Längi vo 18 cm und e Breiti vo 8 cm. Was isch sin Umfang? | 52 cm. |
+| t188 | Finde d'nächste Zahl: 27, 38, 51, 66, 83, 102, 123, ? | 146. Das sind d'Quadrate vo 5² bis 12² plus 2. |
+| t189 | Wenn's 6:10 Uhr isch, wie spät isch's in 25 Minute? | 6:35 Uhr. |
+| t190 | Ohni Tascherechner: 5 + 5 × 4 = ? | 25. |
+| t191 | Weli Zahl chunnt als nächschts: 2, 7, 12, 17, 22, 27, ? | 32. Me addiert jedes Mol 5. |
+| t192 | Wenn's 2:40 Uhr isch, wie spät isch's in 40 Minute? | 3:20 Uhr. |
+| t193 | Wenn's 4:35 Uhr isch, wie spät isch's in 45 Minute? | 5:20 Uhr. |
+| t194 | Was sind 12 % vo 80? | 9,6. |
+| t195 | Weli Zahl chunnt als nächschts: 4, 18, 32, 46, 60, 74, ? | 88. Me addiert jedes Mol 14. |
+| t196 | Ergänze: 32 − 99 = ___ | −67 |
+| t197 | Weli Zahl chunnt als nächschts: 18, 23, 28, 33, 38, ? | 43. Me addiert jedes Mol 5. |
+| t198 | Hüt isch en Eltere 41 und s'Chind 7. In 10 Joor, wie alt sind si zäme? | 68. |
+| t199 | En Rechteck het e Längi vo 22 cm und e Breiti vo 13 cm. Was isch sin Umfang? | 70 cm. |
+| t200 | Hüt isch en Eltere 42 und s'Chind 7. In 8 Joor, wie alt sind si zäme? | 65. |
+| t201 | Ohni Tascherechner: 5 + 12 × 6 = ? | 77. |
+| t202 | En Rechteck het e Längi vo 18 cm und e Breiti vo 23 cm. Was isch sin Umfang? | 82 cm. |
+| t203 | Ergänze: 45 × 66 = ___ | 2970 |
+| t204 | Ohni Tascherechner: 5 + 6 × 7 = ? | 47. |
+| t205 | Was isch d'Hälfte vo 96? | 48. |
+| t206 | Was chunnt als nächschts: 3, 6, 11, 18, 27, ? | 38. |
+| t207 | Finde d'nächste Zahl: 19, 28, 39, 52, 67, 84, ? | 103. Das sind d'Quadrate vo 4² bis 10² plus 3. |
+| t208 | En Rechteck het e Längi vo 17 cm und e Breiti vo 16 cm. Was isch sin Umfang? | 66 cm. |
+| t209 | Weli Zahl chunnt als nächschts: 7, 22, 37, 52, 67, 82, ? | 97. Me addiert jedes Mol 15. |
+| t210 | Was sind 30 % vo 40? | 12. |
+| t211 | Hüt isch en Eltere 37 und s'Chind 6. In 7 Joor, wie alt sind si zäme? | 57. |
+| t212 | Was sind 15 % vo 200? | 30. |
+| t213 | Hüt isch en Eltere 35 und s'Chind 7. In 8 Joor, wie alt sind si zäme? | 58. |
+| t214 | Hüt isch en Eltere 38 und s'Chind 6. In 7 Joor, wie alt sind si zäme? | 58. |
+| t215 | Was sind 40 % vo 60? | 24. |
+| t216 | Weli Zahl chunnt als nächschts: 13, 24, 35, 46, 57, 68, 79, ? | 90. Me addiert jedes Mol 11. |
+| t217 | Was chunnt als nächschts: 8, 11, 16, 23, 32, ? | 43. |
+| t218 | Weli Zahl chunnt als nächschts: 9, 17, 25, 33, 41, 49, ? | 57. Me addiert jedes Mol 8. |
+| t219 | Ergänze: 68 − 51 = ___ | 17 |
+| t220 | Ohni Tascherechner: 8 + 6 × 3 = ? | 26. |
+| t221 | Hüt isch en Eltere 27 und s'Chind 6. In 7 Joor, wie alt sind si zäme? | 47. |
+| t222 | Ergänze: 93 + 18 = ___ | 111 |
+| t223 | Weli Zahl chunnt als nächschts: 8, 13, 18, 23, 28, ? | 33. Me addiert jedes Mol 5. |
+| t224 | Wenn's 3:20 Uhr isch, wie spät isch's in 20 Minute? | 3:40 Uhr. |
+| t225 | Hüt isch en Eltere 34 und s'Chind 11. In 10 Joor, wie alt sind si zäme? | 65. |
+| t226 | Ergänze: 69 − 99 = ___ | −30 |
+| t227 | Finde d'nächste Zahl: 14, 19, 26, 35, 46, 59, ? | 74. Das sind d'Quadrate vo 2² bis 8² plus 10. |
+| t228 | Finde d'nächste Zahl: 5, 8, 13, 20, 29, 40, ? | 53. Das sind d'Quadrate vo 1² bis 7² plus 4. |
+| t229 | Wenn's 11:35 Uhr isch, wie spät isch's in 40 Minute? | 12:15 Uhr. |
+| t230 | Ergänze: 19 × 85 = ___ | 1615 |
+| t231 | Ergänze: 23 × 99 = ___ | 2277 |
+| t232 | Wenn's 2:50 Uhr isch, wie spät isch's in 10 Minute? | 3:00 Uhr. |
+| t233 | Was isch ¼ vo 96? | 24. |
+| t234 | Was sind ¾ vo 30? | 22,5. |
+| t235 | Was sind 2/5 vo 24? | 9,6. |
+| t236 | Was sind 10 % vo 240? | 24. |
+| t237 | Was sind 40 % vo 120? | 48. |
+| t238 | En Rechteck het e Längi vo 23 cm und e Breiti vo 11 cm. Was isch sin Umfang? | 68 cm. |
+| t239 | Wenn's 9:40 Uhr isch, wie spät isch's in 45 Minute? | 10:25 Uhr. |
+| t240 | Was sind 25 % vo 100? | 25. |
+| t241 | Ergänze: 21 + 45 = ___ | 66 |
+| t242 | Hüt isch en Eltere 42 und s'Chind 10. In 7 Joor, wie alt sind si zäme? | 66. |
+| t243 | Weli Zahl chunnt als nächschts: 16, 31, 46, 61, 76, 91, ? | 106. Me addiert jedes Mol 15. |
+| t244 | Was sind ⅔ vo 48? | 32. |
+| t245 | Ohni Tascherechner: 11 + 6 × 10 = ? | 71. |
+| t246 | Weli Zahl chunnt als nächschts: 17, 22, 27, 32, 37, ? | 42. Me addiert jedes Mol 5. |
+| t247 | Ergänze: 62 + 72 = ___ | 134 |
+| t248 | Hüt isch en Eltere 46 und s'Chind 11. In 8 Joor, wie alt sind si zäme? | 73. |
+| t249 | Weli Zahl chunnt als nächschts: 3, 9, 15, 21, 27, ? | 33. Me addiert jedes Mol 6. |
+| t250 | Wenn's 6:40 Uhr isch, wie spät isch's in 50 Minute? | 7:30 Uhr. |
+| t251 | En Rechteck het e Längi vo 14 cm und e Breiti vo 16 cm. Was isch sin Umfang? | 60 cm. |
+| t252 | En Rechteck het e Längi vo 13 cm und e Breiti vo 14 cm. Was isch sin Umfang? | 54 cm. |
+| t253 | Hüt isch en Eltere 37 und s'Chind 8. In 7 Joor, wie alt sind si zäme? | 59. |
+| t254 | Ergänze: 25 + 34 = ___ | 59 |
+| t255 | En Rechteck het e Längi vo 25 cm und e Breiti vo 8 cm. Was isch sin Umfang? | 66 cm. |
+| t256 | Ergänze: 37 × 71 = ___ | 2627 |
+| t257 | Wenn's 9:50 Uhr isch, wie spät isch's in 30 Minute? | 10:20 Uhr. |
+| t258 | Ergänze: 56 + 32 = ___ | 88 |
+| t259 | En Rechteck het e Längi vo 7 cm und e Breiti vo 11 cm. Was isch sin Umfang? | 36 cm. |
+| t260 | Weli Zahl chunnt als nächschts: 2, 12, 22, 32, 42, 52, ? | 62. Me addiert jedes Mol 10. |
+| t261 | Weli Zahl chunnt als nächschts: 19, 25, 31, 37, 43, 49, ? | 55. Me addiert jedes Mol 6. |
+| t262 | Hüt isch en Eltere 39 und s'Chind 9. In 6 Joor, wie alt sind si zäme? | 60. |
+| t263 | Weli Zahl chunnt als nächschts: 9, 24, 39, 54, 69, 84, ? | 99. Me addiert jedes Mol 15. |
+| t264 | Finde d'nächste Zahl: 11, 14, 19, 26, 35, 46, ? | 59. Das sind d'Quadrate vo 1² bis 7² plus 10. |
+| t265 | Hüt isch en Eltere 27 und s'Chind 6. In 6 Joor, wie alt sind si zäme? | 45. |
+| t266 | Was chunnt als nächschts: 10, 13, 18, 25, 34, 45, ? | 58. |
+| t267 | Finde d'nächste Zahl: 2, 5, 10, 17, 26, 37, 50, ? | 65. Das sind d'Quadrate vo 1² bis 8² plus 1. |
+| t268 | Was sind 30 % vo 80? | 24. |
+| t269 | Hüt isch en Eltere 38 und s'Chind 9. In 10 Joor, wie alt sind si zäme? | 67. |
+| t270 | Was sind 5 % vo 100? | 5. |
+| t271 | Wenn's 2:20 Uhr isch, wie spät isch's in 25 Minute? | 2:45 Uhr. |
+| t272 | Ohni Tascherechner: 12 + 3 × 4 = ? | 24. |
+| t273 | Ergänze: 32 + 80 = ___ | 112 |
+| t274 | Weli Zahl chunnt als nächschts: 14, 23, 32, 41, 50, 59, 68, ? | 77. Me addiert jedes Mol 9. |
+| t275 | Wenn's 8:25 Uhr isch, wie spät isch's in 10 Minute? | 8:35 Uhr. |
+| t276 | Ergänze: 46 − 46 = ___ | 0 |
+| t277 | Finde d'nächste Zahl: 9, 14, 21, 30, 41, 54, ? | 69. Das sind d'Quadrate vo 2² bis 8² plus 5. |
+| t278 | Wenn's 11:20 Uhr isch, wie spät isch's in 40 Minute? | 12:00 Uhr. |
+| t279 | Finde d'nächste Zahl: 8, 13, 20, 29, 40, 53, 68, ? | 85. Das sind d'Quadrate vo 2² bis 9² plus 4. |
+| t280 | Finde d'nächste Zahl: 4, 9, 16, 25, 36, 49, ? | 64. Das sind d'Quadrate vo 2² bis 8². |
+| t281 | Wenn's 10:25 Uhr isch, wie spät isch's in 45 Minute? | 11:10 Uhr. |
+| t282 | Finde d'nächste Zahl: 12, 19, 28, 39, 52, 67, 84, ? | 103. Das sind d'Quadrate vo 3² bis 10² plus 3. |
+| t283 | Hüt isch en Eltere 27 und s'Chind 6. In 8 Joor, wie alt sind si zäme? | 49. |
+| t284 | Weli Zahl chunnt als nächschts: 3, 8, 13, 18, 23, 28, 33, ? | 38. Me addiert jedes Mol 5. |
+| t285 | Wenn's 10:05 Uhr isch, wie spät isch's in 30 Minute? | 10:35 Uhr. |
+| t286 | Wenn's 1:15 Uhr isch, wie spät isch's in 45 Minute? | 2:00 Uhr. |
+| t287 | En Rechteck het e Längi vo 23 cm und e Breiti vo 17 cm. Was isch sin Umfang? | 80 cm. |
+| t288 | Ohni Tascherechner: 4 + 11 × 8 = ? | 92. |
+| t289 | Hüt isch en Eltere 41 und s'Chind 6. In 7 Joor, wie alt sind si zäme? | 61. |
+| t290 | Was sind 20 % vo 240? | 48. |
+| t291 | Was sind 5 % vo 300? | 15. |
+| t292 | Hüt isch en Eltere 36 und s'Chind 6. In 7 Joor, wie alt sind si zäme? | 56. |
+| t293 | Was sind 2/5 vo 30? | 12. |
+| t294 | Weli Zahl chunnt als nächschts: 7, 17, 27, 37, 47, 57, ? | 67. Me addiert jedes Mol 10. |
+| t295 | Wenn's 8:55 Uhr isch, wie spät isch's in 45 Minute? | 9:40 Uhr. |
+| t296 | Weli Zahl chunnt als nächschts: 7, 13, 19, 25, 31, 37, 43, ? | 49. Me addiert jedes Mol 6. |
+| t297 | Was chunnt als nächschts: 5, 8, 13, 20, 29, 40, ? | 53. |
+| t298 | Hüt isch en Eltere 26 und s'Chind 6. In 10 Joor, wie alt sind si zäme? | 52. |
+| t299 | Ergänze: 30 + 49 = ___ | 79 |
+| t300 | En Rechteck het e Längi vo 16 cm und e Breiti vo 5 cm. Was isch sin Umfang? | 42 cm. |

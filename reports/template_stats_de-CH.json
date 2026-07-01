@@ -1,0 +1,81 @@
+{
+  "input_csv": "reports\\ch_translation_template.de-CH.csv",
+  "unique_segments": 35775,
+  "unique_patterns": 4876,
+  "coverage_top10": 0.20911250873515025,
+  "coverage_top25": 0.30784067085953876,
+  "coverage_top50": 0.4253808525506639,
+  "coverage_top100": 0.5534591194968553,
+  "top_patterns": [
+    {
+      "pattern_id": "pattern_7ff18e40a2436b84",
+      "normalized_pattern": "Calculate: {n} - {n}",
+      "example_source": "Calculate: 0 - 1",
+      "count": 1854,
+      "sample_seg_ids": "8d854454bd03fd2e4663a202cc775bf7184d5d22467adcb3cc4c0f515807d901 | 39e58a33dde14e3e2bcca860a12d8ede8c0f09e8f4550b48dc01422b0716c943 | daff7b04f1c5bb0cfcf1bc08862c9afe8308dd78a1e0dfdf3148a579dd99c45d | 8d9bcc423f7142470d0a5695380e361a90027b30dd335eff9177da73ee346382 | 66e19c42bb75c7bd14f00e30c4b2856a4fbfd7bc18e4b9c3d53f3f7ce1d2c253"
+    },
+    {
+      "pattern_id": "pattern_aa2782851062605e",
+      "normalized_pattern": "Calculate: {n} + {n}",
+      "example_source": "Calculate: 0 + 1",
+      "count": 1771,
+      "sample_seg_ids": "daf0021a8f8efea7f97f52769ea87c5b5cdc7939f491a45e736606c7aaa376a1 | 193e226f715fe24ecf549e4c4fc025c0271576cd22b1a5ecfd30eb179c40b12a | c134395913f3ca8fda881422e4fd8553aed366df87274c72311e6f0462baf976 | 8d1dded933ead498defb9750662a7df2c426bcd741fb0590890c65ebe378c1ca | c0e15e72992c7785d524da42be119be84ce16512ac48dbfc779f7824581c745c"
+    },
+    {
+      "pattern_id": "pattern_1cce29c7f3d0780a",
+      "normalized_pattern": "Calculate: {n} × {n}",
+      "example_source": "Calculate: 10 × 10",
+      "count": 711,
+      "sample_seg_ids": "8747ea6af935e6a4137b48c4c29433b067953950f0aa05c5e554352fdd4e845e | 156cdf9fa109d4e0d40a99374b880afa742027477a50fd65bc5678862cae4deb | 72d2de7cc54438797cefe9b74cebd41e99db376b371b6acf0518f64d0a551f71 | 40dd702644050316d66d4d014502afd59c67187b7cfde24add72b2eb4fa3d313 | 5c1005b79c31c8de81443e77ad76ed1829393d24663a48771b7bf1be7f35a173"
+    },
+    {
+      "pattern_id": "pattern_9b31cb8f16b849db",
+      "normalized_pattern": "A grouped frequency table has frequencies [{n}, {n}, {n}, {n}] for classes [({n}, {n}), ({n}, {n}), ({n}, {n}), ({n}, {n})]. What is the cumulative frequency up to {n}?",
+      "example_source": "A grouped frequency table has frequencies [10, 10, 2, 10] for classes [(0, 10), (10, 20), (20, 30), (30, 40)]. What is the cumulative frequency up to 30?",
+      "count": 661,
+      "sample_seg_ids": "4ab49bddf2043b169358af0bd0984f322903037b8627c8144f8eec08b204c59d | dd647d471b82ba98222e7e048c6117402b796d4aee06ff25ec5ad0f874dc0287 | 31f40367744fc4b1ac1fe40ba13a3c01d049b0be0045f2775244b99c048f93cd | 3751a0e178645873a3bb5c4dff8e2f52b561e67d88db675bf9de5bced6ad1a17 | 22fe587f6b814e195d6fa535b3f2e7aaacd02d40a8af7b9d3b494c36ea8d6fad"
+    },
+    {
+      "pattern_id": "pattern_b5c8d6cee677e937",
+      "normalized_pattern": "The ratio of red to blue is {n}:{n}. If there are {n} beads in total, how many are red?",
+      "example_source": "The ratio of red to blue is 2:10. If there are 228 beads in total, how many are red?",
+      "count": 637,
+      "sample_seg_ids": "4117f5515f18f9e7ca778d38460d19cfb6995162ae847ab9601460809982a411 | b548d70220de22c3cc381cc139f4fbef9d05d291538e1644283c0424ed6c43cc | 9fb72c225264fdc10d4af6eb8836edd7f88b33d7729ae40dfb0f393dcdb46a2d | 4edc48e6a33e4d1015a65287adb2b44dfe8557e2efd888eb71eb868590e17e85 | fd4350e3011c49f656c4d96c051a7e7a7668f279006b6e0ef6cc566e31ef2835"
+    },
+    {
+      "pattern_id": "pattern_9168ad728275b9e7",
+      "normalized_pattern": "Given density = mass / volume, and density={n}, mass={n}. Find volume.",
+      "example_source": "Given density = mass / volume, and density=10, mass=100. Find volume.",
+      "count": 514,
+      "sample_seg_ids": "f95c4375f4f67257dcb490a70eac02b24074d3e9d31e902579021fc91d09b63c | 951f02aa0ef91021b0a3d65d44fa21dda399c48060f873c7f96f9a2a17f62d9a | f29dd338748a3a3d1544bbbf244f8447f60c655e1d4b2abd79156045f192c6f6 | 4463b012eece94a836d03ad33403ec1e1ac69fb9dab0d2e3cf902c94216f7125 | 49f6b302b4230bc81f5af28499466f71889af0e900e5aa518c6617f6eb4cc04f"
+    },
+    {
+      "pattern_id": "pattern_bcd268c1d713e3fc",
+      "normalized_pattern": "Given v = u + at, and v={n}, u={n}, t={n}. Find a.",
+      "example_source": "Given v = u + at, and v=0, u=0, t=10. Find a.",
+      "count": 397,
+      "sample_seg_ids": "c70cf944ba960e6a9d4c31c9f9cc7c263246ad28a459b1862c0469c72703c04e | 71081a77948da1124e2d1bd848236bee8a05755d65dc3e2074a143f2bcc75536 | 5112df6db805385d0cfe8b236a028db5910ff878bf1e24c89bf1dd4a0fa7d78b | bba00d3a1099c7d9ea97cb136bba52c4148c2d5b1ef809ada66826c9c0a6f226 | c30bb6b6750da6bfd83fada03b06ae1cbcca793120e9e9a314217c6de9b88f57"
+    },
+    {
+      "pattern_id": "pattern_ba9883f4da365578",
+      "normalized_pattern": "Given A = lw, and A={n}, l={n}. Find w.",
+      "example_source": "Given A = lw, and A=10, l=2. Find w.",
+      "count": 324,
+      "sample_seg_ids": "6b97cdb97c30c7a9350dd72c96155db75bd81d62403475d100735f1e8a2b010f | 559d16c9473bc7c9d3f1532b6b6dfb650816fdba8f1e100ea67a17703ac183c4 | 86d379ce9f7f7a8bfa0cde439257692527c303b90760d9394be3256813d2775e | 209cf46f20b2208bdc7565669227909ac853ffc482e822bc4c76c75cd3c6a7d7 | fd9d0f149e77c7bf26f313b0b6369a82a88d9fdfd74d91584630121ec579efdb"
+    },
+    {
+      "pattern_id": "pattern_2dc2accdd120fa23",
+      "normalized_pattern": "Find {n}% of {n}.",
+      "example_source": "Find 10% of 103.",
+      "count": 306,
+      "sample_seg_ids": "d6b855b670572b2ac1409f944960c6e81f588b6fdf4cf17785040173c804b907 | 89a886e3fd2af3223e83385e03a30f50053abf9fd38ddc056360b0f961b44b43 | 25708957983b0f5820ac4e097007db62046971be5abfab51df63dc9d72baa898 | 9719919609f69002af5e4fa89da9cd35f803096db24b6b69d522fe44586e7ee7 | 96a3d3472fb098553a6a8a78885bdf63fd5494f049ac2ef41f11ccf09dd54717"
+    },
+    {
+      "pattern_id": "pattern_52e5452b3cb6c923",
+      "normalized_pattern": "{n}% = {frac}. Multiply {n} by {frac}.",
+      "example_source": "10% = 10/100. Multiply 103 by 10/100.",
+      "count": 306,
+      "sample_seg_ids": "749174fe649b2d59522bfe814a94b531b4b58e363a34c22d09ed048e58a7591f | 0a76349966a9b27c3b8c0aedb43c473b068c6a745c8c4be5cc2abd07e9b050b4 | 6701a8243218d525ea75c3838619f9c6ce6ab493861e0c8060a8bb0edf761336 | 9e16c9ef97b31e1a91d6ee000596f3da581f8dd883a145c56414e8bfcef32a0a | 896266dce6faaf26642edc775add9a58f80a7a0a4a80f6bd383451ec7f763f42"
+    }
+  ]
+}

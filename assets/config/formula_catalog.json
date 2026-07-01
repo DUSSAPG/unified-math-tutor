@@ -1,0 +1,400 @@
+{
+  "version": 1,
+  "formulas": [
+    {
+      "id": "area_rectangle",
+      "category": "Area",
+      "title": "Area of a Rectangle",
+      "formula": "A = l × w",
+      "meaning": "The space enclosed by a rectangle with length l and width w.",
+      "variables": [
+        { "symbol": "A", "meaning": "Area" },
+        { "symbol": "l", "meaning": "Length" },
+        { "symbol": "w", "meaning": "Width" }
+      ],
+      "explanation": "Multiply the length by the width to find the space inside the rectangle.",
+      "example": "A rectangle has length 8 cm and width 5 cm. A = 8 × 5 = 40 cm²."
+    },
+    {
+      "id": "area_triangle",
+      "category": "Area",
+      "title": "Area of a Triangle",
+      "formula": "A = ½ × b × h",
+      "meaning": "The space enclosed by a triangle with base b and perpendicular height h.",
+      "variables": [
+        { "symbol": "A", "meaning": "Area" },
+        { "symbol": "b", "meaning": "Base length" },
+        { "symbol": "h", "meaning": "Perpendicular height" }
+      ],
+      "explanation": "Multiply the base by the height, then halve the result.",
+      "example": "A triangle has base 10 cm and height 6 cm. A = ½ × 10 × 6 = 30 cm²."
+    },
+    {
+      "id": "area_parallelogram",
+      "category": "Area",
+      "title": "Area of a Parallelogram",
+      "formula": "A = b × h",
+      "meaning": "The space enclosed by a parallelogram with base b and perpendicular height h.",
+      "variables": [
+        { "symbol": "A", "meaning": "Area" },
+        { "symbol": "b", "meaning": "Base length" },
+        { "symbol": "h", "meaning": "Perpendicular height" }
+      ],
+      "explanation": "Multiply the base by the perpendicular height between the two parallel sides.",
+      "example": "A parallelogram has base 7 cm and height 4 cm. A = 7 × 4 = 28 cm²."
+    },
+    {
+      "id": "area_trapezium",
+      "category": "Area",
+      "title": "Area of a Trapezium",
+      "formula": "A = ½ × (a + b) × h",
+      "meaning": "The space enclosed by a trapezium with parallel sides a and b, and height h.",
+      "variables": [
+        { "symbol": "A", "meaning": "Area" },
+        { "symbol": "a", "meaning": "Length of one parallel side" },
+        { "symbol": "b", "meaning": "Length of the other parallel side" },
+        { "symbol": "h", "meaning": "Perpendicular height between the parallel sides" }
+      ],
+      "explanation": "Add the two parallel sides, multiply by the height, then halve the result.",
+      "example": "A trapezium has parallel sides 5 cm and 9 cm, height 4 cm. A = ½ × (5 + 9) × 4 = 28 cm²."
+    },
+    {
+      "id": "volume_cuboid",
+      "category": "Volume",
+      "title": "Volume of a Cuboid",
+      "formula": "V = l × w × h",
+      "meaning": "The space occupied by a cuboid with length l, width w, and height h.",
+      "variables": [
+        { "symbol": "V", "meaning": "Volume" },
+        { "symbol": "l", "meaning": "Length" },
+        { "symbol": "w", "meaning": "Width" },
+        { "symbol": "h", "meaning": "Height" }
+      ],
+      "explanation": "Multiply length, width, and height together.",
+      "example": "A cuboid measures 4 cm × 3 cm × 2 cm. V = 4 × 3 × 2 = 24 cm³."
+    },
+    {
+      "id": "volume_cylinder",
+      "category": "Volume",
+      "title": "Volume of a Cylinder",
+      "formula": "V = π × r² × h",
+      "meaning": "The space occupied by a cylinder with radius r and height h.",
+      "variables": [
+        { "symbol": "V", "meaning": "Volume" },
+        { "symbol": "r", "meaning": "Radius of the circular base" },
+        { "symbol": "h", "meaning": "Height of the cylinder" }
+      ],
+      "explanation": "Find the area of the circular base (πr²), then multiply by the height.",
+      "example": "A cylinder has radius 3 cm and height 10 cm. V = π × 3² × 10 ≈ 282.7 cm³."
+    },
+    {
+      "id": "volume_sphere",
+      "category": "Volume",
+      "title": "Volume of a Sphere",
+      "formula": "V = (4/3) × π × r³",
+      "meaning": "The space occupied by a sphere with radius r.",
+      "variables": [
+        { "symbol": "V", "meaning": "Volume" },
+        { "symbol": "r", "meaning": "Radius" }
+      ],
+      "explanation": "Cube the radius, multiply by π, then multiply by 4/3.",
+      "example": "A sphere has radius 6 cm. V = (4/3) × π × 6³ ≈ 904.8 cm³."
+    },
+    {
+      "id": "volume_cone",
+      "category": "Volume",
+      "title": "Volume of a Cone",
+      "formula": "V = (1/3) × π × r² × h",
+      "meaning": "The space occupied by a cone with base radius r and height h.",
+      "variables": [
+        { "symbol": "V", "meaning": "Volume" },
+        { "symbol": "r", "meaning": "Radius of the circular base" },
+        { "symbol": "h", "meaning": "Height of the cone" }
+      ],
+      "explanation": "Find the volume of the equivalent cylinder (πr²h), then take a third of it.",
+      "example": "A cone has radius 4 cm and height 9 cm. V = (1/3) × π × 4² × 9 ≈ 150.8 cm³."
+    },
+    {
+      "id": "fractions_adding",
+      "category": "Fractions",
+      "title": "Adding Fractions",
+      "formula": "a/b + c/d = (ad + bc) / bd",
+      "meaning": "Combines two fractions with different denominators into one.",
+      "variables": [
+        { "symbol": "a, c", "meaning": "Numerators" },
+        { "symbol": "b, d", "meaning": "Denominators" }
+      ],
+      "explanation": "Cross-multiply to get a common denominator, then add the numerators.",
+      "example": "1/3 + 1/4 = (1×4 + 1×3) / (3×4) = 7/12."
+    },
+    {
+      "id": "fractions_multiplying",
+      "category": "Fractions",
+      "title": "Multiplying Fractions",
+      "formula": "a/b × c/d = ac / bd",
+      "meaning": "Combines two fractions by multiplying straight across.",
+      "variables": [
+        { "symbol": "a, c", "meaning": "Numerators" },
+        { "symbol": "b, d", "meaning": "Denominators" }
+      ],
+      "explanation": "Multiply the numerators together and the denominators together.",
+      "example": "2/3 × 3/5 = (2×3) / (3×5) = 6/15 = 2/5."
+    },
+    {
+      "id": "fractions_dividing",
+      "category": "Fractions",
+      "title": "Dividing Fractions",
+      "formula": "a/b ÷ c/d = a/b × d/c",
+      "meaning": "Divides one fraction by another.",
+      "variables": [
+        { "symbol": "a, c", "meaning": "Numerators" },
+        { "symbol": "b, d", "meaning": "Denominators" }
+      ],
+      "explanation": "Flip (reciprocate) the second fraction, then multiply.",
+      "example": "1/2 ÷ 3/4 = 1/2 × 4/3 = 4/6 = 2/3."
+    },
+    {
+      "id": "percentage_of_amount",
+      "category": "Percentages",
+      "title": "Percentage of an Amount",
+      "formula": "P% of N = (P / 100) × N",
+      "meaning": "Finds what a given percentage of a total amount is.",
+      "variables": [
+        { "symbol": "P", "meaning": "The percentage" },
+        { "symbol": "N", "meaning": "The total amount" }
+      ],
+      "explanation": "Divide the percentage by 100 to get a decimal, then multiply by the amount.",
+      "example": "20% of 60 = (20 / 100) × 60 = 12."
+    },
+    {
+      "id": "percentage_change",
+      "category": "Percentages",
+      "title": "Percentage Change",
+      "formula": "Change % = ((New − Old) / Old) × 100",
+      "meaning": "Measures how much a value has increased or decreased, as a percentage of the original.",
+      "variables": [
+        { "symbol": "New", "meaning": "The new value" },
+        { "symbol": "Old", "meaning": "The original value" }
+      ],
+      "explanation": "Subtract the old value from the new value, divide by the old value, then multiply by 100.",
+      "example": "A price rises from 40 to 50. Change % = ((50 − 40) / 40) × 100 = 25%."
+    },
+    {
+      "id": "algebra_difference_of_squares",
+      "category": "Algebra",
+      "title": "Difference of Two Squares",
+      "formula": "a² − b² = (a + b)(a − b)",
+      "meaning": "Factorises the difference between two square terms.",
+      "variables": [
+        { "symbol": "a, b", "meaning": "Any two terms" }
+      ],
+      "explanation": "Any expression in the form a² − b² can be factorised into (a + b)(a − b).",
+      "example": "x² − 9 = x² − 3² = (x + 3)(x − 3)."
+    },
+    {
+      "id": "algebra_perfect_square",
+      "category": "Algebra",
+      "title": "Perfect Square Expansion",
+      "formula": "(a + b)² = a² + 2ab + b²",
+      "meaning": "Expands a squared bracket with two terms.",
+      "variables": [
+        { "symbol": "a, b", "meaning": "Any two terms" }
+      ],
+      "explanation": "Square the first term, add double the product of both terms, then add the square of the second term.",
+      "example": "(x + 4)² = x² + 2(4)(x) + 4² = x² + 8x + 16."
+    },
+    {
+      "id": "algebra_quadratic_formula",
+      "category": "Algebra",
+      "title": "Quadratic Formula",
+      "formula": "x = (−b ± √(b² − 4ac)) / 2a",
+      "meaning": "Solves any quadratic equation in the form ax² + bx + c = 0.",
+      "variables": [
+        { "symbol": "a, b, c", "meaning": "Coefficients of the quadratic equation" },
+        { "symbol": "x", "meaning": "The solution(s) for x" }
+      ],
+      "explanation": "Substitute a, b, and c into the formula to find the two possible values of x.",
+      "example": "For x² + 3x − 4 = 0: a=1, b=3, c=−4. x = (−3 ± √(9 + 16)) / 2 = 1 or −4."
+    },
+    {
+      "id": "pythagoras_theorem",
+      "category": "Pythagoras",
+      "title": "Pythagoras' Theorem",
+      "formula": "a² + b² = c²",
+      "meaning": "Relates the three sides of a right-angled triangle.",
+      "variables": [
+        { "symbol": "a, b", "meaning": "The two shorter sides" },
+        { "symbol": "c", "meaning": "The hypotenuse (longest side, opposite the right angle)" }
+      ],
+      "explanation": "The square of the hypotenuse equals the sum of the squares of the other two sides.",
+      "example": "A right triangle has sides 3 cm and 4 cm. c² = 3² + 4² = 25, so c = 5 cm."
+    },
+    {
+      "id": "circle_circumference",
+      "category": "Circle",
+      "title": "Circumference of a Circle",
+      "formula": "C = 2πr",
+      "meaning": "The distance around the outside of a circle.",
+      "variables": [
+        { "symbol": "C", "meaning": "Circumference" },
+        { "symbol": "r", "meaning": "Radius" }
+      ],
+      "explanation": "Multiply the radius by 2, then multiply by π.",
+      "example": "A circle has radius 5 cm. C = 2 × π × 5 ≈ 31.4 cm."
+    },
+    {
+      "id": "circle_area",
+      "category": "Circle",
+      "title": "Area of a Circle",
+      "formula": "A = πr²",
+      "meaning": "The space enclosed by a circle.",
+      "variables": [
+        { "symbol": "A", "meaning": "Area" },
+        { "symbol": "r", "meaning": "Radius" }
+      ],
+      "explanation": "Square the radius, then multiply by π.",
+      "example": "A circle has radius 4 cm. A = π × 4² ≈ 50.3 cm²."
+    },
+    {
+      "id": "circle_arc_length",
+      "category": "Circle",
+      "title": "Arc Length",
+      "formula": "L = (θ / 360) × 2πr",
+      "meaning": "The length of a curved section of a circle's circumference.",
+      "variables": [
+        { "symbol": "L", "meaning": "Arc length" },
+        { "symbol": "θ", "meaning": "Angle of the arc in degrees" },
+        { "symbol": "r", "meaning": "Radius" }
+      ],
+      "explanation": "Find what fraction of the full circle the angle represents, then apply it to the circumference.",
+      "example": "A 90° arc on a circle of radius 6 cm. L = (90/360) × 2π × 6 ≈ 9.4 cm."
+    },
+    {
+      "id": "trig_sohcahtoa",
+      "category": "Trigonometry",
+      "title": "SOHCAHTOA (Right-Angled Triangles)",
+      "formula": "sin θ = O/H,  cos θ = A/H,  tan θ = O/A",
+      "meaning": "Relates an angle in a right-angled triangle to the ratio of its sides.",
+      "variables": [
+        { "symbol": "O", "meaning": "Opposite side (to the angle θ)" },
+        { "symbol": "A", "meaning": "Adjacent side (next to the angle θ)" },
+        { "symbol": "H", "meaning": "Hypotenuse (longest side)" }
+      ],
+      "explanation": "Choose the ratio (sin, cos, or tan) that matches the two sides you know or need to find.",
+      "example": "A right triangle has hypotenuse 10 and angle 30°. Opposite = sin(30°) × 10 = 5."
+    },
+    {
+      "id": "trig_sine_rule",
+      "category": "Trigonometry",
+      "title": "Sine Rule",
+      "formula": "a / sin A = b / sin B = c / sin C",
+      "meaning": "Relates the sides and angles of any triangle (not just right-angled).",
+      "variables": [
+        { "symbol": "a, b, c", "meaning": "Side lengths" },
+        { "symbol": "A, B, C", "meaning": "Angles opposite each corresponding side" }
+      ],
+      "explanation": "Use when you know a pair of opposite side/angle values plus one more side or angle.",
+      "example": "If a = 8, A = 40°, B = 60°: b = (8 × sin 60°) / sin 40° ≈ 10.8."
+    },
+    {
+      "id": "trig_cosine_rule",
+      "category": "Trigonometry",
+      "title": "Cosine Rule",
+      "formula": "c² = a² + b² − 2ab cos C",
+      "meaning": "Finds a missing side or angle in any triangle when the sine rule cannot be used directly.",
+      "variables": [
+        { "symbol": "a, b, c", "meaning": "Side lengths" },
+        { "symbol": "C", "meaning": "The angle opposite side c" }
+      ],
+      "explanation": "Use when you know two sides and the angle between them, or all three sides.",
+      "example": "a = 7, b = 9, C = 50°. c² = 7² + 9² − 2(7)(9)cos 50° ≈ 51.9, so c ≈ 7.2."
+    },
+    {
+      "id": "coordinate_gradient",
+      "category": "Coordinate Geometry",
+      "title": "Gradient of a Line",
+      "formula": "m = (y2 − y1) / (x2 − x1)",
+      "meaning": "Measures how steep a straight line is between two points.",
+      "variables": [
+        { "symbol": "m", "meaning": "Gradient (slope)" },
+        { "symbol": "(x1, y1), (x2, y2)", "meaning": "Two points on the line" }
+      ],
+      "explanation": "Divide the change in y (vertical) by the change in x (horizontal).",
+      "example": "Points (1, 2) and (4, 8). m = (8 − 2) / (4 − 1) = 2."
+    },
+    {
+      "id": "coordinate_distance",
+      "category": "Coordinate Geometry",
+      "title": "Distance Between Two Points",
+      "formula": "d = √((x2 − x1)² + (y2 − y1)²)",
+      "meaning": "Finds the straight-line distance between two coordinates.",
+      "variables": [
+        { "symbol": "d", "meaning": "Distance" },
+        { "symbol": "(x1, y1), (x2, y2)", "meaning": "The two points" }
+      ],
+      "explanation": "This is Pythagoras' theorem applied to the horizontal and vertical differences between the points.",
+      "example": "Points (0, 0) and (3, 4). d = √(3² + 4²) = √25 = 5."
+    },
+    {
+      "id": "coordinate_midpoint",
+      "category": "Coordinate Geometry",
+      "title": "Midpoint of a Line Segment",
+      "formula": "M = ((x1 + x2) / 2, (y1 + y2) / 2)",
+      "meaning": "Finds the point exactly halfway between two coordinates.",
+      "variables": [
+        { "symbol": "M", "meaning": "Midpoint" },
+        { "symbol": "(x1, y1), (x2, y2)", "meaning": "The two endpoints" }
+      ],
+      "explanation": "Average the x-coordinates and average the y-coordinates.",
+      "example": "Points (2, 3) and (8, 7). M = ((2+8)/2, (3+7)/2) = (5, 5)."
+    },
+    {
+      "id": "probability_basic",
+      "category": "Probability",
+      "title": "Basic Probability",
+      "formula": "P(A) = favourable outcomes / total outcomes",
+      "meaning": "Measures how likely an event is to happen, from 0 (impossible) to 1 (certain).",
+      "variables": [
+        { "symbol": "P(A)", "meaning": "Probability of event A" }
+      ],
+      "explanation": "Count the outcomes that satisfy the event, divide by the total number of possible outcomes.",
+      "example": "Rolling a die: P(rolling an even number) = 3/6 = 1/2."
+    },
+    {
+      "id": "probability_combined_and",
+      "category": "Probability",
+      "title": "Combined Probability (AND, independent events)",
+      "formula": "P(A and B) = P(A) × P(B)",
+      "meaning": "Finds the probability of two independent events both happening.",
+      "variables": [
+        { "symbol": "P(A), P(B)", "meaning": "Probabilities of each independent event" }
+      ],
+      "explanation": "Multiply the individual probabilities together, since the events don't affect each other.",
+      "example": "P(heads on a coin) × P(rolling a 6) = 1/2 × 1/6 = 1/12."
+    },
+    {
+      "id": "statistics_mean",
+      "category": "Statistics",
+      "title": "Mean (Average)",
+      "formula": "mean = (sum of values) / (number of values)",
+      "meaning": "The typical or central value of a data set.",
+      "variables": [
+        { "symbol": "mean", "meaning": "The average value" }
+      ],
+      "explanation": "Add up all the values, then divide by how many values there are.",
+      "example": "Data: 4, 8, 6, 2. Mean = (4+8+6+2) / 4 = 20/4 = 5."
+    },
+    {
+      "id": "statistics_range",
+      "category": "Statistics",
+      "title": "Range",
+      "formula": "range = highest value − lowest value",
+      "meaning": "Measures how spread out a data set is.",
+      "variables": [
+        { "symbol": "range", "meaning": "The spread of the data" }
+      ],
+      "explanation": "Subtract the smallest value in the data set from the largest.",
+      "example": "Data: 4, 8, 6, 2. Range = 8 − 2 = 6."
+    }
+  ]
+}

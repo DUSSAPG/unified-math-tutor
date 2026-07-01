@@ -1,0 +1,2702 @@
+[
+  {
+    "id": "t001",
+    "question": "Un granjero tiene 17 ovejas. Todas menos 9 se alejan. ¿Cuántas quedan?",
+    "answer": "Quedan 9 ovejas.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t002",
+    "question": "Un rectángulo tiene 10 cm de largo y 11 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "42 cm. Perímetro = 2×(10+11).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t003",
+    "question": "Un rectángulo tiene 10 cm de largo y 21 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "62 cm. Perímetro = 2×(10+21).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t004",
+    "question": "Un rectángulo tiene 10 cm de largo y 24 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "68 cm. Perímetro = 2×(10+24).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t005",
+    "question": "Un rectángulo tiene 11 cm de largo y 21 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "64 cm. Perímetro = 2×(11+21).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t006",
+    "question": "Un rectángulo tiene 11 cm de largo y 7 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "36 cm. Perímetro = 2×(11+7).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t007",
+    "question": "Un rectángulo tiene 12 cm de largo y 24 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "72 cm. Perímetro = 2×(12+24).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t008",
+    "question": "Un rectángulo tiene 13 cm de largo y 14 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "54 cm. Perímetro = 2×(13+14).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t009",
+    "question": "Un rectángulo tiene 13 cm de largo y 3 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "32 cm. Perímetro = 2×(13+3).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t010",
+    "question": "Un rectángulo tiene 14 cm de largo y 16 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "60 cm. Perímetro = 2×(14+16).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t011",
+    "question": "Un rectángulo tiene 15 cm de largo y 24 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "78 cm. Perímetro = 2×(15+24).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t012",
+    "question": "Un rectángulo tiene 16 cm de largo y 10 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "52 cm. Perímetro = 2×(16+10).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t013",
+    "question": "Un rectángulo tiene 16 cm de largo y 5 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "42 cm. Perímetro = 2×(16+5).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t014",
+    "question": "Un rectángulo tiene 17 cm de largo y 16 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "66 cm. Perímetro = 2×(17+16).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t015",
+    "question": "Un rectángulo tiene 18 cm de largo y 23 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "82 cm. Perímetro = 2×(18+23).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t016",
+    "question": "Un rectángulo tiene 18 cm de largo y 8 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "52 cm. Perímetro = 2×(18+8).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t017",
+    "question": "Un rectángulo tiene 22 cm de largo y 13 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "70 cm. Perímetro = 2×(22+13).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t018",
+    "question": "Un rectángulo tiene 22 cm de largo y 16 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "76 cm. Perímetro = 2×(22+16).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t019",
+    "question": "Un rectángulo tiene 23 cm de largo y 11 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "68 cm. Perímetro = 2×(23+11).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t020",
+    "question": "Un rectángulo tiene 23 cm de largo y 17 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "80 cm. Perímetro = 2×(23+17).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t021",
+    "question": "Un rectángulo tiene 24 cm de largo y 24 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "96 cm. Perímetro = 2×(24+24).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t022",
+    "question": "Un rectángulo tiene 25 cm de largo y 8 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "66 cm. Perímetro = 2×(25+8).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t023",
+    "question": "Un rectángulo tiene 3 cm de largo y 22 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "50 cm. Perímetro = 2×(3+22).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t024",
+    "question": "Un rectángulo tiene 3 cm de largo y 24 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "54 cm. Perímetro = 2×(3+24).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t025",
+    "question": "Un rectángulo tiene 3 cm de largo y 5 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "16 cm. Perímetro = 2×(3+5).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t026",
+    "question": "Un rectángulo tiene 5 cm de largo y 21 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "52 cm. Perímetro = 2×(5+21).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t027",
+    "question": "Un rectángulo tiene 6 cm de largo y 23 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "58 cm. Perímetro = 2×(6+23).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t028",
+    "question": "Un rectángulo tiene 6 cm de largo y 4 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "20 cm. Perímetro = 2×(6+4).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t029",
+    "question": "Un rectángulo tiene 7 cm de largo y 11 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "36 cm. Perímetro = 2×(7+11).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t030",
+    "question": "Un rectángulo tiene 7 cm de largo y 7 cm de ancho. ¿Cuál es su perímetro?",
+    "answer": "28 cm. Perímetro = 2×(7+7).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t031",
+    "question": "Un triángulo tiene lados de 3 cm, 4 cm y 5 cm. ¿Qué tipo de ángulo contiene?",
+    "answer": "Un ángulo recto.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t032",
+    "question": "Completa el espacio en blanco: 10 + 19 = ___.",
+    "answer": "29",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t033",
+    "question": "Completa el espacio en blanco: 13 - 94 = ___.",
+    "answer": "-81",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t034",
+    "question": "Completa el espacio en blanco: 17 + 84 = ___.",
+    "answer": "101",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t035",
+    "question": "Completa el espacio en blanco: 18 + 14 = ___.",
+    "answer": "32",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t036",
+    "question": "Completa el espacio en blanco: 19 × 85 = ___.",
+    "answer": "1615",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t037",
+    "question": "Completa el espacio en blanco: 21 + 45 = ___.",
+    "answer": "66",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t038",
+    "question": "Completa el espacio en blanco: 23 × 99 = ___.",
+    "answer": "2277",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t039",
+    "question": "Completa el espacio en blanco: 25 + 34 = ___.",
+    "answer": "59",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t040",
+    "question": "Completa el espacio en blanco: 27 + 75 = ___.",
+    "answer": "102",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t041",
+    "question": "Completa el espacio en blanco: 27 × 23 = ___.",
+    "answer": "621",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t042",
+    "question": "Completa el espacio en blanco: 29 × 57 = ___.",
+    "answer": "1653",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t043",
+    "question": "Completa el espacio en blanco: 30 + 49 = ___.",
+    "answer": "79",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t044",
+    "question": "Completa el espacio en blanco: 30 - 69 = ___.",
+    "answer": "-39",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t045",
+    "question": "Completa el espacio en blanco: 31 - 62 = ___.",
+    "answer": "-31",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t046",
+    "question": "Completa el espacio en blanco: 32 + 80 = ___.",
+    "answer": "112",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t047",
+    "question": "Completa el espacio en blanco: 32 - 99 = ___.",
+    "answer": "-67",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t048",
+    "question": "Completa el espacio en blanco: 34 + 78 = ___.",
+    "answer": "112",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t049",
+    "question": "Completa el espacio en blanco: 37 × 71 = ___.",
+    "answer": "2627",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t050",
+    "question": "Completa el espacio en blanco: 43 × 60 = ___.",
+    "answer": "2580",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t051",
+    "question": "Completa el espacio en blanco: 45 × 66 = ___.",
+    "answer": "2970",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t052",
+    "question": "Completa el espacio en blanco: 46 - 46 = ___.",
+    "answer": "0",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t053",
+    "question": "Completa el espacio en blanco: 47 + 20 = ___.",
+    "answer": "67",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t054",
+    "question": "Completa el espacio en blanco: 56 + 32 = ___.",
+    "answer": "88",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t055",
+    "question": "Completa el espacio en blanco: 56 × 65 = ___.",
+    "answer": "3640",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t056",
+    "question": "Completa el espacio en blanco: 61 - 17 = ___.",
+    "answer": "44",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t057",
+    "question": "Completa el espacio en blanco: 62 + 72 = ___.",
+    "answer": "134",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t058",
+    "question": "Completa el espacio en blanco: 63 × 95 = ___.",
+    "answer": "5985",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t059",
+    "question": "Completa el espacio en blanco: 68 - 51 = ___.",
+    "answer": "17",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t060",
+    "question": "Completa el espacio en blanco: 69 - 99 = ___.",
+    "answer": "-30",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t061",
+    "question": "Completa el espacio en blanco: 79 × 98 = ___.",
+    "answer": "7742",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t062",
+    "question": "Completa el espacio en blanco: 93 + 18 = ___.",
+    "answer": "111",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t063",
+    "question": "Completa el espacio en blanco: 95 × 23 = ___.",
+    "answer": "2185",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t064",
+    "question": "Encuentra el siguiente número: 10, 17, 26, 37, 50, ?",
+    "answer": "65. Son cuadrados de 3² a 8² más 1.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t065",
+    "question": "Encuentra el siguiente número: 11, 14, 19, 26, 35, 46, ?",
+    "answer": "59. Son cuadrados de 1² a 7² más 10.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t066",
+    "question": "Encuentra el siguiente número: 11, 18, 27, 38, 51, ?",
+    "answer": "66. Son cuadrados de 3² a 8² más 2.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t067",
+    "question": "Encuentra el siguiente número: 12, 19, 28, 39, 52, 67, 84, ?",
+    "answer": "103. Son cuadrados de 3² a 10² más 3.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t068",
+    "question": "Encuentra el siguiente número: 14, 19, 26, 35, 46, 59, ?",
+    "answer": "74. Son cuadrados de 2² a 8² más 10.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t069",
+    "question": "Encuentra el siguiente número: 14, 19, 26, 35, 46, ?",
+    "answer": "59. Son cuadrados de 2² a 7² más 10.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t070",
+    "question": "Encuentra el siguiente número: 14, 21, 30, 41, 54, 69, 86, ?",
+    "answer": "105. Son cuadrados de 3² a 10² más 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t071",
+    "question": "Encuentra el siguiente número: 16, 25, 36, 49, 64, ?",
+    "answer": "81. Son cuadrados de 4² a 9².",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t072",
+    "question": "Encuentra el siguiente número: 19, 26, 35, 46, 59, 74, ?",
+    "answer": "91. Son cuadrados de 3² a 9² más 10.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t073",
+    "question": "Encuentra el siguiente número: 19, 28, 39, 52, 67, 84, 103, ?",
+    "answer": "124. Son cuadrados de 4² a 11² más 3.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t074",
+    "question": "Encuentra el siguiente número: 19, 28, 39, 52, 67, 84, ?",
+    "answer": "103. Son cuadrados de 4² a 10² más 3.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t075",
+    "question": "Encuentra el siguiente número: 2, 5, 10, 17, 26, 37, 50, ?",
+    "answer": "65. Son cuadrados de 1² a 8² más 1.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t076",
+    "question": "Encuentra el siguiente número: 21, 30, 41, 54, 69, 86, ?",
+    "answer": "105. Son cuadrados de 4² a 10² más 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t077",
+    "question": "Encuentra el siguiente número: 21, 30, 41, 54, 69, ?",
+    "answer": "86. Son cuadrados de 4² a 9² más 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t078",
+    "question": "Encuentra el siguiente número: 25, 36, 49, 64, 81, ?",
+    "answer": "100. Son cuadrados de 5² a 10².",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t079",
+    "question": "Encuentra el siguiente número: 26, 37, 50, 65, 82, 101, 122, ?",
+    "answer": "145. Son cuadrados de 5² a 12² más 1.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t080",
+    "question": "Encuentra el siguiente número: 27, 38, 51, 66, 83, 102, 123, ?",
+    "answer": "146. Son cuadrados de 5² a 12² más 2.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t081",
+    "question": "Encuentra el siguiente número: 3, 6, 11, 18, 27, 38, 51, ?",
+    "answer": "66. Son cuadrados de 1² a 8² más 2.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t082",
+    "question": "Encuentra el siguiente número: 30, 41, 54, 69, 86, ?",
+    "answer": "105. Son cuadrados de 5² a 10² más 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t083",
+    "question": "Encuentra el siguiente número: 4, 7, 12, 19, 28, 39, 52, ?",
+    "answer": "67. Son cuadrados de 1² a 8² más 3.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t084",
+    "question": "Encuentra el siguiente número: 4, 9, 16, 25, 36, 49, ?",
+    "answer": "64. Son cuadrados de 2² a 8².",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t085",
+    "question": "Encuentra el siguiente número: 5, 10, 17, 26, 37, 50, 65, ?",
+    "answer": "82. Son cuadrados de 2² a 9² más 1.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t086",
+    "question": "Encuentra el siguiente número: 5, 8, 13, 20, 29, 40, ?",
+    "answer": "53. Son cuadrados de 1² a 7² más 4.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t087",
+    "question": "Encuentra el siguiente número: 6, 11, 18, 27, 38, 51, 66, ?",
+    "answer": "83. Son cuadrados de 2² a 9² más 2.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t088",
+    "question": "Encuentra el siguiente número: 8, 13, 20, 29, 40, 53, 68, ?",
+    "answer": "85. Son cuadrados de 2² a 9² más 4.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t089",
+    "question": "Encuentra el siguiente número: 9, 14, 21, 30, 41, 54, ?",
+    "answer": "69. Son cuadrados de 2² a 8² más 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t090",
+    "question": "Encuentra el siguiente número: 9, 16, 25, 36, 49, ?",
+    "answer": "64. Son cuadrados de 3² a 8².",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t091",
+    "question": "¿Cuántas veces puedes restar 10 de 100?",
+    "answer": "Una vez. Después, estarías restando de 90.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t092",
+    "question": "Sumo cinco a nueve y obtengo dos. La respuesta es correcta. ¿Cómo?",
+    "answer": "En un reloj: cinco horas después de las 9 son las 2.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t093",
+    "question": "En inglés, soy un número impar. Quita una letra y me convierto en par. ¿Qué número soy?",
+    "answer": "Seven. Al quitar la «s», queda «even» (par, en inglés).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t094",
+    "question": "Tengo agujas, pero no puedo aplaudir. ¿Qué soy?",
+    "answer": "Un reloj.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t095",
+    "question": "Si son las 10:05, ¿qué hora será dentro de 15 minutos?",
+    "answer": "10:20.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t096",
+    "question": "Si son las 10:05, ¿qué hora será dentro de 30 minutos?",
+    "answer": "10:35.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t097",
+    "question": "Si son las 10:25, ¿qué hora será dentro de 45 minutos?",
+    "answer": "11:10.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t098",
+    "question": "Si son las 10:55, ¿qué hora será dentro de 35 minutos?",
+    "answer": "11:30.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t099",
+    "question": "Si son las 11:15, ¿qué hora será dentro de 50 minutos?",
+    "answer": "12:05.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t100",
+    "question": "Si son las 11:20, ¿qué hora será dentro de 40 minutos?",
+    "answer": "12:00.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t101",
+    "question": "Si son las 11:35, ¿qué hora será dentro de 40 minutos?",
+    "answer": "12:15.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t102",
+    "question": "Si son las 1:15, ¿qué hora será dentro de 45 minutos?",
+    "answer": "2:00.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t103",
+    "question": "Si son las 1:45, ¿qué hora será dentro de 25 minutos?",
+    "answer": "2:10.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t104",
+    "question": "Si son las 2:20, ¿qué hora será dentro de 25 minutos?",
+    "answer": "2:45.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t105",
+    "question": "Si son las 2:40, ¿qué hora será dentro de 40 minutos?",
+    "answer": "3:20.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t106",
+    "question": "Si son las 2:50, ¿qué hora será dentro de 10 minutos?",
+    "answer": "3:00.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t107",
+    "question": "Si son las 2:55, ¿qué hora será dentro de 25 minutos?",
+    "answer": "3:20.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t108",
+    "question": "Si son las 3:20, ¿qué hora será dentro de 20 minutos?",
+    "answer": "3:40.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t109",
+    "question": "Si son las 4:10, ¿qué hora será dentro de 10 minutos?",
+    "answer": "4:20.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t110",
+    "question": "Si son las 4:35, ¿qué hora será dentro de 45 minutos?",
+    "answer": "5:20.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t111",
+    "question": "Si son las 6:10, ¿qué hora será dentro de 25 minutos?",
+    "answer": "6:35.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t112",
+    "question": "Si son las 6:40, ¿qué hora será dentro de 50 minutos?",
+    "answer": "7:30.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t113",
+    "question": "Si son las 8:20, ¿qué hora será dentro de 45 minutos?",
+    "answer": "9:05.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t114",
+    "question": "Si son las 8:25, ¿qué hora será dentro de 10 minutos?",
+    "answer": "8:35.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t115",
+    "question": "Si son las 8:45, ¿qué hora será dentro de 50 minutos?",
+    "answer": "9:35.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t116",
+    "question": "Si son las 8:55, ¿qué hora será dentro de 45 minutos?",
+    "answer": "9:40.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t117",
+    "question": "Si son las 9:40, ¿qué hora será dentro de 45 minutos?",
+    "answer": "10:25.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t118",
+    "question": "Si son las 9:50, ¿qué hora será dentro de 30 minutos?",
+    "answer": "10:20.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t119",
+    "question": "Si dos son compañía y tres son multitud, ¿qué son cuatro y cinco?",
+    "answer": "Nueve.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t120",
+    "question": "Si me dejas caer, seguro que me rompo; pero sonríeme y siempre te devolveré la sonrisa. ¿Qué soy?",
+    "answer": "Un espejo.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t121",
+    "question": "Hay 12 calcetines en un cajón: 6 azules y 6 rojos. ¿Cuántos debes sacar a oscuras para garantizar un par del mismo color?",
+    "answer": "3 calcetines.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t122",
+    "question": "Hoy, un progenitor tiene 26 años y su hijo tiene 6. Dentro de 10 años, ¿cuántos años sumarán entre los dos?",
+    "answer": "52. Suma 10 a cada edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t123",
+    "question": "Hoy, un progenitor tiene 27 años y su hijo tiene 6. Dentro de 6 años, ¿cuántos años sumarán entre los dos?",
+    "answer": "45. Suma 6 a cada edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t124",
+    "question": "Hoy, un progenitor tiene 27 años y su hijo tiene 6. Dentro de 7 años, ¿cuántos años sumarán entre los dos?",
+    "answer": "47. Suma 7 a cada edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t125",
+    "question": "Hoy, un progenitor tiene 27 años y su hijo tiene 6. Dentro de 8 años, ¿cuántos años sumarán entre los dos?",
+    "answer": "49. Suma 8 a cada edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t126",
+    "question": "Hoy, un progenitor tiene 29 años y su hijo tiene 7. Dentro de 8 años, ¿cuántos años sumarán entre los dos?",
+    "answer": "52. Suma 8 a cada edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t127",
+    "question": "Hoy, un progenitor tiene 31 años y su hijo tiene 7. Dentro de 10 años, ¿cuántos años sumarán entre los dos?",
+    "answer": "58. Suma 10 a cada edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t128",
+    "question": "Hoy, un progenitor tiene 33 años y su hijo tiene 6. Dentro de 6 años, ¿cuántos años sumarán entre los dos?",
+    "answer": "51. Suma 6 a cada edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t129",
+    "question": "Hoy, un progenitor tiene 33 años y su hijo tiene 7. Dentro de 7 años, ¿cuántos años sumarán entre los dos?",
+    "answer": "54. Suma 7 a cada edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t130",
+    "question": "Hoy, un progenitor tiene 34 años y su hijo tiene 11. Dentro de 10 años, ¿cuántos años sumarán entre los dos?",
+    "answer": "65. Suma 10 a cada edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t131",
+    "question": "Hoy, un progenitor tiene 35 años y su hijo tiene 10. Dentro de 7 años, ¿cuántos años sumarán entre los dos?",
+    "answer": "59. Suma 7 a cada edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t132",
+    "question": "Hoy, un progenitor tiene 35 años y su hijo tiene 7. Dentro de 8 años, ¿cuántos años sumarán entre los dos?",
+    "answer": "58. Suma 8 a cada edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t133",
+    "question": "Hoy, un progenitor tiene 36 años y su hijo tiene 6. Dentro de 7 años, ¿cuántos años sumarán entre los dos?",
+    "answer": "56. Suma 7 a cada edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t134",
+    "question": "Hoy, un progenitor tiene 37 años y su hijo tiene 6. Dentro de 7 años, ¿cuántos años sumarán entre los dos?",
+    "answer": "57. Suma 7 a cada edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t135",
+    "question": "Hoy, un progenitor tiene 37 años y su hijo tiene 8. Dentro de 6 años, ¿cuántos años sumarán entre los dos?",
+    "answer": "57. Suma 6 a cada edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t136",
+    "question": "Hoy, un progenitor tiene 37 años y su hijo tiene 8. Dentro de 7 años, ¿cuántos años sumarán entre los dos?",
+    "answer": "59. Suma 7 a cada edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t137",
+    "question": "Hoy, un progenitor tiene 38 años y su hijo tiene 10. Dentro de 10 años, ¿cuántos años sumarán entre los dos?",
+    "answer": "68. Suma 10 a cada edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t138",
+    "question": "Hoy, un progenitor tiene 38 años y su hijo tiene 10. Dentro de 5 años, ¿cuántos años sumarán entre los dos?",
+    "answer": "58. Suma 5 a cada edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t139",
+    "question": "Hoy, un progenitor tiene 38 años y su hijo tiene 6. Dentro de 7 años, ¿cuántos años sumarán entre los dos?",
+    "answer": "58. Suma 7 a cada edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t140",
+    "question": "Hoy, un progenitor tiene 38 años y su hijo tiene 9. Dentro de 10 años, ¿cuántos años sumarán entre los dos?",
+    "answer": "67. Suma 10 a cada edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t141",
+    "question": "Hoy, un progenitor tiene 39 años y su hijo tiene 9. Dentro de 6 años, ¿cuántos años sumarán entre los dos?",
+    "answer": "60. Suma 6 a cada edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t142",
+    "question": "Hoy, un progenitor tiene 41 años y su hijo tiene 12. Dentro de 10 años, ¿cuántos años sumarán entre los dos?",
+    "answer": "73. Suma 10 a cada edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t143",
+    "question": "Hoy, un progenitor tiene 41 años y su hijo tiene 6. Dentro de 7 años, ¿cuántos años sumarán entre los dos?",
+    "answer": "61. Suma 7 a cada edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t144",
+    "question": "Hoy, un progenitor tiene 41 años y su hijo tiene 7. Dentro de 10 años, ¿cuántos años sumarán entre los dos?",
+    "answer": "68. Suma 10 a cada edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t145",
+    "question": "Hoy, un progenitor tiene 42 años y su hijo tiene 10. Dentro de 7 años, ¿cuántos años sumarán entre los dos?",
+    "answer": "66. Suma 7 a cada edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t146",
+    "question": "Hoy, un progenitor tiene 42 años y su hijo tiene 7. Dentro de 8 años, ¿cuántos años sumarán entre los dos?",
+    "answer": "65. Suma 8 a cada edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t147",
+    "question": "Hoy, un progenitor tiene 43 años y su hijo tiene 10. Dentro de 10 años, ¿cuántos años sumarán entre los dos?",
+    "answer": "73. Suma 10 a cada edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t148",
+    "question": "Hoy, un progenitor tiene 43 años y su hijo tiene 9. Dentro de 6 años, ¿cuántos años sumarán entre los dos?",
+    "answer": "64. Suma 6 a cada edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t149",
+    "question": "Hoy, un progenitor tiene 46 años y su hijo tiene 11. Dentro de 8 años, ¿cuántos años sumarán entre los dos?",
+    "answer": "73. Suma 8 a cada edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t150",
+    "question": "¿Qué empieza por T, termina en T y tiene té dentro?",
+    "answer": "Una tetera.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t151",
+    "question": "¿Qué se puede hacer, contar, gastar y tomar?",
+    "answer": "Una broma.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t152",
+    "question": "¿Qué puede llenar una habitación sin ocupar espacio?",
+    "answer": "La luz.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t153",
+    "question": "¿Qué puede viajar alrededor del mundo sin salir de una esquina?",
+    "answer": "Un sello.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t154",
+    "question": "¿Qué puedes coger pero no lanzar?",
+    "answer": "Un resfriado.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t155",
+    "question": "¿Qué viene después: 1, 4, 9, 16, 25, 36, 49, ?",
+    "answer": "64. Suma números impares consecutivos.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t156",
+    "question": "¿Qué viene después: 10, 13, 18, 25, 34, 45, 58, ?",
+    "answer": "73. Suma números impares consecutivos.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t157",
+    "question": "¿Qué viene después: 10, 13, 18, 25, 34, 45, ?",
+    "answer": "58. Suma números impares consecutivos.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t158",
+    "question": "¿Qué viene después: 2, 5, 10, 17, 26, 37, ?",
+    "answer": "50. Suma números impares consecutivos.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t159",
+    "question": "¿Qué viene después: 3, 6, 11, 18, 27, 38, ?",
+    "answer": "51. Suma números impares consecutivos.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t160",
+    "question": "¿Qué viene después: 3, 6, 11, 18, 27, ?",
+    "answer": "38. Suma números impares consecutivos.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t161",
+    "question": "¿Qué viene después: 5, 8, 13, 20, 29, 40, ?",
+    "answer": "53. Suma números impares consecutivos.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t162",
+    "question": "¿Qué viene después: 5, 8, 13, 20, 29, ?",
+    "answer": "40. Suma números impares consecutivos.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t163",
+    "question": "¿Qué viene después: 7, 10, 15, 22, 31, 42, 55, ?",
+    "answer": "70. Suma números impares consecutivos.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t164",
+    "question": "¿Qué viene después: 7, 10, 15, 22, 31, 42, ?",
+    "answer": "55. Suma números impares consecutivos.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t165",
+    "question": "¿Qué viene después: 7, 10, 15, 22, 31, ?",
+    "answer": "42. Suma números impares consecutivos.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t166",
+    "question": "¿Qué viene después: 8, 11, 16, 23, 32, ?",
+    "answer": "43. Suma números impares consecutivos.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t167",
+    "question": "¿Qué viene después: 9, 12, 17, 24, 33, ?",
+    "answer": "44. Suma números impares consecutivos.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t168",
+    "question": "¿Qué aparece una vez en «minuto», dos veces en «momento» y nunca en «cien años»?",
+    "answer": "La letra «m».",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t169",
+    "question": "¿Qué se moja más cuanto más seca?",
+    "answer": "Una toalla.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t170",
+    "question": "¿Qué sube pero nunca baja?",
+    "answer": "Tu edad.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t171",
+    "question": "¿Qué tiene corteza pero no muerde?",
+    "answer": "Un árbol.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t172",
+    "question": "¿Qué tiene lecho pero nunca duerme?",
+    "answer": "Un río.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t173",
+    "question": "¿Qué tiene la parte de abajo arriba?",
+    "answer": "Tus piernas.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t174",
+    "question": "¿Qué tiene esfera y dos agujas, pero no brazos ni piernas?",
+    "answer": "Un reloj.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t175",
+    "question": "¿Qué tiene cara y cruz, es marrón y no tiene piernas?",
+    "answer": "Una moneda.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t176",
+    "question": "¿Qué tiene cuello pero no cabeza?",
+    "answer": "Una botella.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t177",
+    "question": "¿Qué tiene timbre pero no dedo?",
+    "answer": "Un teléfono.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t178",
+    "question": "¿Qué tiene lomo pero no huesos?",
+    "answer": "Un libro.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t179",
+    "question": "¿Qué tiene cola, no tiene piernas y aun así puede saltar?",
+    "answer": "Una cometa.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t180",
+    "question": "¿Qué tiene un pulgar y cuatro dedos, pero no es una mano?",
+    "answer": "Un guante.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t181",
+    "question": "¿Qué tiene final pero no principio?",
+    "answer": "Un palo.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t182",
+    "question": "¿Qué tiene un ojo pero no cuerpo?",
+    "answer": "Un huracán.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t183",
+    "question": "¿Qué tiene cuatro ruedas y moscas?",
+    "answer": "Un camión de basura (lleva moscas con la basura).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t184",
+    "question": "¿Qué tiene patas pero no camina?",
+    "answer": "Una mesa.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t185",
+    "question": "¿Qué tiene muchas teclas pero no puede abrir ninguna cerradura?",
+    "answer": "Un piano (o un teclado).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t186",
+    "question": "¿Qué tiene un ojo pero no puede ver?",
+    "answer": "Una aguja.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t187",
+    "question": "¿Qué tiene dientes pero no puede morder?",
+    "answer": "Un peine.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t188",
+    "question": "¿Qué hay que romper antes de poder usarlo?",
+    "answer": "Un huevo.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t189",
+    "question": "¿Qué tiene palabras pero nunca habla?",
+    "answer": "Un libro.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t190",
+    "question": "¿Qué invento te permite mirar a través de una pared?",
+    "answer": "Una ventana.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t191",
+    "question": "¿Cuánto es 1/2 de 24?",
+    "answer": "12.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t192",
+    "question": "¿Cuánto es 1/2 de 84?",
+    "answer": "42.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t193",
+    "question": "¿Cuánto es 1/2 de 96?",
+    "answer": "48.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t194",
+    "question": "¿Cuánto es 1/3 de 24?",
+    "answer": "8.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t195",
+    "question": "¿Cuánto es 1/3 de 30?",
+    "answer": "10.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t196",
+    "question": "¿Cuánto es 1/3 de 48?",
+    "answer": "16.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t197",
+    "question": "¿Cuánto es 1/4 de 96?",
+    "answer": "24.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t198",
+    "question": "¿Cuánto es 1/5 de 40?",
+    "answer": "8.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t199",
+    "question": "¿Cuánto es 10% de 240?",
+    "answer": "24. (10% significa 10/100 de 240.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t200",
+    "question": "¿Cuánto es 10% de 300?",
+    "answer": "30. (10% significa 10/100 de 300.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t201",
+    "question": "¿Cuánto es 10% de 80?",
+    "answer": "8. (10% significa 10/100 de 80.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t202",
+    "question": "¿Cuánto es 12% de 100?",
+    "answer": "12. (12% significa 12/100 de 100.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t203",
+    "question": "¿Cuánto es 12% de 80?",
+    "answer": "9.6. (12% significa 12/100 de 80.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t204",
+    "question": "¿Cuánto es 15% de 200?",
+    "answer": "30. (15% significa 15/100 de 200.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t205",
+    "question": "¿Cuánto es 15% de 50?",
+    "answer": "7.5. (15% significa 15/100 de 50.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t206",
+    "question": "¿Cuánto es 15% de 60?",
+    "answer": "9. (15% significa 15/100 de 60.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t207",
+    "question": "¿Cuánto es 2/3 de 120?",
+    "answer": "80.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t208",
+    "question": "¿Cuánto es 2/3 de 36?",
+    "answer": "24.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t209",
+    "question": "¿Cuánto es 2/3 de 48?",
+    "answer": "32.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t210",
+    "question": "¿Cuánto es 2/5 de 24?",
+    "answer": "9.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t211",
+    "question": "¿Cuánto es 2/5 de 30?",
+    "answer": "12.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t212",
+    "question": "¿Cuánto es 2/5 de 48?",
+    "answer": "19.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t213",
+    "question": "¿Cuánto es 20% de 240?",
+    "answer": "48. (20% significa 20/100 de 240.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t214",
+    "question": "¿Cuánto es 20% de 60?",
+    "answer": "12. (20% significa 20/100 de 60.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t215",
+    "question": "¿Cuánto es 20% de 80?",
+    "answer": "16. (20% significa 20/100 de 80.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t216",
+    "question": "¿Cuánto es 25% de 100?",
+    "answer": "25. (25% significa 25/100 de 100.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t217",
+    "question": "¿Cuánto es 25% de 120?",
+    "answer": "30. (25% significa 25/100 de 120.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t218",
+    "question": "¿Cuánto es 25% de 200?",
+    "answer": "50. (25% significa 25/100 de 200.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t219",
+    "question": "¿Cuánto es 25% de 300?",
+    "answer": "75. (25% significa 25/100 de 300.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t220",
+    "question": "¿Cuánto es 3/4 de 120?",
+    "answer": "90.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t221",
+    "question": "¿Cuánto es 3/4 de 30?",
+    "answer": "22.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t222",
+    "question": "¿Cuánto es 3/4 de 60?",
+    "answer": "45.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t223",
+    "question": "¿Cuánto es 3/4 de 84?",
+    "answer": "63.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t224",
+    "question": "¿Cuánto es 30% de 40?",
+    "answer": "12. (30% significa 30/100 de 40.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t225",
+    "question": "¿Cuánto es 30% de 80?",
+    "answer": "24. (30% significa 30/100 de 80.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t226",
+    "question": "¿Cuánto es 40% de 100?",
+    "answer": "40. (40% significa 40/100 de 100.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t227",
+    "question": "¿Cuánto es 40% de 120?",
+    "answer": "48. (40% significa 40/100 de 120.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t228",
+    "question": "¿Cuánto es 40% de 200?",
+    "answer": "80. (40% significa 40/100 de 200.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t229",
+    "question": "¿Cuánto es 40% de 60?",
+    "answer": "24. (40% significa 40/100 de 60.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t230",
+    "question": "¿Cuánto es 5% de 100?",
+    "answer": "5. (5% significa 5/100 de 100.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t231",
+    "question": "¿Cuánto es 5% de 300?",
+    "answer": "15. (5% significa 5/100 de 300.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t232",
+    "question": "¿Cuánto es 5% de 40?",
+    "answer": "2. (5% significa 5/100 de 40.)",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t233",
+    "question": "¿Qué siempre está por venir pero nunca llega?",
+    "answer": "Mañana.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t234",
+    "question": "¿Qué está siempre delante de ti pero no se puede ver?",
+    "answer": "El futuro.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t235",
+    "question": "¿Qué es negro cuando está limpio y blanco cuando está sucio?",
+    "answer": "Una pizarra.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t236",
+    "question": "¿Qué es fácil de levantar pero difícil de lanzar?",
+    "answer": "Una pluma.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t237",
+    "question": "¿Qué está lleno de agujeros pero aun así retiene agua?",
+    "answer": "Una esponja.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t238",
+    "question": "¿Qué es tan frágil que decir su nombre lo rompe?",
+    "answer": "El silencio.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t239",
+    "question": "¿Cuál es el siguiente número: 1, 4, 9, 16, 25, ...?",
+    "answer": "36. Son números cuadrados.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t240",
+    "question": "¿Qué tipo de banda nunca toca música?",
+    "answer": "Una goma elástica.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t241",
+    "question": "¿Qué número viene después: 10, 17, 24, 31, 38, ?",
+    "answer": "45. Suma 7 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t242",
+    "question": "¿Qué número viene después: 11, 19, 27, 35, 43, 51, ?",
+    "answer": "59. Suma 8 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t243",
+    "question": "¿Qué número viene después: 13, 19, 25, 31, 37, 43, ?",
+    "answer": "49. Suma 6 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t244",
+    "question": "¿Qué número viene después: 13, 24, 35, 46, 57, 68, 79, ?",
+    "answer": "90. Suma 11 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t245",
+    "question": "¿Qué número viene después: 14, 16, 18, 20, 22, 24, 26, ?",
+    "answer": "28. Suma 2 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t246",
+    "question": "¿Qué número viene después: 14, 23, 32, 41, 50, 59, 68, ?",
+    "answer": "77. Suma 9 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t247",
+    "question": "¿Qué número viene después: 15, 26, 37, 48, 59, 70, 81, ?",
+    "answer": "92. Suma 11 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t248",
+    "question": "¿Qué número viene después: 16, 21, 26, 31, 36, ?",
+    "answer": "41. Suma 5 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t249",
+    "question": "¿Qué número viene después: 16, 31, 46, 61, 76, 91, ?",
+    "answer": "106. Suma 15 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t250",
+    "question": "¿Qué número viene después: 17, 22, 27, 32, 37, ?",
+    "answer": "42. Suma 5 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t251",
+    "question": "¿Qué número viene después: 18, 23, 28, 33, 38, ?",
+    "answer": "43. Suma 5 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t252",
+    "question": "¿Qué número viene después: 19, 25, 31, 37, 43, 49, ?",
+    "answer": "55. Suma 6 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t253",
+    "question": "¿Qué número viene después: 2, 12, 22, 32, 42, 52, ?",
+    "answer": "62. Suma 10 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t254",
+    "question": "¿Qué número viene después: 2, 7, 12, 17, 22, 27, ?",
+    "answer": "32. Suma 5 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t255",
+    "question": "¿Qué número viene después: 3, 15, 27, 39, 51, 63, ?",
+    "answer": "75. Suma 12 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t256",
+    "question": "¿Qué número viene después: 3, 8, 13, 18, 23, 28, 33, ?",
+    "answer": "38. Suma 5 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t257",
+    "question": "¿Qué número viene después: 3, 9, 15, 21, 27, ?",
+    "answer": "33. Suma 6 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t258",
+    "question": "¿Qué número viene después: 4, 16, 28, 40, 52, 64, 76, ?",
+    "answer": "88. Suma 12 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t259",
+    "question": "¿Qué número viene después: 4, 18, 32, 46, 60, 74, ?",
+    "answer": "88. Suma 14 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t260",
+    "question": "¿Qué número viene después: 4, 6, 8, 10, 12, 14, ?",
+    "answer": "16. Suma 2 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t261",
+    "question": "¿Qué número viene después: 4, 7, 10, 13, 16, 19, 22, ?",
+    "answer": "25. Suma 3 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t262",
+    "question": "¿Qué número viene después: 4, 8, 12, 16, 20, 24, 28, ?",
+    "answer": "32. Suma 4 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t263",
+    "question": "¿Qué número viene después: 6, 19, 32, 45, 58, 71, ?",
+    "answer": "84. Suma 13 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t264",
+    "question": "¿Qué número viene después: 7, 13, 19, 25, 31, 37, 43, ?",
+    "answer": "49. Suma 6 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t265",
+    "question": "¿Qué número viene después: 7, 17, 27, 37, 47, 57, ?",
+    "answer": "67. Suma 10 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t266",
+    "question": "¿Qué número viene después: 7, 22, 37, 52, 67, 82, ?",
+    "answer": "97. Suma 15 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t267",
+    "question": "¿Qué número viene después: 8, 13, 18, 23, 28, ?",
+    "answer": "33. Suma 5 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t268",
+    "question": "¿Qué número viene después: 8, 19, 30, 41, 52, ?",
+    "answer": "63. Suma 11 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t269",
+    "question": "¿Qué número viene después: 9, 17, 25, 33, 41, 49, ?",
+    "answer": "57. Suma 8 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t270",
+    "question": "¿Qué número viene después: 9, 19, 29, 39, 49, ?",
+    "answer": "59. Suma 10 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t271",
+    "question": "¿Qué número viene después: 9, 24, 39, 54, 69, 84, ?",
+    "answer": "99. Suma 15 cada vez.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t272",
+    "question": "¿Qué número tiene tantas letras como indica su valor?",
+    "answer": "Cuatro.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t273",
+    "question": "¿Qué corre pero nunca camina?",
+    "answer": "El agua (un río).",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t274",
+    "question": "¿Qué tres números positivos dan el mismo resultado al sumarlos y al multiplicarlos?",
+    "answer": "1, 2 y 3. Ambos resultados son 6.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t275",
+    "question": "Sin calculadora, ¿cuánto es 10 + 9 × 6?",
+    "answer": "64. Multiplica primero: 9×6=54, luego suma 10.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t276",
+    "question": "Sin calculadora, ¿cuánto es 11 + 6 × 10?",
+    "answer": "71. Multiplica primero: 6×10=60, luego suma 11.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t277",
+    "question": "Sin calculadora, ¿cuánto es 12 + 10 × 11?",
+    "answer": "122. Multiplica primero: 10×11=110, luego suma 12.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t278",
+    "question": "Sin calculadora, ¿cuánto es 12 + 11 × 7?",
+    "answer": "89. Multiplica primero: 11×7=77, luego suma 12.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t279",
+    "question": "Sin calculadora, ¿cuánto es 12 + 12 × 3?",
+    "answer": "48. Multiplica primero: 12×3=36, luego suma 12.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t280",
+    "question": "Sin calculadora, ¿cuánto es 12 + 3 × 4?",
+    "answer": "24. Multiplica primero: 3×4=12, luego suma 12.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t281",
+    "question": "Sin calculadora, ¿cuánto es 12 + 7 × 3?",
+    "answer": "33. Multiplica primero: 7×3=21, luego suma 12.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t282",
+    "question": "Sin calculadora, ¿cuánto es 12 + 8 × 7?",
+    "answer": "68. Multiplica primero: 8×7=56, luego suma 12.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t283",
+    "question": "Sin calculadora, ¿cuánto es 2 + 2 × 7?",
+    "answer": "16. Multiplica primero: 2×7=14, luego suma 2.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t284",
+    "question": "Sin calculadora, ¿cuánto es 2 + 3 × 11?",
+    "answer": "35. Multiplica primero: 3×11=33, luego suma 2.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t285",
+    "question": "Sin calculadora, ¿cuánto es 2 + 9 × 10?",
+    "answer": "92. Multiplica primero: 9×10=90, luego suma 2.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t286",
+    "question": "Sin calculadora, ¿cuánto es 4 + 11 × 8?",
+    "answer": "92. Multiplica primero: 11×8=88, luego suma 4.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t287",
+    "question": "Sin calculadora, ¿cuánto es 4 + 5 × 10?",
+    "answer": "54. Multiplica primero: 5×10=50, luego suma 4.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t288",
+    "question": "Sin calculadora, ¿cuánto es 4 + 5 × 7?",
+    "answer": "39. Multiplica primero: 5×7=35, luego suma 4.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t289",
+    "question": "Sin calculadora, ¿cuánto es 5 + 12 × 6?",
+    "answer": "77. Multiplica primero: 12×6=72, luego suma 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t290",
+    "question": "Sin calculadora, ¿cuánto es 5 + 12 × 7?",
+    "answer": "89. Multiplica primero: 12×7=84, luego suma 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t291",
+    "question": "Sin calculadora, ¿cuánto es 5 + 5 × 4?",
+    "answer": "25. Multiplica primero: 5×4=20, luego suma 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t292",
+    "question": "Sin calculadora, ¿cuánto es 5 + 6 × 7?",
+    "answer": "47. Multiplica primero: 6×7=42, luego suma 5.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t293",
+    "question": "Sin calculadora, ¿cuánto es 6 + 11 × 5?",
+    "answer": "61. Multiplica primero: 11×5=55, luego suma 6.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t294",
+    "question": "Sin calculadora, ¿cuánto es 6 + 5 × 8?",
+    "answer": "46. Multiplica primero: 5×8=40, luego suma 6.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t295",
+    "question": "Sin calculadora, ¿cuánto es 8 + 10 × 12?",
+    "answer": "128. Multiplica primero: 10×12=120, luego suma 8.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t296",
+    "question": "Sin calculadora, ¿cuánto es 8 + 10 × 2?",
+    "answer": "28. Multiplica primero: 10×2=20, luego suma 8.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t297",
+    "question": "Sin calculadora, ¿cuánto es 8 + 12 × 12?",
+    "answer": "152. Multiplica primero: 12×12=144, luego suma 8.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t298",
+    "question": "Sin calculadora, ¿cuánto es 8 + 4 × 9?",
+    "answer": "44. Multiplica primero: 4×9=36, luego suma 8.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t299",
+    "question": "Sin calculadora, ¿cuánto es 8 + 6 × 3?",
+    "answer": "26. Multiplica primero: 6×3=18, luego suma 8.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  },
+  {
+    "id": "t300",
+    "question": "Sin calculadora, ¿cuánto es 9 + 7 × 3?",
+    "answer": "30. Multiplica primero: 7×3=21, luego suma 9.",
+    "difficulty": "easy",
+    "tags": [
+      "all-ages"
+    ]
+  }
+]

@@ -1,0 +1,16 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_shared_ui/flutter_shared_ui.dart';
+
+class TooltipProvider extends StatelessWidget {
+  const TooltipProvider({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppScaffold(
+      title: 'Tooltip Provider',
+      child: const Center(
+        child: Text('Tooltip Provider'),
+      ),
+    );
+  }
+}

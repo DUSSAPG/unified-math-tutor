@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "tricks": [
+    {
+      "id": "multiply_by_11",
+      "title": "Multiply by 11",
+      "explanation": "For a two-digit number, add its digits and place the sum between them. Carry if the sum is 10 or more.",
+      "workedExample": {
+        "prompt": "23 x 11",
+        "steps": ["Keep 2 and 3 as the outside digits.", "Add 2 + 3 = 5 and put it in the middle."],
+        "answer": "253"
+      },
+      "practiceExample": {"prompt": "What is 42 x 11?", "answer": "462"}
+    },
+    {
+      "id": "ending_in_5_squared",
+      "title": "Numbers Ending in 5 Squared",
+      "explanation": "Multiply the digits before the 5 by the next whole number, then finish with 25.",
+      "workedExample": {
+        "prompt": "35 squared",
+        "steps": ["The digit before 5 is 3.", "Multiply 3 x 4 = 12, then attach 25."],
+        "answer": "1225"
+      },
+      "practiceExample": {"prompt": "What is 65 squared?", "answer": "4225"}
+    },
+    {
+      "id": "complements_to_100",
+      "title": "Complements to 100",
+      "explanation": "Find how much is needed to reach the next ten, then how much remains to reach 100.",
+      "workedExample": {
+        "prompt": "What complements 67 to make 100?",
+        "steps": ["67 needs 3 to reach 70.", "70 needs 30 to reach 100. Add 3 + 30."],
+        "answer": "33"
+      },
+      "practiceExample": {"prompt": "What complements 46 to make 100?", "answer": "54"}
+    },
+    {
+      "id": "fast_percentages",
+      "title": "Fast Percentages",
+      "explanation": "Build useful percentages from 10%, 5%, and 1%. Ten percent is the number divided by ten.",
+      "workedExample": {
+        "prompt": "Find 15% of 80",
+        "steps": ["10% of 80 is 8.", "5% is half of 10%, so it is 4.", "Add 8 + 4."],
+        "answer": "12"
+      },
+      "practiceExample": {"prompt": "What is 15% of 60?", "answer": "9"}
+    },
+    {
+      "id": "near_base_multiplication",
+      "title": "Near-Base Multiplication",
+      "explanation": "When both numbers are near 100, use their distances from 100 to simplify the multiplication.",
+      "workedExample": {
+        "prompt": "97 x 96",
+        "steps": ["The shortfalls from 100 are 3 and 4.", "Cross-subtract: 97 - 4 = 93.", "Multiply the shortfalls: 3 x 4 = 12. Join 93 and 12."],
+        "answer": "9312"
+      },
+      "practiceExample": {"prompt": "What is 98 x 97?", "answer": "9506"}
+    }
+  ]
+}

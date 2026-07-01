@@ -1,0 +1,16 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_shared_ui/flutter_shared_ui.dart';
+
+class NavigationMenu extends StatelessWidget {
+  const NavigationMenu({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppScaffold(
+      title: 'Navigation Menu',
+      child: const Center(
+        child: Text('Navigation Menu'),
+      ),
+    );
+  }
+}

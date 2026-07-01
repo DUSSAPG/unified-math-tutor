@@ -1,0 +1,16 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_shared_ui/flutter_shared_ui.dart';
+
+class Avatar extends StatelessWidget {
+  const Avatar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppScaffold(
+      title: 'Avatar',
+      child: const Center(
+        child: Text('Avatar'),
+      ),
+    );
+  }
+}

@@ -1,0 +1,11 @@
+﻿pattern_id,translated_template
+pattern_aa2782851062605e,Calcola: {n} + {n}
+pattern_7ff18e40a2436b84,Calcola: {n} - {n}
+pattern_1cce29c7f3d0780a,Calcola: {n} × {n}
+pattern_d153cc12f45c131a,Calcola: {n} ÷ {n}
+pattern_c7f84da7444091d7,Converti {frac} in percentuale.
+pattern_93d60f1afe4228dd,Un valore di {n} viene aumentato del {n}%.
+pattern_d653b6f0d39c0526,Un valore di {n} viene diminuito del {n}%.
+pattern_9168ad728275b9e7,"Data densità = massa / volume, densità={n}, massa={n}. Trova il volume."
+pattern_42df8efc44ecb3f0,Una successione inizia da {n} e aumenta di {n} ogni volta. Qual è il termine numero {n}?
+pattern_72f94fad55778645,Sviluppa e semplifica: (x+{n})(x-{n})

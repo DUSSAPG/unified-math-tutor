@@ -1,0 +1,136 @@
+{
+  "defaultLocale": "en-GB",
+  "packs": [
+    { "id": "ks2", "filename": "KS2_bank_ok_10000.jsonl", "count": 10000 },
+    { "id": "ks3", "filename": "KS3_bank_ok_10000.jsonl", "count": 10000 },
+    { "id": "ks4", "filename": "KS4_merged_deduped.jsonl", "count": 18432 },
+    { "id": "ks5", "filename": "KS5_merged_deduped.jsonl", "count": 8987 },
+    { "id": "all", "filename": "ALL_merged_deduped.jsonl", "count": 47419 }
+  ],
+  "translatedLocales": {
+    "de-CH": {
+      "enabledByFlag": "ENABLE_CH_PACKS",
+      "packs": {
+        "ks2": { "path": "assets/packs/de-CH/KS2_bank_ok_10000.jsonl", "count": 10000 },
+        "ks3": { "path": "assets/packs/de-CH/KS3_bank_ok_10000.jsonl", "count": 10000 },
+        "ks4": { "path": "assets/packs/de-CH/KS4_merged_deduped.jsonl", "count": 18432 },
+        "ks5": { "path": "assets/packs/de-CH/KS5_merged_deduped.jsonl", "count": 8987 }
+      }
+    },
+    "fr-CH": {
+      "enabledByFlag": "ENABLE_CH_PACKS",
+      "packs": {
+        "ks2": { "path": "assets/packs/fr-CH/KS2_bank_ok_10000.jsonl", "count": 10000 },
+        "ks3": { "path": "assets/packs/fr-CH/KS3_bank_ok_10000.jsonl", "count": 10000 },
+        "ks4": { "path": "assets/packs/fr-CH/KS4_merged_deduped.jsonl", "count": 18432 },
+        "ks5": { "path": "assets/packs/fr-CH/KS5_merged_deduped.jsonl", "count": 8987 }
+      }
+    },
+    "it-CH": {
+      "enabledByFlag": "ENABLE_CH_PACKS",
+      "packs": {
+        "ks2": { "path": "assets/packs/it-CH/KS2_bank_ok_10000.jsonl", "count": 10000 },
+        "ks3": { "path": "assets/packs/it-CH/KS3_bank_ok_10000.jsonl", "count": 10000 },
+        "ks4": { "path": "assets/packs/it-CH/KS4_merged_deduped.jsonl", "count": 18432 },
+        "ks5": { "path": "assets/packs/it-CH/KS5_merged_deduped.jsonl", "count": 8987 }
+      }
+    }
+  },
+  "locales": {
+    "en-GB": {
+      "ks2": { "packId": "ks2_bank_ok_10000", "path": "assets/packs/en-GB/KS2_bank_ok_10000.jsonl", "count": 10000 },
+      "ks3": { "packId": "ks3_bank_ok_10000", "path": "assets/packs/en-GB/KS3_bank_ok_10000.jsonl", "count": 10000 },
+      "ks4_a": { "packId": "ks4_bank_ok_2000_a", "path": "assets/packs/en-GB/KS4_bank_ok_2000_A.jsonl", "count": 2000 },
+      "ks4_b": { "packId": "ks4_bank_ok_2000_b", "path": "assets/packs/en-GB/KS4_bank_ok_2000_B.jsonl", "count": 2000 },
+      "ks4": { "packId": "ks4_merged_deduped", "path": "assets/packs/en-GB/KS4_merged_deduped.jsonl", "count": 18432 },
+      "ks5": { "packId": "ks5_merged_deduped", "path": "assets/packs/en-GB/KS5_merged_deduped.jsonl", "count": 8987 },
+      "all": { "packId": "all_merged_deduped", "path": "assets/packs/en-GB/ALL_merged_deduped.jsonl", "count": 47419 }
+    },
+
+    "en-US": {
+      "ks2": { "packId": "ks2_bank_ok_10000", "path": "assets/packs/en-GB/KS2_bank_ok_10000.jsonl", "count": 10000 },
+      "ks3": { "packId": "ks3_bank_ok_10000", "path": "assets/packs/en-GB/KS3_bank_ok_10000.jsonl", "count": 10000 },
+      "ks4_a": { "packId": "ks4_bank_ok_2000_a", "path": "assets/packs/en-GB/KS4_bank_ok_2000_A.jsonl", "count": 2000 },
+      "ks4_b": { "packId": "ks4_bank_ok_2000_b", "path": "assets/packs/en-GB/KS4_bank_ok_2000_B.jsonl", "count": 2000 },
+      "ks4": { "packId": "ks4_merged_deduped", "path": "assets/packs/en-GB/KS4_merged_deduped.jsonl", "count": 18432 },
+      "ks5": { "packId": "ks5_merged_deduped", "path": "assets/packs/en-GB/KS5_merged_deduped.jsonl", "count": 8987 },
+      "all": { "packId": "all_merged_deduped", "path": "assets/packs/en-GB/ALL_merged_deduped.jsonl", "count": 47419 }
+    },
+
+    "de-CH": {
+      "ks2": { "packId": "ks2_bank_ok_10000", "path": "assets/packs/en-GB/KS2_bank_ok_10000.jsonl", "count": 10000 },
+      "ks3": { "packId": "ks3_bank_ok_10000", "path": "assets/packs/en-GB/KS3_bank_ok_10000.jsonl", "count": 10000 },
+      "ks4_a": { "packId": "ks4_bank_ok_2000_a", "path": "assets/packs/en-GB/KS4_bank_ok_2000_A.jsonl", "count": 2000 },
+      "ks4_b": { "packId": "ks4_bank_ok_2000_b", "path": "assets/packs/en-GB/KS4_bank_ok_2000_B.jsonl", "count": 2000 },
+      "ks4": { "packId": "ks4_merged_deduped", "path": "assets/packs/en-GB/KS4_merged_deduped.jsonl", "count": 18432 },
+      "ks5": { "packId": "ks5_merged_deduped", "path": "assets/packs/en-GB/KS5_merged_deduped.jsonl", "count": 8987 },
+      "all": { "packId": "all_merged_deduped", "path": "assets/packs/en-GB/ALL_merged_deduped.jsonl", "count": 47419 }
+    },
+    "fr-CH": {
+      "ks2": { "packId": "ks2_bank_ok_10000", "path": "assets/packs/en-GB/KS2_bank_ok_10000.jsonl", "count": 10000 },
+      "ks3": { "packId": "ks3_bank_ok_10000", "path": "assets/packs/en-GB/KS3_bank_ok_10000.jsonl", "count": 10000 },
+      "ks4_a": { "packId": "ks4_bank_ok_2000_a", "path": "assets/packs/en-GB/KS4_bank_ok_2000_A.jsonl", "count": 2000 },
+      "ks4_b": { "packId": "ks4_bank_ok_2000_b", "path": "assets/packs/en-GB/KS4_bank_ok_2000_B.jsonl", "count": 2000 },
+      "ks4": { "packId": "ks4_merged_deduped", "path": "assets/packs/en-GB/KS4_merged_deduped.jsonl", "count": 18432 },
+      "ks5": { "packId": "ks5_merged_deduped", "path": "assets/packs/en-GB/KS5_merged_deduped.jsonl", "count": 8987 },
+      "all": { "packId": "all_merged_deduped", "path": "assets/packs/en-GB/ALL_merged_deduped.jsonl", "count": 47419 } 
+    },
+    "it-CH": {
+      "ks2": { "packId": "ks2_bank_ok_10000", "path": "assets/packs/en-GB/KS2_bank_ok_10000.jsonl", "count": 10000 },
+      "ks3": { "packId": "ks3_bank_ok_10000", "path": "assets/packs/en-GB/KS3_bank_ok_10000.jsonl", "count": 10000 },
+      "ks4_a": { "packId": "ks4_bank_ok_2000_a", "path": "assets/packs/en-GB/KS4_bank_ok_2000_A.jsonl", "count": 2000 },
+      "ks4_b": { "packId": "ks4_bank_ok_2000_b", "path": "assets/packs/en-GB/KS4_bank_ok_2000_B.jsonl", "count": 2000 },
+      "ks4": { "packId": "ks4_merged_deduped", "path": "assets/packs/en-GB/KS4_merged_deduped.jsonl", "count": 18432 },
+      "ks5": { "packId": "ks5_merged_deduped", "path": "assets/packs/en-GB/KS5_merged_deduped.jsonl", "count": 8987 },
+      "all": { "packId": "all_merged_deduped", "path": "assets/packs/en-GB/ALL_merged_deduped.jsonl", "count": 47419 }
+    },
+
+    "sv-SE": {
+      "ks2": { "packId": "ks2_bank_ok_10000", "path": "assets/packs/en-GB/KS2_bank_ok_10000.jsonl", "count": 10000 },
+      "ks3": { "packId": "ks3_bank_ok_10000", "path": "assets/packs/en-GB/KS3_bank_ok_10000.jsonl", "count": 10000 },
+      "ks4_a": { "packId": "ks4_bank_ok_2000_a", "path": "assets/packs/en-GB/KS4_bank_ok_2000_A.jsonl", "count": 2000 },
+      "ks4_b": { "packId": "ks4_bank_ok_2000_b", "path": "assets/packs/en-GB/KS4_bank_ok_2000_B.jsonl", "count": 2000 },
+      "ks4": { "packId": "ks4_merged_deduped", "path": "assets/packs/en-GB/KS4_merged_deduped.jsonl", "count": 18432 },
+      "ks5": { "packId": "ks5_merged_deduped", "path": "assets/packs/en-GB/KS5_merged_deduped.jsonl", "count": 8987 },
+      "all": { "packId": "all_merged_deduped", "path": "assets/packs/en-GB/ALL_merged_deduped.jsonl", "count": 47419 }
+    },
+    "nb-NO": {
+      "ks2": { "packId": "ks2_bank_ok_10000", "path": "assets/packs/en-GB/KS2_bank_ok_10000.jsonl", "count": 10000 },
+      "ks3": { "packId": "ks3_bank_ok_10000", "path": "assets/packs/en-GB/KS3_bank_ok_10000.jsonl", "count": 10000 },
+      "ks4_a": { "packId": "ks4_bank_ok_2000_a", "path": "assets/packs/en-GB/KS4_bank_ok_2000_A.jsonl", "count": 2000 },
+      "ks4_b": { "packId": "ks4_bank_ok_2000_b", "path": "assets/packs/en-GB/KS4_bank_ok_2000_B.jsonl", "count": 2000 },
+      "ks4": { "packId": "ks4_merged_deduped", "path": "assets/packs/en-GB/KS4_merged_deduped.jsonl", "count": 18432 },
+      "ks5": { "packId": "ks5_merged_deduped", "path": "assets/packs/en-GB/KS5_merged_deduped.jsonl", "count": 8987 },
+      "all": { "packId": "all_merged_deduped", "path": "assets/packs/en-GB/ALL_merged_deduped.jsonl", "count": 47419 }
+    },
+    "da-DK": {
+      "ks2": { "packId": "ks2_bank_ok_10000", "path": "assets/packs/en-GB/KS2_bank_ok_10000.jsonl", "count": 10000 },
+      "ks3": { "packId": "ks3_bank_ok_10000", "path": "assets/packs/en-GB/KS3_bank_ok_10000.jsonl", "count": 10000 },
+      "ks4_a": { "packId": "ks4_bank_ok_2000_a", "path": "assets/packs/en-GB/KS4_bank_ok_2000_A.jsonl", "count": 2000 },
+      "ks4_b": { "packId": "ks4_bank_ok_2000_b", "path": "assets/packs/en-GB/KS4_bank_ok_2000_B.jsonl", "count": 2000 },
+      "ks4": { "packId": "ks4_merged_deduped", "path": "assets/packs/en-GB/KS4_merged_deduped.jsonl", "count": 18432 },
+      "ks5": { "packId": "ks5_merged_deduped", "path": "assets/packs/en-GB/KS5_merged_deduped.jsonl", "count": 8987 },
+      "all": { "packId": "all_merged_deduped", "path": "assets/packs/en-GB/ALL_merged_deduped.jsonl", "count": 47419 }     
+    },
+
+    "ko-KR": {
+      "ks2": { "packId": "ks2_bank_ok_10000", "path": "assets/packs/en-GB/KS2_bank_ok_10000.jsonl", "count": 10000 },
+      "ks3": { "packId": "ks3_bank_ok_10000", "path": "assets/packs/en-GB/KS3_bank_ok_10000.jsonl", "count": 10000 },
+      "ks4_a": { "packId": "ks4_bank_ok_2000_a", "path": "assets/packs/en-GB/KS4_bank_ok_2000_A.jsonl", "count": 2000 },
+      "ks4_b": { "packId": "ks4_bank_ok_2000_b", "path": "assets/packs/en-GB/KS4_bank_ok_2000_B.jsonl", "count": 2000 },
+      "ks4": { "packId": "ks4_merged_deduped", "path": "assets/packs/en-GB/KS4_merged_deduped.jsonl", "count": 18432 },
+      "ks5": { "packId": "ks5_merged_deduped", "path": "assets/packs/en-GB/KS5_merged_deduped.jsonl", "count": 8987 },
+      "all": { "packId": "all_merged_deduped", "path": "assets/packs/en-GB/ALL_merged_deduped.jsonl", "count": 47419 }    
+    },
+
+    "en-SG": {
+      "ks2": { "packId": "ks2_bank_ok_10000", "path": "assets/packs/en-GB/KS2_bank_ok_10000.jsonl", "count": 10000 },
+      "ks3": { "packId": "ks3_bank_ok_10000", "path": "assets/packs/en-GB/KS3_bank_ok_10000.jsonl", "count": 10000 },
+      "ks4_a": { "packId": "ks4_bank_ok_2000_a", "path": "assets/packs/en-GB/KS4_bank_ok_2000_A.jsonl", "count": 2000 },
+      "ks4_b": { "packId": "ks4_bank_ok_2000_b", "path": "assets/packs/en-GB/KS4_bank_ok_2000_B.jsonl", "count": 2000 },
+      "ks4": { "packId": "ks4_merged_deduped", "path": "assets/packs/en-GB/KS4_merged_deduped.jsonl", "count": 18432 },
+      "ks5": { "packId": "ks5_merged_deduped", "path": "assets/packs/en-GB/KS5_merged_deduped.jsonl", "count": 8987 },
+      "all": { "packId": "all_merged_deduped", "path": "assets/packs/en-GB/ALL_merged_deduped.jsonl", "count": 47419 }     
+    }
+  }
+}

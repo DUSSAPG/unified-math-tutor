@@ -1,0 +1,14 @@
+{
+  "stage": "KS4",
+  "total_seen": 2000,
+  "sympy_ok": 0,
+  "sympy_rejected": 2000,
+  "reject_reasons": {
+    "unsupported_check_type": 2000
+  },
+  "missing_check_fields": 0,
+  "in_path": "content/raw_generated/ks4/ks4_B.jsonl",
+  "out_ok": "content/verified/en-GB/KS4_sympy_ok_B.jsonl",
+  "out_rejects": "content/verified/reports/KS4_sympy_rejects_B.jsonl",
+  "out_report": "content/verified/reports/KS4_sympy_report.json"
+}

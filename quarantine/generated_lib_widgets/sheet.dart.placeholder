@@ -1,0 +1,16 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_shared_ui/flutter_shared_ui.dart';
+
+class Sheet extends StatelessWidget {
+  const Sheet({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppScaffold(
+      title: 'Sheet',
+      child: const Center(
+        child: Text('Sheet'),
+      ),
+    );
+  }
+}

@@ -1,0 +1,16 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_shared_ui/flutter_shared_ui.dart';
+
+class BottomCTAContainer extends StatelessWidget {
+  const BottomCTAContainer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppScaffold(
+      title: 'Bottom CTAContainer',
+      child: const Center(
+        child: Text('Bottom CTAContainer'),
+      ),
+    );
+  }
+}

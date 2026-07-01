@@ -1,0 +1,16 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_shared_ui/flutter_shared_ui.dart';
+
+class ImageWithFallback extends StatelessWidget {
+  const ImageWithFallback({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppScaffold(
+      title: 'Image With Fallback',
+      child: const Center(
+        child: Text('Image With Fallback'),
+      ),
+    );
+  }
+}

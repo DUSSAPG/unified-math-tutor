@@ -1,0 +1,16 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_shared_ui/flutter_shared_ui.dart';
+
+class HoverCard extends StatelessWidget {
+  const HoverCard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppScaffold(
+      title: 'Hover Card',
+      child: const Center(
+        child: Text('Hover Card'),
+      ),
+    );
+  }
+}

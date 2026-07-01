@@ -1,0 +1,16 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_shared_ui/flutter_shared_ui.dart';
+
+class SegmentedControl extends StatelessWidget {
+  const SegmentedControl({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppScaffold(
+      title: 'Segmented Control',
+      child: const Center(
+        child: Text('Segmented Control'),
+      ),
+    );
+  }
+}

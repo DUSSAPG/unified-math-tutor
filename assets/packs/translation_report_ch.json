@@ -1,0 +1,1016 @@
+[
+  {
+    "src": "assets/packs/en-GB/KS2_bank_ok_10000.jsonl",
+    "out": "assets/packs/de-CH/KS2_bank_ok_10000.jsonl",
+    "locale": "de-CH",
+    "total": 10000,
+    "changed": 10000,
+    "flagged": 0,
+    "flagged_examples": []
+  },
+  {
+    "src": "assets/packs/en-GB/KS3_bank_ok_10000.jsonl",
+    "out": "assets/packs/de-CH/KS3_bank_ok_10000.jsonl",
+    "locale": "de-CH",
+    "total": 10000,
+    "changed": 5111,
+    "flagged": 0,
+    "flagged_examples": []
+  },
+  {
+    "src": "assets/packs/en-GB/KS4_merged_deduped.jsonl",
+    "out": "assets/packs/de-CH/KS4_merged_deduped.jsonl",
+    "locale": "de-CH",
+    "total": 18432,
+    "changed": 5074,
+    "flagged": 11592,
+    "flagged_examples": [
+      {
+        "line": 601,
+        "id": "ks4_area_perimeter_0263ed9311",
+        "stage": "KS4",
+        "sample": "Bestimme den Umfang von a rectangle with length 43 and width 22.."
+      },
+      {
+        "line": 602,
+        "id": "ks4_area_perimeter_d026088342",
+        "stage": "KS4",
+        "sample": "Bestimme den Umfang von a rectangle with length 16 and width 32.."
+      },
+      {
+        "line": 603,
+        "id": "ks4_area_perimeter_83d4477f51",
+        "stage": "KS4",
+        "sample": "Bestimme den Flächeninhalt von a rectangle with length 6 and width 31.."
+      },
+      {
+        "line": 604,
+        "id": "ks4_area_perimeter_92b74b0f13",
+        "stage": "KS4",
+        "sample": "Bestimme den Flächeninhalt von a rectangle with length 3 and width 40.."
+      },
+      {
+        "line": 605,
+        "id": "ks4_area_perimeter_68f36f1db7",
+        "stage": "KS4",
+        "sample": "Bestimme den Flächeninhalt von a rectangle with length 38 and width 16.."
+      },
+      {
+        "line": 606,
+        "id": "ks4_area_perimeter_6d6039c607",
+        "stage": "KS4",
+        "sample": "Bestimme den Flächeninhalt von a rectangle with length 22 and width 18.."
+      },
+      {
+        "line": 607,
+        "id": "ks4_area_perimeter_9a62e734fc",
+        "stage": "KS4",
+        "sample": "Bestimme den Flächeninhalt von a rectangle with length 31 and width 4.."
+      },
+      {
+        "line": 608,
+        "id": "ks4_area_perimeter_1a90c5bb33",
+        "stage": "KS4",
+        "sample": "Bestimme den Flächeninhalt von a rectangle with length 5 and width 30.."
+      },
+      {
+        "line": 609,
+        "id": "ks4_area_perimeter_04ad2cb31c",
+        "stage": "KS4",
+        "sample": "Bestimme den Flächeninhalt von a rectangle with length 8 and width 6.."
+      },
+      {
+        "line": 610,
+        "id": "ks4_area_perimeter_4bae246b0f",
+        "stage": "KS4",
+        "sample": "Bestimme den Flächeninhalt von a rectangle with length 33 and width 15.."
+      },
+      {
+        "line": 611,
+        "id": "ks4_area_perimeter_5a4b409888",
+        "stage": "KS4",
+        "sample": "Bestimme den Flächeninhalt von a triangle with base 20 and height 17.."
+      },
+      {
+        "line": 612,
+        "id": "ks4_area_perimeter_c5ed70726f",
+        "stage": "KS4",
+        "sample": "Bestimme den Umfang von a rectangle with length 20 and width 37.."
+      },
+      {
+        "line": 613,
+        "id": "ks4_area_perimeter_f46b369d3b",
+        "stage": "KS4",
+        "sample": "Bestimme den Flächeninhalt von a triangle with base 39 and height 36.."
+      },
+      {
+        "line": 614,
+        "id": "ks4_area_perimeter_702cb434c4",
+        "stage": "KS4",
+        "sample": "Bestimme den Umfang von a rectangle with length 44 and width 12.."
+      },
+      {
+        "line": 615,
+        "id": "ks4_area_perimeter_3046aa8291",
+        "stage": "KS4",
+        "sample": "Bestimme den Flächeninhalt von a triangle with base 15 and height 6.."
+      },
+      {
+        "line": 616,
+        "id": "ks4_area_perimeter_01a8aba1e9",
+        "stage": "KS4",
+        "sample": "Bestimme den Flächeninhalt von a triangle with base 9 and height 34.."
+      },
+      {
+        "line": 617,
+        "id": "ks4_area_perimeter_4df1b89fd6",
+        "stage": "KS4",
+        "sample": "Bestimme den Flächeninhalt von a rectangle with length 31 and width 19.."
+      },
+      {
+        "line": 618,
+        "id": "ks4_area_perimeter_59b91b8fb0",
+        "stage": "KS4",
+        "sample": "Bestimme den Umfang von a rectangle with length 49 and width 25.."
+      },
+      {
+        "line": 619,
+        "id": "ks4_area_perimeter_8d4bb68b86",
+        "stage": "KS4",
+        "sample": "Bestimme den Umfang von a rectangle with length 31 and width 38.."
+      },
+      {
+        "line": 620,
+        "id": "ks4_area_perimeter_9a898b8f9a",
+        "stage": "KS4",
+        "sample": "Bestimme den Flächeninhalt von a rectangle with length 4 and width 6.."
+      },
+      {
+        "line": 621,
+        "id": "ks4_area_perimeter_1a25e262ec",
+        "stage": "KS4",
+        "sample": "Bestimme den Umfang von a rectangle with length 11 and width 47.."
+      },
+      {
+        "line": 622,
+        "id": "ks4_area_perimeter_c2889f68d8",
+        "stage": "KS4",
+        "sample": "Bestimme den Flächeninhalt von a rectangle with length 24 and width 35.."
+      },
+      {
+        "line": 623,
+        "id": "ks4_area_perimeter_aa35de4b55",
+        "stage": "KS4",
+        "sample": "Bestimme den Umfang von a rectangle with length 49 and width 39.."
+      },
+      {
+        "line": 624,
+        "id": "ks4_area_perimeter_986571c9c1",
+        "stage": "KS4",
+        "sample": "Bestimme den Flächeninhalt von a triangle with base 11 and height 21.."
+      },
+      {
+        "line": 625,
+        "id": "ks4_area_perimeter_f83acc5361",
+        "stage": "KS4",
+        "sample": "Bestimme den Flächeninhalt von a triangle with base 26 and height 24.."
+      }
+    ]
+  },
+  {
+    "src": "assets/packs/en-GB/KS5_merged_deduped.jsonl",
+    "out": "assets/packs/de-CH/KS5_merged_deduped.jsonl",
+    "locale": "de-CH",
+    "total": 8987,
+    "changed": 2273,
+    "flagged": 7219,
+    "flagged_examples": [
+      {
+        "line": 801,
+        "id": "ks5_int_poly_1b200a65",
+        "stage": "KS5",
+        "sample": "Find ∫ (3x^2 - 6x + 2) dx"
+      },
+      {
+        "line": 802,
+        "id": "ks5_int_poly_df123681",
+        "stage": "KS5",
+        "sample": "Find ∫ (-4x^3 - 6x^2 + x + 7) dx"
+      },
+      {
+        "line": 803,
+        "id": "ks5_int_poly_498111b7",
+        "stage": "KS5",
+        "sample": "Find ∫ (4x^2 - x + 2) dx"
+      },
+      {
+        "line": 804,
+        "id": "ks5_int_poly_b702dcf3",
+        "stage": "KS5",
+        "sample": "Find ∫ (-2x^3 - 2x^2 + x - 9) dx"
+      },
+      {
+        "line": 805,
+        "id": "ks5_int_poly_70ce35af",
+        "stage": "KS5",
+        "sample": "Find ∫ (-x^3 + 3x^2 + 4x + 10) dx"
+      },
+      {
+        "line": 806,
+        "id": "ks5_int_poly_de3476a2",
+        "stage": "KS5",
+        "sample": "Find ∫ (-4x^3 - 6x + 1) dx"
+      },
+      {
+        "line": 807,
+        "id": "ks5_int_poly_9368363d",
+        "stage": "KS5",
+        "sample": "Find ∫ (3x^3 + 2x^2 + 2x - 9) dx"
+      },
+      {
+        "line": 808,
+        "id": "ks5_int_poly_4e031662",
+        "stage": "KS5",
+        "sample": "Find ∫ (-x^2 + 5x + 10) dx"
+      },
+      {
+        "line": 809,
+        "id": "ks5_int_poly_0e6ec9e5",
+        "stage": "KS5",
+        "sample": "Find ∫ (-6x^3 - 6x^2 + 3x - 2) dx"
+      },
+      {
+        "line": 810,
+        "id": "ks5_int_poly_92ed0d23",
+        "stage": "KS5",
+        "sample": "Find ∫ (-2x^3 + 5x^2 + 6x - 1) dx"
+      },
+      {
+        "line": 811,
+        "id": "ks5_int_poly_104aea73",
+        "stage": "KS5",
+        "sample": "Find ∫ (2x^2 - 3x + 5) dx"
+      },
+      {
+        "line": 812,
+        "id": "ks5_int_poly_a2338dbf",
+        "stage": "KS5",
+        "sample": "Find ∫ (6x^3 + 4x^2 + 4x - 7) dx"
+      },
+      {
+        "line": 813,
+        "id": "ks5_int_poly_cecc08b7",
+        "stage": "KS5",
+        "sample": "Find ∫ (5x^3 + 4x^2 - 3x + 8) dx"
+      },
+      {
+        "line": 814,
+        "id": "ks5_int_poly_fe4491b2",
+        "stage": "KS5",
+        "sample": "Find ∫ (x^2 + 4) dx"
+      },
+      {
+        "line": 815,
+        "id": "ks5_int_poly_8197ed10",
+        "stage": "KS5",
+        "sample": "Find ∫ (5x^2 - 6x + 2) dx"
+      },
+      {
+        "line": 816,
+        "id": "ks5_int_poly_72c6a1c1",
+        "stage": "KS5",
+        "sample": "Find ∫ (-4x^2 + 2x + 5) dx"
+      },
+      {
+        "line": 817,
+        "id": "ks5_int_poly_91f5c703",
+        "stage": "KS5",
+        "sample": "Find ∫ (-5x^3 - 6x^2 - x + 7) dx"
+      },
+      {
+        "line": 818,
+        "id": "ks5_int_poly_5dc230b1",
+        "stage": "KS5",
+        "sample": "Find ∫ (5x^2 + 2x - 7) dx"
+      },
+      {
+        "line": 819,
+        "id": "ks5_int_poly_654b5eed",
+        "stage": "KS5",
+        "sample": "Find ∫ (3x^2 + 2x - 2) dx"
+      },
+      {
+        "line": 820,
+        "id": "ks5_int_poly_f09eb4e4",
+        "stage": "KS5",
+        "sample": "Find ∫ (-x^2 + 9) dx"
+      },
+      {
+        "line": 821,
+        "id": "ks5_int_poly_95027098",
+        "stage": "KS5",
+        "sample": "Find ∫ (-6x^2 + 5x + 6) dx"
+      },
+      {
+        "line": 822,
+        "id": "ks5_int_poly_db2f39a7",
+        "stage": "KS5",
+        "sample": "Find ∫ (6x^2 + 2x + 10) dx"
+      },
+      {
+        "line": 823,
+        "id": "ks5_int_poly_549f642f",
+        "stage": "KS5",
+        "sample": "Find ∫ (-x^3 + 3x^2 - 4x - 7) dx"
+      },
+      {
+        "line": 824,
+        "id": "ks5_int_poly_1fb83f21",
+        "stage": "KS5",
+        "sample": "Find ∫ (5x^2 - 2x) dx"
+      },
+      {
+        "line": 825,
+        "id": "ks5_int_poly_c7d89255",
+        "stage": "KS5",
+        "sample": "Find ∫ (-2x^2 - 3x - 10) dx"
+      }
+    ]
+  },
+  {
+    "src": "assets/packs/en-GB/KS2_bank_ok_10000.jsonl",
+    "out": "assets/packs/fr-CH/KS2_bank_ok_10000.jsonl",
+    "locale": "fr-CH",
+    "total": 10000,
+    "changed": 10000,
+    "flagged": 0,
+    "flagged_examples": []
+  },
+  {
+    "src": "assets/packs/en-GB/KS3_bank_ok_10000.jsonl",
+    "out": "assets/packs/fr-CH/KS3_bank_ok_10000.jsonl",
+    "locale": "fr-CH",
+    "total": 10000,
+    "changed": 5111,
+    "flagged": 0,
+    "flagged_examples": []
+  },
+  {
+    "src": "assets/packs/en-GB/KS4_merged_deduped.jsonl",
+    "out": "assets/packs/fr-CH/KS4_merged_deduped.jsonl",
+    "locale": "fr-CH",
+    "total": 18432,
+    "changed": 5074,
+    "flagged": 11592,
+    "flagged_examples": [
+      {
+        "line": 601,
+        "id": "ks4_area_perimeter_0263ed9311",
+        "stage": "KS4",
+        "sample": "Calcule le périmètre de a rectangle with length 43 and width 22.."
+      },
+      {
+        "line": 602,
+        "id": "ks4_area_perimeter_d026088342",
+        "stage": "KS4",
+        "sample": "Calcule le périmètre de a rectangle with length 16 and width 32.."
+      },
+      {
+        "line": 603,
+        "id": "ks4_area_perimeter_83d4477f51",
+        "stage": "KS4",
+        "sample": "Calcule l’aire de a rectangle with length 6 and width 31.."
+      },
+      {
+        "line": 604,
+        "id": "ks4_area_perimeter_92b74b0f13",
+        "stage": "KS4",
+        "sample": "Calcule l’aire de a rectangle with length 3 and width 40.."
+      },
+      {
+        "line": 605,
+        "id": "ks4_area_perimeter_68f36f1db7",
+        "stage": "KS4",
+        "sample": "Calcule l’aire de a rectangle with length 38 and width 16.."
+      },
+      {
+        "line": 606,
+        "id": "ks4_area_perimeter_6d6039c607",
+        "stage": "KS4",
+        "sample": "Calcule l’aire de a rectangle with length 22 and width 18.."
+      },
+      {
+        "line": 607,
+        "id": "ks4_area_perimeter_9a62e734fc",
+        "stage": "KS4",
+        "sample": "Calcule l’aire de a rectangle with length 31 and width 4.."
+      },
+      {
+        "line": 608,
+        "id": "ks4_area_perimeter_1a90c5bb33",
+        "stage": "KS4",
+        "sample": "Calcule l’aire de a rectangle with length 5 and width 30.."
+      },
+      {
+        "line": 609,
+        "id": "ks4_area_perimeter_04ad2cb31c",
+        "stage": "KS4",
+        "sample": "Calcule l’aire de a rectangle with length 8 and width 6.."
+      },
+      {
+        "line": 610,
+        "id": "ks4_area_perimeter_4bae246b0f",
+        "stage": "KS4",
+        "sample": "Calcule l’aire de a rectangle with length 33 and width 15.."
+      },
+      {
+        "line": 611,
+        "id": "ks4_area_perimeter_5a4b409888",
+        "stage": "KS4",
+        "sample": "Calcule l’aire de a triangle with base 20 and height 17.."
+      },
+      {
+        "line": 612,
+        "id": "ks4_area_perimeter_c5ed70726f",
+        "stage": "KS4",
+        "sample": "Calcule le périmètre de a rectangle with length 20 and width 37.."
+      },
+      {
+        "line": 613,
+        "id": "ks4_area_perimeter_f46b369d3b",
+        "stage": "KS4",
+        "sample": "Calcule l’aire de a triangle with base 39 and height 36.."
+      },
+      {
+        "line": 614,
+        "id": "ks4_area_perimeter_702cb434c4",
+        "stage": "KS4",
+        "sample": "Calcule le périmètre de a rectangle with length 44 and width 12.."
+      },
+      {
+        "line": 615,
+        "id": "ks4_area_perimeter_3046aa8291",
+        "stage": "KS4",
+        "sample": "Calcule l’aire de a triangle with base 15 and height 6.."
+      },
+      {
+        "line": 616,
+        "id": "ks4_area_perimeter_01a8aba1e9",
+        "stage": "KS4",
+        "sample": "Calcule l’aire de a triangle with base 9 and height 34.."
+      },
+      {
+        "line": 617,
+        "id": "ks4_area_perimeter_4df1b89fd6",
+        "stage": "KS4",
+        "sample": "Calcule l’aire de a rectangle with length 31 and width 19.."
+      },
+      {
+        "line": 618,
+        "id": "ks4_area_perimeter_59b91b8fb0",
+        "stage": "KS4",
+        "sample": "Calcule le périmètre de a rectangle with length 49 and width 25.."
+      },
+      {
+        "line": 619,
+        "id": "ks4_area_perimeter_8d4bb68b86",
+        "stage": "KS4",
+        "sample": "Calcule le périmètre de a rectangle with length 31 and width 38.."
+      },
+      {
+        "line": 620,
+        "id": "ks4_area_perimeter_9a898b8f9a",
+        "stage": "KS4",
+        "sample": "Calcule l’aire de a rectangle with length 4 and width 6.."
+      },
+      {
+        "line": 621,
+        "id": "ks4_area_perimeter_1a25e262ec",
+        "stage": "KS4",
+        "sample": "Calcule le périmètre de a rectangle with length 11 and width 47.."
+      },
+      {
+        "line": 622,
+        "id": "ks4_area_perimeter_c2889f68d8",
+        "stage": "KS4",
+        "sample": "Calcule l’aire de a rectangle with length 24 and width 35.."
+      },
+      {
+        "line": 623,
+        "id": "ks4_area_perimeter_aa35de4b55",
+        "stage": "KS4",
+        "sample": "Calcule le périmètre de a rectangle with length 49 and width 39.."
+      },
+      {
+        "line": 624,
+        "id": "ks4_area_perimeter_986571c9c1",
+        "stage": "KS4",
+        "sample": "Calcule l’aire de a triangle with base 11 and height 21.."
+      },
+      {
+        "line": 625,
+        "id": "ks4_area_perimeter_f83acc5361",
+        "stage": "KS4",
+        "sample": "Calcule l’aire de a triangle with base 26 and height 24.."
+      }
+    ]
+  },
+  {
+    "src": "assets/packs/en-GB/KS5_merged_deduped.jsonl",
+    "out": "assets/packs/fr-CH/KS5_merged_deduped.jsonl",
+    "locale": "fr-CH",
+    "total": 8987,
+    "changed": 2273,
+    "flagged": 7219,
+    "flagged_examples": [
+      {
+        "line": 801,
+        "id": "ks5_int_poly_1b200a65",
+        "stage": "KS5",
+        "sample": "Find ∫ (3x^2 - 6x + 2) dx"
+      },
+      {
+        "line": 802,
+        "id": "ks5_int_poly_df123681",
+        "stage": "KS5",
+        "sample": "Find ∫ (-4x^3 - 6x^2 + x + 7) dx"
+      },
+      {
+        "line": 803,
+        "id": "ks5_int_poly_498111b7",
+        "stage": "KS5",
+        "sample": "Find ∫ (4x^2 - x + 2) dx"
+      },
+      {
+        "line": 804,
+        "id": "ks5_int_poly_b702dcf3",
+        "stage": "KS5",
+        "sample": "Find ∫ (-2x^3 - 2x^2 + x - 9) dx"
+      },
+      {
+        "line": 805,
+        "id": "ks5_int_poly_70ce35af",
+        "stage": "KS5",
+        "sample": "Find ∫ (-x^3 + 3x^2 + 4x + 10) dx"
+      },
+      {
+        "line": 806,
+        "id": "ks5_int_poly_de3476a2",
+        "stage": "KS5",
+        "sample": "Find ∫ (-4x^3 - 6x + 1) dx"
+      },
+      {
+        "line": 807,
+        "id": "ks5_int_poly_9368363d",
+        "stage": "KS5",
+        "sample": "Find ∫ (3x^3 + 2x^2 + 2x - 9) dx"
+      },
+      {
+        "line": 808,
+        "id": "ks5_int_poly_4e031662",
+        "stage": "KS5",
+        "sample": "Find ∫ (-x^2 + 5x + 10) dx"
+      },
+      {
+        "line": 809,
+        "id": "ks5_int_poly_0e6ec9e5",
+        "stage": "KS5",
+        "sample": "Find ∫ (-6x^3 - 6x^2 + 3x - 2) dx"
+      },
+      {
+        "line": 810,
+        "id": "ks5_int_poly_92ed0d23",
+        "stage": "KS5",
+        "sample": "Find ∫ (-2x^3 + 5x^2 + 6x - 1) dx"
+      },
+      {
+        "line": 811,
+        "id": "ks5_int_poly_104aea73",
+        "stage": "KS5",
+        "sample": "Find ∫ (2x^2 - 3x + 5) dx"
+      },
+      {
+        "line": 812,
+        "id": "ks5_int_poly_a2338dbf",
+        "stage": "KS5",
+        "sample": "Find ∫ (6x^3 + 4x^2 + 4x - 7) dx"
+      },
+      {
+        "line": 813,
+        "id": "ks5_int_poly_cecc08b7",
+        "stage": "KS5",
+        "sample": "Find ∫ (5x^3 + 4x^2 - 3x + 8) dx"
+      },
+      {
+        "line": 814,
+        "id": "ks5_int_poly_fe4491b2",
+        "stage": "KS5",
+        "sample": "Find ∫ (x^2 + 4) dx"
+      },
+      {
+        "line": 815,
+        "id": "ks5_int_poly_8197ed10",
+        "stage": "KS5",
+        "sample": "Find ∫ (5x^2 - 6x + 2) dx"
+      },
+      {
+        "line": 816,
+        "id": "ks5_int_poly_72c6a1c1",
+        "stage": "KS5",
+        "sample": "Find ∫ (-4x^2 + 2x + 5) dx"
+      },
+      {
+        "line": 817,
+        "id": "ks5_int_poly_91f5c703",
+        "stage": "KS5",
+        "sample": "Find ∫ (-5x^3 - 6x^2 - x + 7) dx"
+      },
+      {
+        "line": 818,
+        "id": "ks5_int_poly_5dc230b1",
+        "stage": "KS5",
+        "sample": "Find ∫ (5x^2 + 2x - 7) dx"
+      },
+      {
+        "line": 819,
+        "id": "ks5_int_poly_654b5eed",
+        "stage": "KS5",
+        "sample": "Find ∫ (3x^2 + 2x - 2) dx"
+      },
+      {
+        "line": 820,
+        "id": "ks5_int_poly_f09eb4e4",
+        "stage": "KS5",
+        "sample": "Find ∫ (-x^2 + 9) dx"
+      },
+      {
+        "line": 821,
+        "id": "ks5_int_poly_95027098",
+        "stage": "KS5",
+        "sample": "Find ∫ (-6x^2 + 5x + 6) dx"
+      },
+      {
+        "line": 822,
+        "id": "ks5_int_poly_db2f39a7",
+        "stage": "KS5",
+        "sample": "Find ∫ (6x^2 + 2x + 10) dx"
+      },
+      {
+        "line": 823,
+        "id": "ks5_int_poly_549f642f",
+        "stage": "KS5",
+        "sample": "Find ∫ (-x^3 + 3x^2 - 4x - 7) dx"
+      },
+      {
+        "line": 824,
+        "id": "ks5_int_poly_1fb83f21",
+        "stage": "KS5",
+        "sample": "Find ∫ (5x^2 - 2x) dx"
+      },
+      {
+        "line": 825,
+        "id": "ks5_int_poly_c7d89255",
+        "stage": "KS5",
+        "sample": "Find ∫ (-2x^2 - 3x - 10) dx"
+      }
+    ]
+  },
+  {
+    "src": "assets/packs/en-GB/KS2_bank_ok_10000.jsonl",
+    "out": "assets/packs/it-CH/KS2_bank_ok_10000.jsonl",
+    "locale": "it-CH",
+    "total": 10000,
+    "changed": 10000,
+    "flagged": 0,
+    "flagged_examples": []
+  },
+  {
+    "src": "assets/packs/en-GB/KS3_bank_ok_10000.jsonl",
+    "out": "assets/packs/it-CH/KS3_bank_ok_10000.jsonl",
+    "locale": "it-CH",
+    "total": 10000,
+    "changed": 5111,
+    "flagged": 0,
+    "flagged_examples": []
+  },
+  {
+    "src": "assets/packs/en-GB/KS4_merged_deduped.jsonl",
+    "out": "assets/packs/it-CH/KS4_merged_deduped.jsonl",
+    "locale": "it-CH",
+    "total": 18432,
+    "changed": 5074,
+    "flagged": 11592,
+    "flagged_examples": [
+      {
+        "line": 601,
+        "id": "ks4_area_perimeter_0263ed9311",
+        "stage": "KS4",
+        "sample": "Trova il perimetro di a rectangle with length 43 and width 22.."
+      },
+      {
+        "line": 602,
+        "id": "ks4_area_perimeter_d026088342",
+        "stage": "KS4",
+        "sample": "Trova il perimetro di a rectangle with length 16 and width 32.."
+      },
+      {
+        "line": 603,
+        "id": "ks4_area_perimeter_83d4477f51",
+        "stage": "KS4",
+        "sample": "Trova l’area di a rectangle with length 6 and width 31.."
+      },
+      {
+        "line": 604,
+        "id": "ks4_area_perimeter_92b74b0f13",
+        "stage": "KS4",
+        "sample": "Trova l’area di a rectangle with length 3 and width 40.."
+      },
+      {
+        "line": 605,
+        "id": "ks4_area_perimeter_68f36f1db7",
+        "stage": "KS4",
+        "sample": "Trova l’area di a rectangle with length 38 and width 16.."
+      },
+      {
+        "line": 606,
+        "id": "ks4_area_perimeter_6d6039c607",
+        "stage": "KS4",
+        "sample": "Trova l’area di a rectangle with length 22 and width 18.."
+      },
+      {
+        "line": 607,
+        "id": "ks4_area_perimeter_9a62e734fc",
+        "stage": "KS4",
+        "sample": "Trova l’area di a rectangle with length 31 and width 4.."
+      },
+      {
+        "line": 608,
+        "id": "ks4_area_perimeter_1a90c5bb33",
+        "stage": "KS4",
+        "sample": "Trova l’area di a rectangle with length 5 and width 30.."
+      },
+      {
+        "line": 609,
+        "id": "ks4_area_perimeter_04ad2cb31c",
+        "stage": "KS4",
+        "sample": "Trova l’area di a rectangle with length 8 and width 6.."
+      },
+      {
+        "line": 610,
+        "id": "ks4_area_perimeter_4bae246b0f",
+        "stage": "KS4",
+        "sample": "Trova l’area di a rectangle with length 33 and width 15.."
+      },
+      {
+        "line": 611,
+        "id": "ks4_area_perimeter_5a4b409888",
+        "stage": "KS4",
+        "sample": "Trova l’area di a triangle with base 20 and height 17.."
+      },
+      {
+        "line": 612,
+        "id": "ks4_area_perimeter_c5ed70726f",
+        "stage": "KS4",
+        "sample": "Trova il perimetro di a rectangle with length 20 and width 37.."
+      },
+      {
+        "line": 613,
+        "id": "ks4_area_perimeter_f46b369d3b",
+        "stage": "KS4",
+        "sample": "Trova l’area di a triangle with base 39 and height 36.."
+      },
+      {
+        "line": 614,
+        "id": "ks4_area_perimeter_702cb434c4",
+        "stage": "KS4",
+        "sample": "Trova il perimetro di a rectangle with length 44 and width 12.."
+      },
+      {
+        "line": 615,
+        "id": "ks4_area_perimeter_3046aa8291",
+        "stage": "KS4",
+        "sample": "Trova l’area di a triangle with base 15 and height 6.."
+      },
+      {
+        "line": 616,
+        "id": "ks4_area_perimeter_01a8aba1e9",
+        "stage": "KS4",
+        "sample": "Trova l’area di a triangle with base 9 and height 34.."
+      },
+      {
+        "line": 617,
+        "id": "ks4_area_perimeter_4df1b89fd6",
+        "stage": "KS4",
+        "sample": "Trova l’area di a rectangle with length 31 and width 19.."
+      },
+      {
+        "line": 618,
+        "id": "ks4_area_perimeter_59b91b8fb0",
+        "stage": "KS4",
+        "sample": "Trova il perimetro di a rectangle with length 49 and width 25.."
+      },
+      {
+        "line": 619,
+        "id": "ks4_area_perimeter_8d4bb68b86",
+        "stage": "KS4",
+        "sample": "Trova il perimetro di a rectangle with length 31 and width 38.."
+      },
+      {
+        "line": 620,
+        "id": "ks4_area_perimeter_9a898b8f9a",
+        "stage": "KS4",
+        "sample": "Trova l’area di a rectangle with length 4 and width 6.."
+      },
+      {
+        "line": 621,
+        "id": "ks4_area_perimeter_1a25e262ec",
+        "stage": "KS4",
+        "sample": "Trova il perimetro di a rectangle with length 11 and width 47.."
+      },
+      {
+        "line": 622,
+        "id": "ks4_area_perimeter_c2889f68d8",
+        "stage": "KS4",
+        "sample": "Trova l’area di a rectangle with length 24 and width 35.."
+      },
+      {
+        "line": 623,
+        "id": "ks4_area_perimeter_aa35de4b55",
+        "stage": "KS4",
+        "sample": "Trova il perimetro di a rectangle with length 49 and width 39.."
+      },
+      {
+        "line": 624,
+        "id": "ks4_area_perimeter_986571c9c1",
+        "stage": "KS4",
+        "sample": "Trova l’area di a triangle with base 11 and height 21.."
+      },
+      {
+        "line": 625,
+        "id": "ks4_area_perimeter_f83acc5361",
+        "stage": "KS4",
+        "sample": "Trova l’area di a triangle with base 26 and height 24.."
+      }
+    ]
+  },
+  {
+    "src": "assets/packs/en-GB/KS5_merged_deduped.jsonl",
+    "out": "assets/packs/it-CH/KS5_merged_deduped.jsonl",
+    "locale": "it-CH",
+    "total": 8987,
+    "changed": 2273,
+    "flagged": 7219,
+    "flagged_examples": [
+      {
+        "line": 801,
+        "id": "ks5_int_poly_1b200a65",
+        "stage": "KS5",
+        "sample": "Find ∫ (3x^2 - 6x + 2) dx"
+      },
+      {
+        "line": 802,
+        "id": "ks5_int_poly_df123681",
+        "stage": "KS5",
+        "sample": "Find ∫ (-4x^3 - 6x^2 + x + 7) dx"
+      },
+      {
+        "line": 803,
+        "id": "ks5_int_poly_498111b7",
+        "stage": "KS5",
+        "sample": "Find ∫ (4x^2 - x + 2) dx"
+      },
+      {
+        "line": 804,
+        "id": "ks5_int_poly_b702dcf3",
+        "stage": "KS5",
+        "sample": "Find ∫ (-2x^3 - 2x^2 + x - 9) dx"
+      },
+      {
+        "line": 805,
+        "id": "ks5_int_poly_70ce35af",
+        "stage": "KS5",
+        "sample": "Find ∫ (-x^3 + 3x^2 + 4x + 10) dx"
+      },
+      {
+        "line": 806,
+        "id": "ks5_int_poly_de3476a2",
+        "stage": "KS5",
+        "sample": "Find ∫ (-4x^3 - 6x + 1) dx"
+      },
+      {
+        "line": 807,
+        "id": "ks5_int_poly_9368363d",
+        "stage": "KS5",
+        "sample": "Find ∫ (3x^3 + 2x^2 + 2x - 9) dx"
+      },
+      {
+        "line": 808,
+        "id": "ks5_int_poly_4e031662",
+        "stage": "KS5",
+        "sample": "Find ∫ (-x^2 + 5x + 10) dx"
+      },
+      {
+        "line": 809,
+        "id": "ks5_int_poly_0e6ec9e5",
+        "stage": "KS5",
+        "sample": "Find ∫ (-6x^3 - 6x^2 + 3x - 2) dx"
+      },
+      {
+        "line": 810,
+        "id": "ks5_int_poly_92ed0d23",
+        "stage": "KS5",
+        "sample": "Find ∫ (-2x^3 + 5x^2 + 6x - 1) dx"
+      },
+      {
+        "line": 811,
+        "id": "ks5_int_poly_104aea73",
+        "stage": "KS5",
+        "sample": "Find ∫ (2x^2 - 3x + 5) dx"
+      },
+      {
+        "line": 812,
+        "id": "ks5_int_poly_a2338dbf",
+        "stage": "KS5",
+        "sample": "Find ∫ (6x^3 + 4x^2 + 4x - 7) dx"
+      },
+      {
+        "line": 813,
+        "id": "ks5_int_poly_cecc08b7",
+        "stage": "KS5",
+        "sample": "Find ∫ (5x^3 + 4x^2 - 3x + 8) dx"
+      },
+      {
+        "line": 814,
+        "id": "ks5_int_poly_fe4491b2",
+        "stage": "KS5",
+        "sample": "Find ∫ (x^2 + 4) dx"
+      },
+      {
+        "line": 815,
+        "id": "ks5_int_poly_8197ed10",
+        "stage": "KS5",
+        "sample": "Find ∫ (5x^2 - 6x + 2) dx"
+      },
+      {
+        "line": 816,
+        "id": "ks5_int_poly_72c6a1c1",
+        "stage": "KS5",
+        "sample": "Find ∫ (-4x^2 + 2x + 5) dx"
+      },
+      {
+        "line": 817,
+        "id": "ks5_int_poly_91f5c703",
+        "stage": "KS5",
+        "sample": "Find ∫ (-5x^3 - 6x^2 - x + 7) dx"
+      },
+      {
+        "line": 818,
+        "id": "ks5_int_poly_5dc230b1",
+        "stage": "KS5",
+        "sample": "Find ∫ (5x^2 + 2x - 7) dx"
+      },
+      {
+        "line": 819,
+        "id": "ks5_int_poly_654b5eed",
+        "stage": "KS5",
+        "sample": "Find ∫ (3x^2 + 2x - 2) dx"
+      },
+      {
+        "line": 820,
+        "id": "ks5_int_poly_f09eb4e4",
+        "stage": "KS5",
+        "sample": "Find ∫ (-x^2 + 9) dx"
+      },
+      {
+        "line": 821,
+        "id": "ks5_int_poly_95027098",
+        "stage": "KS5",
+        "sample": "Find ∫ (-6x^2 + 5x + 6) dx"
+      },
+      {
+        "line": 822,
+        "id": "ks5_int_poly_db2f39a7",
+        "stage": "KS5",
+        "sample": "Find ∫ (6x^2 + 2x + 10) dx"
+      },
+      {
+        "line": 823,
+        "id": "ks5_int_poly_549f642f",
+        "stage": "KS5",
+        "sample": "Find ∫ (-x^3 + 3x^2 - 4x - 7) dx"
+      },
+      {
+        "line": 824,
+        "id": "ks5_int_poly_1fb83f21",
+        "stage": "KS5",
+        "sample": "Find ∫ (5x^2 - 2x) dx"
+      },
+      {
+        "line": 825,
+        "id": "ks5_int_poly_c7d89255",
+        "stage": "KS5",
+        "sample": "Find ∫ (-2x^2 - 3x - 10) dx"
+      }
+    ]
+  }
+]

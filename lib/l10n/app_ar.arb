@@ -1,0 +1,67 @@
+{
+  "@@locale": "ar",
+  "navHome": "الرئيسية",
+  "navTopics": "الموضوعات",
+  "navPractice": "التدريب",
+  "navProfile": "الملف الشخصي",
+  "navTutor": "المعلّم",
+  "navHelp": "المساعدة",
+  "practiceChooseMode": "اختر وضع التدريب",
+  "practiceQuestionsLabel": "الأسئلة",
+  "practiceStartButton": "ابدأ التدريب",
+  "practiceModeQuickStart": "بدء سريع",
+  "practiceModeTopicDrill": "تدريب على موضوع",
+  "practiceModeTimedChallenge": "تحدٍ زمني",
+  "practiceModeExamSimulator": "محاكاة الاختبار",
+  "practiceExit": "خروج",
+  "practiceQuestionOf": "السؤال {current} من {total}",
+  "@practiceQuestionOf": {
+    "placeholders": {
+      "current": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "practiceExplanation": "الشرح",
+  "practiceCheckAnswer": "تحقق من الإجابة",
+  "practiceNextQuestion": "السؤال التالي",
+  "practiceFinishSession": "إنهاء الجلسة",
+  "practiceSummaryTitle": "اكتملت الجلسة",
+  "practiceSummaryAccuracy": "دقة {percent}%",
+  "@practiceSummaryAccuracy": {
+    "placeholders": { "percent": { "type": "int" } }
+  },
+  "practiceSummaryCorrect": "{correct} / {total} صحيحة",
+  "@practiceSummaryCorrect": {
+    "placeholders": {
+      "correct": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "practiceSummaryEncouragement": "عمل رائع! واصل التدريب لتحسين نتيجتك.",
+  "practiceSummaryClose": "العودة إلى التدريب",
+  "homeGreeting": "مساء الخير",
+  "homeSectionContinueLearning": "واصل التعلّم",
+  "homeViewAll": "عرض الكل",
+  "homeSectionProgress": "التقدّم",
+  "homeStreakHeader": "الاستمرارية",
+  "homeStreakFirstDay": "اليوم الأول من الاستمرارية",
+  "homeThisWeekHeader": "هذا الأسبوع",
+  "homeDaysActive": "الأيام النشطة",
+  "homeSectionAchievements": "الإنجازات",
+  "homeAchievementStreakTitle": "تحققت الاستمرارية الأسبوعية!",
+  "homeStartPracticeSession": "ابدأ جلسة تدريب",
+  "homeStreakDays": "استمرارية 5 أيام",
+  "helpHeaderTitle": "المساعدة والدعم",
+  "helpHeaderSubtitle": "الدعم والسلامة ومعلومات التطبيق",
+  "helpFaqTitle": "الأسئلة الشائعة",
+  "helpContactTitle": "تواصل معنا",
+  "helpContactIntro": "للأسئلة أو المشكلات، تواصل معنا:",
+  "helpPrivacyTitle": "الخصوصية والسلامة",
+  "helpPrivacyHeadline": "بيانات قليلة. بلا إعلانات. متوافق مع GDPR.",
+  "helpTermsTitle": "شروط الاستخدام",
+  "helpParentalTitle": "أدوات الرقابة الأبوية",
+  "helpParentalHeadline": "تابع تقدّم طفلك.",
+  "helpReportButton": "الإبلاغ عن مشكلة",
+  "helpFeatureRequestButton": "طلب ميزة",
+  "helpFooter": "بيانات قليلة. بلا إعلانات. أدوات الرقابة الأبوية متاحة."
+}

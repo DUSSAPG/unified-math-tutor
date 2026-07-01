@@ -1,0 +1,16 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_shared_ui/flutter_shared_ui.dart';
+
+class Main extends StatelessWidget {
+  const Main({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppScaffold(
+      title: 'main',
+      child: const Center(
+        child: Text('main'),
+      ),
+    );
+  }
+}

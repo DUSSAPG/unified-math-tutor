@@ -1,0 +1,302 @@
+| ID | Question | Réponse |
+| --- | --- | --- |
+| t1 | Je suis un nombre impair. Retirez une lettre et je deviens pair. Quel nombre suis-je ? (jeu de mots anglais : "seven" → "even") | Sept. (En anglais : retirez le « s » de « seven » et il reste « even » = pair.) |
+| t2 | Quels sont les trois nombres positifs dont la somme et le produit sont égaux ? | 1, 2 et 3. Les deux résultats valent 6. |
+| t3 | Un fermier possède 17 moutons. Tous sauf 9 s'éloignent. Combien en reste-t-il ? | 9 moutons. |
+| t4 | Quel est le prochain nombre : 1, 4, 9, 16, 25, … ? | 36. Ce sont des carrés parfaits. |
+| t5 | Si deux font compagnie et trois font une foule, que font quatre et cinq ? | Neuf. (quatre + cinq = neuf) |
+| t6 | J'ajoute cinq à neuf et j'obtiens deux. C'est correct. Comment ? | Sur une horloge : cinq heures après 9 h, c'est 14 h, soit 2 h. |
+| t7 | Combien de fois peut-on soustraire 10 de 100 ? | Une seule fois. Ensuite, on soustrait de 90. |
+| t8 | Un triangle a des côtés de 3 cm, 4 cm et 5 cm. Quel type d'angle contient-il ? | Un angle droit. |
+| t9 | Quel nombre a autant de lettres que sa valeur ? | Quatre. (« quatre » a six lettres… — en français ce n'est pas « quatre » mais « cinq » non plus. Note : en anglais « four » a 4 lettres. En français, aucun nombre ne correspond exactement. La réponse adaptée est : en anglais, c'est « four ».) |
+| t10 | Il y a 12 chaussettes dans un tiroir : 6 bleues et 6 rouges. Combien faut-il en prendre dans le noir pour être sûr d'avoir une paire assortie ? | 3 chaussettes. |
+| t11 | J'ai des aiguilles mais je ne peux pas applaudir. Que suis-je ? | Une horloge. |
+| t12 | Qu'est-ce qui doit être cassé avant d'être utilisé ? | Un œuf. |
+| t13 | Qu'est-ce qui a un cadran et deux aiguilles mais ni bras ni jambes ? | Une horloge. |
+| t14 | Qu'est-ce qui devient plus mouillé plus il sèche ? | Une serviette. |
+| t15 | Qu'est-ce qui a un goulot mais pas de tête ? | Une bouteille. |
+| t16 | Qu'est-ce qui a beaucoup de touches mais n'ouvre aucune serrure ? | Un piano (ou un clavier). |
+| t17 | Qu'est-ce qui peut faire le tour du monde en restant dans un coin ? | Un timbre. |
+| t18 | Qu'est-ce qui a des mots mais ne parle jamais ? | Un livre. |
+| t19 | Qu'est-ce qui a un chas mais ne voit pas ? | Une aiguille. |
+| t20 | Qu'est-ce qui a des pieds mais ne marche pas ? | Une table. |
+| t21 | Qu'est-ce qui est plein de trous mais retient l'eau ? | Une éponge. |
+| t22 | Qu'est-ce qui apparaît une fois dans « minute », deux fois dans « moment » et jamais dans « mille ans » ? | La lettre « m ». |
+| t23 | Si on me lâche, je me brise ; souris-moi et je te souris toujours. Que suis-je ? | Un miroir. |
+| t24 | Qu'est-ce qui a un pouce et quatre doigts mais n'est pas une main ? | Un gant. |
+| t25 | Qu'est-ce qu'on peut attraper mais pas lancer ? | Un rhume. |
+| t26 | Qu'est-ce qui monte mais ne descend jamais ? | Ton âge. |
+| t27 | Qu'est-ce qui est toujours devant toi mais ne se voit pas ? | L'avenir. |
+| t28 | Qu'est-ce qui a une fin mais pas de début ? | Un bâton. |
+| t29 | Qu'est-ce qui coule mais ne marche jamais ? | L'eau (une rivière). |
+| t30 | Qu'est-ce qui a un lit mais ne dort jamais ? | Une rivière. |
+| t31 | Qu'est-ce qui a une tête, une queue, est brun et n'a pas de pattes ? | Une pièce de monnaie. |
+| t32 | Qu'est-ce qui commence par T, finit par T et contient du thé ? | Une théière. |
+| t33 | Qu'est-ce qui est si fragile que le prononcer le brise ? | Le silence. |
+| t34 | Qu'est-ce qui peut remplir une pièce sans prendre de place ? | La lumière. |
+| t35 | Quelle invention permet de voir à travers un mur ? | Une fenêtre. |
+| t36 | Qu'est-ce qui est noir quand c'est propre et blanc quand c'est sale ? | Un tableau noir. |
+| t37 | Qu'est-ce qui est facile à soulever mais difficile à lancer ? | Une plume. |
+| t38 | Qu'est-ce qui a des dents mais ne mord pas ? | Un peigne. |
+| t39 | Quel groupe ne joue jamais de musique ? | Un élastique. |
+| t40 | Qu'est-ce qui a une sonnerie mais pas de doigt ? | Un téléphone. |
+| t41 | Qu'est-ce qui a une écorce mais ne mord pas ? | Un arbre. |
+| t42 | Qu'est-ce qui a une colonne vertébrale mais pas d'os ? | Un livre. |
+| t43 | Qu'est-ce qui a un œil mais pas de corps ? | Un ouragan. |
+| t44 | Qu'est-ce qui a une queue mais pas de pattes et peut quand même sauter ? | Un cerf-volant. |
+| t45 | Qu'est-ce qui a quatre roues et vole ? | Un camion-poubelle (il « vole » les déchets). |
+| t46 | Qu'est-ce qui a un fond en haut ? | Tes jambes. |
+| t47 | Qu'est-ce qui arrive toujours mais n'arrive jamais ? | Demain. |
+| t48 | Qu'est-ce qu'on peut craquer, faire, raconter et jouer ? | Une blague. |
+| t49 | Trouvez le prochain nombre : 9, 16, 25, 36, 49, ? | 64. Ce sont les carrés de 3² à 8². |
+| t50 | Complétez : 27 × 23 = ___ | 621 |
+| t51 | Un rectangle a une longueur de 5 cm et une largeur de 21 cm. Quel est son périmètre ? | 52 cm. Périmètre = 2×(5+21). |
+| t52 | Quel est 5 % de 40 ? | 2. |
+| t53 | Trouvez le prochain nombre : 5, 10, 17, 26, 37, 50, 65, ? | 82. Ce sont les carrés de 2² à 9² plus 1. |
+| t54 | S'il est 1 h 45, quelle heure sera-t-il dans 25 minutes ? | 2 h 10. |
+| t55 | Un rectangle a une longueur de 16 cm et une largeur de 10 cm. Quel est son périmètre ? | 52 cm. Périmètre = 2×(16+10). |
+| t56 | Aujourd'hui un parent a 38 ans et son enfant 10 ans. Dans 5 ans, quel sera leur âge total ? | 58. Ajouter 5 à chaque âge. |
+| t57 | Que vient ensuite : 7, 10, 15, 22, 31, 42, ? | 55. On ajoute des nombres impairs consécutifs. |
+| t58 | Sans calculatrice, combien font 4 + 5 × 7 ? | 39. Multiplier d'abord : 5×7=35, puis ajouter 4. |
+| t59 | Trouvez le prochain nombre : 16, 25, 36, 49, 64, ? | 81. Ce sont les carrés de 4² à 9². |
+| t60 | Quel est les ¾ de 60 ? | 45. |
+| t61 | Sans calculatrice, combien font 2 + 9 × 10 ? | 92. Multiplier d'abord : 9×10=90, puis ajouter 2. |
+| t62 | Trouvez le prochain nombre : 4, 7, 12, 19, 28, 39, 52, ? | 67. Ce sont les carrés de 1² à 8² plus 3. |
+| t63 | Sans calculatrice, combien font 12 + 11 × 7 ? | 89. Multiplier d'abord : 11×7=77, puis ajouter 12. |
+| t64 | S'il est 4 h 10, quelle heure sera-t-il dans 10 minutes ? | 4 h 20. |
+| t65 | Complétez : 47 + 20 = ___ | 67 |
+| t66 | Quel est 40 % de 100 ? | 40. |
+| t67 | Quel est les ⅔ de 36 ? | 24. |
+| t68 | Quel est ⅕ de 40 ? | 8. |
+| t69 | Sans calculatrice, combien font 12 + 12 × 3 ? | 48. Multiplier d'abord : 12×3=36, puis ajouter 12. |
+| t70 | S'il est 11 h 15, quelle heure sera-t-il dans 50 minutes ? | 12 h 05. |
+| t71 | Complétez : 30 − 69 = ___ | −39 |
+| t72 | Un rectangle a une longueur de 10 cm et une largeur de 24 cm. Quel est son périmètre ? | 68 cm. |
+| t73 | Quel est ⅓ de 24 ? | 8. |
+| t74 | Quel nombre vient ensuite : 11, 19, 27, 35, 43, 51, ? | 59. On ajoute 8 à chaque fois. |
+| t75 | Trouvez le prochain nombre : 26, 37, 50, 65, 82, 101, 122, ? | 145. Ce sont les carrés de 5² à 12² plus 1. |
+| t76 | Aujourd'hui un parent a 43 ans et son enfant 9 ans. Dans 6 ans, quel sera leur âge total ? | 64. |
+| t77 | Sans calculatrice, combien font 4 + 5 × 10 ? | 54. |
+| t78 | Un rectangle a une longueur de 11 cm et une largeur de 21 cm. Quel est son périmètre ? | 64 cm. |
+| t79 | Quel est 25 % de 200 ? | 50. |
+| t80 | Complétez : 27 + 75 = ___ | 102 |
+| t81 | Quel nombre vient ensuite : 4, 8, 12, 16, 20, 24, 28, ? | 32. On ajoute 4 à chaque fois. |
+| t82 | Que vient ensuite : 7, 10, 15, 22, 31, 42, 55, ? | 70. |
+| t83 | Trouvez le prochain nombre : 19, 28, 39, 52, 67, 84, 103, ? | 124. Ce sont les carrés de 4² à 11² plus 3. |
+| t84 | Aujourd'hui un parent a 38 ans et son enfant 10 ans. Dans 10 ans, quel sera leur âge total ? | 68. |
+| t85 | Quel nombre vient ensuite : 4, 16, 28, 40, 52, 64, 76, ? | 88. On ajoute 12 à chaque fois. |
+| t86 | Sans calculatrice, combien font 12 + 7 × 3 ? | 33. |
+| t87 | Sans calculatrice, combien font 8 + 4 × 9 ? | 44. |
+| t88 | Quel nombre vient ensuite : 9, 19, 29, 39, 49, ? | 59. On ajoute 10 à chaque fois. |
+| t89 | Un rectangle a une longueur de 6 cm et une largeur de 23 cm. Quel est son périmètre ? | 58 cm. |
+| t90 | Sans calculatrice, combien font 12 + 10 × 11 ? | 122. |
+| t91 | Complétez : 29 × 57 = ___ | 1653 |
+| t92 | Un rectangle a une longueur de 3 cm et une largeur de 22 cm. Quel est son périmètre ? | 50 cm. |
+| t93 | Quel est la moitié de 84 ? | 42. |
+| t94 | Trouvez le prochain nombre : 11, 18, 27, 38, 51, ? | 66. Ce sont les carrés de 3² à 8² plus 2. |
+| t95 | Quel nombre vient ensuite : 8, 19, 30, 41, 52, ? | 63. On ajoute 11 à chaque fois. |
+| t96 | Trouvez le prochain nombre : 21, 30, 41, 54, 69, ? | 86. Ce sont les carrés de 4² à 9² plus 5. |
+| t97 | Un rectangle a une longueur de 7 cm et une largeur de 7 cm. Quel est son périmètre ? | 28 cm. |
+| t98 | Aujourd'hui un parent a 35 ans et son enfant 10 ans. Dans 7 ans, quel sera leur âge total ? | 59. |
+| t99 | Un rectangle a une longueur de 22 cm et une largeur de 16 cm. Quel est son périmètre ? | 76 cm. |
+| t100 | Complétez : 79 × 98 = ___ | 7742 |
+| t101 | Sans calculatrice, combien font 8 + 12 × 12 ? | 152. |
+| t102 | Quel est les ¾ de 84 ? | 63. |
+| t103 | Aujourd'hui un parent a 33 ans et son enfant 6 ans. Dans 6 ans, quel sera leur âge total ? | 51. |
+| t104 | Trouvez le prochain nombre : 3, 6, 11, 18, 27, 38, 51, ? | 66. Ce sont les carrés de 1² à 8² plus 2. |
+| t105 | Un rectangle a une longueur de 10 cm et une largeur de 21 cm. Quel est son périmètre ? | 62 cm. |
+| t106 | Complétez : 10 + 19 = ___ | 29 |
+| t107 | Complétez : 18 + 14 = ___ | 32 |
+| t108 | Un rectangle a une longueur de 10 cm et une largeur de 11 cm. Quel est son périmètre ? | 42 cm. |
+| t109 | Aujourd'hui un parent a 31 ans et son enfant 7 ans. Dans 10 ans, quel sera leur âge total ? | 58. |
+| t110 | S'il est 8 h 20, quelle heure sera-t-il dans 45 minutes ? | 9 h 05. |
+| t111 | Quel est 10 % de 80 ? | 8. |
+| t112 | Trouvez le prochain nombre : 21, 30, 41, 54, 69, 86, ? | 105. Ce sont les carrés de 4² à 10² plus 5. |
+| t113 | Quel est 40 % de 200 ? | 80. |
+| t114 | Quel nombre vient ensuite : 4, 6, 8, 10, 12, 14, ? | 16. On ajoute 2 à chaque fois. |
+| t115 | Quel est ⅓ de 30 ? | 10. |
+| t116 | Complétez : 34 + 78 = ___ | 112 |
+| t117 | Quel est 20 % de 60 ? | 12. |
+| t118 | Aujourd'hui un parent a 29 ans et son enfant 7 ans. Dans 8 ans, quel sera leur âge total ? | 52. |
+| t119 | Un rectangle a une longueur de 6 cm et une largeur de 4 cm. Quel est son périmètre ? | 20 cm. |
+| t120 | Un rectangle a une longueur de 3 cm et une largeur de 5 cm. Quel est son périmètre ? | 16 cm. |
+| t121 | Complétez : 31 − 62 = ___ | −31 |
+| t122 | Complétez : 61 − 17 = ___ | 44 |
+| t123 | Quel nombre vient ensuite : 13, 19, 25, 31, 37, 43, ? | 49. On ajoute 6 à chaque fois. |
+| t124 | Sans calculatrice, combien font 8 + 10 × 12 ? | 128. |
+| t125 | Aujourd'hui un parent a 33 ans et son enfant 7 ans. Dans 7 ans, quel sera leur âge total ? | 54. |
+| t126 | Complétez : 17 + 84 = ___ | 101 |
+| t127 | Quel est la moitié de 24 ? | 12. |
+| t128 | S'il est 8 h 45, quelle heure sera-t-il dans 50 minutes ? | 9 h 35. |
+| t129 | Que vient ensuite : 1, 4, 9, 16, 25, 36, 49, ? | 64. |
+| t130 | Trouvez le prochain nombre : 14, 19, 26, 35, 46, ? | 59. Ce sont les carrés de 2² à 7² plus 10. |
+| t131 | S'il est 2 h 55, quelle heure sera-t-il dans 25 minutes ? | 3 h 20. |
+| t132 | Quel est 15 % de 50 ? | 7,5. |
+| t133 | S'il est 10 h 05, quelle heure sera-t-il dans 15 minutes ? | 10 h 20. |
+| t134 | Quel est 25 % de 300 ? | 75. |
+| t135 | Sans calculatrice, combien font 5 + 12 × 7 ? | 89. |
+| t136 | Complétez : 43 × 60 = ___ | 2580 |
+| t137 | Sans calculatrice, combien font 9 + 7 × 3 ? | 30. |
+| t138 | Quel nombre vient ensuite : 15, 26, 37, 48, 59, 70, 81, ? | 92. On ajoute 11 à chaque fois. |
+| t139 | Trouvez le prochain nombre : 25, 36, 49, 64, 81, ? | 100. Ce sont les carrés de 5² à 10². |
+| t140 | Un rectangle a une longueur de 11 cm et une largeur de 7 cm. Quel est son périmètre ? | 36 cm. |
+| t141 | Quel est ⅓ de 48 ? | 16. |
+| t142 | Aujourd'hui un parent a 41 ans et son enfant 12 ans. Dans 10 ans, quel sera leur âge total ? | 73. |
+| t143 | Un rectangle a une longueur de 3 cm et une largeur de 24 cm. Quel est son périmètre ? | 54 cm. |
+| t144 | Un rectangle a une longueur de 12 cm et une largeur de 24 cm. Quel est son périmètre ? | 72 cm. |
+| t145 | Trouvez le prochain nombre : 10, 17, 26, 37, 50, ? | 65. Ce sont les carrés de 3² à 8² plus 1. |
+| t146 | Trouvez le prochain nombre : 30, 41, 54, 69, 86, ? | 105. Ce sont les carrés de 5² à 10² plus 5. |
+| t147 | Sans calculatrice, combien font 6 + 11 × 5 ? | 61. |
+| t148 | Sans calculatrice, combien font 10 + 9 × 6 ? | 64. |
+| t149 | Quel nombre vient ensuite : 3, 15, 27, 39, 51, 63, ? | 75. On ajoute 12 à chaque fois. |
+| t150 | Sans calculatrice, combien font 2 + 2 × 7 ? | 16. |
+| t151 | Que vient ensuite : 5, 8, 13, 20, 29, ? | 40. |
+| t152 | Aujourd'hui un parent a 43 ans et son enfant 10 ans. Dans 10 ans, quel sera leur âge total ? | 73. |
+| t153 | Quel nombre vient ensuite : 4, 7, 10, 13, 16, 19, 22, ? | 25. On ajoute 3 à chaque fois. |
+| t154 | Que vient ensuite : 9, 12, 17, 24, 33, ? | 44. |
+| t155 | Quel est les ¾ de 120 ? | 90. |
+| t156 | Que vient ensuite : 7, 10, 15, 22, 31, ? | 42. |
+| t157 | Quel nombre vient ensuite : 10, 17, 24, 31, 38, ? | 45. On ajoute 7 à chaque fois. |
+| t158 | Complétez : 95 × 23 = ___ | 2185 |
+| t159 | Quel est 15 % de 60 ? | 9. |
+| t160 | Que vient ensuite : 3, 6, 11, 18, 27, 38, ? | 51. |
+| t161 | Quel nombre vient ensuite : 6, 19, 32, 45, 58, 71, ? | 84. On ajoute 13 à chaque fois. |
+| t162 | Quel est 20 % de 80 ? | 16. |
+| t163 | Que vient ensuite : 2, 5, 10, 17, 26, 37, ? | 50. |
+| t164 | Quel nombre vient ensuite : 16, 21, 26, 31, 36, ? | 41. On ajoute 5 à chaque fois. |
+| t165 | Aujourd'hui un parent a 37 ans et son enfant 8 ans. Dans 6 ans, quel sera leur âge total ? | 57. |
+| t166 | Complétez : 13 − 94 = ___ | −81 |
+| t167 | Quel est 2/5 de 48 ? | 19,2. (Note : la réponse originale indique 19, mais 2/5 × 48 = 19,2) |
+| t168 | Trouvez le prochain nombre : 19, 26, 35, 46, 59, 74, ? | 91. Ce sont les carrés de 3² à 9² plus 10. |
+| t169 | Un rectangle a une longueur de 15 cm et une largeur de 24 cm. Quel est son périmètre ? | 78 cm. |
+| t170 | Un rectangle a une longueur de 13 cm et une largeur de 3 cm. Quel est son périmètre ? | 32 cm. |
+| t171 | Trouvez le prochain nombre : 6, 11, 18, 27, 38, 51, 66, ? | 83. Ce sont les carrés de 2² à 9² plus 2. |
+| t172 | Sans calculatrice, combien font 2 + 3 × 11 ? | 35. |
+| t173 | Quel est 25 % de 120 ? | 30. |
+| t174 | Quel est 10 % de 300 ? | 30. |
+| t175 | Quel nombre vient ensuite : 14, 16, 18, 20, 22, 24, 26, ? | 28. On ajoute 2 à chaque fois. |
+| t176 | Un rectangle a une longueur de 24 cm et une largeur de 24 cm. Quel est son périmètre ? | 96 cm. |
+| t177 | Complétez : 56 × 65 = ___ | 3640 |
+| t178 | Quel est les ⅔ de 120 ? | 80. |
+| t179 | Trouvez le prochain nombre : 14, 21, 30, 41, 54, 69, 86, ? | 105. Ce sont les carrés de 3² à 10² plus 5. |
+| t180 | Sans calculatrice, combien font 12 + 8 × 7 ? | 68. |
+| t181 | Quel est 12 % de 100 ? | 12. |
+| t182 | Complétez : 63 × 95 = ___ | 5985 |
+| t183 | Que vient ensuite : 10, 13, 18, 25, 34, 45, 58, ? | 73. |
+| t184 | Sans calculatrice, combien font 8 + 10 × 2 ? | 28. |
+| t185 | Sans calculatrice, combien font 6 + 5 × 8 ? | 46. |
+| t186 | S'il est 10 h 55, quelle heure sera-t-il dans 35 minutes ? | 11 h 30. |
+| t187 | Un rectangle a une longueur de 18 cm et une largeur de 8 cm. Quel est son périmètre ? | 52 cm. |
+| t188 | Trouvez le prochain nombre : 27, 38, 51, 66, 83, 102, 123, ? | 146. Ce sont les carrés de 5² à 12² plus 2. |
+| t189 | S'il est 6 h 10, quelle heure sera-t-il dans 25 minutes ? | 6 h 35. |
+| t190 | Sans calculatrice, combien font 5 + 5 × 4 ? | 25. |
+| t191 | Quel nombre vient ensuite : 2, 7, 12, 17, 22, 27, ? | 32. On ajoute 5 à chaque fois. |
+| t192 | S'il est 2 h 40, quelle heure sera-t-il dans 40 minutes ? | 3 h 20. |
+| t193 | S'il est 4 h 35, quelle heure sera-t-il dans 45 minutes ? | 5 h 20. |
+| t194 | Quel est 12 % de 80 ? | 9,6. |
+| t195 | Quel nombre vient ensuite : 4, 18, 32, 46, 60, 74, ? | 88. On ajoute 14 à chaque fois. |
+| t196 | Complétez : 32 − 99 = ___ | −67 |
+| t197 | Quel nombre vient ensuite : 18, 23, 28, 33, 38, ? | 43. On ajoute 5 à chaque fois. |
+| t198 | Aujourd'hui un parent a 41 ans et son enfant 7 ans. Dans 10 ans, quel sera leur âge total ? | 68. |
+| t199 | Un rectangle a une longueur de 22 cm et une largeur de 13 cm. Quel est son périmètre ? | 70 cm. |
+| t200 | Aujourd'hui un parent a 42 ans et son enfant 7 ans. Dans 8 ans, quel sera leur âge total ? | 65. |
+| t201 | Sans calculatrice, combien font 5 + 12 × 6 ? | 77. |
+| t202 | Un rectangle a une longueur de 18 cm et une largeur de 23 cm. Quel est son périmètre ? | 82 cm. |
+| t203 | Complétez : 45 × 66 = ___ | 2970 |
+| t204 | Sans calculatrice, combien font 5 + 6 × 7 ? | 47. |
+| t205 | Quel est la moitié de 96 ? | 48. |
+| t206 | Que vient ensuite : 3, 6, 11, 18, 27, ? | 38. |
+| t207 | Trouvez le prochain nombre : 19, 28, 39, 52, 67, 84, ? | 103. Ce sont les carrés de 4² à 10² plus 3. |
+| t208 | Un rectangle a une longueur de 17 cm et une largeur de 16 cm. Quel est son périmètre ? | 66 cm. |
+| t209 | Quel nombre vient ensuite : 7, 22, 37, 52, 67, 82, ? | 97. On ajoute 15 à chaque fois. |
+| t210 | Quel est 30 % de 40 ? | 12. |
+| t211 | Aujourd'hui un parent a 37 ans et son enfant 6 ans. Dans 7 ans, quel sera leur âge total ? | 57. |
+| t212 | Quel est 15 % de 200 ? | 30. |
+| t213 | Aujourd'hui un parent a 35 ans et son enfant 7 ans. Dans 8 ans, quel sera leur âge total ? | 58. |
+| t214 | Aujourd'hui un parent a 38 ans et son enfant 6 ans. Dans 7 ans, quel sera leur âge total ? | 58. |
+| t215 | Quel est 40 % de 60 ? | 24. |
+| t216 | Quel nombre vient ensuite : 13, 24, 35, 46, 57, 68, 79, ? | 90. On ajoute 11 à chaque fois. |
+| t217 | Que vient ensuite : 8, 11, 16, 23, 32, ? | 43. |
+| t218 | Quel nombre vient ensuite : 9, 17, 25, 33, 41, 49, ? | 57. On ajoute 8 à chaque fois. |
+| t219 | Complétez : 68 − 51 = ___ | 17 |
+| t220 | Sans calculatrice, combien font 8 + 6 × 3 ? | 26. |
+| t221 | Aujourd'hui un parent a 27 ans et son enfant 6 ans. Dans 7 ans, quel sera leur âge total ? | 47. |
+| t222 | Complétez : 93 + 18 = ___ | 111 |
+| t223 | Quel nombre vient ensuite : 8, 13, 18, 23, 28, ? | 33. On ajoute 5 à chaque fois. |
+| t224 | S'il est 3 h 20, quelle heure sera-t-il dans 20 minutes ? | 3 h 40. |
+| t225 | Aujourd'hui un parent a 34 ans et son enfant 11 ans. Dans 10 ans, quel sera leur âge total ? | 65. |
+| t226 | Complétez : 69 − 99 = ___ | −30 |
+| t227 | Trouvez le prochain nombre : 14, 19, 26, 35, 46, 59, ? | 74. Ce sont les carrés de 2² à 8² plus 10. |
+| t228 | Trouvez le prochain nombre : 5, 8, 13, 20, 29, 40, ? | 53. Ce sont les carrés de 1² à 7² plus 4. |
+| t229 | S'il est 11 h 35, quelle heure sera-t-il dans 40 minutes ? | 12 h 15. |
+| t230 | Complétez : 19 × 85 = ___ | 1615 |
+| t231 | Complétez : 23 × 99 = ___ | 2277 |
+| t232 | S'il est 2 h 50, quelle heure sera-t-il dans 10 minutes ? | 3 h 00. |
+| t233 | Quel est ¼ de 96 ? | 24. |
+| t234 | Quel est les ¾ de 30 ? | 22,5. (Note : la réponse originale indique 22, mais ¾ × 30 = 22,5) |
+| t235 | Quel est 2/5 de 24 ? | 9,6. (Note : la réponse originale indique 9, mais 2/5 × 24 = 9,6) |
+| t236 | Quel est 10 % de 240 ? | 24. |
+| t237 | Quel est 40 % de 120 ? | 48. |
+| t238 | Un rectangle a une longueur de 23 cm et une largeur de 11 cm. Quel est son périmètre ? | 68 cm. |
+| t239 | S'il est 9 h 40, quelle heure sera-t-il dans 45 minutes ? | 10 h 25. |
+| t240 | Quel est 25 % de 100 ? | 25. |
+| t241 | Complétez : 21 + 45 = ___ | 66 |
+| t242 | Aujourd'hui un parent a 42 ans et son enfant 10 ans. Dans 7 ans, quel sera leur âge total ? | 66. |
+| t243 | Quel nombre vient ensuite : 16, 31, 46, 61, 76, 91, ? | 106. On ajoute 15 à chaque fois. |
+| t244 | Quel est les ⅔ de 48 ? | 32. |
+| t245 | Sans calculatrice, combien font 11 + 6 × 10 ? | 71. |
+| t246 | Quel nombre vient ensuite : 17, 22, 27, 32, 37, ? | 42. On ajoute 5 à chaque fois. |
+| t247 | Complétez : 62 + 72 = ___ | 134 |
+| t248 | Aujourd'hui un parent a 46 ans et son enfant 11 ans. Dans 8 ans, quel sera leur âge total ? | 73. |
+| t249 | Quel nombre vient ensuite : 3, 9, 15, 21, 27, ? | 33. On ajoute 6 à chaque fois. |
+| t250 | S'il est 6 h 40, quelle heure sera-t-il dans 50 minutes ? | 7 h 30. |
+| t251 | Un rectangle a une longueur de 14 cm et une largeur de 16 cm. Quel est son périmètre ? | 60 cm. |
+| t252 | Un rectangle a une longueur de 13 cm et une largeur de 14 cm. Quel est son périmètre ? | 54 cm. |
+| t253 | Aujourd'hui un parent a 37 ans et son enfant 8 ans. Dans 7 ans, quel sera leur âge total ? | 59. |
+| t254 | Complétez : 25 + 34 = ___ | 59 |
+| t255 | Un rectangle a une longueur de 25 cm et une largeur de 8 cm. Quel est son périmètre ? | 66 cm. |
+| t256 | Complétez : 37 × 71 = ___ | 2627 |
+| t257 | S'il est 9 h 50, quelle heure sera-t-il dans 30 minutes ? | 10 h 20. |
+| t258 | Complétez : 56 + 32 = ___ | 88 |
+| t259 | Un rectangle a une longueur de 7 cm et une largeur de 11 cm. Quel est son périmètre ? | 36 cm. |
+| t260 | Quel nombre vient ensuite : 2, 12, 22, 32, 42, 52, ? | 62. On ajoute 10 à chaque fois. |
+| t261 | Quel nombre vient ensuite : 19, 25, 31, 37, 43, 49, ? | 55. On ajoute 6 à chaque fois. |
+| t262 | Aujourd'hui un parent a 39 ans et son enfant 9 ans. Dans 6 ans, quel sera leur âge total ? | 60. |
+| t263 | Quel nombre vient ensuite : 9, 24, 39, 54, 69, 84, ? | 99. On ajoute 15 à chaque fois. |
+| t264 | Trouvez le prochain nombre : 11, 14, 19, 26, 35, 46, ? | 59. Ce sont les carrés de 1² à 7² plus 10. |
+| t265 | Aujourd'hui un parent a 27 ans et son enfant 6 ans. Dans 6 ans, quel sera leur âge total ? | 45. |
+| t266 | Que vient ensuite : 10, 13, 18, 25, 34, 45, ? | 58. |
+| t267 | Trouvez le prochain nombre : 2, 5, 10, 17, 26, 37, 50, ? | 65. Ce sont les carrés de 1² à 8² plus 1. |
+| t268 | Quel est 30 % de 80 ? | 24. |
+| t269 | Aujourd'hui un parent a 38 ans et son enfant 9 ans. Dans 10 ans, quel sera leur âge total ? | 67. |
+| t270 | Quel est 5 % de 100 ? | 5. |
+| t271 | S'il est 2 h 20, quelle heure sera-t-il dans 25 minutes ? | 2 h 45. |
+| t272 | Sans calculatrice, combien font 12 + 3 × 4 ? | 24. |
+| t273 | Complétez : 32 + 80 = ___ | 112 |
+| t274 | Quel nombre vient ensuite : 14, 23, 32, 41, 50, 59, 68, ? | 77. On ajoute 9 à chaque fois. |
+| t275 | S'il est 8 h 25, quelle heure sera-t-il dans 10 minutes ? | 8 h 35. |
+| t276 | Complétez : 46 − 46 = ___ | 0 |
+| t277 | Trouvez le prochain nombre : 9, 14, 21, 30, 41, 54, ? | 69. Ce sont les carrés de 2² à 8² plus 5. |
+| t278 | S'il est 11 h 20, quelle heure sera-t-il dans 40 minutes ? | 12 h 00. |
+| t279 | Trouvez le prochain nombre : 8, 13, 20, 29, 40, 53, 68, ? | 85. Ce sont les carrés de 2² à 9² plus 4. |
+| t280 | Trouvez le prochain nombre : 4, 9, 16, 25, 36, 49, ? | 64. Ce sont les carrés de 2² à 8². |
+| t281 | S'il est 10 h 25, quelle heure sera-t-il dans 45 minutes ? | 11 h 10. |
+| t282 | Trouvez le prochain nombre : 12, 19, 28, 39, 52, 67, 84, ? | 103. Ce sont les carrés de 3² à 10² plus 3. |
+| t283 | Aujourd'hui un parent a 27 ans et son enfant 6 ans. Dans 8 ans, quel sera leur âge total ? | 49. |
+| t284 | Quel nombre vient ensuite : 3, 8, 13, 18, 23, 28, 33, ? | 38. On ajoute 5 à chaque fois. |
+| t285 | S'il est 10 h 05, quelle heure sera-t-il dans 30 minutes ? | 10 h 35. |
+| t286 | S'il est 1 h 15, quelle heure sera-t-il dans 45 minutes ? | 2 h 00. |
+| t287 | Un rectangle a une longueur de 23 cm et une largeur de 17 cm. Quel est son périmètre ? | 80 cm. |
+| t288 | Sans calculatrice, combien font 4 + 11 × 8 ? | 92. |
+| t289 | Aujourd'hui un parent a 41 ans et son enfant 6 ans. Dans 7 ans, quel sera leur âge total ? | 61. |
+| t290 | Quel est 20 % de 240 ? | 48. |
+| t291 | Quel est 5 % de 300 ? | 15. |
+| t292 | Aujourd'hui un parent a 36 ans et son enfant 6 ans. Dans 7 ans, quel sera leur âge total ? | 56. |
+| t293 | Quel est 2/5 de 30 ? | 12. |
+| t294 | Quel nombre vient ensuite : 7, 17, 27, 37, 47, 57, ? | 67. On ajoute 10 à chaque fois. |
+| t295 | S'il est 8 h 55, quelle heure sera-t-il dans 45 minutes ? | 9 h 40. |
+| t296 | Quel nombre vient ensuite : 7, 13, 19, 25, 31, 37, 43, ? | 49. On ajoute 6 à chaque fois. |
+| t297 | Que vient ensuite : 5, 8, 13, 20, 29, 40, ? | 53. |
+| t298 | Aujourd'hui un parent a 26 ans et son enfant 6 ans. Dans 10 ans, quel sera leur âge total ? | 52. |
+| t299 | Complétez : 30 + 49 = ___ | 79 |
+| t300 | Un rectangle a une longueur de 16 cm et une largeur de 5 cm. Quel est son périmètre ? | 42 cm. |
