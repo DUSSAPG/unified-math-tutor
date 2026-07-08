@@ -1,4 +1,4 @@
-# Final V1 QA Report — Sterling Math
+# Final V1 QA Report — Math Intelligence
 
 **Sprint:** Final V1 UX, Onboarding & Accessibility Polish
 **Scope:** Sections 1–15 of the sprint brief
@@ -6,7 +6,7 @@
 
 ## Summary
 
-This sprint rebranded the app's user-facing copy to "Sterling Math," rebuilt the welcome/onboarding
+This sprint rebranded the app's user-facing copy to "Math Intelligence," rebuilt the welcome/onboarding
 experience with distinct Student and Parent-or-Teacher paths, simplified accessibility controls,
 fixed three functionally broken practice modes (Topic Drill, Timed Challenge, Exam Simulator), added
 a new offline Formula Library, and closed out one pre-existing analyzer error. All work was validated

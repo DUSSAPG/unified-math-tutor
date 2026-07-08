@@ -70,7 +70,7 @@ class _AppearanceScreenState extends State<AppearanceScreen> {
                   _sectionCard(
                     title: 'Appearance',
                     subtitle:
-                        'Sterling Math currently uses our optimized Dark Theme '
+                        'Math Intelligence currently uses our optimized Dark Theme '
                         'to improve focus and readability. Future themes may '
                         'be introduced in later releases.',
                     child: Row(

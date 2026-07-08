@@ -233,7 +233,7 @@
   "profileSignOutSub": "Clear session and return to welcome",
   "@profileSignOutSub": {},
 
-  "profileVersion": "Version 1.0.0 · © 2026 Sterling Math",
+  "profileVersion": "Version 1.0.0 · © 2026 Math Intelligence",
   "@profileVersion": {},
 
   "profileHeaderTitle": "Profile",
@@ -305,7 +305,7 @@
   "helpTermsTitle": "Terms of Use",
   "@helpTermsTitle": {},
 
-  "helpTermsBody": "Free for students and parents. By using Sterling Math you agree to our terms of service. No payment is required for standard access.",
+  "helpTermsBody": "Free for students and parents. By using Math Intelligence you agree to our terms of service. No payment is required for standard access.",
   "@helpTermsBody": {},
 
   "helpParentalTitle": "Parental Controls",
@@ -490,6 +490,12 @@
   "onboardingStageSub": "We'll tailor the content to the right level",
   "@onboardingStageSub": {},
 
+  "onboardingStageTitleParent": "Choose their level",
+  "@onboardingStageTitleParent": {},
+
+  "onboardingStageSubParent": "We'll tailor the content to your child's level",
+  "@onboardingStageSubParent": {},
+
   "onboardingStageCount": "4",
   "@onboardingStageCount": { "description": "Number of stage options to display — varies by market" },
 
@@ -523,6 +529,12 @@
   "onboardingGoalSub": "Choose the learning focus",
   "@onboardingGoalSub": {},
 
+  "onboardingGoalTitleParent": "What matters most?",
+  "@onboardingGoalTitleParent": {},
+
+  "onboardingGoalSubParent": "Choose how you'd like to support them",
+  "@onboardingGoalSubParent": {},
+
   "onboardingGoal1Label": "Build confidence",
   "@onboardingGoal1Label": {},
 
@@ -547,11 +559,44 @@
   "onboardingGoal4Sub": "Stretch challenges and advanced problems",
   "@onboardingGoal4Sub": {},
 
-  "onboardingProfileTitle": "Choose your level",
+  "onboardingParentGoal1Label": "Help my child build confidence",
+  "@onboardingParentGoal1Label": {},
+
+  "onboardingParentGoal1Sub": "Steady, low-pressure practice at their own pace",
+  "@onboardingParentGoal1Sub": {},
+
+  "onboardingParentGoal2Label": "Find learning gaps",
+  "@onboardingParentGoal2Label": {},
+
+  "onboardingParentGoal2Sub": "Spot weak topics before they become a problem",
+  "@onboardingParentGoal2Sub": {},
+
+  "onboardingParentGoal3Label": "Track progress over time",
+  "@onboardingParentGoal3Label": {},
+
+  "onboardingParentGoal3Sub": "See how they're improving week to week",
+  "@onboardingParentGoal3Sub": {},
+
+  "onboardingParentGoal4Label": "Support GCSE preparation",
+  "@onboardingParentGoal4Label": {},
+
+  "onboardingParentGoal4Sub": "Targeted revision aligned to the exam",
+  "@onboardingParentGoal4Sub": {},
+
+  "onboardingProfileTitle": "A few details about your child",
   "@onboardingProfileTitle": {},
 
-  "onboardingProfileSub": "Select the right tier for School Support",
+  "onboardingProfileSub": "This helps us tailor recommendations for them",
   "@onboardingProfileSub": {},
+
+  "onboardingChildNameLabel": "Child's name (optional)",
+  "@onboardingChildNameLabel": {},
+
+  "onboardingChildNameSub": "Personalise their experience",
+  "@onboardingChildNameSub": {},
+
+  "onboardingChildNameHint": "e.g. Alex",
+  "@onboardingChildNameHint": {},
 
   "onboardingShowLevelPicker": "true",
   "@onboardingShowLevelPicker": { "description": "Show KS level picker in study profile — false for markets using age-based stage selection" },
@@ -866,5 +911,29 @@
   "vaultLoadError": "The vault could not be loaded.",
   "pinMustBeFourDigits": "Enter exactly 4 digits.",
   "pinIncorrect": "Incorrect PIN.",
-  "pinResetFailed": "PIN reset failed."
+  "pinResetFailed": "PIN reset failed.",
+
+  "navJourney": "Journey",
+  "@navJourney": {},
+  "navMore": "More",
+  "@navMore": {},
+  "commonCancel": "Cancel",
+  "@commonCancel": {},
+
+  "journeyTitle": "Your Journey",
+  "@journeyTitle": {},
+  "journeySubtitle": "Streaks, achievements, and milestones in one place.",
+  "@journeySubtitle": {},
+  "journeyTeaserSubtitle": "See your streak, achievements, and milestones",
+  "@journeyTeaserSubtitle": {},
+
+  "practiceExitSessionTitle": "Exit session?",
+  "@practiceExitSessionTitle": {},
+  "practiceExitSessionBody": "Your current progress may not be saved.",
+  "@practiceExitSessionBody": {},
+
+  "onboardingDiscardTitle": "Discard your answers?",
+  "@onboardingDiscardTitle": {},
+  "onboardingDiscardBody": "Going back will clear what you've entered on this step.",
+  "@onboardingDiscardBody": {}
 }

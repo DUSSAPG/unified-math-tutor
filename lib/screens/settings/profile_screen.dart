@@ -4,6 +4,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../core/config/build_flags.dart';
+import '../../services/local_account_service.dart';
 import '../../services/sign_out_service.dart';
 import '../../shared/theme/app_spacing.dart';
 
@@ -31,7 +32,7 @@ class _ProfileContentState extends State<_ProfileContent> {
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Sign out of Sterling Math?'),
+        title: const Text('Sign out of Math Intelligence?'),
         actions: [
           TextButton(
             onPressed: () => Navigator.of(context).pop(false),
@@ -78,6 +79,8 @@ class _ProfileContentState extends State<_ProfileContent> {
         children: [
           // Centered header
           const _ProfileHeader(),
+          const SizedBox(height: 20),
+          const _AccountStateCard(),
           const SizedBox(height: 28),
           Text(
             l10n.profileSettingsLabel,
@@ -214,7 +217,7 @@ class _ProfileContentState extends State<_ProfileContent> {
             child: Column(
               children: [
                 const Text(
-                  'Sterling Math',
+                  'Math Intelligence',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Color(0xFF8A9DC0),
@@ -282,6 +285,124 @@ class _ProfileHeader extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+// ─── Account State ────────────────────────────────────────────────────────────
+
+class _AccountStateCard extends StatelessWidget {
+  const _AccountStateCard();
+
+  @override
+  Widget build(BuildContext context) {
+    return ValueListenableBuilder<AccountState>(
+      valueListenable: LocalAccountService.instance.notifier,
+      builder: (context, account, _) {
+        return Container(
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: const Color(0xFF132040),
+            borderRadius: BorderRadius.circular(14),
+            border: Border.all(color: const Color(0xFF1F3055)),
+          ),
+          child: account.isSignedIn
+              ? Row(
+                  children: [
+                    const Icon(Icons.verified_user,
+                        color: Color(0xFF34C759), size: 22),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Signed in as ${account.displayName}',
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          const SizedBox(height: 2),
+                          Text(
+                            account.email,
+                            style: const TextStyle(
+                              color: Color(0xFF8A9DC0),
+                              fontSize: 13,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                )
+              : Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        const Icon(Icons.person_outline,
+                            color: Color(0xFF8A9DC0), size: 22),
+                        const SizedBox(width: 12),
+                        const Expanded(
+                          child: Text(
+                            "You're browsing as a guest",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 4),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 34),
+                      child: Text(
+                        'Sign in to save your progress across devices.',
+                        style: TextStyle(
+                          color: Color(0xFF8A9DC0),
+                          fontSize: 13,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: OutlinedButton(
+                            onPressed: () => context.push('/auth/sign-in'),
+                            style: OutlinedButton.styleFrom(
+                              foregroundColor: const Color(0xFF5B8EFF),
+                              side: const BorderSide(color: Color(0xFF3D7EFF)),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                            ),
+                            child: const Text('Sign In'),
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                        Expanded(
+                          child: FilledButton(
+                            onPressed: () => context.push('/auth/create'),
+                            style: FilledButton.styleFrom(
+                              backgroundColor: const Color(0xFF3D7EFF),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                            ),
+                            child: const Text('Create Account'),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+        );
+      },
     );
   }
 }

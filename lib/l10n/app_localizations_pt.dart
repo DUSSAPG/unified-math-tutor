@@ -235,7 +235,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get profileSignOutSub => 'Clear session and return to welcome';
 
   @override
-  String get profileVersion => 'Version 1.0.0 · © 2026 Sterling Math';
+  String get profileVersion => 'Version 1.0.0 · © 2026 Math Intelligence';
 
   @override
   String get profileHeaderTitle => 'Profile';
@@ -312,7 +312,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get helpTermsBody =>
-      'Free for students and parents. By using Sterling Math you agree to our terms of service. No payment is required for standard access.';
+      'Free for students and parents. By using Math Intelligence you agree to our terms of service. No payment is required for standard access.';
 
   @override
   String get helpParentalTitle => 'Parental Controls';
@@ -503,6 +503,13 @@ class AppLocalizationsPt extends AppLocalizations {
       'We\'ll tailor the content to the right level';
 
   @override
+  String get onboardingStageTitleParent => 'Choose their level';
+
+  @override
+  String get onboardingStageSubParent =>
+      'We\'ll tailor the content to your child\'s level';
+
+  @override
   String get onboardingStageCount => '4';
 
   @override
@@ -536,6 +543,13 @@ class AppLocalizationsPt extends AppLocalizations {
   String get onboardingGoalSub => 'Choose the learning focus';
 
   @override
+  String get onboardingGoalTitleParent => 'What matters most?';
+
+  @override
+  String get onboardingGoalSubParent =>
+      'Choose how you\'d like to support them';
+
+  @override
   String get onboardingGoal1Label => 'Build confidence';
 
   @override
@@ -561,10 +575,48 @@ class AppLocalizationsPt extends AppLocalizations {
   String get onboardingGoal4Sub => 'Stretch challenges and advanced problems';
 
   @override
-  String get onboardingProfileTitle => 'Choose your level';
+  String get onboardingParentGoal1Label => 'Help my child build confidence';
 
   @override
-  String get onboardingProfileSub => 'Select the right tier for School Support';
+  String get onboardingParentGoal1Sub =>
+      'Steady, low-pressure practice at their own pace';
+
+  @override
+  String get onboardingParentGoal2Label => 'Find learning gaps';
+
+  @override
+  String get onboardingParentGoal2Sub =>
+      'Spot weak topics before they become a problem';
+
+  @override
+  String get onboardingParentGoal3Label => 'Track progress over time';
+
+  @override
+  String get onboardingParentGoal3Sub =>
+      'See how they\'re improving week to week';
+
+  @override
+  String get onboardingParentGoal4Label => 'Support GCSE preparation';
+
+  @override
+  String get onboardingParentGoal4Sub =>
+      'Targeted revision aligned to the exam';
+
+  @override
+  String get onboardingProfileTitle => 'A few details about your child';
+
+  @override
+  String get onboardingProfileSub =>
+      'This helps us tailor recommendations for them';
+
+  @override
+  String get onboardingChildNameLabel => 'Child\'s name (optional)';
+
+  @override
+  String get onboardingChildNameSub => 'Personalise their experience';
+
+  @override
+  String get onboardingChildNameHint => 'e.g. Alex';
 
   @override
   String get onboardingShowLevelPicker => 'true';
@@ -1082,4 +1134,38 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get pinResetFailed => 'Falha ao redefinir o PIN.';
+
+  @override
+  String get navJourney => 'Journey';
+
+  @override
+  String get navMore => 'More';
+
+  @override
+  String get commonCancel => 'Cancel';
+
+  @override
+  String get journeyTitle => 'Your Journey';
+
+  @override
+  String get journeySubtitle =>
+      'Streaks, achievements, and milestones in one place.';
+
+  @override
+  String get journeyTeaserSubtitle =>
+      'See your streak, achievements, and milestones';
+
+  @override
+  String get practiceExitSessionTitle => 'Exit session?';
+
+  @override
+  String get practiceExitSessionBody =>
+      'Your current progress may not be saved.';
+
+  @override
+  String get onboardingDiscardTitle => 'Discard your answers?';
+
+  @override
+  String get onboardingDiscardBody =>
+      'Going back will clear what you\'ve entered on this step.';
 }

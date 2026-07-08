@@ -31,7 +31,7 @@ class ReleaseNotesScreen extends StatelessWidget {
                   fontWeight: FontWeight.w700),
             ),
             Text(
-              'What\'s new in Sterling Math',
+              'What\'s new in Math Intelligence',
               style: TextStyle(color: Color(0xFF8A9DC0), fontSize: 12),
             ),
           ],
@@ -132,7 +132,7 @@ class ReleaseNotesScreen extends StatelessWidget {
                     ),
                     child: const Column(
                       children: [
-                        _InfoRow(label: 'App', value: 'Sterling Math'),
+                        _InfoRow(label: 'App', value: 'Math Intelligence'),
                         _Divider(),
                         _InfoRow(label: 'Version', value: 'v0.1-alpha'),
                         _Divider(),

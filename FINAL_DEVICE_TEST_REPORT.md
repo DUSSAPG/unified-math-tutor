@@ -41,7 +41,7 @@ exercises every supported locale against the onboarding flow and all six bottom-
 ## Verified Configuration (duplicate-install check)
 
 - `android/app/src/main/AndroidManifest.xml`: exactly one `<activity>` with a `LAUNCHER` intent-filter,
-  `android:label="Sterling Math"`.
+  `android:label="Math Intelligence"`.
 - `android/app/build.gradle.kts`: single `applicationId` = single `namespace` =
   `com.quantumlab.mathtutor.gb`, no product flavors currently defined — no duplicate-install risk in
   the current build.

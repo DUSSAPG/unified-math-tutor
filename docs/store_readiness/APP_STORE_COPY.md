@@ -1,4 +1,4 @@
-# Sterling Math Store Copy
+# Math Intelligence Store Copy
 
 ## UK Variant
 

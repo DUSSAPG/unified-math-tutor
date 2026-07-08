@@ -138,4 +138,4 @@ Before uploading to stores:
 - [ ] No personal data or test credentials visible
 - [ ] Status bar is clean (full battery, no notifications)
 - [ ] All text is legible at thumbnail size
-- [ ] Brand name consistent: "Sterling Math" (GB/CH) or "Sterling Math Korea" (KR)
+- [ ] Brand name consistent: "Math Intelligence" (GB/CH) or "Math Intelligence Korea" (KR)

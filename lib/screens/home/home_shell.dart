@@ -9,10 +9,12 @@ import '../../services/curriculum_service.dart';
 import '../../services/local_preferences_service.dart';
 import '../../services/mascot_fuel_service.dart';
 import '../../services/mental_math_vault_service.dart';
+import '../../services/nav_visibility_service.dart';
 import '../../services/streak_service.dart';
 import '../../widgets/mascot_card.dart';
 import '../../widgets/shared/fade_in.dart';
 import '../../widgets/shared/reward_confetti.dart';
+import '../../widgets/shared/section_label.dart';
 
 class HomeTabContent extends StatelessWidget {
   const HomeTabContent({super.key});
@@ -21,33 +23,66 @@ class HomeTabContent extends StatelessWidget {
   Widget build(BuildContext context) => const _HomeContent();
 }
 
+// Branch indices, matching the StatefulShellRoute order in app/router.dart.
+const _branchJourney = 3;
+const _branchFormulas = 4;
+const _branchProfile = 5;
+const _branchTutor = 6;
+const _branchHelp = 7;
+const _branchCount = 8;
+
+// On phone/tablet width the bottom bar only has room for 5 slots; anything
+// past Journey collapses behind a "More" sheet instead of its own tab.
+const _mobileMoreSlot = 4;
+
 class AppShell extends StatelessWidget {
   final StatefulNavigationShell shell;
 
   const AppShell({super.key, required this.shell});
 
-  void _onTab(int index) {
-    if (index < 0 || index >= 6) return;
+  void _goBranch(int index) {
     shell.goBranch(index, initialLocation: index == shell.currentIndex);
+  }
+
+  Future<void> _openMoreSheet(BuildContext context) {
+    return showModalBottomSheet<void>(
+      context: context,
+      backgroundColor: const Color(0xFF132040),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (sheetContext) => _MoreSheet(
+        onBranchSelected: (index) {
+          Navigator.of(sheetContext).pop();
+          _goBranch(index);
+        },
+        onSettingsSelected: () {
+          Navigator.of(sheetContext).pop();
+          context.push('/profile/settings');
+        },
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     final useRail = AppResponsive.isDesktop(context);
-    final isMobile = AppResponsive.isMobile(context);
-    final contentPadding = isMobile ? AppSpacing.md : AppSpacing.lg;
+    final isPhone = AppResponsive.isPhone(context);
+    final contentPadding = isPhone ? AppSpacing.md : AppSpacing.lg;
     final l10n = AppLocalizations.of(context);
 
     final titles = <String>[
       l10n.navHome,
       l10n.navTopics,
       l10n.navPractice,
+      l10n.navJourney,
+      l10n.homeFormulaLibraryTitle,
       l10n.navProfile,
       l10n.navTutor,
       l10n.navHelp,
     ];
     final currentIndex =
-        shell.currentIndex >= 0 && shell.currentIndex < titles.length
+        shell.currentIndex >= 0 && shell.currentIndex < _branchCount
             ? shell.currentIndex
             : 0;
 
@@ -68,6 +103,16 @@ class AppShell extends StatelessWidget {
         label: Text(l10n.navPractice),
       ),
       NavigationRailDestination(
+        icon: const Icon(LucideIcons.flame, size: 24),
+        selectedIcon: const Icon(LucideIcons.flame, size: 24),
+        label: Text(l10n.navJourney),
+      ),
+      NavigationRailDestination(
+        icon: const Icon(LucideIcons.functionSquare, size: 24),
+        selectedIcon: const Icon(LucideIcons.functionSquare, size: 24),
+        label: Text(l10n.homeFormulaLibraryTitle),
+      ),
+      NavigationRailDestination(
         icon: const Icon(LucideIcons.settings, size: 24),
         selectedIcon: const Icon(LucideIcons.settings, size: 24),
         label: Text(l10n.navProfile),
@@ -84,87 +129,195 @@ class AppShell extends StatelessWidget {
       ),
     ];
 
-    return Scaffold(
-      appBar: AppBar(title: Text(titles[currentIndex])),
-      body: SafeArea(
-        top: false,
-        child: Row(
-          children: [
-            if (useRail)
-              NavigationRail(
-                selectedIndex: currentIndex,
-                onDestinationSelected: _onTab,
-                labelType: NavigationRailLabelType.all,
-                destinations: railDestinations,
-              ),
-            Expanded(
-              child: LayoutBuilder(
-                builder: (context, constraints) {
-                  final maxWidth = isMobile
-                      ? constraints.maxWidth
-                      : AppResponsive.contentMaxWidth(context);
+    // Active practice/timed-challenge/exam-sim sessions hide all shell chrome
+    // (bottom nav / rail) so the focused flow owns the whole screen.
+    return ValueListenableBuilder<bool>(
+      valueListenable: NavVisibilityService.instance.hidden,
+      builder: (context, navHidden, _) {
+        final showChrome = !navHidden;
+        return Scaffold(
+          appBar: AppBar(title: Text(titles[currentIndex])),
+          body: SafeArea(
+            top: false,
+            child: Row(
+              children: [
+                if (useRail && showChrome)
+                  NavigationRail(
+                    selectedIndex: currentIndex,
+                    onDestinationSelected: _goBranch,
+                    labelType: NavigationRailLabelType.all,
+                    destinations: railDestinations,
+                  ),
+                Expanded(
+                  child: LayoutBuilder(
+                    builder: (context, constraints) {
+                      final maxWidth = AppResponsive.contentMaxWidth(context);
 
-                  return Align(
-                    alignment: Alignment.topCenter,
-                    child: SizedBox(
-                      width: maxWidth,
-                      height: constraints.maxHeight,
-                      child: Padding(
-                        padding: EdgeInsets.fromLTRB(
-                          contentPadding,
-                          contentPadding,
-                          contentPadding,
-                          0,
+                      return Align(
+                        alignment: Alignment.topCenter,
+                        child: SizedBox(
+                          width: maxWidth,
+                          height: constraints.maxHeight,
+                          child: Padding(
+                            padding: EdgeInsets.fromLTRB(
+                              contentPadding,
+                              contentPadding,
+                              contentPadding,
+                              0,
+                            ),
+                            child: shell,
+                          ),
                         ),
-                        child: shell,
-                      ),
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
+          bottomNavigationBar: (useRail || !showChrome)
+              ? null
+              : BottomNavigationBar(
+                  type: BottomNavigationBarType.fixed,
+                  currentIndex: currentIndex <= _branchJourney
+                      ? currentIndex
+                      : _mobileMoreSlot,
+                  onTap: (index) {
+                    if (index == _mobileMoreSlot) {
+                      _openMoreSheet(context);
+                      return;
+                    }
+                    _goBranch(index);
+                  },
+                  items: [
+                    BottomNavigationBarItem(
+                      icon: const Icon(LucideIcons.home, size: 24),
+                      activeIcon: _NavGlowIcon(icon: LucideIcons.home),
+                      label: l10n.navHome,
                     ),
-                  );
-                },
+                    BottomNavigationBarItem(
+                      icon: const Icon(LucideIcons.bookOpen, size: 24),
+                      activeIcon: _NavGlowIcon(icon: LucideIcons.bookOpen),
+                      label: l10n.navTopics,
+                    ),
+                    BottomNavigationBarItem(
+                      icon: const Icon(LucideIcons.calculator, size: 24),
+                      activeIcon: _NavGlowIcon(icon: LucideIcons.calculator),
+                      label: l10n.navPractice,
+                    ),
+                    BottomNavigationBarItem(
+                      icon: const Icon(LucideIcons.flame, size: 24),
+                      activeIcon: _NavGlowIcon(icon: LucideIcons.flame),
+                      label: l10n.navJourney,
+                    ),
+                    BottomNavigationBarItem(
+                      icon: const Icon(LucideIcons.moreHorizontal, size: 24),
+                      activeIcon:
+                          _NavGlowIcon(icon: LucideIcons.moreHorizontal),
+                      label: l10n.navMore,
+                    ),
+                  ],
+                ),
+        );
+      },
+    );
+  }
+}
+
+// ─── "More" sheet (mobile only) ───────────────────────────────────────────────
+
+class _MoreSheet extends StatelessWidget {
+  final ValueChanged<int> onBranchSelected;
+  final VoidCallback onSettingsSelected;
+
+  const _MoreSheet({
+    required this.onBranchSelected,
+    required this.onSettingsSelected,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    return SafeArea(
+      top: false,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              width: 36,
+              height: 4,
+              margin: const EdgeInsets.only(bottom: 12),
+              decoration: BoxDecoration(
+                color: const Color(0xFF1F3055),
+                borderRadius: BorderRadius.circular(2),
               ),
+            ),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                child: Text(
+                  l10n.navMore,
+                  style: const TextStyle(
+                    color: Color(0xFF8A9BB8),
+                    fontSize: 11,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 1.2,
+                  ),
+                ),
+              ),
+            ),
+            _MoreSheetTile(
+              icon: LucideIcons.functionSquare,
+              label: l10n.homeFormulaLibraryTitle,
+              onTap: () => onBranchSelected(_branchFormulas),
+            ),
+            _MoreSheetTile(
+              icon: LucideIcons.brain,
+              label: l10n.navTutor,
+              onTap: () => onBranchSelected(_branchTutor),
+            ),
+            _MoreSheetTile(
+              icon: LucideIcons.settings,
+              label: l10n.navProfile,
+              onTap: () => onBranchSelected(_branchProfile),
+            ),
+            _MoreSheetTile(
+              icon: LucideIcons.helpCircle,
+              label: l10n.navHelp,
+              onTap: () => onBranchSelected(_branchHelp),
+            ),
+            _MoreSheetTile(
+              icon: LucideIcons.settings,
+              label: l10n.settingsTitle,
+              onTap: onSettingsSelected,
             ),
           ],
         ),
       ),
-      bottomNavigationBar: useRail
-          ? null
-          : BottomNavigationBar(
-              type: BottomNavigationBarType.fixed,
-              currentIndex: currentIndex,
-              onTap: _onTab,
-              items: [
-                BottomNavigationBarItem(
-                  icon: const Icon(LucideIcons.home, size: 24),
-                  activeIcon: _NavGlowIcon(icon: LucideIcons.home),
-                  label: l10n.navHome,
-                ),
-                BottomNavigationBarItem(
-                  icon: const Icon(LucideIcons.bookOpen, size: 24),
-                  activeIcon: _NavGlowIcon(icon: LucideIcons.bookOpen),
-                  label: l10n.navTopics,
-                ),
-                BottomNavigationBarItem(
-                  icon: const Icon(LucideIcons.calculator, size: 24),
-                  activeIcon: _NavGlowIcon(icon: LucideIcons.calculator),
-                  label: l10n.navPractice,
-                ),
-                BottomNavigationBarItem(
-                  icon: const Icon(LucideIcons.settings, size: 24),
-                  activeIcon: _NavGlowIcon(icon: LucideIcons.settings),
-                  label: l10n.navProfile,
-                ),
-                BottomNavigationBarItem(
-                  icon: const Icon(LucideIcons.brain, size: 24),
-                  activeIcon: _NavGlowIcon(icon: LucideIcons.brain),
-                  label: l10n.navTutor,
-                ),
-                BottomNavigationBarItem(
-                  icon: const Icon(LucideIcons.helpCircle, size: 24),
-                  activeIcon: _NavGlowIcon(icon: LucideIcons.helpCircle),
-                  label: l10n.navHelp,
-                ),
-              ],
-            ),
+    );
+  }
+}
+
+class _MoreSheetTile extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final VoidCallback onTap;
+
+  const _MoreSheetTile({
+    required this.icon,
+    required this.label,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: Icon(icon, color: const Color(0xFF5B8EFF)),
+      title: Text(label, style: const TextStyle(color: Colors.white)),
+      onTap: onTap,
     );
   }
 }
@@ -238,7 +391,7 @@ class _HomeContentState extends State<_HomeContent> {
             const SizedBox(height: AppSpacing.lg),
 
             // 2. Continue Learning
-            _SectionLabel(text: l10n.homeSectionContinueLearning),
+            SectionLabel(text: l10n.homeSectionContinueLearning),
             const SizedBox(height: AppSpacing.sm),
             const _ContinueLearningCard(),
             const SizedBox(height: AppSpacing.sm),
@@ -248,7 +401,7 @@ class _HomeContentState extends State<_HomeContent> {
             const SizedBox(height: AppSpacing.lg),
 
             // 4. Topics
-            _SectionLabel(
+            SectionLabel(
               text: l10n.navTopics,
               actionLabel: l10n.homeViewAll,
               onAction: () {},
@@ -282,57 +435,21 @@ class _HomeContentState extends State<_HomeContent> {
             ),
             const SizedBox(height: AppSpacing.lg),
 
-            // 5. Progress
-            _SectionLabel(text: l10n.homeSectionProgress),
+            // 5. Journey teaser (full progress/achievements live on the
+            // dedicated Journey tab)
+            SectionLabel(text: l10n.homeSectionProgress),
             const SizedBox(height: AppSpacing.sm),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  child: _ProgressCompactCard(
-                    icon: Icons.local_fire_department,
-                    iconColor: const Color(0xFFFF6B35),
-                    header: l10n.homeStreakHeader,
-                    value: '1',
-                    label: l10n.homeStreakFirstDay,
-                  ),
-                ),
-                const SizedBox(width: AppSpacing.sm),
-                Expanded(
-                  child: _ProgressCompactCard(
-                    icon: Icons.calendar_today,
-                    iconColor: const Color(0xFF5B8EFF),
-                    header: l10n.homeThisWeekHeader,
-                    value: '1/5',
-                    label: l10n.homeDaysActive,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: AppSpacing.lg),
-
-            // 6. Achievements
-            _SectionLabel(text: l10n.homeSectionAchievements),
-            const SizedBox(height: AppSpacing.sm),
-            const _AchievementsCard(),
-            const SizedBox(height: 10),
-            const _AchievementBadgesRow(),
-            const SizedBox(height: AppSpacing.lg),
-
-            // 6b. Daily Goal
-            _SectionLabel(text: l10n.homeDailyGoalTitle),
-            const SizedBox(height: AppSpacing.sm),
-            const _DailyGoalCard(),
+            const _JourneyTeaserCard(),
             const SizedBox(height: AppSpacing.lg),
 
             // 7. Oxford Track
-            _SectionLabel(text: l10n.homeSectionOxfordTrack),
+            SectionLabel(text: l10n.homeSectionOxfordTrack),
             const SizedBox(height: AppSpacing.sm),
             const _OxfordTrackCard(),
             const SizedBox(height: AppSpacing.lg),
 
             // 8. Learning Paths
-            _SectionLabel(text: l10n.homeSectionLearningPaths),
+            SectionLabel(text: l10n.homeSectionLearningPaths),
             const SizedBox(height: AppSpacing.sm),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -361,7 +478,7 @@ class _HomeContentState extends State<_HomeContent> {
             const SizedBox(height: AppSpacing.lg),
 
             // 9. Exam Packs
-            _SectionLabel(text: l10n.homeSectionExamPacks),
+            SectionLabel(text: l10n.homeSectionExamPacks),
             const SizedBox(height: AppSpacing.sm),
             const _ExamPacksCard(),
             const SizedBox(height: AppSpacing.md),
@@ -418,7 +535,7 @@ class _FormulaLibraryCard extends StatelessWidget {
         ),
         subtitle: Text(l10n.homeFormulaLibrarySubtitle),
         trailing: const Icon(Icons.chevron_right),
-        onTap: () => context.push('/formulas'),
+        onTap: () => context.go('/formulas'),
       ),
     );
   }
@@ -546,47 +663,69 @@ class _DailyMissionCard extends StatelessWidget {
   }
 }
 
-// ─── Reusable section label ───────────────────────────────────────────────────
+// ─── Journey teaser card ──────────────────────────────────────────────────────
 
-class _SectionLabel extends StatelessWidget {
-  final String text;
-  final String? actionLabel;
-  final VoidCallback? onAction;
-
-  const _SectionLabel({
-    required this.text,
-    this.actionLabel,
-    this.onAction,
-  });
+class _JourneyTeaserCard extends StatelessWidget {
+  const _JourneyTeaserCard();
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(
-          text.toUpperCase(),
-          style: const TextStyle(
-            color: Color(0xFF8A9BB8),
-            fontSize: 11,
-            fontWeight: FontWeight.w600,
-            letterSpacing: 1.2,
+    final l10n = AppLocalizations.of(context);
+    return Card(
+      clipBehavior: Clip.antiAlias,
+      child: InkWell(
+        onTap: () => context.go('/journey'),
+        child: Padding(
+          padding: const EdgeInsets.all(AppSpacing.md),
+          child: Row(
+            children: [
+              Container(
+                width: 44,
+                height: 44,
+                decoration: BoxDecoration(
+                  color: const Color(0xFFFF6B35).withValues(alpha: 0.15),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const Icon(
+                  Icons.local_fire_department,
+                  color: Color(0xFFFF6B35),
+                  size: 24,
+                ),
+              ),
+              const SizedBox(width: AppSpacing.md),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ValueListenableBuilder<int>(
+                      valueListenable: StreakService.instance.days,
+                      builder: (context, days, _) => Text(
+                        days == 0
+                            ? l10n.homeStreakDays
+                            : l10n.homeStreakCount(days),
+                        style: const TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      l10n.journeyTeaserSubtitle,
+                      style: const TextStyle(
+                        fontSize: 12,
+                        color: Color(0xFF8A9BB8),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const Icon(Icons.chevron_right, color: Color(0xFF4A6080)),
+            ],
           ),
         ),
-        if (actionLabel != null) ...[
-          const Spacer(),
-          GestureDetector(
-            onTap: onAction,
-            child: Text(
-              actionLabel!,
-              style: const TextStyle(
-                color: Color(0xFF5B8EFF),
-                fontSize: 13,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ),
-        ],
-      ],
+      ),
     );
   }
 }
@@ -710,104 +849,6 @@ class _RewardsChip extends StatelessWidget {
               : AppLocalizations.of(context).homeRewardsOff,
         ),
         onSelected: prefs.setRewardsEnabled,
-      ),
-    );
-  }
-}
-
-// ─── 6b. Achievement Badges Row ───────────────────────────────────────────────
-
-class _AchievementBadgesRow extends StatelessWidget {
-  const _AchievementBadgesRow();
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 86,
-      child: ListView(
-        scrollDirection: Axis.horizontal,
-        children: [
-          _AchievementChip(
-            icon: Icons.emoji_events,
-            label: AppLocalizations.of(context).homeBadgeFirstSession,
-            sublabel: AppLocalizations.of(context).homeAchievementUnlocked,
-            unlocked: true,
-          ),
-          const SizedBox(width: 10),
-          _AchievementChip(
-            icon: Icons.quiz_outlined,
-            label: AppLocalizations.of(context).homeBadgeTenQuestions,
-            sublabel: '4 / 10',
-            unlocked: false,
-          ),
-          const SizedBox(width: 10),
-          _AchievementChip(
-            icon: Icons.functions,
-            label: AppLocalizations.of(context).homeBadgeAlgebraStarter,
-            sublabel: AppLocalizations.of(context).homeBadgeLocked,
-            unlocked: false,
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _AchievementChip extends StatelessWidget {
-  final IconData icon;
-  final String label;
-  final String sublabel;
-  final bool unlocked;
-
-  const _AchievementChip({
-    required this.icon,
-    required this.label,
-    required this.sublabel,
-    required this.unlocked,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final color = unlocked ? const Color(0xFFFFBD00) : const Color(0xFF4A6080);
-    final bg = unlocked ? const Color(0xFF2A1F00) : const Color(0xFF132040);
-    final borderColor = unlocked
-        ? const Color(0xFFFFBD00).withValues(alpha: 0.35)
-        : const Color(0xFF1F3055);
-
-    return Container(
-      width: 110,
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-      decoration: BoxDecoration(
-        color: bg,
-        borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: borderColor),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(icon, color: color, size: 22),
-          const SizedBox(height: 5),
-          Text(
-            label,
-            textAlign: TextAlign.center,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(
-              color: unlocked ? Colors.white : const Color(0xFF8A9DC0),
-              fontSize: 11,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-          Text(
-            sublabel,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(
-              color: color,
-              fontSize: 10,
-            ),
-          ),
-        ],
       ),
     );
   }
@@ -1058,143 +1099,6 @@ class _TopicRowCard extends StatelessWidget {
               minHeight: 3,
               backgroundColor: const Color(0xFF2A3A5A),
               valueColor: AlwaysStoppedAnimation<Color>(iconColor),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-// ─── 5. Progress compact cards ────────────────────────────────────────────────
-
-class _ProgressCompactCard extends StatelessWidget {
-  final IconData icon;
-  final Color iconColor;
-  final String header;
-  final String value;
-  final String label;
-
-  const _ProgressCompactCard({
-    required this.icon,
-    required this.iconColor,
-    required this.header,
-    required this.value,
-    required this.label,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(AppSpacing.md),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Icon(icon, color: iconColor, size: 16),
-                const SizedBox(width: 6),
-                Expanded(
-                  child: Text(
-                    header,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                      color: Color(0xFF8A9BB8),
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 8),
-            Text(
-              value,
-              style: const TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-            const SizedBox(height: 2),
-            Text(
-              label,
-              style: const TextStyle(
-                fontSize: 11,
-                color: Color(0xFF8A9BB8),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-// ─── 6. Achievements ──────────────────────────────────────────────────────────
-
-class _AchievementsCard extends StatelessWidget {
-  const _AchievementsCard();
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context);
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(AppSpacing.md),
-        child: Row(
-          children: [
-            Container(
-              width: 44,
-              height: 44,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                    const Color(0xFF3D2A00),
-                    Color.lerp(const Color(0xFF3D2A00), const Color(0xFFFFBD00),
-                        0.15)!,
-                  ],
-                ),
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [
-                  BoxShadow(
-                    color: const Color(0xFFFFBD00).withValues(alpha: 0.2),
-                    blurRadius: 8,
-                    offset: const Offset(0, 2),
-                  ),
-                ],
-              ),
-              child: const Icon(
-                LucideIcons.badgeCheck,
-                color: Color(0xFFFFBD00),
-                size: 32,
-              ),
-            ),
-            const SizedBox(width: AppSpacing.md),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    l10n.homeAchievementStreakTitle,
-                    style: const TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                  const SizedBox(height: 2),
-                  Text(
-                    l10n.homeAchievementStreakSubtitle,
-                    style:
-                        const TextStyle(fontSize: 13, color: Color(0xFF8A9BB8)),
-                  ),
-                ],
-              ),
             ),
           ],
         ),
@@ -1578,83 +1482,6 @@ class _WhatsNewCard extends StatelessWidget {
           GestureDetector(
             onTap: onDismiss,
             child: const Icon(Icons.close, color: Color(0xFF4A6080), size: 18),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-// ─── 6b. Daily Goal Card ─────────────────────────────────────────────────────
-
-class _DailyGoalCard extends StatelessWidget {
-  const _DailyGoalCard();
-
-  static const double _progress = 7 / 15;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context);
-    return Container(
-      padding: const EdgeInsets.all(AppSpacing.md),
-      decoration: BoxDecoration(
-        color: const Color(0xFF132040),
-        borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: const Color(0xFF1F3055)),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Container(
-                width: 36,
-                height: 36,
-                decoration: BoxDecoration(
-                  color: const Color(0xFF34C759).withValues(alpha: 0.12),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: const Icon(
-                  Icons.flag_outlined,
-                  color: Color(0xFF34C759),
-                  size: 18,
-                ),
-              ),
-              const SizedBox(width: 10),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      l10n.homeDailyGoalSubtitle,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Text(
-                l10n.homeDailyGoalProgress,
-                style: const TextStyle(
-                  color: Color(0xFF34C759),
-                  fontSize: 13,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 10),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(3),
-            child: const LinearProgressIndicator(
-              value: _progress,
-              minHeight: 6,
-              backgroundColor: Color(0xFF1F3055),
-              valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF34C759)),
-            ),
           ),
         ],
       ),

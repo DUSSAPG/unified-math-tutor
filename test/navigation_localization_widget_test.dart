@@ -59,21 +59,48 @@ void main() {
         );
         await tester.pumpAndSettle();
 
-        final destinations = <(String, String)>[
+        // Home / Topics / Practice / Journey sit directly on the bottom bar.
+        final directDestinations = <(String, String)>[
           (l10n.navHome, '/home'),
           (l10n.navTopics, '/topics'),
           (l10n.navPractice, '/practice'),
-          (l10n.navProfile, '/profile'),
-          (l10n.navTutor, '/tutor'),
-          (l10n.navHelp, '/help'),
+          (l10n.navJourney, '/journey'),
         ];
-        for (final destination in destinations) {
+        for (final destination in directDestinations) {
           await tester.tap(
             find.descendant(
               of: find.byType(BottomNavigationBar),
               matching: find.text(destination.$1),
             ),
           );
+          await tester.pumpAndSettle();
+          expect(
+            appRouter.routeInformationProvider.value.uri.path,
+            destination.$2,
+            reason: 'Failed ${destination.$2} for $locale',
+          );
+          expect(
+            tester.takeException(),
+            isNull,
+            reason: 'Layout failed ${destination.$2} for $locale',
+          );
+        }
+
+        // Profile / Tutor / Help collapse behind the "More" sheet on phones.
+        final moreDestinations = <(String, String)>[
+          (l10n.navProfile, '/profile'),
+          (l10n.navTutor, '/tutor'),
+          (l10n.navHelp, '/help'),
+        ];
+        for (final destination in moreDestinations) {
+          await tester.tap(
+            find.descendant(
+              of: find.byType(BottomNavigationBar),
+              matching: find.text(l10n.navMore),
+            ),
+          );
+          await tester.pumpAndSettle();
+          await tester.tap(find.text(destination.$1).last);
           await tester.pumpAndSettle();
           expect(
             appRouter.routeInformationProvider.value.uri.path,

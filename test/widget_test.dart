@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:unified_math_tutor/core/bootstrap.dart';
 import 'package:unified_math_tutor/main.dart';
 import 'package:unified_math_tutor/services/locale_service.dart';
-import 'package:unified_math_tutor/services/local_preferences_service.dart';
-import 'package:unified_math_tutor/services/streak_service.dart';
-import 'package:unified_math_tutor/services/tutor_credit_service.dart';
 
 void main() {
   testWidgets('app boots without overflow for production locales',
       (WidgetTester tester) async {
     SharedPreferences.setMockInitialValues({});
-    await LocaleService.instance.init();
-    await LocalPreferencesService.instance.init();
-    await StreakService.instance.init();
-    await TutorCreditService.instance.init();
+    // Same bootstrap the app runs in main() — calling it here (rather than
+    // each service's init() individually) means AppSplashScreen's own call
+    // to AppBootstrap.ensureStarted() later just reuses this cached future
+    // instead of re-running init() a second time and crashing on
+    // TutorCreditService's `late final` notifier.
+    await AppBootstrap.ensureStarted();
 
     for (final locale in LocaleService.productionLocales) {
       await LocaleService.instance.setLocale(locale);

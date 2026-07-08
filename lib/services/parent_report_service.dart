@@ -34,7 +34,7 @@ class ParentReportService {
         pageFormat: PdfPageFormat.a4,
         theme: pw.ThemeData.withFont(base: font, bold: font),
         build: (_) => [
-          pw.Header(level: 0, child: pw.Text('Sterling Math Parent Cheat Sheet')),
+          pw.Header(level: 0, child: pw.Text('Math Intelligence Parent Cheat Sheet')),
           pw.Text('Generated locally. No learner data was uploaded.'),
           pw.SizedBox(height: 12),
           pw.Header(level: 1, child: pw.Text('Suggested topic drills')),

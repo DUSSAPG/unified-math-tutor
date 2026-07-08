@@ -44,17 +44,17 @@ productFlavors {
     gb {
         dimension "market"
         applicationId "com.quantumlab.mathtutor.gb"
-        resValue "string", "app_name", "Sterling Math"
+        resValue "string", "app_name", "Math Intelligence"
     }
     ch {
         dimension "market"
         applicationId "com.quantumlab.mathtutor.ch"
-        resValue "string", "app_name", "Sterling Math"
+        resValue "string", "app_name", "Math Intelligence"
     }
     kr {
         dimension "market"
         applicationId "com.quantumlab.mathtutor.kr"
-        resValue "string", "app_name", "Sterling Math Korea"
+        resValue "string", "app_name", "Math Intelligence Korea"
     }
 }
 ```

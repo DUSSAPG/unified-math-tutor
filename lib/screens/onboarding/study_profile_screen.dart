@@ -18,17 +18,53 @@ class _StudyProfileScreenState extends State<StudyProfileScreen> {
   static const _curriculumKeys = ['ks2', 'ks3', 'ks4'];
 
   int? _selected;
+  final _childNameController = TextEditingController();
   final _emailController = TextEditingController();
 
   @override
   void dispose() {
+    _childNameController.dispose();
     _emailController.dispose();
     super.dispose();
+  }
+
+  bool get _hasUnsavedInput =>
+      _childNameController.text.trim().isNotEmpty ||
+      _emailController.text.trim().isNotEmpty;
+
+  Future<void> _confirmBack() async {
+    if (!_hasUnsavedInput) {
+      context.go('/onboarding/goal');
+      return;
+    }
+    final l10n = AppLocalizations.of(context);
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        title: Text(l10n.onboardingDiscardTitle),
+        content: Text(l10n.onboardingDiscardBody),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(dialogContext).pop(false),
+            child: Text(l10n.commonCancel),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.of(dialogContext).pop(true),
+            child: Text(l10n.practiceExit),
+          ),
+        ],
+      ),
+    );
+    if (confirmed == true && mounted) context.go('/onboarding/goal');
   }
 
   void _finish() {
     if (_selected != null) {
       CurriculumService.instance.select(_curriculumKeys[_selected!]);
+    }
+    final childName = _childNameController.text.trim();
+    if (childName.isNotEmpty) {
+      OnboardingProfileService.instance.setChildName(childName);
     }
     final email = _emailController.text.trim();
     if (email.isNotEmpty) {
@@ -58,10 +94,53 @@ class _StudyProfileScreenState extends State<StudyProfileScreen> {
       onContinue: _finish,
       skipLabel: l10n.onboardingSkipEmail,
       onSkip: _finish,
-      onBack: () => context.go('/onboarding/goal'),
+      onBack: _confirmBack,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Text(
+            l10n.onboardingChildNameLabel,
+            style: const TextStyle(
+              color: Color(0xFF8A9DC0),
+              fontSize: 13,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            l10n.onboardingChildNameSub,
+            style: const TextStyle(color: Color(0xFF4A6080), fontSize: 12),
+          ),
+          const SizedBox(height: 10),
+          TextField(
+            controller: _childNameController,
+            textCapitalization: TextCapitalization.words,
+            style: const TextStyle(color: Colors.white),
+            decoration: InputDecoration(
+              hintText: l10n.onboardingChildNameHint,
+              hintStyle: const TextStyle(color: Color(0xFF4A6080)),
+              filled: true,
+              fillColor: const Color(0xFF132040),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: const BorderSide(color: Color(0xFF1F3055)),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: const BorderSide(color: Color(0xFF1F3055)),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide:
+                    const BorderSide(color: Color(0xFF3D7EFF), width: 2),
+              ),
+              contentPadding: const EdgeInsets.symmetric(
+                horizontal: 16,
+                vertical: 14,
+              ),
+            ),
+          ),
+          const SizedBox(height: 20),
           if (showLevelPicker) ...[
             ...List.generate(levels.length, (i) {
               final (title, subtitle) = levels[i];

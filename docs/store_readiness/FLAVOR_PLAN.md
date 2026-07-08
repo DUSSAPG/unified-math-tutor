@@ -6,9 +6,9 @@ Three Flutter flavors map to three distinct store listings. Each flavor shares t
 
 | Flavor | Package ID | Default Locale | App Name |
 |---|---|---|---|
-| `gb` | `com.quantumlab.mathtutor.gb` | `en_GB` | Sterling Math |
-| `ch` | `com.quantumlab.mathtutor.ch` | `de_CH` | Sterling Math |
-| `kr` | `com.quantumlab.mathtutor.kr` | `ko_KR` | Sterling Math Korea |
+| `gb` | `com.quantumlab.mathtutor.gb` | `en_GB` | Math Intelligence |
+| `ch` | `com.quantumlab.mathtutor.ch` | `de_CH` | Math Intelligence |
+| `kr` | `com.quantumlab.mathtutor.kr` | `ko_KR` | Math Intelligence Korea |
 
 ## Status
 

@@ -202,6 +202,29 @@ class _UserTypeScreenState extends State<UserTypeScreen> {
                               ),
                             ),
                           ),
+                          const Text(
+                            '·',
+                            style: TextStyle(
+                              color: Color(0xFF4A6080),
+                              fontSize: 14,
+                            ),
+                          ),
+                          TextButton(
+                            style: TextButton.styleFrom(
+                              padding: const EdgeInsets.symmetric(horizontal: 6),
+                              minimumSize: Size.zero,
+                              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                            ),
+                            onPressed: () => context.push('/auth/create'),
+                            child: const Text(
+                              'Create account',
+                              style: TextStyle(
+                                color: Color(0xFF5B8EFF),
+                                fontWeight: FontWeight.w600,
+                                fontSize: 14,
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                       TextButton(

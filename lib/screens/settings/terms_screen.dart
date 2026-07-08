@@ -52,7 +52,7 @@ class TermsScreen extends StatelessWidget {
                     iconColor: const Color(0xFF7B3FFF),
                     title: 'ACCEPTANCE OF TERMS',
                     body:
-                        'By downloading, installing, or using Sterling Math you agree to be bound by these Terms of Use. If you do not agree, do not use the app.',
+                        'By downloading, installing, or using Math Intelligence you agree to be bound by these Terms of Use. If you do not agree, do not use the app.',
                   ),
                   const SizedBox(height: 12),
                   _TermsSection(
@@ -60,7 +60,7 @@ class TermsScreen extends StatelessWidget {
                     iconColor: const Color(0xFF5B8EFF),
                     title: 'USE OF THE APP',
                     body:
-                        'Sterling Math is a personal, non-commercial educational tool. You may use it to support your own learning or to help a child you are responsible for. You may not copy, modify, distribute, or reverse-engineer any part of the app.',
+                        'Math Intelligence is a personal, non-commercial educational tool. You may use it to support your own learning or to help a child you are responsible for. You may not copy, modify, distribute, or reverse-engineer any part of the app.',
                   ),
                   const SizedBox(height: 12),
                   _TermsSection(
@@ -76,7 +76,7 @@ class TermsScreen extends StatelessWidget {
                     iconColor: const Color(0xFF34C759),
                     title: 'INTELLECTUAL PROPERTY',
                     body:
-                        'All content, questions, explanations, and materials within Sterling Math are the intellectual property of QuantumLab Education Ltd. You may not reproduce or distribute any content without written permission.',
+                        'All content, questions, explanations, and materials within Math Intelligence are the intellectual property of QuantumLab Education Ltd. You may not reproduce or distribute any content without written permission.',
                   ),
                   const SizedBox(height: 12),
                   _TermsSection(

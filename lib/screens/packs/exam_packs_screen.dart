@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
+import '../../app/safe_navigation.dart';
 import '../../services/curriculum_service.dart';
 
 enum _Badge { included, premium, topup }
@@ -113,7 +114,16 @@ class ExamPacksScreen extends StatelessWidget {
     ];
 
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.homeSectionExamPacks)),
+      appBar: AppBar(
+        title: Text(l10n.homeSectionExamPacks),
+        automaticallyImplyLeading: false,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.close),
+            onPressed: () => popOrGo(context, '/home'),
+          ),
+        ],
+      ),
       body: ListView.separated(
         padding: EdgeInsets.fromLTRB(16, 16, 16, bottomPadding),
         itemCount: packs.length + 1,

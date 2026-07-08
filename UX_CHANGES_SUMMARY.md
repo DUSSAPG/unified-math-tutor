@@ -1,8 +1,8 @@
-# UX Changes Summary — Sterling Math V1 Polish
+# UX Changes Summary — Math Intelligence V1 Polish
 
 ## 1. Rebrand (display copy only)
 
-Renamed the app's user-facing name from "MathTutor" / "Unified Math Tutor" to **Sterling Math**
+Renamed the app's user-facing name from "MathTutor" / "Unified Math Tutor" to **Math Intelligence**
 across: launcher label, `MaterialApp` title, Profile screen, Sign-out dialog, Terms of Use, Release
 Notes, the Parent Cheat Sheet PDF header, and legal/store-readiness docs. `applicationId`, `namespace`,
 and internal Dart package/class names (`unified_math_tutor`, `UnifiedMathTutorApp`) were deliberately
@@ -41,7 +41,7 @@ collected but discarded).
 
 Confirmed the app already ships dark-only (no `darkTheme`/`themeMode` ever existed in `main.dart`).
 The Appearance screen's Light/System swatches — which never did anything — were removed and replaced
-with a single non-interactive "Dark" card and the sprint's exact copy: *"Sterling Math currently uses
+with a single non-interactive "Dark" card and the sprint's exact copy: *"Math Intelligence currently uses
 our optimized Dark Theme to improve focus and readability. Future themes may be introduced in later
 releases."*
 

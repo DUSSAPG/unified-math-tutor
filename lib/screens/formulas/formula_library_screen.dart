@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../app/safe_navigation.dart';
 import '../../services/formula_library_service.dart';
 
 class FormulaLibraryScreen extends StatefulWidget {
@@ -26,36 +25,10 @@ class _FormulaLibraryScreenState extends State<FormulaLibraryScreen> {
   Widget build(BuildContext context) {
     final bottomPadding = MediaQuery.viewPaddingOf(context).bottom + 16;
 
-    return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
-      appBar: AppBar(
-        backgroundColor: const Color(0xFF0B1120),
-        elevation: 0,
-        scrolledUnderElevation: 0,
-        centerTitle: false,
-        titleSpacing: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => popOrGo(context, '/home'),
-        ),
-        title: const Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Formula Library',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700),
-            ),
-            Text(
-              'Quick reference for key maths formulas',
-              style: TextStyle(color: Color(0xFF8A9DC0), fontSize: 12),
-            ),
-          ],
-        ),
-      ),
-      body: SafeArea(
+    // No own AppBar/Scaffold: this is a bottom-nav tab, so AppShell already
+    // provides the outer Scaffold and title bar (matching Topics/Tutor/Help).
+    return SafeArea(
+        top: false,
         child: FutureBuilder<List<FormulaEntry>>(
           future: FormulaLibraryService.instance.load(),
           builder: (context, snapshot) {
@@ -75,7 +48,8 @@ class _FormulaLibraryScreenState extends State<FormulaLibraryScreen> {
             final categories = all.map((e) => e.category).toSet().toList();
             final filtered = all
                 .where((e) =>
-                    (_selectedCategory == null || e.category == _selectedCategory) &&
+                    (_selectedCategory == null ||
+                        e.category == _selectedCategory) &&
                     e.matches(_query))
                 .toList();
 
@@ -126,7 +100,8 @@ class _FormulaLibraryScreenState extends State<FormulaLibraryScreen> {
                           padding:
                               EdgeInsets.fromLTRB(16, 0, 16, bottomPadding),
                           itemCount: filtered.length,
-                          separatorBuilder: (_, __) => const SizedBox(height: 10),
+                          separatorBuilder: (_, __) =>
+                              const SizedBox(height: 10),
                           itemBuilder: (context, index) {
                             final entry = filtered[index];
                             return _FormulaCard(
@@ -143,9 +118,7 @@ class _FormulaLibraryScreenState extends State<FormulaLibraryScreen> {
               ],
             );
           },
-        ),
-      ),
-    );
+        ));
   }
 }
 
@@ -285,7 +258,8 @@ class _FormulaCard extends StatelessWidget {
                 if (entry.meaning.isNotEmpty) ...[
                   Text(
                     entry.meaning,
-                    style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13),
+                    style:
+                        const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13),
                   ),
                   const SizedBox(height: 10),
                 ],

@@ -12,6 +12,7 @@ import '../../models/graph_question.dart';
 import '../../services/curriculum_service.dart';
 import '../../services/jsonl_pack_loader.dart';
 import '../../services/mascot_fuel_service.dart';
+import '../../services/nav_visibility_service.dart';
 import '../../services/pack_registry_service.dart';
 import '../../services/practice_context_service.dart';
 import '../../services/session_history_service.dart';
@@ -116,6 +117,7 @@ class _PracticeScreenState extends State<PracticeScreen>
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
     _sessionTimer?.cancel();
+    NavVisibilityService.instance.show();
     super.dispose();
   }
 
@@ -140,7 +142,8 @@ class _PracticeScreenState extends State<PracticeScreen>
   }
 
   void _onModeSelected(_PracticeMode mode) {
-    final hasTopic = widget.selectedTopicId != null || widget.selectedTopic != null;
+    final hasTopic =
+        widget.selectedTopicId != null || widget.selectedTopic != null;
     if (mode == _PracticeMode.topicDrill && !hasTopic) {
       // Topic Drill needs a topic first — open the existing topic selector
       // rather than starting a generic/mixed session.
@@ -192,7 +195,8 @@ class _PracticeScreenState extends State<PracticeScreen>
           if (_selectedMode == _PracticeMode.topicDrill) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text(AppLocalizations.of(context).practiceTopicDrillEmpty),
+                content:
+                    Text(AppLocalizations.of(context).practiceTopicDrillEmpty),
                 behavior: SnackBarBehavior.floating,
               ),
             );
@@ -210,6 +214,7 @@ class _PracticeScreenState extends State<PracticeScreen>
           _attempts.clear();
           _screenState = _ScreenState.session;
         });
+        NavVisibilityService.instance.hide();
         PracticeContextService.instance.set(PracticeContext(
           stage: stage,
           questionText: questions[0].question,
@@ -267,6 +272,7 @@ class _PracticeScreenState extends State<PracticeScreen>
   void _goBack() {
     _sessionTimer?.cancel();
     PracticeContextService.instance.clear();
+    NavVisibilityService.instance.show();
     setState(() {
       _screenState = _ScreenState.setup;
       _questions = [];
@@ -279,6 +285,28 @@ class _PracticeScreenState extends State<PracticeScreen>
       _attempts.clear();
       _secondsRemaining = null;
     });
+  }
+
+  Future<void> _confirmExitSession() async {
+    final l10n = AppLocalizations.of(context);
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        title: Text(l10n.practiceExitSessionTitle),
+        content: Text(l10n.practiceExitSessionBody),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(dialogContext).pop(false),
+            child: Text(l10n.commonCancel),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.of(dialogContext).pop(true),
+            child: Text(l10n.practiceExit),
+          ),
+        ],
+      ),
+    );
+    if (confirmed == true) _goBack();
   }
 
   Future<void> _nextQuestion() async {
@@ -301,6 +329,7 @@ class _PracticeScreenState extends State<PracticeScreen>
   Future<void> _finishSession() async {
     _sessionTimer?.cancel();
     PracticeContextService.instance.clear();
+    NavVisibilityService.instance.show();
     await SessionHistoryService.instance.add(PracticeSessionResult(
       stage: _selectedStage,
       completedAt: DateTime.now(),
@@ -368,42 +397,49 @@ class _PracticeScreenState extends State<PracticeScreen>
     }
 
     if (_screenState == _ScreenState.session) {
-      return _SessionView(
-        questions: _questions,
-        graphsByQuestionId: _graphsByQuestionId,
-        currentIndex: _currentIndex,
-        selectedOption: _selectedOption,
-        checked: _checked,
-        celebrationSerial: _answerCelebrationSerial,
-        onOptionSelected: (i) => setState(() => _selectedOption = i),
-        onCheck: () async {
-          final correct =
-              _selectedOption == _questions[_currentIndex].correctIndex;
-          setState(() {
-            _checked = true;
-            if (correct) {
-              _correctCount++;
-              _answerCelebrationSerial++;
-            }
-            _attempts.add(SessionQuestionResult(
-              question: _questions[_currentIndex].question,
-              options: _questions[_currentIndex].options,
-              correctIndex: _questions[_currentIndex].correctIndex,
-              selectedIndex: _selectedOption!,
-              topic: _questions[_currentIndex].topic,
-              explanation: _questions[_currentIndex].explanation,
-            ));
-          });
-          if (correct) {
-            await MascotFuelService.instance.addFuel(4);
-            await MascotFuelService.instance.incrementDailyMission();
-          } else {
-            MascotFuelService.instance.showIncorrectFeedback();
-          }
+      return PopScope(
+        canPop: false,
+        onPopInvokedWithResult: (didPop, result) {
+          if (didPop) return;
+          _confirmExitSession();
         },
-        onNext: _nextQuestion,
-        onBack: _goBack,
-        secondsRemaining: _secondsRemaining,
+        child: _SessionView(
+          questions: _questions,
+          graphsByQuestionId: _graphsByQuestionId,
+          currentIndex: _currentIndex,
+          selectedOption: _selectedOption,
+          checked: _checked,
+          celebrationSerial: _answerCelebrationSerial,
+          onOptionSelected: (i) => setState(() => _selectedOption = i),
+          onCheck: () async {
+            final correct =
+                _selectedOption == _questions[_currentIndex].correctIndex;
+            setState(() {
+              _checked = true;
+              if (correct) {
+                _correctCount++;
+                _answerCelebrationSerial++;
+              }
+              _attempts.add(SessionQuestionResult(
+                question: _questions[_currentIndex].question,
+                options: _questions[_currentIndex].options,
+                correctIndex: _questions[_currentIndex].correctIndex,
+                selectedIndex: _selectedOption!,
+                topic: _questions[_currentIndex].topic,
+                explanation: _questions[_currentIndex].explanation,
+              ));
+            });
+            if (correct) {
+              await MascotFuelService.instance.addFuel(4);
+              await MascotFuelService.instance.incrementDailyMission();
+            } else {
+              MascotFuelService.instance.showIncorrectFeedback();
+            }
+          },
+          onNext: _nextQuestion,
+          onBack: _confirmExitSession,
+          secondsRemaining: _secondsRemaining,
+        ),
       );
     }
 
@@ -913,8 +949,8 @@ class _SessionView extends StatelessWidget {
                 const Spacer(),
                 if (secondsRemaining != null) ...[
                   Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 10, vertical: 4),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                     decoration: BoxDecoration(
                       color: secondsRemaining! <= 30
                           ? const Color(0xFF3A0E0C)

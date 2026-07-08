@@ -1,4 +1,4 @@
-# Terms of Use — Sterling Math
+# Terms of Use — Math Intelligence
 
 **Document status:** Placeholder. Must be reviewed by legal counsel and published at a public URL before store submission.
 
@@ -10,7 +10,7 @@
 
 ## 1. Acceptance of Terms
 
-By downloading, installing, or using the Sterling Math application ("App"), you ("User") agree to be bound by these Terms of Use ("Terms"). If you do not agree to these Terms, do not use the App.
+By downloading, installing, or using the Math Intelligence application ("App"), you ("User") agree to be bound by these Terms of Use ("Terms"). If you do not agree to these Terms, do not use the App.
 
 If the User is a child under the relevant age of digital consent (16 in the EU/EEA/UK, 14 in South Korea), a parent or guardian must accept these Terms on their behalf.
 
@@ -18,7 +18,7 @@ If the User is a child under the relevant age of digital consent (16 in the EU/E
 
 ## 2. Description of Service
 
-Sterling Math is an educational mathematics application providing:
+Math Intelligence is an educational mathematics application providing:
 
 - Curriculum-aligned practice questions (KS2–KS5, Swiss Standard, Korean school stages)
 - An AI-assisted tutor for hints, explanations, and step-by-step support

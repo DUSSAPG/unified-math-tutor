@@ -77,7 +77,8 @@ flutter_launcher_icons:
   image_path: "assets/icons/app_icon.png"
   min_sdk_android: 21
   adaptive_icon_background: "#0B1120"
-  adaptive_icon_foreground: "assets/icons/app_icon.png"
+  adaptive_icon_foreground: "assets/icons/app_icon_foreground.png"
+  adaptive_icon_monochrome: "assets/icons/app_icon_monochrome.png"
   web:
     generate: false
   windows:
@@ -91,6 +92,7 @@ flutter_native_splash:
   image: assets/splash/splash_logo.png
   android: true
   ios: false
+  web: false
   android_12:
     color: "#0B1120"
     image: assets/splash/splash_logo.png

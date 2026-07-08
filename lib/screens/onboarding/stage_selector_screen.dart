@@ -41,8 +41,8 @@ class _StageSelectorScreenState extends State<StageSelectorScreen> {
       step: isStudent ? 2 : 1,
       totalSteps: 3,
       timeEstimate: '~45 seconds',
-      title: l10n.onboardingStageTitle,
-      subtitle: l10n.onboardingStageSub,
+      title: isStudent ? l10n.onboardingStageTitle : l10n.onboardingStageTitleParent,
+      subtitle: isStudent ? l10n.onboardingStageSub : l10n.onboardingStageSubParent,
       continueLabel: l10n.onboardingContinue,
       onBack: () =>
           context.go(isStudent ? '/onboarding/welcome' : '/onboarding'),

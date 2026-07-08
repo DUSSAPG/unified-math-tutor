@@ -44,7 +44,14 @@ class LocaleService {
 
   static const _prefKey = 'locale';
 
-  late ValueNotifier<Locale> _notifier;
+  // Eagerly initialized (not `late`) with a best-effort default so the root
+  // widget can read `notifier`/`current` on the very first frame — before
+  // `init()` resolves — without throwing. `init()` corrects `.value` once
+  // the saved preference is loaded, which the ValueListenableBuilder in
+  // main.dart picks up like any other reactive update.
+  final ValueNotifier<Locale> _notifier = ValueNotifier<Locale>(
+    resolveDeviceLocale(PlatformDispatcher.instance.locale, selectable),
+  );
 
   ValueNotifier<Locale> get notifier => _notifier;
   Locale get current => _notifier.value;
@@ -53,14 +60,12 @@ class LocaleService {
     final prefs = await SharedPreferences.getInstance();
     final saved = prefs.getString(_prefKey);
     final savedLocale = _parse(saved);
-    _notifier = ValueNotifier<Locale>(
-      savedLocale != null && selectable.contains(savedLocale)
-          ? savedLocale
-          : resolveDeviceLocale(
-              deviceLocale ?? PlatformDispatcher.instance.locale,
-              selectable,
-            ),
-    );
+    _notifier.value = savedLocale != null && selectable.contains(savedLocale)
+        ? savedLocale
+        : resolveDeviceLocale(
+            deviceLocale ?? PlatformDispatcher.instance.locale,
+            selectable,
+          );
   }
 
   Future<void> setLocale(Locale locale) async {

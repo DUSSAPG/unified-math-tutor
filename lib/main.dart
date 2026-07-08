@@ -1,34 +1,18 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'app/router.dart';
-import 'core/market/market_smoke.dart';
+import 'core/bootstrap.dart';
 import 'l10n/app_localizations.dart';
 import 'services/locale_service.dart';
 import 'services/local_preferences_service.dart';
-import 'services/mental_math_vault_service.dart';
-import 'services/onboarding_profile_service.dart';
-import 'services/tutor_credit_service.dart';
-import 'services/streak_service.dart';
 
-void main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  await LocaleService.instance.init();
-  await LocalPreferencesService.instance.init();
-  await OnboardingProfileService.instance.init();
-  await StreakService.instance.init();
-  await TutorCreditService.instance.init();
-  await MarketSmoke.printStartupState();
-  if (kDebugMode) {
-    final vault = MentalMathVaultService.instance;
-    final locale = LocaleService.instance.current;
-    final teasers = await vault.getTeasers(locale);
-    final today = await vault.getDailyTeaser(DateTime.now(), locale);
-    debugPrint(
-      'Daily brain teasers: loaded ${teasers.length}, today=${today.id}',
-    );
-  }
+  // Kicked off (not awaited) so it overlaps with the first frame — the
+  // in-app splash screen awaits this same future while it renders, instead
+  // of the app sitting on the native splash until init finishes.
+  AppBootstrap.ensureStarted();
   runApp(const UnifiedMathTutorApp());
 }
 
@@ -41,7 +25,7 @@ class UnifiedMathTutorApp extends StatelessWidget {
       valueListenable: LocaleService.instance.notifier,
       builder: (context, locale, _) {
         return MaterialApp.router(
-          title: 'Sterling Math',
+          title: 'Math Intelligence',
           debugShowCheckedModeBanner: false,
           routerConfig: appRouter,
           theme: _buildTheme(),

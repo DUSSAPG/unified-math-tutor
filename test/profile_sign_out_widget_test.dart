@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 import 'package:unified_math_tutor/screens/settings/profile_screen.dart';
+import 'package:unified_math_tutor/services/local_account_service.dart';
 import 'package:unified_math_tutor/services/local_preferences_service.dart';
 import 'package:unified_math_tutor/services/session_history_service.dart';
 
@@ -41,6 +42,7 @@ void main() {
   setUp(() async {
     SharedPreferences.setMockInitialValues({});
     await LocalPreferencesService.instance.init();
+    await LocalAccountService.instance.init();
   });
 
   testWidgets('Sign Out opens confirmation and Cancel closes it',
@@ -52,7 +54,7 @@ void main() {
     await tester.tap(find.byKey(const ValueKey('profile-sign-out')));
     await tester.pumpAndSettle();
 
-    expect(find.text('Sign out of Sterling Math?'), findsOneWidget);
+    expect(find.text('Sign out of Math Intelligence?'), findsOneWidget);
     expect(find.widgetWithText(TextButton, 'Cancel'), findsOneWidget);
     expect(find.widgetWithText(FilledButton, 'Sign Out'), findsOneWidget);
 

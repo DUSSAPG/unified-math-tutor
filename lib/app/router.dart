@@ -2,15 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../core/config/build_flags.dart';
-import '../core/market/market_store.dart';
-import '../features/onboarding/market_picker_screen.dart';
-import '../features/onboarding/swiss_canton_picker_screen.dart';
-import '../features/onboarding/swiss_language_picker_screen.dart';
-import '../features/welcome/welcome_router_screen.dart';
 import '../screens/home/home_shell.dart';
+import '../screens/journey/journey_screen.dart';
+import '../screens/splash/app_splash_screen.dart';
 import '../screens/practice/practice_screen.dart';
-import '../screens/practice/question_screen.dart';
-import '../screens/results/results_screen.dart';
 import '../screens/tutor/tutor_screen.dart';
 import '../screens/topics/topics_screen.dart';
 import '../screens/settings/help_screen.dart';
@@ -30,6 +25,7 @@ import '../screens/onboarding/goal_selector_screen.dart';
 import '../screens/onboarding/study_profile_screen.dart';
 import '../screens/auth/sign_in_screen.dart';
 import '../screens/auth/create_account_screen.dart';
+import '../screens/auth/forgot_password_screen.dart';
 import '../screens/packs/exam_packs_screen.dart';
 import '../screens/formulas/formula_library_screen.dart';
 import '../screens/settings/release_notes_screen.dart';
@@ -43,15 +39,22 @@ final _rootNavigatorKey = GlobalKey<NavigatorState>();
 final _homeNavKey = GlobalKey<NavigatorState>(debugLabel: 'home');
 final _topicsNavKey = GlobalKey<NavigatorState>(debugLabel: 'topics');
 final _practiceNavKey = GlobalKey<NavigatorState>(debugLabel: 'practice');
+final _journeyNavKey = GlobalKey<NavigatorState>(debugLabel: 'journey');
+final _formulasNavKey = GlobalKey<NavigatorState>(debugLabel: 'formulas');
 final _profileNavKey = GlobalKey<NavigatorState>(debugLabel: 'profile');
 final _tutorNavKey = GlobalKey<NavigatorState>(debugLabel: 'tutor');
 final _helpNavKey = GlobalKey<NavigatorState>(debugLabel: 'help');
-final _marketStore = MarketStore();
 
 final GoRouter appRouter = GoRouter(
   navigatorKey: _rootNavigatorKey,
-  initialLocation: '/onboarding',
+  initialLocation: '/splash',
   routes: [
+    // ── Splash ────────────────────────────────────────────────────────────────
+    GoRoute(
+      path: '/splash',
+      builder: (context, state) => const AppSplashScreen(),
+    ),
+
     // ── Onboarding ────────────────────────────────────────────────────────────
     GoRoute(
       path: '/onboarding',
@@ -73,23 +76,6 @@ final GoRouter appRouter = GoRouter(
       path: '/onboarding/profile',
       builder: (context, state) => const StudyProfileScreen(),
     ),
-    GoRoute(
-      path: '/choose-market',
-      builder: (context, state) => MarketPickerScreen(store: _marketStore),
-    ),
-    GoRoute(
-      path: '/choose-canton-ch',
-      builder: (context, state) => SwissCantonPickerScreen(store: _marketStore),
-    ),
-    GoRoute(
-      path: '/choose-language-ch',
-      builder: (context, state) =>
-          SwissLanguagePickerScreen(store: _marketStore),
-    ),
-    GoRoute(
-      path: '/welcome',
-      builder: (context, state) => WelcomeRouterScreen(store: _marketStore),
-    ),
 
     // ── Auth ──────────────────────────────────────────────────────────────────
     GoRoute(
@@ -99,6 +85,10 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: '/auth/create',
       builder: (context, state) => const CreateAccountScreen(),
+    ),
+    GoRoute(
+      path: '/auth/forgot-password',
+      builder: (context, state) => const ForgotPasswordScreen(),
     ),
 
     // ── Legacy redirect ───────────────────────────────────────────────────────
@@ -111,11 +101,6 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: '/packs',
       builder: (context, state) => const ExamPacksScreen(),
-    ),
-
-    GoRoute(
-      path: '/formulas',
-      builder: (context, state) => const FormulaLibraryScreen(),
     ),
 
     GoRoute(
@@ -179,7 +164,7 @@ final GoRouter appRouter = GoRouter(
           ],
         ),
 
-        // 2 — Practice (question + results stay within the branch)
+        // 2 — Practice
         StatefulShellBranch(
           navigatorKey: _practiceNavKey,
           routes: [
@@ -202,23 +187,33 @@ final GoRouter appRouter = GoRouter(
                   autoStart: autoStart,
                 );
               },
-              routes: [
-                // Reserved for a future standalone question flow. Production
-                // practice sessions currently stay inside PracticeScreen.
-                GoRoute(
-                  path: 'question',
-                  builder: (context, state) => const QuestionScreen(),
-                ),
-                GoRoute(
-                  path: 'results',
-                  builder: (context, state) => const ResultsScreen(),
-                ),
-              ],
             ),
           ],
         ),
 
-        // 3 — Profile (settings sub-pages break out above the shell so they
+        // 3 — Journey
+        StatefulShellBranch(
+          navigatorKey: _journeyNavKey,
+          routes: [
+            GoRoute(
+              path: '/journey',
+              builder: (context, state) => const JourneyScreen(),
+            ),
+          ],
+        ),
+
+        // 4 — Formula Library
+        StatefulShellBranch(
+          navigatorKey: _formulasNavKey,
+          routes: [
+            GoRoute(
+              path: '/formulas',
+              builder: (context, state) => const FormulaLibraryScreen(),
+            ),
+          ],
+        ),
+
+        // 5 — Profile (settings sub-pages break out above the shell so they
         //     appear full-screen without the nav bar, matching the old behaviour)
         StatefulShellBranch(
           navigatorKey: _profileNavKey,
@@ -267,7 +262,7 @@ final GoRouter appRouter = GoRouter(
           ],
         ),
 
-        // 4 — Tutor
+        // 6 — Tutor
         StatefulShellBranch(
           navigatorKey: _tutorNavKey,
           routes: [
@@ -278,7 +273,7 @@ final GoRouter appRouter = GoRouter(
           ],
         ),
 
-        // 5 — Help
+        // 7 — Help
         StatefulShellBranch(
           navigatorKey: _helpNavKey,
           routes: [

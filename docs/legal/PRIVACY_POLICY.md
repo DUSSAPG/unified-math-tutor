@@ -1,4 +1,4 @@
-# Privacy Policy — Sterling Math
+# Privacy Policy — Math Intelligence
 
 **Document status:** Placeholder. Must be reviewed by legal counsel and published at a public URL before store submission.
 
@@ -10,7 +10,7 @@
 
 ## 1. Introduction
 
-Sterling Math ("we", "us", or "our") operates the Sterling Math mobile application (the "App"). This Privacy Policy explains how we collect, use, and protect information when you use the App.
+Math Intelligence ("we", "us", or "our") operates the Math Intelligence mobile application (the "App"). This Privacy Policy explains how we collect, use, and protect information when you use the App.
 
 By using the App, you agree to the collection and use of information in accordance with this policy.
 
@@ -78,7 +78,7 @@ We collect the minimum data necessary. The parent email field is clearly marked 
 
 ## 7. Third-Party Services
 
-The current version of Sterling Math does not integrate third-party analytics, advertising, or payment SDKs. If third-party services are added in future versions, this policy will be updated and users will be notified.
+The current version of Math Intelligence does not integrate third-party analytics, advertising, or payment SDKs. If third-party services are added in future versions, this policy will be updated and users will be notified.
 
 ---
 
