@@ -9,7 +9,7 @@ class MathTutorAppShell extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      title: 'MathTutor',
+      title: 'Math Intelligence',
       routerConfig: appRouter,
       theme: ThemeData(
         brightness: Brightness.dark,

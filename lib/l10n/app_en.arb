@@ -1,804 +1,696 @@
 {
   "@@locale": "en",
-
   "navHome": "Home",
-  "@navHome": { "description": "Bottom nav label for Home tab" },
-
+  "@navHome": {
+    "description": "Bottom nav label for Home tab"
+  },
   "navTopics": "Topics",
-  "@navTopics": { "description": "Bottom nav label for Topics tab" },
-
+  "@navTopics": {
+    "description": "Bottom nav label for Topics tab"
+  },
   "navPractice": "Practice",
-  "@navPractice": { "description": "Bottom nav label for Practice tab" },
-
+  "@navPractice": {
+    "description": "Bottom nav label for Practice tab"
+  },
   "navProfile": "Profile",
-  "@navProfile": { "description": "Bottom nav label for Profile tab" },
-
+  "@navProfile": {
+    "description": "Bottom nav label for Profile tab"
+  },
   "navTutor": "Tutor",
-  "@navTutor": { "description": "Bottom nav label for Tutor tab" },
-
+  "@navTutor": {
+    "description": "Bottom nav label for Tutor tab"
+  },
   "navHelp": "Help",
-  "@navHelp": { "description": "Bottom nav label for Help tab" },
-
+  "@navHelp": {
+    "description": "Bottom nav label for Help tab"
+  },
   "topicsSearchHint": "Search topics...",
-  "@topicsSearchHint": { "description": "Placeholder in topics search bar" },
-
+  "@topicsSearchHint": {
+    "description": "Placeholder in topics search bar"
+  },
   "topicsFilterAll": "All",
   "@topicsFilterAll": {},
-
   "topicsFilterPractice": "Practice",
   "@topicsFilterPractice": {},
-
   "topicsFilterRecommended": "Recommended",
   "@topicsFilterRecommended": {},
-
   "topicsFilterOxfordTrack": "Oxford Track",
   "@topicsFilterOxfordTrack": {},
-
   "topicsFilterGcse": "GCSE",
   "@topicsFilterGcse": {},
-
   "topicsFilterMore": "More",
   "@topicsFilterMore": {},
-
   "topicsSelectTrack": "Select Track",
-  "@topicsSelectTrack": { "description": "Title of the track selection panel" },
-
+  "@topicsSelectTrack": {
+    "description": "Title of the track selection panel"
+  },
   "topicsTrackStandard": "Standard",
   "@topicsTrackStandard": {},
-
   "topicsTrackStandardSub": "Core curriculum for all Key Stages",
   "@topicsTrackStandardSub": {},
-
   "topicsTrackGcseFoundation": "GCSE Foundation",
   "@topicsTrackGcseFoundation": {},
-
   "topicsTrackGcseFoundationSub": "Foundation tier GCSE preparation",
   "@topicsTrackGcseFoundationSub": {},
-
   "topicsTrackGcseHigher": "GCSE Higher",
   "@topicsTrackGcseHigher": {},
-
   "topicsTrackGcseHigherSub": "Higher tier GCSE preparation",
   "@topicsTrackGcseHigherSub": {},
-
   "topicsTrackOxford": "Oxford Track",
   "@topicsTrackOxford": {},
-
   "topicsTrackOxfordSub": "11+ prep, stretch questions & competition math",
   "@topicsTrackOxfordSub": {},
-
   "topicsPremiumComingSoon": "Premium feature",
   "@topicsPremiumComingSoon": {},
-
   "topicsPremiumLabel": "PREMIUM",
   "@topicsPremiumLabel": {},
-
   "practiceChooseMode": "Choose your practice mode",
   "@practiceChooseMode": {},
-
   "practiceModeLabel": "MODE",
-  "@practiceModeLabel": { "description": "Section header above practice mode cards" },
-
+  "@practiceModeLabel": {
+    "description": "Section header above practice mode cards"
+  },
   "practiceQuestionsLabel": "QUESTIONS",
-  "@practiceQuestionsLabel": { "description": "Section header above question count selector" },
-
+  "@practiceQuestionsLabel": {
+    "description": "Section header above question count selector"
+  },
   "practiceStartButton": "Start Practice",
   "@practiceStartButton": {},
-
   "practiceModeQuickStart": "Quick Start",
   "@practiceModeQuickStart": {},
-
   "practiceModeQuickStartSub": "Mixed review, 10 questions",
   "@practiceModeQuickStartSub": {},
-
   "practiceModeTopicDrill": "Topic Drill",
   "@practiceModeTopicDrill": {},
-
   "practiceModeTopicDrillSub": "Choose a specific topic",
   "@practiceModeTopicDrillSub": {},
-
   "practiceModeTimedChallenge": "Timed Challenge",
   "@practiceModeTimedChallenge": {},
-
   "practiceModeTimedChallengeSub": "Race against the clock",
   "@practiceModeTimedChallengeSub": {},
-
   "practiceModeExamSimulator": "Exam Simulator",
   "@practiceModeExamSimulator": {},
-
   "practiceModeExamSimulatorSub": "GCSE-style mock test",
   "@practiceModeExamSimulatorSub": {},
-
   "practiceModeExamSimulatorSubFor": "{examLabel}-style mock test",
   "@practiceModeExamSimulatorSubFor": {
     "description": "Exam Simulator subtitle naming the selected curriculum/exam",
     "placeholders": {
-      "examLabel": { "type": "String" }
+      "examLabel": {
+        "type": "String"
+      }
     }
   },
-
   "practiceExamSimulatorSelectPrompt": "Select an exam to begin",
   "@practiceExamSimulatorSelectPrompt": {},
-
   "practiceSelectExamLabel": "SELECT EXAM",
-  "@practiceSelectExamLabel": { "description": "Section header above the exam choice chips in Exam Simulator mode" },
-
+  "@practiceSelectExamLabel": {
+    "description": "Section header above the exam choice chips in Exam Simulator mode"
+  },
   "practiceExamSwissGymnasium": "Swiss Gymnasium",
   "@practiceExamSwissGymnasium": {},
-
   "practiceExit": "Exit",
   "@practiceExit": {},
-
   "practiceQuestionOf": "Question {current} of {total}",
   "@practiceQuestionOf": {
     "description": "Question counter shown during a practice session",
     "placeholders": {
-      "current": { "type": "int" },
-      "total": { "type": "int" }
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
     }
   },
-
   "practiceMixedReview": "Mixed Review",
-  "@practiceMixedReview": { "description": "Topic pill label when topic is empty" },
-
+  "@practiceMixedReview": {
+    "description": "Topic pill label when topic is empty"
+  },
   "practiceExplanation": "Explanation",
   "@practiceExplanation": {},
-
   "practiceCheckAnswer": "Check Answer",
   "@practiceCheckAnswer": {},
-
   "practiceNextQuestion": "Next Question →",
   "@practiceNextQuestion": {},
-
   "practiceFinishSession": "Finish Session",
   "@practiceFinishSession": {},
-
   "tutorBotName": "TutorBot",
   "@tutorBotName": {},
-
   "tutorBotSubtitle": "Get hints, explanations and step-by-step support.",
   "@tutorBotSubtitle": {},
-
   "tutorFreeTipsLeft": "Free tips left today: {count}",
   "@tutorFreeTipsLeft": {
     "description": "Usage pill showing remaining free tips",
     "placeholders": {
-      "count": { "type": "int" }
+      "count": {
+        "type": "int"
+      }
     }
   },
-
   "tutorChipExplain": "Explain this",
   "@tutorChipExplain": {},
-
   "tutorChipHint": "Give me a hint",
   "@tutorChipHint": {},
-
   "tutorChipSteps": "Show steps",
   "@tutorChipSteps": {},
-
   "tutorChipCheckMistake": "Check my mistake",
   "@tutorChipCheckMistake": {},
-
   "tutorInputHint": "Ask TutorBot a question...",
   "@tutorInputHint": {},
-
   "tutorNeedMoreHelp": "Need more help?",
   "@tutorNeedMoreHelp": {},
-
   "tutorUnlockDeeper": "Unlock deeper explanations with Tutor credits or a paid math pack.",
   "@tutorUnlockDeeper": {},
-
   "tutorBuyCredits": "Buy Tutor Credits",
   "@tutorBuyCredits": {},
-
   "tutorViewPacks": "View Packs",
   "@tutorViewPacks": {},
-
   "profileSettingsLabel": "SETTINGS",
   "@profileSettingsLabel": {},
-
   "profileAppearance": "Appearance",
   "@profileAppearance": {},
-
   "profileAppearanceSub": "Theme and visual settings",
   "@profileAppearanceSub": {},
-
   "profileAccessibility": "Accessibility",
   "@profileAccessibility": {},
-
   "profileAccessibilitySub": "Text size, contrast & animations",
   "@profileAccessibilitySub": {},
-
   "profileSubscription": "Subscription",
   "@profileSubscription": {},
-
   "profileSubscriptionSub": "Manage your plan",
   "@profileSubscriptionSub": {},
-
   "profileCurriculumSettings": "Curriculum Settings",
   "@profileCurriculumSettings": {},
-
   "profileCurriculumSettingsSub": "KS2 · School Support · ks2",
   "@profileCurriculumSettingsSub": {},
-
   "profilePrivacyData": "Privacy & Data",
   "@profilePrivacyData": {},
-
   "profilePrivacyDataSub": "GDPR compliant · No ads · No third-party sharing",
   "@profilePrivacyDataSub": {},
-
   "profileSignOut": "Sign Out",
   "@profileSignOut": {},
-
   "profileSignOutSub": "Clear session and return to welcome",
   "@profileSignOutSub": {},
-
-  "profileVersion": "Version 1.0.0 · © 2026 Math Intelligence",
-  "@profileVersion": {},
-
+  "profileVersionNumber": "Version {version}",
+  "@profileVersionNumber": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "profileCopyright": "© QuantumLab Intelligence",
+  "@profileCopyright": {},
   "profileHeaderTitle": "Profile",
   "@profileHeaderTitle": {},
-
   "profileHeaderSubtitle": "Settings & preferences",
   "@profileHeaderSubtitle": {},
-
+  "profilePreferredDisplayName": "Preferred Display Name",
+  "@profilePreferredDisplayName": {},
+  "profilePreferredDisplayNameNotSet": "Not set",
+  "@profilePreferredDisplayNameNotSet": {},
+  "profileChangeDisplayName": "Change Display Name",
+  "@profileChangeDisplayName": {},
+  "profileGreetingPreview": "Greeting Preview",
+  "@profileGreetingPreview": {},
+  "profileSwitchLearner": "Switch Learner",
+  "@profileSwitchLearner": {},
+  "profileDisplayNameDialogHint": "e.g. Sam or a nickname",
+  "@profileDisplayNameDialogHint": {},
+  "whoIsLearningTitle": "Who's learning today?",
+  "@whoIsLearningTitle": {},
+  "whoIsLearningAddLearner": "Add Learner",
+  "@whoIsLearningAddLearner": {},
+  "whoIsLearningAddLearnerHint": "Learner's name",
+  "@whoIsLearningAddLearnerHint": {},
+  "homeLearningAsLabel": "Learning as: {name}",
+  "@homeLearningAsLabel": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "homeSwitchLearnerAction": "Switch",
+  "@homeSwitchLearnerAction": {},
   "helpHeaderTitle": "Help & Support",
   "@helpHeaderTitle": {},
-
   "helpHeaderSubtitle": "Support, safety & app information",
   "@helpHeaderSubtitle": {},
-
   "helpFaqTitle": "Frequently Asked Questions",
   "@helpFaqTitle": {},
-
   "helpFaq1Q": "How does the Key Stage selection work?",
   "@helpFaq1Q": {},
-
   "helpFaq1A": "During onboarding you choose your Key Stage (KS2–KS5). This tailors topics, difficulty, and exam packs to your curriculum level. You can change it anytime in Curriculum Settings.",
   "@helpFaq1A": {},
-
   "helpFaq2Q": "Is my data secure?",
   "@helpFaq2Q": {},
-
   "helpFaq2A": "Yes. We collect only what is needed to personalize your learning. No data is sold or shared with third parties. All data is deletable at any time.",
   "@helpFaq2A": {},
-
   "helpFaq3Q": "Can I add multiple children?",
   "@helpFaq3Q": {},
-
-  "helpFaq3A": "Multi-profile support is on our roadmap. Currently each installation supports one learner profile. Parental controls and progress reports are available via the Profile screen.",
+  "helpFaq3A": "Currently each installation supports one learner profile. Learning Analytics and progress reports are available from More or Profile.",
   "@helpFaq3A": {},
-
   "helpFaq4Q": "How do GCSE exam packs work?",
   "@helpFaq4Q": {},
-
   "helpFaq4A": "Exam packs are curated sets of past-paper style questions grouped by topic and difficulty tier. Tap Practice → Exam Simulator to start a GCSE-style timed session.",
   "@helpFaq4A": {},
-
   "helpContactTitle": "Contact",
   "@helpContactTitle": {},
-
   "helpContactIntro": "For questions or issues, contact us:",
   "@helpContactIntro": {},
-
   "helpContactEmail": "support@mathtutor.app",
   "@helpContactEmail": {},
-
   "helpPrivacyTitle": "Privacy & Safety",
   "@helpPrivacyTitle": {},
-
   "helpPrivacyHeadline": "Minimal data. No ads. GDPR compliant.",
   "@helpPrivacyHeadline": {},
-
   "helpPrivacyBullet1": "We only collect necessary data",
   "@helpPrivacyBullet1": {},
-
   "helpPrivacyBullet2": "No sharing with third parties",
   "@helpPrivacyBullet2": {},
-
-  "helpPrivacyBullet3": "Parental controls available",
+  "helpPrivacyBullet3": "Learning Analytics available",
   "@helpPrivacyBullet3": {},
-
   "helpPrivacyBullet4": "Deletable at any time",
   "@helpPrivacyBullet4": {},
-
   "helpTermsTitle": "Terms of Use",
   "@helpTermsTitle": {},
-
   "helpTermsBody": "Free for students and parents. By using Math Intelligence you agree to our terms of service. No payment is required for standard access.",
   "@helpTermsBody": {},
-
-  "helpParentalTitle": "Parental Controls",
+  "helpParentalTitle": "Learning Analytics",
   "@helpParentalTitle": {},
-
-  "helpParentalHeadline": "Monitor your child's progress.",
+  "helpParentalHeadline": "Understand progress, identify learning gaps and support the next step.",
   "@helpParentalHeadline": {},
-
-  "helpParentalBullet1": "Daily progress reports",
+  "helpParentalBullet1": "Progress Overview",
   "@helpParentalBullet1": {},
-
-  "helpParentalBullet2": "Weakness overview",
+  "helpParentalBullet2": "Topic Mastery",
   "@helpParentalBullet2": {},
-
-  "helpParentalBullet3": "Set time limits",
+  "helpParentalBullet3": "Learning Trends",
   "@helpParentalBullet3": {},
-
-  "helpParentalBullet4": "View activity logs",
+  "helpParentalBullet4": "Recommended Practice",
   "@helpParentalBullet4": {},
-
   "helpReportButton": "Report a Problem",
   "@helpReportButton": {},
-
-  "helpFooter": "Minimal data. No ads. Parental controls available.",
+  "helpFooter": "Minimal data. No ads. Learning Analytics available.",
   "@helpFooter": {},
-
   "swissChooseLanguage": "Switzerland • Choose language",
   "@swissChooseLanguage": {},
-
   "tutorChipDeepExplanation": "Deep Explanation",
   "@tutorChipDeepExplanation": {},
-
   "tutorChipStepByStep": "Step-by-step",
   "@tutorChipStepByStep": {},
-
   "tutorChipMistakeAnalysis": "Mistake Analysis",
   "@tutorChipMistakeAnalysis": {},
-
   "tutorCreditBadge": "1 credit",
   "@tutorCreditBadge": {},
-
   "tutorCreditBalance": "{count} credits",
   "@tutorCreditBalance": {
     "description": "Credit balance displayed in the usage pill",
     "placeholders": {
-      "count": { "type": "int" }
+      "count": {
+        "type": "int"
+      }
     }
   },
-
   "tutorProLabel": "Premium",
   "@tutorProLabel": {},
-
   "tutorExhaustedTitle": "Free tips used up",
   "@tutorExhaustedTitle": {},
-
   "tutorExhaustedBody": "You've used all 3 free tips. Buy credits or upgrade to continue.",
   "@tutorExhaustedBody": {},
-
   "tutorCreditRequired": "Requires 1 credit",
   "@tutorCreditRequired": {},
-
   "tutorPracticeContextLabel": "Practising",
   "@tutorPracticeContextLabel": {},
-
   "tutorContextHint": "Hint",
   "@tutorContextHint": {},
-
   "tutorContextExplain": "Explanation",
   "@tutorContextExplain": {},
-
-  "homeGreeting": "Good evening, Gabriel",
-  "@homeGreeting": { "description": "Home screen greeting" },
-
+  "homeGreetingMorningNamed": "Good morning, {name}",
+  "@homeGreetingMorningNamed": {
+    "description": "Home screen greeting, 05:00-11:59, with a preferred display name",
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "homeGreetingMorningDefault": "Good morning",
+  "@homeGreetingMorningDefault": {
+    "description": "Home screen greeting, 05:00-11:59, no name on file"
+  },
+  "homeGreetingAfternoonNamed": "Good afternoon, {name}",
+  "@homeGreetingAfternoonNamed": {
+    "description": "Home screen greeting, 12:00-17:59, with a preferred display name",
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "homeGreetingAfternoonDefault": "Good afternoon",
+  "@homeGreetingAfternoonDefault": {
+    "description": "Home screen greeting, 12:00-17:59, no name on file"
+  },
+  "homeGreetingEveningNamed": "Good evening, {name}",
+  "@homeGreetingEveningNamed": {
+    "description": "Home screen greeting, 18:00-22:59, with a preferred display name",
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "homeGreetingEveningDefault": "Good evening",
+  "@homeGreetingEveningDefault": {
+    "description": "Home screen greeting, 18:00-22:59, no name on file"
+  },
+  "homeGreetingNightNamed": "Welcome back, {name}",
+  "@homeGreetingNightNamed": {
+    "description": "Home screen greeting, 23:00-04:59, with a preferred display name",
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "homeGreetingNightDefault": "Welcome back",
+  "@homeGreetingNightDefault": {
+    "description": "Home screen greeting, 23:00-04:59, no name on file"
+  },
   "homeStreakGoalMessage": "· 10 minutes to hit your streak goal",
   "@homeStreakGoalMessage": {},
-
   "homeSectionContinueLearning": "Continue Learning",
   "@homeSectionContinueLearning": {},
-
   "homeViewAll": "View all",
   "@homeViewAll": {},
-
   "homeSectionProgress": "Progress",
   "@homeSectionProgress": {},
-
   "homeStreakHeader": "Streak",
   "@homeStreakHeader": {},
-
   "homeStreakFirstDay": "First day of your streak",
   "@homeStreakFirstDay": {},
-
   "homeThisWeekHeader": "This week",
   "@homeThisWeekHeader": {},
-
   "homeDaysActive": "Days active",
   "@homeDaysActive": {},
-
   "homeSectionAchievements": "Achievements",
   "@homeSectionAchievements": {},
-
   "homeAchievementStreakTitle": "Weekly streak reached!",
   "@homeAchievementStreakTitle": {},
-
   "homeAchievementStreakSubtitle": "7 days of learning in a row",
   "@homeAchievementStreakSubtitle": {},
-
+  "homeAchievementStreakLocked": "Reach a 7-day streak to unlock this",
+  "@homeAchievementStreakLocked": {},
   "homeSectionOxfordTrack": "Oxford Track",
   "@homeSectionOxfordTrack": {},
-
   "homePremiumRequired": "PREMIUM REQUIRED",
   "@homePremiumRequired": {},
-
   "homeOxfordTrackSubtitle": "11+ prep, advanced challenges & competition math",
   "@homeOxfordTrackSubtitle": {},
-
   "homeSectionLearningPaths": "Learning Paths",
   "@homeSectionLearningPaths": {},
-
   "homeSectionExamPacks": "Exam Packs",
   "@homeSectionExamPacks": {},
-
   "homeExamPacksSubtitle": "Targeted exam preparation",
   "@homeExamPacksSubtitle": {},
-
   "homeViewExamPacks": "View Exam Packs",
   "@homeViewExamPacks": {},
-
   "homeStartPracticeSession": "Start Practice Session",
   "@homeStartPracticeSession": {},
-
-  "onboardingWelcomeTitle": "Helping every learner build confidence in mathematics.",
+  "onboardingWelcomeTitle": "Develop mathematical thinking.\nUnlock your potential.",
   "@onboardingWelcomeTitle": {},
-
-  "onboardingWelcomeSubtitle": "Personalized math learning, built for results",
+  "onboardingWelcomeSubtitle": "Personalised learning. Measurable progress.",
   "@onboardingWelcomeSubtitle": {},
-
   "onboardingWhoLabel": "WHO IS USING THE APP?",
   "@onboardingWhoLabel": {},
-
-  "onboardingStudentLabel": "I'm a Student",
+  "onboardingStudentLabel": "I'm a Learner",
   "@onboardingStudentLabel": {},
-
-  "onboardingStudentSub": "Practice maths, build confidence and prepare for exams.",
+  "onboardingStudentSub": "Practice mathematics with a learning journey designed around you.",
   "@onboardingStudentSub": {},
-
-  "onboardingParentLabel": "I'm a Parent or Teacher",
+  "onboardingParentLabel": "I'm supporting a learner",
   "@onboardingParentLabel": {},
-
-  "onboardingParentSub": "Monitor progress, guide learning and celebrate achievement.",
+  "onboardingParentSub": "Support every step of a learner's mathematical development.",
   "@onboardingParentSub": {},
-
+  "onboardingTeacherLabel": "I'm a teacher",
+  "@onboardingTeacherLabel": {},
+  "onboardingTeacherSub": "Monitor progress and assign practice for your students.",
+  "@onboardingTeacherSub": {},
   "onboardingSelectError": "Please select an option",
   "@onboardingSelectError": {},
-
   "onboardingSignInPrompt": "Already have an account?",
   "@onboardingSignInPrompt": {},
-
   "onboardingSignIn": "Sign In",
   "@onboardingSignIn": {},
-
   "onboardingGuestMode": "Guest Mode",
   "@onboardingGuestMode": {},
-
   "onboardingGuestModeSub": "Try a limited practice session.",
   "@onboardingGuestModeSub": {},
-
   "onboardingContinue": "Continue",
   "@onboardingContinue": {},
-
-  "onboardingFooter": "Minimal data. No ads. Parental controls available.",
+  "onboardingFooter": "Minimal data. No ads. Learning Analytics available.",
   "@onboardingFooter": {},
-
-  "onboardingWelcomeStepTitle": "Welcome",
-  "@onboardingWelcomeStepTitle": {},
-
-  "onboardingWelcomeStepBody": "Let's personalise your learning journey.",
-  "@onboardingWelcomeStepBody": {},
-
+  "onboardingAccessibilityTitle": "Make it comfortable to read",
+  "@onboardingAccessibilityTitle": {},
+  "onboardingAccessibilitySub": "You can change these anytime in Settings.",
+  "@onboardingAccessibilitySub": {},
   "onboardingStageTitle": "Choose your level",
   "@onboardingStageTitle": {},
-
   "onboardingStageSub": "We'll tailor the content to the right level",
   "@onboardingStageSub": {},
-
-  "onboardingStageTitleParent": "Choose their level",
+  "onboardingStageTitleParent": "Choose the learner's level",
   "@onboardingStageTitleParent": {},
-
-  "onboardingStageSubParent": "We'll tailor the content to your child's level",
+  "onboardingStageSubParent": "We'll tailor content to the learner's current level.",
   "@onboardingStageSubParent": {},
-
   "onboardingStageCount": "4",
-  "@onboardingStageCount": { "description": "Number of stage options to display — varies by market" },
-
+  "@onboardingStageCount": {
+    "description": "Number of stage options to display — varies by market"
+  },
   "onboardingStage1Label": "KS2 (Years 3–6)",
   "@onboardingStage1Label": {},
-
   "onboardingStage1Sub": "Primary school math",
   "@onboardingStage1Sub": {},
-
   "onboardingStage2Label": "KS3 (Years 7–9)",
   "@onboardingStage2Label": {},
-
   "onboardingStage2Sub": "Secondary school math",
   "@onboardingStage2Sub": {},
-
   "onboardingStage3Label": "KS4 GCSE (Years 10–11)",
   "@onboardingStage3Label": {},
-
   "onboardingStage3Sub": "GCSE math preparation",
   "@onboardingStage3Sub": {},
-
   "onboardingStage4Label": "KS5 (Years 12–13)",
   "@onboardingStage4Label": {},
-
   "onboardingStage4Sub": "Advanced math",
   "@onboardingStage4Sub": {},
-
   "onboardingGoalTitle": "What's the goal?",
   "@onboardingGoalTitle": {},
-
   "onboardingGoalSub": "Choose the learning focus",
   "@onboardingGoalSub": {},
-
-  "onboardingGoalTitleParent": "What matters most?",
+  "onboardingGoalTitleParent": "How would you like to support them?",
   "@onboardingGoalTitleParent": {},
-
-  "onboardingGoalSubParent": "Choose how you'd like to support them",
+  "onboardingGoalSubParent": "Choose the support focus for this learner.",
   "@onboardingGoalSubParent": {},
-
   "onboardingGoal1Label": "Build confidence",
   "@onboardingGoal1Label": {},
-
   "onboardingGoal1Sub": "Steady, low-pressure practice at your own pace",
   "@onboardingGoal1Sub": {},
-
   "onboardingGoal2Label": "Improve school maths",
   "@onboardingGoal2Label": {},
-
   "onboardingGoal2Sub": "Strengthen everyday classroom topics",
   "@onboardingGoal2Sub": {},
-
   "onboardingGoal3Label": "Prepare for exams",
   "@onboardingGoal3Label": {},
-
   "onboardingGoal3Sub": "Targeted GCSE practice & timed sets",
   "@onboardingGoal3Sub": {},
-
   "onboardingGoal4Label": "Challenge myself",
   "@onboardingGoal4Label": {},
-
   "onboardingGoal4Sub": "Stretch challenges and advanced problems",
   "@onboardingGoal4Sub": {},
-
-  "onboardingParentGoal1Label": "Help my child build confidence",
+  "onboardingParentGoal1Label": "Help build mathematical confidence",
   "@onboardingParentGoal1Label": {},
-
-  "onboardingParentGoal1Sub": "Steady, low-pressure practice at their own pace",
+  "onboardingParentGoal1Sub": "Support steady, low-pressure practice at the learner's pace.",
   "@onboardingParentGoal1Sub": {},
-
-  "onboardingParentGoal2Label": "Find learning gaps",
+  "onboardingParentGoal2Label": "Identify learning gaps",
   "@onboardingParentGoal2Label": {},
-
-  "onboardingParentGoal2Sub": "Spot weak topics before they become a problem",
+  "onboardingParentGoal2Sub": "Spot topics that need more attention before they become blockers.",
   "@onboardingParentGoal2Sub": {},
-
   "onboardingParentGoal3Label": "Track progress over time",
   "@onboardingParentGoal3Label": {},
-
-  "onboardingParentGoal3Sub": "See how they're improving week to week",
+  "onboardingParentGoal3Sub": "Follow growth and consistency across completed practice.",
   "@onboardingParentGoal3Sub": {},
-
-  "onboardingParentGoal4Label": "Support GCSE preparation",
+  "onboardingParentGoal4Label": "Support exam preparation",
   "@onboardingParentGoal4Label": {},
-
-  "onboardingParentGoal4Sub": "Targeted revision aligned to the exam",
+  "onboardingParentGoal4Sub": "Guide revision and practice for upcoming assessments.",
   "@onboardingParentGoal4Sub": {},
-
-  "onboardingProfileTitle": "A few details about your child",
+  "onboardingGoalTitleTeacher": "How would you like to use Math Intelligence?",
+  "@onboardingGoalTitleTeacher": {},
+  "onboardingGoalSubTeacher": "Choose the focus for your class.",
+  "@onboardingGoalSubTeacher": {},
+  "onboardingTeacherGoal1Label": "Monitor class progress",
+  "@onboardingTeacherGoal1Label": {},
+  "onboardingTeacherGoal1Sub": "See how your students are progressing over time.",
+  "@onboardingTeacherGoal1Sub": {},
+  "onboardingTeacherGoal2Label": "Assign practice",
+  "@onboardingTeacherGoal2Label": {},
+  "onboardingTeacherGoal2Sub": "Set targeted practice sets for your students.",
+  "@onboardingTeacherGoal2Sub": {},
+  "onboardingTeacherGoal3Label": "Prepare for exams",
+  "@onboardingTeacherGoal3Label": {},
+  "onboardingTeacherGoal3Sub": "Support exam readiness with focused practice sets.",
+  "@onboardingTeacherGoal3Sub": {},
+  "onboardingTeacherGoal4Label": "Explore the curriculum",
+  "@onboardingTeacherGoal4Label": {},
+  "onboardingTeacherGoal4Sub": "Browse topics and worked solutions before assigning them.",
+  "@onboardingTeacherGoal4Sub": {},
+  "onboardingProfileTitle": "Save your progress",
   "@onboardingProfileTitle": {},
-
-  "onboardingProfileSub": "This helps us tailor recommendations for them",
+  "onboardingProfileSub": "Optional — you can always change this later in Profile.",
   "@onboardingProfileSub": {},
-
-  "onboardingChildNameLabel": "Child's name (optional)",
-  "@onboardingChildNameLabel": {},
-
-  "onboardingChildNameSub": "Personalise their experience",
-  "@onboardingChildNameSub": {},
-
-  "onboardingChildNameHint": "e.g. Alex",
-  "@onboardingChildNameHint": {},
-
-  "onboardingShowLevelPicker": "true",
-  "@onboardingShowLevelPicker": { "description": "Show KS level picker in study profile — false for markets using age-based stage selection" },
-
-  "onboardingLevel1Label": "KS2",
-  "@onboardingLevel1Label": {},
-
-  "onboardingLevel1Sub": "Years 3-6 curriculum support",
-  "@onboardingLevel1Sub": {},
-
-  "onboardingLevel2Label": "KS3",
-  "@onboardingLevel2Label": {},
-
-  "onboardingLevel2Sub": "Years 7-9 curriculum support",
-  "@onboardingLevel2Sub": {},
-
-  "onboardingLevel3Label": "KS4",
-  "@onboardingLevel3Label": {},
-
-  "onboardingLevel3Sub": "Years 10-11 curriculum support",
-  "@onboardingLevel3Sub": {},
-
-  "onboardingLanguageLabel": "Selected Language",
-  "@onboardingLanguageLabel": {},
-
-  "onboardingLanguageValue": "English (UK)",
-  "@onboardingLanguageValue": {},
-
-  "onboardingParentEmailLabel": "Parent Email (optional)",
+  "onboardingDisplayNameLabel": "What should we call you?",
+  "@onboardingDisplayNameLabel": {},
+  "onboardingDisplayNameSub": "A nickname is fine — this is just for your greeting.",
+  "@onboardingDisplayNameSub": {},
+  "onboardingDisplayNameHint": "e.g. Alex",
+  "@onboardingDisplayNameHint": {},
+  "onboardingLearnerNameLabel": "What should we call your learner?",
+  "@onboardingLearnerNameLabel": {},
+  "onboardingLearnerNameSub": "Personalise their Maths Journey.",
+  "@onboardingLearnerNameSub": {},
+  "onboardingLearnerNameHint": "e.g. Alex",
+  "@onboardingLearnerNameHint": {},
+  "onboardingRelationshipLabel": "Your relationship to the learner",
+  "@onboardingRelationshipLabel": {},
+  "onboardingRelationshipParent": "Parent",
+  "@onboardingRelationshipParent": {},
+  "onboardingRelationshipGuardian": "Guardian",
+  "@onboardingRelationshipGuardian": {},
+  "onboardingRelationshipGrandparent": "Grandparent",
+  "@onboardingRelationshipGrandparent": {},
+  "onboardingRelationshipTutor": "Tutor",
+  "@onboardingRelationshipTutor": {},
+  "onboardingRelationshipOther": "Other family member",
+  "@onboardingRelationshipOther": {},
+  "onboardingParentEmailLabel": "Supporting adult email (optional)",
   "@onboardingParentEmailLabel": {},
-
-  "onboardingParentEmailHint": "parent@example.co.uk",
+  "onboardingParentEmailHint": "name@example.com",
   "@onboardingParentEmailHint": {},
-
-  "onboardingParentEmailSub": "For progress reports and important updates",
+  "onboardingParentEmailSub": "Stored locally on this device for account clarity.",
   "@onboardingParentEmailSub": {},
-
-  "onboardingPrivacyNote": "Your data is kept private. For reports only, no spam.",
+  "onboardingPrivacyNote": "Local-only profile details. No cloud sync is claimed for this release.",
   "@onboardingPrivacyNote": {},
-
   "onboardingStartLearning": "Start Learning",
   "@onboardingStartLearning": {},
-
   "onboardingSkipEmail": "Skip for now",
   "@onboardingSkipEmail": {},
-
   "appearanceLanguageTitle": "Language",
   "@appearanceLanguageTitle": {},
-
   "appearanceLanguageSub": "App display language",
   "@appearanceLanguageSub": {},
-
   "upgradeTitle": "Unlock Premium",
   "@upgradeTitle": {},
-
   "upgradeBody": "Unlock Premium features with a subscription.",
   "@upgradeBody": {},
-
   "upgradeViewPacks": "View Exam Packs",
   "@upgradeViewPacks": {},
-
   "upgradeMaybeLater": "Maybe Later",
   "@upgradeMaybeLater": {},
-
   "termsTitle": "Terms of Use",
   "@termsTitle": {},
-
   "termsSub": "Please read before using this app",
   "@termsSub": {},
-
   "tutorCreditComingSoon": "Available in exam packs.",
   "@tutorCreditComingSoon": {},
-
   "upgradeWhatsIncluded": "What you'll get",
   "@upgradeWhatsIncluded": {},
-
   "upgradeBenefit1Title": "Unlimited AI Tutor",
   "@upgradeBenefit1Title": {},
-
   "upgradeBenefit1Sub": "Ask unlimited questions, get step-by-step explanations, and receive personalized hints without credit limits.",
   "@upgradeBenefit1Sub": {},
-
   "upgradeBenefit2Title": "Oxford-Style Track",
   "@upgradeBenefit2Title": {},
-
   "upgradeBenefit2Sub": "Access the structured Oxford curriculum track with curated problem sets and guided progression from KS3 to A-Level.",
   "@upgradeBenefit2Sub": {},
-
-  "upgradeBenefit3Title": "Advanced Analytics",
+  "upgradeBenefit3Title": "Learning Analytics",
   "@upgradeBenefit3Title": {},
-
   "upgradeBenefit3Sub": "Track your progress with detailed performance charts, weakness detection, and personalized study recommendations.",
   "@upgradeBenefit3Sub": {},
-
   "upgradeComingSoonLabel": "Included in Premium",
   "@upgradeComingSoonLabel": {},
-
   "upgradeComingSoon1": "Monthly & annual subscription plans",
   "@upgradeComingSoon1": {},
-
   "upgradeComingSoon2": "Multi-profile family accounts",
   "@upgradeComingSoon2": {},
-
   "upgradeComingSoon3": "Daily streak reminders & push notifications",
   "@upgradeComingSoon3": {},
-
   "upgradeComingSoon4": "Achievements and milestone rewards",
   "@upgradeComingSoon4": {},
-
   "upgradeJoinEarlyAccess": "Join Early Access",
   "@upgradeJoinEarlyAccess": {},
-
   "upgradeEarlyAccessSnackbar": "Early access sign-up is coming soon. Stay tuned!",
   "@upgradeEarlyAccessSnackbar": {},
-
   "profileAboutLabel": "About",
   "@profileAboutLabel": {},
-
   "profileReleaseNotes": "Release Notes",
   "@profileReleaseNotes": {},
-
   "tutorEmptyTitle": "No messages yet",
   "@tutorEmptyTitle": {},
-
   "tutorEmptySubtitle": "Ask a question about any topic and your AI tutor will help you step by step.",
   "@tutorEmptySubtitle": {},
-
   "homeStreakDays": "5 Day Streak",
   "@homeStreakDays": {},
-
   "homeAchievementUnlocked": "Unlocked",
   "@homeAchievementUnlocked": {},
-
   "homeBadgeLocked": "Locked",
   "@homeBadgeLocked": {},
-
   "homeWhatsNewTitle": "What's New in v1.0",
   "@homeWhatsNewTitle": {},
-
   "homeWhatsNewBody": "AI Tutor, Oxford Track, and GCSE exam packs are now live.",
   "@homeWhatsNewBody": {},
-
   "homeDailyGoalTitle": "Daily Goal",
   "@homeDailyGoalTitle": {},
-
   "homeDailyGoalSubtitle": "Solve 15 questions today",
   "@homeDailyGoalSubtitle": {},
-
-  "homeDailyGoalProgress": "7 / 15 completed",
-  "@homeDailyGoalProgress": {},
-
+  "homeDailyGoalProgress": "{completed} / {target} completed",
+  "@homeDailyGoalProgress": {
+    "placeholders": {
+      "completed": { "type": "int" },
+      "target": { "type": "int" }
+    }
+  },
   "tutorHowItWorksTitle": "How Tutor Works",
   "@tutorHowItWorksTitle": {},
-
   "tutorHowItWorksStep1Title": "Ask any question",
   "@tutorHowItWorksStep1Title": {},
-
   "tutorHowItWorksStep1Sub": "Type a math question or tap a quick action above.",
   "@tutorHowItWorksStep1Sub": {},
-
   "tutorHowItWorksStep2Title": "Get a step-by-step answer",
   "@tutorHowItWorksStep2Title": {},
-
   "tutorHowItWorksStep2Sub": "The AI breaks down the solution so you understand every step.",
   "@tutorHowItWorksStep2Sub": {},
-
   "tutorHowItWorksStep3Title": "Practice what you learn",
   "@tutorHowItWorksStep3Title": {},
-
   "tutorHowItWorksStep3Sub": "Head to Practice to apply what you've just learned.",
   "@tutorHowItWorksStep3Sub": {},
-
   "practiceSummaryTitle": "Session Complete",
   "@practiceSummaryTitle": {},
-
   "practiceSummaryAccuracy": "{percent}% accuracy",
   "@practiceSummaryAccuracy": {
     "placeholders": {
-      "percent": { "type": "int" }
+      "percent": {
+        "type": "int"
+      }
     }
   },
-
   "practiceSummaryCorrect": "{correct} / {total} correct",
   "@practiceSummaryCorrect": {
     "placeholders": {
-      "correct": { "type": "int" },
-      "total": { "type": "int" }
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
     }
   },
-
   "practiceSummaryEncouragement": "Great work! Keep practising to improve your score.",
   "@practiceSummaryEncouragement": {},
-
   "practiceSummaryClose": "Back to Practice",
   "@practiceSummaryClose": {},
-
   "helpFeatureRequestButton": "Request a Feature",
   "@helpFeatureRequestButton": {},
-
   "helpFeatureRequestSnackbar": "Feature requests coming soon — thanks for your interest!",
   "@helpFeatureRequestSnackbar": {},
-
   "helpReportSnackbar": "Thanks for your report! We'll look into it soon.",
   "@helpReportSnackbar": {},
   "mentalMathVaultTitle": "Mental Math Vault",
@@ -840,7 +732,9 @@
   "examPackSelected": "{stage} selected",
   "@examPackSelected": {
     "placeholders": {
-      "stage": { "type": "String" }
+      "stage": {
+        "type": "String"
+      }
     }
   },
   "examPackKs2Title": "KS2 Maths",
@@ -858,13 +752,17 @@
   "homeStreakCount": "{days} day streak",
   "@homeStreakCount": {
     "placeholders": {
-      "days": { "type": "int" }
+      "days": {
+        "type": "int"
+      }
     }
   },
   "homeMilestone": "{days}-day milestone",
   "@homeMilestone": {
     "placeholders": {
-      "days": { "type": "int" }
+      "days": {
+        "type": "int"
+      }
     }
   },
   "homeRewardsOn": "Rewards on",
@@ -883,14 +781,20 @@
   "quietStudyModeLabel": "Quiet Study Mode",
   "quietStudyModeTooltip": "Inspired by Nyepi, a Balinese tradition of reflection, stillness and focus.",
   "nextUp": "Next up: {topic}",
-  "@nextUp": { "placeholders": { "topic": { "type": "String" } } },
+  "@nextUp": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
   "settingsTitle": "Settings",
-  "settingsParentToolsRewards": "Parent tools and rewards animations",
-  "enableParentTools": "Enable Parent Tools",
-  "parentToolsLocalOnly": "Allow local-only Parent & Teacher Tools",
-  "unlockParentTools": "Unlock Parent Tools",
-  "parentToolsPinPrompt": "Create or enter the local 4-digit PIN",
-  "parentTeacherTools": "Parent & Teacher Tools",
+  "settingsParentToolsRewards": "Learning Analytics and rewards animations",
+  "enableParentTools": "Enable Learning Analytics",
+  "parentToolsLocalOnly": "Allow local-only Learning Analytics",
+  "unlockParentTools": "Unlock Learning Analytics",
+  "parentToolsPinPrompt": "Create or enter the local 4-digit PIN for Learning Analytics.",
+  "parentTeacherTools": "Learning Analytics",
   "createParentPin": "Create Parent PIN",
   "parentPinStorageNotice": "The 4-digit PIN is stored locally as a SHA-256 hash. No data leaves this device.",
   "fourDigitPin": "4-digit PIN",
@@ -912,28 +816,195 @@
   "pinMustBeFourDigits": "Enter exactly 4 digits.",
   "pinIncorrect": "Incorrect PIN.",
   "pinResetFailed": "PIN reset failed.",
-
   "navJourney": "Journey",
   "@navJourney": {},
   "navMore": "More",
   "@navMore": {},
   "commonCancel": "Cancel",
   "@commonCancel": {},
-
   "journeyTitle": "Your Journey",
   "@journeyTitle": {},
   "journeySubtitle": "Streaks, achievements, and milestones in one place.",
   "@journeySubtitle": {},
   "journeyTeaserSubtitle": "See your streak, achievements, and milestones",
   "@journeyTeaserSubtitle": {},
-
   "practiceExitSessionTitle": "Exit session?",
   "@practiceExitSessionTitle": {},
   "practiceExitSessionBody": "Your current progress may not be saved.",
   "@practiceExitSessionBody": {},
-
   "onboardingDiscardTitle": "Discard your answers?",
   "@onboardingDiscardTitle": {},
   "onboardingDiscardBody": "Going back will clear what you've entered on this step.",
-  "@onboardingDiscardBody": {}
+  "@onboardingDiscardBody": {},
+  "onboardingProductName": "Math Intelligence",
+  "onboardingTechBadge": "Powered by Adaptive Learning Intelligence",
+  "onboardingHeroStatement": "Develop mathematical thinking.\nUnlock your potential.",
+  "onboardingSupportingStatement": "Personalised learning.\nMeasurable progress.",
+  "onboardingRoleClarification": "For parents, guardians, teachers, tutors and homeschool educators.",
+  "onboardingCreateAccount": "Create Account",
+  "onboardingCreateAccountSub": "Save progress, Maths Journey data and achievements on this device.",
+  "learningAnalyticsTitle": "Learning Analytics",
+  "learningAnalyticsSummary": "Understand progress, identify learning gaps and support the next step.",
+  "learningAnalyticsEmptyState": "Complete a practice session to begin building Learning Analytics.",
+  "@onboardingProductName": {
+    "description": "Public product name used in onboarding hero."
+  },
+  "@onboardingTechBadge": {
+    "description": "Technology positioning badge in onboarding hero."
+  },
+  "@onboardingHeroStatement": {
+    "description": "Primary onboarding hero statement. May contain locale-specific line breaks."
+  },
+  "@onboardingSupportingStatement": {
+    "description": "Secondary onboarding hero statement. May contain locale-specific line breaks."
+  },
+  "@onboardingRoleClarification": {
+    "description": "Clarifies who the supporting-a-learner role is for."
+  },
+  "@onboardingCreateAccount": {
+    "description": "Create account action label on onboarding."
+  },
+  "@onboardingCreateAccountSub": {
+    "description": "Local account benefit explanation."
+  },
+  "@learningAnalyticsTitle": {
+    "description": "Shared professional progress reporting label."
+  },
+  "@learningAnalyticsSummary": {
+    "description": "Learning Analytics supporting copy."
+  },
+  "@learningAnalyticsEmptyState": {
+    "description": "Empty state when no practice data is available yet."
+  },
+  "exploreMathIntelligenceTitle": "Explore Math Intelligence",
+  "@exploreMathIntelligenceTitle": {
+    "description": "Title of the Feature Discovery page and its entry point in the More sheet."
+  },
+  "exploreHeaderSubtitle": "What Math Intelligence offers today, and what's coming next.",
+  "@exploreHeaderSubtitle": {},
+  "exploreAvailableTodaySection": "AVAILABLE TODAY",
+  "@exploreAvailableTodaySection": {},
+  "exploreInAtelierSection": "IN ATELIER",
+  "@exploreInAtelierSection": {},
+  "exploreInAtelierBadge": "In Atelier",
+  "@exploreInAtelierBadge": {},
+  "exploreInDevelopmentNote": "This feature is currently in development.",
+  "@exploreInDevelopmentNote": {},
+  "exploreRoadmapTitle": "Roadmap Philosophy",
+  "@exploreRoadmapTitle": {},
+  "exploreRoadmapBody": "Math Intelligence is designed to grow over time. Some capabilities are available today. Others are currently being developed and tested before release.",
+  "@exploreRoadmapBody": {},
+  "explorePersonalisedPracticeTitle": "Personalised Practice",
+  "@explorePersonalisedPracticeTitle": {},
+  "explorePersonalisedPracticeBody": "Adaptive question sessions based on your selected level and learning goals.",
+  "@explorePersonalisedPracticeBody": {},
+  "exploreTopicLearningTitle": "Topic Learning",
+  "@exploreTopicLearningTitle": {},
+  "exploreTopicLearningBody": "Focus on individual mathematical topics.",
+  "@exploreTopicLearningBody": {},
+  "exploreTimedChallengesTitle": "Timed Challenges",
+  "@exploreTimedChallengesTitle": {},
+  "exploreTimedChallengesBody": "Develop speed and confidence.",
+  "@exploreTimedChallengesBody": {},
+  "exploreExamSimulatorTitle": "Exam Simulator",
+  "@exploreExamSimulatorTitle": {},
+  "exploreExamSimulatorBody": "Practise using structured exam sessions.",
+  "@exploreExamSimulatorBody": {},
+  "exploreMathsJourneyTitle": "My Maths Journey",
+  "@exploreMathsJourneyTitle": {},
+  "exploreMathsJourneyBody": "Track your learning journey over time.",
+  "@exploreMathsJourneyBody": {},
+  "exploreLearningAnalyticsBody": "Monitor progress and identify growth opportunities.",
+  "@exploreLearningAnalyticsBody": {},
+  "exploreFormulaLibraryBody": "Quick offline reference.",
+  "@exploreFormulaLibraryBody": {},
+  "explorePhotoUploadTitle": "Photo Question Upload",
+  "@explorePhotoUploadTitle": {},
+  "explorePhotoUploadBody": "Upload worksheets, textbook pages or exam questions.",
+  "@explorePhotoUploadBody": {},
+  "exploreMarkMyPaperTitle": "Mark My Paper",
+  "@exploreMarkMyPaperTitle": {},
+  "exploreMarkMyPaperBody": "Receive structured feedback on completed work.",
+  "@exploreMarkMyPaperBody": {},
+  "exploreExaminerIntelligenceTitle": "Examiner Intelligence",
+  "@exploreExaminerIntelligenceTitle": {},
+  "exploreExaminerIntelligenceBody": "Learn how examiners award marks and identify common mistakes.",
+  "@exploreExaminerIntelligenceBody": {},
+  "exploreAdaptiveStudyPlansTitle": "Adaptive Study Plans",
+  "@exploreAdaptiveStudyPlansTitle": {},
+  "exploreAdaptiveStudyPlansBody": "Personalised study recommendations based on your learning journey.",
+  "@exploreAdaptiveStudyPlansBody": {},
+  "exploreTutorConversationsTitle": "Tutor Conversations",
+  "@exploreTutorConversationsTitle": {},
+  "exploreTutorConversationsBody": "Natural-language mathematical coaching.",
+  "@exploreTutorConversationsBody": {},
+  "journeyCardTitleDefault": "My Maths Journey",
+  "@journeyCardTitleDefault": {},
+  "journeyCardTitleNamed": "{name}'s Maths Journey",
+  "@journeyCardTitleNamed": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "journeyCardCurrentFocusLabel": "Current focus",
+  "@journeyCardCurrentFocusLabel": {},
+  "journeyCardGettingStarted": "Getting started",
+  "@journeyCardGettingStarted": {},
+  "journeyCardCurrentStreakLabel": "Current streak",
+  "@journeyCardCurrentStreakLabel": {},
+  "journeyCardStartStreakToday": "Start your streak today",
+  "@journeyCardStartStreakToday": {},
+  "journeyCardStreakDays": "{days}-day streak",
+  "@journeyCardStreakDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "journeyCardNextMilestoneLabel": "Next milestone",
+  "@journeyCardNextMilestoneLabel": {},
+  "journeyCardDaysToMilestoneOne": "1 day to your {milestone}-day streak",
+  "@journeyCardDaysToMilestoneOne": {
+    "placeholders": {
+      "milestone": {
+        "type": "int"
+      }
+    }
+  },
+  "journeyCardDaysToMilestoneMany": "{days} days to your {milestone}-day streak",
+  "@journeyCardDaysToMilestoneMany": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "milestone": {
+        "type": "int"
+      }
+    }
+  },
+  "journeyCardAllMilestonesReached": "You've reached every streak milestone!",
+  "@journeyCardAllMilestonesReached": {},
+  "journeyCardGoalConfidence": "You are building confidence",
+  "@journeyCardGoalConfidence": {},
+  "journeyCardGoalSchool": "You are improving school maths",
+  "@journeyCardGoalSchool": {},
+  "journeyCardGoalExams": "You are preparing for exams",
+  "@journeyCardGoalExams": {},
+  "journeyCardGoalChallenge": "You are tackling challenge problems",
+  "@journeyCardGoalChallenge": {},
+  "journeyCardGoalParentGaps": "You are finding learning gaps",
+  "@journeyCardGoalParentGaps": {},
+  "journeyCardGoalParentProgress": "You are tracking progress over time",
+  "@journeyCardGoalParentProgress": {},
+  "journeyCardGoalParentGcse": "You are preparing for GCSE",
+  "@journeyCardGoalParentGcse": {},
+  "journeyCardGoalTeacherMonitor": "You are monitoring class progress",
+  "@journeyCardGoalTeacherMonitor": {},
+  "journeyCardGoalTeacherAssign": "You are assigning practice",
+  "@journeyCardGoalTeacherAssign": {},
+  "journeyCardGoalTeacherExplore": "You are exploring the curriculum",
+  "@journeyCardGoalTeacherExplore": {}
 }

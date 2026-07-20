@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../core/config/build_flags.dart';
+import '../../services/greeting_service.dart';
+import '../../services/learner_profiles_service.dart';
 import '../../services/local_account_service.dart';
+import '../../services/onboarding_profile_service.dart';
 import '../../services/sign_out_service.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../widgets/onboarding/who_is_learning_sheet.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -26,6 +31,16 @@ class _ProfileContent extends StatefulWidget {
 
 class _ProfileContentState extends State<_ProfileContent> {
   bool _isSigningOut = false;
+  String? _appVersion;
+
+  @override
+  void initState() {
+    super.initState();
+    PackageInfo.fromPlatform().then((info) {
+      if (!mounted) return;
+      setState(() => _appVersion = info.version);
+    });
+  }
 
   Future<void> _confirmSignOut() async {
     if (_isSigningOut) return;
@@ -81,6 +96,8 @@ class _ProfileContentState extends State<_ProfileContent> {
           const _ProfileHeader(),
           const SizedBox(height: 20),
           const _AccountStateCard(),
+          const SizedBox(height: 16),
+          const _IdentitySection(),
           const SizedBox(height: 28),
           Text(
             l10n.profileSettingsLabel,
@@ -225,12 +242,26 @@ class _ProfileContentState extends State<_ProfileContent> {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                const SizedBox(height: 2),
+                if (_appVersion != null) ...[
+                  const SizedBox(height: 2),
+                  Text(
+                    l10n.profileVersionNumber(_appVersion!),
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                        color: Color(0xFF4A6080), fontSize: 12),
+                  ),
+                ],
+                const SizedBox(height: 6),
                 Text(
-                  l10n.profileVersion,
+                  l10n.onboardingTechBadge,
                   textAlign: TextAlign.center,
-                  style:
-                      const TextStyle(color: Color(0xFF4A6080), fontSize: 12),
+                  style: const TextStyle(color: Color(0xFF4A6080), fontSize: 11),
+                ),
+                const SizedBox(height: 6),
+                Text(
+                  l10n.profileCopyright,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(color: Color(0xFF4A6080), fontSize: 11),
                 ),
               ],
             ),
@@ -361,7 +392,7 @@ class _AccountStateCard extends StatelessWidget {
                     const Padding(
                       padding: EdgeInsets.only(left: 34),
                       child: Text(
-                        'Sign in to save your progress across devices.',
+                        'Sign in to save progress, Maths Journey data and achievements on this device.',
                         style: TextStyle(
                           color: Color(0xFF8A9DC0),
                           fontSize: 13,
@@ -401,6 +432,116 @@ class _AccountStateCard extends StatelessWidget {
                     ),
                   ],
                 ),
+        );
+      },
+    );
+  }
+}
+
+// ─── Identity (Preferred Display Name / Greeting Preview / Switch Learner) ────
+
+class _IdentitySection extends StatelessWidget {
+  const _IdentitySection();
+
+  Future<void> _editDisplayName(BuildContext context) async {
+    final l10n = AppLocalizations.of(context);
+    final controller = TextEditingController(
+      text: OnboardingProfileService.instance.preferredDisplayName.value ?? '',
+    );
+    final result = await showDialog<String>(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        backgroundColor: const Color(0xFF132040),
+        title: Text(
+          l10n.profileChangeDisplayName,
+          style: const TextStyle(color: Colors.white),
+        ),
+        content: TextField(
+          controller: controller,
+          autofocus: true,
+          textCapitalization: TextCapitalization.words,
+          style: const TextStyle(color: Colors.white),
+          decoration: InputDecoration(
+            hintText: l10n.profileDisplayNameDialogHint,
+            hintStyle: const TextStyle(color: Color(0xFF4A6080)),
+          ),
+          onSubmitted: (value) => Navigator.of(dialogContext).pop(value),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(dialogContext).pop(),
+            child: Text(l10n.commonCancel),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.of(dialogContext).pop(controller.text),
+            child: Text(l10n.onboardingContinue),
+          ),
+        ],
+      ),
+    );
+    if (result != null) {
+      await OnboardingProfileService.instance.setPreferredDisplayName(result);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final onboarding = OnboardingProfileService.instance;
+    return AnimatedBuilder(
+      animation: Listenable.merge([
+        onboarding.userType,
+        onboarding.preferredDisplayName,
+        onboarding.childName,
+        LearnerProfilesService.instance.profiles,
+      ]),
+      builder: (context, _) {
+        final isLearnerRole = onboarding.userType.value == 'parent' ||
+            onboarding.userType.value == 'teacher';
+        final greetingName = isLearnerRole
+            ? onboarding.childName.value
+            : onboarding.preferredDisplayName.value;
+        final preview = greetingFor(
+          l10n,
+          greetingPeriodFor(DateTime.now()),
+          greetingName,
+        );
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            _SettingCard(
+              icon: Icons.badge_outlined,
+              iconColor: const Color(0xFF5B8EFF),
+              iconBg: const Color(0xFF0D1F40),
+              title: l10n.profilePreferredDisplayName,
+              subtitle: onboarding.preferredDisplayName.value ??
+                  l10n.profilePreferredDisplayNameNotSet,
+              onTap: () => _editDisplayName(context),
+            ),
+            const SizedBox(height: 10),
+            _SettingCard(
+              icon: Icons.wb_sunny_outlined,
+              iconColor: const Color(0xFFFFB300),
+              iconBg: const Color(0xFF3A2E0D),
+              title: l10n.profileGreetingPreview,
+              subtitle: preview,
+              onTap: null,
+              showChevron: false,
+            ),
+            if (isLearnerRole) ...[
+              const SizedBox(height: 10),
+              _SettingCard(
+                icon: Icons.swap_horiz,
+                iconColor: const Color(0xFF34C759),
+                iconBg: const Color(0xFF0A2015),
+                title: LearnerProfilesService.instance.profiles.value.isNotEmpty
+                    ? l10n.profileSwitchLearner
+                    : l10n.whoIsLearningAddLearner,
+                subtitle: onboarding.childName.value ?? '',
+                onTap: () => showWhoIsLearningSheet(context),
+              ),
+            ],
+          ],
         );
       },
     );

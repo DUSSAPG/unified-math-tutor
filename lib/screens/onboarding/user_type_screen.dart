@@ -17,17 +17,19 @@ class _UserTypeScreenState extends State<UserTypeScreen> {
   int? _selected;
   bool _showError = false;
 
+  static const _roles = ['student', 'parent', 'teacher'];
+
   void _onContinue() {
     if (_selected == null) {
       setState(() => _showError = true);
       return;
     }
-    final isStudent = _selected == 0;
-    OnboardingProfileService.instance.setUserType(isStudent ? 'student' : 'parent');
-    context.go(isStudent ? '/onboarding/welcome' : '/onboarding/stage');
+    OnboardingProfileService.instance.setUserType(_roles[_selected!]);
+    context.go('/onboarding/stage');
   }
 
   void _onGuestMode() {
+    OnboardingProfileService.instance.markOnboardingComplete();
     context.go('/practice', extra: const {'autoStart': true});
   }
 
@@ -76,26 +78,61 @@ class _UserTypeScreenState extends State<UserTypeScreen> {
                         ),
                         const SizedBox(height: 24),
                         Text(
-                          l10n.onboardingWelcomeTitle,
+                          l10n.onboardingProductName,
                           style: const TextStyle(
-                            fontSize: 26,
+                            fontSize: 30,
                             fontWeight: FontWeight.w800,
                             color: Colors.white,
                           ),
                           textAlign: TextAlign.center,
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
                         ),
-                        const SizedBox(height: 8),
+                        const SizedBox(height: 12),
+                        Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 14,
+                            vertical: 7,
+                          ),
+                          decoration: BoxDecoration(
+                            color: const Color(0xFF132040),
+                            borderRadius: BorderRadius.circular(999),
+                            border: Border.all(
+                              color: const Color(0xFF5B8EFF)
+                                  .withValues(alpha: 0.45),
+                            ),
+                          ),
+                          child: Text(
+                            l10n.onboardingTechBadge,
+                            style: const TextStyle(
+                              color: Color(0xE6FFFFFF),
+                              fontSize: 12,
+                              fontWeight: FontWeight.w700,
+                              letterSpacing: 0.2,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        const SizedBox(height: 20),
                         Text(
-                          l10n.onboardingWelcomeSubtitle,
+                          l10n.onboardingHeroStatement,
                           style: const TextStyle(
-                            color: Color(0xFF8A9DC0),
-                            fontSize: 15,
+                            color: Colors.white,
+                            fontSize: 21,
+                            fontWeight: FontWeight.w700,
+                            height: 1.25,
                           ),
                           textAlign: TextAlign.center,
                         ),
-                        const SizedBox(height: 28),
+                        const SizedBox(height: 12),
+                        Text(
+                          l10n.onboardingSupportingStatement,
+                          style: const TextStyle(
+                            color: Color(0xE6FFFFFF),
+                            fontSize: 16,
+                            height: 1.35,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        const SizedBox(height: 30),
                         _LanguageSelector(),
                         const SizedBox(height: 24),
                         Align(
@@ -131,6 +168,27 @@ class _UserTypeScreenState extends State<UserTypeScreen> {
                             _selected = 1;
                             _showError = false;
                           }),
+                        ),
+                        const SizedBox(height: 12),
+                        OnboardingOptionCard(
+                          title: l10n.onboardingTeacherLabel,
+                          subtitle: l10n.onboardingTeacherSub,
+                          icon: Icons.groups,
+                          selected: _selected == 2,
+                          onTap: () => setState(() {
+                            _selected = 2;
+                            _showError = false;
+                          }),
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          l10n.onboardingRoleClarification,
+                          style: const TextStyle(
+                            color: Color(0xCCFFFFFF),
+                            fontSize: 12,
+                            height: 1.35,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
                         if (_showError)
                           Padding(
@@ -188,7 +246,8 @@ class _UserTypeScreenState extends State<UserTypeScreen> {
                           ),
                           TextButton(
                             style: TextButton.styleFrom(
-                              padding: const EdgeInsets.symmetric(horizontal: 6),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 6),
                               minimumSize: Size.zero,
                               tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                             ),
@@ -211,14 +270,15 @@ class _UserTypeScreenState extends State<UserTypeScreen> {
                           ),
                           TextButton(
                             style: TextButton.styleFrom(
-                              padding: const EdgeInsets.symmetric(horizontal: 6),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 6),
                               minimumSize: Size.zero,
                               tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                             ),
                             onPressed: () => context.push('/auth/create'),
-                            child: const Text(
-                              'Create account',
-                              style: TextStyle(
+                            child: Text(
+                              l10n.onboardingCreateAccount,
+                              style: const TextStyle(
                                 color: Color(0xFF5B8EFF),
                                 fontWeight: FontWeight.w600,
                                 fontSize: 14,

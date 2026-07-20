@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -c \"Select-String -Path lib\\\\*.dart,lib\\\\**\\\\*.dart -Pattern MathTutorAppShell\")",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('lib/l10n/app_de.arb','utf8'\\)\\); console.log\\('de OK'\\)\")",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('lib/l10n/app_fr.arb','utf8'\\)\\); console.log\\('fr OK'\\)\")",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('lib/l10n/app_it.arb','utf8'\\)\\); console.log\\('OK app_it.arb'\\)\")"
+    ]
+  }
+}

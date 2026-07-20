@@ -1,5 +1,6 @@
 import 'market/market_smoke.dart';
 import '../services/locale_service.dart';
+import '../services/learner_profiles_service.dart';
 import '../services/local_account_service.dart';
 import '../services/local_preferences_service.dart';
 import '../services/onboarding_profile_service.dart';
@@ -21,7 +22,11 @@ class AppBootstrap {
       LocaleService.instance.init(),
       LocalAccountService.instance.init(),
       LocalPreferencesService.instance.init(),
-      OnboardingProfileService.instance.init(),
+      // LearnerProfilesService migrates the legacy childName field, so it
+      // must run after OnboardingProfileService has loaded.
+      OnboardingProfileService.instance
+          .init()
+          .then((_) => LearnerProfilesService.instance.init()),
       StreakService.instance.init(),
       TutorCreditService.instance.init(),
     ]);

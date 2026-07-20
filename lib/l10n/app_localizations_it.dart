@@ -235,13 +235,53 @@ class AppLocalizationsIt extends AppLocalizations {
   String get profileSignOutSub => 'Clear session and return to welcome';
 
   @override
-  String get profileVersion => 'Version 1.0.0 · © 2026 Math Intelligence';
+  String profileVersionNumber(String version) {
+    return 'Version $version';
+  }
+
+  @override
+  String get profileCopyright => '© QuantumLab Intelligence';
 
   @override
   String get profileHeaderTitle => 'Profile';
 
   @override
   String get profileHeaderSubtitle => 'Settings & preferences';
+
+  @override
+  String get profilePreferredDisplayName => 'Preferred Display Name';
+
+  @override
+  String get profilePreferredDisplayNameNotSet => 'Not set';
+
+  @override
+  String get profileChangeDisplayName => 'Change Display Name';
+
+  @override
+  String get profileGreetingPreview => 'Greeting Preview';
+
+  @override
+  String get profileSwitchLearner => 'Switch Learner';
+
+  @override
+  String get profileDisplayNameDialogHint => 'e.g. Sam or a nickname';
+
+  @override
+  String get whoIsLearningTitle => 'Who\'s learning today?';
+
+  @override
+  String get whoIsLearningAddLearner => 'Add Learner';
+
+  @override
+  String get whoIsLearningAddLearnerHint => 'Learner\'s name';
+
+  @override
+  String homeLearningAsLabel(String name) {
+    return 'Learning as: $name';
+  }
+
+  @override
+  String get homeSwitchLearnerAction => 'Switch';
 
   @override
   String get helpHeaderTitle => 'Help & Support';
@@ -271,7 +311,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get helpFaq3A =>
-      'Multi-profile support is on our roadmap. Currently each installation supports one learner profile. Parental controls and progress reports are available via the Profile screen.';
+      'Ogni installazione supporta attualmente un profilo studente. Learning Analytics e report sui progressi sono disponibili da Altro o Profilo.';
 
   @override
   String get helpFaq4Q => 'How do GCSE exam packs work?';
@@ -302,7 +342,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get helpPrivacyBullet2 => 'No sharing with third parties';
 
   @override
-  String get helpPrivacyBullet3 => 'Parental controls available';
+  String get helpPrivacyBullet3 => 'Learning Analytics disponibile';
 
   @override
   String get helpPrivacyBullet4 => 'Deletable at any time';
@@ -315,28 +355,30 @@ class AppLocalizationsIt extends AppLocalizations {
       'Free for students and parents. By using Math Intelligence you agree to our terms of service. No payment is required for standard access.';
 
   @override
-  String get helpParentalTitle => 'Parental Controls';
+  String get helpParentalTitle => 'Learning Analytics';
 
   @override
-  String get helpParentalHeadline => 'Monitor your child\'s progress.';
+  String get helpParentalHeadline =>
+      'Comprendi i progressi, individua le lacune e sostieni il prossimo passo.';
 
   @override
-  String get helpParentalBullet1 => 'Daily progress reports';
+  String get helpParentalBullet1 => 'Panoramica progressi';
 
   @override
-  String get helpParentalBullet2 => 'Weakness overview';
+  String get helpParentalBullet2 => 'Padronanza degli argomenti';
 
   @override
-  String get helpParentalBullet3 => 'Set time limits';
+  String get helpParentalBullet3 => 'Tendenze di apprendimento';
 
   @override
-  String get helpParentalBullet4 => 'View activity logs';
+  String get helpParentalBullet4 => 'Pratica consigliata';
 
   @override
   String get helpReportButton => 'Report a Problem';
 
   @override
-  String get helpFooter => 'Minimal data. No ads. Parental controls available.';
+  String get helpFooter =>
+      'Dati minimi. Niente pubblicità. Learning Analytics disponibile.';
 
   @override
   String get swissChooseLanguage => 'Switzerland • Choose language';
@@ -381,7 +423,36 @@ class AppLocalizationsIt extends AppLocalizations {
   String get tutorContextExplain => 'Explanation';
 
   @override
-  String get homeGreeting => 'Good evening, Gabriel';
+  String homeGreetingMorningNamed(String name) {
+    return 'Good morning, $name';
+  }
+
+  @override
+  String get homeGreetingMorningDefault => 'Good morning';
+
+  @override
+  String homeGreetingAfternoonNamed(String name) {
+    return 'Good afternoon, $name';
+  }
+
+  @override
+  String get homeGreetingAfternoonDefault => 'Good afternoon';
+
+  @override
+  String homeGreetingEveningNamed(String name) {
+    return 'Good evening, $name';
+  }
+
+  @override
+  String get homeGreetingEveningDefault => 'Good evening';
+
+  @override
+  String homeGreetingNightNamed(String name) {
+    return 'Welcome back, $name';
+  }
+
+  @override
+  String get homeGreetingNightDefault => 'Welcome back';
 
   @override
   String get homeStreakGoalMessage => '· 10 minutes to hit your streak goal';
@@ -443,28 +514,35 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get onboardingWelcomeTitle =>
-      'Helping every learner build confidence in mathematics.';
+      'Sviluppa il pensiero matematico.\nLibera il tuo potenziale.';
 
   @override
   String get onboardingWelcomeSubtitle =>
-      'Personalized math learning, built for results';
+      'Apprendimento personalizzato. Progressi misurabili.';
 
   @override
   String get onboardingWhoLabel => 'WHO IS USING THE APP?';
 
   @override
-  String get onboardingStudentLabel => 'I\'m a Student';
+  String get onboardingStudentLabel => 'Sono uno studente';
 
   @override
   String get onboardingStudentSub =>
-      'Practice maths, build confidence and prepare for exams.';
+      'Esercitati in matematica con un percorso pensato intorno a te.';
 
   @override
-  String get onboardingParentLabel => 'I\'m a Parent or Teacher';
+  String get onboardingParentLabel => 'Supporto uno studente';
 
   @override
   String get onboardingParentSub =>
-      'Monitor progress, guide learning and celebrate achievement.';
+      'Sostieni ogni fase del suo sviluppo matematico.';
+
+  @override
+  String get onboardingTeacherLabel => 'Sono un insegnante';
+
+  @override
+  String get onboardingTeacherSub =>
+      'Monitora i progressi e assegna esercizi ai tuoi studenti.';
 
   @override
   String get onboardingSelectError => 'Please select an option';
@@ -486,14 +564,14 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get onboardingFooter =>
-      'Minimal data. No ads. Parental controls available.';
+      'Dati minimi. Niente pubblicità. Learning Analytics disponibile.';
 
   @override
-  String get onboardingWelcomeStepTitle => 'Welcome';
+  String get onboardingAccessibilityTitle => 'Rendi la lettura più comoda';
 
   @override
-  String get onboardingWelcomeStepBody =>
-      'Let\'s personalise your learning journey.';
+  String get onboardingAccessibilitySub =>
+      'Puoi modificare queste impostazioni in qualsiasi momento nelle Impostazioni.';
 
   @override
   String get onboardingStageTitle => 'Choose your level';
@@ -503,11 +581,11 @@ class AppLocalizationsIt extends AppLocalizations {
       'We\'ll tailor the content to the right level';
 
   @override
-  String get onboardingStageTitleParent => 'Choose their level';
+  String get onboardingStageTitleParent => 'Scegli il livello dello studente';
 
   @override
   String get onboardingStageSubParent =>
-      'We\'ll tailor the content to your child\'s level';
+      'Adatteremo i contenuti al suo livello attuale.';
 
   @override
   String get onboardingStageCount => '4';
@@ -543,11 +621,11 @@ class AppLocalizationsIt extends AppLocalizations {
   String get onboardingGoalSub => 'Choose the learning focus';
 
   @override
-  String get onboardingGoalTitleParent => 'What matters most?';
+  String get onboardingGoalTitleParent => 'Come vuoi supportarlo?';
 
   @override
   String get onboardingGoalSubParent =>
-      'Choose how you\'d like to support them';
+      'Scegli l\'obiettivo di supporto per questo studente.';
 
   @override
   String get onboardingGoal1Label => 'Build confidence';
@@ -575,89 +653,131 @@ class AppLocalizationsIt extends AppLocalizations {
   String get onboardingGoal4Sub => 'Stretch challenges and advanced problems';
 
   @override
-  String get onboardingParentGoal1Label => 'Help my child build confidence';
+  String get onboardingParentGoal1Label =>
+      'Aiutare a costruire fiducia in matematica';
 
   @override
   String get onboardingParentGoal1Sub =>
-      'Steady, low-pressure practice at their own pace';
+      'Sostenere una pratica regolare e serena al suo ritmo.';
 
   @override
-  String get onboardingParentGoal2Label => 'Find learning gaps';
+  String get onboardingParentGoal2Label =>
+      'Individuare lacune di apprendimento';
 
   @override
   String get onboardingParentGoal2Sub =>
-      'Spot weak topics before they become a problem';
+      'Riconoscere gli argomenti che richiedono più attenzione.';
 
   @override
-  String get onboardingParentGoal3Label => 'Track progress over time';
+  String get onboardingParentGoal3Label => 'Seguire i progressi nel tempo';
 
   @override
   String get onboardingParentGoal3Sub =>
-      'See how they\'re improving week to week';
+      'Osservare crescita e costanza dagli esercizi completati.';
 
   @override
-  String get onboardingParentGoal4Label => 'Support GCSE preparation';
+  String get onboardingParentGoal4Label =>
+      'Supportare la preparazione agli esami';
 
   @override
   String get onboardingParentGoal4Sub =>
-      'Targeted revision aligned to the exam';
+      'Guidare ripasso e pratica per le prossime verifiche.';
 
   @override
-  String get onboardingProfileTitle => 'A few details about your child';
+  String get onboardingGoalTitleTeacher =>
+      'Come vuoi utilizzare Math Intelligence?';
+
+  @override
+  String get onboardingGoalSubTeacher => 'Scegli il focus per la tua classe.';
+
+  @override
+  String get onboardingTeacherGoal1Label =>
+      'Monitorare i progressi della classe';
+
+  @override
+  String get onboardingTeacherGoal1Sub =>
+      'Osserva come stanno progredendo i tuoi studenti nel tempo.';
+
+  @override
+  String get onboardingTeacherGoal2Label => 'Assegnare esercizi';
+
+  @override
+  String get onboardingTeacherGoal2Sub =>
+      'Imposta set di esercizi mirati per i tuoi studenti.';
+
+  @override
+  String get onboardingTeacherGoal3Label => 'Prepararsi per gli esami';
+
+  @override
+  String get onboardingTeacherGoal3Sub =>
+      'Sostieni la preparazione agli esami con esercizi mirati.';
+
+  @override
+  String get onboardingTeacherGoal4Label => 'Esplorare il programma';
+
+  @override
+  String get onboardingTeacherGoal4Sub =>
+      'Sfoglia gli argomenti e le soluzioni svolte prima di assegnarli.';
+
+  @override
+  String get onboardingProfileTitle => 'Salva i tuoi progressi';
 
   @override
   String get onboardingProfileSub =>
-      'This helps us tailor recommendations for them';
+      'Facoltativo — puoi sempre modificarlo più tardi nel tuo Profilo.';
 
   @override
-  String get onboardingChildNameLabel => 'Child\'s name (optional)';
+  String get onboardingDisplayNameLabel => 'Come vuoi che ti chiamiamo?';
 
   @override
-  String get onboardingChildNameSub => 'Personalise their experience';
+  String get onboardingDisplayNameSub =>
+      'Va bene anche un soprannome: serve solo per il tuo saluto.';
 
   @override
-  String get onboardingChildNameHint => 'e.g. Alex';
+  String get onboardingDisplayNameHint => 'e.g. Alex';
 
   @override
-  String get onboardingShowLevelPicker => 'true';
+  String get onboardingLearnerNameLabel =>
+      'Come vuoi che chiamiamo il tuo studente?';
 
   @override
-  String get onboardingLevel1Label => 'KS2';
+  String get onboardingLearnerNameSub => 'Personalizza il suo Maths Journey.';
 
   @override
-  String get onboardingLevel1Sub => 'Years 3-6 curriculum support';
+  String get onboardingLearnerNameHint => 'e.g. Alex';
 
   @override
-  String get onboardingLevel2Label => 'KS3';
+  String get onboardingRelationshipLabel => 'La tua relazione con lo studente';
 
   @override
-  String get onboardingLevel2Sub => 'Years 7-9 curriculum support';
+  String get onboardingRelationshipParent => 'Genitore';
 
   @override
-  String get onboardingLevel3Label => 'KS4';
+  String get onboardingRelationshipGuardian => 'Tutore legale';
 
   @override
-  String get onboardingLevel3Sub => 'Years 10-11 curriculum support';
+  String get onboardingRelationshipGrandparent => 'Nonno/a';
 
   @override
-  String get onboardingLanguageLabel => 'Selected Language';
+  String get onboardingRelationshipTutor => 'Tutor';
 
   @override
-  String get onboardingLanguageValue => 'English (UK)';
+  String get onboardingRelationshipOther => 'Altro familiare';
 
   @override
-  String get onboardingParentEmailLabel => 'Parent Email (optional)';
+  String get onboardingParentEmailLabel =>
+      'Email dell\'adulto di supporto (facoltativa)';
 
   @override
-  String get onboardingParentEmailHint => 'parent@example.co.uk';
+  String get onboardingParentEmailHint => 'name@example.com';
 
   @override
   String get onboardingParentEmailSub =>
-      'For progress reports and important updates';
+      'Salvata localmente su questo dispositivo per chiarezza dell\'account.';
 
   @override
   String get onboardingPrivacyNote =>
-      'Your data is kept private. For reports only, no spam.';
+      'Dettagli profilo solo locali. In questa versione non è promessa sincronizzazione cloud.';
 
   @override
   String get onboardingStartLearning => 'Start Learning';
@@ -710,7 +830,7 @@ class AppLocalizationsIt extends AppLocalizations {
       'Access the structured Oxford curriculum track with curated problem sets and guided progression from KS3 to A-Level.';
 
   @override
-  String get upgradeBenefit3Title => 'Advanced Analytics';
+  String get upgradeBenefit3Title => 'Learning Analytics';
 
   @override
   String get upgradeBenefit3Sub =>
@@ -1051,22 +1171,23 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get settingsParentToolsRewards =>
-      'Parent tools and rewards animations';
+      'Learning Analytics e animazioni ricompensa';
 
   @override
-  String get enableParentTools => 'Enable Parent Tools';
+  String get enableParentTools => 'Attiva Learning Analytics';
 
   @override
-  String get parentToolsLocalOnly => 'Allow local-only Parent & Teacher Tools';
+  String get parentToolsLocalOnly => 'Consenti Learning Analytics solo locale';
 
   @override
-  String get unlockParentTools => 'Unlock Parent Tools';
+  String get unlockParentTools => 'Sblocca Learning Analytics';
 
   @override
-  String get parentToolsPinPrompt => 'Create or enter the local 4-digit PIN';
+  String get parentToolsPinPrompt =>
+      'Crea o inserisci il PIN locale a 4 cifre per Learning Analytics.';
 
   @override
-  String get parentTeacherTools => 'Parent & Teacher Tools';
+  String get parentTeacherTools => 'Learning Analytics';
 
   @override
   String get createParentPin => 'Create Parent PIN';
@@ -1166,6 +1287,220 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get onboardingDiscardBody =>
       'Going back will clear what you\'ve entered on this step.';
+
+  @override
+  String get onboardingProductName => 'Math Intelligence';
+
+  @override
+  String get onboardingTechBadge => 'Powered by Adaptive Learning Intelligence';
+
+  @override
+  String get onboardingHeroStatement =>
+      'Sviluppa il pensiero matematico.\nLibera il tuo potenziale.';
+
+  @override
+  String get onboardingSupportingStatement =>
+      'Apprendimento personalizzato.\nProgressi misurabili.';
+
+  @override
+  String get onboardingRoleClarification =>
+      'Per genitori, tutori, insegnanti, tutor ed educatori homeschool.';
+
+  @override
+  String get onboardingCreateAccount => 'Crea account';
+
+  @override
+  String get onboardingCreateAccountSub =>
+      'Salva progressi, dati di Maths Journey e risultati su questo dispositivo.';
+
+  @override
+  String get learningAnalyticsTitle => 'Learning Analytics';
+
+  @override
+  String get learningAnalyticsSummary =>
+      'Comprendi i progressi, individua le lacune e sostieni il prossimo passo.';
+
+  @override
+  String get learningAnalyticsEmptyState =>
+      'Completa una sessione di pratica per iniziare a creare Learning Analytics.';
+
+  @override
+  String get exploreMathIntelligenceTitle => 'Explore Math Intelligence';
+
+  @override
+  String get exploreHeaderSubtitle =>
+      'What Math Intelligence offers today, and what\'s coming next.';
+
+  @override
+  String get exploreAvailableTodaySection => 'AVAILABLE TODAY';
+
+  @override
+  String get exploreInAtelierSection => 'IN ATELIER';
+
+  @override
+  String get exploreInAtelierBadge => 'In Atelier';
+
+  @override
+  String get exploreInDevelopmentNote =>
+      'This feature is currently in development.';
+
+  @override
+  String get exploreRoadmapTitle => 'Roadmap Philosophy';
+
+  @override
+  String get exploreRoadmapBody =>
+      'Math Intelligence is designed to grow over time. Some capabilities are available today. Others are currently being developed and tested before release.';
+
+  @override
+  String get explorePersonalisedPracticeTitle => 'Personalised Practice';
+
+  @override
+  String get explorePersonalisedPracticeBody =>
+      'Adaptive question sessions based on your selected level and learning goals.';
+
+  @override
+  String get exploreTopicLearningTitle => 'Topic Learning';
+
+  @override
+  String get exploreTopicLearningBody =>
+      'Focus on individual mathematical topics.';
+
+  @override
+  String get exploreTimedChallengesTitle => 'Timed Challenges';
+
+  @override
+  String get exploreTimedChallengesBody => 'Develop speed and confidence.';
+
+  @override
+  String get exploreExamSimulatorTitle => 'Exam Simulator';
+
+  @override
+  String get exploreExamSimulatorBody =>
+      'Practise using structured exam sessions.';
+
+  @override
+  String get exploreMathsJourneyTitle => 'My Maths Journey';
+
+  @override
+  String get exploreMathsJourneyBody =>
+      'Track your learning journey over time.';
+
+  @override
+  String get exploreLearningAnalyticsBody =>
+      'Monitor progress and identify growth opportunities.';
+
+  @override
+  String get exploreFormulaLibraryBody => 'Quick offline reference.';
+
+  @override
+  String get explorePhotoUploadTitle => 'Photo Question Upload';
+
+  @override
+  String get explorePhotoUploadBody =>
+      'Upload worksheets, textbook pages or exam questions.';
+
+  @override
+  String get exploreMarkMyPaperTitle => 'Mark My Paper';
+
+  @override
+  String get exploreMarkMyPaperBody =>
+      'Receive structured feedback on completed work.';
+
+  @override
+  String get exploreExaminerIntelligenceTitle => 'Examiner Intelligence';
+
+  @override
+  String get exploreExaminerIntelligenceBody =>
+      'Learn how examiners award marks and identify common mistakes.';
+
+  @override
+  String get exploreAdaptiveStudyPlansTitle => 'Adaptive Study Plans';
+
+  @override
+  String get exploreAdaptiveStudyPlansBody =>
+      'Personalised study recommendations based on your learning journey.';
+
+  @override
+  String get exploreTutorConversationsTitle => 'Tutor Conversations';
+
+  @override
+  String get exploreTutorConversationsBody =>
+      'Natural-language mathematical coaching.';
+
+  @override
+  String get journeyCardTitleDefault => 'My Maths Journey';
+
+  @override
+  String journeyCardTitleNamed(String name) {
+    return '$name\'s Maths Journey';
+  }
+
+  @override
+  String get journeyCardCurrentFocusLabel => 'Current focus';
+
+  @override
+  String get journeyCardGettingStarted => 'Getting started';
+
+  @override
+  String get journeyCardCurrentStreakLabel => 'Current streak';
+
+  @override
+  String get journeyCardStartStreakToday => 'Start your streak today';
+
+  @override
+  String journeyCardStreakDays(int days) {
+    return '$days-day streak';
+  }
+
+  @override
+  String get journeyCardNextMilestoneLabel => 'Next milestone';
+
+  @override
+  String journeyCardDaysToMilestoneOne(int milestone) {
+    return '1 day to your $milestone-day streak';
+  }
+
+  @override
+  String journeyCardDaysToMilestoneMany(int days, int milestone) {
+    return '$days days to your $milestone-day streak';
+  }
+
+  @override
+  String get journeyCardAllMilestonesReached =>
+      'You\'ve reached every streak milestone!';
+
+  @override
+  String get journeyCardGoalConfidence => 'You are building confidence';
+
+  @override
+  String get journeyCardGoalSchool => 'You are improving school maths';
+
+  @override
+  String get journeyCardGoalExams => 'You are preparing for exams';
+
+  @override
+  String get journeyCardGoalChallenge => 'You are tackling challenge problems';
+
+  @override
+  String get journeyCardGoalParentGaps => 'You are finding learning gaps';
+
+  @override
+  String get journeyCardGoalParentProgress =>
+      'You are tracking progress over time';
+
+  @override
+  String get journeyCardGoalParentGcse => 'You are preparing for GCSE';
+
+  @override
+  String get journeyCardGoalTeacherMonitor =>
+      'You are monitoring class progress';
+
+  @override
+  String get journeyCardGoalTeacherAssign => 'You are assigning practice';
+
+  @override
+  String get journeyCardGoalTeacherExplore =>
+      'You are exploring the curriculum';
 }
 
 /// The translations for Italian, as used in Switzerland (`it_CH`).
@@ -1384,7 +1719,12 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
   String get profileSignOutSub => 'Esci da questo dispositivo';
 
   @override
-  String get profileVersion => 'Versione';
+  String profileVersionNumber(String version) {
+    return 'Versione $version';
+  }
+
+  @override
+  String get profileCopyright => '© QuantumLab Intelligence';
 
   @override
   String get profileHeaderTitle => 'Profilo';
@@ -1392,6 +1732,41 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
   @override
   String get profileHeaderSubtitle =>
       'Personalizza la tua esperienza di apprendimento.';
+
+  @override
+  String get profilePreferredDisplayName => 'Nome visualizzato preferito';
+
+  @override
+  String get profilePreferredDisplayNameNotSet => 'Non impostato';
+
+  @override
+  String get profileChangeDisplayName => 'Cambia nome visualizzato';
+
+  @override
+  String get profileGreetingPreview => 'Anteprima saluto';
+
+  @override
+  String get profileSwitchLearner => 'Cambia studente';
+
+  @override
+  String get profileDisplayNameDialogHint => 'es. Sam o un soprannome';
+
+  @override
+  String get whoIsLearningTitle => 'Chi sta imparando oggi?';
+
+  @override
+  String get whoIsLearningAddLearner => 'Aggiungi studente';
+
+  @override
+  String get whoIsLearningAddLearnerHint => 'Nome dello studente';
+
+  @override
+  String homeLearningAsLabel(String name) {
+    return 'Stai imparando come: $name';
+  }
+
+  @override
+  String get homeSwitchLearnerAction => 'Cambia';
 
   @override
   String get helpHeaderTitle => 'Aiuto';
@@ -1421,7 +1796,7 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
 
   @override
   String get helpFaq3A =>
-      'Le impostazioni e le attività recenti vengono salvate localmente sul dispositivo.';
+      'Ogni installazione supporta attualmente un profilo studente. Learning Analytics e report sui progressi sono disponibili da Altro o Profilo.';
 
   @override
   String get helpFaq4Q => 'Come posso cambiare lingua?';
@@ -1454,8 +1829,7 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
       'Nessuna condivisione dei dati senza il tuo consenso';
 
   @override
-  String get helpPrivacyBullet3 =>
-      'Puoi eliminare i dati locali in qualsiasi momento';
+  String get helpPrivacyBullet3 => 'Learning Analytics disponibile';
 
   @override
   String get helpPrivacyBullet4 =>
@@ -1469,29 +1843,30 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
       'Usa l\'app come supporto allo studio. Verifica le decisioni importanti con un insegnante o un genitore.';
 
   @override
-  String get helpParentalTitle => 'Genitori e insegnanti';
+  String get helpParentalTitle => 'Learning Analytics';
 
   @override
   String get helpParentalHeadline =>
-      'Supporta l\'apprendimento con strumenti locali per i genitori.';
+      'Comprendi i progressi, individua le lacune e sostieni il prossimo passo.';
 
   @override
-  String get helpParentalBullet1 => 'Visualizza le sessioni recenti';
+  String get helpParentalBullet1 => 'Panoramica progressi';
 
   @override
-  String get helpParentalBullet2 => 'Mostra risposte corrette e spiegazioni';
+  String get helpParentalBullet2 => 'Padronanza degli argomenti';
 
   @override
-  String get helpParentalBullet3 => 'Visualizzazione in sola lettura';
+  String get helpParentalBullet3 => 'Tendenze di apprendimento';
 
   @override
-  String get helpParentalBullet4 => 'Proteggi l\'accesso con un PIN locale';
+  String get helpParentalBullet4 => 'Pratica consigliata';
 
   @override
   String get helpReportButton => 'Segnala un problema';
 
   @override
-  String get helpFooter => 'Progettato per uno studio autonomo e concentrato.';
+  String get helpFooter =>
+      'Dati minimi. Niente pubblicità. Learning Analytics disponibile.';
 
   @override
   String get swissChooseLanguage => 'Svizzera · Scegli la lingua';
@@ -1536,7 +1911,36 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
   String get tutorContextExplain => 'Spiegazione';
 
   @override
-  String get homeGreeting => 'Buonasera, Gabriel';
+  String homeGreetingMorningNamed(String name) {
+    return 'Buongiorno, $name';
+  }
+
+  @override
+  String get homeGreetingMorningDefault => 'Buongiorno';
+
+  @override
+  String homeGreetingAfternoonNamed(String name) {
+    return 'Buon pomeriggio, $name';
+  }
+
+  @override
+  String get homeGreetingAfternoonDefault => 'Buon pomeriggio';
+
+  @override
+  String homeGreetingEveningNamed(String name) {
+    return 'Buonasera, $name';
+  }
+
+  @override
+  String get homeGreetingEveningDefault => 'Buonasera';
+
+  @override
+  String homeGreetingNightNamed(String name) {
+    return 'Bentornato, $name';
+  }
+
+  @override
+  String get homeGreetingNightDefault => 'Bentornato';
 
   @override
   String get homeStreakGoalMessage =>
@@ -1600,11 +2004,11 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
 
   @override
   String get onboardingWelcomeTitle =>
-      'Aiutiamo ogni studente a costruire fiducia in matematica.';
+      'Sviluppa il pensiero matematico.\nLibera il tuo potenziale.';
 
   @override
   String get onboardingWelcomeSubtitle =>
-      'Apprendimento della matematica personalizzato, con risultati concreti';
+      'Apprendimento personalizzato. Progressi misurabili.';
 
   @override
   String get onboardingWhoLabel => 'CHI UTILIZZA L\'APP?';
@@ -1614,14 +2018,21 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
 
   @override
   String get onboardingStudentSub =>
-      'Esercitati in matematica, costruisci fiducia e preparati per gli esami.';
+      'Esercitati in matematica con un percorso pensato intorno a te.';
 
   @override
-  String get onboardingParentLabel => 'Sono un genitore o insegnante';
+  String get onboardingParentLabel => 'Supporto uno studente';
 
   @override
   String get onboardingParentSub =>
-      'Monitora i progressi, guida l\'apprendimento e festeggia i traguardi.';
+      'Sostieni ogni fase del suo sviluppo matematico.';
+
+  @override
+  String get onboardingTeacherLabel => 'Sono un insegnante';
+
+  @override
+  String get onboardingTeacherSub =>
+      'Monitora i progressi e assegna esercizi ai tuoi studenti.';
 
   @override
   String get onboardingSelectError => 'Seleziona un\'opzione';
@@ -1631,7 +2042,14 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
 
   @override
   String get onboardingFooter =>
-      'Dati minimi. Nessuna pubblicità. Controllo parentale disponibile.';
+      'Dati minimi. Niente pubblicità. Learning Analytics disponibile.';
+
+  @override
+  String get onboardingAccessibilityTitle => 'Rendi la lettura più comoda';
+
+  @override
+  String get onboardingAccessibilitySub =>
+      'Puoi modificare queste impostazioni in qualsiasi momento nelle Impostazioni.';
 
   @override
   String get onboardingStageTitle => 'A quale livello si trova lo studente?';
@@ -1639,6 +2057,13 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
   @override
   String get onboardingStageSub =>
       'Adatteremo il contenuto al livello appropriato';
+
+  @override
+  String get onboardingStageTitleParent => 'Scegli il livello dello studente';
+
+  @override
+  String get onboardingStageSubParent =>
+      'Adatteremo i contenuti al suo livello attuale.';
 
   @override
   String get onboardingStageCount => '4';
@@ -1674,6 +2099,13 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
   String get onboardingGoalSub => 'Scegli il focus di apprendimento';
 
   @override
+  String get onboardingGoalTitleParent => 'Come vuoi supportarlo?';
+
+  @override
+  String get onboardingGoalSubParent =>
+      'Scegli l\'obiettivo di supporto per questo studente.';
+
+  @override
   String get onboardingGoal1Label => 'Supporto scolastico';
 
   @override
@@ -1692,52 +2124,131 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
   String get onboardingGoal3Sub => 'Preparazione 11+ e sfide avanzate';
 
   @override
-  String get onboardingProfileTitle => 'Scegli il tuo livello';
+  String get onboardingParentGoal1Label =>
+      'Aiutare a costruire fiducia in matematica';
+
+  @override
+  String get onboardingParentGoal1Sub =>
+      'Sostenere una pratica regolare e serena al suo ritmo.';
+
+  @override
+  String get onboardingParentGoal2Label =>
+      'Individuare lacune di apprendimento';
+
+  @override
+  String get onboardingParentGoal2Sub =>
+      'Riconoscere gli argomenti che richiedono più attenzione.';
+
+  @override
+  String get onboardingParentGoal3Label => 'Seguire i progressi nel tempo';
+
+  @override
+  String get onboardingParentGoal3Sub =>
+      'Osservare crescita e costanza dagli esercizi completati.';
+
+  @override
+  String get onboardingParentGoal4Label =>
+      'Supportare la preparazione agli esami';
+
+  @override
+  String get onboardingParentGoal4Sub =>
+      'Guidare ripasso e pratica per le prossime verifiche.';
+
+  @override
+  String get onboardingGoalTitleTeacher =>
+      'Come vuoi utilizzare Math Intelligence?';
+
+  @override
+  String get onboardingGoalSubTeacher => 'Scegli il focus per la tua classe.';
+
+  @override
+  String get onboardingTeacherGoal1Label =>
+      'Monitorare i progressi della classe';
+
+  @override
+  String get onboardingTeacherGoal1Sub =>
+      'Osserva come stanno progredendo i tuoi studenti nel tempo.';
+
+  @override
+  String get onboardingTeacherGoal2Label => 'Assegnare esercizi';
+
+  @override
+  String get onboardingTeacherGoal2Sub =>
+      'Imposta set di esercizi mirati per i tuoi studenti.';
+
+  @override
+  String get onboardingTeacherGoal3Label => 'Prepararsi per gli esami';
+
+  @override
+  String get onboardingTeacherGoal3Sub =>
+      'Sostieni la preparazione agli esami con esercizi mirati.';
+
+  @override
+  String get onboardingTeacherGoal4Label => 'Esplorare il programma';
+
+  @override
+  String get onboardingTeacherGoal4Sub =>
+      'Sfoglia gli argomenti e le soluzioni svolte prima di assegnarli.';
+
+  @override
+  String get onboardingProfileTitle => 'Salva i tuoi progressi';
 
   @override
   String get onboardingProfileSub =>
-      'Seleziona il livello giusto per il supporto scolastico';
+      'Facoltativo — puoi sempre modificarlo più tardi nel tuo Profilo.';
 
   @override
-  String get onboardingShowLevelPicker => 'true';
+  String get onboardingDisplayNameLabel => 'Come vuoi che ti chiamiamo?';
 
   @override
-  String get onboardingLevel1Label => 'Scuola primaria';
+  String get onboardingDisplayNameSub =>
+      'Va bene anche un soprannome: serve solo per il tuo saluto.';
 
   @override
-  String get onboardingLevel1Sub => 'Anni 3–6';
+  String get onboardingDisplayNameHint => 'e.g. Alex';
 
   @override
-  String get onboardingLevel2Label => 'Scuola media';
+  String get onboardingLearnerNameLabel =>
+      'Come vuoi che chiamiamo il tuo studente?';
 
   @override
-  String get onboardingLevel2Sub => 'Anni 7–9';
+  String get onboardingLearnerNameSub => 'Personalizza il suo Maths Journey.';
 
   @override
-  String get onboardingLevel3Label => 'Scuola superiore';
+  String get onboardingLearnerNameHint => 'e.g. Alex';
 
   @override
-  String get onboardingLevel3Sub => 'Anni 10–11';
+  String get onboardingRelationshipLabel => 'La tua relazione con lo studente';
 
   @override
-  String get onboardingLanguageLabel => 'Lingua selezionata';
+  String get onboardingRelationshipParent => 'Genitore';
 
   @override
-  String get onboardingLanguageValue => 'Italiano (Svizzera)';
+  String get onboardingRelationshipGuardian => 'Tutore legale';
 
   @override
-  String get onboardingParentEmailLabel => 'Email genitore (facoltativa)';
+  String get onboardingRelationshipGrandparent => 'Nonno/a';
 
   @override
-  String get onboardingParentEmailHint => 'genitore@esempio.ch';
+  String get onboardingRelationshipTutor => 'Tutor';
+
+  @override
+  String get onboardingRelationshipOther => 'Altro familiare';
+
+  @override
+  String get onboardingParentEmailLabel =>
+      'Email dell\'adulto di supporto (facoltativa)';
+
+  @override
+  String get onboardingParentEmailHint => 'name@example.com';
 
   @override
   String get onboardingParentEmailSub =>
-      'Per rapporti sui progressi e aggiornamenti importanti';
+      'Salvata localmente su questo dispositivo per chiarezza dell\'account.';
 
   @override
   String get onboardingPrivacyNote =>
-      'I tuoi dati rimangono privati. Solo per i rapporti, nessuno spam.';
+      'Dettagli profilo solo locali. In questa versione non è promessa sincronizzazione cloud.';
 
   @override
   String get onboardingStartLearning => 'Inizia ad imparare';
@@ -1790,7 +2301,7 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
       'Accedi al percorso Oxford strutturato con set di problemi curati e progressione guidata da KS3 a A-Level.';
 
   @override
-  String get upgradeBenefit3Title => 'Analisi avanzate';
+  String get upgradeBenefit3Title => 'Learning Analytics';
 
   @override
   String get upgradeBenefit3Sub =>
@@ -2122,24 +2633,23 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
 
   @override
   String get settingsParentToolsRewards =>
-      'Strumenti genitori e animazioni premio';
+      'Learning Analytics e animazioni ricompensa';
 
   @override
-  String get enableParentTools => 'Attiva strumenti genitori';
+  String get enableParentTools => 'Attiva Learning Analytics';
 
   @override
-  String get parentToolsLocalOnly =>
-      'Consenti strumenti locali per genitori e insegnanti';
+  String get parentToolsLocalOnly => 'Consenti Learning Analytics solo locale';
 
   @override
-  String get unlockParentTools => 'Sblocca strumenti genitori';
+  String get unlockParentTools => 'Sblocca Learning Analytics';
 
   @override
   String get parentToolsPinPrompt =>
-      'Crea o inserisci il PIN locale di 4 cifre';
+      'Crea o inserisci il PIN locale a 4 cifre per Learning Analytics.';
 
   @override
-  String get parentTeacherTools => 'Strumenti per genitori e insegnanti';
+  String get parentTeacherTools => 'Learning Analytics';
 
   @override
   String get createParentPin => 'Crea PIN genitore';
@@ -2205,4 +2715,219 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
 
   @override
   String get pinResetFailed => 'Reimpostazione del PIN non riuscita.';
+
+  @override
+  String get onboardingProductName => 'Math Intelligence';
+
+  @override
+  String get onboardingTechBadge => 'Powered by Adaptive Learning Intelligence';
+
+  @override
+  String get onboardingHeroStatement =>
+      'Sviluppa il pensiero matematico.\nLibera il tuo potenziale.';
+
+  @override
+  String get onboardingSupportingStatement =>
+      'Apprendimento personalizzato.\nProgressi misurabili.';
+
+  @override
+  String get onboardingRoleClarification =>
+      'Per genitori, tutori, insegnanti, tutor ed educatori homeschool.';
+
+  @override
+  String get onboardingCreateAccount => 'Crea account';
+
+  @override
+  String get onboardingCreateAccountSub =>
+      'Salva progressi, dati di Maths Journey e risultati su questo dispositivo.';
+
+  @override
+  String get learningAnalyticsTitle => 'Learning Analytics';
+
+  @override
+  String get learningAnalyticsSummary =>
+      'Comprendi i progressi, individua le lacune e sostieni il prossimo passo.';
+
+  @override
+  String get learningAnalyticsEmptyState =>
+      'Completa una sessione di pratica per iniziare a creare Learning Analytics.';
+
+  @override
+  String get exploreMathIntelligenceTitle => 'Scopri Math Intelligence';
+
+  @override
+  String get exploreHeaderSubtitle =>
+      'Cosa offre oggi Math Intelligence, e cosa arriverà.';
+
+  @override
+  String get exploreAvailableTodaySection => 'DISPONIBILE OGGI';
+
+  @override
+  String get exploreInAtelierSection => 'IN ATELIER';
+
+  @override
+  String get exploreInAtelierBadge => 'In Atelier';
+
+  @override
+  String get exploreInDevelopmentNote =>
+      'Questa funzione è attualmente in fase di sviluppo.';
+
+  @override
+  String get exploreRoadmapTitle => 'Filosofia di sviluppo';
+
+  @override
+  String get exploreRoadmapBody =>
+      'Math Intelligence è pensato per crescere nel tempo. Alcune funzioni sono già disponibili oggi. Altre sono attualmente in fase di sviluppo e test prima del rilascio.';
+
+  @override
+  String get explorePersonalisedPracticeTitle => 'Esercitazione personalizzata';
+
+  @override
+  String get explorePersonalisedPracticeBody =>
+      'Sessioni di domande adattive in base al tuo livello e ai tuoi obiettivi di apprendimento.';
+
+  @override
+  String get exploreTopicLearningTitle => 'Apprendimento per argomento';
+
+  @override
+  String get exploreTopicLearningBody =>
+      'Concentrati su singoli argomenti matematici.';
+
+  @override
+  String get exploreTimedChallengesTitle => 'Sfide a tempo';
+
+  @override
+  String get exploreTimedChallengesBody => 'Sviluppa velocità e sicurezza.';
+
+  @override
+  String get exploreExamSimulatorTitle => 'Simulatore d\'esame';
+
+  @override
+  String get exploreExamSimulatorBody =>
+      'Esercitati con sessioni d\'esame strutturate.';
+
+  @override
+  String get exploreMathsJourneyTitle => 'Il mio Maths Journey';
+
+  @override
+  String get exploreMathsJourneyBody =>
+      'Segui il tuo percorso di apprendimento nel tempo.';
+
+  @override
+  String get exploreLearningAnalyticsBody =>
+      'Monitora i progressi e individua le opportunità di crescita.';
+
+  @override
+  String get exploreFormulaLibraryBody => 'Riferimento rapido, anche offline.';
+
+  @override
+  String get explorePhotoUploadTitle => 'Caricamento foto di esercizi';
+
+  @override
+  String get explorePhotoUploadBody =>
+      'Carica schede di esercizi, pagine di libri di testo o domande d\'esame.';
+
+  @override
+  String get exploreMarkMyPaperTitle => 'Correggi il mio lavoro';
+
+  @override
+  String get exploreMarkMyPaperBody =>
+      'Ricevi un riscontro strutturato sul lavoro completato.';
+
+  @override
+  String get exploreExaminerIntelligenceTitle => 'Logica dell\'esaminatore';
+
+  @override
+  String get exploreExaminerIntelligenceBody =>
+      'Scopri come gli esaminatori assegnano i punti e individua gli errori più comuni.';
+
+  @override
+  String get exploreAdaptiveStudyPlansTitle => 'Piani di studio adattivi';
+
+  @override
+  String get exploreAdaptiveStudyPlansBody =>
+      'Consigli di studio personalizzati in base al tuo percorso di apprendimento.';
+
+  @override
+  String get exploreTutorConversationsTitle => 'Conversazioni con il tutor';
+
+  @override
+  String get exploreTutorConversationsBody =>
+      'Supporto matematico in linguaggio naturale.';
+
+  @override
+  String get journeyCardTitleDefault => 'Il mio Maths Journey';
+
+  @override
+  String journeyCardTitleNamed(String name) {
+    return 'Il Maths Journey di $name';
+  }
+
+  @override
+  String get journeyCardCurrentFocusLabel => 'Obiettivo attuale';
+
+  @override
+  String get journeyCardGettingStarted => 'Si comincia';
+
+  @override
+  String get journeyCardCurrentStreakLabel => 'Serie attuale';
+
+  @override
+  String get journeyCardStartStreakToday => 'Inizia oggi la tua serie';
+
+  @override
+  String journeyCardStreakDays(int days) {
+    return 'Serie di $days giorni';
+  }
+
+  @override
+  String get journeyCardNextMilestoneLabel => 'Prossimo traguardo';
+
+  @override
+  String journeyCardDaysToMilestoneOne(int milestone) {
+    return 'Ancora 1 giorno per la tua serie di $milestone giorni';
+  }
+
+  @override
+  String journeyCardDaysToMilestoneMany(int days, int milestone) {
+    return 'Ancora $days giorni per la tua serie di $milestone giorni';
+  }
+
+  @override
+  String get journeyCardAllMilestonesReached =>
+      'Hai raggiunto tutti i traguardi di serie!';
+
+  @override
+  String get journeyCardGoalConfidence => 'Stai costruendo fiducia';
+
+  @override
+  String get journeyCardGoalSchool =>
+      'Stai migliorando la matematica scolastica';
+
+  @override
+  String get journeyCardGoalExams => 'Ti stai preparando per gli esami';
+
+  @override
+  String get journeyCardGoalChallenge => 'Stai affrontando sfide impegnative';
+
+  @override
+  String get journeyCardGoalParentGaps =>
+      'Stai individuando lacune di apprendimento';
+
+  @override
+  String get journeyCardGoalParentProgress =>
+      'Stai seguendo i progressi nel tempo';
+
+  @override
+  String get journeyCardGoalParentGcse => 'Ti stai preparando per il GCSE';
+
+  @override
+  String get journeyCardGoalTeacherMonitor =>
+      'Stai monitorando i progressi della classe';
+
+  @override
+  String get journeyCardGoalTeacherAssign => 'Stai assegnando esercizi';
+
+  @override
+  String get journeyCardGoalTeacherExplore => 'Stai esplorando il programma';
 }

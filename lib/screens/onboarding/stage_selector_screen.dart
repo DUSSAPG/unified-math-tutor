@@ -23,6 +23,8 @@ class _StageSelectorScreenState extends State<StageSelectorScreen> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final isStudent = OnboardingProfileService.instance.userType.value == 'student';
+    // Teacher reuses the parent-facing "the learner's level" copy — both
+    // roles are choosing a curriculum stage on someone else's behalf.
     final stageCount = int.tryParse(l10n.onboardingStageCount) ?? 4;
     final stageLabels = [
       l10n.onboardingStage1Label,
@@ -38,14 +40,13 @@ class _StageSelectorScreenState extends State<StageSelectorScreen> {
     ];
 
     return OnboardingShell(
-      step: isStudent ? 2 : 1,
-      totalSteps: 3,
+      step: 1,
+      totalSteps: 4,
       timeEstimate: '~45 seconds',
       title: isStudent ? l10n.onboardingStageTitle : l10n.onboardingStageTitleParent,
       subtitle: isStudent ? l10n.onboardingStageSub : l10n.onboardingStageSubParent,
       continueLabel: l10n.onboardingContinue,
-      onBack: () =>
-          context.go(isStudent ? '/onboarding/welcome' : '/onboarding'),
+      onBack: () => context.go('/onboarding'),
       onContinue: _selected != null
           ? () {
               CurriculumService.instance.select(_curriculumKeys[_selected!]);

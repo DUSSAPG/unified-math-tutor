@@ -47,7 +47,9 @@ class OnboardingOptionCard extends StatelessWidget {
                 children: [
                   Text(title,
                       style: const TextStyle(
-                          fontSize: 17, fontWeight: FontWeight.w700)),
+                          color: Colors.white,
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700)),
                   const SizedBox(height: 6),
                   Text(subtitle,
                       style: const TextStyle(color: Color(0xFF8A9DC0))),

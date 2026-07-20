@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/bootstrap.dart';
+import '../../services/onboarding_profile_service.dart';
 
 /// Branded splash shown while [AppBootstrap] finishes initializing services.
 ///
@@ -57,7 +58,10 @@ class _AppSplashScreenState extends State<AppSplashScreen> {
     _navigated = true;
     _minTimer?.cancel();
     _maxTimer?.cancel();
-    context.go('/onboarding');
+    final destination = OnboardingProfileService.instance.hasCompletedOnboarding.value
+        ? '/home'
+        : '/onboarding';
+    context.go(destination);
   }
 
   @override

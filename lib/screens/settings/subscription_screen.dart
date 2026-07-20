@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../app/safe_navigation.dart';
 
 class SubscriptionScreen extends StatelessWidget {
   const SubscriptionScreen({super.key});
+
+  void _showComingSoon(BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(AppLocalizations.of(context).upgradeEarlyAccessSnackbar),
+        behavior: SnackBarBehavior.floating,
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +94,7 @@ class SubscriptionScreen extends StatelessWidget {
                   SizedBox(
                     height: 52,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () => _showComingSoon(context),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFF5B8EFF),
                         foregroundColor: Colors.white,
@@ -100,9 +110,15 @@ class SubscriptionScreen extends StatelessWidget {
                       ),
                     ),
                   ),
+                  const SizedBox(height: 8),
+                  const Text(
+                    'Coming soon — payments aren\'t live yet, this won\'t charge you.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Color(0xFF4A6080), fontSize: 12),
+                  ),
                   const SizedBox(height: 12),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () => _showComingSoon(context),
                     child: const Text(
                       'Restore Purchases',
                       style: TextStyle(color: Color(0xFF8A9DC0), fontSize: 13),

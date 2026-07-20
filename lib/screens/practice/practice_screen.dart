@@ -18,6 +18,7 @@ import '../../services/practice_context_service.dart';
 import '../../services/session_history_service.dart';
 import '../../services/streak_service.dart';
 import '../../services/topic_catalog_service.dart';
+import '../../shared/math_notation_formatter.dart';
 import '../../shared/theme/app_spacing.dart';
 import '../../widgets/shared/reward_confetti.dart';
 import '../../widgets/mascot_card.dart';
@@ -1046,7 +1047,7 @@ class _SessionView extends StatelessWidget {
                         borderRadius: BorderRadius.circular(16),
                       ),
                       child: Text(
-                        question.question,
+                        MathNotationFormatter.format(question.question),
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 17,
@@ -1138,7 +1139,7 @@ class _SessionView extends StatelessWidget {
                                 const SizedBox(width: 12),
                                 Expanded(
                                   child: Text(
-                                    question.options[i],
+                                    MathNotationFormatter.format(question.options[i]),
                                     style: const TextStyle(
                                         color: Colors.white, fontSize: 15),
                                   ),
@@ -1177,7 +1178,7 @@ class _SessionView extends StatelessWidget {
                             ),
                             const SizedBox(height: 6),
                             Text(
-                              question.explanation,
+                              MathNotationFormatter.format(question.explanation),
                               style: const TextStyle(
                                 color: Color(0xFF8A9DC0),
                                 fontSize: 14,

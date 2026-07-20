@@ -69,7 +69,8 @@ class _ParentTeacherToolsScreenState extends State<ParentTeacherToolsScreen> {
           actions: [
             TextButton(
                 onPressed: () => context.pop(false),
-                child: Text(MaterialLocalizations.of(context).cancelButtonLabel)),
+                child:
+                    Text(MaterialLocalizations.of(context).cancelButtonLabel)),
             FilledButton(
                 onPressed: () => context.pop(true),
                 child: Text(l10n.resetLabel)),
@@ -81,7 +82,8 @@ class _ParentTeacherToolsScreenState extends State<ParentTeacherToolsScreen> {
     final changed = await LocalPreferencesService.instance
         .resetParentPin(current.text, replacement.text);
     if (!mounted) return;
-    setState(() => _error = changed ? null : AppLocalizations.of(context).pinResetFailed);
+    setState(() =>
+        _error = changed ? null : AppLocalizations.of(context).pinResetFailed);
   }
 
   @override

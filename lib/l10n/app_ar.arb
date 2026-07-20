@@ -17,8 +17,12 @@
   "practiceQuestionOf": "السؤال {current} من {total}",
   "@practiceQuestionOf": {
     "placeholders": {
-      "current": { "type": "int" },
-      "total": { "type": "int" }
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
     }
   },
   "practiceExplanation": "الشرح",
@@ -28,18 +32,33 @@
   "practiceSummaryTitle": "اكتملت الجلسة",
   "practiceSummaryAccuracy": "دقة {percent}%",
   "@practiceSummaryAccuracy": {
-    "placeholders": { "percent": { "type": "int" } }
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
   },
   "practiceSummaryCorrect": "{correct} / {total} صحيحة",
   "@practiceSummaryCorrect": {
     "placeholders": {
-      "correct": { "type": "int" },
-      "total": { "type": "int" }
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
     }
   },
   "practiceSummaryEncouragement": "عمل رائع! واصل التدريب لتحسين نتيجتك.",
   "practiceSummaryClose": "العودة إلى التدريب",
-  "homeGreeting": "مساء الخير",
+  "homeGreetingMorningNamed": "صباح الخير، {name}",
+  "homeGreetingMorningDefault": "صباح الخير",
+  "homeGreetingAfternoonNamed": "طاب يومك، {name}",
+  "homeGreetingAfternoonDefault": "طاب يومك",
+  "homeGreetingEveningNamed": "مساء الخير، {name}",
+  "homeGreetingEveningDefault": "مساء الخير",
+  "homeGreetingNightNamed": "أهلاً بعودتك، {name}",
+  "homeGreetingNightDefault": "أهلاً بعودتك",
   "homeSectionContinueLearning": "واصل التعلّم",
   "homeViewAll": "عرض الكل",
   "homeSectionProgress": "التقدّم",
@@ -59,9 +78,81 @@
   "helpPrivacyTitle": "الخصوصية والسلامة",
   "helpPrivacyHeadline": "بيانات قليلة. بلا إعلانات. متوافق مع GDPR.",
   "helpTermsTitle": "شروط الاستخدام",
-  "helpParentalTitle": "أدوات الرقابة الأبوية",
-  "helpParentalHeadline": "تابع تقدّم طفلك.",
+  "helpParentalTitle": "Learning Analytics",
+  "helpParentalHeadline": "Understand progress, identify learning gaps and support the next step.",
   "helpReportButton": "الإبلاغ عن مشكلة",
   "helpFeatureRequestButton": "طلب ميزة",
-  "helpFooter": "بيانات قليلة. بلا إعلانات. أدوات الرقابة الأبوية متاحة."
+  "helpFooter": "Minimal data. No ads. Learning Analytics available.",
+  "onboardingProductName": "Math Intelligence",
+  "onboardingTechBadge": "مدعوم بـ Adaptive Learning Intelligence",
+  "onboardingHeroStatement": "طوّر التفكير الرياضي.\nأطلق إمكاناتك.",
+  "onboardingSupportingStatement": "تعلّم مخصص.\nتقدم قابل للقياس.",
+  "onboardingWelcomeTitle": "Develop mathematical thinking.\nUnlock your potential.",
+  "onboardingWelcomeSubtitle": "Personalised learning. Measurable progress.",
+  "onboardingStudentLabel": "أنا متعلم",
+  "onboardingStudentSub": "Practice mathematics with a learning journey designed around you.",
+  "onboardingParentLabel": "أنا أدعم متعلمًا",
+  "onboardingParentSub": "Support every step of a learner's mathematical development.",
+  "onboardingTeacherLabel": "أنا معلّم",
+  "onboardingTeacherSub": "تابع تقدم طلابك وخصص لهم تمارين.",
+  "onboardingRoleClarification": "For parents, guardians, teachers, tutors and homeschool educators.",
+  "onboardingCreateAccount": "Create Account",
+  "onboardingCreateAccountSub": "Save progress, Maths Journey data and achievements on this device.",
+  "onboardingStageTitleParent": "Choose the learner's level",
+  "onboardingStageSubParent": "We'll tailor content to the learner's current level.",
+  "onboardingGoalTitleParent": "How would you like to support them?",
+  "onboardingGoalSubParent": "Choose the support focus for this learner.",
+  "onboardingParentGoal1Label": "Help build mathematical confidence",
+  "onboardingParentGoal1Sub": "Support steady, low-pressure practice at the learner's pace.",
+  "onboardingParentGoal2Label": "Identify learning gaps",
+  "onboardingParentGoal2Sub": "Spot topics that need more attention before they become blockers.",
+  "onboardingParentGoal3Label": "Track progress over time",
+  "onboardingParentGoal3Sub": "Follow growth and consistency across completed practice.",
+  "onboardingParentGoal4Label": "Support exam preparation",
+  "onboardingParentGoal4Sub": "Guide revision and practice for upcoming assessments.",
+  "onboardingGoalTitleTeacher": "كيف تود استخدام Math Intelligence؟",
+  "onboardingGoalSubTeacher": "اختر محور التركيز لصفك.",
+  "onboardingTeacherGoal1Label": "متابعة تقدم الصف",
+  "onboardingTeacherGoal1Sub": "تابع تقدم طلابك بمرور الوقت.",
+  "onboardingTeacherGoal2Label": "تخصيص التمارين",
+  "onboardingTeacherGoal2Sub": "حدد مجموعات تمارين مخصصة لطلابك.",
+  "onboardingTeacherGoal3Label": "الاستعداد للامتحانات",
+  "onboardingTeacherGoal3Sub": "ادعم الاستعداد للامتحانات بتمارين مركزة.",
+  "onboardingTeacherGoal4Label": "استكشاف المنهج",
+  "onboardingTeacherGoal4Sub": "تصفّح الموضوعات والحلول التفصيلية قبل تخصيصها.",
+  "onboardingProfileTitle": "احفظ تقدمك",
+  "onboardingProfileSub": "اختياري — يمكنك دائمًا تغيير هذا لاحقًا في الملف الشخصي.",
+  "onboardingDisplayNameLabel": "بماذا نناديك؟",
+  "onboardingDisplayNameSub": "يمكن استخدام اسم مستعار — هذا فقط من أجل رسالة الترحيب.",
+  "onboardingDisplayNameHint": "مثال: أحمد",
+  "onboardingLearnerNameLabel": "بماذا ننادي المتعلم؟",
+  "onboardingLearnerNameSub": "خصص Maths Journey الخاصة به.",
+  "onboardingLearnerNameHint": "مثال: أحمد",
+  "onboardingRelationshipLabel": "علاقتك بالمتعلم",
+  "onboardingRelationshipParent": "والد/والدة",
+  "onboardingRelationshipGuardian": "ولي أمر",
+  "onboardingRelationshipGrandparent": "جد/جدة",
+  "onboardingRelationshipTutor": "معلم خصوصي",
+  "onboardingRelationshipOther": "فرد آخر من العائلة",
+  "onboardingParentEmailLabel": "Supporting adult email (optional)",
+  "onboardingParentEmailHint": "name@example.com",
+  "onboardingParentEmailSub": "Stored locally on this device for account clarity.",
+  "onboardingPrivacyNote": "Local-only profile details. No cloud sync is claimed for this release.",
+  "onboardingFooter": "Minimal data. No ads. Learning Analytics available.",
+  "helpFaq3A": "Currently each installation supports one learner profile. Learning Analytics and progress reports are available from More or Profile.",
+  "helpPrivacyBullet3": "Learning Analytics available",
+  "helpParentalBullet1": "Progress Overview",
+  "helpParentalBullet2": "Topic Mastery",
+  "helpParentalBullet3": "Learning Trends",
+  "helpParentalBullet4": "Recommended Practice",
+  "settingsParentToolsRewards": "Learning Analytics and rewards animations",
+  "enableParentTools": "تفعيل Learning Analytics",
+  "parentToolsLocalOnly": "Allow local-only Learning Analytics",
+  "unlockParentTools": "Unlock Learning Analytics",
+  "parentTeacherTools": "Learning Analytics",
+  "parentToolsPinPrompt": "Create or enter the local 4-digit PIN for Learning Analytics.",
+  "upgradeBenefit3Title": "Learning Analytics",
+  "learningAnalyticsTitle": "Learning Analytics",
+  "learningAnalyticsSummary": "Understand progress, identify learning gaps and support the next step.",
+  "learningAnalyticsEmptyState": "Complete a practice session to begin building Learning Analytics."
 }

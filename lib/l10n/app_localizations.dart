@@ -558,11 +558,17 @@ abstract class AppLocalizations {
   /// **'Clear session and return to welcome'**
   String get profileSignOutSub;
 
-  /// No description provided for @profileVersion.
+  /// No description provided for @profileVersionNumber.
   ///
   /// In en, this message translates to:
-  /// **'Version 1.0.0 · © 2026 Math Intelligence'**
-  String get profileVersion;
+  /// **'Version {version}'**
+  String profileVersionNumber(String version);
+
+  /// No description provided for @profileCopyright.
+  ///
+  /// In en, this message translates to:
+  /// **'© QuantumLab Intelligence'**
+  String get profileCopyright;
 
   /// No description provided for @profileHeaderTitle.
   ///
@@ -575,6 +581,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Settings & preferences'**
   String get profileHeaderSubtitle;
+
+  /// No description provided for @profilePreferredDisplayName.
+  ///
+  /// In en, this message translates to:
+  /// **'Preferred Display Name'**
+  String get profilePreferredDisplayName;
+
+  /// No description provided for @profilePreferredDisplayNameNotSet.
+  ///
+  /// In en, this message translates to:
+  /// **'Not set'**
+  String get profilePreferredDisplayNameNotSet;
+
+  /// No description provided for @profileChangeDisplayName.
+  ///
+  /// In en, this message translates to:
+  /// **'Change Display Name'**
+  String get profileChangeDisplayName;
+
+  /// No description provided for @profileGreetingPreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Greeting Preview'**
+  String get profileGreetingPreview;
+
+  /// No description provided for @profileSwitchLearner.
+  ///
+  /// In en, this message translates to:
+  /// **'Switch Learner'**
+  String get profileSwitchLearner;
+
+  /// No description provided for @profileDisplayNameDialogHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. Sam or a nickname'**
+  String get profileDisplayNameDialogHint;
+
+  /// No description provided for @whoIsLearningTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Who\'s learning today?'**
+  String get whoIsLearningTitle;
+
+  /// No description provided for @whoIsLearningAddLearner.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Learner'**
+  String get whoIsLearningAddLearner;
+
+  /// No description provided for @whoIsLearningAddLearnerHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Learner\'s name'**
+  String get whoIsLearningAddLearnerHint;
+
+  /// No description provided for @homeLearningAsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Learning as: {name}'**
+  String homeLearningAsLabel(String name);
+
+  /// No description provided for @homeSwitchLearnerAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Switch'**
+  String get homeSwitchLearnerAction;
 
   /// No description provided for @helpHeaderTitle.
   ///
@@ -627,7 +699,7 @@ abstract class AppLocalizations {
   /// No description provided for @helpFaq3A.
   ///
   /// In en, this message translates to:
-  /// **'Multi-profile support is on our roadmap. Currently each installation supports one learner profile. Parental controls and progress reports are available via the Profile screen.'**
+  /// **'Currently each installation supports one learner profile. Learning Analytics and progress reports are available from More or Profile.'**
   String get helpFaq3A;
 
   /// No description provided for @helpFaq4Q.
@@ -687,7 +759,7 @@ abstract class AppLocalizations {
   /// No description provided for @helpPrivacyBullet3.
   ///
   /// In en, this message translates to:
-  /// **'Parental controls available'**
+  /// **'Learning Analytics available'**
   String get helpPrivacyBullet3;
 
   /// No description provided for @helpPrivacyBullet4.
@@ -711,37 +783,37 @@ abstract class AppLocalizations {
   /// No description provided for @helpParentalTitle.
   ///
   /// In en, this message translates to:
-  /// **'Parental Controls'**
+  /// **'Learning Analytics'**
   String get helpParentalTitle;
 
   /// No description provided for @helpParentalHeadline.
   ///
   /// In en, this message translates to:
-  /// **'Monitor your child\'s progress.'**
+  /// **'Understand progress, identify learning gaps and support the next step.'**
   String get helpParentalHeadline;
 
   /// No description provided for @helpParentalBullet1.
   ///
   /// In en, this message translates to:
-  /// **'Daily progress reports'**
+  /// **'Progress Overview'**
   String get helpParentalBullet1;
 
   /// No description provided for @helpParentalBullet2.
   ///
   /// In en, this message translates to:
-  /// **'Weakness overview'**
+  /// **'Topic Mastery'**
   String get helpParentalBullet2;
 
   /// No description provided for @helpParentalBullet3.
   ///
   /// In en, this message translates to:
-  /// **'Set time limits'**
+  /// **'Learning Trends'**
   String get helpParentalBullet3;
 
   /// No description provided for @helpParentalBullet4.
   ///
   /// In en, this message translates to:
-  /// **'View activity logs'**
+  /// **'Recommended Practice'**
   String get helpParentalBullet4;
 
   /// No description provided for @helpReportButton.
@@ -753,7 +825,7 @@ abstract class AppLocalizations {
   /// No description provided for @helpFooter.
   ///
   /// In en, this message translates to:
-  /// **'Minimal data. No ads. Parental controls available.'**
+  /// **'Minimal data. No ads. Learning Analytics available.'**
   String get helpFooter;
 
   /// No description provided for @swissChooseLanguage.
@@ -834,11 +906,53 @@ abstract class AppLocalizations {
   /// **'Explanation'**
   String get tutorContextExplain;
 
-  /// Home screen greeting
+  /// Home screen greeting, 05:00-11:59, with a preferred display name
   ///
   /// In en, this message translates to:
-  /// **'Good evening, Gabriel'**
-  String get homeGreeting;
+  /// **'Good morning, {name}'**
+  String homeGreetingMorningNamed(String name);
+
+  /// Home screen greeting, 05:00-11:59, no name on file
+  ///
+  /// In en, this message translates to:
+  /// **'Good morning'**
+  String get homeGreetingMorningDefault;
+
+  /// Home screen greeting, 12:00-17:59, with a preferred display name
+  ///
+  /// In en, this message translates to:
+  /// **'Good afternoon, {name}'**
+  String homeGreetingAfternoonNamed(String name);
+
+  /// Home screen greeting, 12:00-17:59, no name on file
+  ///
+  /// In en, this message translates to:
+  /// **'Good afternoon'**
+  String get homeGreetingAfternoonDefault;
+
+  /// Home screen greeting, 18:00-22:59, with a preferred display name
+  ///
+  /// In en, this message translates to:
+  /// **'Good evening, {name}'**
+  String homeGreetingEveningNamed(String name);
+
+  /// Home screen greeting, 18:00-22:59, no name on file
+  ///
+  /// In en, this message translates to:
+  /// **'Good evening'**
+  String get homeGreetingEveningDefault;
+
+  /// Home screen greeting, 23:00-04:59, with a preferred display name
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome back, {name}'**
+  String homeGreetingNightNamed(String name);
+
+  /// Home screen greeting, 23:00-04:59, no name on file
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome back'**
+  String get homeGreetingNightDefault;
 
   /// No description provided for @homeStreakGoalMessage.
   ///
@@ -957,13 +1071,13 @@ abstract class AppLocalizations {
   /// No description provided for @onboardingWelcomeTitle.
   ///
   /// In en, this message translates to:
-  /// **'Helping every learner build confidence in mathematics.'**
+  /// **'Develop mathematical thinking.\nUnlock your potential.'**
   String get onboardingWelcomeTitle;
 
   /// No description provided for @onboardingWelcomeSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'Personalized math learning, built for results'**
+  /// **'Personalised learning. Measurable progress.'**
   String get onboardingWelcomeSubtitle;
 
   /// No description provided for @onboardingWhoLabel.
@@ -975,26 +1089,38 @@ abstract class AppLocalizations {
   /// No description provided for @onboardingStudentLabel.
   ///
   /// In en, this message translates to:
-  /// **'I\'m a Student'**
+  /// **'I\'m a Learner'**
   String get onboardingStudentLabel;
 
   /// No description provided for @onboardingStudentSub.
   ///
   /// In en, this message translates to:
-  /// **'Practice maths, build confidence and prepare for exams.'**
+  /// **'Practice mathematics with a learning journey designed around you.'**
   String get onboardingStudentSub;
 
   /// No description provided for @onboardingParentLabel.
   ///
   /// In en, this message translates to:
-  /// **'I\'m a Parent or Teacher'**
+  /// **'I\'m supporting a learner'**
   String get onboardingParentLabel;
 
   /// No description provided for @onboardingParentSub.
   ///
   /// In en, this message translates to:
-  /// **'Monitor progress, guide learning and celebrate achievement.'**
+  /// **'Support every step of a learner\'s mathematical development.'**
   String get onboardingParentSub;
+
+  /// No description provided for @onboardingTeacherLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'m a teacher'**
+  String get onboardingTeacherLabel;
+
+  /// No description provided for @onboardingTeacherSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Monitor progress and assign practice for your students.'**
+  String get onboardingTeacherSub;
 
   /// No description provided for @onboardingSelectError.
   ///
@@ -1035,20 +1161,20 @@ abstract class AppLocalizations {
   /// No description provided for @onboardingFooter.
   ///
   /// In en, this message translates to:
-  /// **'Minimal data. No ads. Parental controls available.'**
+  /// **'Minimal data. No ads. Learning Analytics available.'**
   String get onboardingFooter;
 
-  /// No description provided for @onboardingWelcomeStepTitle.
+  /// No description provided for @onboardingAccessibilityTitle.
   ///
   /// In en, this message translates to:
-  /// **'Welcome'**
-  String get onboardingWelcomeStepTitle;
+  /// **'Make it comfortable to read'**
+  String get onboardingAccessibilityTitle;
 
-  /// No description provided for @onboardingWelcomeStepBody.
+  /// No description provided for @onboardingAccessibilitySub.
   ///
   /// In en, this message translates to:
-  /// **'Let\'s personalise your learning journey.'**
-  String get onboardingWelcomeStepBody;
+  /// **'You can change these anytime in Settings.'**
+  String get onboardingAccessibilitySub;
 
   /// No description provided for @onboardingStageTitle.
   ///
@@ -1065,13 +1191,13 @@ abstract class AppLocalizations {
   /// No description provided for @onboardingStageTitleParent.
   ///
   /// In en, this message translates to:
-  /// **'Choose their level'**
+  /// **'Choose the learner\'s level'**
   String get onboardingStageTitleParent;
 
   /// No description provided for @onboardingStageSubParent.
   ///
   /// In en, this message translates to:
-  /// **'We\'ll tailor the content to your child\'s level'**
+  /// **'We\'ll tailor content to the learner\'s current level.'**
   String get onboardingStageSubParent;
 
   /// Number of stage options to display — varies by market
@@ -1143,13 +1269,13 @@ abstract class AppLocalizations {
   /// No description provided for @onboardingGoalTitleParent.
   ///
   /// In en, this message translates to:
-  /// **'What matters most?'**
+  /// **'How would you like to support them?'**
   String get onboardingGoalTitleParent;
 
   /// No description provided for @onboardingGoalSubParent.
   ///
   /// In en, this message translates to:
-  /// **'Choose how you\'d like to support them'**
+  /// **'Choose the support focus for this learner.'**
   String get onboardingGoalSubParent;
 
   /// No description provided for @onboardingGoal1Label.
@@ -1203,25 +1329,25 @@ abstract class AppLocalizations {
   /// No description provided for @onboardingParentGoal1Label.
   ///
   /// In en, this message translates to:
-  /// **'Help my child build confidence'**
+  /// **'Help build mathematical confidence'**
   String get onboardingParentGoal1Label;
 
   /// No description provided for @onboardingParentGoal1Sub.
   ///
   /// In en, this message translates to:
-  /// **'Steady, low-pressure practice at their own pace'**
+  /// **'Support steady, low-pressure practice at the learner\'s pace.'**
   String get onboardingParentGoal1Sub;
 
   /// No description provided for @onboardingParentGoal2Label.
   ///
   /// In en, this message translates to:
-  /// **'Find learning gaps'**
+  /// **'Identify learning gaps'**
   String get onboardingParentGoal2Label;
 
   /// No description provided for @onboardingParentGoal2Sub.
   ///
   /// In en, this message translates to:
-  /// **'Spot weak topics before they become a problem'**
+  /// **'Spot topics that need more attention before they become blockers.'**
   String get onboardingParentGoal2Sub;
 
   /// No description provided for @onboardingParentGoal3Label.
@@ -1233,127 +1359,187 @@ abstract class AppLocalizations {
   /// No description provided for @onboardingParentGoal3Sub.
   ///
   /// In en, this message translates to:
-  /// **'See how they\'re improving week to week'**
+  /// **'Follow growth and consistency across completed practice.'**
   String get onboardingParentGoal3Sub;
 
   /// No description provided for @onboardingParentGoal4Label.
   ///
   /// In en, this message translates to:
-  /// **'Support GCSE preparation'**
+  /// **'Support exam preparation'**
   String get onboardingParentGoal4Label;
 
   /// No description provided for @onboardingParentGoal4Sub.
   ///
   /// In en, this message translates to:
-  /// **'Targeted revision aligned to the exam'**
+  /// **'Guide revision and practice for upcoming assessments.'**
   String get onboardingParentGoal4Sub;
+
+  /// No description provided for @onboardingGoalTitleTeacher.
+  ///
+  /// In en, this message translates to:
+  /// **'How would you like to use Math Intelligence?'**
+  String get onboardingGoalTitleTeacher;
+
+  /// No description provided for @onboardingGoalSubTeacher.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose the focus for your class.'**
+  String get onboardingGoalSubTeacher;
+
+  /// No description provided for @onboardingTeacherGoal1Label.
+  ///
+  /// In en, this message translates to:
+  /// **'Monitor class progress'**
+  String get onboardingTeacherGoal1Label;
+
+  /// No description provided for @onboardingTeacherGoal1Sub.
+  ///
+  /// In en, this message translates to:
+  /// **'See how your students are progressing over time.'**
+  String get onboardingTeacherGoal1Sub;
+
+  /// No description provided for @onboardingTeacherGoal2Label.
+  ///
+  /// In en, this message translates to:
+  /// **'Assign practice'**
+  String get onboardingTeacherGoal2Label;
+
+  /// No description provided for @onboardingTeacherGoal2Sub.
+  ///
+  /// In en, this message translates to:
+  /// **'Set targeted practice sets for your students.'**
+  String get onboardingTeacherGoal2Sub;
+
+  /// No description provided for @onboardingTeacherGoal3Label.
+  ///
+  /// In en, this message translates to:
+  /// **'Prepare for exams'**
+  String get onboardingTeacherGoal3Label;
+
+  /// No description provided for @onboardingTeacherGoal3Sub.
+  ///
+  /// In en, this message translates to:
+  /// **'Support exam readiness with focused practice sets.'**
+  String get onboardingTeacherGoal3Sub;
+
+  /// No description provided for @onboardingTeacherGoal4Label.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore the curriculum'**
+  String get onboardingTeacherGoal4Label;
+
+  /// No description provided for @onboardingTeacherGoal4Sub.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse topics and worked solutions before assigning them.'**
+  String get onboardingTeacherGoal4Sub;
 
   /// No description provided for @onboardingProfileTitle.
   ///
   /// In en, this message translates to:
-  /// **'A few details about your child'**
+  /// **'Save your progress'**
   String get onboardingProfileTitle;
 
   /// No description provided for @onboardingProfileSub.
   ///
   /// In en, this message translates to:
-  /// **'This helps us tailor recommendations for them'**
+  /// **'Optional — you can always change this later in Profile.'**
   String get onboardingProfileSub;
 
-  /// No description provided for @onboardingChildNameLabel.
+  /// No description provided for @onboardingDisplayNameLabel.
   ///
   /// In en, this message translates to:
-  /// **'Child\'s name (optional)'**
-  String get onboardingChildNameLabel;
+  /// **'What should we call you?'**
+  String get onboardingDisplayNameLabel;
 
-  /// No description provided for @onboardingChildNameSub.
+  /// No description provided for @onboardingDisplayNameSub.
   ///
   /// In en, this message translates to:
-  /// **'Personalise their experience'**
-  String get onboardingChildNameSub;
+  /// **'A nickname is fine — this is just for your greeting.'**
+  String get onboardingDisplayNameSub;
 
-  /// No description provided for @onboardingChildNameHint.
+  /// No description provided for @onboardingDisplayNameHint.
   ///
   /// In en, this message translates to:
   /// **'e.g. Alex'**
-  String get onboardingChildNameHint;
+  String get onboardingDisplayNameHint;
 
-  /// Show KS level picker in study profile — false for markets using age-based stage selection
+  /// No description provided for @onboardingLearnerNameLabel.
   ///
   /// In en, this message translates to:
-  /// **'true'**
-  String get onboardingShowLevelPicker;
+  /// **'What should we call your learner?'**
+  String get onboardingLearnerNameLabel;
 
-  /// No description provided for @onboardingLevel1Label.
+  /// No description provided for @onboardingLearnerNameSub.
   ///
   /// In en, this message translates to:
-  /// **'KS2'**
-  String get onboardingLevel1Label;
+  /// **'Personalise their Maths Journey.'**
+  String get onboardingLearnerNameSub;
 
-  /// No description provided for @onboardingLevel1Sub.
+  /// No description provided for @onboardingLearnerNameHint.
   ///
   /// In en, this message translates to:
-  /// **'Years 3-6 curriculum support'**
-  String get onboardingLevel1Sub;
+  /// **'e.g. Alex'**
+  String get onboardingLearnerNameHint;
 
-  /// No description provided for @onboardingLevel2Label.
+  /// No description provided for @onboardingRelationshipLabel.
   ///
   /// In en, this message translates to:
-  /// **'KS3'**
-  String get onboardingLevel2Label;
+  /// **'Your relationship to the learner'**
+  String get onboardingRelationshipLabel;
 
-  /// No description provided for @onboardingLevel2Sub.
+  /// No description provided for @onboardingRelationshipParent.
   ///
   /// In en, this message translates to:
-  /// **'Years 7-9 curriculum support'**
-  String get onboardingLevel2Sub;
+  /// **'Parent'**
+  String get onboardingRelationshipParent;
 
-  /// No description provided for @onboardingLevel3Label.
+  /// No description provided for @onboardingRelationshipGuardian.
   ///
   /// In en, this message translates to:
-  /// **'KS4'**
-  String get onboardingLevel3Label;
+  /// **'Guardian'**
+  String get onboardingRelationshipGuardian;
 
-  /// No description provided for @onboardingLevel3Sub.
+  /// No description provided for @onboardingRelationshipGrandparent.
   ///
   /// In en, this message translates to:
-  /// **'Years 10-11 curriculum support'**
-  String get onboardingLevel3Sub;
+  /// **'Grandparent'**
+  String get onboardingRelationshipGrandparent;
 
-  /// No description provided for @onboardingLanguageLabel.
+  /// No description provided for @onboardingRelationshipTutor.
   ///
   /// In en, this message translates to:
-  /// **'Selected Language'**
-  String get onboardingLanguageLabel;
+  /// **'Tutor'**
+  String get onboardingRelationshipTutor;
 
-  /// No description provided for @onboardingLanguageValue.
+  /// No description provided for @onboardingRelationshipOther.
   ///
   /// In en, this message translates to:
-  /// **'English (UK)'**
-  String get onboardingLanguageValue;
+  /// **'Other family member'**
+  String get onboardingRelationshipOther;
 
   /// No description provided for @onboardingParentEmailLabel.
   ///
   /// In en, this message translates to:
-  /// **'Parent Email (optional)'**
+  /// **'Supporting adult email (optional)'**
   String get onboardingParentEmailLabel;
 
   /// No description provided for @onboardingParentEmailHint.
   ///
   /// In en, this message translates to:
-  /// **'parent@example.co.uk'**
+  /// **'name@example.com'**
   String get onboardingParentEmailHint;
 
   /// No description provided for @onboardingParentEmailSub.
   ///
   /// In en, this message translates to:
-  /// **'For progress reports and important updates'**
+  /// **'Stored locally on this device for account clarity.'**
   String get onboardingParentEmailSub;
 
   /// No description provided for @onboardingPrivacyNote.
   ///
   /// In en, this message translates to:
-  /// **'Your data is kept private. For reports only, no spam.'**
+  /// **'Local-only profile details. No cloud sync is claimed for this release.'**
   String get onboardingPrivacyNote;
 
   /// No description provided for @onboardingStartLearning.
@@ -1455,7 +1641,7 @@ abstract class AppLocalizations {
   /// No description provided for @upgradeBenefit3Title.
   ///
   /// In en, this message translates to:
-  /// **'Advanced Analytics'**
+  /// **'Learning Analytics'**
   String get upgradeBenefit3Title;
 
   /// No description provided for @upgradeBenefit3Sub.
@@ -2073,37 +2259,37 @@ abstract class AppLocalizations {
   /// No description provided for @settingsParentToolsRewards.
   ///
   /// In en, this message translates to:
-  /// **'Parent tools and rewards animations'**
+  /// **'Learning Analytics and rewards animations'**
   String get settingsParentToolsRewards;
 
   /// No description provided for @enableParentTools.
   ///
   /// In en, this message translates to:
-  /// **'Enable Parent Tools'**
+  /// **'Enable Learning Analytics'**
   String get enableParentTools;
 
   /// No description provided for @parentToolsLocalOnly.
   ///
   /// In en, this message translates to:
-  /// **'Allow local-only Parent & Teacher Tools'**
+  /// **'Allow local-only Learning Analytics'**
   String get parentToolsLocalOnly;
 
   /// No description provided for @unlockParentTools.
   ///
   /// In en, this message translates to:
-  /// **'Unlock Parent Tools'**
+  /// **'Unlock Learning Analytics'**
   String get unlockParentTools;
 
   /// No description provided for @parentToolsPinPrompt.
   ///
   /// In en, this message translates to:
-  /// **'Create or enter the local 4-digit PIN'**
+  /// **'Create or enter the local 4-digit PIN for Learning Analytics.'**
   String get parentToolsPinPrompt;
 
   /// No description provided for @parentTeacherTools.
   ///
   /// In en, this message translates to:
-  /// **'Parent & Teacher Tools'**
+  /// **'Learning Analytics'**
   String get parentTeacherTools;
 
   /// No description provided for @createParentPin.
@@ -2291,6 +2477,372 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Going back will clear what you\'ve entered on this step.'**
   String get onboardingDiscardBody;
+
+  /// Public product name used in onboarding hero.
+  ///
+  /// In en, this message translates to:
+  /// **'Math Intelligence'**
+  String get onboardingProductName;
+
+  /// Technology positioning badge in onboarding hero.
+  ///
+  /// In en, this message translates to:
+  /// **'Powered by Adaptive Learning Intelligence'**
+  String get onboardingTechBadge;
+
+  /// Primary onboarding hero statement. May contain locale-specific line breaks.
+  ///
+  /// In en, this message translates to:
+  /// **'Develop mathematical thinking.\nUnlock your potential.'**
+  String get onboardingHeroStatement;
+
+  /// Secondary onboarding hero statement. May contain locale-specific line breaks.
+  ///
+  /// In en, this message translates to:
+  /// **'Personalised learning.\nMeasurable progress.'**
+  String get onboardingSupportingStatement;
+
+  /// Clarifies who the supporting-a-learner role is for.
+  ///
+  /// In en, this message translates to:
+  /// **'For parents, guardians, teachers, tutors and homeschool educators.'**
+  String get onboardingRoleClarification;
+
+  /// Create account action label on onboarding.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Account'**
+  String get onboardingCreateAccount;
+
+  /// Local account benefit explanation.
+  ///
+  /// In en, this message translates to:
+  /// **'Save progress, Maths Journey data and achievements on this device.'**
+  String get onboardingCreateAccountSub;
+
+  /// Shared professional progress reporting label.
+  ///
+  /// In en, this message translates to:
+  /// **'Learning Analytics'**
+  String get learningAnalyticsTitle;
+
+  /// Learning Analytics supporting copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Understand progress, identify learning gaps and support the next step.'**
+  String get learningAnalyticsSummary;
+
+  /// Empty state when no practice data is available yet.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete a practice session to begin building Learning Analytics.'**
+  String get learningAnalyticsEmptyState;
+
+  /// Title of the Feature Discovery page and its entry point in the More sheet.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore Math Intelligence'**
+  String get exploreMathIntelligenceTitle;
+
+  /// No description provided for @exploreHeaderSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What Math Intelligence offers today, and what\'s coming next.'**
+  String get exploreHeaderSubtitle;
+
+  /// No description provided for @exploreAvailableTodaySection.
+  ///
+  /// In en, this message translates to:
+  /// **'AVAILABLE TODAY'**
+  String get exploreAvailableTodaySection;
+
+  /// No description provided for @exploreInAtelierSection.
+  ///
+  /// In en, this message translates to:
+  /// **'IN ATELIER'**
+  String get exploreInAtelierSection;
+
+  /// No description provided for @exploreInAtelierBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'In Atelier'**
+  String get exploreInAtelierBadge;
+
+  /// No description provided for @exploreInDevelopmentNote.
+  ///
+  /// In en, this message translates to:
+  /// **'This feature is currently in development.'**
+  String get exploreInDevelopmentNote;
+
+  /// No description provided for @exploreRoadmapTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Roadmap Philosophy'**
+  String get exploreRoadmapTitle;
+
+  /// No description provided for @exploreRoadmapBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Math Intelligence is designed to grow over time. Some capabilities are available today. Others are currently being developed and tested before release.'**
+  String get exploreRoadmapBody;
+
+  /// No description provided for @explorePersonalisedPracticeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Personalised Practice'**
+  String get explorePersonalisedPracticeTitle;
+
+  /// No description provided for @explorePersonalisedPracticeBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Adaptive question sessions based on your selected level and learning goals.'**
+  String get explorePersonalisedPracticeBody;
+
+  /// No description provided for @exploreTopicLearningTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Topic Learning'**
+  String get exploreTopicLearningTitle;
+
+  /// No description provided for @exploreTopicLearningBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Focus on individual mathematical topics.'**
+  String get exploreTopicLearningBody;
+
+  /// No description provided for @exploreTimedChallengesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Timed Challenges'**
+  String get exploreTimedChallengesTitle;
+
+  /// No description provided for @exploreTimedChallengesBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Develop speed and confidence.'**
+  String get exploreTimedChallengesBody;
+
+  /// No description provided for @exploreExamSimulatorTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Exam Simulator'**
+  String get exploreExamSimulatorTitle;
+
+  /// No description provided for @exploreExamSimulatorBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Practise using structured exam sessions.'**
+  String get exploreExamSimulatorBody;
+
+  /// No description provided for @exploreMathsJourneyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'My Maths Journey'**
+  String get exploreMathsJourneyTitle;
+
+  /// No description provided for @exploreMathsJourneyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Track your learning journey over time.'**
+  String get exploreMathsJourneyBody;
+
+  /// No description provided for @exploreLearningAnalyticsBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Monitor progress and identify growth opportunities.'**
+  String get exploreLearningAnalyticsBody;
+
+  /// No description provided for @exploreFormulaLibraryBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick offline reference.'**
+  String get exploreFormulaLibraryBody;
+
+  /// No description provided for @explorePhotoUploadTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Photo Question Upload'**
+  String get explorePhotoUploadTitle;
+
+  /// No description provided for @explorePhotoUploadBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload worksheets, textbook pages or exam questions.'**
+  String get explorePhotoUploadBody;
+
+  /// No description provided for @exploreMarkMyPaperTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark My Paper'**
+  String get exploreMarkMyPaperTitle;
+
+  /// No description provided for @exploreMarkMyPaperBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Receive structured feedback on completed work.'**
+  String get exploreMarkMyPaperBody;
+
+  /// No description provided for @exploreExaminerIntelligenceTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Examiner Intelligence'**
+  String get exploreExaminerIntelligenceTitle;
+
+  /// No description provided for @exploreExaminerIntelligenceBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn how examiners award marks and identify common mistakes.'**
+  String get exploreExaminerIntelligenceBody;
+
+  /// No description provided for @exploreAdaptiveStudyPlansTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Adaptive Study Plans'**
+  String get exploreAdaptiveStudyPlansTitle;
+
+  /// No description provided for @exploreAdaptiveStudyPlansBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Personalised study recommendations based on your learning journey.'**
+  String get exploreAdaptiveStudyPlansBody;
+
+  /// No description provided for @exploreTutorConversationsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Tutor Conversations'**
+  String get exploreTutorConversationsTitle;
+
+  /// No description provided for @exploreTutorConversationsBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Natural-language mathematical coaching.'**
+  String get exploreTutorConversationsBody;
+
+  /// No description provided for @journeyCardTitleDefault.
+  ///
+  /// In en, this message translates to:
+  /// **'My Maths Journey'**
+  String get journeyCardTitleDefault;
+
+  /// No description provided for @journeyCardTitleNamed.
+  ///
+  /// In en, this message translates to:
+  /// **'{name}\'s Maths Journey'**
+  String journeyCardTitleNamed(String name);
+
+  /// No description provided for @journeyCardCurrentFocusLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Current focus'**
+  String get journeyCardCurrentFocusLabel;
+
+  /// No description provided for @journeyCardGettingStarted.
+  ///
+  /// In en, this message translates to:
+  /// **'Getting started'**
+  String get journeyCardGettingStarted;
+
+  /// No description provided for @journeyCardCurrentStreakLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Current streak'**
+  String get journeyCardCurrentStreakLabel;
+
+  /// No description provided for @journeyCardStartStreakToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Start your streak today'**
+  String get journeyCardStartStreakToday;
+
+  /// No description provided for @journeyCardStreakDays.
+  ///
+  /// In en, this message translates to:
+  /// **'{days}-day streak'**
+  String journeyCardStreakDays(int days);
+
+  /// No description provided for @journeyCardNextMilestoneLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Next milestone'**
+  String get journeyCardNextMilestoneLabel;
+
+  /// No description provided for @journeyCardDaysToMilestoneOne.
+  ///
+  /// In en, this message translates to:
+  /// **'1 day to your {milestone}-day streak'**
+  String journeyCardDaysToMilestoneOne(int milestone);
+
+  /// No description provided for @journeyCardDaysToMilestoneMany.
+  ///
+  /// In en, this message translates to:
+  /// **'{days} days to your {milestone}-day streak'**
+  String journeyCardDaysToMilestoneMany(int days, int milestone);
+
+  /// No description provided for @journeyCardAllMilestonesReached.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ve reached every streak milestone!'**
+  String get journeyCardAllMilestonesReached;
+
+  /// No description provided for @journeyCardGoalConfidence.
+  ///
+  /// In en, this message translates to:
+  /// **'You are building confidence'**
+  String get journeyCardGoalConfidence;
+
+  /// No description provided for @journeyCardGoalSchool.
+  ///
+  /// In en, this message translates to:
+  /// **'You are improving school maths'**
+  String get journeyCardGoalSchool;
+
+  /// No description provided for @journeyCardGoalExams.
+  ///
+  /// In en, this message translates to:
+  /// **'You are preparing for exams'**
+  String get journeyCardGoalExams;
+
+  /// No description provided for @journeyCardGoalChallenge.
+  ///
+  /// In en, this message translates to:
+  /// **'You are tackling challenge problems'**
+  String get journeyCardGoalChallenge;
+
+  /// No description provided for @journeyCardGoalParentGaps.
+  ///
+  /// In en, this message translates to:
+  /// **'You are finding learning gaps'**
+  String get journeyCardGoalParentGaps;
+
+  /// No description provided for @journeyCardGoalParentProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'You are tracking progress over time'**
+  String get journeyCardGoalParentProgress;
+
+  /// No description provided for @journeyCardGoalParentGcse.
+  ///
+  /// In en, this message translates to:
+  /// **'You are preparing for GCSE'**
+  String get journeyCardGoalParentGcse;
+
+  /// No description provided for @journeyCardGoalTeacherMonitor.
+  ///
+  /// In en, this message translates to:
+  /// **'You are monitoring class progress'**
+  String get journeyCardGoalTeacherMonitor;
+
+  /// No description provided for @journeyCardGoalTeacherAssign.
+  ///
+  /// In en, this message translates to:
+  /// **'You are assigning practice'**
+  String get journeyCardGoalTeacherAssign;
+
+  /// No description provided for @journeyCardGoalTeacherExplore.
+  ///
+  /// In en, this message translates to:
+  /// **'You are exploring the curriculum'**
+  String get journeyCardGoalTeacherExplore;
 }
 
 class _AppLocalizationsDelegate

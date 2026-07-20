@@ -5,6 +5,7 @@ import '../../app/safe_navigation.dart';
 import '../../services/local_preferences_service.dart';
 import '../../services/parent_report_service.dart';
 import '../../services/session_history_service.dart';
+import '../../shared/math_notation_formatter.dart';
 
 class ParentCheatSheetScreen extends StatefulWidget {
   const ParentCheatSheetScreen({super.key});
@@ -162,12 +163,13 @@ class _QuestionResultTileState extends State<_QuestionResultTile> {
   Widget build(BuildContext context) {
     final result = widget.result;
     return ListTile(
-      title: Text(result.question, style: const TextStyle(color: Colors.white)),
+      title: Text(MathNotationFormatter.format(result.question),
+          style: const TextStyle(color: Colors.white)),
       subtitle: _revealed
           ? Text(
-              'Correct: ${result.options[result.correctIndex]}\n'
-              'Selected: ${result.options[result.selectedIndex]}\n'
-              'Explanation: ${result.explanation.isEmpty ? 'Not provided' : result.explanation}',
+              'Correct: ${MathNotationFormatter.format(result.options[result.correctIndex])}\n'
+              'Selected: ${MathNotationFormatter.format(result.options[result.selectedIndex])}\n'
+              'Explanation: ${result.explanation.isEmpty ? 'Not provided' : MathNotationFormatter.format(result.explanation)}',
             )
           : const Text('Answer hidden'),
       trailing: TextButton(

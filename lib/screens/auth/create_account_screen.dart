@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../services/local_account_service.dart';
+import '../../services/onboarding_profile_service.dart';
 import 'auth_form_fields.dart';
 
 class CreateAccountScreen extends StatefulWidget {
@@ -31,10 +32,19 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
   Future<void> _submit() async {
     if (!(_formKey.currentState?.validate() ?? false)) return;
     setState(() => _isSubmitting = true);
+    final name = _nameController.text.trim();
     await LocalAccountService.instance.createAccount(
       email: _emailController.text.trim(),
-      displayName: _nameController.text.trim(),
+      displayName: name,
     );
+    // Seed the greeting's preferred display name, but only if the learner
+    // hasn't already set one — presentation identity stays decoupled from
+    // account identity per the privacy contract.
+    if (name.isNotEmpty &&
+        OnboardingProfileService.instance.preferredDisplayName.value == null) {
+      await OnboardingProfileService.instance.setPreferredDisplayName(name);
+    }
+    await OnboardingProfileService.instance.markOnboardingComplete();
     if (!mounted) return;
     context.go('/home');
   }
@@ -69,7 +79,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                     ),
                     const SizedBox(height: 6),
                     const Text(
-                      'Save your progress and pick up where you left off on any device.',
+                      'Save progress, Maths Journey data and achievements on this device.',
                       style: TextStyle(color: Color(0xFF8A9DC0), fontSize: 14),
                     ),
                     const SizedBox(height: 28),

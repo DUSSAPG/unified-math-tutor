@@ -29,11 +29,19 @@ class _GoalSelectorScreenState extends State<GoalSelectorScreen> {
     'parent_progress',
     'parent_gcse',
   ];
+  static const _teacherGoalKeys = [
+    'teacher_monitor',
+    'teacher_assign',
+    'teacher_exams',
+    'teacher_explore',
+  ];
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final isStudent = OnboardingProfileService.instance.userType.value == 'student';
+    final role = OnboardingProfileService.instance.userType.value;
+    final isStudent = role == 'student';
+    final isTeacher = role == 'teacher';
     final goalLabels = isStudent
         ? [
             (l10n.onboardingGoal1Label, l10n.onboardingGoal1Sub),
@@ -41,28 +49,45 @@ class _GoalSelectorScreenState extends State<GoalSelectorScreen> {
             (l10n.onboardingGoal3Label, l10n.onboardingGoal3Sub),
             (l10n.onboardingGoal4Label, l10n.onboardingGoal4Sub),
           ]
-        : [
-            (l10n.onboardingParentGoal1Label, l10n.onboardingParentGoal1Sub),
-            (l10n.onboardingParentGoal2Label, l10n.onboardingParentGoal2Sub),
-            (l10n.onboardingParentGoal3Label, l10n.onboardingParentGoal3Sub),
-            (l10n.onboardingParentGoal4Label, l10n.onboardingParentGoal4Sub),
-          ];
-    final goalKeys = isStudent ? _goalKeys : _parentGoalKeys;
+        : isTeacher
+            ? [
+                (l10n.onboardingTeacherGoal1Label, l10n.onboardingTeacherGoal1Sub),
+                (l10n.onboardingTeacherGoal2Label, l10n.onboardingTeacherGoal2Sub),
+                (l10n.onboardingTeacherGoal3Label, l10n.onboardingTeacherGoal3Sub),
+                (l10n.onboardingTeacherGoal4Label, l10n.onboardingTeacherGoal4Sub),
+              ]
+            : [
+                (l10n.onboardingParentGoal1Label, l10n.onboardingParentGoal1Sub),
+                (l10n.onboardingParentGoal2Label, l10n.onboardingParentGoal2Sub),
+                (l10n.onboardingParentGoal3Label, l10n.onboardingParentGoal3Sub),
+                (l10n.onboardingParentGoal4Label, l10n.onboardingParentGoal4Sub),
+              ];
+    final goalKeys = isStudent
+        ? _goalKeys
+        : isTeacher
+            ? _teacherGoalKeys
+            : _parentGoalKeys;
 
     return OnboardingShell(
-      step: isStudent ? 3 : 2,
-      totalSteps: 3,
+      step: 2,
+      totalSteps: 4,
       timeEstimate: '~30 seconds',
-      title: isStudent ? l10n.onboardingGoalTitle : l10n.onboardingGoalTitleParent,
-      subtitle: isStudent ? l10n.onboardingGoalSub : l10n.onboardingGoalSubParent,
-      continueLabel:
-          isStudent ? l10n.onboardingStartLearning : l10n.onboardingContinue,
-      showContinueArrow: !isStudent,
+      title: isStudent
+          ? l10n.onboardingGoalTitle
+          : isTeacher
+              ? l10n.onboardingGoalTitleTeacher
+              : l10n.onboardingGoalTitleParent,
+      subtitle: isStudent
+          ? l10n.onboardingGoalSub
+          : isTeacher
+              ? l10n.onboardingGoalSubTeacher
+              : l10n.onboardingGoalSubParent,
+      continueLabel: l10n.onboardingContinue,
       onBack: () => context.go('/onboarding/stage'),
       onContinue: _selected != null
           ? () {
               OnboardingProfileService.instance.setGoal(goalKeys[_selected!]);
-              context.go(isStudent ? '/' : '/onboarding/profile');
+              context.go('/onboarding/accessibility');
             }
           : null,
       child: Column(

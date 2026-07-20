@@ -19,7 +19,7 @@ import '../screens/settings/subscription_screen.dart';
 import '../screens/settings/curriculum_settings_screen.dart';
 import '../screens/settings/privacy_data_screen.dart';
 import '../screens/onboarding/user_type_screen.dart';
-import '../screens/onboarding/welcome_step_screen.dart';
+import '../screens/onboarding/accessibility_step_screen.dart';
 import '../screens/onboarding/stage_selector_screen.dart';
 import '../screens/onboarding/goal_selector_screen.dart';
 import '../screens/onboarding/study_profile_screen.dart';
@@ -28,6 +28,7 @@ import '../screens/auth/create_account_screen.dart';
 import '../screens/auth/forgot_password_screen.dart';
 import '../screens/packs/exam_packs_screen.dart';
 import '../screens/formulas/formula_library_screen.dart';
+import '../screens/explore/explore_math_intelligence_screen.dart';
 import '../screens/settings/release_notes_screen.dart';
 import '../screens/settings/terms_screen.dart';
 import '../screens/mental_math/daily_teaser_detail_screen.dart';
@@ -61,8 +62,8 @@ final GoRouter appRouter = GoRouter(
       builder: (context, state) => const UserTypeScreen(),
     ),
     GoRoute(
-      path: '/onboarding/welcome',
-      builder: (context, state) => const WelcomeStepScreen(),
+      path: '/onboarding/accessibility',
+      builder: (context, state) => const AccessibilityStepScreen(),
     ),
     GoRoute(
       path: '/onboarding/stage',
@@ -101,6 +102,12 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: '/packs',
       builder: (context, state) => const ExamPacksScreen(),
+    ),
+
+    // ── Feature Discovery (pushed above shell from the More sheet) ────────────
+    GoRoute(
+      path: '/explore',
+      builder: (context, state) => const ExploreMathIntelligenceScreen(),
     ),
 
     GoRoute(

@@ -24,6 +24,7 @@ dependencies:
   flutter_svg: ^2.2.3
   pdf: ^3.11.3
   printing: ^5.14.2
+  package_info_plus: ^8.1.2
 
   flutter_shared_models:
     path: ../../../packages/flutter_shared_models

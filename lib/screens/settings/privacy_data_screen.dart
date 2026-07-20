@@ -2,9 +2,61 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../app/safe_navigation.dart';
+import '../../services/local_data_reset_service.dart';
 
-class PrivacyDataScreen extends StatelessWidget {
+class PrivacyDataScreen extends StatefulWidget {
   const PrivacyDataScreen({super.key});
+
+  @override
+  State<PrivacyDataScreen> createState() => _PrivacyDataScreenState();
+}
+
+class _PrivacyDataScreenState extends State<PrivacyDataScreen> {
+  bool _isDeleting = false;
+
+  Future<void> _confirmDeleteData() async {
+    if (_isDeleting) return;
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        title: const Text('Delete all app data?'),
+        content: const Text(
+          'This permanently deletes your profile, progress, streaks and '
+          'settings on this device. This cannot be undone.',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(dialogContext).pop(false),
+            child: const Text('Cancel'),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.of(dialogContext).pop(true),
+            style: FilledButton.styleFrom(
+              backgroundColor: const Color(0xFFFF3B30),
+            ),
+            child: const Text('Delete Everything'),
+          ),
+        ],
+      ),
+    );
+    if (confirmed != true || !mounted) return;
+
+    setState(() => _isDeleting = true);
+    try {
+      await LocalDataResetService.instance.resetAllLocalData();
+      if (!mounted) return;
+      context.go('/onboarding');
+    } catch (_) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Could not delete data. Please try again.'),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+      setState(() => _isDeleting = false);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -110,7 +162,7 @@ class PrivacyDataScreen extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: OutlinedButton(
-                      onPressed: () {},
+                      onPressed: _isDeleting ? null : _confirmDeleteData,
                       style: OutlinedButton.styleFrom(
                         foregroundColor: const Color(0xFFFF3B30),
                         side: const BorderSide(color: Color(0xFFFF3B30)),
@@ -118,10 +170,19 @@ class PrivacyDataScreen extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12)),
                       ),
-                      child: const Text(
-                        'Request Data Deletion',
-                        style: TextStyle(fontWeight: FontWeight.w600),
-                      ),
+                      child: _isDeleting
+                          ? const SizedBox(
+                              width: 20,
+                              height: 20,
+                              child: CircularProgressIndicator(
+                                strokeWidth: 2,
+                                color: Color(0xFFFF3B30),
+                              ),
+                            )
+                          : const Text(
+                              'Request Data Deletion',
+                              style: TextStyle(fontWeight: FontWeight.w600),
+                            ),
                     ),
                   ),
                   const SizedBox(height: 12),

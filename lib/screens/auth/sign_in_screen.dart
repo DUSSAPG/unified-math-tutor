@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../services/local_account_service.dart';
+import '../../services/onboarding_profile_service.dart';
 import 'auth_form_fields.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -30,6 +31,7 @@ class _SignInScreenState extends State<SignInScreen> {
     await LocalAccountService.instance.signIn(
       email: _emailController.text.trim(),
     );
+    await OnboardingProfileService.instance.markOnboardingComplete();
     if (!mounted) return;
     context.go('/home');
   }
@@ -64,7 +66,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                     const SizedBox(height: 6),
                     const Text(
-                      'Sign in to sync your progress across devices.',
+                      'Sign in to keep your local progress, Maths Journey data and achievements on this device.',
                       style: TextStyle(color: Color(0xFF8A9DC0), fontSize: 14),
                     ),
                     const SizedBox(height: 28),

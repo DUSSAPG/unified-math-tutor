@@ -122,7 +122,7 @@ class _HelpContent extends StatelessWidget {
           ),
           const SizedBox(height: 12),
 
-          // Parental Controls
+          // Learning Analytics
           _HelpSection(
             icon: Icons.family_restroom,
             iconColor: const Color(0xFFFF9500),
@@ -201,7 +201,7 @@ class _HelpContent extends StatelessWidget {
           ),
           const SizedBox(height: 20),
 
-          // Parent & Teacher Tools
+          // Learning Analytics
           ValueListenableBuilder<bool>(
             valueListenable:
                 LocalPreferencesService.instance.parentToolsEnabled,

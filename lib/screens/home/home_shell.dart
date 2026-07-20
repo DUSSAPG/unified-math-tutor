@@ -6,12 +6,16 @@ import 'package:go_router/go_router.dart';
 import '../../shared/responsive/app_breakpoints.dart';
 import '../../shared/theme/app_spacing.dart';
 import '../../services/curriculum_service.dart';
+import '../../services/greeting_service.dart';
+import '../../services/learner_profiles_service.dart';
 import '../../services/local_preferences_service.dart';
 import '../../services/mascot_fuel_service.dart';
 import '../../services/mental_math_vault_service.dart';
 import '../../services/nav_visibility_service.dart';
+import '../../services/onboarding_profile_service.dart';
 import '../../services/streak_service.dart';
 import '../../widgets/mascot_card.dart';
+import '../../widgets/onboarding/who_is_learning_sheet.dart';
 import '../../widgets/shared/fade_in.dart';
 import '../../widgets/shared/reward_confetti.dart';
 import '../../widgets/shared/section_label.dart';
@@ -56,9 +60,17 @@ class AppShell extends StatelessWidget {
           Navigator.of(sheetContext).pop();
           _goBranch(index);
         },
+        onLearningAnalyticsSelected: () {
+          Navigator.of(sheetContext).pop();
+          context.push('/help/parent-teacher-tools');
+        },
         onSettingsSelected: () {
           Navigator.of(sheetContext).pop();
           context.push('/profile/settings');
+        },
+        onExploreSelected: () {
+          Navigator.of(sheetContext).pop();
+          context.push('/explore');
         },
       ),
     );
@@ -147,6 +159,18 @@ class AppShell extends StatelessWidget {
                     onDestinationSelected: _goBranch,
                     labelType: NavigationRailLabelType.all,
                     destinations: railDestinations,
+                    trailing: Expanded(
+                      child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom: 12),
+                          child: _RailExploreButton(
+                            label: l10n.exploreMathIntelligenceTitle,
+                            onTap: () => context.push('/explore'),
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
                 Expanded(
                   child: LayoutBuilder(
@@ -224,15 +248,53 @@ class AppShell extends StatelessWidget {
   }
 }
 
+// ─── Rail-only Explore entry (desktop/tablet width) ───────────────────────────
+
+class _RailExploreButton extends StatelessWidget {
+  final String label;
+  final VoidCallback onTap;
+
+  const _RailExploreButton({required this.label, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      borderRadius: BorderRadius.circular(12),
+      onTap: onTap,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Icon(LucideIcons.compass, size: 24),
+            const SizedBox(height: 4),
+            Text(
+              label,
+              textAlign: TextAlign.center,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(fontSize: 11),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 // ─── "More" sheet (mobile only) ───────────────────────────────────────────────
 
 class _MoreSheet extends StatelessWidget {
   final ValueChanged<int> onBranchSelected;
+  final VoidCallback onLearningAnalyticsSelected;
   final VoidCallback onSettingsSelected;
+  final VoidCallback onExploreSelected;
 
   const _MoreSheet({
     required this.onBranchSelected,
+    required this.onLearningAnalyticsSelected,
     required this.onSettingsSelected,
+    required this.onExploreSelected,
   });
 
   @override
@@ -270,6 +332,11 @@ class _MoreSheet extends StatelessWidget {
               ),
             ),
             _MoreSheetTile(
+              icon: LucideIcons.compass,
+              label: l10n.exploreMathIntelligenceTitle,
+              onTap: onExploreSelected,
+            ),
+            _MoreSheetTile(
               icon: LucideIcons.functionSquare,
               label: l10n.homeFormulaLibraryTitle,
               onTap: () => onBranchSelected(_branchFormulas),
@@ -288,6 +355,11 @@ class _MoreSheet extends StatelessWidget {
               icon: LucideIcons.helpCircle,
               label: l10n.navHelp,
               onTap: () => onBranchSelected(_branchHelp),
+            ),
+            _MoreSheetTile(
+              icon: Icons.insights_outlined,
+              label: l10n.parentTeacherTools,
+              onTap: onLearningAnalyticsSelected,
             ),
             _MoreSheetTile(
               icon: LucideIcons.settings,
@@ -738,21 +810,89 @@ class _HeroGreeting extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          l10n.homeGreeting,
-          style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                fontWeight: FontWeight.bold,
+    final onboarding = OnboardingProfileService.instance;
+    return AnimatedBuilder(
+      animation: Listenable.merge([
+        onboarding.userType,
+        onboarding.preferredDisplayName,
+        onboarding.childName,
+        LearnerProfilesService.instance.profiles,
+      ]),
+      builder: (context, _) {
+        final isLearnerRole = onboarding.userType.value == 'parent' ||
+            onboarding.userType.value == 'teacher';
+        final name =
+            isLearnerRole ? onboarding.childName.value : onboarding.preferredDisplayName.value;
+        final greeting = greetingFor(
+          l10n,
+          greetingPeriodFor(DateTime.now()),
+          name,
+        );
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              greeting,
+              style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
+            ),
+            const SizedBox(height: 4),
+            Text(
+              l10n.homeStreakGoalMessage,
+              style: const TextStyle(color: Color(0xFF8A9BB8), fontSize: 13),
+            ),
+            if (isLearnerRole) ...[
+              const SizedBox(height: 10),
+              InkWell(
+                borderRadius: BorderRadius.circular(999),
+                onTap: () => showWhoIsLearningSheet(context),
+                child: Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF132040),
+                    borderRadius: BorderRadius.circular(999),
+                    border: Border.all(color: const Color(0xFF1F3055)),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      if (LearnerProfilesService.instance.profiles.value.isNotEmpty) ...[
+                        Text(
+                          l10n.homeLearningAsLabel(onboarding.childName.value ?? ''),
+                          style: const TextStyle(
+                            color: Color(0xFF8A9BB8),
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        const SizedBox(width: 6),
+                        Text(
+                          l10n.homeSwitchLearnerAction,
+                          style: const TextStyle(
+                            color: Color(0xFF5B8EFF),
+                            fontSize: 12,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ] else
+                        Text(
+                          l10n.whoIsLearningAddLearner,
+                          style: const TextStyle(
+                            color: Color(0xFF5B8EFF),
+                            fontSize: 12,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
               ),
-        ),
-        const SizedBox(height: 4),
-        Text(
-          l10n.homeStreakGoalMessage,
-          style: const TextStyle(color: Color(0xFF8A9BB8), fontSize: 13),
-        ),
-      ],
+            ],
+          ],
+        );
+      },
     );
   }
 }

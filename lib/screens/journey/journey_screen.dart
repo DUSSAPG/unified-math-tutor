@@ -1,10 +1,59 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../shared/theme/app_spacing.dart';
 import '../../services/onboarding_profile_service.dart';
+import '../../services/session_history_service.dart';
 import '../../services/streak_service.dart';
 import '../../widgets/shared/section_label.dart';
+
+/// Real activity derived from [SessionHistoryService], computed once per
+/// screen build so the "This Week", Achievements and Daily Goal sections
+/// never show fabricated numbers unrelated to what the learner actually did.
+class _JourneyActivity {
+  final int activeDaysThisWeek;
+  final int totalQuestionsAnswered;
+  final int questionsAnsweredToday;
+  final bool hasAnySession;
+
+  const _JourneyActivity({
+    required this.activeDaysThisWeek,
+    required this.totalQuestionsAnswered,
+    required this.questionsAnsweredToday,
+    required this.hasAnySession,
+  });
+
+  static const empty = _JourneyActivity(
+    activeDaysThisWeek: 0,
+    totalQuestionsAnswered: 0,
+    questionsAnsweredToday: 0,
+    hasAnySession: false,
+  );
+
+  static _JourneyActivity from(List<PracticeSessionResult> history) {
+    final now = DateTime.now();
+    final today = DateTime(now.year, now.month, now.day);
+    final weekStart = today.subtract(const Duration(days: 6));
+    final activeDays = <DateTime>{};
+    var totalQuestions = 0;
+    var questionsToday = 0;
+    for (final session in history) {
+      final day = DateTime(session.completedAt.year, session.completedAt.month,
+          session.completedAt.day);
+      totalQuestions += session.questions.length;
+      if (!day.isBefore(weekStart)) activeDays.add(day);
+      if (day == today) questionsToday += session.questions.length;
+    }
+    return _JourneyActivity(
+      activeDaysThisWeek: activeDays.length,
+      totalQuestionsAnswered: totalQuestions,
+      questionsAnsweredToday: questionsToday,
+      hasAnySession: history.isNotEmpty,
+    );
+  }
+}
 
 /// The "Journey" tab — the home for a learner's progress narrative: streaks,
 /// achievements, and daily goals. Split out of Home so the dashboard stays a
@@ -18,64 +67,82 @@ class JourneyScreen extends StatelessWidget {
     final bottomPadding =
         MediaQuery.viewPaddingOf(context).bottom + AppSpacing.xl;
 
-    return SingleChildScrollView(
-      key: const PageStorageKey<String>('journey'),
-      padding: EdgeInsets.only(bottom: bottomPadding),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            l10n.journeyTitle,
-            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
-          ),
-          const SizedBox(height: 4),
-          Text(
-            l10n.journeySubtitle,
-            style: const TextStyle(color: Color(0xFF8A9BB8), fontSize: 13),
-          ),
-          const SizedBox(height: AppSpacing.lg),
-          const _MathsJourneyCard(),
-          const SizedBox(height: AppSpacing.lg),
-          SectionLabel(text: l10n.homeSectionProgress),
-          const SizedBox(height: AppSpacing.sm),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
+    return FutureBuilder<List<PracticeSessionResult>>(
+      future: SessionHistoryService.instance.load(),
+      builder: (context, snapshot) {
+        final activity = snapshot.hasData
+            ? _JourneyActivity.from(snapshot.data!)
+            : _JourneyActivity.empty;
+        return SingleChildScrollView(
+          key: const PageStorageKey<String>('journey'),
+          padding: EdgeInsets.only(bottom: bottomPadding),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Expanded(
-                child: _ProgressCompactCard(
-                  icon: Icons.local_fire_department,
-                  iconColor: const Color(0xFFFF6B35),
-                  header: l10n.homeStreakHeader,
-                  value: '1',
-                  label: l10n.homeStreakFirstDay,
-                ),
+              Text(
+                l10n.journeyTitle,
+                style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
               ),
-              const SizedBox(width: AppSpacing.sm),
-              Expanded(
-                child: _ProgressCompactCard(
-                  icon: Icons.calendar_today,
-                  iconColor: const Color(0xFF5B8EFF),
-                  header: l10n.homeThisWeekHeader,
-                  value: '1/5',
-                  label: l10n.homeDaysActive,
-                ),
+              const SizedBox(height: 4),
+              Text(
+                l10n.journeySubtitle,
+                style: const TextStyle(color: Color(0xFF8A9BB8), fontSize: 13),
               ),
+              const SizedBox(height: AppSpacing.lg),
+              const _MathsJourneyCard(),
+              const SizedBox(height: AppSpacing.lg),
+              SectionLabel(text: l10n.homeSectionProgress),
+              const SizedBox(height: AppSpacing.sm),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: ValueListenableBuilder<int>(
+                      valueListenable: StreakService.instance.days,
+                      builder: (context, days, _) => _ProgressCompactCard(
+                        icon: Icons.local_fire_department,
+                        iconColor: const Color(0xFFFF6B35),
+                        header: l10n.homeStreakHeader,
+                        value: '$days',
+                        label: days == 0
+                            ? l10n.journeyCardStartStreakToday
+                            : days == 1
+                                ? l10n.homeStreakFirstDay
+                                : l10n.journeyCardStreakDays(days),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: AppSpacing.sm),
+                  Expanded(
+                    child: _ProgressCompactCard(
+                      icon: Icons.calendar_today,
+                      iconColor: const Color(0xFF5B8EFF),
+                      header: l10n.homeThisWeekHeader,
+                      value: '${activity.activeDaysThisWeek}/7',
+                      label: l10n.homeDaysActive,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: AppSpacing.lg),
+              SectionLabel(text: l10n.homeSectionAchievements),
+              const SizedBox(height: AppSpacing.sm),
+              const _AchievementsCard(),
+              const SizedBox(height: 10),
+              _AchievementBadgesRow(
+                hasAnySession: activity.hasAnySession,
+                totalQuestionsAnswered: activity.totalQuestionsAnswered,
+              ),
+              const SizedBox(height: AppSpacing.lg),
+              SectionLabel(text: l10n.homeDailyGoalTitle),
+              const SizedBox(height: AppSpacing.sm),
+              _DailyGoalCard(questionsAnsweredToday: activity.questionsAnsweredToday),
             ],
           ),
-          const SizedBox(height: AppSpacing.lg),
-          SectionLabel(text: l10n.homeSectionAchievements),
-          const SizedBox(height: AppSpacing.sm),
-          const _AchievementsCard(),
-          const SizedBox(height: 10),
-          const _AchievementBadgesRow(),
-          const SizedBox(height: AppSpacing.lg),
-          SectionLabel(text: l10n.homeDailyGoalTitle),
-          const SizedBox(height: AppSpacing.sm),
-          const _DailyGoalCard(),
-        ],
-      ),
+        );
+      },
     );
   }
 }
@@ -85,25 +152,45 @@ class JourneyScreen extends StatelessWidget {
 class _MathsJourneyCard extends StatelessWidget {
   const _MathsJourneyCard();
 
-  static const _goalCopy = {
-    'confidence': 'building confidence',
-    'school': 'improving school maths',
-    'exams': 'exam preparation',
-    'challenge': 'challenge problems',
-    'parent_confidence': 'building confidence',
-    'parent_gaps': 'finding learning gaps',
-    'parent_progress': 'tracking progress over time',
-    'parent_gcse': 'GCSE preparation',
-  };
+  static String? _goalCopy(AppLocalizations l10n, String? goal) {
+    switch (goal) {
+      case 'confidence':
+      case 'parent_confidence':
+        return l10n.journeyCardGoalConfidence;
+      case 'school':
+        return l10n.journeyCardGoalSchool;
+      case 'exams':
+        return l10n.journeyCardGoalExams;
+      case 'challenge':
+        return l10n.journeyCardGoalChallenge;
+      case 'parent_gaps':
+        return l10n.journeyCardGoalParentGaps;
+      case 'parent_progress':
+        return l10n.journeyCardGoalParentProgress;
+      case 'parent_gcse':
+        return l10n.journeyCardGoalParentGcse;
+      case 'teacher_monitor':
+        return l10n.journeyCardGoalTeacherMonitor;
+      case 'teacher_assign':
+        return l10n.journeyCardGoalTeacherAssign;
+      case 'teacher_exams':
+        return l10n.journeyCardGoalExams;
+      case 'teacher_explore':
+        return l10n.journeyCardGoalTeacherExplore;
+      default:
+        return null;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return ValueListenableBuilder<String?>(
       valueListenable: OnboardingProfileService.instance.childName,
       builder: (context, childName, _) {
         final title = (childName != null && childName.isNotEmpty)
-            ? "$childName's Maths Journey"
-            : 'My Maths Journey';
+            ? l10n.journeyCardTitleNamed(childName)
+            : l10n.journeyCardTitleDefault;
         return Container(
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
@@ -147,11 +234,11 @@ class _MathsJourneyCard extends StatelessWidget {
               ValueListenableBuilder<String?>(
                 valueListenable: OnboardingProfileService.instance.goal,
                 builder: (context, goal, _) {
-                  final focus = _goalCopy[goal];
+                  final focus = _goalCopy(l10n, goal);
                   return _JourneyRow(
                     icon: Icons.center_focus_strong,
-                    label: 'Current focus',
-                    value: focus != null ? 'You are $focus' : 'Getting started',
+                    label: l10n.journeyCardCurrentFocusLabel,
+                    value: focus ?? l10n.journeyCardGettingStarted,
                   );
                 },
               ),
@@ -173,18 +260,22 @@ class _MathsJourneyCard extends StatelessWidget {
                     children: [
                       _JourneyRow(
                         icon: Icons.local_fire_department,
-                        label: 'Consistency',
+                        label: l10n.journeyCardCurrentStreakLabel,
                         value: days == 0
-                            ? 'Start your streak today'
-                            : '$days-day streak',
+                            ? l10n.journeyCardStartStreakToday
+                            : l10n.journeyCardStreakDays(days),
                       ),
                       const SizedBox(height: 10),
                       _JourneyRow(
                         icon: Icons.flag_outlined,
-                        label: 'Next milestone',
-                        value: nextMilestone != null
-                            ? '$daysToGo day${daysToGo == 1 ? '' : 's'} to your $nextMilestone-day streak'
-                            : "You've reached every streak milestone!",
+                        label: l10n.journeyCardNextMilestoneLabel,
+                        value: nextMilestone == null
+                            ? l10n.journeyCardAllMilestonesReached
+                            : daysToGo == 1
+                                ? l10n.journeyCardDaysToMilestoneOne(
+                                    nextMilestone)
+                                : l10n.journeyCardDaysToMilestoneMany(
+                                    daysToGo, nextMilestone),
                       ),
                     ],
                   );
@@ -321,64 +412,72 @@ class _AchievementsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(AppSpacing.md),
-        child: Row(
-          children: [
-            Container(
-              width: 44,
-              height: 44,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                    const Color(0xFF3D2A00),
-                    Color.lerp(const Color(0xFF3D2A00), const Color(0xFFFFBD00),
-                        0.15)!,
-                  ],
-                ),
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [
-                  BoxShadow(
-                    color: const Color(0xFFFFBD00).withValues(alpha: 0.2),
-                    blurRadius: 8,
-                    offset: const Offset(0, 2),
-                  ),
-                ],
-              ),
-              child: const Icon(
-                Icons.verified,
-                color: Color(0xFFFFBD00),
-                size: 32,
-              ),
-            ),
-            const SizedBox(width: AppSpacing.md),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    l10n.homeAchievementStreakTitle,
-                    style: const TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+    return ValueListenableBuilder<int>(
+      valueListenable: StreakService.instance.days,
+      builder: (context, days, _) {
+        final unlocked = StreakService.milestones
+            .where((milestone) => milestone <= days)
+            .isNotEmpty;
+        final iconBase = unlocked ? const Color(0xFF3D2A00) : const Color(0xFF132040);
+        final iconColor = unlocked ? const Color(0xFFFFBD00) : const Color(0xFF4A6080);
+        return Card(
+          child: Padding(
+            padding: const EdgeInsets.all(AppSpacing.md),
+            child: Row(
+              children: [
+                Container(
+                  width: 44,
+                  height: 44,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [iconBase, Color.lerp(iconBase, iconColor, 0.15)!],
                     ),
+                    borderRadius: BorderRadius.circular(12),
+                    boxShadow: unlocked
+                        ? [
+                            BoxShadow(
+                              color: iconColor.withValues(alpha: 0.2),
+                              blurRadius: 8,
+                              offset: const Offset(0, 2),
+                            ),
+                          ]
+                        : null,
                   ),
-                  const SizedBox(height: 2),
-                  Text(
-                    l10n.homeAchievementStreakSubtitle,
-                    style:
-                        const TextStyle(fontSize: 13, color: Color(0xFF8A9BB8)),
+                  child: Icon(Icons.verified, color: iconColor, size: 32),
+                ),
+                const SizedBox(width: AppSpacing.md),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        unlocked
+                            ? l10n.homeAchievementStreakTitle
+                            : l10n.journeyCardCurrentStreakLabel,
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: unlocked ? Colors.white : const Color(0xFF8A9DC0),
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      Text(
+                        unlocked
+                            ? l10n.homeAchievementStreakSubtitle
+                            : l10n.homeAchievementStreakLocked,
+                        style: const TextStyle(
+                            fontSize: 13, color: Color(0xFF8A9BB8)),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }
@@ -386,10 +485,18 @@ class _AchievementsCard extends StatelessWidget {
 // ─── Achievement badges row ────────────────────────────────────────────────────
 
 class _AchievementBadgesRow extends StatelessWidget {
-  const _AchievementBadgesRow();
+  final bool hasAnySession;
+  final int totalQuestionsAnswered;
+
+  const _AchievementBadgesRow({
+    required this.hasAnySession,
+    required this.totalQuestionsAnswered,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final tenQuestionsUnlocked = totalQuestionsAnswered >= 10;
     return SizedBox(
       height: 86,
       child: ListView(
@@ -397,22 +504,24 @@ class _AchievementBadgesRow extends StatelessWidget {
         children: [
           _AchievementChip(
             icon: Icons.emoji_events,
-            label: AppLocalizations.of(context).homeBadgeFirstSession,
-            sublabel: AppLocalizations.of(context).homeAchievementUnlocked,
-            unlocked: true,
+            label: l10n.homeBadgeFirstSession,
+            sublabel: hasAnySession ? l10n.homeAchievementUnlocked : l10n.homeBadgeLocked,
+            unlocked: hasAnySession,
           ),
           const SizedBox(width: 10),
           _AchievementChip(
             icon: Icons.quiz_outlined,
-            label: AppLocalizations.of(context).homeBadgeTenQuestions,
-            sublabel: '4 / 10',
-            unlocked: false,
+            label: l10n.homeBadgeTenQuestions,
+            sublabel: tenQuestionsUnlocked
+                ? l10n.homeAchievementUnlocked
+                : '${min(totalQuestionsAnswered, 10)} / 10',
+            unlocked: tenQuestionsUnlocked,
           ),
           const SizedBox(width: 10),
           _AchievementChip(
             icon: Icons.functions,
-            label: AppLocalizations.of(context).homeBadgeAlgebraStarter,
-            sublabel: AppLocalizations.of(context).homeBadgeLocked,
+            label: l10n.homeBadgeAlgebraStarter,
+            sublabel: l10n.homeBadgeLocked,
             unlocked: false,
           ),
         ],
@@ -484,13 +593,16 @@ class _AchievementChip extends StatelessWidget {
 // ─── Daily goal ────────────────────────────────────────────────────────────────
 
 class _DailyGoalCard extends StatelessWidget {
-  const _DailyGoalCard();
+  static const int _dailyTarget = 15;
 
-  static const double _progress = 7 / 15;
+  final int questionsAnsweredToday;
+
+  const _DailyGoalCard({required this.questionsAnsweredToday});
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final progress = (questionsAnsweredToday / _dailyTarget).clamp(0.0, 1.0);
     return Container(
       padding: const EdgeInsets.all(AppSpacing.md),
       decoration: BoxDecoration(
@@ -533,7 +645,7 @@ class _DailyGoalCard extends StatelessWidget {
                 ),
               ),
               Text(
-                l10n.homeDailyGoalProgress,
+                l10n.homeDailyGoalProgress(questionsAnsweredToday, _dailyTarget),
                 style: const TextStyle(
                   color: Color(0xFF34C759),
                   fontSize: 13,
@@ -545,11 +657,11 @@ class _DailyGoalCard extends StatelessWidget {
           const SizedBox(height: 10),
           ClipRRect(
             borderRadius: BorderRadius.circular(3),
-            child: const LinearProgressIndicator(
-              value: _progress,
+            child: LinearProgressIndicator(
+              value: progress,
               minHeight: 6,
-              backgroundColor: Color(0xFF1F3055),
-              valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF34C759)),
+              backgroundColor: const Color(0xFF1F3055),
+              valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFF34C759)),
             ),
           ),
         ],
