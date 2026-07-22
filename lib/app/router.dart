@@ -29,6 +29,17 @@ import '../screens/auth/forgot_password_screen.dart';
 import '../screens/packs/exam_packs_screen.dart';
 import '../screens/formulas/formula_library_screen.dart';
 import '../screens/explore/explore_math_intelligence_screen.dart';
+import '../screens/math_studio/math_studio_hub_screen.dart';
+import '../screens/build_confidence/build_confidence_screen.dart';
+import '../screens/mental_maths/mental_maths_hub_screen.dart';
+import '../screens/mental_maths/mental_maths_category_screen.dart';
+import '../screens/visual_maths/visual_maths_hub_screen.dart';
+import '../screens/visual_maths/number_line_screen.dart';
+import '../screens/visual_maths/fraction_bars_screen.dart';
+import '../screens/visual_maths/abacus_screen.dart';
+import '../screens/visual_maths/place_value_explorer_screen.dart';
+import '../screens/discovery/discovery_library_screen.dart';
+import '../screens/discovery/discovery_card_detail_screen.dart';
 import '../screens/settings/release_notes_screen.dart';
 import '../screens/settings/terms_screen.dart';
 import '../screens/mental_math/daily_teaser_detail_screen.dart';
@@ -108,6 +119,65 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: '/explore',
       builder: (context, state) => const ExploreMathIntelligenceScreen(),
+    ),
+
+    // ── Math Studio (curriculum-independent pillar, pushed above shell from
+    //     Home / the More sheet — no exam/curriculum selection required) ─────
+    GoRoute(
+      path: '/math-studio',
+      builder: (context, state) => const MathStudioHubScreen(),
+      routes: [
+        GoRoute(
+          path: 'build-confidence',
+          builder: (context, state) => const BuildConfidenceScreen(),
+        ),
+        GoRoute(
+          path: 'mental-maths',
+          builder: (context, state) => const MentalMathsHubScreen(),
+          routes: [
+            GoRoute(
+              path: ':categoryId',
+              builder: (context, state) => MentalMathsCategoryScreen(
+                categoryId: state.pathParameters['categoryId']!,
+              ),
+            ),
+          ],
+        ),
+        GoRoute(
+          path: 'visual-maths',
+          builder: (context, state) => const VisualMathsHubScreen(),
+          routes: [
+            GoRoute(
+              path: 'number-line',
+              builder: (context, state) => const NumberLineScreen(),
+            ),
+            GoRoute(
+              path: 'fraction-bars',
+              builder: (context, state) => const FractionBarsScreen(),
+            ),
+            GoRoute(
+              path: 'abacus',
+              builder: (context, state) => const AbacusScreen(),
+            ),
+            GoRoute(
+              path: 'place-value',
+              builder: (context, state) => const PlaceValueExplorerScreen(),
+            ),
+          ],
+        ),
+        GoRoute(
+          path: 'discovery',
+          builder: (context, state) => const DiscoveryLibraryScreen(),
+          routes: [
+            GoRoute(
+              path: ':cardId',
+              builder: (context, state) => DiscoveryCardDetailScreen(
+                cardId: state.pathParameters['cardId']!,
+              ),
+            ),
+          ],
+        ),
+      ],
     ),
 
     GoRoute(

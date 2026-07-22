@@ -455,6 +455,8 @@ class _HomeContentState extends State<_HomeContent> {
             const SizedBox(height: AppSpacing.sm),
             const _DailyMissionCard(),
             const SizedBox(height: AppSpacing.sm),
+            const _MathStudioCard(),
+            const SizedBox(height: AppSpacing.sm),
             const _MentalMathVaultCard(),
             const SizedBox(height: AppSpacing.sm),
             const _DailyBrainTeaserCard(),
@@ -556,6 +558,32 @@ class _HomeContentState extends State<_HomeContent> {
             const SizedBox(height: AppSpacing.md),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _MathStudioCard extends StatelessWidget {
+  const _MathStudioCard();
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    return Card(
+      child: ListTile(
+        contentPadding: const EdgeInsets.all(14),
+        leading: const Icon(
+          LucideIcons.sparkles,
+          color: Color(0xFFFFBD00),
+          size: 32,
+        ),
+        title: Text(
+          l10n.mathStudioNavCardTitle,
+          style: const TextStyle(fontWeight: FontWeight.bold),
+        ),
+        subtitle: Text(l10n.mathStudioNavCardSubtitle),
+        trailing: const Icon(Icons.chevron_right),
+        onTap: () => context.push('/math-studio'),
       ),
     );
   }

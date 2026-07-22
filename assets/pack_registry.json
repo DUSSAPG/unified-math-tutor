@@ -5,7 +5,8 @@
     { "id": "ks3", "filename": "KS3_bank_ok_10000.jsonl", "count": 10000 },
     { "id": "ks4", "filename": "KS4_merged_deduped.jsonl", "count": 18432 },
     { "id": "ks5", "filename": "KS5_merged_deduped.jsonl", "count": 8987 },
-    { "id": "all", "filename": "ALL_merged_deduped.jsonl", "count": 47419 }
+    { "id": "all", "filename": "ALL_merged_deduped.jsonl", "count": 47419 },
+    { "id": "build_confidence", "filename": "build_confidence_pack.jsonl", "count": 12 }
   ],
   "translatedLocales": {
     "de-CH": {

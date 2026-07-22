@@ -1,0 +1,34 @@
+{
+  "$comment": "Documentation-only schema for assets/config/discovery_cards.json. Not enforced by a JSON-schema validator at build time — lib/models/discovery_card.dart's DiscoveryCard.fromJson performs the equivalent fail-fast validation at load time, and test/discovery_card_schema_test.dart asserts every card in the bundled asset satisfies it (including per-locale text completeness for the 5 production locales).",
+  "version": "integer, top-level catalog version",
+  "cards": [
+    {
+      "id": "string, must match ^[a-z0-9]+(-[a-z0-9]+)+$, stable and never reused",
+      "category": "one of: everydayLife, shopping, cooking, sports, aviation, truckingLogistics, healthcare, engineeringConstruction, artDesign, gaming, businessFinance",
+      "sport": "one of: cricket, football, basketball, americanFootball, baseball, tennis — required if and only if category == sports, otherwise must be omitted/null",
+      "difficulty": "one of: foundation, intermediate, advanced",
+      "curriculumTags": "array, zero or more of: gcseFoundation, gcseHigher, igcse",
+      "illustrationAssetId": "string, stable key resolved by DiscoveryIllustration; RC1 renders every id via an accessible category-based placeholder (see AccessibleIllustrationFallback) rather than requiring a bundled image file",
+      "relatedDisciplineIds": "array of category-name strings (own taxonomy, not curriculum tags) used to cross-link 'Where you'll use this' to disciplines without a dedicated RC1 card, e.g. engineeringConstruction/artDesign/gaming/businessFinance",
+      "contentVersion": "integer >= 1, bump whenever this card's text or answer changes",
+      "followUp": {
+        "answerValue": "number, program-readable and locale-invariant (the correct numeric answer to the follow-up question)",
+        "answerUnit": "string or null, e.g. '%', 'km/h', 'L' — kept out of translated prose so grading never depends on locale text"
+      },
+      "locales": {
+        "<bcp47 tag, e.g. en / en-GB / de-CH / fr-CH / it-CH>": {
+          "title": "string",
+          "scenario": "string, the real-world situation",
+          "challengeQuestion": "string, the question posed before Reveal",
+          "thinkPrompt": "string, a short low-pressure prompt shown in the Think state",
+          "workedSteps": "array of 2-5 strings, the deterministic step-by-step solution shown in Reveal",
+          "explanation": "string, plain-language explanation of the underlying concept",
+          "whereYoullUseThis": "string, real-world/career connection",
+          "followUpQuestion": "string, one practice question reusing the same concept with different numbers",
+          "followUpAnswerText": "string, the worked answer to the follow-up (prose form of followUp.answerValue/answerUnit)",
+          "illustrationAlt": "string, screen-reader description of the (placeholder or future) illustration"
+        }
+      }
+    }
+  ]
+}

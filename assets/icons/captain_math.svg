@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- RC1 placeholder: simple bouncing sphere wearing a cap. Stable asset id
+       "captain_math"; bounded animation is applied externally by
+       CaptainMathCard/CaptainMathBounce, never baked into this file, so a
+       richer future character can drop in without changing the interface. -->
+  <ellipse cx="50" cy="86" rx="22" ry="5" fill="#000000" opacity="0.18" />
+  <circle cx="50" cy="54" r="30" fill="#5B8EFF" />
+  <circle cx="41" cy="48" r="4.2" fill="#0B1120" />
+  <circle cx="61" cy="48" r="4.2" fill="#0B1120" />
+  <path d="M38 64 Q50 74 62 64" stroke="#0B1120" stroke-width="3.2" fill="none" stroke-linecap="round" />
+  <path d="M22 34 Q50 12 78 34 L78 40 Q50 24 22 40 Z" fill="#FFBD00" />
+  <path d="M60 26 Q78 26 78 40 L68 40 Q68 30 60 30 Z" fill="#FF9500" />
+</svg>

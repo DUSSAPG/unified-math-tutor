@@ -1,0 +1,335 @@
+{
+  "version": 1,
+  "categories": [
+    {
+      "id": "numberBonds",
+      "items": [
+        {
+          "id": "numberBonds-01",
+          "tier": "foundation",
+          "answerValue": 3,
+          "answerUnit": null,
+          "contentVersion": 1,
+          "locales": {
+            "en": { "prompt": "Find the missing number: 7 + ? = 10", "workedSteps": ["10 − 7 = 3"], "answerText": "3" },
+            "en-GB": { "prompt": "Find the missing number: 7 + ? = 10", "workedSteps": ["10 − 7 = 3"], "answerText": "3" },
+            "de-CH": { "prompt": "Finde die fehlende Zahl: 7 + ? = 10", "workedSteps": ["10 − 7 = 3"], "answerText": "3" },
+            "fr-CH": { "prompt": "Trouve le nombre manquant : 7 + ? = 10", "workedSteps": ["10 − 7 = 3"], "answerText": "3" },
+            "it-CH": { "prompt": "Trova il numero mancante: 7 + ? = 10", "workedSteps": ["10 − 7 = 3"], "answerText": "3" }
+          }
+        },
+        {
+          "id": "numberBonds-02",
+          "tier": "intermediate",
+          "answerValue": 36,
+          "answerUnit": null,
+          "contentVersion": 1,
+          "locales": {
+            "en": { "prompt": "What number bonds with 64 to make 100?", "workedSteps": ["100 − 64 = 36"], "answerText": "36" },
+            "en-GB": { "prompt": "What number bonds with 64 to make 100?", "workedSteps": ["100 − 64 = 36"], "answerText": "36" },
+            "de-CH": { "prompt": "Welche Zahl ergaenzt 64 zu 100?", "workedSteps": ["100 − 64 = 36"], "answerText": "36" },
+            "fr-CH": { "prompt": "Quel nombre complete 64 pour atteindre 100 ?", "workedSteps": ["100 − 64 = 36"], "answerText": "36" },
+            "it-CH": { "prompt": "Quale numero completa 64 per arrivare a 100?", "workedSteps": ["100 − 64 = 36"], "answerText": "36" }
+          }
+        }
+      ]
+    },
+    {
+      "id": "decomposition",
+      "items": [
+        {
+          "id": "decomposition-01",
+          "tier": "foundation",
+          "answerValue": 82,
+          "answerUnit": null,
+          "contentVersion": 1,
+          "locales": {
+            "en": { "prompt": "Work out 47 + 35 by splitting each number into tens and ones.", "workedSteps": ["47 = 40 + 7, 35 = 30 + 5", "40 + 30 = 70, and 7 + 5 = 12", "70 + 12 = 82"], "answerText": "82" },
+            "en-GB": { "prompt": "Work out 47 + 35 by splitting each number into tens and ones.", "workedSteps": ["47 = 40 + 7, 35 = 30 + 5", "40 + 30 = 70, and 7 + 5 = 12", "70 + 12 = 82"], "answerText": "82" },
+            "de-CH": { "prompt": "Berechne 47 + 35, indem du beide Zahlen in Zehner und Einer zerlegst.", "workedSteps": ["47 = 40 + 7, 35 = 30 + 5", "40 + 30 = 70, und 7 + 5 = 12", "70 + 12 = 82"], "answerText": "82" },
+            "fr-CH": { "prompt": "Calcule 47 + 35 en decomposant chaque nombre en dizaines et unites.", "workedSteps": ["47 = 40 + 7, 35 = 30 + 5", "40 + 30 = 70, et 7 + 5 = 12", "70 + 12 = 82"], "answerText": "82" },
+            "it-CH": { "prompt": "Calcola 47 + 35 scomponendo ogni numero in decine e unita.", "workedSteps": ["47 = 40 + 7, 35 = 30 + 5", "40 + 30 = 70, e 7 + 5 = 12", "70 + 12 = 82"], "answerText": "82" }
+          }
+        },
+        {
+          "id": "decomposition-02",
+          "tier": "intermediate",
+          "answerValue": 45,
+          "answerUnit": null,
+          "contentVersion": 1,
+          "locales": {
+            "en": { "prompt": "Work out 68 − 23 by splitting each number into tens and ones.", "workedSteps": ["68 = 60 + 8, 23 = 20 + 3", "60 − 20 = 40, and 8 − 3 = 5", "40 + 5 = 45"], "answerText": "45" },
+            "en-GB": { "prompt": "Work out 68 − 23 by splitting each number into tens and ones.", "workedSteps": ["68 = 60 + 8, 23 = 20 + 3", "60 − 20 = 40, and 8 − 3 = 5", "40 + 5 = 45"], "answerText": "45" },
+            "de-CH": { "prompt": "Berechne 68 − 23, indem du beide Zahlen in Zehner und Einer zerlegst.", "workedSteps": ["68 = 60 + 8, 23 = 20 + 3", "60 − 20 = 40, und 8 − 3 = 5", "40 + 5 = 45"], "answerText": "45" },
+            "fr-CH": { "prompt": "Calcule 68 − 23 en decomposant chaque nombre en dizaines et unites.", "workedSteps": ["68 = 60 + 8, 23 = 20 + 3", "60 − 20 = 40, et 8 − 3 = 5", "40 + 5 = 45"], "answerText": "45" },
+            "it-CH": { "prompt": "Calcola 68 − 23 scomponendo ogni numero in decine e unita.", "workedSteps": ["68 = 60 + 8, 23 = 20 + 3", "60 − 20 = 40, e 8 − 3 = 5", "40 + 5 = 45"], "answerText": "45" }
+          }
+        }
+      ]
+    },
+    {
+      "id": "compensation",
+      "items": [
+        {
+          "id": "compensation-01",
+          "tier": "foundation",
+          "answerValue": 145,
+          "answerUnit": null,
+          "contentVersion": 1,
+          "locales": {
+            "en": { "prompt": "Work out 99 + 46 using compensation.", "workedSteps": ["Round 99 up to 100 (add 1)", "100 + 46 = 146", "Subtract the 1 back: 146 − 1 = 145"], "answerText": "145" },
+            "en-GB": { "prompt": "Work out 99 + 46 using compensation.", "workedSteps": ["Round 99 up to 100 (add 1)", "100 + 46 = 146", "Subtract the 1 back: 146 − 1 = 145"], "answerText": "145" },
+            "de-CH": { "prompt": "Berechne 99 + 46 mit der Ausgleichsmethode.", "workedSteps": ["Runde 99 auf 100 auf (addiere 1)", "100 + 46 = 146", "Ziehe die 1 wieder ab: 146 − 1 = 145"], "answerText": "145" },
+            "fr-CH": { "prompt": "Calcule 99 + 46 par compensation.", "workedSteps": ["Arrondis 99 a 100 (ajoute 1)", "100 + 46 = 146", "Soustrais le 1 : 146 − 1 = 145"], "answerText": "145" },
+            "it-CH": { "prompt": "Calcola 99 + 46 usando la compensazione.", "workedSteps": ["Arrotonda 99 a 100 (aggiungi 1)", "100 + 46 = 146", "Sottrai l'1: 146 − 1 = 145"], "answerText": "145" }
+          }
+        },
+        {
+          "id": "compensation-02",
+          "tier": "intermediate",
+          "answerValue": 39,
+          "answerUnit": null,
+          "contentVersion": 1,
+          "locales": {
+            "en": { "prompt": "Work out 58 − 19 using compensation.", "workedSteps": ["Round 19 up to 20 and subtract: 58 − 20 = 38", "19 was 1 less than 20, so add that 1 back", "38 + 1 = 39"], "answerText": "39" },
+            "en-GB": { "prompt": "Work out 58 − 19 using compensation.", "workedSteps": ["Round 19 up to 20 and subtract: 58 − 20 = 38", "19 was 1 less than 20, so add that 1 back", "38 + 1 = 39"], "answerText": "39" },
+            "de-CH": { "prompt": "Berechne 58 − 19 mit der Ausgleichsmethode.", "workedSteps": ["Runde 19 auf 20 auf und subtrahiere: 58 − 20 = 38", "19 war 1 weniger als 20, also addiere die 1 zurueck", "38 + 1 = 39"], "answerText": "39" },
+            "fr-CH": { "prompt": "Calcule 58 − 19 par compensation.", "workedSteps": ["Arrondis 19 a 20 et soustrais : 58 − 20 = 38", "19 etait 1 de moins que 20, donc rajoute ce 1", "38 + 1 = 39"], "answerText": "39" },
+            "it-CH": { "prompt": "Calcola 58 − 19 usando la compensazione.", "workedSteps": ["Arrotonda 19 a 20 e sottrai: 58 − 20 = 38", "19 era 1 in meno di 20, quindi riaggiungi quell'1", "38 + 1 = 39"], "answerText": "39" }
+          }
+        }
+      ]
+    },
+    {
+      "id": "estimation",
+      "items": [
+        {
+          "id": "estimation-01",
+          "tier": "foundation",
+          "answerValue": 800,
+          "answerUnit": null,
+          "contentVersion": 1,
+          "locales": {
+            "en": { "prompt": "Estimate 297 + 512 by rounding each to the nearest hundred.", "workedSteps": ["297 ≈ 300, 512 ≈ 500", "300 + 500 = 800"], "answerText": "About 800" },
+            "en-GB": { "prompt": "Estimate 297 + 512 by rounding each to the nearest hundred.", "workedSteps": ["297 ≈ 300, 512 ≈ 500", "300 + 500 = 800"], "answerText": "About 800" },
+            "de-CH": { "prompt": "Schaetze 297 + 512, indem du auf die naechste Hundertern rundest.", "workedSteps": ["297 ≈ 300, 512 ≈ 500", "300 + 500 = 800"], "answerText": "Etwa 800" },
+            "fr-CH": { "prompt": "Estime 297 + 512 en arrondissant chacun a la centaine la plus proche.", "workedSteps": ["297 ≈ 300, 512 ≈ 500", "300 + 500 = 800"], "answerText": "Environ 800" },
+            "it-CH": { "prompt": "Stima 297 + 512 arrotondando ciascuno al centinaio piu vicino.", "workedSteps": ["297 ≈ 300, 512 ≈ 500", "300 + 500 = 800"], "answerText": "Circa 800" }
+          }
+        },
+        {
+          "id": "estimation-02",
+          "tier": "intermediate",
+          "answerValue": 1000,
+          "answerUnit": null,
+          "contentVersion": 1,
+          "locales": {
+            "en": { "prompt": "Estimate 48 × 22 by rounding each to the nearest ten.", "workedSteps": ["48 ≈ 50, 22 ≈ 20", "50 × 20 = 1000"], "answerText": "About 1000" },
+            "en-GB": { "prompt": "Estimate 48 × 22 by rounding each to the nearest ten.", "workedSteps": ["48 ≈ 50, 22 ≈ 20", "50 × 20 = 1000"], "answerText": "About 1000" },
+            "de-CH": { "prompt": "Schaetze 48 × 22, indem du auf die naechste Zehnerzahl rundest.", "workedSteps": ["48 ≈ 50, 22 ≈ 20", "50 × 20 = 1000"], "answerText": "Etwa 1000" },
+            "fr-CH": { "prompt": "Estime 48 × 22 en arrondissant chacun a la dizaine la plus proche.", "workedSteps": ["48 ≈ 50, 22 ≈ 20", "50 × 20 = 1000"], "answerText": "Environ 1000" },
+            "it-CH": { "prompt": "Stima 48 × 22 arrotondando ciascuno alla decina piu vicina.", "workedSteps": ["48 ≈ 50, 22 ≈ 20", "50 × 20 = 1000"], "answerText": "Circa 1000" }
+          }
+        }
+      ]
+    },
+    {
+      "id": "multiplicationStrategies",
+      "items": [
+        {
+          "id": "multiplicationStrategies-01",
+          "tier": "foundation",
+          "answerValue": 84,
+          "answerUnit": null,
+          "contentVersion": 1,
+          "locales": {
+            "en": { "prompt": "Work out 6 × 14 by splitting 14 into 10 and 4.", "workedSteps": ["6 × 10 = 60", "6 × 4 = 24", "60 + 24 = 84"], "answerText": "84" },
+            "en-GB": { "prompt": "Work out 6 × 14 by splitting 14 into 10 and 4.", "workedSteps": ["6 × 10 = 60", "6 × 4 = 24", "60 + 24 = 84"], "answerText": "84" },
+            "de-CH": { "prompt": "Berechne 6 × 14, indem du 14 in 10 und 4 zerlegst.", "workedSteps": ["6 × 10 = 60", "6 × 4 = 24", "60 + 24 = 84"], "answerText": "84" },
+            "fr-CH": { "prompt": "Calcule 6 × 14 en decomposant 14 en 10 et 4.", "workedSteps": ["6 × 10 = 60", "6 × 4 = 24", "60 + 24 = 84"], "answerText": "84" },
+            "it-CH": { "prompt": "Calcola 6 × 14 scomponendo 14 in 10 e 4.", "workedSteps": ["6 × 10 = 60", "6 × 4 = 24", "60 + 24 = 84"], "answerText": "84" }
+          }
+        },
+        {
+          "id": "multiplicationStrategies-02",
+          "tier": "intermediate",
+          "answerValue": 400,
+          "answerUnit": null,
+          "contentVersion": 1,
+          "locales": {
+            "en": { "prompt": "Work out 25 × 16 using doubling and halving.", "workedSteps": ["Halve 16 to get 8, and double 25 to get 50", "50 × 8 = 400"], "answerText": "400" },
+            "en-GB": { "prompt": "Work out 25 × 16 using doubling and halving.", "workedSteps": ["Halve 16 to get 8, and double 25 to get 50", "50 × 8 = 400"], "answerText": "400" },
+            "de-CH": { "prompt": "Berechne 25 × 16 durch Verdoppeln und Halbieren.", "workedSteps": ["Halbiere 16 zu 8, verdoppele 25 zu 50", "50 × 8 = 400"], "answerText": "400" },
+            "fr-CH": { "prompt": "Calcule 25 × 16 en doublant et en divisant par deux.", "workedSteps": ["Divise 16 par deux pour obtenir 8, double 25 pour obtenir 50", "50 × 8 = 400"], "answerText": "400" },
+            "it-CH": { "prompt": "Calcola 25 × 16 raddoppiando e dimezzando.", "workedSteps": ["Dimezza 16 a 8, raddoppia 25 a 50", "50 × 8 = 400"], "answerText": "400" }
+          }
+        }
+      ]
+    },
+    {
+      "id": "divisionStrategies",
+      "items": [
+        {
+          "id": "divisionStrategies-01",
+          "tier": "foundation",
+          "answerValue": 12,
+          "answerUnit": null,
+          "contentVersion": 1,
+          "locales": {
+            "en": { "prompt": "Work out 144 ÷ 12 by breaking 144 into friendly chunks.", "workedSteps": ["120 ÷ 12 = 10", "24 ÷ 12 = 2", "10 + 2 = 12"], "answerText": "12" },
+            "en-GB": { "prompt": "Work out 144 ÷ 12 by breaking 144 into friendly chunks.", "workedSteps": ["120 ÷ 12 = 10", "24 ÷ 12 = 2", "10 + 2 = 12"], "answerText": "12" },
+            "de-CH": { "prompt": "Berechne 144 ÷ 12, indem du 144 in einfache Teile zerlegst.", "workedSteps": ["120 ÷ 12 = 10", "24 ÷ 12 = 2", "10 + 2 = 12"], "answerText": "12" },
+            "fr-CH": { "prompt": "Calcule 144 ÷ 12 en decomposant 144 en parties faciles.", "workedSteps": ["120 ÷ 12 = 10", "24 ÷ 12 = 2", "10 + 2 = 12"], "answerText": "12" },
+            "it-CH": { "prompt": "Calcola 144 ÷ 12 scomponendo 144 in parti semplici.", "workedSteps": ["120 ÷ 12 = 10", "24 ÷ 12 = 2", "10 + 2 = 12"], "answerText": "12" }
+          }
+        },
+        {
+          "id": "divisionStrategies-02",
+          "tier": "intermediate",
+          "answerValue": 12,
+          "answerUnit": null,
+          "contentVersion": 1,
+          "locales": {
+            "en": { "prompt": "Work out 96 ÷ 8 using repeated halving.", "workedSteps": ["Halve both numbers: 96 ÷ 2 = 48, 8 ÷ 2 = 4", "48 ÷ 4 = 12"], "answerText": "12" },
+            "en-GB": { "prompt": "Work out 96 ÷ 8 using repeated halving.", "workedSteps": ["Halve both numbers: 96 ÷ 2 = 48, 8 ÷ 2 = 4", "48 ÷ 4 = 12"], "answerText": "12" },
+            "de-CH": { "prompt": "Berechne 96 ÷ 8 durch wiederholtes Halbieren.", "workedSteps": ["Halbiere beide Zahlen: 96 ÷ 2 = 48, 8 ÷ 2 = 4", "48 ÷ 4 = 12"], "answerText": "12" },
+            "fr-CH": { "prompt": "Calcule 96 ÷ 8 en divisant plusieurs fois par deux.", "workedSteps": ["Divise les deux nombres par deux : 96 ÷ 2 = 48, 8 ÷ 2 = 4", "48 ÷ 4 = 12"], "answerText": "12" },
+            "it-CH": { "prompt": "Calcola 96 ÷ 8 dimezzando ripetutamente.", "workedSteps": ["Dimezza entrambi i numeri: 96 ÷ 2 = 48, 8 ÷ 2 = 4", "48 ÷ 4 = 12"], "answerText": "12" }
+          }
+        }
+      ]
+    },
+    {
+      "id": "percentages",
+      "items": [
+        {
+          "id": "percentages-01",
+          "tier": "foundation",
+          "answerValue": 75,
+          "answerUnit": null,
+          "contentVersion": 1,
+          "locales": {
+            "en": { "prompt": "Find 10% of 250, then use it to find 30%.", "workedSteps": ["10% of 250 = 25", "30% = 3 × 25 = 75"], "answerText": "75" },
+            "en-GB": { "prompt": "Find 10% of 250, then use it to find 30%.", "workedSteps": ["10% of 250 = 25", "30% = 3 × 25 = 75"], "answerText": "75" },
+            "de-CH": { "prompt": "Finde 10% von 250 und nutze das, um 30% zu finden.", "workedSteps": ["10% von 250 = 25", "30% = 3 × 25 = 75"], "answerText": "75" },
+            "fr-CH": { "prompt": "Trouve 10% de 250, puis utilise-le pour trouver 30%.", "workedSteps": ["10% de 250 = 25", "30% = 3 × 25 = 75"], "answerText": "75" },
+            "it-CH": { "prompt": "Trova il 10% di 250, poi usalo per trovare il 30%.", "workedSteps": ["10% di 250 = 25", "30% = 3 × 25 = 75"], "answerText": "75" }
+          }
+        },
+        {
+          "id": "percentages-02",
+          "tier": "intermediate",
+          "answerValue": 9,
+          "answerUnit": null,
+          "contentVersion": 1,
+          "locales": {
+            "en": { "prompt": "Find 15% of 60 by combining 10% and 5%.", "workedSteps": ["10% of 60 = 6", "5% of 60 = 3", "6 + 3 = 9"], "answerText": "9" },
+            "en-GB": { "prompt": "Find 15% of 60 by combining 10% and 5%.", "workedSteps": ["10% of 60 = 6", "5% of 60 = 3", "6 + 3 = 9"], "answerText": "9" },
+            "de-CH": { "prompt": "Finde 15% von 60, indem du 10% und 5% kombinierst.", "workedSteps": ["10% von 60 = 6", "5% von 60 = 3", "6 + 3 = 9"], "answerText": "9" },
+            "fr-CH": { "prompt": "Trouve 15% de 60 en combinant 10% et 5%.", "workedSteps": ["10% de 60 = 6", "5% de 60 = 3", "6 + 3 = 9"], "answerText": "9" },
+            "it-CH": { "prompt": "Trova il 15% di 60 combinando il 10% e il 5%.", "workedSteps": ["10% di 60 = 6", "5% di 60 = 3", "6 + 3 = 9"], "answerText": "9" }
+          }
+        }
+      ]
+    },
+    {
+      "id": "fractions",
+      "items": [
+        {
+          "id": "fractions-01",
+          "tier": "foundation",
+          "answerValue": 22,
+          "answerUnit": null,
+          "contentVersion": 1,
+          "locales": {
+            "en": { "prompt": "Work out 1/4 of 88.", "workedSteps": ["88 ÷ 4 = 22"], "answerText": "22" },
+            "en-GB": { "prompt": "Work out 1/4 of 88.", "workedSteps": ["88 ÷ 4 = 22"], "answerText": "22" },
+            "de-CH": { "prompt": "Berechne 1/4 von 88.", "workedSteps": ["88 ÷ 4 = 22"], "answerText": "22" },
+            "fr-CH": { "prompt": "Calcule 1/4 de 88.", "workedSteps": ["88 ÷ 4 = 22"], "answerText": "22" },
+            "it-CH": { "prompt": "Calcola 1/4 di 88.", "workedSteps": ["88 ÷ 4 = 22"], "answerText": "22" }
+          }
+        },
+        {
+          "id": "fractions-02",
+          "tier": "intermediate",
+          "answerValue": 27,
+          "answerUnit": null,
+          "contentVersion": 1,
+          "locales": {
+            "en": { "prompt": "Work out 3/5 of 45.", "workedSteps": ["45 ÷ 5 = 9", "9 × 3 = 27"], "answerText": "27" },
+            "en-GB": { "prompt": "Work out 3/5 of 45.", "workedSteps": ["45 ÷ 5 = 9", "9 × 3 = 27"], "answerText": "27" },
+            "de-CH": { "prompt": "Berechne 3/5 von 45.", "workedSteps": ["45 ÷ 5 = 9", "9 × 3 = 27"], "answerText": "27" },
+            "fr-CH": { "prompt": "Calcule 3/5 de 45.", "workedSteps": ["45 ÷ 5 = 9", "9 × 3 = 27"], "answerText": "27" },
+            "it-CH": { "prompt": "Calcola 3/5 di 45.", "workedSteps": ["45 ÷ 5 = 9", "9 × 3 = 27"], "answerText": "27" }
+          }
+        }
+      ]
+    },
+    {
+      "id": "placeValue",
+      "items": [
+        {
+          "id": "placeValue-01",
+          "tier": "foundation",
+          "answerValue": 700,
+          "answerUnit": null,
+          "contentVersion": 1,
+          "locales": {
+            "en": { "prompt": "What is the value of the 7 in 3,742?", "workedSteps": ["The 7 is in the hundreds place", "Its value is 700"], "answerText": "700" },
+            "en-GB": { "prompt": "What is the value of the 7 in 3,742?", "workedSteps": ["The 7 is in the hundreds place", "Its value is 700"], "answerText": "700" },
+            "de-CH": { "prompt": "Welchen Wert hat die 7 in 3742?", "workedSteps": ["Die 7 steht an der Hunderterstelle", "Ihr Wert ist 700"], "answerText": "700" },
+            "fr-CH": { "prompt": "Quelle est la valeur du 7 dans 3742 ?", "workedSteps": ["Le 7 est a la position des centaines", "Sa valeur est 700"], "answerText": "700" },
+            "it-CH": { "prompt": "Qual e il valore del 7 in 3742?", "workedSteps": ["Il 7 e nella posizione delle centinaia", "Il suo valore e 700"], "answerText": "700" }
+          }
+        },
+        {
+          "id": "placeValue-02",
+          "tier": "intermediate",
+          "answerValue": 640,
+          "answerUnit": null,
+          "contentVersion": 1,
+          "locales": {
+            "en": { "prompt": "Multiply 6.4 by 100 using place value.", "workedSteps": ["Each digit moves 2 places to the left", "6.4 × 100 = 640"], "answerText": "640" },
+            "en-GB": { "prompt": "Multiply 6.4 by 100 using place value.", "workedSteps": ["Each digit moves 2 places to the left", "6.4 × 100 = 640"], "answerText": "640" },
+            "de-CH": { "prompt": "Multipliziere 6.4 mit 100 mithilfe des Stellenwerts.", "workedSteps": ["Jede Ziffer rueckt 2 Stellen nach links", "6.4 × 100 = 640"], "answerText": "640" },
+            "fr-CH": { "prompt": "Multiplie 6.4 par 100 en utilisant la valeur de position.", "workedSteps": ["Chaque chiffre se decale de 2 positions vers la gauche", "6.4 × 100 = 640"], "answerText": "640" },
+            "it-CH": { "prompt": "Moltiplica 6.4 per 100 usando il valore posizionale.", "workedSteps": ["Ogni cifra si sposta di 2 posizioni a sinistra", "6.4 × 100 = 640"], "answerText": "640" }
+          }
+        }
+      ]
+    },
+    {
+      "id": "patternRecognition",
+      "items": [
+        {
+          "id": "patternRecognition-01",
+          "tier": "foundation",
+          "answerValue": 48,
+          "answerUnit": null,
+          "contentVersion": 1,
+          "locales": {
+            "en": { "prompt": "What comes next: 3, 6, 12, 24, ?", "workedSteps": ["Each term doubles the one before it", "24 × 2 = 48"], "answerText": "48" },
+            "en-GB": { "prompt": "What comes next: 3, 6, 12, 24, ?", "workedSteps": ["Each term doubles the one before it", "24 × 2 = 48"], "answerText": "48" },
+            "de-CH": { "prompt": "Was kommt als naechstes: 3, 6, 12, 24, ?", "workedSteps": ["Jede Zahl ist doppelt so gross wie die vorherige", "24 × 2 = 48"], "answerText": "48" },
+            "fr-CH": { "prompt": "Que vient ensuite : 3, 6, 12, 24, ?", "workedSteps": ["Chaque terme est le double du precedent", "24 × 2 = 48"], "answerText": "48" },
+            "it-CH": { "prompt": "Cosa viene dopo: 3, 6, 12, 24, ?", "workedSteps": ["Ogni termine e il doppio del precedente", "24 × 2 = 48"], "answerText": "48" }
+          }
+        },
+        {
+          "id": "patternRecognition-02",
+          "tier": "intermediate",
+          "answerValue": 20,
+          "answerUnit": null,
+          "contentVersion": 1,
+          "locales": {
+            "en": { "prompt": "What comes next: 2, 5, 9, 14, ?", "workedSteps": ["The gaps increase by 1 each time: +3, +4, +5", "14 + 6 = 20"], "answerText": "20" },
+            "en-GB": { "prompt": "What comes next: 2, 5, 9, 14, ?", "workedSteps": ["The gaps increase by 1 each time: +3, +4, +5", "14 + 6 = 20"], "answerText": "20" },
+            "de-CH": { "prompt": "Was kommt als naechstes: 2, 5, 9, 14, ?", "workedSteps": ["Die Abstaende wachsen jedes Mal um 1: +3, +4, +5", "14 + 6 = 20"], "answerText": "20" },
+            "fr-CH": { "prompt": "Que vient ensuite : 2, 5, 9, 14, ?", "workedSteps": ["Les ecarts augmentent de 1 a chaque fois : +3, +4, +5", "14 + 6 = 20"], "answerText": "20" },
+            "it-CH": { "prompt": "Cosa viene dopo: 2, 5, 9, 14, ?", "workedSteps": ["Gli scarti aumentano di 1 ogni volta: +3, +4, +5", "14 + 6 = 20"], "answerText": "20" }
+          }
+        }
+      ]
+    }
+  ]
+}

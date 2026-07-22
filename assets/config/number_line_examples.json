@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "examples": [
+    { "id": "basic-whole-number", "min": 0, "max": 10, "step": 1, "target": 7 },
+    { "id": "negative-number", "min": -10, "max": 10, "step": 1, "target": -4 },
+    { "id": "simple-fraction", "min": 0, "max": 1, "step": 0.25, "target": 0.75 },
+    { "id": "decimal", "min": 0, "max": 5, "step": 0.5, "target": 2.5 }
+  ]
+}

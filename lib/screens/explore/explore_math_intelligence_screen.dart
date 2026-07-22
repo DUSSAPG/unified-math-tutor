@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
@@ -103,6 +104,14 @@ class ExploreMathIntelligenceScreen extends StatelessWidget {
                     title: l10n.homeFormulaLibraryTitle,
                     body: l10n.exploreFormulaLibraryBody,
                   ),
+                  const SizedBox(height: 10),
+                  _AvailableFeatureCard(
+                    icon: LucideIcons.sparkles,
+                    iconColor: const Color(0xFFFFBD00),
+                    title: l10n.mathStudioNavCardTitle,
+                    body: l10n.mathStudioHubTagline,
+                    onTap: () => context.push('/math-studio'),
+                  ),
                   const SizedBox(height: AppSpacing.lg),
                   _SectionLabel(
                     text: l10n.exploreInAtelierSection,
@@ -200,17 +209,19 @@ class _AvailableFeatureCard extends StatelessWidget {
   final Color iconColor;
   final String title;
   final String body;
+  final VoidCallback? onTap;
 
   const _AvailableFeatureCard({
     required this.icon,
     required this.iconColor,
     required this.title,
     required this.body,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    final card = Container(
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
         color: const Color(0xFF132040),
@@ -263,6 +274,16 @@ class _AvailableFeatureCard extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+    if (onTap == null) return card;
+    return Material(
+      color: Colors.transparent,
+      borderRadius: BorderRadius.circular(14),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(14),
+        onTap: onTap,
+        child: card,
       ),
     );
   }

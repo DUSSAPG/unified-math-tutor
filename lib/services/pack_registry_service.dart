@@ -145,6 +145,17 @@ class PackRegistryService {
     return pack;
   }
 
+  /// Generic lookup by raw registry id, bypassing the [practiceStages] gate.
+  /// Used by non-curriculum-stage packs such as Math Studio's Build
+  /// Confidence content.
+  Future<PackEntry> forId(String id) async {
+    final pack = (await load())[id.toLowerCase()];
+    if (pack == null) {
+      throw StateError('No pack registered with id "$id".');
+    }
+    return pack;
+  }
+
   void _applyTranslatedLocale(
     Map<String, dynamic> json,
     Map<String, PackEntry> packs,

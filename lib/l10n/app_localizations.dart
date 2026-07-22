@@ -1020,6 +1020,12 @@ abstract class AppLocalizations {
   /// **'7 days of learning in a row'**
   String get homeAchievementStreakSubtitle;
 
+  /// No description provided for @homeAchievementStreakLocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Reach a 7-day streak to unlock this'**
+  String get homeAchievementStreakLocked;
+
   /// No description provided for @homeSectionOxfordTrack.
   ///
   /// In en, this message translates to:
@@ -1761,8 +1767,8 @@ abstract class AppLocalizations {
   /// No description provided for @homeDailyGoalProgress.
   ///
   /// In en, this message translates to:
-  /// **'7 / 15 completed'**
-  String get homeDailyGoalProgress;
+  /// **'{completed} / {target} completed'**
+  String homeDailyGoalProgress(int completed, int target);
 
   /// No description provided for @tutorHowItWorksTitle.
   ///
@@ -2843,6 +2849,558 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'You are exploring the curriculum'**
   String get journeyCardGoalTeacherExplore;
+
+  /// No description provided for @mathStudioNavCardTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Math Studio'**
+  String get mathStudioNavCardTitle;
+
+  /// No description provided for @mathStudioNavCardSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Discover the maths you already use'**
+  String get mathStudioNavCardSubtitle;
+
+  /// No description provided for @mathStudioHubTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Math Studio'**
+  String get mathStudioHubTitle;
+
+  /// No description provided for @mathStudioHubTagline.
+  ///
+  /// In en, this message translates to:
+  /// **'Discover the mathematics you\'ve been using all your life.'**
+  String get mathStudioHubTagline;
+
+  /// No description provided for @mathStudioBuildConfidenceTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Build Confidence'**
+  String get mathStudioBuildConfidenceTitle;
+
+  /// No description provided for @mathStudioBuildConfidenceSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Gentle, untimed practice with worked explanations'**
+  String get mathStudioBuildConfidenceSubtitle;
+
+  /// No description provided for @mathStudioMentalMathsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Mental Maths'**
+  String get mathStudioMentalMathsTitle;
+
+  /// No description provided for @mathStudioMentalMathsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily number strategies, no pressure'**
+  String get mathStudioMentalMathsSubtitle;
+
+  /// No description provided for @mathStudioVisualMathsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Visual Maths'**
+  String get mathStudioVisualMathsTitle;
+
+  /// No description provided for @mathStudioVisualMathsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'See maths through models you can move'**
+  String get mathStudioVisualMathsSubtitle;
+
+  /// No description provided for @mathStudioDiscoveryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Discovery Library'**
+  String get mathStudioDiscoveryTitle;
+
+  /// No description provided for @mathStudioDiscoverySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Real-world maths, one card at a time'**
+  String get mathStudioDiscoverySubtitle;
+
+  /// No description provided for @mathStudioCategoryEverydayLife.
+  ///
+  /// In en, this message translates to:
+  /// **'Everyday Life'**
+  String get mathStudioCategoryEverydayLife;
+
+  /// No description provided for @mathStudioCategoryShopping.
+  ///
+  /// In en, this message translates to:
+  /// **'Shopping'**
+  String get mathStudioCategoryShopping;
+
+  /// No description provided for @mathStudioCategoryCooking.
+  ///
+  /// In en, this message translates to:
+  /// **'Cooking'**
+  String get mathStudioCategoryCooking;
+
+  /// No description provided for @mathStudioCategorySports.
+  ///
+  /// In en, this message translates to:
+  /// **'Sports'**
+  String get mathStudioCategorySports;
+
+  /// No description provided for @mathStudioCategoryAviation.
+  ///
+  /// In en, this message translates to:
+  /// **'Aviation'**
+  String get mathStudioCategoryAviation;
+
+  /// No description provided for @mathStudioCategoryTruckingLogistics.
+  ///
+  /// In en, this message translates to:
+  /// **'Trucking & Logistics'**
+  String get mathStudioCategoryTruckingLogistics;
+
+  /// No description provided for @mathStudioCategoryHealthcare.
+  ///
+  /// In en, this message translates to:
+  /// **'Healthcare'**
+  String get mathStudioCategoryHealthcare;
+
+  /// No description provided for @mathStudioCategoryEngineeringConstruction.
+  ///
+  /// In en, this message translates to:
+  /// **'Engineering & Construction'**
+  String get mathStudioCategoryEngineeringConstruction;
+
+  /// No description provided for @mathStudioCategoryArtDesign.
+  ///
+  /// In en, this message translates to:
+  /// **'Art & Design'**
+  String get mathStudioCategoryArtDesign;
+
+  /// No description provided for @mathStudioCategoryGaming.
+  ///
+  /// In en, this message translates to:
+  /// **'Gaming'**
+  String get mathStudioCategoryGaming;
+
+  /// No description provided for @mathStudioCategoryBusinessFinance.
+  ///
+  /// In en, this message translates to:
+  /// **'Business & Finance'**
+  String get mathStudioCategoryBusinessFinance;
+
+  /// No description provided for @mathStudioCategoryAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get mathStudioCategoryAll;
+
+  /// No description provided for @mathStudioDifficultyFoundation.
+  ///
+  /// In en, this message translates to:
+  /// **'Foundation'**
+  String get mathStudioDifficultyFoundation;
+
+  /// No description provided for @mathStudioDifficultyIntermediate.
+  ///
+  /// In en, this message translates to:
+  /// **'Intermediate'**
+  String get mathStudioDifficultyIntermediate;
+
+  /// No description provided for @mathStudioDifficultyAdvanced.
+  ///
+  /// In en, this message translates to:
+  /// **'Advanced'**
+  String get mathStudioDifficultyAdvanced;
+
+  /// No description provided for @mathStudioThinkLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Think it through'**
+  String get mathStudioThinkLabel;
+
+  /// No description provided for @mathStudioRevealButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Reveal the solution'**
+  String get mathStudioRevealButton;
+
+  /// No description provided for @mathStudioRevealedLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Worked solution'**
+  String get mathStudioRevealedLabel;
+
+  /// No description provided for @mathStudioWhereYoullUseThisLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Where you\'ll use this'**
+  String get mathStudioWhereYoullUseThisLabel;
+
+  /// No description provided for @mathStudioFollowUpLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Try one yourself'**
+  String get mathStudioFollowUpLabel;
+
+  /// No description provided for @mathStudioFollowUpCheckButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Check my answer'**
+  String get mathStudioFollowUpCheckButton;
+
+  /// No description provided for @mathStudioFollowUpCorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'Nice work — that\'s right.'**
+  String get mathStudioFollowUpCorrect;
+
+  /// No description provided for @mathStudioFollowUpTryAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Not quite — take another look at the steps above.'**
+  String get mathStudioFollowUpTryAgain;
+
+  /// No description provided for @mathStudioFollowUpAnswerLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Answer'**
+  String get mathStudioFollowUpAnswerLabel;
+
+  /// No description provided for @mathStudioExportButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Print or share'**
+  String get mathStudioExportButton;
+
+  /// No description provided for @mathStudioExportChallengeOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Challenge sheet'**
+  String get mathStudioExportChallengeOnly;
+
+  /// No description provided for @mathStudioExportSolutionOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Worked solution sheet'**
+  String get mathStudioExportSolutionOnly;
+
+  /// No description provided for @mathStudioExportCombined.
+  ///
+  /// In en, this message translates to:
+  /// **'Challenge + solution'**
+  String get mathStudioExportCombined;
+
+  /// No description provided for @mathStudioExportIncludeNameLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Include my name on this export'**
+  String get mathStudioExportIncludeNameLabel;
+
+  /// No description provided for @mathStudioExportShareAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Share'**
+  String get mathStudioExportShareAction;
+
+  /// No description provided for @captainMathCurious.
+  ///
+  /// In en, this message translates to:
+  /// **'There\'s a discovery here — take a look.'**
+  String get captainMathCurious;
+
+  /// No description provided for @captainMathEncouraging.
+  ///
+  /// In en, this message translates to:
+  /// **'Nice thinking — keep going.'**
+  String get captainMathEncouraging;
+
+  /// No description provided for @captainMathCalm.
+  ///
+  /// In en, this message translates to:
+  /// **'Notice how this connects to something else.'**
+  String get captainMathCalm;
+
+  /// No description provided for @captainMathCelebrating.
+  ///
+  /// In en, this message translates to:
+  /// **'Well done!'**
+  String get captainMathCelebrating;
+
+  /// No description provided for @mentalMathsCategoryNumberBonds.
+  ///
+  /// In en, this message translates to:
+  /// **'Number Bonds'**
+  String get mentalMathsCategoryNumberBonds;
+
+  /// No description provided for @mentalMathsCategoryDecomposition.
+  ///
+  /// In en, this message translates to:
+  /// **'Decomposition'**
+  String get mentalMathsCategoryDecomposition;
+
+  /// No description provided for @mentalMathsCategoryCompensation.
+  ///
+  /// In en, this message translates to:
+  /// **'Compensation'**
+  String get mentalMathsCategoryCompensation;
+
+  /// No description provided for @mentalMathsCategoryEstimation.
+  ///
+  /// In en, this message translates to:
+  /// **'Estimation'**
+  String get mentalMathsCategoryEstimation;
+
+  /// No description provided for @mentalMathsCategoryMultiplicationStrategies.
+  ///
+  /// In en, this message translates to:
+  /// **'Multiplication Strategies'**
+  String get mentalMathsCategoryMultiplicationStrategies;
+
+  /// No description provided for @mentalMathsCategoryDivisionStrategies.
+  ///
+  /// In en, this message translates to:
+  /// **'Division Strategies'**
+  String get mentalMathsCategoryDivisionStrategies;
+
+  /// No description provided for @mentalMathsCategoryPercentages.
+  ///
+  /// In en, this message translates to:
+  /// **'Percentages'**
+  String get mentalMathsCategoryPercentages;
+
+  /// No description provided for @mentalMathsCategoryFractions.
+  ///
+  /// In en, this message translates to:
+  /// **'Fractions'**
+  String get mentalMathsCategoryFractions;
+
+  /// No description provided for @mentalMathsCategoryPlaceValue.
+  ///
+  /// In en, this message translates to:
+  /// **'Place Value'**
+  String get mentalMathsCategoryPlaceValue;
+
+  /// No description provided for @mentalMathsCategoryPatternRecognition.
+  ///
+  /// In en, this message translates to:
+  /// **'Pattern Recognition'**
+  String get mentalMathsCategoryPatternRecognition;
+
+  /// No description provided for @mentalMathsTodaysChallenge.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s Challenge'**
+  String get mentalMathsTodaysChallenge;
+
+  /// No description provided for @mentalMathsUntimedNote.
+  ///
+  /// In en, this message translates to:
+  /// **'No timer — take the time you need.'**
+  String get mentalMathsUntimedNote;
+
+  /// No description provided for @buildConfidenceProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Question {current} of {total}'**
+  String buildConfidenceProgress(int current, int total);
+
+  /// No description provided for @buildConfidenceContinueButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get buildConfidenceContinueButton;
+
+  /// No description provided for @buildConfidenceCompletionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Nicely done'**
+  String get buildConfidenceCompletionTitle;
+
+  /// No description provided for @buildConfidenceCompletionBody.
+  ///
+  /// In en, this message translates to:
+  /// **'You worked through today\'s session at your own pace. Come back whenever you\'re ready for another.'**
+  String get buildConfidenceCompletionBody;
+
+  /// No description provided for @buildConfidenceDoneButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get buildConfidenceDoneButton;
+
+  /// No description provided for @visualMathsNumberLineTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Number Line'**
+  String get visualMathsNumberLineTitle;
+
+  /// No description provided for @visualMathsNumberLineSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Drag the point to explore numbers on a line'**
+  String get visualMathsNumberLineSubtitle;
+
+  /// No description provided for @visualMathsFractionBarsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Fraction Bars'**
+  String get visualMathsFractionBarsTitle;
+
+  /// No description provided for @visualMathsFractionBarsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Compare fractions as bars, side by side'**
+  String get visualMathsFractionBarsSubtitle;
+
+  /// No description provided for @visualMathsAbacusTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Animated Abacus'**
+  String get visualMathsAbacusTitle;
+
+  /// No description provided for @visualMathsAbacusSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'See place value in action, bead by bead'**
+  String get visualMathsAbacusSubtitle;
+
+  /// No description provided for @visualMathsPlaceValueTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Place Value Explorer'**
+  String get visualMathsPlaceValueTitle;
+
+  /// No description provided for @visualMathsPlaceValueSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Break numbers apart by their place value'**
+  String get visualMathsPlaceValueSubtitle;
+
+  /// No description provided for @visualMathsInteractiveBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Interactive'**
+  String get visualMathsInteractiveBadge;
+
+  /// No description provided for @visualMathsPreviewBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview'**
+  String get visualMathsPreviewBadge;
+
+  /// No description provided for @visualMathsComingSoonNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Interactive version coming in a future release.'**
+  String get visualMathsComingSoonNote;
+
+  /// No description provided for @visualMathsTryAnotherExample.
+  ///
+  /// In en, this message translates to:
+  /// **'Try another example'**
+  String get visualMathsTryAnotherExample;
+
+  /// No description provided for @numberLineExampleBasicWholeNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'A whole number on a 0 to 10 line'**
+  String get numberLineExampleBasicWholeNumber;
+
+  /// No description provided for @numberLineExampleNegativeNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'A negative number on a −10 to 10 line'**
+  String get numberLineExampleNegativeNumber;
+
+  /// No description provided for @numberLineExampleSimpleFraction.
+  ///
+  /// In en, this message translates to:
+  /// **'A fraction on a 0 to 1 line'**
+  String get numberLineExampleSimpleFraction;
+
+  /// No description provided for @numberLineExampleDecimal.
+  ///
+  /// In en, this message translates to:
+  /// **'A decimal on a 0 to 5 line'**
+  String get numberLineExampleDecimal;
+
+  /// No description provided for @fractionBarsCaption1.
+  ///
+  /// In en, this message translates to:
+  /// **'1/2 is exactly half of the whole bar.'**
+  String get fractionBarsCaption1;
+
+  /// No description provided for @fractionBarsCaption2.
+  ///
+  /// In en, this message translates to:
+  /// **'2/4 covers the same length as 1/2 — equivalent fractions.'**
+  String get fractionBarsCaption2;
+
+  /// No description provided for @fractionBarsCaption3.
+  ///
+  /// In en, this message translates to:
+  /// **'3/4 is more than half, less than the whole.'**
+  String get fractionBarsCaption3;
+
+  /// No description provided for @fractionBarsCaption4.
+  ///
+  /// In en, this message translates to:
+  /// **'5/8 is just over half of the whole bar.'**
+  String get fractionBarsCaption4;
+
+  /// No description provided for @abacusCaption1.
+  ///
+  /// In en, this message translates to:
+  /// **'One bead moved in the ones column represents 1.'**
+  String get abacusCaption1;
+
+  /// No description provided for @abacusCaption2.
+  ///
+  /// In en, this message translates to:
+  /// **'Ten ones regroup into a single bead in the tens column.'**
+  String get abacusCaption2;
+
+  /// No description provided for @abacusCaption3.
+  ///
+  /// In en, this message translates to:
+  /// **'A bead in the hundreds column is worth 100 ones.'**
+  String get abacusCaption3;
+
+  /// No description provided for @placeValueCaption1.
+  ///
+  /// In en, this message translates to:
+  /// **'3,742 breaks into 3 thousands, 7 hundreds, 4 tens, 2 ones.'**
+  String get placeValueCaption1;
+
+  /// No description provided for @placeValueCaption2.
+  ///
+  /// In en, this message translates to:
+  /// **'6.4 breaks into 6 ones and 4 tenths.'**
+  String get placeValueCaption2;
+
+  /// No description provided for @placeValueCaption3.
+  ///
+  /// In en, this message translates to:
+  /// **'805 breaks into 8 hundreds, 0 tens, 5 ones — the 0 holds the tens place.'**
+  String get placeValueCaption3;
+
+  /// No description provided for @abacusColumnHundreds.
+  ///
+  /// In en, this message translates to:
+  /// **'Hundreds'**
+  String get abacusColumnHundreds;
+
+  /// No description provided for @abacusColumnTens.
+  ///
+  /// In en, this message translates to:
+  /// **'Tens'**
+  String get abacusColumnTens;
+
+  /// No description provided for @abacusColumnOnes.
+  ///
+  /// In en, this message translates to:
+  /// **'Ones'**
+  String get abacusColumnOnes;
 }
 
 class _AppLocalizationsDelegate

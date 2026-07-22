@@ -488,6 +488,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get homeAchievementStreakSubtitle => '7 days of learning in a row';
 
   @override
+  String get homeAchievementStreakLocked =>
+      'Reach a 7-day streak to unlock this';
+
+  @override
   String get homeSectionOxfordTrack => 'Oxford Track';
 
   @override
@@ -893,7 +897,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get homeDailyGoalSubtitle => 'Solve 15 questions today';
 
   @override
-  String get homeDailyGoalProgress => '7 / 15 completed';
+  String homeDailyGoalProgress(int completed, int target) {
+    return '$completed / $target completed';
+  }
 
   @override
   String get tutorHowItWorksTitle => 'How Tutor Works';
@@ -1501,6 +1507,308 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get journeyCardGoalTeacherExplore =>
       'You are exploring the curriculum';
+
+  @override
+  String get mathStudioNavCardTitle => 'Math Studio';
+
+  @override
+  String get mathStudioNavCardSubtitle => 'Discover the maths you already use';
+
+  @override
+  String get mathStudioHubTitle => 'Math Studio';
+
+  @override
+  String get mathStudioHubTagline =>
+      'Discover the mathematics you\'ve been using all your life.';
+
+  @override
+  String get mathStudioBuildConfidenceTitle => 'Build Confidence';
+
+  @override
+  String get mathStudioBuildConfidenceSubtitle =>
+      'Gentle, untimed practice with worked explanations';
+
+  @override
+  String get mathStudioMentalMathsTitle => 'Mental Maths';
+
+  @override
+  String get mathStudioMentalMathsSubtitle =>
+      'Daily number strategies, no pressure';
+
+  @override
+  String get mathStudioVisualMathsTitle => 'Visual Maths';
+
+  @override
+  String get mathStudioVisualMathsSubtitle =>
+      'See maths through models you can move';
+
+  @override
+  String get mathStudioDiscoveryTitle => 'Discovery Library';
+
+  @override
+  String get mathStudioDiscoverySubtitle =>
+      'Real-world maths, one card at a time';
+
+  @override
+  String get mathStudioCategoryEverydayLife => 'Everyday Life';
+
+  @override
+  String get mathStudioCategoryShopping => 'Shopping';
+
+  @override
+  String get mathStudioCategoryCooking => 'Cooking';
+
+  @override
+  String get mathStudioCategorySports => 'Sports';
+
+  @override
+  String get mathStudioCategoryAviation => 'Aviation';
+
+  @override
+  String get mathStudioCategoryTruckingLogistics => 'Trucking & Logistics';
+
+  @override
+  String get mathStudioCategoryHealthcare => 'Healthcare';
+
+  @override
+  String get mathStudioCategoryEngineeringConstruction =>
+      'Engineering & Construction';
+
+  @override
+  String get mathStudioCategoryArtDesign => 'Art & Design';
+
+  @override
+  String get mathStudioCategoryGaming => 'Gaming';
+
+  @override
+  String get mathStudioCategoryBusinessFinance => 'Business & Finance';
+
+  @override
+  String get mathStudioCategoryAll => 'All';
+
+  @override
+  String get mathStudioDifficultyFoundation => 'Foundation';
+
+  @override
+  String get mathStudioDifficultyIntermediate => 'Intermediate';
+
+  @override
+  String get mathStudioDifficultyAdvanced => 'Advanced';
+
+  @override
+  String get mathStudioThinkLabel => 'Think it through';
+
+  @override
+  String get mathStudioRevealButton => 'Reveal the solution';
+
+  @override
+  String get mathStudioRevealedLabel => 'Worked solution';
+
+  @override
+  String get mathStudioWhereYoullUseThisLabel => 'Where you\'ll use this';
+
+  @override
+  String get mathStudioFollowUpLabel => 'Try one yourself';
+
+  @override
+  String get mathStudioFollowUpCheckButton => 'Check my answer';
+
+  @override
+  String get mathStudioFollowUpCorrect => 'Nice work — that\'s right.';
+
+  @override
+  String get mathStudioFollowUpTryAgain =>
+      'Not quite — take another look at the steps above.';
+
+  @override
+  String get mathStudioFollowUpAnswerLabel => 'Answer';
+
+  @override
+  String get mathStudioExportButton => 'Print or share';
+
+  @override
+  String get mathStudioExportChallengeOnly => 'Challenge sheet';
+
+  @override
+  String get mathStudioExportSolutionOnly => 'Worked solution sheet';
+
+  @override
+  String get mathStudioExportCombined => 'Challenge + solution';
+
+  @override
+  String get mathStudioExportIncludeNameLabel =>
+      'Include my name on this export';
+
+  @override
+  String get mathStudioExportShareAction => 'Share';
+
+  @override
+  String get captainMathCurious => 'There\'s a discovery here — take a look.';
+
+  @override
+  String get captainMathEncouraging => 'Nice thinking — keep going.';
+
+  @override
+  String get captainMathCalm => 'Notice how this connects to something else.';
+
+  @override
+  String get captainMathCelebrating => 'Well done!';
+
+  @override
+  String get mentalMathsCategoryNumberBonds => 'Number Bonds';
+
+  @override
+  String get mentalMathsCategoryDecomposition => 'Decomposition';
+
+  @override
+  String get mentalMathsCategoryCompensation => 'Compensation';
+
+  @override
+  String get mentalMathsCategoryEstimation => 'Estimation';
+
+  @override
+  String get mentalMathsCategoryMultiplicationStrategies =>
+      'Multiplication Strategies';
+
+  @override
+  String get mentalMathsCategoryDivisionStrategies => 'Division Strategies';
+
+  @override
+  String get mentalMathsCategoryPercentages => 'Percentages';
+
+  @override
+  String get mentalMathsCategoryFractions => 'Fractions';
+
+  @override
+  String get mentalMathsCategoryPlaceValue => 'Place Value';
+
+  @override
+  String get mentalMathsCategoryPatternRecognition => 'Pattern Recognition';
+
+  @override
+  String get mentalMathsTodaysChallenge => 'Today\'s Challenge';
+
+  @override
+  String get mentalMathsUntimedNote => 'No timer — take the time you need.';
+
+  @override
+  String buildConfidenceProgress(int current, int total) {
+    return 'Question $current of $total';
+  }
+
+  @override
+  String get buildConfidenceContinueButton => 'Continue';
+
+  @override
+  String get buildConfidenceCompletionTitle => 'Nicely done';
+
+  @override
+  String get buildConfidenceCompletionBody =>
+      'You worked through today\'s session at your own pace. Come back whenever you\'re ready for another.';
+
+  @override
+  String get buildConfidenceDoneButton => 'Done';
+
+  @override
+  String get visualMathsNumberLineTitle => 'Number Line';
+
+  @override
+  String get visualMathsNumberLineSubtitle =>
+      'Drag the point to explore numbers on a line';
+
+  @override
+  String get visualMathsFractionBarsTitle => 'Fraction Bars';
+
+  @override
+  String get visualMathsFractionBarsSubtitle =>
+      'Compare fractions as bars, side by side';
+
+  @override
+  String get visualMathsAbacusTitle => 'Animated Abacus';
+
+  @override
+  String get visualMathsAbacusSubtitle =>
+      'See place value in action, bead by bead';
+
+  @override
+  String get visualMathsPlaceValueTitle => 'Place Value Explorer';
+
+  @override
+  String get visualMathsPlaceValueSubtitle =>
+      'Break numbers apart by their place value';
+
+  @override
+  String get visualMathsInteractiveBadge => 'Interactive';
+
+  @override
+  String get visualMathsPreviewBadge => 'Preview';
+
+  @override
+  String get visualMathsComingSoonNote =>
+      'Interactive version coming in a future release.';
+
+  @override
+  String get visualMathsTryAnotherExample => 'Try another example';
+
+  @override
+  String get numberLineExampleBasicWholeNumber =>
+      'A whole number on a 0 to 10 line';
+
+  @override
+  String get numberLineExampleNegativeNumber =>
+      'A negative number on a −10 to 10 line';
+
+  @override
+  String get numberLineExampleSimpleFraction => 'A fraction on a 0 to 1 line';
+
+  @override
+  String get numberLineExampleDecimal => 'A decimal on a 0 to 5 line';
+
+  @override
+  String get fractionBarsCaption1 => '1/2 is exactly half of the whole bar.';
+
+  @override
+  String get fractionBarsCaption2 =>
+      '2/4 covers the same length as 1/2 — equivalent fractions.';
+
+  @override
+  String get fractionBarsCaption3 =>
+      '3/4 is more than half, less than the whole.';
+
+  @override
+  String get fractionBarsCaption4 => '5/8 is just over half of the whole bar.';
+
+  @override
+  String get abacusCaption1 =>
+      'One bead moved in the ones column represents 1.';
+
+  @override
+  String get abacusCaption2 =>
+      'Ten ones regroup into a single bead in the tens column.';
+
+  @override
+  String get abacusCaption3 =>
+      'A bead in the hundreds column is worth 100 ones.';
+
+  @override
+  String get placeValueCaption1 =>
+      '3,742 breaks into 3 thousands, 7 hundreds, 4 tens, 2 ones.';
+
+  @override
+  String get placeValueCaption2 => '6.4 breaks into 6 ones and 4 tenths.';
+
+  @override
+  String get placeValueCaption3 =>
+      '805 breaks into 8 hundreds, 0 tens, 5 ones — the 0 holds the tens place.';
+
+  @override
+  String get abacusColumnHundreds => 'Hundreds';
+
+  @override
+  String get abacusColumnTens => 'Tens';
+
+  @override
+  String get abacusColumnOnes => 'Ones';
 }
 
 /// The translations for French, as used in Switzerland (`fr_CH`).
@@ -1980,6 +2288,10 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
   String get homeAchievementStreakSubtitle => '7 jours d\'affilée';
 
   @override
+  String get homeAchievementStreakLocked =>
+      'Atteignez une série de 7 jours pour débloquer ceci';
+
+  @override
   String get homeSectionOxfordTrack => 'Parcours Oxford';
 
   @override
@@ -2368,7 +2680,9 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
   String get homeDailyGoalSubtitle => 'Résous 15 exercices aujourd\'hui';
 
   @override
-  String get homeDailyGoalProgress => '7 / 15 complétés';
+  String homeDailyGoalProgress(int completed, int target) {
+    return '$completed / $target complétés';
+  }
 
   @override
   String get tutorHowItWorksTitle => 'Comment fonctionne le tuteur';
@@ -2936,4 +3250,314 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get journeyCardGoalTeacherExplore => 'Tu explores le programme';
+
+  @override
+  String get mathStudioNavCardTitle => 'Math Studio';
+
+  @override
+  String get mathStudioNavCardSubtitle =>
+      'Decouvre les maths que tu utilises deja';
+
+  @override
+  String get mathStudioHubTitle => 'Math Studio';
+
+  @override
+  String get mathStudioHubTagline =>
+      'Decouvre les mathematiques que tu utilises depuis toujours.';
+
+  @override
+  String get mathStudioBuildConfidenceTitle => 'Renforcer la confiance';
+
+  @override
+  String get mathStudioBuildConfidenceSubtitle =>
+      'Entrainement doux et sans chrono, avec des explications detaillees';
+
+  @override
+  String get mathStudioMentalMathsTitle => 'Calcul mental';
+
+  @override
+  String get mathStudioMentalMathsSubtitle =>
+      'Strategies numeriques quotidiennes, sans pression';
+
+  @override
+  String get mathStudioVisualMathsTitle => 'Maths visuelles';
+
+  @override
+  String get mathStudioVisualMathsSubtitle =>
+      'Vivre les maths a travers des modeles que tu peux manipuler';
+
+  @override
+  String get mathStudioDiscoveryTitle => 'Bibliotheque de decouvertes';
+
+  @override
+  String get mathStudioDiscoverySubtitle =>
+      'Des maths bien reelles, une carte a la fois';
+
+  @override
+  String get mathStudioCategoryEverydayLife => 'Vie quotidienne';
+
+  @override
+  String get mathStudioCategoryShopping => 'Achats';
+
+  @override
+  String get mathStudioCategoryCooking => 'Cuisine';
+
+  @override
+  String get mathStudioCategorySports => 'Sport';
+
+  @override
+  String get mathStudioCategoryAviation => 'Aviation';
+
+  @override
+  String get mathStudioCategoryTruckingLogistics => 'Transport et logistique';
+
+  @override
+  String get mathStudioCategoryHealthcare => 'Sante';
+
+  @override
+  String get mathStudioCategoryEngineeringConstruction =>
+      'Ingenierie et construction';
+
+  @override
+  String get mathStudioCategoryArtDesign => 'Art et design';
+
+  @override
+  String get mathStudioCategoryGaming => 'Jeux video';
+
+  @override
+  String get mathStudioCategoryBusinessFinance => 'Commerce et finance';
+
+  @override
+  String get mathStudioCategoryAll => 'Tout';
+
+  @override
+  String get mathStudioDifficultyFoundation => 'Fondamental';
+
+  @override
+  String get mathStudioDifficultyIntermediate => 'Intermediaire';
+
+  @override
+  String get mathStudioDifficultyAdvanced => 'Avance';
+
+  @override
+  String get mathStudioThinkLabel => 'Reflechis a ton rythme';
+
+  @override
+  String get mathStudioRevealButton => 'Revele la solution';
+
+  @override
+  String get mathStudioRevealedLabel => 'Solution detaillee';
+
+  @override
+  String get mathStudioWhereYoullUseThisLabel => 'Ou tu utiliseras cela';
+
+  @override
+  String get mathStudioFollowUpLabel => 'A toi d\'essayer';
+
+  @override
+  String get mathStudioFollowUpCheckButton => 'Verifier ma reponse';
+
+  @override
+  String get mathStudioFollowUpCorrect => 'Bien joue — c\'est exact.';
+
+  @override
+  String get mathStudioFollowUpTryAgain =>
+      'Pas tout a fait — revois les etapes ci-dessus.';
+
+  @override
+  String get mathStudioFollowUpAnswerLabel => 'Reponse';
+
+  @override
+  String get mathStudioExportButton => 'Imprimer ou partager';
+
+  @override
+  String get mathStudioExportChallengeOnly => 'Fiche defi';
+
+  @override
+  String get mathStudioExportSolutionOnly => 'Fiche solution';
+
+  @override
+  String get mathStudioExportCombined => 'Defi + solution';
+
+  @override
+  String get mathStudioExportIncludeNameLabel =>
+      'Inclure mon nom sur cet export';
+
+  @override
+  String get mathStudioExportShareAction => 'Partager';
+
+  @override
+  String get captainMathCurious => 'Il y a une decouverte ici — regarde.';
+
+  @override
+  String get captainMathEncouraging => 'Bien pense — continue.';
+
+  @override
+  String get captainMathCalm => 'Remarque comment cela se relie a autre chose.';
+
+  @override
+  String get captainMathCelebrating => 'Bravo !';
+
+  @override
+  String get mentalMathsCategoryNumberBonds => 'Complements numeriques';
+
+  @override
+  String get mentalMathsCategoryDecomposition => 'Decomposition';
+
+  @override
+  String get mentalMathsCategoryCompensation => 'Compensation';
+
+  @override
+  String get mentalMathsCategoryEstimation => 'Estimation';
+
+  @override
+  String get mentalMathsCategoryMultiplicationStrategies =>
+      'Strategies de multiplication';
+
+  @override
+  String get mentalMathsCategoryDivisionStrategies => 'Strategies de division';
+
+  @override
+  String get mentalMathsCategoryPercentages => 'Pourcentages';
+
+  @override
+  String get mentalMathsCategoryFractions => 'Fractions';
+
+  @override
+  String get mentalMathsCategoryPlaceValue => 'Valeur de position';
+
+  @override
+  String get mentalMathsCategoryPatternRecognition =>
+      'Reconnaissance de motifs';
+
+  @override
+  String get mentalMathsTodaysChallenge => 'Le defi du jour';
+
+  @override
+  String get mentalMathsUntimedNote =>
+      'Pas de chronometre — prends le temps qu\'il te faut.';
+
+  @override
+  String buildConfidenceProgress(int current, int total) {
+    return 'Question $current sur $total';
+  }
+
+  @override
+  String get buildConfidenceContinueButton => 'Continuer';
+
+  @override
+  String get buildConfidenceCompletionTitle => 'Bien joue';
+
+  @override
+  String get buildConfidenceCompletionBody =>
+      'Tu as termine la session d\'aujourd\'hui a ton propre rythme. Reviens quand tu es pret pour la suivante.';
+
+  @override
+  String get buildConfidenceDoneButton => 'Termine';
+
+  @override
+  String get visualMathsNumberLineTitle => 'Droite numerique';
+
+  @override
+  String get visualMathsNumberLineSubtitle =>
+      'Fais glisser le point pour explorer les nombres sur une droite';
+
+  @override
+  String get visualMathsFractionBarsTitle => 'Barres de fractions';
+
+  @override
+  String get visualMathsFractionBarsSubtitle =>
+      'Compare des fractions sous forme de barres, cote a cote';
+
+  @override
+  String get visualMathsAbacusTitle => 'Boulier anime';
+
+  @override
+  String get visualMathsAbacusSubtitle =>
+      'Vois la valeur de position en action, boule par boule';
+
+  @override
+  String get visualMathsPlaceValueTitle => 'Explorateur de valeur de position';
+
+  @override
+  String get visualMathsPlaceValueSubtitle =>
+      'Decompose les nombres selon leur valeur de position';
+
+  @override
+  String get visualMathsInteractiveBadge => 'Interactif';
+
+  @override
+  String get visualMathsPreviewBadge => 'Apercu';
+
+  @override
+  String get visualMathsComingSoonNote =>
+      'Version interactive disponible dans une prochaine version.';
+
+  @override
+  String get visualMathsTryAnotherExample => 'Essayer un autre exemple';
+
+  @override
+  String get numberLineExampleBasicWholeNumber =>
+      'Un nombre entier sur une droite de 0 a 10';
+
+  @override
+  String get numberLineExampleNegativeNumber =>
+      'Un nombre negatif sur une droite de −10 a 10';
+
+  @override
+  String get numberLineExampleSimpleFraction =>
+      'Une fraction sur une droite de 0 a 1';
+
+  @override
+  String get numberLineExampleDecimal =>
+      'Un nombre decimal sur une droite de 0 a 5';
+
+  @override
+  String get fractionBarsCaption1 =>
+      '1/2 est exactement la moitie de la barre entiere.';
+
+  @override
+  String get fractionBarsCaption2 =>
+      '2/4 couvre la meme longueur que 1/2 — des fractions equivalentes.';
+
+  @override
+  String get fractionBarsCaption3 =>
+      '3/4 est plus que la moitie, moins que le tout.';
+
+  @override
+  String get fractionBarsCaption4 =>
+      '5/8 depasse tout juste la moitie de la barre entiere.';
+
+  @override
+  String get abacusCaption1 =>
+      'Une boule deplacee dans la colonne des unites represente 1.';
+
+  @override
+  String get abacusCaption2 =>
+      'Dix unites se regroupent en une boule dans la colonne des dizaines.';
+
+  @override
+  String get abacusCaption3 =>
+      'Une boule dans la colonne des centaines vaut 100 unites.';
+
+  @override
+  String get placeValueCaption1 =>
+      '3742 se decompose en 3 milliers, 7 centaines, 4 dizaines, 2 unites.';
+
+  @override
+  String get placeValueCaption2 =>
+      '6.4 se decompose en 6 unites et 4 dixiemes.';
+
+  @override
+  String get placeValueCaption3 =>
+      '805 se decompose en 8 centaines, 0 dizaine, 5 unites — le 0 occupe la position des dizaines.';
+
+  @override
+  String get abacusColumnHundreds => 'Centaines';
+
+  @override
+  String get abacusColumnTens => 'Dizaines';
+
+  @override
+  String get abacusColumnOnes => 'Unites';
 }
