@@ -118,15 +118,22 @@ class MentalMathVaultService {
   }
 
   Future<List<DailyBrainTeaser>> getTeasers([Locale? locale]) async {
-    final localeTag = _localeTag(locale ?? const Locale('en'));
+    final resolvedLocale = locale ?? const Locale('en');
+    final localeTag = _localeTag(resolvedLocale);
     final cached = _teasersByLocale[localeTag];
     if (cached != null) return cached;
 
+    // English has no per-region teaser file (e.g. no "en.json" or
+    // "en-GB.json") — only the base teasersAssetPath. Gating on languageCode
+    // rather than the full tag means en-GB/en-US etc. go straight to the
+    // base file instead of first probing two asset paths that can never
+    // exist, which previously logged spurious 404s on every English launch.
+    final languageCode = resolvedLocale.languageCode;
     final paths = <String>[
-      if (localeTag != 'en')
+      if (languageCode != 'en' && localeTag != languageCode)
         'assets/config/daily_brain_teasers.$localeTag.json',
-      if (localeTag != 'en' && localeTag != locale?.languageCode)
-        'assets/config/daily_brain_teasers.${locale?.languageCode}.json',
+      if (languageCode != 'en')
+        'assets/config/daily_brain_teasers.$languageCode.json',
       teasersAssetPath,
     ];
 

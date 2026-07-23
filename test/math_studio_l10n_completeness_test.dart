@@ -15,6 +15,7 @@ const _prefixes = [
   'abacusColumn',
   'placeValueCaption',
   'recallCards',
+  'labs',
 ];
 
 // Brand terms deliberately kept identical across every locale.
@@ -31,6 +32,12 @@ const _cognateProneKeyPrefixes = [
   'abacusColumn',
   'recallCardsTopic',
   'recallCardsType',
+  // "Median" is the same word in English, German, and Italian mathematical
+  // terminology — a genuine cognate, not a missed translation.
+  'labsDataDetectiveMedianLabel',
+  'labsDataDetectivePredictMedianButton',
+  // "Navigator" is the same word in English and German.
+  'labsGuidanceNavigator',
 ];
 
 Map<String, dynamic> _loadArb(String filename) {

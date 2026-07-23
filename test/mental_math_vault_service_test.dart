@@ -1,9 +1,57 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:unified_math_tutor/services/mental_math_vault_service.dart';
 
+class _RecordingBundle extends CachingAssetBundle {
+  final List<String> requestedKeys = [];
+
+  @override
+  Future<String> loadString(String key, {bool cache = true}) async {
+    requestedKeys.add(key);
+    if (key == MentalMathVaultService.teasersAssetPath) {
+      return jsonEncode([
+        {
+          'id': 't001',
+          'question': 'Q',
+          'answer': 'A',
+          'difficulty': 'easy',
+          'tags': <String>['number'],
+        },
+      ]);
+    }
+    throw FlutterError('Unable to load asset: "$key".');
+  }
+
+  @override
+  Future<ByteData> load(String key) async {
+    return ByteData.sublistView(Uint8List.fromList(utf8.encode(await loadString(key))));
+  }
+}
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
+
+  group('English-region locales never probe a nonexistent per-locale teaser file', () {
+    for (final locale in [const Locale('en'), const Locale('en', 'GB'), const Locale('en', 'US')]) {
+      test('$locale only requests the base teasersAssetPath', () async {
+        final bundle = _RecordingBundle();
+        final service = MentalMathVaultService(bundle: bundle);
+        await service.getTeasers(locale);
+
+        expect(
+          bundle.requestedKeys,
+          [MentalMathVaultService.teasersAssetPath],
+          reason: 'English locales must never attempt a nonexistent '
+              '"daily_brain_teasers.en.json"/"daily_brain_teasers.en-GB.json" '
+              'asset — that previously logged spurious load-failure noise on '
+              'every English launch.',
+        );
+      });
+    }
+  });
 
   test('vault loads the five v1 tricks', () async {
     final tricks = await MentalMathVaultService().getTricks();

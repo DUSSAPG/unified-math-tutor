@@ -46,6 +46,12 @@ import '../screens/recall/recall_cards_browse_screen.dart';
 import '../screens/recall/recall_cards_bookmarks_screen.dart';
 import '../screens/recall/recall_card_detail_screen.dart';
 import '../screens/recall/recall_review_session_screen.dart';
+import '../screens/labs/interactive_labs_hub_screen.dart';
+import '../screens/labs/fraction_builder_screen.dart';
+import '../screens/labs/algebra_balance_screen.dart';
+import '../screens/labs/number_line_explorer_screen.dart';
+import '../screens/labs/flight_path_lab_screen.dart';
+import '../screens/labs/data_detective_screen.dart';
 import '../screens/settings/release_notes_screen.dart';
 import '../screens/settings/terms_screen.dart';
 import '../screens/mental_math/daily_teaser_detail_screen.dart';
@@ -215,6 +221,32 @@ final GoRouter appRouter = GoRouter(
               builder: (context, state) => RecallReviewSessionScreen(
                 cards: (state.extra as List<RecallCard>?) ?? const [],
               ),
+            ),
+          ],
+        ),
+        GoRoute(
+          path: 'interactive-labs',
+          builder: (context, state) => const InteractiveLabsHubScreen(),
+          routes: [
+            GoRoute(
+              path: 'fraction-builder',
+              builder: (context, state) => const FractionBuilderScreen(),
+            ),
+            GoRoute(
+              path: 'algebra-balance',
+              builder: (context, state) => const AlgebraBalanceScreen(),
+            ),
+            GoRoute(
+              path: 'number-line-explorer',
+              builder: (context, state) => const NumberLineExplorerScreen(),
+            ),
+            GoRoute(
+              path: 'flight-path-lab',
+              builder: (context, state) => const FlightPathLabScreen(),
+            ),
+            GoRoute(
+              path: 'data-detective',
+              builder: (context, state) => const DataDetectiveScreen(),
             ),
           ],
         ),

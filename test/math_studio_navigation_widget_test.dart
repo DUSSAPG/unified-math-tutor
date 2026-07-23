@@ -7,6 +7,7 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 import 'package:unified_math_tutor/screens/build_confidence/build_confidence_screen.dart';
 import 'package:unified_math_tutor/screens/discovery/discovery_library_screen.dart';
 import 'package:unified_math_tutor/screens/math_studio/math_studio_hub_screen.dart';
+import 'package:unified_math_tutor/screens/labs/interactive_labs_hub_screen.dart';
 import 'package:unified_math_tutor/screens/mental_maths/mental_maths_hub_screen.dart';
 import 'package:unified_math_tutor/screens/recall/recall_cards_hub_screen.dart';
 import 'package:unified_math_tutor/screens/visual_maths/visual_maths_hub_screen.dart';
@@ -56,7 +57,7 @@ void main() {
   });
 
   testWidgets(
-    'Math Studio hub reaches all five pillars with no exam/curriculum selection required',
+    'Math Studio hub reaches all six pillars with no exam/curriculum selection required',
     (tester) async {
       addTearDown(tester.view.resetPhysicalSize);
       addTearDown(tester.view.resetDevicePixelRatio);
@@ -121,6 +122,13 @@ void main() {
           await tester.tap(find.text(l10n.mathStudioRecallCardsTitle));
           await tester.pumpAndSettle();
           expect(find.byType(RecallCardsHubScreen), findsOneWidget);
+          await tester.tap(find.byIcon(Icons.arrow_back));
+          await tester.pumpAndSettle();
+
+          await tester.ensureVisible(find.text(l10n.mathStudioInteractiveLabsTitle));
+          await tester.tap(find.text(l10n.mathStudioInteractiveLabsTitle));
+          await tester.pumpAndSettle();
+          expect(find.byType(InteractiveLabsHubScreen), findsOneWidget);
           await tester.tap(find.byIcon(Icons.arrow_back));
           await tester.pumpAndSettle();
 

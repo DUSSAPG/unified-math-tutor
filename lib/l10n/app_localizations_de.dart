@@ -1978,6 +1978,498 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get recallCardsTopicProbability => 'Probability';
+
+  @override
+  String get mathStudioInteractiveLabsTitle => 'Interactive Labs';
+
+  @override
+  String get mathStudioInteractiveLabsSubtitle =>
+      'Hands-on maths you can touch, change and test';
+
+  @override
+  String get labsHubTitle => 'Interactive Labs';
+
+  @override
+  String get labsHubSubtitle =>
+      'See a concept, touch it, change it, and test your prediction';
+
+  @override
+  String get labsResetButton => 'Reset';
+
+  @override
+  String get labsCheckButton => 'Check';
+
+  @override
+  String get labsNextChallengeButton => 'Next';
+
+  @override
+  String get labsFeedbackCorrect => 'Nice work — that\'s right.';
+
+  @override
+  String get labsFeedbackTryAgain => 'Not quite — have another go.';
+
+  @override
+  String get labsRelatedRecallCardsLabel => 'Related Recall Cards';
+
+  @override
+  String get labsFractionBuilderTitle => 'Fraction Builder';
+
+  @override
+  String get labsFractionBuilderSubtitle =>
+      'Build a fraction by filling equal parts';
+
+  @override
+  String get labsFractionBuilderConcept =>
+      'A fraction is a count of equal parts out of a whole. Tap segments to fill them and match the target fraction.';
+
+  @override
+  String get labsFractionBuilderWhereUsed =>
+      'Sharing food fairly, reading recipes, and measuring ingredients all rely on fractions of a whole.';
+
+  @override
+  String labsFractionBuilderPrompt(int numerator, int denominator) {
+    return 'Fill in $numerator out of $denominator segments.';
+  }
+
+  @override
+  String labsFractionBuilderFilledCount(int filled, int denominator) {
+    return '$filled of $denominator filled';
+  }
+
+  @override
+  String get labsAlgebraBalanceTitle => 'Algebra Balance';
+
+  @override
+  String get labsAlgebraBalanceSubtitle =>
+      'Keep both sides equal to solve for x';
+
+  @override
+  String get labsAlgebraBalanceConcept =>
+      'An equation stays true only if you do the same thing to both sides. Simplify step by step until x stands alone.';
+
+  @override
+  String get labsAlgebraBalanceWhereUsed =>
+      'Working backwards from a total to find an unknown amount uses exactly this balancing idea.';
+
+  @override
+  String labsAlgebraBalanceEquationLabel(String equation) {
+    return 'Equation: $equation';
+  }
+
+  @override
+  String get labsAlgebraBalanceStep1Button => 'Remove the constant';
+
+  @override
+  String get labsAlgebraBalanceStep2Button => 'Divide to isolate x';
+
+  @override
+  String labsAlgebraBalanceSolvedFeedback(int x) {
+    return 'Solved! x = $x';
+  }
+
+  @override
+  String get labsNumberLineExplorerTitle => 'Number Line Explorer';
+
+  @override
+  String get labsNumberLineExplorerSubtitle =>
+      'Drag to match a value on the line';
+
+  @override
+  String get labsNumberLineExplorerConcept =>
+      'A number\'s position on a number line matches its value — including negative numbers and decimals.';
+
+  @override
+  String get labsNumberLineExplorerWhereUsed =>
+      'Reading thermometers, timelines and measuring scales all rely on position matching value.';
+
+  @override
+  String labsNumberLineExplorerPrompt(String target) {
+    return 'Drag the point to $target.';
+  }
+
+  @override
+  String get labsFlightPathLabTitle => 'Flight Path Lab';
+
+  @override
+  String get labsFlightPathLabSubtitle =>
+      'Set a heading and speed to reach the target';
+
+  @override
+  String get labsFlightPathLabConcept =>
+      'A heading (bearing) and speed, held for a fixed time, fix exactly where you end up — this combines bearings with speed, distance and time.';
+
+  @override
+  String get labsFlightPathLabWhereUsed =>
+      'Pilots and sailors use bearing and speed together to navigate to a destination.';
+
+  @override
+  String labsFlightPathLabPrompt(int bearing, int distance) {
+    return 'Target: bearing $bearing°, $distance km away. Flight time is fixed at 2 hours — choose a heading and speed to reach it.';
+  }
+
+  @override
+  String get labsFlightPathLabRadarLabel =>
+      'A radar view showing the target and, after a test flight, where the aircraft landed.';
+
+  @override
+  String labsFlightPathLabSpeedLabel(int speed) {
+    return 'Speed: $speed km/h';
+  }
+
+  @override
+  String get labsFlightPathLabTestButton => 'Test Flight';
+
+  @override
+  String get labsFlightPathLabResultSpotOn => 'Spot on!';
+
+  @override
+  String get labsFlightPathLabResultClose => 'Close — try a small adjustment.';
+
+  @override
+  String get labsFlightPathLabResultTryAgain =>
+      'Try adjusting the heading or speed.';
+
+  @override
+  String labsFlightPathLabResultDistance(int distance) {
+    return 'You landed $distance km from the target.';
+  }
+
+  @override
+  String get labsDataDetectiveTitle => 'Data Detective';
+
+  @override
+  String get labsDataDetectiveSubtitle =>
+      'See how one outlier changes an average';
+
+  @override
+  String get labsDataDetectiveConcept =>
+      'The mean is pulled toward an outlier much more than the median is. Remove values and watch each average update live.';
+
+  @override
+  String get labsDataDetectiveWhereUsed =>
+      'Reporting a \'typical\' salary, price or score fairly means knowing when the mean is misleading and the median is a better summary.';
+
+  @override
+  String get labsDataDetectiveAddValueButton => 'Add a typical value';
+
+  @override
+  String get labsDataDetectivePredictionPrompt =>
+      'Which will change more once the outlier is removed?';
+
+  @override
+  String get labsDataDetectivePredictMeanButton => 'Mean';
+
+  @override
+  String get labsDataDetectivePredictMedianButton => 'Median';
+
+  @override
+  String get labsDataDetectiveRevealButton => 'Remove outlier & reveal';
+
+  @override
+  String get labsDataDetectiveCorrectPrediction => 'Correct prediction!';
+
+  @override
+  String get labsDataDetectiveIncorrectPrediction =>
+      'Not quite — look at the shift below.';
+
+  @override
+  String labsDataDetectiveShiftSummary(String meanShift, String medianShift) {
+    return 'Mean moved by $meanShift, median moved by $medianShift.';
+  }
+
+  @override
+  String get labsDataDetectiveMeanLabel => 'Mean';
+
+  @override
+  String get labsDataDetectiveMedianLabel => 'Median';
+
+  @override
+  String get labsDataDetectiveRangeLabel => 'Range';
+
+  @override
+  String get labsTryAgainButton => 'Try again';
+
+  @override
+  String get labsHelpButton => 'Help';
+
+  @override
+  String get labsHelpTitle => 'Help';
+
+  @override
+  String get labsHelpWhatToDo => 'What to do';
+
+  @override
+  String get labsHelpWhatToNotice => 'What to notice';
+
+  @override
+  String get labsHelpWhatItMeans => 'What the maths means';
+
+  @override
+  String get labsHelpWhereUsed => 'Where this is used';
+
+  @override
+  String get labsFirstUseTitle => 'Before you start';
+
+  @override
+  String get labsFirstUseGotItButton => 'Got it';
+
+  @override
+  String get labsGuidanceLevelLabel => 'Guidance level';
+
+  @override
+  String get labsGuidanceExplorer => 'Explorer';
+
+  @override
+  String get labsGuidanceBuilder => 'Builder';
+
+  @override
+  String get labsGuidanceNavigator => 'Navigator';
+
+  @override
+  String get labsDirectionAway => 'Away from you';
+
+  @override
+  String get labsDirectionRight => 'Right';
+
+  @override
+  String get labsDirectionToward => 'Toward you';
+
+  @override
+  String get labsDirectionLeft => 'Left';
+
+  @override
+  String get labsFlightPathLabMission =>
+      'Point the plane toward the yellow target, then press Test Flight to see where it lands.';
+
+  @override
+  String labsFlightPathLabHeadingLabel(String direction, int degrees) {
+    return 'Direction: $direction  •  Heading: $degrees°';
+  }
+
+  @override
+  String labsFlightPathLabHeadingNavigatorLabel(String bearing) {
+    return 'Heading: $bearing';
+  }
+
+  @override
+  String get labsFlightPathLabHeadingHelper =>
+      'Turn this to choose which way the plane points';
+
+  @override
+  String get labsFlightPathLabSpeedHelper =>
+      'Choose how far the plane should travel';
+
+  @override
+  String labsFlightPathLabTargetExplanation(int distance, String bearing) {
+    return 'The yellow marker is your target. It is $distance km away, on a bearing of $bearing.';
+  }
+
+  @override
+  String get labsFlightPathLabPredictionPrompt =>
+      'Before you test: will you land short, on target, or overshoot?';
+
+  @override
+  String get labsFlightPathLabPredictShort => 'Short';
+
+  @override
+  String get labsFlightPathLabPredictOnTarget => 'On target';
+
+  @override
+  String get labsFlightPathLabPredictOver => 'Overshoot';
+
+  @override
+  String get labsFlightPathLabHelpWhatToDo =>
+      'Set the heading and speed, make a prediction if asked, then press Test Flight.';
+
+  @override
+  String get labsFlightPathLabHelpWhatToNotice =>
+      'Notice how far from the target the plane lands, and which way you need to adjust.';
+
+  @override
+  String get labsFlightPathLabHelpWhatItMeans =>
+      'A steady heading and speed, held for a fixed time, always lead to exactly one landing point — that\'s speed, distance and time combined with direction.';
+
+  @override
+  String get labsFlightPathLabFirstUseStep1 =>
+      'Point the plane toward the yellow target.';
+
+  @override
+  String get labsFlightPathLabFirstUseStep2 =>
+      'Choose how far the plane should travel.';
+
+  @override
+  String get labsFlightPathLabFirstUseStep3 =>
+      'Press Test Flight to see where it lands.';
+
+  @override
+  String get labsDataDetectiveMission =>
+      'Predict what happens to the mean and median, then remove the unusual value to find out.';
+
+  @override
+  String labsDataDetectiveOutlierExplanation(int outlier) {
+    return 'One value, $outlier, stands out from the rest — it\'s much higher or lower than the others. That\'s called an outlier.';
+  }
+
+  @override
+  String labsDataDetectiveBeforeAfter(String meanBefore, String meanAfter,
+      String medianBefore, String medianAfter) {
+    return 'Mean: $meanBefore → $meanAfter. Median: $medianBefore → $medianAfter.';
+  }
+
+  @override
+  String get labsDataDetectiveHelpWhatToDo =>
+      'Look at the values, predict whether the mean or median will change more, then remove the outlier to reveal the answer.';
+
+  @override
+  String get labsDataDetectiveHelpWhatToNotice =>
+      'Notice how much the mean moves compared to the median once the outlier is gone.';
+
+  @override
+  String get labsDataDetectiveHelpWhatItMeans =>
+      'The mean uses every value, so one extreme value can pull it a long way. The median only depends on the middle position, so it barely moves.';
+
+  @override
+  String get labsDataDetectiveFirstUseStep1 =>
+      'Look at the list of values — one of them stands out.';
+
+  @override
+  String get labsDataDetectiveFirstUseStep2 =>
+      'Predict which will change more: the mean or the median.';
+
+  @override
+  String get labsDataDetectiveFirstUseStep3 =>
+      'Remove the outlier and reveal the answer.';
+
+  @override
+  String get labsAlgebraBalanceMission =>
+      'Keep both sides balanced until x is on its own.';
+
+  @override
+  String labsAlgebraBalanceStep1RemoveButton(int value) {
+    return 'Remove $value from both sides';
+  }
+
+  @override
+  String labsAlgebraBalanceStep1AddButton(int value) {
+    return 'Add $value to both sides';
+  }
+
+  @override
+  String labsAlgebraBalanceStep2DivideButton(int value) {
+    return 'Divide both sides by $value';
+  }
+
+  @override
+  String get labsAlgebraBalanceHelpWhatToDo =>
+      'Clear the number term first, then divide to leave x on its own.';
+
+  @override
+  String get labsAlgebraBalanceHelpWhatToNotice =>
+      'Notice that both pans always change together, by the same amount — the equation never stops being true.';
+
+  @override
+  String get labsAlgebraBalanceHelpWhatItMeans =>
+      'Doing the same operation to both sides of an equation keeps it balanced, which is how you can safely simplify down to just x.';
+
+  @override
+  String get labsAlgebraBalanceFirstUseStep1 =>
+      'Look at the equation and the balance below it.';
+
+  @override
+  String get labsAlgebraBalanceFirstUseStep2 =>
+      'Use the buttons to simplify both sides together.';
+
+  @override
+  String get labsAlgebraBalanceFirstUseStep3 =>
+      'Keep going until x stands alone.';
+
+  @override
+  String labsFractionBuilderMission(int numerator, int denominator) {
+    return 'Fill in $numerator out of $denominator equal parts.';
+  }
+
+  @override
+  String get labsFractionBuilderTapGuidance =>
+      'Tap a segment to fill it in, or tap again to empty it.';
+
+  @override
+  String labsFractionBuilderSymbolicResult(int numerator, int denominator) {
+    return '$numerator/$denominator — $numerator equal part(s) filled out of $denominator.';
+  }
+
+  @override
+  String get labsFractionBuilderHelpWhatToDo =>
+      'Tap segments until the number filled matches the fraction, then press Check.';
+
+  @override
+  String get labsFractionBuilderHelpWhatToNotice =>
+      'Notice that the denominator is the total number of equal parts, and the numerator is how many are filled.';
+
+  @override
+  String get labsFractionBuilderHelpWhatItMeans =>
+      'A fraction counts equal parts of a whole — the same idea whether it\'s a bar, a pizza, or a measuring cup.';
+
+  @override
+  String get labsFractionBuilderFirstUseStep1 =>
+      'Look at how many parts to fill in.';
+
+  @override
+  String get labsFractionBuilderFirstUseStep2 =>
+      'Tap segments to fill them in.';
+
+  @override
+  String get labsFractionBuilderFirstUseStep3 =>
+      'Press Check to see if you matched the fraction.';
+
+  @override
+  String labsNumberLineExplorerMission(String target) {
+    return 'Move the point to $target.';
+  }
+
+  @override
+  String labsNumberLineExplorerStartInstruction(String min) {
+    return 'Start at $min and move the point to the target.';
+  }
+
+  @override
+  String labsNumberLineExplorerMoveRight(String distance) {
+    return 'Move $distance more to the right';
+  }
+
+  @override
+  String labsNumberLineExplorerMoveLeft(String distance) {
+    return 'Move $distance more to the left';
+  }
+
+  @override
+  String get labsNumberLineExplorerIncreaseButton => 'Move right';
+
+  @override
+  String get labsNumberLineExplorerDecreaseButton => 'Move left';
+
+  @override
+  String get labsNumberLineExplorerHelpWhatToDo =>
+      'Drag the point, or use the arrow buttons, to reach the target value, then press Check.';
+
+  @override
+  String get labsNumberLineExplorerHelpWhatToNotice =>
+      'Notice how the point\'s position matches its value — further right is a bigger number, further left is smaller.';
+
+  @override
+  String get labsNumberLineExplorerHelpWhatItMeans =>
+      'A number line shows every number in order, in both directions from zero, including negative numbers and decimals.';
+
+  @override
+  String get labsNumberLineExplorerFirstUseStep1 =>
+      'See where the point starts.';
+
+  @override
+  String get labsNumberLineExplorerFirstUseStep2 =>
+      'Drag the point, or use the arrow buttons, toward the target.';
+
+  @override
+  String get labsNumberLineExplorerFirstUseStep3 =>
+      'Press Check to see if you reached it.';
 }
 
 /// The translations for German, as used in Switzerland (`de_CH`).
@@ -3889,4 +4381,498 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
 
   @override
   String get recallCardsTopicProbability => 'Wahrscheinlichkeit';
+
+  @override
+  String get mathStudioInteractiveLabsTitle => 'Interaktive Labore';
+
+  @override
+  String get mathStudioInteractiveLabsSubtitle =>
+      'Praktische Mathematik zum Anfassen, Veraendern und Testen';
+
+  @override
+  String get labsHubTitle => 'Interaktive Labore';
+
+  @override
+  String get labsHubSubtitle =>
+      'Ein Konzept sehen, anfassen, veraendern und deine Vermutung testen';
+
+  @override
+  String get labsResetButton => 'Zuruecksetzen';
+
+  @override
+  String get labsCheckButton => 'Pruefen';
+
+  @override
+  String get labsNextChallengeButton => 'Weiter';
+
+  @override
+  String get labsFeedbackCorrect => 'Gut gemacht — das stimmt.';
+
+  @override
+  String get labsFeedbackTryAgain => 'Noch nicht ganz — versuch es nochmal.';
+
+  @override
+  String get labsRelatedRecallCardsLabel => 'Verwandte Merkkarten';
+
+  @override
+  String get labsFractionBuilderTitle => 'Bruch-Baukasten';
+
+  @override
+  String get labsFractionBuilderSubtitle =>
+      'Baue einen Bruch, indem du gleiche Teile fuellst';
+
+  @override
+  String get labsFractionBuilderConcept =>
+      'Ein Bruch zaehlt gleiche Teile eines Ganzen. Tippe auf Segmente, um sie zu fuellen und den Zielbruch zu erreichen.';
+
+  @override
+  String get labsFractionBuilderWhereUsed =>
+      'Essen gerecht teilen, Rezepte lesen und Zutaten abmessen beruhen alle auf Bruechen eines Ganzen.';
+
+  @override
+  String labsFractionBuilderPrompt(int numerator, int denominator) {
+    return 'Fuelle $numerator von $denominator Segmenten.';
+  }
+
+  @override
+  String labsFractionBuilderFilledCount(int filled, int denominator) {
+    return '$filled von $denominator gefuellt';
+  }
+
+  @override
+  String get labsAlgebraBalanceTitle => 'Algebra-Waage';
+
+  @override
+  String get labsAlgebraBalanceSubtitle =>
+      'Halte beide Seiten gleich, um x zu loesen';
+
+  @override
+  String get labsAlgebraBalanceConcept =>
+      'Eine Gleichung bleibt nur wahr, wenn du auf beiden Seiten dasselbe tust. Vereinfache Schritt fuer Schritt, bis x allein steht.';
+
+  @override
+  String get labsAlgebraBalanceWhereUsed =>
+      'Von einer Summe rueckwaerts zu einer unbekannten Menge zu rechnen nutzt genau dieses Gleichgewichtsprinzip.';
+
+  @override
+  String labsAlgebraBalanceEquationLabel(String equation) {
+    return 'Gleichung: $equation';
+  }
+
+  @override
+  String get labsAlgebraBalanceStep1Button => 'Konstante entfernen';
+
+  @override
+  String get labsAlgebraBalanceStep2Button => 'Durch Teilen x isolieren';
+
+  @override
+  String labsAlgebraBalanceSolvedFeedback(int x) {
+    return 'Geloest! x = $x';
+  }
+
+  @override
+  String get labsNumberLineExplorerTitle => 'Zahlenstrahl-Entdecker';
+
+  @override
+  String get labsNumberLineExplorerSubtitle =>
+      'Ziehe den Punkt auf einen Wert am Zahlenstrahl';
+
+  @override
+  String get labsNumberLineExplorerConcept =>
+      'Die Position einer Zahl auf dem Zahlenstrahl entspricht ihrem Wert — auch bei negativen Zahlen und Dezimalzahlen.';
+
+  @override
+  String get labsNumberLineExplorerWhereUsed =>
+      'Thermometer, Zeitstrahlen und Messskalen lesen beruht alles darauf, dass Position und Wert uebereinstimmen.';
+
+  @override
+  String labsNumberLineExplorerPrompt(String target) {
+    return 'Ziehe den Punkt auf $target.';
+  }
+
+  @override
+  String get labsFlightPathLabTitle => 'Flugbahn-Labor';
+
+  @override
+  String get labsFlightPathLabSubtitle =>
+      'Stelle Kurs und Geschwindigkeit ein, um das Ziel zu erreichen';
+
+  @override
+  String get labsFlightPathLabConcept =>
+      'Ein Kurs (Peilung) und eine Geschwindigkeit, ueber eine feste Zeit gehalten, legen genau fest, wo du landest — das verbindet Peilung mit Geschwindigkeit, Strecke und Zeit.';
+
+  @override
+  String get labsFlightPathLabWhereUsed =>
+      'Piloten und Seefahrer nutzen Peilung und Geschwindigkeit gemeinsam, um ein Ziel anzusteuern.';
+
+  @override
+  String labsFlightPathLabPrompt(int bearing, int distance) {
+    return 'Ziel: Peilung $bearing°, $distance km entfernt. Die Flugzeit ist fest bei 2 Stunden — waehle Kurs und Geschwindigkeit, um es zu erreichen.';
+  }
+
+  @override
+  String get labsFlightPathLabRadarLabel =>
+      'Eine Radaransicht mit dem Ziel und, nach einem Testflug, wo das Flugzeug gelandet ist.';
+
+  @override
+  String labsFlightPathLabSpeedLabel(int speed) {
+    return 'Geschwindigkeit: $speed km/h';
+  }
+
+  @override
+  String get labsFlightPathLabTestButton => 'Testflug';
+
+  @override
+  String get labsFlightPathLabResultSpotOn => 'Genau getroffen!';
+
+  @override
+  String get labsFlightPathLabResultClose =>
+      'Nah dran — versuche eine kleine Anpassung.';
+
+  @override
+  String get labsFlightPathLabResultTryAgain =>
+      'Passe Kurs oder Geschwindigkeit an.';
+
+  @override
+  String labsFlightPathLabResultDistance(int distance) {
+    return 'Du bist $distance km vom Ziel entfernt gelandet.';
+  }
+
+  @override
+  String get labsDataDetectiveTitle => 'Daten-Detektiv';
+
+  @override
+  String get labsDataDetectiveSubtitle =>
+      'Sieh, wie ein Ausreisser einen Durchschnitt veraendert';
+
+  @override
+  String get labsDataDetectiveConcept =>
+      'Der Mittelwert wird viel staerker von einem Ausreisser angezogen als der Median. Entferne Werte und beobachte, wie sich jeder Durchschnitt sofort aendert.';
+
+  @override
+  String get labsDataDetectiveWhereUsed =>
+      'Ein \'typisches\' Gehalt, einen Preis oder eine Punktzahl fair zu berichten bedeutet zu wissen, wann der Mittelwert irrefuehrend ist und der Median die bessere Zusammenfassung ist.';
+
+  @override
+  String get labsDataDetectiveAddValueButton => 'Typischen Wert hinzufuegen';
+
+  @override
+  String get labsDataDetectivePredictionPrompt =>
+      'Was aendert sich mehr, wenn der Ausreisser entfernt wird?';
+
+  @override
+  String get labsDataDetectivePredictMeanButton => 'Mittelwert';
+
+  @override
+  String get labsDataDetectivePredictMedianButton => 'Median';
+
+  @override
+  String get labsDataDetectiveRevealButton =>
+      'Ausreisser entfernen & aufdecken';
+
+  @override
+  String get labsDataDetectiveCorrectPrediction => 'Richtig vorhergesagt!';
+
+  @override
+  String get labsDataDetectiveIncorrectPrediction =>
+      'Nicht ganz — sieh dir die Verschiebung unten an.';
+
+  @override
+  String labsDataDetectiveShiftSummary(String meanShift, String medianShift) {
+    return 'Der Mittelwert verschob sich um $meanShift, der Median um $medianShift.';
+  }
+
+  @override
+  String get labsDataDetectiveMeanLabel => 'Mittelwert';
+
+  @override
+  String get labsDataDetectiveMedianLabel => 'Median';
+
+  @override
+  String get labsDataDetectiveRangeLabel => 'Spannweite';
+
+  @override
+  String get labsTryAgainButton => 'Nochmal versuchen';
+
+  @override
+  String get labsHelpButton => 'Hilfe';
+
+  @override
+  String get labsHelpTitle => 'Hilfe';
+
+  @override
+  String get labsHelpWhatToDo => 'Was zu tun ist';
+
+  @override
+  String get labsHelpWhatToNotice => 'Worauf zu achten ist';
+
+  @override
+  String get labsHelpWhatItMeans => 'Was die Mathematik bedeutet';
+
+  @override
+  String get labsHelpWhereUsed => 'Wo das verwendet wird';
+
+  @override
+  String get labsFirstUseTitle => 'Bevor du startest';
+
+  @override
+  String get labsFirstUseGotItButton => 'Verstanden';
+
+  @override
+  String get labsGuidanceLevelLabel => 'Fuehrungsstufe';
+
+  @override
+  String get labsGuidanceExplorer => 'Entdecker';
+
+  @override
+  String get labsGuidanceBuilder => 'Baumeister';
+
+  @override
+  String get labsGuidanceNavigator => 'Navigator';
+
+  @override
+  String get labsDirectionAway => 'Von dir weg';
+
+  @override
+  String get labsDirectionRight => 'Rechts';
+
+  @override
+  String get labsDirectionToward => 'Zu dir hin';
+
+  @override
+  String get labsDirectionLeft => 'Links';
+
+  @override
+  String get labsFlightPathLabMission =>
+      'Richte das Flugzeug auf das gelbe Ziel, dann druecke Testflug, um zu sehen, wo es landet.';
+
+  @override
+  String labsFlightPathLabHeadingLabel(String direction, int degrees) {
+    return 'Richtung: $direction  •  Kurs: $degrees°';
+  }
+
+  @override
+  String labsFlightPathLabHeadingNavigatorLabel(String bearing) {
+    return 'Kurs: $bearing';
+  }
+
+  @override
+  String get labsFlightPathLabHeadingHelper =>
+      'Drehe das, um zu waehlen, wohin das Flugzeug zeigt';
+
+  @override
+  String get labsFlightPathLabSpeedHelper =>
+      'Waehle, wie weit das Flugzeug fliegen soll';
+
+  @override
+  String labsFlightPathLabTargetExplanation(int distance, String bearing) {
+    return 'Die gelbe Markierung ist dein Ziel. Sie ist $distance km entfernt, auf einer Peilung von $bearing.';
+  }
+
+  @override
+  String get labsFlightPathLabPredictionPrompt =>
+      'Bevor du testest: landest du zu kurz, genau im Ziel oder darueber hinaus?';
+
+  @override
+  String get labsFlightPathLabPredictShort => 'Zu kurz';
+
+  @override
+  String get labsFlightPathLabPredictOnTarget => 'Im Ziel';
+
+  @override
+  String get labsFlightPathLabPredictOver => 'Darueber hinaus';
+
+  @override
+  String get labsFlightPathLabHelpWhatToDo =>
+      'Stelle Kurs und Geschwindigkeit ein, mache wenn gefragt eine Vorhersage, dann druecke Testflug.';
+
+  @override
+  String get labsFlightPathLabHelpWhatToNotice =>
+      'Achte darauf, wie weit vom Ziel das Flugzeug landet und in welche Richtung du anpassen musst.';
+
+  @override
+  String get labsFlightPathLabHelpWhatItMeans =>
+      'Ein gleichbleibender Kurs und eine gleichbleibende Geschwindigkeit fuehren ueber eine feste Zeit immer zu genau einem Landepunkt — das ist Geschwindigkeit, Strecke und Zeit zusammen mit einer Richtung.';
+
+  @override
+  String get labsFlightPathLabFirstUseStep1 =>
+      'Richte das Flugzeug auf das gelbe Ziel.';
+
+  @override
+  String get labsFlightPathLabFirstUseStep2 =>
+      'Waehle, wie weit das Flugzeug fliegen soll.';
+
+  @override
+  String get labsFlightPathLabFirstUseStep3 =>
+      'Druecke Testflug, um zu sehen, wo es landet.';
+
+  @override
+  String get labsDataDetectiveMission =>
+      'Sage voraus, was mit Mittelwert und Median passiert, dann entferne den ungewoehnlichen Wert, um es herauszufinden.';
+
+  @override
+  String labsDataDetectiveOutlierExplanation(int outlier) {
+    return 'Ein Wert, $outlier, sticht aus den anderen heraus — er ist viel hoeher oder tiefer als die uebrigen. Das nennt man einen Ausreisser.';
+  }
+
+  @override
+  String labsDataDetectiveBeforeAfter(String meanBefore, String meanAfter,
+      String medianBefore, String medianAfter) {
+    return 'Mittelwert: $meanBefore → $meanAfter. Median: $medianBefore → $medianAfter.';
+  }
+
+  @override
+  String get labsDataDetectiveHelpWhatToDo =>
+      'Schau dir die Werte an, sage voraus, ob sich Mittelwert oder Median staerker aendert, dann entferne den Ausreisser, um die Antwort zu sehen.';
+
+  @override
+  String get labsDataDetectiveHelpWhatToNotice =>
+      'Achte darauf, wie stark sich der Mittelwert im Vergleich zum Median veraendert, sobald der Ausreisser weg ist.';
+
+  @override
+  String get labsDataDetectiveHelpWhatItMeans =>
+      'Der Mittelwert nutzt jeden Wert, daher kann ihn ein extremer Wert stark verschieben. Der Median haengt nur von der mittleren Position ab, darum bewegt er sich kaum.';
+
+  @override
+  String get labsDataDetectiveFirstUseStep1 =>
+      'Schau dir die Liste der Werte an — einer sticht heraus.';
+
+  @override
+  String get labsDataDetectiveFirstUseStep2 =>
+      'Sage voraus, was sich staerker aendert: Mittelwert oder Median.';
+
+  @override
+  String get labsDataDetectiveFirstUseStep3 =>
+      'Entferne den Ausreisser und decke die Antwort auf.';
+
+  @override
+  String get labsAlgebraBalanceMission =>
+      'Halte beide Seiten im Gleichgewicht, bis x allein steht.';
+
+  @override
+  String labsAlgebraBalanceStep1RemoveButton(int value) {
+    return 'Entferne $value von beiden Seiten';
+  }
+
+  @override
+  String labsAlgebraBalanceStep1AddButton(int value) {
+    return 'Addiere $value zu beiden Seiten';
+  }
+
+  @override
+  String labsAlgebraBalanceStep2DivideButton(int value) {
+    return 'Teile beide Seiten durch $value';
+  }
+
+  @override
+  String get labsAlgebraBalanceHelpWhatToDo =>
+      'Entferne zuerst die Zahl, dann teile, um x allein stehen zu lassen.';
+
+  @override
+  String get labsAlgebraBalanceHelpWhatToNotice =>
+      'Achte darauf, dass sich beide Waagschalen immer gemeinsam und um den gleichen Betrag aendern — die Gleichung bleibt immer wahr.';
+
+  @override
+  String get labsAlgebraBalanceHelpWhatItMeans =>
+      'Dieselbe Operation auf beiden Seiten einer Gleichung anzuwenden haelt sie im Gleichgewicht — so kannst du sicher bis auf x vereinfachen.';
+
+  @override
+  String get labsAlgebraBalanceFirstUseStep1 =>
+      'Schau dir die Gleichung und die Waage darunter an.';
+
+  @override
+  String get labsAlgebraBalanceFirstUseStep2 =>
+      'Nutze die Knoepfe, um beide Seiten gemeinsam zu vereinfachen.';
+
+  @override
+  String get labsAlgebraBalanceFirstUseStep3 =>
+      'Mach weiter, bis x allein steht.';
+
+  @override
+  String labsFractionBuilderMission(int numerator, int denominator) {
+    return 'Fuelle $numerator von $denominator gleichen Teilen.';
+  }
+
+  @override
+  String get labsFractionBuilderTapGuidance =>
+      'Tippe auf ein Segment, um es zu fuellen, oder nochmal, um es zu leeren.';
+
+  @override
+  String labsFractionBuilderSymbolicResult(int numerator, int denominator) {
+    return '$numerator/$denominator — $numerator gleiche(r) Teil(e) von $denominator gefuellt.';
+  }
+
+  @override
+  String get labsFractionBuilderHelpWhatToDo =>
+      'Tippe Segmente, bis die gefuellte Anzahl zum Bruch passt, dann druecke Pruefen.';
+
+  @override
+  String get labsFractionBuilderHelpWhatToNotice =>
+      'Achte darauf, dass der Nenner die Gesamtzahl gleicher Teile ist und der Zaehler, wie viele gefuellt sind.';
+
+  @override
+  String get labsFractionBuilderHelpWhatItMeans =>
+      'Ein Bruch zaehlt gleiche Teile eines Ganzen — dieselbe Idee, egal ob Balken, Pizza oder Messbecher.';
+
+  @override
+  String get labsFractionBuilderFirstUseStep1 =>
+      'Schau, wie viele Teile zu fuellen sind.';
+
+  @override
+  String get labsFractionBuilderFirstUseStep2 =>
+      'Tippe Segmente, um sie zu fuellen.';
+
+  @override
+  String get labsFractionBuilderFirstUseStep3 =>
+      'Druecke Pruefen, um zu sehen, ob du den Bruch getroffen hast.';
+
+  @override
+  String labsNumberLineExplorerMission(String target) {
+    return 'Bewege den Punkt auf $target.';
+  }
+
+  @override
+  String labsNumberLineExplorerStartInstruction(String min) {
+    return 'Starte bei $min und bewege den Punkt zum Ziel.';
+  }
+
+  @override
+  String labsNumberLineExplorerMoveRight(String distance) {
+    return 'Bewege $distance weiter nach rechts';
+  }
+
+  @override
+  String labsNumberLineExplorerMoveLeft(String distance) {
+    return 'Bewege $distance weiter nach links';
+  }
+
+  @override
+  String get labsNumberLineExplorerIncreaseButton => 'Nach rechts';
+
+  @override
+  String get labsNumberLineExplorerDecreaseButton => 'Nach links';
+
+  @override
+  String get labsNumberLineExplorerHelpWhatToDo =>
+      'Ziehe den Punkt, oder nutze die Pfeilknoepfe, um den Zielwert zu erreichen, dann druecke Pruefen.';
+
+  @override
+  String get labsNumberLineExplorerHelpWhatToNotice =>
+      'Achte darauf, wie die Position des Punktes seinem Wert entspricht — weiter rechts ist eine groessere Zahl, weiter links eine kleinere.';
+
+  @override
+  String get labsNumberLineExplorerHelpWhatItMeans =>
+      'Ein Zahlenstrahl zeigt jede Zahl der Reihe nach, in beiden Richtungen von null, einschliesslich negativer Zahlen und Dezimalzahlen.';
+
+  @override
+  String get labsNumberLineExplorerFirstUseStep1 =>
+      'Schau, wo der Punkt startet.';
+
+  @override
+  String get labsNumberLineExplorerFirstUseStep2 =>
+      'Ziehe den Punkt, oder nutze die Pfeilknoepfe, zum Ziel.';
+
+  @override
+  String get labsNumberLineExplorerFirstUseStep3 =>
+      'Druecke Pruefen, um zu sehen, ob du es erreicht hast.';
 }

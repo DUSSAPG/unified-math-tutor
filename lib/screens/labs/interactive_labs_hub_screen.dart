@@ -6,11 +6,10 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 import '../../app/safe_navigation.dart';
 import '../../shared/theme/app_spacing.dart';
 
-/// Math Studio landing page. Curriculum-independent — reachable without any
-/// exam/curriculum selection, and never requires one before a learner can
-/// use any of the four routes below.
-class MathStudioHubScreen extends StatelessWidget {
-  const MathStudioHubScreen({super.key});
+/// Interactive Labs landing page. Curriculum-independent, reachable from the
+/// Math Studio hub — mirrors [MathStudioHubScreen]'s route-card layout.
+class InteractiveLabsHubScreen extends StatelessWidget {
+  const InteractiveLabsHubScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,20 +19,13 @@ class MathStudioHubScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color(0xFF0B1120),
         elevation: 0,
-        scrolledUnderElevation: 0,
-        centerTitle: false,
-        titleSpacing: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => popOrGo(context, '/home'),
+          onPressed: () => popOrGo(context, '/math-studio'),
         ),
         title: Text(
-          l10n.mathStudioHubTitle,
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-            fontWeight: FontWeight.w700,
-          ),
+          l10n.labsHubTitle,
+          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
         ),
       ),
       body: SafeArea(
@@ -46,60 +38,49 @@ class MathStudioHubScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    l10n.mathStudioHubTagline,
-                    style: const TextStyle(
-                      color: Color(0xFF8A9DC0),
-                      fontSize: 15,
-                      height: 1.4,
-                    ),
+                    l10n.labsHubSubtitle,
+                    style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 15, height: 1.4),
                   ),
                   const SizedBox(height: AppSpacing.lg),
-                  _MathStudioRouteCard(
-                    icon: LucideIcons.heart,
+                  _LabRouteCard(
+                    icon: LucideIcons.divide,
                     iconColor: const Color(0xFF34C759),
-                    title: l10n.mathStudioBuildConfidenceTitle,
-                    subtitle: l10n.mathStudioBuildConfidenceSubtitle,
-                    onTap: () => context.push('/math-studio/build-confidence'),
+                    title: l10n.labsFractionBuilderTitle,
+                    subtitle: l10n.labsFractionBuilderSubtitle,
+                    onTap: () => context.push('/math-studio/interactive-labs/fraction-builder'),
                   ),
                   const SizedBox(height: 10),
-                  _MathStudioRouteCard(
-                    icon: LucideIcons.brain,
+                  _LabRouteCard(
+                    icon: LucideIcons.scale,
                     iconColor: const Color(0xFF5B8EFF),
-                    title: l10n.mathStudioMentalMathsTitle,
-                    subtitle: l10n.mathStudioMentalMathsSubtitle,
-                    onTap: () => context.push('/math-studio/mental-maths'),
+                    title: l10n.labsAlgebraBalanceTitle,
+                    subtitle: l10n.labsAlgebraBalanceSubtitle,
+                    onTap: () => context.push('/math-studio/interactive-labs/algebra-balance'),
                   ),
                   const SizedBox(height: 10),
-                  _MathStudioRouteCard(
-                    icon: LucideIcons.eye,
+                  _LabRouteCard(
+                    icon: LucideIcons.moveHorizontal,
                     iconColor: const Color(0xFF7C5FFF),
-                    title: l10n.mathStudioVisualMathsTitle,
-                    subtitle: l10n.mathStudioVisualMathsSubtitle,
-                    onTap: () => context.push('/math-studio/visual-maths'),
+                    title: l10n.labsNumberLineExplorerTitle,
+                    subtitle: l10n.labsNumberLineExplorerSubtitle,
+                    onTap: () =>
+                        context.push('/math-studio/interactive-labs/number-line-explorer'),
                   ),
                   const SizedBox(height: 10),
-                  _MathStudioRouteCard(
-                    icon: LucideIcons.layoutGrid,
+                  _LabRouteCard(
+                    icon: LucideIcons.plane,
                     iconColor: const Color(0xFFFFBD00),
-                    title: l10n.mathStudioDiscoveryTitle,
-                    subtitle: l10n.mathStudioDiscoverySubtitle,
-                    onTap: () => context.push('/math-studio/discovery'),
+                    title: l10n.labsFlightPathLabTitle,
+                    subtitle: l10n.labsFlightPathLabSubtitle,
+                    onTap: () => context.push('/math-studio/interactive-labs/flight-path-lab'),
                   ),
                   const SizedBox(height: 10),
-                  _MathStudioRouteCard(
-                    icon: LucideIcons.zap,
-                    iconColor: const Color(0xFF34C759),
-                    title: l10n.mathStudioRecallCardsTitle,
-                    subtitle: l10n.mathStudioRecallCardsSubtitle,
-                    onTap: () => context.push('/math-studio/recall-cards'),
-                  ),
-                  const SizedBox(height: 10),
-                  _MathStudioRouteCard(
-                    icon: LucideIcons.flaskConical,
+                  _LabRouteCard(
+                    icon: LucideIcons.barChart2,
                     iconColor: const Color(0xFF00BCD4),
-                    title: l10n.mathStudioInteractiveLabsTitle,
-                    subtitle: l10n.mathStudioInteractiveLabsSubtitle,
-                    onTap: () => context.push('/math-studio/interactive-labs'),
+                    title: l10n.labsDataDetectiveTitle,
+                    subtitle: l10n.labsDataDetectiveSubtitle,
+                    onTap: () => context.push('/math-studio/interactive-labs/data-detective'),
                   ),
                 ],
               ),
@@ -111,14 +92,14 @@ class MathStudioHubScreen extends StatelessWidget {
   }
 }
 
-class _MathStudioRouteCard extends StatelessWidget {
+class _LabRouteCard extends StatelessWidget {
   final IconData icon;
   final Color iconColor;
   final String title;
   final String subtitle;
   final VoidCallback onTap;
 
-  const _MathStudioRouteCard({
+  const _LabRouteCard({
     required this.icon,
     required this.iconColor,
     required this.title,
@@ -167,11 +148,7 @@ class _MathStudioRouteCard extends StatelessWidget {
                     const SizedBox(height: 3),
                     Text(
                       subtitle,
-                      style: const TextStyle(
-                        color: Color(0xFF8A9DC0),
-                        fontSize: 13,
-                        height: 1.3,
-                      ),
+                      style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13, height: 1.3),
                     ),
                   ],
                 ),

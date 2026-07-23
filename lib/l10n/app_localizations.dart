@@ -3725,6 +3725,781 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Probability'**
   String get recallCardsTopicProbability;
+
+  /// No description provided for @mathStudioInteractiveLabsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Interactive Labs'**
+  String get mathStudioInteractiveLabsTitle;
+
+  /// No description provided for @mathStudioInteractiveLabsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Hands-on maths you can touch, change and test'**
+  String get mathStudioInteractiveLabsSubtitle;
+
+  /// No description provided for @labsHubTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Interactive Labs'**
+  String get labsHubTitle;
+
+  /// No description provided for @labsHubSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'See a concept, touch it, change it, and test your prediction'**
+  String get labsHubSubtitle;
+
+  /// No description provided for @labsResetButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset'**
+  String get labsResetButton;
+
+  /// No description provided for @labsCheckButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Check'**
+  String get labsCheckButton;
+
+  /// No description provided for @labsNextChallengeButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get labsNextChallengeButton;
+
+  /// No description provided for @labsFeedbackCorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'Nice work — that\'s right.'**
+  String get labsFeedbackCorrect;
+
+  /// No description provided for @labsFeedbackTryAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Not quite — have another go.'**
+  String get labsFeedbackTryAgain;
+
+  /// No description provided for @labsRelatedRecallCardsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Related Recall Cards'**
+  String get labsRelatedRecallCardsLabel;
+
+  /// No description provided for @labsFractionBuilderTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Fraction Builder'**
+  String get labsFractionBuilderTitle;
+
+  /// No description provided for @labsFractionBuilderSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Build a fraction by filling equal parts'**
+  String get labsFractionBuilderSubtitle;
+
+  /// No description provided for @labsFractionBuilderConcept.
+  ///
+  /// In en, this message translates to:
+  /// **'A fraction is a count of equal parts out of a whole. Tap segments to fill them and match the target fraction.'**
+  String get labsFractionBuilderConcept;
+
+  /// No description provided for @labsFractionBuilderWhereUsed.
+  ///
+  /// In en, this message translates to:
+  /// **'Sharing food fairly, reading recipes, and measuring ingredients all rely on fractions of a whole.'**
+  String get labsFractionBuilderWhereUsed;
+
+  /// Fraction Builder challenge prompt
+  ///
+  /// In en, this message translates to:
+  /// **'Fill in {numerator} out of {denominator} segments.'**
+  String labsFractionBuilderPrompt(int numerator, int denominator);
+
+  /// Fraction Builder live fill count
+  ///
+  /// In en, this message translates to:
+  /// **'{filled} of {denominator} filled'**
+  String labsFractionBuilderFilledCount(int filled, int denominator);
+
+  /// No description provided for @labsAlgebraBalanceTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Algebra Balance'**
+  String get labsAlgebraBalanceTitle;
+
+  /// No description provided for @labsAlgebraBalanceSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep both sides equal to solve for x'**
+  String get labsAlgebraBalanceSubtitle;
+
+  /// No description provided for @labsAlgebraBalanceConcept.
+  ///
+  /// In en, this message translates to:
+  /// **'An equation stays true only if you do the same thing to both sides. Simplify step by step until x stands alone.'**
+  String get labsAlgebraBalanceConcept;
+
+  /// No description provided for @labsAlgebraBalanceWhereUsed.
+  ///
+  /// In en, this message translates to:
+  /// **'Working backwards from a total to find an unknown amount uses exactly this balancing idea.'**
+  String get labsAlgebraBalanceWhereUsed;
+
+  /// Screen-reader label for the current algebra equation
+  ///
+  /// In en, this message translates to:
+  /// **'Equation: {equation}'**
+  String labsAlgebraBalanceEquationLabel(String equation);
+
+  /// No description provided for @labsAlgebraBalanceStep1Button.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove the constant'**
+  String get labsAlgebraBalanceStep1Button;
+
+  /// No description provided for @labsAlgebraBalanceStep2Button.
+  ///
+  /// In en, this message translates to:
+  /// **'Divide to isolate x'**
+  String get labsAlgebraBalanceStep2Button;
+
+  /// Shown once the Algebra Balance equation is fully solved
+  ///
+  /// In en, this message translates to:
+  /// **'Solved! x = {x}'**
+  String labsAlgebraBalanceSolvedFeedback(int x);
+
+  /// No description provided for @labsNumberLineExplorerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Number Line Explorer'**
+  String get labsNumberLineExplorerTitle;
+
+  /// No description provided for @labsNumberLineExplorerSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Drag to match a value on the line'**
+  String get labsNumberLineExplorerSubtitle;
+
+  /// No description provided for @labsNumberLineExplorerConcept.
+  ///
+  /// In en, this message translates to:
+  /// **'A number\'s position on a number line matches its value — including negative numbers and decimals.'**
+  String get labsNumberLineExplorerConcept;
+
+  /// No description provided for @labsNumberLineExplorerWhereUsed.
+  ///
+  /// In en, this message translates to:
+  /// **'Reading thermometers, timelines and measuring scales all rely on position matching value.'**
+  String get labsNumberLineExplorerWhereUsed;
+
+  /// Number Line Explorer challenge prompt
+  ///
+  /// In en, this message translates to:
+  /// **'Drag the point to {target}.'**
+  String labsNumberLineExplorerPrompt(String target);
+
+  /// No description provided for @labsFlightPathLabTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Flight Path Lab'**
+  String get labsFlightPathLabTitle;
+
+  /// No description provided for @labsFlightPathLabSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Set a heading and speed to reach the target'**
+  String get labsFlightPathLabSubtitle;
+
+  /// No description provided for @labsFlightPathLabConcept.
+  ///
+  /// In en, this message translates to:
+  /// **'A heading (bearing) and speed, held for a fixed time, fix exactly where you end up — this combines bearings with speed, distance and time.'**
+  String get labsFlightPathLabConcept;
+
+  /// No description provided for @labsFlightPathLabWhereUsed.
+  ///
+  /// In en, this message translates to:
+  /// **'Pilots and sailors use bearing and speed together to navigate to a destination.'**
+  String get labsFlightPathLabWhereUsed;
+
+  /// Flight Path Lab scenario prompt
+  ///
+  /// In en, this message translates to:
+  /// **'Target: bearing {bearing}°, {distance} km away. Flight time is fixed at 2 hours — choose a heading and speed to reach it.'**
+  String labsFlightPathLabPrompt(int bearing, int distance);
+
+  /// No description provided for @labsFlightPathLabRadarLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'A radar view showing the target and, after a test flight, where the aircraft landed.'**
+  String get labsFlightPathLabRadarLabel;
+
+  /// Flight Path Lab speed slider label
+  ///
+  /// In en, this message translates to:
+  /// **'Speed: {speed} km/h'**
+  String labsFlightPathLabSpeedLabel(int speed);
+
+  /// No description provided for @labsFlightPathLabTestButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Test Flight'**
+  String get labsFlightPathLabTestButton;
+
+  /// No description provided for @labsFlightPathLabResultSpotOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Spot on!'**
+  String get labsFlightPathLabResultSpotOn;
+
+  /// No description provided for @labsFlightPathLabResultClose.
+  ///
+  /// In en, this message translates to:
+  /// **'Close — try a small adjustment.'**
+  String get labsFlightPathLabResultClose;
+
+  /// No description provided for @labsFlightPathLabResultTryAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Try adjusting the heading or speed.'**
+  String get labsFlightPathLabResultTryAgain;
+
+  /// Flight Path Lab result distance-from-target message
+  ///
+  /// In en, this message translates to:
+  /// **'You landed {distance} km from the target.'**
+  String labsFlightPathLabResultDistance(int distance);
+
+  /// No description provided for @labsDataDetectiveTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Data Detective'**
+  String get labsDataDetectiveTitle;
+
+  /// No description provided for @labsDataDetectiveSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'See how one outlier changes an average'**
+  String get labsDataDetectiveSubtitle;
+
+  /// No description provided for @labsDataDetectiveConcept.
+  ///
+  /// In en, this message translates to:
+  /// **'The mean is pulled toward an outlier much more than the median is. Remove values and watch each average update live.'**
+  String get labsDataDetectiveConcept;
+
+  /// No description provided for @labsDataDetectiveWhereUsed.
+  ///
+  /// In en, this message translates to:
+  /// **'Reporting a \'typical\' salary, price or score fairly means knowing when the mean is misleading and the median is a better summary.'**
+  String get labsDataDetectiveWhereUsed;
+
+  /// No description provided for @labsDataDetectiveAddValueButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a typical value'**
+  String get labsDataDetectiveAddValueButton;
+
+  /// No description provided for @labsDataDetectivePredictionPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Which will change more once the outlier is removed?'**
+  String get labsDataDetectivePredictionPrompt;
+
+  /// No description provided for @labsDataDetectivePredictMeanButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Mean'**
+  String get labsDataDetectivePredictMeanButton;
+
+  /// No description provided for @labsDataDetectivePredictMedianButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Median'**
+  String get labsDataDetectivePredictMedianButton;
+
+  /// No description provided for @labsDataDetectiveRevealButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove outlier & reveal'**
+  String get labsDataDetectiveRevealButton;
+
+  /// No description provided for @labsDataDetectiveCorrectPrediction.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct prediction!'**
+  String get labsDataDetectiveCorrectPrediction;
+
+  /// No description provided for @labsDataDetectiveIncorrectPrediction.
+  ///
+  /// In en, this message translates to:
+  /// **'Not quite — look at the shift below.'**
+  String get labsDataDetectiveIncorrectPrediction;
+
+  /// Data Detective before/after shift comparison
+  ///
+  /// In en, this message translates to:
+  /// **'Mean moved by {meanShift}, median moved by {medianShift}.'**
+  String labsDataDetectiveShiftSummary(String meanShift, String medianShift);
+
+  /// No description provided for @labsDataDetectiveMeanLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Mean'**
+  String get labsDataDetectiveMeanLabel;
+
+  /// No description provided for @labsDataDetectiveMedianLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Median'**
+  String get labsDataDetectiveMedianLabel;
+
+  /// No description provided for @labsDataDetectiveRangeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Range'**
+  String get labsDataDetectiveRangeLabel;
+
+  /// No description provided for @labsTryAgainButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get labsTryAgainButton;
+
+  /// No description provided for @labsHelpButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Help'**
+  String get labsHelpButton;
+
+  /// No description provided for @labsHelpTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Help'**
+  String get labsHelpTitle;
+
+  /// No description provided for @labsHelpWhatToDo.
+  ///
+  /// In en, this message translates to:
+  /// **'What to do'**
+  String get labsHelpWhatToDo;
+
+  /// No description provided for @labsHelpWhatToNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'What to notice'**
+  String get labsHelpWhatToNotice;
+
+  /// No description provided for @labsHelpWhatItMeans.
+  ///
+  /// In en, this message translates to:
+  /// **'What the maths means'**
+  String get labsHelpWhatItMeans;
+
+  /// No description provided for @labsHelpWhereUsed.
+  ///
+  /// In en, this message translates to:
+  /// **'Where this is used'**
+  String get labsHelpWhereUsed;
+
+  /// No description provided for @labsFirstUseTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Before you start'**
+  String get labsFirstUseTitle;
+
+  /// No description provided for @labsFirstUseGotItButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Got it'**
+  String get labsFirstUseGotItButton;
+
+  /// No description provided for @labsGuidanceLevelLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Guidance level'**
+  String get labsGuidanceLevelLabel;
+
+  /// No description provided for @labsGuidanceExplorer.
+  ///
+  /// In en, this message translates to:
+  /// **'Explorer'**
+  String get labsGuidanceExplorer;
+
+  /// No description provided for @labsGuidanceBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'Builder'**
+  String get labsGuidanceBuilder;
+
+  /// No description provided for @labsGuidanceNavigator.
+  ///
+  /// In en, this message translates to:
+  /// **'Navigator'**
+  String get labsGuidanceNavigator;
+
+  /// No description provided for @labsDirectionAway.
+  ///
+  /// In en, this message translates to:
+  /// **'Away from you'**
+  String get labsDirectionAway;
+
+  /// No description provided for @labsDirectionRight.
+  ///
+  /// In en, this message translates to:
+  /// **'Right'**
+  String get labsDirectionRight;
+
+  /// No description provided for @labsDirectionToward.
+  ///
+  /// In en, this message translates to:
+  /// **'Toward you'**
+  String get labsDirectionToward;
+
+  /// No description provided for @labsDirectionLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'Left'**
+  String get labsDirectionLeft;
+
+  /// No description provided for @labsFlightPathLabMission.
+  ///
+  /// In en, this message translates to:
+  /// **'Point the plane toward the yellow target, then press Test Flight to see where it lands.'**
+  String get labsFlightPathLabMission;
+
+  /// Flight Path Lab heading label for Explorer/Builder bands, combining a plain direction word with the formal degree value
+  ///
+  /// In en, this message translates to:
+  /// **'Direction: {direction}  •  Heading: {degrees}°'**
+  String labsFlightPathLabHeadingLabel(String direction, int degrees);
+
+  /// Flight Path Lab heading label for the Navigator band — formal three-figure bearing only, already formatted e.g. "090°"
+  ///
+  /// In en, this message translates to:
+  /// **'Heading: {bearing}'**
+  String labsFlightPathLabHeadingNavigatorLabel(String bearing);
+
+  /// No description provided for @labsFlightPathLabHeadingHelper.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn this to choose which way the plane points'**
+  String get labsFlightPathLabHeadingHelper;
+
+  /// No description provided for @labsFlightPathLabSpeedHelper.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose how far the plane should travel'**
+  String get labsFlightPathLabSpeedHelper;
+
+  /// Flight Path Lab explicit target explanation
+  ///
+  /// In en, this message translates to:
+  /// **'The yellow marker is your target. It is {distance} km away, on a bearing of {bearing}.'**
+  String labsFlightPathLabTargetExplanation(int distance, String bearing);
+
+  /// No description provided for @labsFlightPathLabPredictionPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Before you test: will you land short, on target, or overshoot?'**
+  String get labsFlightPathLabPredictionPrompt;
+
+  /// No description provided for @labsFlightPathLabPredictShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Short'**
+  String get labsFlightPathLabPredictShort;
+
+  /// No description provided for @labsFlightPathLabPredictOnTarget.
+  ///
+  /// In en, this message translates to:
+  /// **'On target'**
+  String get labsFlightPathLabPredictOnTarget;
+
+  /// No description provided for @labsFlightPathLabPredictOver.
+  ///
+  /// In en, this message translates to:
+  /// **'Overshoot'**
+  String get labsFlightPathLabPredictOver;
+
+  /// No description provided for @labsFlightPathLabHelpWhatToDo.
+  ///
+  /// In en, this message translates to:
+  /// **'Set the heading and speed, make a prediction if asked, then press Test Flight.'**
+  String get labsFlightPathLabHelpWhatToDo;
+
+  /// No description provided for @labsFlightPathLabHelpWhatToNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Notice how far from the target the plane lands, and which way you need to adjust.'**
+  String get labsFlightPathLabHelpWhatToNotice;
+
+  /// No description provided for @labsFlightPathLabHelpWhatItMeans.
+  ///
+  /// In en, this message translates to:
+  /// **'A steady heading and speed, held for a fixed time, always lead to exactly one landing point — that\'s speed, distance and time combined with direction.'**
+  String get labsFlightPathLabHelpWhatItMeans;
+
+  /// No description provided for @labsFlightPathLabFirstUseStep1.
+  ///
+  /// In en, this message translates to:
+  /// **'Point the plane toward the yellow target.'**
+  String get labsFlightPathLabFirstUseStep1;
+
+  /// No description provided for @labsFlightPathLabFirstUseStep2.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose how far the plane should travel.'**
+  String get labsFlightPathLabFirstUseStep2;
+
+  /// No description provided for @labsFlightPathLabFirstUseStep3.
+  ///
+  /// In en, this message translates to:
+  /// **'Press Test Flight to see where it lands.'**
+  String get labsFlightPathLabFirstUseStep3;
+
+  /// No description provided for @labsDataDetectiveMission.
+  ///
+  /// In en, this message translates to:
+  /// **'Predict what happens to the mean and median, then remove the unusual value to find out.'**
+  String get labsDataDetectiveMission;
+
+  /// Data Detective explicit explanation of the unusual value
+  ///
+  /// In en, this message translates to:
+  /// **'One value, {outlier}, stands out from the rest — it\'s much higher or lower than the others. That\'s called an outlier.'**
+  String labsDataDetectiveOutlierExplanation(int outlier);
+
+  /// Data Detective before/after mean and median comparison
+  ///
+  /// In en, this message translates to:
+  /// **'Mean: {meanBefore} → {meanAfter}. Median: {medianBefore} → {medianAfter}.'**
+  String labsDataDetectiveBeforeAfter(String meanBefore, String meanAfter,
+      String medianBefore, String medianAfter);
+
+  /// No description provided for @labsDataDetectiveHelpWhatToDo.
+  ///
+  /// In en, this message translates to:
+  /// **'Look at the values, predict whether the mean or median will change more, then remove the outlier to reveal the answer.'**
+  String get labsDataDetectiveHelpWhatToDo;
+
+  /// No description provided for @labsDataDetectiveHelpWhatToNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Notice how much the mean moves compared to the median once the outlier is gone.'**
+  String get labsDataDetectiveHelpWhatToNotice;
+
+  /// No description provided for @labsDataDetectiveHelpWhatItMeans.
+  ///
+  /// In en, this message translates to:
+  /// **'The mean uses every value, so one extreme value can pull it a long way. The median only depends on the middle position, so it barely moves.'**
+  String get labsDataDetectiveHelpWhatItMeans;
+
+  /// No description provided for @labsDataDetectiveFirstUseStep1.
+  ///
+  /// In en, this message translates to:
+  /// **'Look at the list of values — one of them stands out.'**
+  String get labsDataDetectiveFirstUseStep1;
+
+  /// No description provided for @labsDataDetectiveFirstUseStep2.
+  ///
+  /// In en, this message translates to:
+  /// **'Predict which will change more: the mean or the median.'**
+  String get labsDataDetectiveFirstUseStep2;
+
+  /// No description provided for @labsDataDetectiveFirstUseStep3.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove the outlier and reveal the answer.'**
+  String get labsDataDetectiveFirstUseStep3;
+
+  /// No description provided for @labsAlgebraBalanceMission.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep both sides balanced until x is on its own.'**
+  String get labsAlgebraBalanceMission;
+
+  /// Algebra Balance concrete step-1 button when the constant is positive
+  ///
+  /// In en, this message translates to:
+  /// **'Remove {value} from both sides'**
+  String labsAlgebraBalanceStep1RemoveButton(int value);
+
+  /// Algebra Balance concrete step-1 button when the constant is negative
+  ///
+  /// In en, this message translates to:
+  /// **'Add {value} to both sides'**
+  String labsAlgebraBalanceStep1AddButton(int value);
+
+  /// Algebra Balance concrete step-2 button once the constant is cleared
+  ///
+  /// In en, this message translates to:
+  /// **'Divide both sides by {value}'**
+  String labsAlgebraBalanceStep2DivideButton(int value);
+
+  /// No description provided for @labsAlgebraBalanceHelpWhatToDo.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear the number term first, then divide to leave x on its own.'**
+  String get labsAlgebraBalanceHelpWhatToDo;
+
+  /// No description provided for @labsAlgebraBalanceHelpWhatToNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Notice that both pans always change together, by the same amount — the equation never stops being true.'**
+  String get labsAlgebraBalanceHelpWhatToNotice;
+
+  /// No description provided for @labsAlgebraBalanceHelpWhatItMeans.
+  ///
+  /// In en, this message translates to:
+  /// **'Doing the same operation to both sides of an equation keeps it balanced, which is how you can safely simplify down to just x.'**
+  String get labsAlgebraBalanceHelpWhatItMeans;
+
+  /// No description provided for @labsAlgebraBalanceFirstUseStep1.
+  ///
+  /// In en, this message translates to:
+  /// **'Look at the equation and the balance below it.'**
+  String get labsAlgebraBalanceFirstUseStep1;
+
+  /// No description provided for @labsAlgebraBalanceFirstUseStep2.
+  ///
+  /// In en, this message translates to:
+  /// **'Use the buttons to simplify both sides together.'**
+  String get labsAlgebraBalanceFirstUseStep2;
+
+  /// No description provided for @labsAlgebraBalanceFirstUseStep3.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep going until x stands alone.'**
+  String get labsAlgebraBalanceFirstUseStep3;
+
+  /// Fraction Builder mission statement
+  ///
+  /// In en, this message translates to:
+  /// **'Fill in {numerator} out of {denominator} equal parts.'**
+  String labsFractionBuilderMission(int numerator, int denominator);
+
+  /// No description provided for @labsFractionBuilderTapGuidance.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap a segment to fill it in, or tap again to empty it.'**
+  String get labsFractionBuilderTapGuidance;
+
+  /// Fraction Builder symbolic + visual result shown after a correct check
+  ///
+  /// In en, this message translates to:
+  /// **'{numerator}/{denominator} — {numerator} equal part(s) filled out of {denominator}.'**
+  String labsFractionBuilderSymbolicResult(int numerator, int denominator);
+
+  /// No description provided for @labsFractionBuilderHelpWhatToDo.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap segments until the number filled matches the fraction, then press Check.'**
+  String get labsFractionBuilderHelpWhatToDo;
+
+  /// No description provided for @labsFractionBuilderHelpWhatToNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Notice that the denominator is the total number of equal parts, and the numerator is how many are filled.'**
+  String get labsFractionBuilderHelpWhatToNotice;
+
+  /// No description provided for @labsFractionBuilderHelpWhatItMeans.
+  ///
+  /// In en, this message translates to:
+  /// **'A fraction counts equal parts of a whole — the same idea whether it\'s a bar, a pizza, or a measuring cup.'**
+  String get labsFractionBuilderHelpWhatItMeans;
+
+  /// No description provided for @labsFractionBuilderFirstUseStep1.
+  ///
+  /// In en, this message translates to:
+  /// **'Look at how many parts to fill in.'**
+  String get labsFractionBuilderFirstUseStep1;
+
+  /// No description provided for @labsFractionBuilderFirstUseStep2.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap segments to fill them in.'**
+  String get labsFractionBuilderFirstUseStep2;
+
+  /// No description provided for @labsFractionBuilderFirstUseStep3.
+  ///
+  /// In en, this message translates to:
+  /// **'Press Check to see if you matched the fraction.'**
+  String get labsFractionBuilderFirstUseStep3;
+
+  /// Number Line Explorer mission statement
+  ///
+  /// In en, this message translates to:
+  /// **'Move the point to {target}.'**
+  String labsNumberLineExplorerMission(String target);
+
+  /// Number Line Explorer explicit start-point instruction
+  ///
+  /// In en, this message translates to:
+  /// **'Start at {min} and move the point to the target.'**
+  String labsNumberLineExplorerStartInstruction(String min);
+
+  /// Number Line Explorer direction/distance helper when the target is to the right
+  ///
+  /// In en, this message translates to:
+  /// **'Move {distance} more to the right'**
+  String labsNumberLineExplorerMoveRight(String distance);
+
+  /// Number Line Explorer direction/distance helper when the target is to the left
+  ///
+  /// In en, this message translates to:
+  /// **'Move {distance} more to the left'**
+  String labsNumberLineExplorerMoveLeft(String distance);
+
+  /// No description provided for @labsNumberLineExplorerIncreaseButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Move right'**
+  String get labsNumberLineExplorerIncreaseButton;
+
+  /// No description provided for @labsNumberLineExplorerDecreaseButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Move left'**
+  String get labsNumberLineExplorerDecreaseButton;
+
+  /// No description provided for @labsNumberLineExplorerHelpWhatToDo.
+  ///
+  /// In en, this message translates to:
+  /// **'Drag the point, or use the arrow buttons, to reach the target value, then press Check.'**
+  String get labsNumberLineExplorerHelpWhatToDo;
+
+  /// No description provided for @labsNumberLineExplorerHelpWhatToNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Notice how the point\'s position matches its value — further right is a bigger number, further left is smaller.'**
+  String get labsNumberLineExplorerHelpWhatToNotice;
+
+  /// No description provided for @labsNumberLineExplorerHelpWhatItMeans.
+  ///
+  /// In en, this message translates to:
+  /// **'A number line shows every number in order, in both directions from zero, including negative numbers and decimals.'**
+  String get labsNumberLineExplorerHelpWhatItMeans;
+
+  /// No description provided for @labsNumberLineExplorerFirstUseStep1.
+  ///
+  /// In en, this message translates to:
+  /// **'See where the point starts.'**
+  String get labsNumberLineExplorerFirstUseStep1;
+
+  /// No description provided for @labsNumberLineExplorerFirstUseStep2.
+  ///
+  /// In en, this message translates to:
+  /// **'Drag the point, or use the arrow buttons, toward the target.'**
+  String get labsNumberLineExplorerFirstUseStep2;
+
+  /// No description provided for @labsNumberLineExplorerFirstUseStep3.
+  ///
+  /// In en, this message translates to:
+  /// **'Press Check to see if you reached it.'**
+  String get labsNumberLineExplorerFirstUseStep3;
 }
 
 class _AppLocalizationsDelegate

@@ -3,6 +3,7 @@ import '../services/locale_service.dart';
 import '../services/learner_profiles_service.dart';
 import '../services/local_account_service.dart';
 import '../services/local_preferences_service.dart';
+import '../services/interactive_labs_progress_service.dart';
 import '../services/onboarding_profile_service.dart';
 import '../services/recall_cards_progress_service.dart';
 import '../services/streak_service.dart';
@@ -31,6 +32,7 @@ class AppBootstrap {
       StreakService.instance.init(),
       TutorCreditService.instance.init(),
       RecallCardsProgressService.instance.init(),
+      InteractiveLabsProgressService.instance.init(),
     ]);
     await MarketSmoke.printStartupState();
   }

@@ -154,23 +154,42 @@ class AppShell extends StatelessWidget {
             child: Row(
               children: [
                 if (useRail && showChrome)
-                  NavigationRail(
-                    selectedIndex: currentIndex,
-                    onDestinationSelected: _goBranch,
-                    labelType: NavigationRailLabelType.all,
-                    destinations: railDestinations,
-                    trailing: Expanded(
-                      child: Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Padding(
-                          padding: const EdgeInsets.only(bottom: 12),
-                          child: _RailExploreButton(
-                            label: l10n.exploreMathIntelligenceTitle,
-                            onTap: () => context.push('/explore'),
+                  // NavigationRail's own destinations + trailing button can
+                  // exceed the available height on short viewports (small
+                  // landscape phones, resized browser windows). Wrapping in
+                  // SingleChildScrollView + a min-height ConstrainedBox +
+                  // IntrinsicHeight is Flutter's own documented fix for this
+                  // (see NavigationRail's API docs "Usage" section) — it
+                  // scrolls only when content genuinely doesn't fit, and
+                  // still fills/centers normally otherwise.
+                  LayoutBuilder(
+                    builder: (context, constraints) {
+                      return SingleChildScrollView(
+                        child: ConstrainedBox(
+                          constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                          child: IntrinsicHeight(
+                            child: NavigationRail(
+                              selectedIndex: currentIndex,
+                              onDestinationSelected: _goBranch,
+                              labelType: NavigationRailLabelType.all,
+                              destinations: railDestinations,
+                              trailing: Expanded(
+                                child: Align(
+                                  alignment: Alignment.bottomCenter,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(bottom: 12),
+                                    child: _RailExploreButton(
+                                      label: l10n.exploreMathIntelligenceTitle,
+                                      onTap: () => context.push('/explore'),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
                         ),
-                      ),
-                    ),
+                      );
+                    },
                   ),
                 Expanded(
                   child: LayoutBuilder(
