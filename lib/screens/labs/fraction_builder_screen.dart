@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../models/interactive_lab_id.dart';
+import '../../services/audio_cue_service.dart';
 import '../../services/captain_math_service.dart';
 import '../../services/interactive_labs_progress_service.dart';
 import '../../shared/theme/app_spacing.dart';
@@ -49,6 +50,7 @@ class _FractionBuilderScreenState extends State<FractionBuilderScreen> {
   _FractionChallenge get _challenge => _challenges[_challengeIndex];
 
   void _toggleSegment(int index) {
+    AudioCueService.instance.play(AudioCue.objectSelect, throttle: true);
     setState(() {
       _filled = index < _filled ? index : index + 1;
       _lastResultCorrect = null;
@@ -56,6 +58,7 @@ class _FractionBuilderScreenState extends State<FractionBuilderScreen> {
   }
 
   Future<void> _check() async {
+    AudioCueService.instance.play(AudioCue.testLaunch);
     final correct = _filled == _challenge.numerator;
     setState(() => _lastResultCorrect = correct);
     await InteractiveLabsProgressService.instance.recordAttempt(InteractiveLabId.fractionBuilder);
@@ -63,12 +66,14 @@ class _FractionBuilderScreenState extends State<FractionBuilderScreen> {
       await InteractiveLabsProgressService.instance
           .recordCompletion(InteractiveLabId.fractionBuilder);
       CaptainMathService.instance.showCompletion();
+      AudioCueService.instance.play(AudioCue.success);
     } else {
       CaptainMathService.instance.showEncouragement();
     }
   }
 
   void _reset() {
+    AudioCueService.instance.play(AudioCue.retry);
     setState(() {
       _filled = 0;
       _lastResultCorrect = null;
@@ -76,6 +81,7 @@ class _FractionBuilderScreenState extends State<FractionBuilderScreen> {
   }
 
   void _next() {
+    AudioCueService.instance.play(AudioCue.nextMission);
     setState(() {
       _challengeIndex = (_challengeIndex + 1) % _challenges.length;
       _filled = 0;
@@ -99,7 +105,7 @@ class _FractionBuilderScreenState extends State<FractionBuilderScreen> {
         whereYoullUseThis: l10n.labsFractionBuilderWhereUsed,
         onReset: _reset,
         progressIndicator: LabProgressIndicator(
-          label: l10n.recallCardsCardOf(_challengeIndex + 1, _challenges.length),
+          label: l10n.labsMissionOf(_challengeIndex + 1, _challenges.length),
         ),
         helpContent: LabHelpContent(
           whatToDo: l10n.labsFractionBuilderHelpWhatToDo,

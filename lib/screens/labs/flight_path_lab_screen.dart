@@ -5,8 +5,10 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../models/interactive_lab_id.dart';
 import '../../models/lab_guidance_level.dart';
+import '../../services/audio_cue_service.dart';
 import '../../services/captain_math_service.dart';
 import '../../services/interactive_labs_progress_service.dart';
+import '../../services/local_preferences_service.dart';
 import '../../shared/theme/app_spacing.dart';
 import '../../widgets/labs/lab_help_sheet.dart';
 import '../../widgets/labs/lab_progress_indicator.dart';
@@ -77,20 +79,30 @@ Offset _bearingToOffset(double bearingDegrees, double distanceKm) {
   return Offset(distanceKm * math.sin(radians), distanceKm * math.cos(radians));
 }
 
-/// Simplified quadrant direction word — matches Explorer/Builder-band
-/// example copy ("Direction: Right") rather than 8/16-point compass names,
-/// which would add terminology Explorer-band learners don't need yet.
-enum _DirectionWord { away, right, toward, left }
+/// 8-point simplified direction word for the Explorer band — plain compass
+/// points would introduce terminology Explorer-band learners don't need yet.
+enum _PlainDirection { up, upRight, right, downRight, down, downLeft, left, upLeft }
 
-_DirectionWord _directionWordFor(double heading) {
-  final normalized = heading % 360;
-  if (normalized >= 315 || normalized < 45) return _DirectionWord.away;
-  if (normalized >= 45 && normalized < 135) return _DirectionWord.right;
-  if (normalized >= 135 && normalized < 225) return _DirectionWord.toward;
-  return _DirectionWord.left;
-}
+/// 8-point compass direction for Builder/Navigator — shown together with
+/// the formal bearing, per "compass directions plus heading/bearing".
+enum _CompassDirection { north, northeast, east, southeast, south, southwest, west, northwest }
+
+int _octant(double heading) => (((heading % 360) + 22.5) ~/ 45) % 8;
+
+_PlainDirection _plainDirectionFor(double heading) => _PlainDirection.values[_octant(heading)];
+
+_CompassDirection _compassDirectionFor(double heading) => _CompassDirection.values[_octant(heading)];
 
 String _threeFigureBearing(double heading) => '${heading.round().toString().padLeft(3, '0')}°';
+
+/// Deterministically snaps a raw pointer-derived heading to the same 5°
+/// grid the heading slider uses, so drag/tap-to-aim and the slider always
+/// agree on reachable values.
+double _snapHeading(double raw) {
+  final wrapped = raw % 360;
+  final snapped = (wrapped / 5).round() * 5;
+  return snapped >= 360 ? 0 : snapped.toDouble();
+}
 
 /// Teaches: a heading (bearing) and speed, held for a fixed time, determine
 /// exactly where an aircraft ends up — speed-distance-time and bearings
@@ -113,7 +125,42 @@ class _FlightPathLabScreenState extends State<FlightPathLabScreen> {
   _FlightScenario get _scenario => _scenarios[_scenarioIndex];
   bool get _predictionRequired => _scenario.level != LabGuidanceLevel.explorer;
 
+  void _registerDirectManipulation() {
+    if (!InteractiveLabsProgressService.instance.hasSeenDragCue(InteractiveLabId.flightPathLab)) {
+      InteractiveLabsProgressService.instance.markDragCueSeen(InteractiveLabId.flightPathLab);
+    }
+  }
+
+  /// Shared angle maths for any drag/tap gesture: [pivot] is the point the
+  /// heading rotates around (the aircraft glyph's own centre when dragging
+  /// the aircraft; the radar's launch origin when tapping the radar).
+  void _setHeadingFromPoint(Offset localPosition, Offset pivot) {
+    final vector = localPosition - pivot;
+    if (vector.distance < 4) return; // ignore taps too close to the pivot
+    final radians = math.atan2(vector.dx, -vector.dy);
+    setState(() => _heading = _snapHeading(radians * 180 / math.pi));
+    AudioCueService.instance.play(AudioCue.aircraftTurn, throttle: true);
+    _registerDirectManipulation();
+  }
+
+  void _setHeadingFromAircraftDrag(Offset localPositionInBox, Size boxSize) {
+    _setHeadingFromPoint(localPositionInBox, Offset(boxSize.width / 2, boxSize.height / 2));
+  }
+
+  /// Tapping the radar aims at that point directly — the same pivot
+  /// convention [_RadarPainter] uses for its launch origin.
+  void _setHeadingFromRadarTap(Offset localPosition, Size radarSize) {
+    _setHeadingFromPoint(localPosition, Offset(radarSize.width / 2, radarSize.height - 20));
+  }
+
+  void _setHeadingFromTarget() {
+    setState(() => _heading = _snapHeading(_scenario.targetBearing));
+    AudioCueService.instance.play(AudioCue.objectSelect);
+    _registerDirectManipulation();
+  }
+
   Future<void> _testFlight() async {
+    AudioCueService.instance.play(AudioCue.testLaunch);
     final distanceFlown = _speed * _flightTimeHours;
     final landing = _bearingToOffset(_heading, distanceFlown) + _scenario.windOffsetKm;
     final target = _bearingToOffset(_scenario.targetBearing, _scenario.targetDistanceKm);
@@ -128,12 +175,17 @@ class _FlightPathLabScreenState extends State<FlightPathLabScreen> {
     if (error < 15) {
       await InteractiveLabsProgressService.instance.recordCompletion(InteractiveLabId.flightPathLab);
       CaptainMathService.instance.showCompletion();
+      AudioCueService.instance.play(AudioCue.success);
+    } else if (error < 60) {
+      CaptainMathService.instance.showEncouragement();
+      AudioCueService.instance.play(AudioCue.nearMiss);
     } else {
       CaptainMathService.instance.showEncouragement();
     }
   }
 
   void _reset() {
+    AudioCueService.instance.play(AudioCue.retry);
     setState(() {
       _heading = 90;
       _speed = 100;
@@ -144,6 +196,7 @@ class _FlightPathLabScreenState extends State<FlightPathLabScreen> {
   }
 
   void _next() {
+    AudioCueService.instance.play(AudioCue.nextMission);
     setState(() {
       _scenarioIndex = (_scenarioIndex + 1) % _scenarios.length;
       _heading = 90;
@@ -165,18 +218,39 @@ class _FlightPathLabScreenState extends State<FlightPathLabScreen> {
     final l10n = AppLocalizations.of(context);
     final level = InteractiveLabsProgressService.instance.guidanceLevel();
     final target = _bearingToOffset(_scenario.targetBearing, _scenario.targetDistanceKm);
-    final directionWord = _directionWordFor(_heading);
-    final directionLabel = switch (directionWord) {
-      _DirectionWord.away => l10n.labsDirectionAway,
-      _DirectionWord.right => l10n.labsDirectionRight,
-      _DirectionWord.toward => l10n.labsDirectionToward,
-      _DirectionWord.left => l10n.labsDirectionLeft,
-    };
-    final headingLabel = level == LabGuidanceLevel.navigator
-        ? l10n.labsFlightPathLabHeadingNavigatorLabel(_threeFigureBearing(_heading))
-        : l10n.labsFlightPathLabHeadingLabel(directionLabel, _heading.round());
+    final hasResult = _distanceFromTarget != null;
+
+    final String headingLabel;
+    if (level == LabGuidanceLevel.explorer) {
+      final word = switch (_plainDirectionFor(_heading)) {
+        _PlainDirection.up => l10n.labsDirectionUp,
+        _PlainDirection.upRight => l10n.labsDirectionUpRight,
+        _PlainDirection.right => l10n.labsDirectionRight,
+        _PlainDirection.downRight => l10n.labsDirectionDownRight,
+        _PlainDirection.down => l10n.labsDirectionDown,
+        _PlainDirection.downLeft => l10n.labsDirectionDownLeft,
+        _PlainDirection.left => l10n.labsDirectionLeft,
+        _PlainDirection.upLeft => l10n.labsDirectionUpLeft,
+      };
+      headingLabel = l10n.labsFlightPathLabHeadingExplorerLabel(word, _heading.round());
+    } else {
+      final compass = switch (_compassDirectionFor(_heading)) {
+        _CompassDirection.north => l10n.labsCompassNorth,
+        _CompassDirection.northeast => l10n.labsCompassNortheast,
+        _CompassDirection.east => l10n.labsCompassEast,
+        _CompassDirection.southeast => l10n.labsCompassSoutheast,
+        _CompassDirection.south => l10n.labsCompassSouth,
+        _CompassDirection.southwest => l10n.labsCompassSouthwest,
+        _CompassDirection.west => l10n.labsCompassWest,
+        _CompassDirection.northwest => l10n.labsCompassNorthwest,
+      };
+      headingLabel =
+          l10n.labsFlightPathLabHeadingCompassLabel(compass, _threeFigureBearing(_heading));
+    }
 
     final canTest = !_predictionRequired || _prediction != null;
+    final dragCueSeen =
+        InteractiveLabsProgressService.instance.hasSeenDragCue(InteractiveLabId.flightPathLab);
 
     return ListenableBuilder(
       listenable: InteractiveLabsProgressService.instance.updateSerial,
@@ -188,7 +262,7 @@ class _FlightPathLabScreenState extends State<FlightPathLabScreen> {
         whereYoullUseThis: l10n.labsFlightPathLabWhereUsed,
         onReset: _reset,
         progressIndicator: LabProgressIndicator(
-          label: l10n.recallCardsCardOf(_scenarioIndex + 1, _scenarios.length),
+          label: l10n.labsMissionOf(_scenarioIndex + 1, _scenarios.length),
         ),
         helpContent: LabHelpContent(
           whatToDo: l10n.labsFlightPathLabHelpWhatToDo,
@@ -219,33 +293,46 @@ class _FlightPathLabScreenState extends State<FlightPathLabScreen> {
                   child: Semantics(
                     label: l10n.labsFlightPathLabRadarLabel,
                     image: true,
-                    child: ExcludeSemantics(
-                      child: SizedBox(
-                        height: 220,
-                        child: CustomPaint(
-                          painter: _RadarPainter(target: target, landing: _landingPoint),
-                        ),
-                      ),
+                    child: LayoutBuilder(
+                      builder: (context, constraints) {
+                        final size = Size(constraints.maxWidth, 220);
+                        return GestureDetector(
+                          key: const Key('flightPathRadarGesture'),
+                          behavior: HitTestBehavior.opaque,
+                          onTapUp: (details) => _setHeadingFromRadarTap(details.localPosition, size),
+                          child: ExcludeSemantics(
+                            child: SizedBox(
+                              height: 220,
+                              width: double.infinity,
+                              child: CustomPaint(
+                                painter: _RadarPainter(target: target, landing: _landingPoint),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
                     ),
                   ),
                 ),
                 const SizedBox(width: AppSpacing.md),
-                Column(
-                  children: [
-                    Semantics(
-                      label: headingLabel,
-                      child: ExcludeSemantics(
-                        child: Transform.rotate(
-                          angle: _heading * math.pi / 180,
-                          child: const Icon(Icons.navigation, color: Color(0xFF5B8EFF), size: 48),
-                        ),
-                      ),
-                    ),
-                  ],
+                _AircraftControl(
+                  heading: _heading,
+                  showDragCue: !dragCueSeen,
+                  headingLabel: headingLabel,
+                  onDrag: _setHeadingFromAircraftDrag,
+                  onDragEnd: _registerDirectManipulation,
                 ),
               ],
             ),
-            const SizedBox(height: AppSpacing.lg),
+            if (level == LabGuidanceLevel.explorer) ...[
+              const SizedBox(height: AppSpacing.sm),
+              TextButton.icon(
+                onPressed: _setHeadingFromTarget,
+                icon: const Icon(Icons.my_location, size: 16),
+                label: Text(l10n.labsFlightPathLabTapTargetHint),
+              ),
+            ],
+            const SizedBox(height: AppSpacing.sm),
             Text(
               headingLabel,
               style: const TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w700),
@@ -253,14 +340,6 @@ class _FlightPathLabScreenState extends State<FlightPathLabScreen> {
             Text(
               l10n.labsFlightPathLabHeadingHelper,
               style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 12),
-            ),
-            Slider(
-              value: _heading,
-              min: 0,
-              max: 355,
-              divisions: 71,
-              label: '${_heading.round()}°',
-              onChanged: (value) => setState(() => _heading = value),
             ),
             Text(
               l10n.labsFlightPathLabSpeedLabel(_speed.round()),
@@ -324,14 +403,18 @@ class _FlightPathLabScreenState extends State<FlightPathLabScreen> {
                 ),
               ],
             ),
-            const SizedBox(height: AppSpacing.sm),
-            OutlinedButton(
-              onPressed: _next,
-              child: Text(l10n.labsNextChallengeButton),
-            ),
+            // "Next" only enters the flow once a result exists — it isn't a
+            // way to skip a scenario without trying it.
+            if (hasResult) ...[
+              const SizedBox(height: AppSpacing.sm),
+              OutlinedButton(
+                onPressed: _next,
+                child: Text(l10n.labsNextChallengeButton),
+              ),
+            ],
           ],
         ),
-        feedback: _distanceFromTarget == null
+        feedback: !hasResult
             ? null
             : LabResultBanner(
                 kind: _resultKind(_distanceFromTarget!),
@@ -351,6 +434,181 @@ class _FlightPathLabScreenState extends State<FlightPathLabScreen> {
       ),
     );
   }
+}
+
+/// The draggable aircraft direction control: an aircraft-shaped vector glyph
+/// that can be dragged in a circle to set the heading directly ("Drag the
+/// plane to turn it"), with a pulsing first-use cue that disappears for
+/// good once this profile has successfully dragged it.
+class _AircraftControl extends StatefulWidget {
+  const _AircraftControl({
+    required this.heading,
+    required this.showDragCue,
+    required this.headingLabel,
+    required this.onDrag,
+    required this.onDragEnd,
+  });
+
+  final double heading;
+  final bool showDragCue;
+  final String headingLabel;
+  final void Function(Offset localPosition, Size boxSize) onDrag;
+  final VoidCallback onDragEnd;
+
+  static const _boxSize = Size(88, 88);
+
+  @override
+  State<_AircraftControl> createState() => _AircraftControlState();
+}
+
+class _AircraftControlState extends State<_AircraftControl> with SingleTickerProviderStateMixin {
+  late final AnimationController _pulseController;
+  bool _pulseStarted = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _pulseController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1200),
+    );
+  }
+
+  // MediaQuery isn't safe to read until dependencies are established, so the
+  // initial pulse start happens here rather than in initState().
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (!_pulseStarted && widget.showDragCue && _motionEnabled) {
+      _pulseStarted = true;
+      // A handful of pulses draws the eye without becoming a constant,
+      // intrusive animation that never settles.
+      _pulseController.repeat(reverse: true, count: 6);
+    }
+  }
+
+  bool get _motionEnabled =>
+      !LocalPreferencesService.instance.reduceMotion.value &&
+      !MediaQuery.disableAnimationsOf(context);
+
+  @override
+  void didUpdateWidget(covariant _AircraftControl oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (!widget.showDragCue && _pulseController.isAnimating) {
+      _pulseController.stop();
+    } else if (widget.showDragCue && !_pulseController.isAnimating && _motionEnabled) {
+      _pulseController.repeat(reverse: true, count: 6);
+    }
+  }
+
+  @override
+  void dispose() {
+    _pulseController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    return Column(
+      children: [
+        Semantics(
+          label: widget.headingLabel,
+          child: ExcludeSemantics(
+            child: GestureDetector(
+              key: const Key('flightPathAircraftGesture'),
+              behavior: HitTestBehavior.opaque,
+              onPanUpdate: (details) =>
+                  widget.onDrag(details.localPosition, _AircraftControl._boxSize),
+              onPanEnd: (_) => widget.onDragEnd(),
+              child: SizedBox(
+                width: _AircraftControl._boxSize.width,
+                height: _AircraftControl._boxSize.height,
+                child: AnimatedBuilder(
+                  animation: _pulseController,
+                  builder: (context, child) {
+                    final pulse = widget.showDragCue
+                        ? (_motionEnabled ? 0.3 + _pulseController.value * 0.4 : 0.5)
+                        : 0.0;
+                    return CustomPaint(
+                      painter: _AircraftPainter(headingDegrees: widget.heading, cuePulse: pulse),
+                    );
+                  },
+                ),
+              ),
+            ),
+          ),
+        ),
+        if (widget.showDragCue) ...[
+          const SizedBox(height: 4),
+          SizedBox(
+            width: 96,
+            child: Text(
+              l10n.labsFlightPathLabDragCue,
+              textAlign: TextAlign.center,
+              style: const TextStyle(color: Color(0xFF5B8EFF), fontSize: 11, fontWeight: FontWeight.w600),
+            ),
+          ),
+        ],
+      ],
+    );
+  }
+}
+
+/// Aircraft-shaped Flutter vector (a simple dart/paper-aeroplane silhouette)
+/// rather than a generic arrow icon, with the nose indicating heading. Also
+/// draws the pulsing first-use cue ring when [cuePulse] > 0.
+class _AircraftPainter extends CustomPainter {
+  _AircraftPainter({required this.headingDegrees, required this.cuePulse});
+
+  final double headingDegrees;
+  final double cuePulse;
+
+  static const _aircraftColor = Color(0xFF5B8EFF);
+  static const _cueColor = Color(0xFF34C759);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final center = Offset(size.width / 2, size.height / 2);
+
+    if (cuePulse > 0) {
+      canvas.drawCircle(
+        center,
+        size.width / 2 - 2,
+        Paint()
+          ..color = _cueColor.withValues(alpha: 0.15 + cuePulse * 0.2)
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 2 + cuePulse * 2,
+      );
+    }
+
+    canvas.save();
+    canvas.translate(center.dx, center.dy);
+    canvas.rotate(headingDegrees * math.pi / 180);
+
+    final path = Path()
+      ..moveTo(0, -26) // nose
+      ..lineTo(20, 18) // right wingtip
+      ..lineTo(6, 12) // right tail root
+      ..lineTo(0, 26) // tail point
+      ..lineTo(-6, 12) // left tail root
+      ..lineTo(-20, 18) // left wingtip
+      ..close();
+
+    canvas.drawPath(path, Paint()..color = _aircraftColor);
+    canvas.drawPath(
+      path,
+      Paint()
+        ..color = Colors.white.withValues(alpha: 0.4)
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 1.2,
+    );
+    canvas.restore();
+  }
+
+  @override
+  bool shouldRepaint(covariant _AircraftPainter oldDelegate) =>
+      oldDelegate.headingDegrees != headingDegrees || oldDelegate.cuePulse != cuePulse;
 }
 
 class _RadarPainter extends CustomPainter {
@@ -383,22 +641,32 @@ class _RadarPainter extends CustomPainter {
     }
 
     final targetPoint = toCanvasPoint(target);
-    // The target marker is drawn with a distinct ring-and-cross shape (not
-    // just a coloured dot) so it never depends on colour alone to read as
-    // "the target" versus "the landing point".
-    canvas.drawCircle(targetPoint, 10, Paint()..color = _targetColor.withValues(alpha: 0.25));
-    canvas.drawCircle(
-      targetPoint,
-      10,
+    // A recognisable destination-pin/runway marker rather than a plain dot
+    // or ring, so "this is the destination" reads without relying on
+    // colour alone.
+    final pinPath = Path()
+      ..moveTo(targetPoint.dx, targetPoint.dy + 14)
+      ..lineTo(targetPoint.dx - 8, targetPoint.dy - 2)
+      ..arcToPoint(
+        Offset(targetPoint.dx + 8, targetPoint.dy - 2),
+        radius: const Radius.circular(8),
+        clockwise: true,
+      )
+      ..close();
+    canvas.drawPath(pinPath, Paint()..color = _targetColor.withValues(alpha: 0.25));
+    canvas.drawPath(
+      pinPath,
       Paint()
         ..color = _targetColor
         ..style = PaintingStyle.stroke
         ..strokeWidth = 2,
     );
-    canvas.drawLine(targetPoint - const Offset(5, 0), targetPoint + const Offset(5, 0),
-        Paint()..color = _targetColor..strokeWidth = 2);
-    canvas.drawLine(targetPoint - const Offset(0, 5), targetPoint + const Offset(0, 5),
-        Paint()..color = _targetColor..strokeWidth = 2);
+    canvas.drawCircle(Offset(targetPoint.dx, targetPoint.dy - 6), 3, Paint()..color = _targetColor);
+    // Small runway strip beneath the pin.
+    canvas.drawRect(
+      Rect.fromCenter(center: Offset(targetPoint.dx, targetPoint.dy + 14), width: 22, height: 4),
+      Paint()..color = _targetColor.withValues(alpha: 0.6),
+    );
 
     if (landing != null) {
       final landingPoint = toCanvasPoint(landing!);

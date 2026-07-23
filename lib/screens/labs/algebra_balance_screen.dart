@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../models/interactive_lab_id.dart';
+import '../../services/audio_cue_service.dart';
 import '../../services/captain_math_service.dart';
 import '../../services/interactive_labs_progress_service.dart';
 import '../../shared/theme/app_spacing.dart';
@@ -65,6 +66,7 @@ class _AlgebraBalanceScreenState extends State<AlgebraBalanceScreen> {
 
   Future<void> _subtractB() async {
     if (_b == 0) return;
+    AudioCueService.instance.play(AudioCue.objectSelect);
     setState(() {
       _c -= _b;
       _b = 0;
@@ -74,6 +76,7 @@ class _AlgebraBalanceScreenState extends State<AlgebraBalanceScreen> {
 
   Future<void> _divideByA() async {
     if (_b != 0 || _a == 1) return;
+    AudioCueService.instance.play(AudioCue.testLaunch);
     setState(() {
       _c = _c ~/ _a;
       _a = 1;
@@ -82,11 +85,16 @@ class _AlgebraBalanceScreenState extends State<AlgebraBalanceScreen> {
     await InteractiveLabsProgressService.instance.recordAttempt(InteractiveLabId.algebraBalance);
     await InteractiveLabsProgressService.instance.recordCompletion(InteractiveLabId.algebraBalance);
     CaptainMathService.instance.showCompletion();
+    AudioCueService.instance.play(AudioCue.success);
   }
 
-  void _reset() => setState(_loadEquation);
+  void _reset() {
+    AudioCueService.instance.play(AudioCue.retry);
+    setState(_loadEquation);
+  }
 
   void _next() {
+    AudioCueService.instance.play(AudioCue.nextMission);
     setState(() {
       _equationIndex = (_equationIndex + 1) % _equations.length;
       _loadEquation();
@@ -126,7 +134,7 @@ class _AlgebraBalanceScreenState extends State<AlgebraBalanceScreen> {
         whereYoullUseThis: l10n.labsAlgebraBalanceWhereUsed,
         onReset: _reset,
         progressIndicator: LabProgressIndicator(
-          label: l10n.recallCardsCardOf(_equationIndex + 1, _equations.length),
+          label: l10n.labsMissionOf(_equationIndex + 1, _equations.length),
         ),
         helpContent: LabHelpContent(
           whatToDo: l10n.labsAlgebraBalanceHelpWhatToDo,

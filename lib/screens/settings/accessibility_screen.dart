@@ -15,6 +15,8 @@ class _AccessibilityScreenState extends State<AccessibilityScreen> {
   late int _textSize = _textScaleIndex(
       LocalPreferencesService.instance.textScale.value); // 0=Small 1=Default 2=Large
   bool _reduceMotion = LocalPreferencesService.instance.reduceMotion.value;
+  bool _quietStudyMode = LocalPreferencesService.instance.quietStudyMode.value;
+  bool _soundEnabled = LocalPreferencesService.instance.soundEnabled.value;
 
   static int _textScaleIndex(double scale) {
     var closest = 0;
@@ -116,6 +118,37 @@ class _AccessibilityScreenState extends State<AccessibilityScreen> {
                     onChanged: (v) async {
                       await LocalPreferencesService.instance.setReduceMotion(v);
                       if (mounted) setState(() => _reduceMotion = v);
+                    },
+                  ),
+                  const SizedBox(height: 12),
+
+                  // Quiet Study Mode
+                  _ToggleCard(
+                    icon: Icons.self_improvement,
+                    iconColor: const Color(0xFF34C759),
+                    iconBg: const Color(0xFF0F2E1A),
+                    title: 'Quiet Study Mode',
+                    subtitle:
+                        'Inspired by Nyepi, a Balinese tradition of reflection, stillness and focus — reduces Captain Math and sound cues',
+                    value: _quietStudyMode,
+                    onChanged: (v) async {
+                      await LocalPreferencesService.instance.setQuietStudyMode(v);
+                      if (mounted) setState(() => _quietStudyMode = v);
+                    },
+                  ),
+                  const SizedBox(height: 12),
+
+                  // Sound Cues
+                  _ToggleCard(
+                    icon: Icons.volume_up_outlined,
+                    iconColor: const Color(0xFFFFBD00),
+                    iconBg: const Color(0xFF2E2500),
+                    title: 'Sound Cues',
+                    subtitle: 'Short, optional sounds for Interactive Labs actions',
+                    value: _soundEnabled,
+                    onChanged: (v) async {
+                      await LocalPreferencesService.instance.setSoundEnabled(v);
+                      if (mounted) setState(() => _soundEnabled = v);
                     },
                   ),
                 ],

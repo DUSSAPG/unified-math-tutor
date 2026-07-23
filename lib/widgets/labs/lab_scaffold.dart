@@ -3,8 +3,12 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../app/safe_navigation.dart';
 import '../../models/interactive_lab_id.dart';
+import '../../services/audio_cue_service.dart';
+import '../../services/captain_math_service.dart';
 import '../../services/interactive_labs_progress_service.dart';
+import '../../services/local_preferences_service.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../captain_math_card.dart';
 import 'lab_first_use_overlay.dart';
 import 'lab_help_sheet.dart';
 import 'lab_mission_panel.dart';
@@ -71,6 +75,12 @@ class _LabScaffoldState extends State<LabScaffold> {
   void initState() {
     super.initState();
     _hadFeedback = widget.feedback != null;
+    // "Mission introduction" — a brief, non-blocking Captain Math moment
+    // every time a lab opens, shared here so no individual lab needs to
+    // remember to trigger it.
+    AudioCueService.instance.play(AudioCue.labOpen);
+    CaptainMathService.instance.showDiscoveryIntro();
+    AudioCueService.instance.play(AudioCue.captainMathPrompt);
     WidgetsBinding.instance.addPostFrameCallback((_) => _maybeShowFirstUse());
   }
 
@@ -150,6 +160,19 @@ class _LabScaffoldState extends State<LabScaffold> {
                     const SizedBox(height: AppSpacing.sm),
                   ],
                   LabMissionPanel(text: widget.missionText),
+                  ValueListenableBuilder<bool>(
+                    valueListenable: LocalPreferencesService.instance.quietStudyMode,
+                    builder: (context, quiet, _) {
+                      // Quiet Study Mode reduces Captain Math's presence
+                      // rather than removing the concept entirely — the
+                      // mission/help text alone still carries every fact.
+                      if (quiet) return const SizedBox.shrink();
+                      return Padding(
+                        padding: const EdgeInsets.only(top: AppSpacing.sm),
+                        child: CaptainMathCard(compact: true),
+                      );
+                    },
+                  ),
                   if (widget.conceptText != null && widget.conceptText!.isNotEmpty) ...[
                     const SizedBox(height: AppSpacing.sm),
                     Text(

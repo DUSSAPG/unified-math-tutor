@@ -4500,6 +4500,120 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Press Check to see if you reached it.'**
   String get labsNumberLineExplorerFirstUseStep3;
+
+  /// Shared progress indicator label across every Interactive Lab
+  ///
+  /// In en, this message translates to:
+  /// **'Mission {current} of {total}'**
+  String labsMissionOf(int current, int total);
+
+  /// No description provided for @labsDirectionUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Up'**
+  String get labsDirectionUp;
+
+  /// No description provided for @labsDirectionUpRight.
+  ///
+  /// In en, this message translates to:
+  /// **'Up-right'**
+  String get labsDirectionUpRight;
+
+  /// No description provided for @labsDirectionDownRight.
+  ///
+  /// In en, this message translates to:
+  /// **'Down-right'**
+  String get labsDirectionDownRight;
+
+  /// No description provided for @labsDirectionDown.
+  ///
+  /// In en, this message translates to:
+  /// **'Down'**
+  String get labsDirectionDown;
+
+  /// No description provided for @labsDirectionDownLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'Down-left'**
+  String get labsDirectionDownLeft;
+
+  /// No description provided for @labsDirectionUpLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'Up-left'**
+  String get labsDirectionUpLeft;
+
+  /// No description provided for @labsCompassNorth.
+  ///
+  /// In en, this message translates to:
+  /// **'North'**
+  String get labsCompassNorth;
+
+  /// No description provided for @labsCompassNortheast.
+  ///
+  /// In en, this message translates to:
+  /// **'Northeast'**
+  String get labsCompassNortheast;
+
+  /// No description provided for @labsCompassEast.
+  ///
+  /// In en, this message translates to:
+  /// **'East'**
+  String get labsCompassEast;
+
+  /// No description provided for @labsCompassSoutheast.
+  ///
+  /// In en, this message translates to:
+  /// **'Southeast'**
+  String get labsCompassSoutheast;
+
+  /// No description provided for @labsCompassSouth.
+  ///
+  /// In en, this message translates to:
+  /// **'South'**
+  String get labsCompassSouth;
+
+  /// No description provided for @labsCompassSouthwest.
+  ///
+  /// In en, this message translates to:
+  /// **'Southwest'**
+  String get labsCompassSouthwest;
+
+  /// No description provided for @labsCompassWest.
+  ///
+  /// In en, this message translates to:
+  /// **'West'**
+  String get labsCompassWest;
+
+  /// No description provided for @labsCompassNorthwest.
+  ///
+  /// In en, this message translates to:
+  /// **'Northwest'**
+  String get labsCompassNorthwest;
+
+  /// Explorer-band heading label: plain direction word with the degree value visible but not required
+  ///
+  /// In en, this message translates to:
+  /// **'Direction: {direction} ({degrees}°)'**
+  String labsFlightPathLabHeadingExplorerLabel(String direction, int degrees);
+
+  /// Builder/Navigator-band heading label: compass direction plus the formal three-figure bearing
+  ///
+  /// In en, this message translates to:
+  /// **'{compass} • Heading: {bearing}'**
+  String labsFlightPathLabHeadingCompassLabel(String compass, String bearing);
+
+  /// No description provided for @labsFlightPathLabTapTargetHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Tip: tap the target to aim automatically'**
+  String get labsFlightPathLabTapTargetHint;
+
+  /// No description provided for @labsFlightPathLabDragCue.
+  ///
+  /// In en, this message translates to:
+  /// **'Drag the plane to turn it'**
+  String get labsFlightPathLabDragCue;
 }
 
 class _AppLocalizationsDelegate

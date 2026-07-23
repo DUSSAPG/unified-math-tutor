@@ -83,24 +83,26 @@ void main() {
       await InteractiveLabsProgressService.instance.markFirstUseSeen(InteractiveLabId.flightPathLab);
     });
 
-    testWidgets('Builder (default) level shows a plain direction word alongside the degree value',
+    testWidgets('Builder (default) level shows a compass direction alongside the formal bearing',
         (tester) async {
       await pump(tester);
       expect(
         InteractiveLabsProgressService.instance.guidanceLevel(),
         LabGuidanceLevel.defaultLevel,
       );
-      expect(find.textContaining('Direction: Right'), findsOneWidget);
-      expect(find.textContaining('90°'), findsWidgets);
+      expect(find.textContaining('Direction:'), findsNothing);
+      expect(find.textContaining('East'), findsWidgets);
+      expect(find.textContaining('Heading: 090°'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('Navigator level shows only the formal three-figure bearing, no direction word',
+    testWidgets('Navigator level also shows the compass direction alongside the formal bearing',
         (tester) async {
       await InteractiveLabsProgressService.instance.setGuidanceLevel(LabGuidanceLevel.navigator);
       await pump(tester);
 
       expect(find.textContaining('Direction:'), findsNothing);
+      expect(find.textContaining('East'), findsWidgets);
       expect(find.textContaining('Heading: 090°'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });

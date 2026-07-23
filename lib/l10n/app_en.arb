@@ -1731,5 +1731,65 @@
   "labsNumberLineExplorerFirstUseStep2": "Drag the point, or use the arrow buttons, toward the target.",
   "@labsNumberLineExplorerFirstUseStep2": {},
   "labsNumberLineExplorerFirstUseStep3": "Press Check to see if you reached it.",
-  "@labsNumberLineExplorerFirstUseStep3": {}
+  "@labsNumberLineExplorerFirstUseStep3": {},
+
+  "labsMissionOf": "Mission {current} of {total}",
+  "@labsMissionOf": {
+    "description": "Shared progress indicator label across every Interactive Lab",
+    "placeholders": {
+      "current": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+
+  "labsDirectionUp": "Up",
+  "@labsDirectionUp": {},
+  "labsDirectionUpRight": "Up-right",
+  "@labsDirectionUpRight": {},
+  "labsDirectionDownRight": "Down-right",
+  "@labsDirectionDownRight": {},
+  "labsDirectionDown": "Down",
+  "@labsDirectionDown": {},
+  "labsDirectionDownLeft": "Down-left",
+  "@labsDirectionDownLeft": {},
+  "labsDirectionUpLeft": "Up-left",
+  "@labsDirectionUpLeft": {},
+
+  "labsCompassNorth": "North",
+  "@labsCompassNorth": {},
+  "labsCompassNortheast": "Northeast",
+  "@labsCompassNortheast": {},
+  "labsCompassEast": "East",
+  "@labsCompassEast": {},
+  "labsCompassSoutheast": "Southeast",
+  "@labsCompassSoutheast": {},
+  "labsCompassSouth": "South",
+  "@labsCompassSouth": {},
+  "labsCompassSouthwest": "Southwest",
+  "@labsCompassSouthwest": {},
+  "labsCompassWest": "West",
+  "@labsCompassWest": {},
+  "labsCompassNorthwest": "Northwest",
+  "@labsCompassNorthwest": {},
+
+  "labsFlightPathLabHeadingExplorerLabel": "Direction: {direction} ({degrees}°)",
+  "@labsFlightPathLabHeadingExplorerLabel": {
+    "description": "Explorer-band heading label: plain direction word with the degree value visible but not required",
+    "placeholders": {
+      "direction": { "type": "String" },
+      "degrees": { "type": "int" }
+    }
+  },
+  "labsFlightPathLabHeadingCompassLabel": "{compass} • Heading: {bearing}",
+  "@labsFlightPathLabHeadingCompassLabel": {
+    "description": "Builder/Navigator-band heading label: compass direction plus the formal three-figure bearing",
+    "placeholders": {
+      "compass": { "type": "String" },
+      "bearing": { "type": "String" }
+    }
+  },
+  "labsFlightPathLabTapTargetHint": "Tip: tap the target to aim automatically",
+  "@labsFlightPathLabTapTargetHint": {},
+  "labsFlightPathLabDragCue": "Drag the plane to turn it",
+  "@labsFlightPathLabDragCue": {}
 }

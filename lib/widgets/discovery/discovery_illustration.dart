@@ -6,20 +6,28 @@ import '../../models/discovery_card.dart';
 /// (see the ComfyUI-ready asset-interface deliverable for the future
 /// pipeline), so every [illustrationAssetId] currently resolves to this
 /// accessible, deterministic, category-based placeholder rather than a
-/// missing-image glyph. Swapping in real art later only means adding an
-/// asset lookup here — the call site and [illustrationAssetId] contract do
-/// not change.
+/// missing-image glyph.
+///
+/// [headerImageAssetPath] is the prepared slot for that future mid-century
+/// ComfyUI artwork: no Discovery Card sets it today (no unapproved artwork
+/// has been generated or installed), so every call site currently falls
+/// straight through to the icon placeholder below. Once an approved image
+/// is installed for a card, passing its asset path here is the only change
+/// needed — the icon rendering remains as the permanent fallback if the
+/// asset is ever missing.
 class DiscoveryIllustration extends StatelessWidget {
   const DiscoveryIllustration({
     super.key,
     required this.card,
     required this.semanticLabel,
     this.size = 96,
+    this.headerImageAssetPath,
   });
 
   final DiscoveryCard card;
   final String semanticLabel;
   final double size;
+  final String? headerImageAssetPath;
 
   static const _categoryIcons = <DiscoveryCategory, IconData>{
     DiscoveryCategory.everydayLife: Icons.home_outlined,
@@ -58,25 +66,41 @@ class DiscoveryIllustration extends StatelessWidget {
     DiscoveryCategory.businessFinance: Color(0xFF00BCD4),
   };
 
+  Widget _iconFallback(Color color, IconData icon) {
+    return Container(
+      width: size,
+      height: size,
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.14),
+        borderRadius: BorderRadius.circular(size * 0.18),
+        border: Border.all(color: color.withValues(alpha: 0.4)),
+      ),
+      child: Icon(icon, color: color, size: size * 0.48),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final sport = card.sport;
     final icon = sport != null ? _sportIcons[sport]! : _categoryIcons[card.category]!;
     final color = _categoryColors[card.category]!;
+    final imagePath = headerImageAssetPath;
 
     return Semantics(
       label: semanticLabel,
       image: true,
       child: ExcludeSemantics(
-        child: Container(
-          width: size,
-          height: size,
-          decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.14),
-            borderRadius: BorderRadius.circular(size * 0.18),
-            border: Border.all(color: color.withValues(alpha: 0.4)),
-          ),
-          child: Icon(icon, color: color, size: size * 0.48),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(size * 0.18),
+          child: imagePath == null
+              ? _iconFallback(color, icon)
+              : Image.asset(
+                  imagePath,
+                  width: size,
+                  height: size,
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) => _iconFallback(color, icon),
+                ),
         ),
       ),
     );

@@ -2470,6 +2470,70 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get labsNumberLineExplorerFirstUseStep3 =>
       'Press Check to see if you reached it.';
+
+  @override
+  String labsMissionOf(int current, int total) {
+    return 'Mission $current of $total';
+  }
+
+  @override
+  String get labsDirectionUp => 'Up';
+
+  @override
+  String get labsDirectionUpRight => 'Up-right';
+
+  @override
+  String get labsDirectionDownRight => 'Down-right';
+
+  @override
+  String get labsDirectionDown => 'Down';
+
+  @override
+  String get labsDirectionDownLeft => 'Down-left';
+
+  @override
+  String get labsDirectionUpLeft => 'Up-left';
+
+  @override
+  String get labsCompassNorth => 'North';
+
+  @override
+  String get labsCompassNortheast => 'Northeast';
+
+  @override
+  String get labsCompassEast => 'East';
+
+  @override
+  String get labsCompassSoutheast => 'Southeast';
+
+  @override
+  String get labsCompassSouth => 'South';
+
+  @override
+  String get labsCompassSouthwest => 'Southwest';
+
+  @override
+  String get labsCompassWest => 'West';
+
+  @override
+  String get labsCompassNorthwest => 'Northwest';
+
+  @override
+  String labsFlightPathLabHeadingExplorerLabel(String direction, int degrees) {
+    return 'Direction: $direction ($degrees°)';
+  }
+
+  @override
+  String labsFlightPathLabHeadingCompassLabel(String compass, String bearing) {
+    return '$compass • Heading: $bearing';
+  }
+
+  @override
+  String get labsFlightPathLabTapTargetHint =>
+      'Tip: tap the target to aim automatically';
+
+  @override
+  String get labsFlightPathLabDragCue => 'Drag the plane to turn it';
 }
 
 /// The translations for German, as used in Switzerland (`de_CH`).
@@ -4875,4 +4939,68 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
   @override
   String get labsNumberLineExplorerFirstUseStep3 =>
       'Druecke Pruefen, um zu sehen, ob du es erreicht hast.';
+
+  @override
+  String labsMissionOf(int current, int total) {
+    return 'Auftrag $current von $total';
+  }
+
+  @override
+  String get labsDirectionUp => 'Hoch';
+
+  @override
+  String get labsDirectionUpRight => 'Hoch-rechts';
+
+  @override
+  String get labsDirectionDownRight => 'Runter-rechts';
+
+  @override
+  String get labsDirectionDown => 'Runter';
+
+  @override
+  String get labsDirectionDownLeft => 'Runter-links';
+
+  @override
+  String get labsDirectionUpLeft => 'Hoch-links';
+
+  @override
+  String get labsCompassNorth => 'Norden';
+
+  @override
+  String get labsCompassNortheast => 'Nordosten';
+
+  @override
+  String get labsCompassEast => 'Osten';
+
+  @override
+  String get labsCompassSoutheast => 'Suedosten';
+
+  @override
+  String get labsCompassSouth => 'Sueden';
+
+  @override
+  String get labsCompassSouthwest => 'Suedwesten';
+
+  @override
+  String get labsCompassWest => 'Westen';
+
+  @override
+  String get labsCompassNorthwest => 'Nordwesten';
+
+  @override
+  String labsFlightPathLabHeadingExplorerLabel(String direction, int degrees) {
+    return 'Richtung: $direction ($degrees°)';
+  }
+
+  @override
+  String labsFlightPathLabHeadingCompassLabel(String compass, String bearing) {
+    return '$compass • Kurs: $bearing';
+  }
+
+  @override
+  String get labsFlightPathLabTapTargetHint =>
+      'Tipp: Tippe auf das Ziel, um automatisch zu zielen';
+
+  @override
+  String get labsFlightPathLabDragCue => 'Ziehe das Flugzeug, um es zu drehen';
 }

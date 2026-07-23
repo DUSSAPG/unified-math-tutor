@@ -13,6 +13,8 @@ class LocalPreferencesService {
   static const _rewardsEnabledKey = 'rewards_enabled';
   static const _reduceMotionKey = 'reduce_motion';
   static const _textScaleKey = 'text_scale';
+  static const _quietStudyModeKey = 'quiet_study_mode';
+  static const _soundEnabledKey = 'sound_enabled';
 
   late SharedPreferences _prefs;
   bool _parentAccessGranted = false;
@@ -21,12 +23,23 @@ class LocalPreferencesService {
   final ValueNotifier<bool> reduceMotion = ValueNotifier(false);
   final ValueNotifier<double> textScale = ValueNotifier(1.0);
 
+  /// Inspired by Nyepi, a Balinese tradition of reflection, stillness and
+  /// focus — a low-distraction mode. Gates Captain Math's visual prominence
+  /// and all optional audio cues; never gates required information.
+  final ValueNotifier<bool> quietStudyMode = ValueNotifier(false);
+
+  /// Global switch for optional short audio cues (see AudioCueService).
+  /// Defaults on; every cue is decorative, never required.
+  final ValueNotifier<bool> soundEnabled = ValueNotifier(true);
+
   Future<void> init() async {
     _prefs = await SharedPreferences.getInstance();
     parentToolsEnabled.value = _prefs.getBool(_parentEnabledKey) ?? false;
     rewardsEnabled.value = _prefs.getBool(_rewardsEnabledKey) ?? false;
     reduceMotion.value = _prefs.getBool(_reduceMotionKey) ?? false;
     textScale.value = _prefs.getDouble(_textScaleKey) ?? 1.0;
+    quietStudyMode.value = _prefs.getBool(_quietStudyModeKey) ?? false;
+    soundEnabled.value = _prefs.getBool(_soundEnabledKey) ?? true;
   }
 
   Future<void> setTextScale(double value) async {
@@ -51,6 +64,16 @@ class LocalPreferencesService {
   Future<void> setReduceMotion(bool value) async {
     await _prefs.setBool(_reduceMotionKey, value);
     reduceMotion.value = value;
+  }
+
+  Future<void> setQuietStudyMode(bool value) async {
+    await _prefs.setBool(_quietStudyModeKey, value);
+    quietStudyMode.value = value;
+  }
+
+  Future<void> setSoundEnabled(bool value) async {
+    await _prefs.setBool(_soundEnabledKey, value);
+    soundEnabled.value = value;
   }
 
   Future<bool> setParentPin(String pin) async {

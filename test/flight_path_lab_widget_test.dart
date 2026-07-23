@@ -44,9 +44,9 @@ void main() {
       find.text('The yellow marker is your target. It is 200 km away, on a bearing of 090°.'),
       findsOneWidget,
     );
-    // Explorer-band scenario: direction word alongside the degree value.
-    expect(find.textContaining('Direction: Right'), findsOneWidget);
-    expect(find.textContaining('090°'), findsWidgets);
+    // Default guidance level is Builder: compass direction plus formal bearing.
+    expect(find.textContaining('East'), findsWidgets);
+    expect(find.textContaining('Heading: 090°'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 
@@ -67,8 +67,19 @@ void main() {
 
   testWidgets('changing the heading away from the target no longer lands spot on', (tester) async {
     await pump(tester);
-    final headingSlider = find.byType(Slider).first;
-    tester.widget<Slider>(headingSlider).onChanged!(0);
+    // Heading is set by dragging the aircraft glyph; drag it well away from
+    // its default (east/090°) heading before testing.
+    final aircraftGesture = find.byKey(const Key('flightPathAircraftGesture'));
+    await tester.ensureVisible(aircraftGesture);
+    // A single teleporting moveBy only ever fires onPanStart (the whole
+    // movement is consumed as the pan's start threshold); a second move is
+    // needed to generate an onPanUpdate, as a real finger drag would.
+    final gesture = await tester.startGesture(tester.getCenter(aircraftGesture));
+    await gesture.moveBy(const Offset(-40, -40));
+    await tester.pump();
+    await gesture.moveBy(const Offset(-10, -10));
+    await tester.pump();
+    await gesture.up();
     await tester.pump();
 
     await tester.ensureVisible(find.text('Test Flight'));
@@ -101,6 +112,10 @@ void main() {
 
   testWidgets('Next cycles to the next deterministic scenario', (tester) async {
     await pump(tester);
+    // Next only enters the completion flow once a result exists.
+    await tester.ensureVisible(find.text('Test Flight'));
+    await tester.tap(find.text('Test Flight'));
+    await tester.pumpAndSettle();
     await tester.ensureVisible(find.text('Next'));
     await tester.tap(find.text('Next'));
     await tester.pumpAndSettle();
@@ -113,10 +128,19 @@ void main() {
       (tester) async {
     await pump(tester);
     // Scenarios 0 and 1 are Explorer-band; scenario 2 is the first
-    // Builder-band one, where a prediction is required.
+    // Builder-band one, where a prediction is required. Next only appears
+    // once a result exists, so Test Flight each scenario before advancing.
+    await tester.ensureVisible(find.text('Test Flight'));
+    await tester.tap(find.text('Test Flight'));
+    await tester.pumpAndSettle();
     await tester.ensureVisible(find.text('Next'));
     await tester.tap(find.text('Next'));
     await tester.pumpAndSettle();
+
+    await tester.ensureVisible(find.text('Test Flight'));
+    await tester.tap(find.text('Test Flight'));
+    await tester.pumpAndSettle();
+    await tester.ensureVisible(find.text('Next'));
     await tester.tap(find.text('Next'));
     await tester.pumpAndSettle();
 

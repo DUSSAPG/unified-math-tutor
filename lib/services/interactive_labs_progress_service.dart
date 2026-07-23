@@ -37,6 +37,7 @@ class InteractiveLabsProgressService {
       'labs_linked_practice_${_learnerKey()}_${lab.name}';
   String get _guidanceLevelKey => 'labs_guidance_level_${_learnerKey()}';
   String _firstUseSeenKey(InteractiveLabId lab) => 'labs_first_use_seen_${_learnerKey()}_${lab.name}';
+  String _dragCueSeenKey(InteractiveLabId lab) => 'labs_drag_cue_seen_${_learnerKey()}_${lab.name}';
 
   int attemptsFor(InteractiveLabId lab) => _prefs.getInt(_attemptsKey(lab)) ?? 0;
   int completedFor(InteractiveLabId lab) => _prefs.getInt(_completedKey(lab)) ?? 0;
@@ -100,6 +101,16 @@ class InteractiveLabsProgressService {
 
   Future<void> markFirstUseSeen(InteractiveLabId lab) async {
     await _prefs.setBool(_firstUseSeenKey(lab), true);
+    updateSerial.value++;
+  }
+
+  /// Whether the ambient "drag to interact" cue (e.g. Flight Path Lab's
+  /// pulsing aircraft hint) has already been dismissed by a successful
+  /// direct-manipulation interaction, for this profile and this lab.
+  bool hasSeenDragCue(InteractiveLabId lab) => _prefs.getBool(_dragCueSeenKey(lab)) ?? false;
+
+  Future<void> markDragCueSeen(InteractiveLabId lab) async {
+    await _prefs.setBool(_dragCueSeenKey(lab), true);
     updateSerial.value++;
   }
 }

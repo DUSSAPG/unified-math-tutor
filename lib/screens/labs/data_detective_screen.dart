@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../models/interactive_lab_id.dart';
+import '../../services/audio_cue_service.dart';
 import '../../services/captain_math_service.dart';
 import '../../services/interactive_labs_progress_service.dart';
 import '../../shared/theme/app_spacing.dart';
@@ -74,6 +75,7 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen> {
   }
 
   void _removeAt(int index) {
+    AudioCueService.instance.play(AudioCue.objectSelect, throttle: true);
     setState(() {
       _working.removeAt(index);
       _revealSummary = null;
@@ -82,6 +84,7 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen> {
   }
 
   void _addTypicalValue() {
+    AudioCueService.instance.play(AudioCue.objectSelect, throttle: true);
     setState(() {
       _working.add(_dataset.typicalValueToAdd);
       _revealSummary = null;
@@ -90,11 +93,13 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen> {
   }
 
   void _selectPrediction(_Prediction prediction) {
+    AudioCueService.instance.play(AudioCue.objectSelect, throttle: true);
     setState(() => _prediction = prediction);
   }
 
   Future<void> _reveal() async {
     if (_prediction == null) return;
+    AudioCueService.instance.play(AudioCue.testLaunch);
     final before = List<int>.of(_working);
     final meanBefore = _mean(before);
     final medianBefore = _median(before);
@@ -126,12 +131,14 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen> {
     if (correct) {
       await InteractiveLabsProgressService.instance.recordCompletion(InteractiveLabId.dataDetective);
       CaptainMathService.instance.showCompletion();
+      AudioCueService.instance.play(AudioCue.success);
     } else {
       CaptainMathService.instance.showEncouragement();
     }
   }
 
   void _reset() {
+    AudioCueService.instance.play(AudioCue.retry);
     setState(() {
       _working = [..._dataset.values];
       _prediction = null;
@@ -145,6 +152,7 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen> {
   }
 
   void _next() {
+    AudioCueService.instance.play(AudioCue.nextMission);
     setState(() {
       _datasetIndex = (_datasetIndex + 1) % _datasets.length;
       _working = [..._datasets[_datasetIndex].values];
@@ -178,7 +186,7 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen> {
         whereYoullUseThis: l10n.labsDataDetectiveWhereUsed,
         onReset: _reset,
         progressIndicator: LabProgressIndicator(
-          label: l10n.recallCardsCardOf(_datasetIndex + 1, _datasets.length),
+          label: l10n.labsMissionOf(_datasetIndex + 1, _datasets.length),
         ),
         helpContent: LabHelpContent(
           whatToDo: l10n.labsDataDetectiveHelpWhatToDo,

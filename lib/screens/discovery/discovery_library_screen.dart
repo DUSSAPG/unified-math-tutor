@@ -21,11 +21,18 @@ class DiscoveryLibraryScreen extends StatefulWidget {
 class _DiscoveryLibraryScreenState extends State<DiscoveryLibraryScreen> {
   DiscoveryCategory? _filter;
   late final Future<List<DiscoveryCard>> _cardsFuture;
+  final _categoryScrollController = ScrollController();
 
   @override
   void initState() {
     super.initState();
     _cardsFuture = DiscoveryCardCatalogService.instance.all();
+  }
+
+  @override
+  void dispose() {
+    _categoryScrollController.dispose();
+    super.dispose();
   }
 
   @override
@@ -65,26 +72,34 @@ class _DiscoveryLibraryScreenState extends State<DiscoveryLibraryScreen> {
             return Column(
               children: [
                 SizedBox(
-                  height: 44,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    padding: const EdgeInsets.symmetric(horizontal: 12),
-                    children: [
-                      _FilterChip(
-                        label: l10n.mathStudioCategoryAll,
-                        selected: _filter == null,
-                        onTap: () => setState(() => _filter = null),
-                      ),
-                      for (final category in DiscoveryCategory.values)
-                        Padding(
-                          padding: const EdgeInsets.only(left: 8),
-                          child: _FilterChip(
-                            label: discoveryCategoryLabel(l10n, category),
-                            selected: _filter == category,
-                            onTap: () => setState(() => _filter = category),
-                          ),
+                  height: 52,
+                  // A visible scrollbar affordance so narrow-phone learners
+                  // can see there are more categories than fit on screen,
+                  // not just discover it by accidentally swiping.
+                  child: Scrollbar(
+                    controller: _categoryScrollController,
+                    thumbVisibility: true,
+                    child: ListView(
+                      controller: _categoryScrollController,
+                      scrollDirection: Axis.horizontal,
+                      padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
+                      children: [
+                        _FilterChip(
+                          label: l10n.mathStudioCategoryAll,
+                          selected: _filter == null,
+                          onTap: () => setState(() => _filter = null),
                         ),
-                    ],
+                        for (final category in DiscoveryCategory.values)
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8),
+                            child: _FilterChip(
+                              label: discoveryCategoryLabel(l10n, category),
+                              selected: _filter == category,
+                              onTap: () => setState(() => _filter = category),
+                            ),
+                          ),
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(

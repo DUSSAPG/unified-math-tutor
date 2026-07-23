@@ -3,6 +3,7 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../models/interactive_lab_id.dart';
 import '../../models/lab_guidance_level.dart';
+import '../../services/audio_cue_service.dart';
 import '../../services/captain_math_service.dart';
 import '../../services/interactive_labs_progress_service.dart';
 import '../../shared/theme/app_spacing.dart';
@@ -70,6 +71,7 @@ class _NumberLineExplorerScreenState extends State<NumberLineExplorerScreen> {
   }
 
   void _step(num delta) {
+    AudioCueService.instance.play(AudioCue.objectSelect, throttle: true);
     setState(() {
       _value = (_value + delta).clamp(_challenge.min, _challenge.max);
       _lastResultCorrect = null;
@@ -77,7 +79,9 @@ class _NumberLineExplorerScreenState extends State<NumberLineExplorerScreen> {
   }
 
   Future<void> _check() async {
-    final correct = (_value - _challenge.target).abs() < 0.001;
+    AudioCueService.instance.play(AudioCue.testLaunch);
+    final distance = (_value - _challenge.target).abs();
+    final correct = distance < 0.001;
     setState(() => _lastResultCorrect = correct);
     await InteractiveLabsProgressService.instance
         .recordAttempt(InteractiveLabId.numberLineExplorer);
@@ -85,12 +89,17 @@ class _NumberLineExplorerScreenState extends State<NumberLineExplorerScreen> {
       await InteractiveLabsProgressService.instance
           .recordCompletion(InteractiveLabId.numberLineExplorer);
       CaptainMathService.instance.showCompletion();
+      AudioCueService.instance.play(AudioCue.success);
     } else {
       CaptainMathService.instance.showEncouragement();
+      if (distance <= _challenge.step) {
+        AudioCueService.instance.play(AudioCue.nearMiss);
+      }
     }
   }
 
   void _reset() {
+    AudioCueService.instance.play(AudioCue.retry);
     setState(() {
       _value = _challenge.min;
       _lastResultCorrect = null;
@@ -98,6 +107,7 @@ class _NumberLineExplorerScreenState extends State<NumberLineExplorerScreen> {
   }
 
   void _next() {
+    AudioCueService.instance.play(AudioCue.nextMission);
     setState(() {
       _challengeIndex = (_challengeIndex + 1) % _challenges.length;
       _value = _challenge.min;
@@ -126,7 +136,7 @@ class _NumberLineExplorerScreenState extends State<NumberLineExplorerScreen> {
         whereYoullUseThis: l10n.labsNumberLineExplorerWhereUsed,
         onReset: _reset,
         progressIndicator: LabProgressIndicator(
-          label: l10n.recallCardsCardOf(_challengeIndex + 1, _challenges.length),
+          label: l10n.labsMissionOf(_challengeIndex + 1, _challenges.length),
         ),
         helpContent: LabHelpContent(
           whatToDo: l10n.labsNumberLineExplorerHelpWhatToDo,
@@ -153,10 +163,13 @@ class _NumberLineExplorerScreenState extends State<NumberLineExplorerScreen> {
               step: challenge.step,
               value: _value,
               semanticLabel: l10n.labsNumberLineExplorerMission('${challenge.target}'),
-              onChanged: (next) => setState(() {
-                _value = next;
-                _lastResultCorrect = null;
-              }),
+              onChanged: (next) {
+                AudioCueService.instance.play(AudioCue.objectSelect, throttle: true);
+                setState(() {
+                  _value = next;
+                  _lastResultCorrect = null;
+                });
+              },
             ),
             const SizedBox(height: AppSpacing.sm),
             // Explicit, focusable +/- buttons alongside the drag widget's
