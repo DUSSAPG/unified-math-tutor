@@ -1,0 +1,35 @@
+{
+  "$comment": "Documentation-only schema for assets/config/recall_cards.json. Not enforced by a JSON-schema validator at build time — lib/models/recall_card.dart's RecallCard.fromJson performs the equivalent fail-fast validation at load time, and test/recall_card_schema_test.dart asserts every card in the bundled asset satisfies it, including id/domain/type distribution and locale completeness for en + en-GB.",
+  "version": "integer, top-level catalog version",
+  "cards": [
+    {
+      "id": "string, must match ^[a-z0-9]+(-[a-z0-9]+)+$, stable and never reused",
+      "topicId": "one of: number, ratioAndProportion, algebra, geometryAndMeasures, statistics, probability",
+      "cardType": "one of: formula, meaning, symbol, vocabulary, strategy, misconception, visual, realWorldConnection",
+      "difficulty": "one of: foundation, intermediate, advanced (shared with Discovery Cards' CardDifficulty)",
+      "curriculumTags": "array, zero or more of: gcseFoundation, gcseHigher, igcse (shared with Discovery Cards' CurriculumTag)",
+      "frontVisualAssetId": "optional string, stable key for a future illustration; RC1 renders every id via an accessible deterministic placeholder (see RecallIllustration). When set, every locale's frontVisualAlt is required; when absent, frontVisualAlt must not be set.",
+      "relatedDiscoveryCardIds": "array of Discovery Card ids (assets/config/discovery_cards.json) this card links to for the Connect stage; may be empty",
+      "relatedInteractiveLabIds": "array of forward-declared Interactive Lab ids (e.g. flight-lab, data-lab) this card conceptually relates to; Labs are not yet shipped, so the UI shows these as non-navigating text only until they exist — the data contract exists now for forward compatibility",
+      "relatedPracticeTopicIds": "array of practice topic ids from assets/config/topic_catalog.json (e.g. algebra, fractions, ratio_proportion); may be empty",
+      "contentVersion": "integer >= 1, bump whenever this card's text or answer changes",
+      "spacedReviewEligible": "boolean — false excludes the card from Quick Review/Review Due/Ask Me Tomorrow entirely (still reachable via Browse/Search/Bookmarks)",
+      "locales": {
+        "<bcp47 tag, e.g. en / en-GB>": {
+          "frontPrompt": "string, the Recognise/Recall-stage prompt shown before Reveal",
+          "answer": "string, the Reveal-stage fact/formula/definition/symbol",
+          "explanation": "string, plain-language explanation shown at the Explain stage",
+          "commonMistake": "string, a common mistake learners make with this concept",
+          "whereUsed": "array of 1+ strings, the Connect-stage where-used list",
+          "frontVisualAlt": "string, screen-reader description of frontVisualAssetId — required if and only if frontVisualAssetId is set"
+        }
+      }
+    }
+  ],
+  "inventoryTarget": {
+    "totalCards": 120,
+    "perDomain": 20,
+    "domains": ["number", "ratioAndProportion", "algebra", "geometryAndMeasures", "statistics", "probability"],
+    "note": "Full en + en-GB card content is required at launch; other locales are supported by the schema/model (locales map, en fallback chain) but are not required to be authored for RC1 — see math_studio_l10n_completeness_test.dart for the separately-tracked static-UI-string locale requirement (en-GB, de-CH, fr-CH, it-CH)."
+  }
+}

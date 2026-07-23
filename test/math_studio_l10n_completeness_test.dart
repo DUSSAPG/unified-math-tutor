@@ -14,6 +14,7 @@ const _prefixes = [
   'abacusCaption',
   'abacusColumn',
   'placeValueCaption',
+  'recallCards',
 ];
 
 // Brand terms deliberately kept identical across every locale.
@@ -28,6 +29,8 @@ const _cognateProneKeyPrefixes = [
   'mathStudioCategory',
   'mentalMathsCategory',
   'abacusColumn',
+  'recallCardsTopic',
+  'recallCardsType',
 ];
 
 Map<String, dynamic> _loadArb(String filename) {

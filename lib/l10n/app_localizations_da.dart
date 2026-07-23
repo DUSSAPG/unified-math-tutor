@@ -1804,6 +1804,177 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get abacusColumnOnes => 'Ones';
+
+  @override
+  String get mathStudioRecallCardsTitle => 'Recall Cards';
+
+  @override
+  String get mathStudioRecallCardsSubtitle =>
+      'Quick retrieval practice for the facts you need to keep';
+
+  @override
+  String get recallCardsHubTitle => 'Recall Cards';
+
+  @override
+  String get recallCardsHubSubtitle =>
+      'Short, focused practice for formulas, vocabulary, symbols and the ideas behind them';
+
+  @override
+  String get recallCardsQuickReviewTitle => 'Five-Card Quick Review';
+
+  @override
+  String get recallCardsQuickReviewSubtitle =>
+      'A short daily set, chosen for you';
+
+  @override
+  String get recallCardsReviewDueTitle => 'Review Due';
+
+  @override
+  String recallCardsReviewDueCount(int count) {
+    return '$count due for review';
+  }
+
+  @override
+  String get recallCardsReviewDueEmpty => 'Nothing due right now — nice work';
+
+  @override
+  String get recallCardsBrowseByTopicTitle => 'Browse by Topic';
+
+  @override
+  String get recallCardsBrowseByTypeTitle => 'Browse by Card Type';
+
+  @override
+  String get recallCardsSearchTitle => 'Search';
+
+  @override
+  String get recallCardsSearchHint => 'Search formulas, terms and ideas';
+
+  @override
+  String get recallCardsBookmarksTitle => 'Bookmarks';
+
+  @override
+  String get recallCardsEmptyBookmarks =>
+      'No bookmarks yet — tap the bookmark icon on any card to save it here';
+
+  @override
+  String get recallCardsNoResults => 'No cards found';
+
+  @override
+  String get recallCardsRevealButton => 'Reveal the answer';
+
+  @override
+  String get recallCardsRevealedLabel => 'Answer';
+
+  @override
+  String get recallCardsExplainLabel => 'Why this works';
+
+  @override
+  String get recallCardsCommonMistakeLabel => 'Common mistake';
+
+  @override
+  String get recallCardsConnectLabel => 'Where this is used';
+
+  @override
+  String get recallCardsRelatedDiscoveryLabel => 'Related Discovery Cards';
+
+  @override
+  String get recallCardsRelatedPracticeLabel => 'Related Practice';
+
+  @override
+  String get recallCardsRelatedLabsLabel => 'Related Interactive Labs';
+
+  @override
+  String get recallCardsLabComingSoon => 'Coming soon';
+
+  @override
+  String get recallCardsRememberedButton => 'I remembered this';
+
+  @override
+  String get recallCardsNotYetButton => 'Not yet';
+
+  @override
+  String get recallCardsAskMeTomorrowButton => 'Ask Me Tomorrow';
+
+  @override
+  String get recallCardsBookmarkAdd => 'Bookmark this card';
+
+  @override
+  String get recallCardsBookmarkRemove => 'Remove bookmark';
+
+  @override
+  String get recallCardsExportButton => 'Print or share';
+
+  @override
+  String get recallCardsExportFiveCardSheet => 'Recall sheet (questions only)';
+
+  @override
+  String get recallCardsExportAnswerSheet => 'Answer sheet';
+
+  @override
+  String get recallCardsSessionComplete => 'Session complete';
+
+  @override
+  String get recallCardsSessionCompleteSubtitle =>
+      'Great work — come back tomorrow for more';
+
+  @override
+  String recallCardsCardOf(int current, int total) {
+    return 'Card $current of $total';
+  }
+
+  @override
+  String get recallCardsStateNew => 'New';
+
+  @override
+  String get recallCardsStateLearning => 'Learning';
+
+  @override
+  String get recallCardsStateReviewDue => 'Review due';
+
+  @override
+  String get recallCardsStateMastered => 'Mastered';
+
+  @override
+  String get recallCardsTypeFormula => 'Formula';
+
+  @override
+  String get recallCardsTypeMeaning => 'Meaning';
+
+  @override
+  String get recallCardsTypeSymbol => 'Symbol';
+
+  @override
+  String get recallCardsTypeVocabulary => 'Vocabulary';
+
+  @override
+  String get recallCardsTypeStrategy => 'Strategy';
+
+  @override
+  String get recallCardsTypeMisconception => 'Common Misconception';
+
+  @override
+  String get recallCardsTypeVisual => 'Visual';
+
+  @override
+  String get recallCardsTypeRealWorldConnection => 'Real-World Connection';
+
+  @override
+  String get recallCardsTopicNumber => 'Number';
+
+  @override
+  String get recallCardsTopicRatioAndProportion => 'Ratio & Proportion';
+
+  @override
+  String get recallCardsTopicAlgebra => 'Algebra';
+
+  @override
+  String get recallCardsTopicGeometryAndMeasures => 'Geometry & Measures';
+
+  @override
+  String get recallCardsTopicStatistics => 'Statistics';
+
+  @override
+  String get recallCardsTopicProbability => 'Probability';
 }
 
 /// The translations for Danish, as used in Denmark (`da_DK`).

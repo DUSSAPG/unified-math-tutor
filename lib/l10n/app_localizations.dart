@@ -3401,6 +3401,330 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Ones'**
   String get abacusColumnOnes;
+
+  /// No description provided for @mathStudioRecallCardsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Recall Cards'**
+  String get mathStudioRecallCardsTitle;
+
+  /// No description provided for @mathStudioRecallCardsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick retrieval practice for the facts you need to keep'**
+  String get mathStudioRecallCardsSubtitle;
+
+  /// No description provided for @recallCardsHubTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Recall Cards'**
+  String get recallCardsHubTitle;
+
+  /// No description provided for @recallCardsHubSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Short, focused practice for formulas, vocabulary, symbols and the ideas behind them'**
+  String get recallCardsHubSubtitle;
+
+  /// No description provided for @recallCardsQuickReviewTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Five-Card Quick Review'**
+  String get recallCardsQuickReviewTitle;
+
+  /// No description provided for @recallCardsQuickReviewSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'A short daily set, chosen for you'**
+  String get recallCardsQuickReviewSubtitle;
+
+  /// No description provided for @recallCardsReviewDueTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Review Due'**
+  String get recallCardsReviewDueTitle;
+
+  /// Count of Recall Cards currently due for review
+  ///
+  /// In en, this message translates to:
+  /// **'{count} due for review'**
+  String recallCardsReviewDueCount(int count);
+
+  /// No description provided for @recallCardsReviewDueEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing due right now — nice work'**
+  String get recallCardsReviewDueEmpty;
+
+  /// No description provided for @recallCardsBrowseByTopicTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse by Topic'**
+  String get recallCardsBrowseByTopicTitle;
+
+  /// No description provided for @recallCardsBrowseByTypeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse by Card Type'**
+  String get recallCardsBrowseByTypeTitle;
+
+  /// No description provided for @recallCardsSearchTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get recallCardsSearchTitle;
+
+  /// No description provided for @recallCardsSearchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search formulas, terms and ideas'**
+  String get recallCardsSearchHint;
+
+  /// No description provided for @recallCardsBookmarksTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Bookmarks'**
+  String get recallCardsBookmarksTitle;
+
+  /// No description provided for @recallCardsEmptyBookmarks.
+  ///
+  /// In en, this message translates to:
+  /// **'No bookmarks yet — tap the bookmark icon on any card to save it here'**
+  String get recallCardsEmptyBookmarks;
+
+  /// No description provided for @recallCardsNoResults.
+  ///
+  /// In en, this message translates to:
+  /// **'No cards found'**
+  String get recallCardsNoResults;
+
+  /// No description provided for @recallCardsRevealButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Reveal the answer'**
+  String get recallCardsRevealButton;
+
+  /// No description provided for @recallCardsRevealedLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Answer'**
+  String get recallCardsRevealedLabel;
+
+  /// No description provided for @recallCardsExplainLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Why this works'**
+  String get recallCardsExplainLabel;
+
+  /// No description provided for @recallCardsCommonMistakeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Common mistake'**
+  String get recallCardsCommonMistakeLabel;
+
+  /// No description provided for @recallCardsConnectLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Where this is used'**
+  String get recallCardsConnectLabel;
+
+  /// No description provided for @recallCardsRelatedDiscoveryLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Related Discovery Cards'**
+  String get recallCardsRelatedDiscoveryLabel;
+
+  /// No description provided for @recallCardsRelatedPracticeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Related Practice'**
+  String get recallCardsRelatedPracticeLabel;
+
+  /// No description provided for @recallCardsRelatedLabsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Related Interactive Labs'**
+  String get recallCardsRelatedLabsLabel;
+
+  /// No description provided for @recallCardsLabComingSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Coming soon'**
+  String get recallCardsLabComingSoon;
+
+  /// No description provided for @recallCardsRememberedButton.
+  ///
+  /// In en, this message translates to:
+  /// **'I remembered this'**
+  String get recallCardsRememberedButton;
+
+  /// No description provided for @recallCardsNotYetButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Not yet'**
+  String get recallCardsNotYetButton;
+
+  /// No description provided for @recallCardsAskMeTomorrowButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask Me Tomorrow'**
+  String get recallCardsAskMeTomorrowButton;
+
+  /// No description provided for @recallCardsBookmarkAdd.
+  ///
+  /// In en, this message translates to:
+  /// **'Bookmark this card'**
+  String get recallCardsBookmarkAdd;
+
+  /// No description provided for @recallCardsBookmarkRemove.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove bookmark'**
+  String get recallCardsBookmarkRemove;
+
+  /// No description provided for @recallCardsExportButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Print or share'**
+  String get recallCardsExportButton;
+
+  /// No description provided for @recallCardsExportFiveCardSheet.
+  ///
+  /// In en, this message translates to:
+  /// **'Recall sheet (questions only)'**
+  String get recallCardsExportFiveCardSheet;
+
+  /// No description provided for @recallCardsExportAnswerSheet.
+  ///
+  /// In en, this message translates to:
+  /// **'Answer sheet'**
+  String get recallCardsExportAnswerSheet;
+
+  /// No description provided for @recallCardsSessionComplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Session complete'**
+  String get recallCardsSessionComplete;
+
+  /// No description provided for @recallCardsSessionCompleteSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Great work — come back tomorrow for more'**
+  String get recallCardsSessionCompleteSubtitle;
+
+  /// Progress indicator during a Recall Cards review session
+  ///
+  /// In en, this message translates to:
+  /// **'Card {current} of {total}'**
+  String recallCardsCardOf(int current, int total);
+
+  /// No description provided for @recallCardsStateNew.
+  ///
+  /// In en, this message translates to:
+  /// **'New'**
+  String get recallCardsStateNew;
+
+  /// No description provided for @recallCardsStateLearning.
+  ///
+  /// In en, this message translates to:
+  /// **'Learning'**
+  String get recallCardsStateLearning;
+
+  /// No description provided for @recallCardsStateReviewDue.
+  ///
+  /// In en, this message translates to:
+  /// **'Review due'**
+  String get recallCardsStateReviewDue;
+
+  /// No description provided for @recallCardsStateMastered.
+  ///
+  /// In en, this message translates to:
+  /// **'Mastered'**
+  String get recallCardsStateMastered;
+
+  /// No description provided for @recallCardsTypeFormula.
+  ///
+  /// In en, this message translates to:
+  /// **'Formula'**
+  String get recallCardsTypeFormula;
+
+  /// No description provided for @recallCardsTypeMeaning.
+  ///
+  /// In en, this message translates to:
+  /// **'Meaning'**
+  String get recallCardsTypeMeaning;
+
+  /// No description provided for @recallCardsTypeSymbol.
+  ///
+  /// In en, this message translates to:
+  /// **'Symbol'**
+  String get recallCardsTypeSymbol;
+
+  /// No description provided for @recallCardsTypeVocabulary.
+  ///
+  /// In en, this message translates to:
+  /// **'Vocabulary'**
+  String get recallCardsTypeVocabulary;
+
+  /// No description provided for @recallCardsTypeStrategy.
+  ///
+  /// In en, this message translates to:
+  /// **'Strategy'**
+  String get recallCardsTypeStrategy;
+
+  /// No description provided for @recallCardsTypeMisconception.
+  ///
+  /// In en, this message translates to:
+  /// **'Common Misconception'**
+  String get recallCardsTypeMisconception;
+
+  /// No description provided for @recallCardsTypeVisual.
+  ///
+  /// In en, this message translates to:
+  /// **'Visual'**
+  String get recallCardsTypeVisual;
+
+  /// No description provided for @recallCardsTypeRealWorldConnection.
+  ///
+  /// In en, this message translates to:
+  /// **'Real-World Connection'**
+  String get recallCardsTypeRealWorldConnection;
+
+  /// No description provided for @recallCardsTopicNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Number'**
+  String get recallCardsTopicNumber;
+
+  /// No description provided for @recallCardsTopicRatioAndProportion.
+  ///
+  /// In en, this message translates to:
+  /// **'Ratio & Proportion'**
+  String get recallCardsTopicRatioAndProportion;
+
+  /// No description provided for @recallCardsTopicAlgebra.
+  ///
+  /// In en, this message translates to:
+  /// **'Algebra'**
+  String get recallCardsTopicAlgebra;
+
+  /// No description provided for @recallCardsTopicGeometryAndMeasures.
+  ///
+  /// In en, this message translates to:
+  /// **'Geometry & Measures'**
+  String get recallCardsTopicGeometryAndMeasures;
+
+  /// No description provided for @recallCardsTopicStatistics.
+  ///
+  /// In en, this message translates to:
+  /// **'Statistics'**
+  String get recallCardsTopicStatistics;
+
+  /// No description provided for @recallCardsTopicProbability.
+  ///
+  /// In en, this message translates to:
+  /// **'Probability'**
+  String get recallCardsTopicProbability;
 }
 
 class _AppLocalizationsDelegate

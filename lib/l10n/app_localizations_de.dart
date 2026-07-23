@@ -1807,6 +1807,177 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get abacusColumnOnes => 'Ones';
+
+  @override
+  String get mathStudioRecallCardsTitle => 'Recall Cards';
+
+  @override
+  String get mathStudioRecallCardsSubtitle =>
+      'Quick retrieval practice for the facts you need to keep';
+
+  @override
+  String get recallCardsHubTitle => 'Recall Cards';
+
+  @override
+  String get recallCardsHubSubtitle =>
+      'Short, focused practice for formulas, vocabulary, symbols and the ideas behind them';
+
+  @override
+  String get recallCardsQuickReviewTitle => 'Five-Card Quick Review';
+
+  @override
+  String get recallCardsQuickReviewSubtitle =>
+      'A short daily set, chosen for you';
+
+  @override
+  String get recallCardsReviewDueTitle => 'Review Due';
+
+  @override
+  String recallCardsReviewDueCount(int count) {
+    return '$count due for review';
+  }
+
+  @override
+  String get recallCardsReviewDueEmpty => 'Nothing due right now — nice work';
+
+  @override
+  String get recallCardsBrowseByTopicTitle => 'Browse by Topic';
+
+  @override
+  String get recallCardsBrowseByTypeTitle => 'Browse by Card Type';
+
+  @override
+  String get recallCardsSearchTitle => 'Search';
+
+  @override
+  String get recallCardsSearchHint => 'Search formulas, terms and ideas';
+
+  @override
+  String get recallCardsBookmarksTitle => 'Bookmarks';
+
+  @override
+  String get recallCardsEmptyBookmarks =>
+      'No bookmarks yet — tap the bookmark icon on any card to save it here';
+
+  @override
+  String get recallCardsNoResults => 'No cards found';
+
+  @override
+  String get recallCardsRevealButton => 'Reveal the answer';
+
+  @override
+  String get recallCardsRevealedLabel => 'Answer';
+
+  @override
+  String get recallCardsExplainLabel => 'Why this works';
+
+  @override
+  String get recallCardsCommonMistakeLabel => 'Common mistake';
+
+  @override
+  String get recallCardsConnectLabel => 'Where this is used';
+
+  @override
+  String get recallCardsRelatedDiscoveryLabel => 'Related Discovery Cards';
+
+  @override
+  String get recallCardsRelatedPracticeLabel => 'Related Practice';
+
+  @override
+  String get recallCardsRelatedLabsLabel => 'Related Interactive Labs';
+
+  @override
+  String get recallCardsLabComingSoon => 'Coming soon';
+
+  @override
+  String get recallCardsRememberedButton => 'I remembered this';
+
+  @override
+  String get recallCardsNotYetButton => 'Not yet';
+
+  @override
+  String get recallCardsAskMeTomorrowButton => 'Ask Me Tomorrow';
+
+  @override
+  String get recallCardsBookmarkAdd => 'Bookmark this card';
+
+  @override
+  String get recallCardsBookmarkRemove => 'Remove bookmark';
+
+  @override
+  String get recallCardsExportButton => 'Print or share';
+
+  @override
+  String get recallCardsExportFiveCardSheet => 'Recall sheet (questions only)';
+
+  @override
+  String get recallCardsExportAnswerSheet => 'Answer sheet';
+
+  @override
+  String get recallCardsSessionComplete => 'Session complete';
+
+  @override
+  String get recallCardsSessionCompleteSubtitle =>
+      'Great work — come back tomorrow for more';
+
+  @override
+  String recallCardsCardOf(int current, int total) {
+    return 'Card $current of $total';
+  }
+
+  @override
+  String get recallCardsStateNew => 'New';
+
+  @override
+  String get recallCardsStateLearning => 'Learning';
+
+  @override
+  String get recallCardsStateReviewDue => 'Review due';
+
+  @override
+  String get recallCardsStateMastered => 'Mastered';
+
+  @override
+  String get recallCardsTypeFormula => 'Formula';
+
+  @override
+  String get recallCardsTypeMeaning => 'Meaning';
+
+  @override
+  String get recallCardsTypeSymbol => 'Symbol';
+
+  @override
+  String get recallCardsTypeVocabulary => 'Vocabulary';
+
+  @override
+  String get recallCardsTypeStrategy => 'Strategy';
+
+  @override
+  String get recallCardsTypeMisconception => 'Common Misconception';
+
+  @override
+  String get recallCardsTypeVisual => 'Visual';
+
+  @override
+  String get recallCardsTypeRealWorldConnection => 'Real-World Connection';
+
+  @override
+  String get recallCardsTopicNumber => 'Number';
+
+  @override
+  String get recallCardsTopicRatioAndProportion => 'Ratio & Proportion';
+
+  @override
+  String get recallCardsTopicAlgebra => 'Algebra';
+
+  @override
+  String get recallCardsTopicGeometryAndMeasures => 'Geometry & Measures';
+
+  @override
+  String get recallCardsTopicStatistics => 'Statistics';
+
+  @override
+  String get recallCardsTopicProbability => 'Probability';
 }
 
 /// The translations for German, as used in Switzerland (`de_CH`).
@@ -3547,4 +3718,175 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
 
   @override
   String get abacusColumnOnes => 'Einer';
+
+  @override
+  String get mathStudioRecallCardsTitle => 'Merkkarten';
+
+  @override
+  String get mathStudioRecallCardsSubtitle =>
+      'Schnelles Abrufen fuer die Fakten, die du behalten musst';
+
+  @override
+  String get recallCardsHubTitle => 'Merkkarten';
+
+  @override
+  String get recallCardsHubSubtitle =>
+      'Kurzes, gezieltes Training fuer Formeln, Begriffe, Symbole und die Ideen dahinter';
+
+  @override
+  String get recallCardsQuickReviewTitle => 'Fuenf-Karten-Schnellwiederholung';
+
+  @override
+  String get recallCardsQuickReviewSubtitle =>
+      'Eine kurze taegliche Auswahl, fuer dich zusammengestellt';
+
+  @override
+  String get recallCardsReviewDueTitle => 'Faellige Wiederholung';
+
+  @override
+  String recallCardsReviewDueCount(int count) {
+    return '$count zur Wiederholung faellig';
+  }
+
+  @override
+  String get recallCardsReviewDueEmpty => 'Gerade nichts faellig — gut gemacht';
+
+  @override
+  String get recallCardsBrowseByTopicTitle => 'Nach Thema durchsuchen';
+
+  @override
+  String get recallCardsBrowseByTypeTitle => 'Nach Kartentyp durchsuchen';
+
+  @override
+  String get recallCardsSearchTitle => 'Suche';
+
+  @override
+  String get recallCardsSearchHint => 'Formeln, Begriffe und Ideen suchen';
+
+  @override
+  String get recallCardsBookmarksTitle => 'Lesezeichen';
+
+  @override
+  String get recallCardsEmptyBookmarks =>
+      'Noch keine Lesezeichen — tippe auf das Lesezeichen-Symbol einer Karte, um sie hier zu speichern';
+
+  @override
+  String get recallCardsNoResults => 'Keine Karten gefunden';
+
+  @override
+  String get recallCardsRevealButton => 'Antwort anzeigen';
+
+  @override
+  String get recallCardsRevealedLabel => 'Antwort';
+
+  @override
+  String get recallCardsExplainLabel => 'Warum das funktioniert';
+
+  @override
+  String get recallCardsCommonMistakeLabel => 'Haeufiger Fehler';
+
+  @override
+  String get recallCardsConnectLabel => 'Wo das verwendet wird';
+
+  @override
+  String get recallCardsRelatedDiscoveryLabel => 'Verwandte Entdeckerkarten';
+
+  @override
+  String get recallCardsRelatedPracticeLabel => 'Verwandte Uebungen';
+
+  @override
+  String get recallCardsRelatedLabsLabel => 'Verwandte interaktive Labore';
+
+  @override
+  String get recallCardsLabComingSoon => 'Demnaechst verfuegbar';
+
+  @override
+  String get recallCardsRememberedButton => 'Das wusste ich noch';
+
+  @override
+  String get recallCardsNotYetButton => 'Noch nicht';
+
+  @override
+  String get recallCardsAskMeTomorrowButton => 'Morgen nochmal fragen';
+
+  @override
+  String get recallCardsBookmarkAdd => 'Diese Karte mit Lesezeichen versehen';
+
+  @override
+  String get recallCardsBookmarkRemove => 'Lesezeichen entfernen';
+
+  @override
+  String get recallCardsExportButton => 'Drucken oder teilen';
+
+  @override
+  String get recallCardsExportFiveCardSheet => 'Merkblatt (nur Fragen)';
+
+  @override
+  String get recallCardsExportAnswerSheet => 'Antwortblatt';
+
+  @override
+  String get recallCardsSessionComplete => 'Sitzung abgeschlossen';
+
+  @override
+  String get recallCardsSessionCompleteSubtitle =>
+      'Gut gemacht — komm morgen fuer mehr wieder';
+
+  @override
+  String recallCardsCardOf(int current, int total) {
+    return 'Karte $current von $total';
+  }
+
+  @override
+  String get recallCardsStateNew => 'Neu';
+
+  @override
+  String get recallCardsStateLearning => 'Lernphase';
+
+  @override
+  String get recallCardsStateReviewDue => 'Wiederholung faellig';
+
+  @override
+  String get recallCardsStateMastered => 'Gemeistert';
+
+  @override
+  String get recallCardsTypeFormula => 'Formel';
+
+  @override
+  String get recallCardsTypeMeaning => 'Bedeutung';
+
+  @override
+  String get recallCardsTypeSymbol => 'Symbol';
+
+  @override
+  String get recallCardsTypeVocabulary => 'Fachbegriff';
+
+  @override
+  String get recallCardsTypeStrategy => 'Strategie';
+
+  @override
+  String get recallCardsTypeMisconception => 'Haeufiger Irrtum';
+
+  @override
+  String get recallCardsTypeVisual => 'Visuell';
+
+  @override
+  String get recallCardsTypeRealWorldConnection => 'Alltagsbezug';
+
+  @override
+  String get recallCardsTopicNumber => 'Zahlen';
+
+  @override
+  String get recallCardsTopicRatioAndProportion => 'Verhaeltnis & Proportion';
+
+  @override
+  String get recallCardsTopicAlgebra => 'Algebra';
+
+  @override
+  String get recallCardsTopicGeometryAndMeasures => 'Geometrie & Masse';
+
+  @override
+  String get recallCardsTopicStatistics => 'Statistik';
+
+  @override
+  String get recallCardsTopicProbability => 'Wahrscheinlichkeit';
 }

@@ -40,6 +40,12 @@ import '../screens/visual_maths/abacus_screen.dart';
 import '../screens/visual_maths/place_value_explorer_screen.dart';
 import '../screens/discovery/discovery_library_screen.dart';
 import '../screens/discovery/discovery_card_detail_screen.dart';
+import '../models/recall_card.dart';
+import '../screens/recall/recall_cards_hub_screen.dart';
+import '../screens/recall/recall_cards_browse_screen.dart';
+import '../screens/recall/recall_cards_bookmarks_screen.dart';
+import '../screens/recall/recall_card_detail_screen.dart';
+import '../screens/recall/recall_review_session_screen.dart';
 import '../screens/settings/release_notes_screen.dart';
 import '../screens/settings/terms_screen.dart';
 import '../screens/mental_math/daily_teaser_detail_screen.dart';
@@ -173,6 +179,41 @@ final GoRouter appRouter = GoRouter(
               path: ':cardId',
               builder: (context, state) => DiscoveryCardDetailScreen(
                 cardId: state.pathParameters['cardId']!,
+              ),
+            ),
+          ],
+        ),
+        GoRoute(
+          path: 'recall-cards',
+          builder: (context, state) => const RecallCardsHubScreen(),
+          routes: [
+            GoRoute(
+              path: 'browse',
+              builder: (context, state) {
+                final extra = state.extra;
+                final filters = extra is Map ? extra : const <String, String>{};
+                final topicId = filters['topic'] as String?;
+                final typeId = filters['type'] as String?;
+                return RecallCardsBrowseScreen(
+                  initialTopic: topicId == null ? null : RecallTopic.fromId(topicId),
+                  initialType: typeId == null ? null : RecallCardType.fromId(typeId),
+                );
+              },
+            ),
+            GoRoute(
+              path: 'bookmarks',
+              builder: (context, state) => const RecallCardsBookmarksScreen(),
+            ),
+            GoRoute(
+              path: 'card/:cardId',
+              builder: (context, state) => RecallCardDetailScreen(
+                cardId: state.pathParameters['cardId']!,
+              ),
+            ),
+            GoRoute(
+              path: 'session',
+              builder: (context, state) => RecallReviewSessionScreen(
+                cards: (state.extra as List<RecallCard>?) ?? const [],
               ),
             ),
           ],

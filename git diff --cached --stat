@@ -1,0 +1,31 @@
+warning: in the working copy of 'lib/app/router.dart', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'lib/core/bootstrap.dart', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'lib/screens/math_studio/math_studio_hub_screen.dart', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'test/math_studio_l10n_completeness_test.dart', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'test/math_studio_navigation_widget_test.dart', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'untranslated_messages.txt', LF will be replaced by CRLF the next time Git touches it
+ lib/app/router.dart                                |  41 [32m+[m
+ lib/core/bootstrap.dart                            |   2 [32m+[m
+ lib/l10n/app_de_CH.arb                             |  58 [32m+[m[31m-[m
+ lib/l10n/app_en.arb                                | 129 [32m+++[m[31m-[m
+ lib/l10n/app_en_GB.arb                             |  58 [32m+[m[31m-[m
+ lib/l10n/app_fr_CH.arb                             |  58 [32m+[m[31m-[m
+ lib/l10n/app_it_CH.arb                             |  58 [32m+[m[31m-[m
+ lib/l10n/app_localizations.dart                    | 324 [32m++++++++[m
+ lib/l10n/app_localizations_ar.dart                 | 171 [32m+++++[m
+ lib/l10n/app_localizations_da.dart                 | 171 [32m+++++[m
+ lib/l10n/app_localizations_de.dart                 | 342 [32m+++++++++[m
+ lib/l10n/app_localizations_en.dart                 | 342 [32m+++++++++[m
+ lib/l10n/app_localizations_es.dart                 | 171 [32m+++++[m
+ lib/l10n/app_localizations_fr.dart                 | 345 [32m+++++++++[m
+ lib/l10n/app_localizations_id.dart                 | 171 [32m+++++[m
+ lib/l10n/app_localizations_it.dart                 | 344 [32m+++++++++[m
+ lib/l10n/app_localizations_ko.dart                 | 171 [32m+++++[m
+ lib/l10n/app_localizations_nb.dart                 | 171 [32m+++++[m
+ lib/l10n/app_localizations_pt.dart                 | 171 [32m+++++[m
+ lib/l10n/app_localizations_sv.dart                 | 171 [32m+++++[m
+ .../math_studio/math_studio_hub_screen.dart        |   8 [32m+[m
+ test/math_studio_l10n_completeness_test.dart       |   3 [32m+[m
+ test/math_studio_navigation_widget_test.dart       |  18 [32m+[m[31m-[m
+ untranslated_messages.txt                          | 840 [32m++++++++++++++++++++[m[31m-[m
+ 24 files changed, 4317 insertions(+), 21 deletions(-)
