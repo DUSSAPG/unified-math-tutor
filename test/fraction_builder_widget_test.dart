@@ -50,7 +50,7 @@ void main() {
   testWidgets('tapping a segment then Check gives correct feedback when it matches the target',
       (tester) async {
     await pump(tester);
-    await tester.tap(find.byType(GestureDetector).first);
+    await tester.tap(find.byKey(const Key('fractionSegment0')));
     await tester.pump();
     expect(find.text('1 of 2 filled'), findsOneWidget);
 
@@ -90,7 +90,7 @@ void main() {
   testWidgets('Reset (app bar icon) clears the current fill without changing challenge',
       (tester) async {
     await pump(tester);
-    await tester.tap(find.byType(GestureDetector).first);
+    await tester.tap(find.byKey(const Key('fractionSegment0')));
     await tester.pump();
     expect(find.text('1 of 2 filled'), findsOneWidget);
 
@@ -104,7 +104,7 @@ void main() {
 
   testWidgets('correct check shows the symbolic result alongside the visual', (tester) async {
     await pump(tester);
-    await tester.tap(find.byType(GestureDetector).first);
+    await tester.tap(find.byKey(const Key('fractionSegment0')));
     await tester.pump();
     await tester.ensureVisible(find.text('Check'));
     await tester.tap(find.text('Check'));

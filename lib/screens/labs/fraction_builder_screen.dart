@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../models/interactive_lab_id.dart';
+import '../../models/lab_guidance_level.dart';
+import '../../models/lab_narration_trigger.dart';
 import '../../services/audio_cue_service.dart';
 import '../../services/captain_math_service.dart';
 import '../../services/interactive_labs_progress_service.dart';
@@ -11,6 +13,7 @@ import '../../widgets/labs/lab_progress_indicator.dart';
 import '../../widgets/labs/lab_related_links.dart';
 import '../../widgets/labs/lab_result_banner.dart';
 import '../../widgets/labs/lab_scaffold.dart';
+import '../../widgets/labs/simple_lab_narration_mixin.dart';
 
 class _FractionChallenge {
   const _FractionChallenge(this.numerator, this.denominator);
@@ -42,12 +45,63 @@ class FractionBuilderScreen extends StatefulWidget {
   State<FractionBuilderScreen> createState() => _FractionBuilderScreenState();
 }
 
-class _FractionBuilderScreenState extends State<FractionBuilderScreen> {
+class _FractionBuilderScreenState extends State<FractionBuilderScreen>
+    with SimpleLabNarrationMixin {
   int _challengeIndex = 0;
   int _filled = 0;
   bool? _lastResultCorrect;
+  int? _lastCheckedFilled;
 
   _FractionChallenge get _challenge => _challenges[_challengeIndex];
+
+  @override
+  InteractiveLabId get narrationLabId => InteractiveLabId.fractionBuilder;
+
+  @override
+  void initState() {
+    super.initState();
+    initNarration();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    maybeIntroduceNarration();
+  }
+
+  @override
+  void dispose() {
+    disposeNarration();
+    super.dispose();
+  }
+
+  @override
+  void onIntroductionNarration() {
+    final level = InteractiveLabsProgressService.instance.guidanceLevel();
+    final l10n = AppLocalizations.of(context);
+    playNarration(
+      messageId: 'labsFractionBuilderNarrationIntro',
+      text: l10n.labsFractionBuilderNarrationIntro,
+      trigger: LabNarrationTrigger.introduction,
+      level: level,
+    );
+  }
+
+  @override
+  void onInactivityNarration() {
+    final level = InteractiveLabsProgressService.instance.guidanceLevel();
+    final l10n = AppLocalizations.of(context);
+    playNarration(
+      messageId: 'labsFractionBuilderNarrationHintInactivity${narrationLevelSuffix(level)}',
+      text: switch (level) {
+        LabGuidanceLevel.explorer => l10n.labsFractionBuilderNarrationHintInactivityExplorer,
+        LabGuidanceLevel.builder => l10n.labsFractionBuilderNarrationHintInactivityBuilder,
+        LabGuidanceLevel.navigator => l10n.labsFractionBuilderNarrationHintInactivityNavigator,
+      },
+      trigger: LabNarrationTrigger.hint,
+      level: level,
+    );
+  }
 
   void _toggleSegment(int index) {
     AudioCueService.instance.play(AudioCue.objectSelect, throttle: true);
@@ -55,20 +109,61 @@ class _FractionBuilderScreenState extends State<FractionBuilderScreen> {
       _filled = index < _filled ? index : index + 1;
       _lastResultCorrect = null;
     });
+    registerNarrationActivity();
   }
 
   Future<void> _check() async {
     AudioCueService.instance.play(AudioCue.testLaunch);
+    final l10n = AppLocalizations.of(context);
+    final level = InteractiveLabsProgressService.instance.guidanceLevel();
+    final isRepeated = _lastCheckedFilled == _filled;
+
     final correct = _filled == _challenge.numerator;
     setState(() => _lastResultCorrect = correct);
+    _lastCheckedFilled = _filled;
+    registerNarrationActivity();
+
     await InteractiveLabsProgressService.instance.recordAttempt(InteractiveLabId.fractionBuilder);
     if (correct) {
       await InteractiveLabsProgressService.instance
           .recordCompletion(InteractiveLabId.fractionBuilder);
       CaptainMathService.instance.showCompletion();
       AudioCueService.instance.play(AudioCue.success);
+      playNarration(
+        messageId: 'labsFractionBuilderNarrationCompletion${narrationLevelSuffix(level)}',
+        text: switch (level) {
+          LabGuidanceLevel.explorer => l10n.labsFractionBuilderNarrationCompletionExplorer,
+          LabGuidanceLevel.builder => l10n.labsFractionBuilderNarrationCompletionBuilder,
+          LabGuidanceLevel.navigator => l10n.labsFractionBuilderNarrationCompletionNavigator,
+        },
+        trigger: LabNarrationTrigger.completion,
+        level: level,
+      );
     } else {
       CaptainMathService.instance.showEncouragement();
+      if (isRepeated) {
+        playNarration(
+          messageId: 'labsFractionBuilderNarrationHintRepeated${narrationLevelSuffix(level)}',
+          text: switch (level) {
+            LabGuidanceLevel.explorer => l10n.labsFractionBuilderNarrationHintRepeatedExplorer,
+            LabGuidanceLevel.builder => l10n.labsFractionBuilderNarrationHintRepeatedBuilder,
+            LabGuidanceLevel.navigator => l10n.labsFractionBuilderNarrationHintRepeatedNavigator,
+          },
+          trigger: LabNarrationTrigger.hint,
+          level: level,
+        );
+      } else {
+        playNarration(
+          messageId: 'labsFractionBuilderNarrationResultWrong${narrationLevelSuffix(level)}',
+          text: switch (level) {
+            LabGuidanceLevel.explorer => l10n.labsFractionBuilderNarrationResultWrongExplorer,
+            LabGuidanceLevel.builder => l10n.labsFractionBuilderNarrationResultWrongBuilder,
+            LabGuidanceLevel.navigator => l10n.labsFractionBuilderNarrationResultWrongNavigator,
+          },
+          trigger: LabNarrationTrigger.resultExplanation,
+          level: level,
+        );
+      }
     }
   }
 
@@ -78,6 +173,7 @@ class _FractionBuilderScreenState extends State<FractionBuilderScreen> {
       _filled = 0;
       _lastResultCorrect = null;
     });
+    registerNarrationActivity();
   }
 
   void _next() {
@@ -87,6 +183,8 @@ class _FractionBuilderScreenState extends State<FractionBuilderScreen> {
       _filled = 0;
       _lastResultCorrect = null;
     });
+    _lastCheckedFilled = null;
+    registerNarrationActivity();
   }
 
   @override
@@ -134,6 +232,7 @@ class _FractionBuilderScreenState extends State<FractionBuilderScreen> {
                     for (var i = 0; i < challenge.denominator; i++)
                       Expanded(
                         child: GestureDetector(
+                          key: Key('fractionSegment$i'),
                           onTap: () => _toggleSegment(i),
                           child: Container(
                             height: 56,

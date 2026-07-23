@@ -184,8 +184,10 @@ class _TopicsContentState extends State<_TopicsContent> {
     return {for (final display in resolved) display.id: display};
   }
 
-  bool get _showTrackPanel =>
-      _selectedFilter == _Filter.oxfordTrack || _selectedFilter == _Filter.more;
+  // "More" itself is never a persisted selection any more (choosing a
+  // secondary filter from its sheet sets the real filter directly), so only
+  // Oxford Track needs to reveal the track panel.
+  bool get _showTrackPanel => _selectedFilter == _Filter.oxfordTrack;
 
   List<_Topic> get _filteredTopics =>
       _topics.where((t) => t.matches(_selectedFilter)).toList();
@@ -293,21 +295,28 @@ class _SearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 44,
+      width: double.infinity,
+      constraints: const BoxConstraints(minHeight: 44),
       decoration: BoxDecoration(
         color: const Color(0xFF132040),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: const Color(0xFF1F3055)),
       ),
+      padding: const EdgeInsets.symmetric(vertical: 8),
       child: Row(
         children: [
           const SizedBox(width: 12),
           const Icon(Icons.search, color: Color(0xFF8A9DC0), size: 20),
           const SizedBox(width: 8),
-          Text(
-            AppLocalizations.of(context).topicsSearchHint,
-            style: const TextStyle(color: Color(0xFF4A6080), fontSize: 14),
+          Expanded(
+            child: Text(
+              AppLocalizations.of(context).topicsSearchHint,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(color: Color(0xFF4A6080), fontSize: 14),
+            ),
           ),
+          const SizedBox(width: 12),
         ],
       ),
     );
@@ -316,77 +325,195 @@ class _SearchBar extends StatelessWidget {
 
 // ─── Filter Row ───────────────────────────────────────────────────────────────
 
-class _FilterRow extends StatelessWidget {
+class _FilterRow extends StatefulWidget {
   final _Filter selected;
   final ValueChanged<_Filter> onSelected;
 
   const _FilterRow({required this.selected, required this.onSelected});
 
   @override
-  Widget build(BuildContext context) {
+  State<_FilterRow> createState() => _FilterRowState();
+}
+
+class _FilterRowState extends State<_FilterRow> {
+  final _scrollController = ScrollController();
+
+  _Filter get selected => widget.selected;
+  ValueChanged<_Filter> get onSelected => widget.onSelected;
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  // "All", "Practice" and "Recommended" always stay on-screen; curriculum
+  // filters (and any future ones added here) live behind "More" so the
+  // primary row never crowds out on narrow phones.
+  static const _primaryFilters = [_Filter.all, _Filter.practice, _Filter.recommended];
+  static const _secondaryFilters = [_Filter.oxfordTrack, _Filter.gcse];
+
+  static String _labelFor(AppLocalizations l10n, _Filter filter) => switch (filter) {
+        _Filter.all => l10n.topicsFilterAll,
+        _Filter.practice => l10n.topicsFilterPractice,
+        _Filter.recommended => l10n.topicsFilterRecommended,
+        _Filter.oxfordTrack => l10n.topicsFilterOxfordTrack,
+        _Filter.gcse => l10n.topicsFilterGcse,
+        _Filter.more => l10n.topicsFilterMore,
+      };
+
+  Future<void> _openMoreSheet(BuildContext context) async {
     final l10n = AppLocalizations.of(context);
-    final chips = [
-      (l10n.topicsFilterAll, _Filter.all),
-      (l10n.topicsFilterPractice, _Filter.practice),
-      (l10n.topicsFilterRecommended, _Filter.recommended),
-      (l10n.topicsFilterOxfordTrack, _Filter.oxfordTrack),
-      (l10n.topicsFilterGcse, _Filter.gcse),
-      (l10n.topicsFilterMore, _Filter.more),
-    ];
-
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      primary: false,
-      child: Row(
-        children: List.generate(chips.length, (i) {
-          final (label, filter) = chips[i];
-          final isSel = selected == filter;
-          final isMore = filter == _Filter.more;
-
-          return Padding(
-            padding: EdgeInsets.only(right: i < chips.length - 1 ? 8 : 0),
-            child: GestureDetector(
-              onTap: () => onSelected(filter),
-              child: Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
-                decoration: BoxDecoration(
-                  color:
-                      isSel ? const Color(0xFF3D7EFF) : const Color(0xFF132040),
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(
-                    color: isSel
-                        ? const Color(0xFF3D7EFF)
-                        : const Color(0xFF1F3055),
+    final chosen = await showModalBottomSheet<_Filter>(
+      context: context,
+      backgroundColor: const Color(0xFF0D1525),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      // Bounded and scrollable so a growing list of future curriculum/formula
+      // filters can never overflow off the bottom of a short phone screen.
+      constraints: BoxConstraints(maxHeight: MediaQuery.of(context).size.height * 0.7),
+      builder: (sheetContext) => SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 12),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 4, 20, 12),
+                child: Text(
+                  l10n.topicsFilterMore,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
+              ),
+              Flexible(
+                child: ListView(
+                  shrinkWrap: true,
                   children: [
-                    Text(
-                      label,
-                      style: TextStyle(
-                        color: isSel ? Colors.white : const Color(0xFF8A9DC0),
-                        fontSize: 13,
-                        fontWeight: isSel ? FontWeight.w600 : FontWeight.w400,
+                    for (final filter in _secondaryFilters)
+                      Semantics(
+                        button: true,
+                        selected: selected == filter,
+                        label: _labelFor(l10n, filter),
+                        child: ListTile(
+                          minVerticalPadding: 16,
+                          title: Text(
+                            _labelFor(l10n, filter),
+                            style: const TextStyle(color: Colors.white, fontSize: 15),
+                          ),
+                          trailing: selected == filter
+                              ? const Icon(Icons.check, color: Color(0xFF5B8EFF))
+                              : null,
+                          onTap: () => Navigator.of(sheetContext).pop(filter),
+                        ),
                       ),
-                    ),
-                    if (isMore) ...[
-                      const SizedBox(width: 2),
-                      Icon(
-                        isSel
-                            ? Icons.keyboard_arrow_up
-                            : Icons.keyboard_arrow_down,
-                        size: 14,
-                        color: isSel ? Colors.white : const Color(0xFF8A9DC0),
-                      ),
-                    ],
                   ],
                 ),
               ),
+            ],
+          ),
+        ),
+      ),
+    );
+    if (chosen != null) onSelected(chosen);
+  }
+
+  Widget _chip(
+    BuildContext context,
+    AppLocalizations l10n,
+    _Filter filter,
+    String label, {
+    bool isMoreChip = false,
+    bool? selectedOverride,
+    VoidCallback? onTapOverride,
+  }) {
+    final isSel = selectedOverride ?? (selected == filter);
+    return Semantics(
+      button: true,
+      selected: isSel,
+      label: label,
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(20),
+          onTap: onTapOverride ?? () => onSelected(filter),
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(minHeight: 44, minWidth: 44),
+            child: Container(
+              alignment: Alignment.center,
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
+              decoration: BoxDecoration(
+                color: isSel ? const Color(0xFF3D7EFF) : const Color(0xFF132040),
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(
+                  color: isSel ? const Color(0xFF3D7EFF) : const Color(0xFF1F3055),
+                ),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    label,
+                    style: TextStyle(
+                      color: isSel ? Colors.white : const Color(0xFF8A9DC0),
+                      fontSize: 13,
+                      fontWeight: isSel ? FontWeight.w600 : FontWeight.w400,
+                    ),
+                  ),
+                  if (isMoreChip) ...[
+                    const SizedBox(width: 2),
+                    Icon(
+                      Icons.keyboard_arrow_down,
+                      size: 14,
+                      color: isSel ? Colors.white : const Color(0xFF8A9DC0),
+                    ),
+                  ],
+                ],
+              ),
             ),
-          );
-        }),
+          ),
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final isSecondarySelected = _secondaryFilters.contains(selected);
+    // The More chip shows the active secondary filter's own name once one is
+    // chosen, so the selection stays visible without needing to reopen the
+    // sheet — this is how "preserve selected state" reads on-screen.
+    final moreLabel = isSecondarySelected ? _labelFor(l10n, selected) : l10n.topicsFilterMore;
+
+    return Scrollbar(
+      controller: _scrollController,
+      thumbVisibility: true,
+      child: SingleChildScrollView(
+        controller: _scrollController,
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: [
+            for (final filter in _primaryFilters) ...[
+              _chip(context, l10n, filter, _labelFor(l10n, filter)),
+              const SizedBox(width: 8),
+            ],
+            _chip(
+              context,
+              l10n,
+              _Filter.more,
+              moreLabel,
+              isMoreChip: true,
+              selectedOverride: isSecondarySelected,
+              onTapOverride: () => _openMoreSheet(context),
+            ),
+          ],
+        ),
       ),
     );
   }

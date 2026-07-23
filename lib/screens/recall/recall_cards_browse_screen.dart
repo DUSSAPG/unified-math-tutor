@@ -30,6 +30,8 @@ class _RecallCardsBrowseScreenState extends State<RecallCardsBrowseScreen> {
   late RecallTopic? _topicFilter = widget.initialTopic;
   late RecallCardType? _typeFilter = widget.initialType;
   final _searchController = TextEditingController();
+  final _topicScrollController = ScrollController();
+  final _typeScrollController = ScrollController();
   String _query = '';
 
   @override
@@ -41,6 +43,8 @@ class _RecallCardsBrowseScreenState extends State<RecallCardsBrowseScreen> {
   @override
   void dispose() {
     _searchController.dispose();
+    _topicScrollController.dispose();
+    _typeScrollController.dispose();
     super.dispose();
   }
 
@@ -112,49 +116,59 @@ class _RecallCardsBrowseScreenState extends State<RecallCardsBrowseScreen> {
                 ),
                 SizedBox(
                   height: 40,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    padding: const EdgeInsets.symmetric(horizontal: 12),
-                    children: [
-                      _FilterChip(
-                        label: l10n.mathStudioCategoryAll,
-                        selected: _topicFilter == null,
-                        onTap: () => setState(() => _topicFilter = null),
-                      ),
-                      for (final topic in RecallTopic.values)
-                        Padding(
-                          padding: const EdgeInsets.only(left: 8),
-                          child: _FilterChip(
-                            label: recallTopicLabel(l10n, topic),
-                            selected: _topicFilter == topic,
-                            onTap: () => setState(() => _topicFilter = topic),
-                          ),
+                  child: Scrollbar(
+                    controller: _topicScrollController,
+                    thumbVisibility: true,
+                    child: ListView(
+                      controller: _topicScrollController,
+                      scrollDirection: Axis.horizontal,
+                      padding: const EdgeInsets.symmetric(horizontal: 12),
+                      children: [
+                        _FilterChip(
+                          label: l10n.mathStudioCategoryAll,
+                          selected: _topicFilter == null,
+                          onTap: () => setState(() => _topicFilter = null),
                         ),
-                    ],
+                        for (final topic in RecallTopic.values)
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8),
+                            child: _FilterChip(
+                              label: recallTopicLabel(l10n, topic),
+                              selected: _topicFilter == topic,
+                              onTap: () => setState(() => _topicFilter = topic),
+                            ),
+                          ),
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(height: 6),
                 SizedBox(
                   height: 40,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    padding: const EdgeInsets.symmetric(horizontal: 12),
-                    children: [
-                      _FilterChip(
-                        label: l10n.mathStudioCategoryAll,
-                        selected: _typeFilter == null,
-                        onTap: () => setState(() => _typeFilter = null),
-                      ),
-                      for (final type in RecallCardType.values)
-                        Padding(
-                          padding: const EdgeInsets.only(left: 8),
-                          child: _FilterChip(
-                            label: recallCardTypeLabel(l10n, type),
-                            selected: _typeFilter == type,
-                            onTap: () => setState(() => _typeFilter = type),
-                          ),
+                  child: Scrollbar(
+                    controller: _typeScrollController,
+                    thumbVisibility: true,
+                    child: ListView(
+                      controller: _typeScrollController,
+                      scrollDirection: Axis.horizontal,
+                      padding: const EdgeInsets.symmetric(horizontal: 12),
+                      children: [
+                        _FilterChip(
+                          label: l10n.mathStudioCategoryAll,
+                          selected: _typeFilter == null,
+                          onTap: () => setState(() => _typeFilter = null),
                         ),
-                    ],
+                        for (final type in RecallCardType.values)
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8),
+                            child: _FilterChip(
+                              label: recallCardTypeLabel(l10n, type),
+                              selected: _typeFilter == type,
+                              onTap: () => setState(() => _typeFilter = type),
+                            ),
+                          ),
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(height: 8),
@@ -170,7 +184,11 @@ class _RecallCardsBrowseScreenState extends State<RecallCardsBrowseScreen> {
                           padding: const EdgeInsets.all(AppSpacing.md),
                           gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                             maxCrossAxisExtent: 260,
-                            mainAxisExtent: 196,
+                            // Extra headroom over the tile's nominal content
+                            // height so locale text-length/font-metric
+                            // variance can't tip it into overflow on narrow
+                            // phones (mirrors discovery_library_screen.dart).
+                            mainAxisExtent: 216,
                             crossAxisSpacing: AppSpacing.sm,
                             mainAxisSpacing: AppSpacing.sm,
                           ),

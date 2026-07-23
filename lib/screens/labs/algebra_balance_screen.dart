@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../models/interactive_lab_id.dart';
+import '../../models/lab_guidance_level.dart';
+import '../../models/lab_narration_trigger.dart';
 import '../../services/audio_cue_service.dart';
 import '../../services/captain_math_service.dart';
 import '../../services/interactive_labs_progress_service.dart';
@@ -11,6 +13,7 @@ import '../../widgets/labs/lab_progress_indicator.dart';
 import '../../widgets/labs/lab_related_links.dart';
 import '../../widgets/labs/lab_result_banner.dart';
 import '../../widgets/labs/lab_scaffold.dart';
+import '../../widgets/labs/simple_lab_narration_mixin.dart';
 
 class _Equation {
   const _Equation(this.a, this.b, this.c);
@@ -43,7 +46,8 @@ class AlgebraBalanceScreen extends StatefulWidget {
   State<AlgebraBalanceScreen> createState() => _AlgebraBalanceScreenState();
 }
 
-class _AlgebraBalanceScreenState extends State<AlgebraBalanceScreen> {
+class _AlgebraBalanceScreenState extends State<AlgebraBalanceScreen>
+    with SimpleLabNarrationMixin {
   int _equationIndex = 0;
   late int _a;
   late int _b;
@@ -51,9 +55,52 @@ class _AlgebraBalanceScreenState extends State<AlgebraBalanceScreen> {
   bool _solved = false;
 
   @override
+  InteractiveLabId get narrationLabId => InteractiveLabId.algebraBalance;
+
+  @override
   void initState() {
     super.initState();
     _loadEquation();
+    initNarration();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    maybeIntroduceNarration();
+  }
+
+  @override
+  void dispose() {
+    disposeNarration();
+    super.dispose();
+  }
+
+  @override
+  void onIntroductionNarration() {
+    final level = InteractiveLabsProgressService.instance.guidanceLevel();
+    playNarration(
+      messageId: 'labsAlgebraBalanceNarrationIntro',
+      text: AppLocalizations.of(context).labsAlgebraBalanceNarrationIntro,
+      trigger: LabNarrationTrigger.introduction,
+      level: level,
+    );
+  }
+
+  @override
+  void onInactivityNarration() {
+    final level = InteractiveLabsProgressService.instance.guidanceLevel();
+    final l10n = AppLocalizations.of(context);
+    playNarration(
+      messageId: 'labsAlgebraBalanceNarrationHintInactivity${narrationLevelSuffix(level)}',
+      text: switch (level) {
+        LabGuidanceLevel.explorer => l10n.labsAlgebraBalanceNarrationHintInactivityExplorer,
+        LabGuidanceLevel.builder => l10n.labsAlgebraBalanceNarrationHintInactivityBuilder,
+        LabGuidanceLevel.navigator => l10n.labsAlgebraBalanceNarrationHintInactivityNavigator,
+      },
+      trigger: LabNarrationTrigger.hint,
+      level: level,
+    );
   }
 
   void _loadEquation() {
@@ -71,7 +118,22 @@ class _AlgebraBalanceScreenState extends State<AlgebraBalanceScreen> {
       _c -= _b;
       _b = 0;
     });
+    registerNarrationActivity();
     await InteractiveLabsProgressService.instance.recordAttempt(InteractiveLabId.algebraBalance);
+    if (!mounted) return;
+    // Removing the constant is step one — guide toward step two next.
+    final level = InteractiveLabsProgressService.instance.guidanceLevel();
+    final l10n = AppLocalizations.of(context);
+    playNarration(
+      messageId: 'labsAlgebraBalanceNarrationHintNextStep${narrationLevelSuffix(level)}',
+      text: switch (level) {
+        LabGuidanceLevel.explorer => l10n.labsAlgebraBalanceNarrationHintNextStepExplorer,
+        LabGuidanceLevel.builder => l10n.labsAlgebraBalanceNarrationHintNextStepBuilder,
+        LabGuidanceLevel.navigator => l10n.labsAlgebraBalanceNarrationHintNextStepNavigator,
+      },
+      trigger: LabNarrationTrigger.hint,
+      level: level,
+    );
   }
 
   Future<void> _divideByA() async {
@@ -82,15 +144,30 @@ class _AlgebraBalanceScreenState extends State<AlgebraBalanceScreen> {
       _a = 1;
       _solved = true;
     });
+    registerNarrationActivity();
     await InteractiveLabsProgressService.instance.recordAttempt(InteractiveLabId.algebraBalance);
     await InteractiveLabsProgressService.instance.recordCompletion(InteractiveLabId.algebraBalance);
+    if (!mounted) return;
     CaptainMathService.instance.showCompletion();
     AudioCueService.instance.play(AudioCue.success);
+    final level = InteractiveLabsProgressService.instance.guidanceLevel();
+    final l10n = AppLocalizations.of(context);
+    playNarration(
+      messageId: 'labsAlgebraBalanceNarrationCompletion${narrationLevelSuffix(level)}',
+      text: switch (level) {
+        LabGuidanceLevel.explorer => l10n.labsAlgebraBalanceNarrationCompletionExplorer,
+        LabGuidanceLevel.builder => l10n.labsAlgebraBalanceNarrationCompletionBuilder,
+        LabGuidanceLevel.navigator => l10n.labsAlgebraBalanceNarrationCompletionNavigator,
+      },
+      trigger: LabNarrationTrigger.completion,
+      level: level,
+    );
   }
 
   void _reset() {
     AudioCueService.instance.play(AudioCue.retry);
     setState(_loadEquation);
+    registerNarrationActivity();
   }
 
   void _next() {

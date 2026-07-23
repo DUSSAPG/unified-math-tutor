@@ -6,9 +6,8 @@ import '../../models/interactive_lab_id.dart';
 import '../../services/audio_cue_service.dart';
 import '../../services/captain_math_service.dart';
 import '../../services/interactive_labs_progress_service.dart';
-import '../../services/local_preferences_service.dart';
 import '../../shared/theme/app_spacing.dart';
-import '../captain_math_card.dart';
+import 'guided_narration_banner.dart';
 import 'lab_first_use_overlay.dart';
 import 'lab_help_sheet.dart';
 import 'lab_mission_panel.dart';
@@ -39,6 +38,7 @@ class LabScaffold extends StatefulWidget {
     this.feedback,
     this.progressIndicator,
     this.conceptText,
+    this.postResultActions,
   });
 
   final InteractiveLabId labId;
@@ -58,6 +58,14 @@ class LabScaffold extends StatefulWidget {
   final Widget? feedback;
   final Widget? progressIndicator;
   final LabHelpContent helpContent;
+
+  /// Optional actions shown after the mission body and result (Try
+  /// Again/Next pattern) — kept separate from [body] so a lab can place its
+  /// primary action (e.g. Test Flight) before the result and its
+  /// after-result actions below it, matching each lab's own required
+  /// mobile reading order without changing this shared scaffold's fixed
+  /// section order for every other lab.
+  final Widget? postResultActions;
 
   /// Level-resolved first-use walkthrough steps, shown once per profile the
   /// first time this lab is opened.
@@ -160,18 +168,9 @@ class _LabScaffoldState extends State<LabScaffold> {
                     const SizedBox(height: AppSpacing.sm),
                   ],
                   LabMissionPanel(text: widget.missionText),
-                  ValueListenableBuilder<bool>(
-                    valueListenable: LocalPreferencesService.instance.quietStudyMode,
-                    builder: (context, quiet, _) {
-                      // Quiet Study Mode reduces Captain Math's presence
-                      // rather than removing the concept entirely — the
-                      // mission/help text alone still carries every fact.
-                      if (quiet) return const SizedBox.shrink();
-                      return Padding(
-                        padding: const EdgeInsets.only(top: AppSpacing.sm),
-                        child: CaptainMathCard(compact: true),
-                      );
-                    },
+                  Padding(
+                    padding: const EdgeInsets.only(top: AppSpacing.sm),
+                    child: GuidedNarrationBanner(labId: widget.labId),
                   ),
                   if (widget.conceptText != null && widget.conceptText!.isNotEmpty) ...[
                     const SizedBox(height: AppSpacing.sm),
@@ -189,6 +188,10 @@ class _LabScaffoldState extends State<LabScaffold> {
                       skipTraversal: true,
                       child: widget.feedback!,
                     ),
+                  ],
+                  if (widget.postResultActions != null) ...[
+                    const SizedBox(height: AppSpacing.md),
+                    widget.postResultActions!,
                   ],
                   const SizedBox(height: AppSpacing.lg),
                   _SectionHeading(text: l10n.mathStudioWhereYoullUseThisLabel),

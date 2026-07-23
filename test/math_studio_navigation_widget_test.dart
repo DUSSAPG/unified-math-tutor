@@ -30,8 +30,13 @@ void main() {
   ];
 
   const viewports = [
+    Size(320, 568), // smallest supported phone (iPhone SE-class)
+    Size(360, 640), // common small Android phone
     Size(390, 844), // phone (Pixel 6a-class)
+    Size(412, 915), // common large Android phone
+    Size(600, 960), // small tablet
     Size(768, 1024), // portrait tablet
+    Size(844, 390), // landscape phone
     Size(1280, 800), // landscape tablet / desktop
   ];
 
@@ -94,27 +99,39 @@ void main() {
           );
           expect(find.text(l10n.mathStudioHubTagline), findsOneWidget);
 
+          await tester.ensureVisible(find.text(l10n.mathStudioBuildConfidenceTitle));
           await tester.tap(find.text(l10n.mathStudioBuildConfidenceTitle));
           await tester.pumpAndSettle();
           expect(find.byType(BuildConfidenceScreen), findsOneWidget);
+          expect(tester.takeException(), isNull,
+              reason: 'Build Confidence overflowed for $locale at $viewport');
           await tester.tap(find.byIcon(Icons.arrow_back));
           await tester.pumpAndSettle();
 
+          await tester.ensureVisible(find.text(l10n.mathStudioMentalMathsTitle));
           await tester.tap(find.text(l10n.mathStudioMentalMathsTitle));
           await tester.pumpAndSettle();
           expect(find.byType(MentalMathsHubScreen), findsOneWidget);
+          expect(tester.takeException(), isNull,
+              reason: 'Mental Maths hub overflowed for $locale at $viewport');
           await tester.tap(find.byIcon(Icons.arrow_back));
           await tester.pumpAndSettle();
 
+          await tester.ensureVisible(find.text(l10n.mathStudioVisualMathsTitle));
           await tester.tap(find.text(l10n.mathStudioVisualMathsTitle));
           await tester.pumpAndSettle();
           expect(find.byType(VisualMathsHubScreen), findsOneWidget);
+          expect(tester.takeException(), isNull,
+              reason: 'Visual Maths hub overflowed for $locale at $viewport');
           await tester.tap(find.byIcon(Icons.arrow_back));
           await tester.pumpAndSettle();
 
+          await tester.ensureVisible(find.text(l10n.mathStudioDiscoveryTitle));
           await tester.tap(find.text(l10n.mathStudioDiscoveryTitle));
           await tester.pumpAndSettle();
           expect(find.byType(DiscoveryLibraryScreen), findsOneWidget);
+          expect(tester.takeException(), isNull,
+              reason: 'Discovery Library overflowed for $locale at $viewport');
           await tester.tap(find.byIcon(Icons.arrow_back));
           await tester.pumpAndSettle();
 
@@ -122,6 +139,8 @@ void main() {
           await tester.tap(find.text(l10n.mathStudioRecallCardsTitle));
           await tester.pumpAndSettle();
           expect(find.byType(RecallCardsHubScreen), findsOneWidget);
+          expect(tester.takeException(), isNull,
+              reason: 'Recall Cards hub overflowed for $locale at $viewport');
           await tester.tap(find.byIcon(Icons.arrow_back));
           await tester.pumpAndSettle();
 
@@ -129,6 +148,8 @@ void main() {
           await tester.tap(find.text(l10n.mathStudioInteractiveLabsTitle));
           await tester.pumpAndSettle();
           expect(find.byType(InteractiveLabsHubScreen), findsOneWidget);
+          expect(tester.takeException(), isNull,
+              reason: 'Interactive Labs hub overflowed for $locale at $viewport');
           await tester.tap(find.byIcon(Icons.arrow_back));
           await tester.pumpAndSettle();
 

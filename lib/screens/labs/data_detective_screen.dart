@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../models/interactive_lab_id.dart';
+import '../../models/lab_guidance_level.dart';
+import '../../models/lab_narration_trigger.dart';
 import '../../services/audio_cue_service.dart';
 import '../../services/captain_math_service.dart';
 import '../../services/interactive_labs_progress_service.dart';
@@ -11,6 +13,7 @@ import '../../widgets/labs/lab_progress_indicator.dart';
 import '../../widgets/labs/lab_related_links.dart';
 import '../../widgets/labs/lab_result_banner.dart';
 import '../../widgets/labs/lab_scaffold.dart';
+import '../../widgets/labs/simple_lab_narration_mixin.dart';
 
 enum _Prediction { mean, median }
 
@@ -55,7 +58,8 @@ class DataDetectiveScreen extends StatefulWidget {
   State<DataDetectiveScreen> createState() => _DataDetectiveScreenState();
 }
 
-class _DataDetectiveScreenState extends State<DataDetectiveScreen> {
+class _DataDetectiveScreenState extends State<DataDetectiveScreen>
+    with SimpleLabNarrationMixin {
   int _datasetIndex = 0;
   late List<int> _working;
   _Prediction? _prediction;
@@ -65,13 +69,57 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen> {
   double? _meanAfter;
   double? _medianBefore;
   double? _medianAfter;
+  _Prediction? _lastRevealedPrediction;
 
   _Dataset get _dataset => _datasets[_datasetIndex];
+
+  @override
+  InteractiveLabId get narrationLabId => InteractiveLabId.dataDetective;
 
   @override
   void initState() {
     super.initState();
     _working = [..._dataset.values];
+    initNarration();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    maybeIntroduceNarration();
+  }
+
+  @override
+  void dispose() {
+    disposeNarration();
+    super.dispose();
+  }
+
+  @override
+  void onIntroductionNarration() {
+    final level = InteractiveLabsProgressService.instance.guidanceLevel();
+    playNarration(
+      messageId: 'labsDataDetectiveNarrationIntro',
+      text: AppLocalizations.of(context).labsDataDetectiveNarrationIntro,
+      trigger: LabNarrationTrigger.introduction,
+      level: level,
+    );
+  }
+
+  @override
+  void onInactivityNarration() {
+    final level = InteractiveLabsProgressService.instance.guidanceLevel();
+    final l10n = AppLocalizations.of(context);
+    playNarration(
+      messageId: 'labsDataDetectiveNarrationHintInactivity${narrationLevelSuffix(level)}',
+      text: switch (level) {
+        LabGuidanceLevel.explorer => l10n.labsDataDetectiveNarrationHintInactivityExplorer,
+        LabGuidanceLevel.builder => l10n.labsDataDetectiveNarrationHintInactivityBuilder,
+        LabGuidanceLevel.navigator => l10n.labsDataDetectiveNarrationHintInactivityNavigator,
+      },
+      trigger: LabNarrationTrigger.hint,
+      level: level,
+    );
   }
 
   void _removeAt(int index) {
@@ -81,6 +129,7 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen> {
       _revealSummary = null;
       _predictionCorrect = null;
     });
+    registerNarrationActivity();
   }
 
   void _addTypicalValue() {
@@ -90,16 +139,21 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen> {
       _revealSummary = null;
       _predictionCorrect = null;
     });
+    registerNarrationActivity();
   }
 
   void _selectPrediction(_Prediction prediction) {
     AudioCueService.instance.play(AudioCue.objectSelect, throttle: true);
     setState(() => _prediction = prediction);
+    registerNarrationActivity();
   }
 
   Future<void> _reveal() async {
     if (_prediction == null) return;
-    AudioCueService.instance.play(AudioCue.testLaunch);
+    AudioCueService.instance.play(AudioCue.reveal);
+    final level = InteractiveLabsProgressService.instance.guidanceLevel();
+    final isRepeated = _lastRevealedPrediction == _prediction;
+
     final before = List<int>.of(_working);
     final meanBefore = _mean(before);
     final medianBefore = _median(before);
@@ -126,14 +180,49 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen> {
       _medianAfter = medianAfter;
       _revealSummary = l10n.labsDataDetectiveShiftSummary(_fmt(meanShift), _fmt(medianShift));
     });
+    _lastRevealedPrediction = _prediction;
+    registerNarrationActivity();
 
     await InteractiveLabsProgressService.instance.recordAttempt(InteractiveLabId.dataDetective);
     if (correct) {
       await InteractiveLabsProgressService.instance.recordCompletion(InteractiveLabId.dataDetective);
       CaptainMathService.instance.showCompletion();
       AudioCueService.instance.play(AudioCue.success);
+      playNarration(
+        messageId: 'labsDataDetectiveNarrationCompletion${narrationLevelSuffix(level)}',
+        text: switch (level) {
+          LabGuidanceLevel.explorer => l10n.labsDataDetectiveNarrationCompletionExplorer,
+          LabGuidanceLevel.builder => l10n.labsDataDetectiveNarrationCompletionBuilder,
+          LabGuidanceLevel.navigator => l10n.labsDataDetectiveNarrationCompletionNavigator,
+        },
+        trigger: LabNarrationTrigger.completion,
+        level: level,
+      );
     } else {
       CaptainMathService.instance.showEncouragement();
+      if (isRepeated) {
+        playNarration(
+          messageId: 'labsDataDetectiveNarrationHintRepeated${narrationLevelSuffix(level)}',
+          text: switch (level) {
+            LabGuidanceLevel.explorer => l10n.labsDataDetectiveNarrationHintRepeatedExplorer,
+            LabGuidanceLevel.builder => l10n.labsDataDetectiveNarrationHintRepeatedBuilder,
+            LabGuidanceLevel.navigator => l10n.labsDataDetectiveNarrationHintRepeatedNavigator,
+          },
+          trigger: LabNarrationTrigger.hint,
+          level: level,
+        );
+      } else {
+        playNarration(
+          messageId: 'labsDataDetectiveNarrationResultWrong${narrationLevelSuffix(level)}',
+          text: switch (level) {
+            LabGuidanceLevel.explorer => l10n.labsDataDetectiveNarrationResultWrongExplorer,
+            LabGuidanceLevel.builder => l10n.labsDataDetectiveNarrationResultWrongBuilder,
+            LabGuidanceLevel.navigator => l10n.labsDataDetectiveNarrationResultWrongNavigator,
+          },
+          trigger: LabNarrationTrigger.resultExplanation,
+          level: level,
+        );
+      }
     }
   }
 
@@ -149,6 +238,7 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen> {
       _medianBefore = null;
       _medianAfter = null;
     });
+    registerNarrationActivity();
   }
 
   void _next() {
@@ -164,6 +254,8 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen> {
       _medianBefore = null;
       _medianAfter = null;
     });
+    _lastRevealedPrediction = null;
+    registerNarrationActivity();
   }
 
   @override

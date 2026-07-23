@@ -38,6 +38,10 @@ const _cognateProneKeyPrefixes = [
   'labsDataDetectivePredictMedianButton',
   // "Navigator" is the same word in English and German.
   'labsGuidanceNavigator',
+  // "Normal" is the same word in English and German.
+  'labsNarrationSpeedNormal',
+  // "Narration" is the same word in English and French.
+  'labsNarrationOnOffLabel',
 ];
 
 Map<String, dynamic> _loadArb(String filename) {

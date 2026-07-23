@@ -38,6 +38,9 @@ class InteractiveLabsProgressService {
   String get _guidanceLevelKey => 'labs_guidance_level_${_learnerKey()}';
   String _firstUseSeenKey(InteractiveLabId lab) => 'labs_first_use_seen_${_learnerKey()}_${lab.name}';
   String _dragCueSeenKey(InteractiveLabId lab) => 'labs_drag_cue_seen_${_learnerKey()}_${lab.name}';
+  String get _narrationMutedKey => 'labs_narration_muted_${_learnerKey()}';
+  String get _narrationTextOnlyKey => 'labs_narration_text_only_${_learnerKey()}';
+  String get _narrationSpeedKey => 'labs_narration_speed_${_learnerKey()}';
 
   int attemptsFor(InteractiveLabId lab) => _prefs.getInt(_attemptsKey(lab)) ?? 0;
   int completedFor(InteractiveLabId lab) => _prefs.getInt(_completedKey(lab)) ?? 0;
@@ -111,6 +114,31 @@ class InteractiveLabsProgressService {
 
   Future<void> markDragCueSeen(InteractiveLabId lab) async {
     await _prefs.setBool(_dragCueSeenKey(lab), true);
+    updateSerial.value++;
+  }
+
+  /// Captain Math Guided Narration preferences — profile-isolated like
+  /// [guidanceLevel], never shared/leaked across learner profiles. Audio is
+  /// on by default (each cue/narration line is still optional and never
+  /// required to complete an activity); speed defaults to normal (1.0).
+  bool narrationMuted() => _prefs.getBool(_narrationMutedKey) ?? false;
+
+  Future<void> setNarrationMuted(bool value) async {
+    await _prefs.setBool(_narrationMutedKey, value);
+    updateSerial.value++;
+  }
+
+  bool narrationTextOnly() => _prefs.getBool(_narrationTextOnlyKey) ?? false;
+
+  Future<void> setNarrationTextOnly(bool value) async {
+    await _prefs.setBool(_narrationTextOnlyKey, value);
+    updateSerial.value++;
+  }
+
+  double narrationSpeed() => _prefs.getDouble(_narrationSpeedKey) ?? 1.0;
+
+  Future<void> setNarrationSpeed(double value) async {
+    await _prefs.setDouble(_narrationSpeedKey, value);
     updateSerial.value++;
   }
 }

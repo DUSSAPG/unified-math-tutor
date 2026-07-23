@@ -12,6 +12,7 @@ enum AudioCue {
   nearMiss,
   success,
   retry,
+  reveal,
   nextMission,
   captainMathPrompt,
 }

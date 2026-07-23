@@ -54,6 +54,7 @@ flutter:
     - assets/packs/it-CH/
     - assets/config/
     - assets/config/mental_math_tricks.json
+    - assets/config/captain_math_narration_manifest.json
     - assets/config/daily_brain_teasers.json
     - assets/config/daily_brain_teasers.fr-CH.json
     - assets/config/daily_brain_teasers.de-CH.json

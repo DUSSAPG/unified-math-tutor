@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import 'lab_guidance_level_selector.dart';
+import 'lab_narration_controls.dart';
 
 /// The four required sections of every lab's Help content: what to do, what
 /// to notice, what the mathematics means, and where it's used. Callers pass
@@ -68,6 +69,8 @@ class _LabHelpSheet extends StatelessWidget {
             _HelpSection(label: l10n.labsHelpWhereUsed, text: content.whereUsed),
             const Divider(color: Color(0xFF1F3055), height: 24),
             const LabGuidanceLevelSelector(),
+            const Divider(color: Color(0xFF1F3055), height: 24),
+            const LabNarrationControls(),
           ],
         ),
       ),

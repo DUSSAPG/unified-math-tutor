@@ -2195,6 +2195,30 @@ class AppLocalizationsFr extends AppLocalizations {
   String get labsHelpButton => 'Help';
 
   @override
+  String get labsNarrationReplayButton => 'Replay';
+
+  @override
+  String get labsNarrationSectionLabel => 'CAPTAIN MATH NARRATION';
+
+  @override
+  String get labsNarrationOnOffLabel => 'Narration';
+
+  @override
+  String get labsNarrationTextOnlyLabel => 'Text only (no spoken audio)';
+
+  @override
+  String get labsNarrationSpeedLabel => 'Speed';
+
+  @override
+  String get labsNarrationSpeedSlower => 'Slower';
+
+  @override
+  String get labsNarrationSpeedNormal => 'Normal';
+
+  @override
+  String get labsNarrationSpeedFaster => 'Faster';
+
+  @override
   String get labsHelpTitle => 'Help';
 
   @override
@@ -2536,6 +2560,322 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get labsFlightPathLabDragCue => 'Drag the plane to turn it';
+
+  @override
+  String get labsFlightPathLabNarrationIntroExplorer =>
+      'Point the plane at the yellow target, then press Test Flight to see where it lands.';
+
+  @override
+  String get labsFlightPathLabNarrationIntroBuilder =>
+      'Set a heading and speed, predict where you\'ll land, then test your prediction.';
+
+  @override
+  String get labsFlightPathLabNarrationIntroNavigator =>
+      'Choose a bearing and speed; the resulting displacement is bearing and speed-time combined into one vector.';
+
+  @override
+  String get labsFlightPathLabNarrationResultNearMissExplorer =>
+      'So close! Try a slightly different speed or direction and test again.';
+
+  @override
+  String get labsFlightPathLabNarrationResultNearMissBuilder =>
+      'You landed close to the target. Check whether you\'re slightly early or late, and adjust speed or heading a little.';
+
+  @override
+  String get labsFlightPathLabNarrationResultNearMissNavigator =>
+      'The resultant displacement is close to the target vector but not exact — refine heading and/or speed and re-test.';
+
+  @override
+  String get labsFlightPathLabNarrationResultCorrectHeadingTooFarExplorer =>
+      'Good direction! But the plane flew too far. Try a slower speed.';
+
+  @override
+  String get labsFlightPathLabNarrationResultCorrectHeadingTooFarBuilder =>
+      'The heading is right, but you travelled further than the target distance. Keep the direction and lower the speed.';
+
+  @override
+  String get labsFlightPathLabNarrationResultCorrectHeadingTooFarNavigator =>
+      'Bearing matches the target vector; the magnitude (speed × time) overshoots it — reduce speed to shorten the displacement.';
+
+  @override
+  String get labsFlightPathLabNarrationResultCorrectHeadingTooShortExplorer =>
+      'Good direction! But the plane didn\'t fly far enough. Try a faster speed.';
+
+  @override
+  String get labsFlightPathLabNarrationResultCorrectHeadingTooShortBuilder =>
+      'The heading is right, but you didn\'t travel far enough. Keep the direction and raise the speed.';
+
+  @override
+  String get labsFlightPathLabNarrationResultCorrectHeadingTooShortNavigator =>
+      'Bearing matches the target vector; the magnitude falls short — increase speed to extend the displacement.';
+
+  @override
+  String get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceExplorer =>
+      'The distance is right, but the plane is pointing the wrong way. Turn it toward the yellow target.';
+
+  @override
+  String get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceBuilder =>
+      'You flew the right distance, but the wrong direction. Adjust the heading toward the target bearing and keep the speed.';
+
+  @override
+  String get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceNavigator =>
+      'The magnitude is correct but the bearing is off — rotate the heading toward the target bearing without changing speed.';
+
+  @override
+  String get labsFlightPathLabNarrationResultWrongHeadingAndDistanceExplorer =>
+      'The plane is pointing the wrong way and went the wrong distance. Aim at the target, then choose a speed.';
+
+  @override
+  String get labsFlightPathLabNarrationResultWrongHeadingAndDistanceBuilder =>
+      'Both the direction and the distance need adjusting. Re-aim toward the target bearing, then set a speed for the right distance.';
+
+  @override
+  String get labsFlightPathLabNarrationResultWrongHeadingAndDistanceNavigator =>
+      'Both bearing and magnitude are off the target vector — correct the heading first, then adjust speed for the required distance.';
+
+  @override
+  String get labsFlightPathLabNarrationCompletionExplorer =>
+      'Excellent! You aimed the plane and picked the right speed to land exactly on target.';
+
+  @override
+  String get labsFlightPathLabNarrationCompletionBuilder =>
+      'Excellent! Matching heading and speed to a target is exactly how real flight plans are built.';
+
+  @override
+  String get labsFlightPathLabNarrationCompletionNavigator =>
+      'Exact match: the displacement vector (bearing and magnitude) equals the target vector — this is how flight planning and navigation calculations work in practice.';
+
+  @override
+  String get labsFlightPathLabNarrationHintRepeatedExplorer =>
+      'That\'s the same try as last time. Change the direction or speed before testing again.';
+
+  @override
+  String get labsFlightPathLabNarrationHintRepeatedBuilder =>
+      'You tested the exact same heading and speed again. Try changing one of them before the next test.';
+
+  @override
+  String get labsFlightPathLabNarrationHintRepeatedNavigator =>
+      'Heading and speed are unchanged from the previous attempt — vary at least one variable to gather new information.';
+
+  @override
+  String get labsFlightPathLabNarrationHintInactivityExplorer =>
+      'Still there? Drag the plane or move the speed slider to keep going.';
+
+  @override
+  String get labsFlightPathLabNarrationHintInactivityBuilder =>
+      'Take your time — drag the plane to aim it, or adjust the speed, whenever you\'re ready.';
+
+  @override
+  String get labsFlightPathLabNarrationHintInactivityNavigator =>
+      'No input recorded recently — adjust heading or speed to continue refining the solution.';
+
+  @override
+  String get labsNumberLineExplorerNarrationResultWrongExplorer =>
+      'Not quite — look at whether you need to move left or right, then try again.';
+
+  @override
+  String get labsNumberLineExplorerNarrationResultWrongBuilder =>
+      'Compare your value to the target: move toward it by the difference, then check again.';
+
+  @override
+  String get labsNumberLineExplorerNarrationResultWrongNavigator =>
+      'The value differs from the target by more than one step — adjust by the required increment and retest.';
+
+  @override
+  String get labsNumberLineExplorerNarrationResultCloseExplorer =>
+      'So close! Just one small step away — try nudging it once more.';
+
+  @override
+  String get labsNumberLineExplorerNarrationResultCloseBuilder =>
+      'You\'re one step away from the target. Adjust by a single increment and check again.';
+
+  @override
+  String get labsNumberLineExplorerNarrationResultCloseNavigator =>
+      'The value is within one increment of the target — a single adjustment should resolve it.';
+
+  @override
+  String get labsNumberLineExplorerNarrationCompletionExplorer =>
+      'Exactly right! You found the target\'s exact position on the line.';
+
+  @override
+  String get labsNumberLineExplorerNarrationCompletionBuilder =>
+      'Exactly right! Matching a value to its position is how number lines represent size and order.';
+
+  @override
+  String get labsNumberLineExplorerNarrationCompletionNavigator =>
+      'Exact match: the value\'s position on the line corresponds precisely to its numeric value, including sign and magnitude.';
+
+  @override
+  String get labsNumberLineExplorerNarrationHintRepeatedExplorer =>
+      'That\'s the same spot as last time — move it before checking again.';
+
+  @override
+  String get labsNumberLineExplorerNarrationHintRepeatedBuilder =>
+      'You checked the same value again. Move it by at least one step before the next check.';
+
+  @override
+  String get labsNumberLineExplorerNarrationHintRepeatedNavigator =>
+      'The value is unchanged from the previous check — adjust before retesting.';
+
+  @override
+  String get labsNumberLineExplorerNarrationHintInactivityExplorer =>
+      'Still there? Drag the marker or use the +/- buttons.';
+
+  @override
+  String get labsNumberLineExplorerNarrationHintInactivityBuilder =>
+      'Take your time — drag the marker or use the +/- buttons whenever you\'re ready.';
+
+  @override
+  String get labsNumberLineExplorerNarrationHintInactivityNavigator =>
+      'No input recorded recently — adjust the value to continue.';
+
+  @override
+  String get labsFractionBuilderNarrationResultWrongExplorer =>
+      'Not quite the right number of parts — count the filled segments and compare to the target.';
+
+  @override
+  String get labsFractionBuilderNarrationResultWrongBuilder =>
+      'Compare the filled segments to the numerator, then add or remove one to match.';
+
+  @override
+  String get labsFractionBuilderNarrationResultWrongNavigator =>
+      'The filled-segment count must equal the numerator exactly — adjust by the difference.';
+
+  @override
+  String get labsFractionBuilderNarrationCompletionExplorer =>
+      'That\'s it! You filled exactly the right number of parts.';
+
+  @override
+  String get labsFractionBuilderNarrationCompletionBuilder =>
+      'That\'s it! Counting filled parts against a numerator is exactly what a fraction represents.';
+
+  @override
+  String get labsFractionBuilderNarrationCompletionNavigator =>
+      'Exact match: filled segments equal the numerator over the shown denominator, matching the fraction\'s defining ratio.';
+
+  @override
+  String get labsFractionBuilderNarrationHintRepeatedExplorer =>
+      'Same count as last time — change it before checking again.';
+
+  @override
+  String get labsFractionBuilderNarrationHintRepeatedBuilder =>
+      'You checked the same filled count again. Change it before the next check.';
+
+  @override
+  String get labsFractionBuilderNarrationHintRepeatedNavigator =>
+      'The filled count is unchanged from the previous check — adjust before retesting.';
+
+  @override
+  String get labsFractionBuilderNarrationHintInactivityExplorer =>
+      'Still there? Tap a segment to fill or unfill it.';
+
+  @override
+  String get labsFractionBuilderNarrationHintInactivityBuilder =>
+      'Take your time — tap segments to adjust the count whenever you\'re ready.';
+
+  @override
+  String get labsFractionBuilderNarrationHintInactivityNavigator =>
+      'No input recorded recently — tap a segment to continue.';
+
+  @override
+  String get labsAlgebraBalanceNarrationHintNextStepExplorer =>
+      'Remove the number first, then divide to find x.';
+
+  @override
+  String get labsAlgebraBalanceNarrationHintNextStepBuilder =>
+      'First remove the constant from both sides, then divide both sides by the coefficient of x.';
+
+  @override
+  String get labsAlgebraBalanceNarrationHintNextStepNavigator =>
+      'Apply the inverse additive operation first, then the inverse multiplicative operation, to isolate x.';
+
+  @override
+  String get labsAlgebraBalanceNarrationCompletionExplorer =>
+      'Solved! You found the value of x.';
+
+  @override
+  String get labsAlgebraBalanceNarrationCompletionBuilder =>
+      'Solved! Every equation of this form is solved by removing the constant, then dividing.';
+
+  @override
+  String get labsAlgebraBalanceNarrationCompletionNavigator =>
+      'Solved: x is isolated by inverse operations applied to both sides, preserving equality throughout.';
+
+  @override
+  String get labsAlgebraBalanceNarrationHintInactivityExplorer =>
+      'Still there? Try the first button to remove the number.';
+
+  @override
+  String get labsAlgebraBalanceNarrationHintInactivityBuilder =>
+      'Take your time — remove the constant, then divide, whenever you\'re ready.';
+
+  @override
+  String get labsAlgebraBalanceNarrationHintInactivityNavigator =>
+      'No input recorded recently — apply the next inverse operation to continue.';
+
+  @override
+  String get labsDataDetectiveNarrationResultWrongExplorer =>
+      'Not quite — look at how much each average moved and pick again.';
+
+  @override
+  String get labsDataDetectiveNarrationResultWrongBuilder =>
+      'Compare how much the mean and median each changed, then predict again based on which shifted more.';
+
+  @override
+  String get labsDataDetectiveNarrationResultWrongNavigator =>
+      'Re-examine the computed shifts: predict again based on which statistic changed by the larger magnitude.';
+
+  @override
+  String get labsDataDetectiveNarrationCompletionExplorer =>
+      'Correct! You spotted which average the outlier affects most.';
+
+  @override
+  String get labsDataDetectiveNarrationCompletionBuilder =>
+      'Correct! Identifying which statistic an outlier distorts most is exactly this lab\'s key idea.';
+
+  @override
+  String get labsDataDetectiveNarrationCompletionNavigator =>
+      'Correct: the statistic with the larger shift is more sensitive to the outlier, consistent with the mean\'s sensitivity to extreme values relative to the median.';
+
+  @override
+  String get labsDataDetectiveNarrationHintRepeatedExplorer =>
+      'Same guess as last time — try the other one.';
+
+  @override
+  String get labsDataDetectiveNarrationHintRepeatedBuilder =>
+      'You predicted the same statistic again. Consider the other option.';
+
+  @override
+  String get labsDataDetectiveNarrationHintRepeatedNavigator =>
+      'The same prediction was repeated — reconsider using the computed shift values.';
+
+  @override
+  String get labsDataDetectiveNarrationHintInactivityExplorer =>
+      'Still there? Pick Mean or Median, then tap Reveal.';
+
+  @override
+  String get labsDataDetectiveNarrationHintInactivityBuilder =>
+      'Take your time — pick a prediction and tap Reveal whenever you\'re ready.';
+
+  @override
+  String get labsDataDetectiveNarrationHintInactivityNavigator =>
+      'No input recorded recently — choose a prediction to continue.';
+
+  @override
+  String get labsFractionBuilderNarrationIntro =>
+      'Tap segments to fill the fraction, then check your answer.';
+
+  @override
+  String get labsNumberLineExplorerNarrationIntro =>
+      'Move the marker to the target value, then check your answer.';
+
+  @override
+  String get labsAlgebraBalanceNarrationIntro =>
+      'Use the balance operations to isolate x, one step at a time.';
+
+  @override
+  String get labsDataDetectiveNarrationIntro =>
+      'Predict which average the outlier affects most, then reveal the answer.';
 }
 
 /// The translations for French, as used in Switzerland (`fr_CH`).
@@ -4677,6 +5017,30 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
   String get labsHelpButton => 'Aide';
 
   @override
+  String get labsNarrationReplayButton => 'Rejouer';
+
+  @override
+  String get labsNarrationSectionLabel => 'NARRATION DU CAPITAINE MATH';
+
+  @override
+  String get labsNarrationOnOffLabel => 'Narration';
+
+  @override
+  String get labsNarrationTextOnlyLabel => 'Texte seul (pas de voix)';
+
+  @override
+  String get labsNarrationSpeedLabel => 'Vitesse';
+
+  @override
+  String get labsNarrationSpeedSlower => 'Plus lent';
+
+  @override
+  String get labsNarrationSpeedNormal => 'Normal';
+
+  @override
+  String get labsNarrationSpeedFaster => 'Plus rapide';
+
+  @override
   String get labsHelpTitle => 'Aide';
 
   @override
@@ -5019,4 +5383,320 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
   @override
   String get labsFlightPathLabDragCue =>
       'Fais glisser l\'avion pour le tourner';
+
+  @override
+  String get labsFlightPathLabNarrationIntroExplorer =>
+      'Vise la cible jaune avec l\'avion, puis appuie sur Tester le vol pour voir où il atterrit.';
+
+  @override
+  String get labsFlightPathLabNarrationIntroBuilder =>
+      'Choisis un cap et une vitesse, prédis où tu vas atterrir, puis teste ta prédiction.';
+
+  @override
+  String get labsFlightPathLabNarrationIntroNavigator =>
+      'Choisis un cap et une vitesse ; le déplacement obtenu combine le cap et la vitesse fois le temps en un seul vecteur.';
+
+  @override
+  String get labsFlightPathLabNarrationResultNearMissExplorer =>
+      'Tout près ! Essaie une vitesse ou une direction légèrement différente et teste à nouveau.';
+
+  @override
+  String get labsFlightPathLabNarrationResultNearMissBuilder =>
+      'Tu as atterri près de la cible. Vérifie si tu es un peu en avance ou en retard, et ajuste légèrement la vitesse ou le cap.';
+
+  @override
+  String get labsFlightPathLabNarrationResultNearMissNavigator =>
+      'Le déplacement résultant est proche du vecteur cible mais pas exact — affine le cap et/ou la vitesse et teste à nouveau.';
+
+  @override
+  String get labsFlightPathLabNarrationResultCorrectHeadingTooFarExplorer =>
+      'Bonne direction ! Mais l\'avion a volé trop loin. Essaie une vitesse plus lente.';
+
+  @override
+  String get labsFlightPathLabNarrationResultCorrectHeadingTooFarBuilder =>
+      'Le cap est bon, mais tu as parcouru plus loin que la distance cible. Garde la direction et réduis la vitesse.';
+
+  @override
+  String get labsFlightPathLabNarrationResultCorrectHeadingTooFarNavigator =>
+      'Le cap correspond au vecteur cible ; la norme (vitesse × temps) le dépasse — réduis la vitesse pour raccourcir le déplacement.';
+
+  @override
+  String get labsFlightPathLabNarrationResultCorrectHeadingTooShortExplorer =>
+      'Bonne direction ! Mais l\'avion n\'a pas assez volé. Essaie une vitesse plus rapide.';
+
+  @override
+  String get labsFlightPathLabNarrationResultCorrectHeadingTooShortBuilder =>
+      'Le cap est bon, mais tu n\'as pas parcouru assez de distance. Garde la direction et augmente la vitesse.';
+
+  @override
+  String get labsFlightPathLabNarrationResultCorrectHeadingTooShortNavigator =>
+      'Le cap correspond au vecteur cible ; la norme est insuffisante — augmente la vitesse pour allonger le déplacement.';
+
+  @override
+  String get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceExplorer =>
+      'La distance est bonne, mais l\'avion pointe dans la mauvaise direction. Tourne-le vers la cible jaune.';
+
+  @override
+  String get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceBuilder =>
+      'Tu as parcouru la bonne distance, mais dans la mauvaise direction. Ajuste le cap vers le relèvement cible et garde la vitesse.';
+
+  @override
+  String get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceNavigator =>
+      'La norme est correcte mais le relèvement est décalé — tourne le cap vers le relèvement cible sans changer la vitesse.';
+
+  @override
+  String get labsFlightPathLabNarrationResultWrongHeadingAndDistanceExplorer =>
+      'L\'avion pointe dans la mauvaise direction et a parcouru la mauvaise distance. Vise la cible, puis choisis une vitesse.';
+
+  @override
+  String get labsFlightPathLabNarrationResultWrongHeadingAndDistanceBuilder =>
+      'La direction et la distance doivent toutes deux être ajustées. Revise vers le relèvement cible, puis choisis une vitesse pour la bonne distance.';
+
+  @override
+  String get labsFlightPathLabNarrationResultWrongHeadingAndDistanceNavigator =>
+      'Le relèvement et la norme sont tous deux décalés par rapport au vecteur cible — corrige d\'abord le cap, puis ajuste la vitesse pour la distance requise.';
+
+  @override
+  String get labsFlightPathLabNarrationCompletionExplorer =>
+      'Excellent ! Tu as orienté l\'avion et choisi la bonne vitesse pour atterrir exactement sur la cible.';
+
+  @override
+  String get labsFlightPathLabNarrationCompletionBuilder =>
+      'Excellent ! Faire correspondre cap et vitesse à une cible, c\'est exactement ainsi que sont établis les vrais plans de vol.';
+
+  @override
+  String get labsFlightPathLabNarrationCompletionNavigator =>
+      'Correspondance exacte : le vecteur déplacement (relèvement et norme) est égal au vecteur cible — c\'est ainsi que fonctionnent la planification de vol et la navigation en pratique.';
+
+  @override
+  String get labsFlightPathLabNarrationHintRepeatedExplorer =>
+      'C\'est le même essai que la dernière fois. Change la direction ou la vitesse avant de tester à nouveau.';
+
+  @override
+  String get labsFlightPathLabNarrationHintRepeatedBuilder =>
+      'Tu as testé exactement le même cap et la même vitesse. Essaie de changer l\'un des deux avant le prochain test.';
+
+  @override
+  String get labsFlightPathLabNarrationHintRepeatedNavigator =>
+      'Le cap et la vitesse sont inchangés par rapport à l\'essai précédent — fais varier au moins une variable pour obtenir de nouvelles informations.';
+
+  @override
+  String get labsFlightPathLabNarrationHintInactivityExplorer =>
+      'Toujours là ? Fais glisser l\'avion ou déplace le curseur de vitesse.';
+
+  @override
+  String get labsFlightPathLabNarrationHintInactivityBuilder =>
+      'Prends ton temps — fais glisser l\'avion pour le viser, ou ajuste la vitesse, quand tu es prêt.';
+
+  @override
+  String get labsFlightPathLabNarrationHintInactivityNavigator =>
+      'Aucune saisie récente — ajuste le cap ou la vitesse pour continuer.';
+
+  @override
+  String get labsNumberLineExplorerNarrationResultWrongExplorer =>
+      'Pas tout à fait — regarde si tu dois aller à gauche ou à droite, puis réessaie.';
+
+  @override
+  String get labsNumberLineExplorerNarrationResultWrongBuilder =>
+      'Compare ta valeur à la cible : déplace-toi vers elle de la différence, puis revérifie.';
+
+  @override
+  String get labsNumberLineExplorerNarrationResultWrongNavigator =>
+      'La valeur diffère de la cible de plus d\'un pas — ajuste de l\'incrément requis et reteste.';
+
+  @override
+  String get labsNumberLineExplorerNarrationResultCloseExplorer =>
+      'Tout près ! Plus qu\'un petit pas — essaie encore une fois.';
+
+  @override
+  String get labsNumberLineExplorerNarrationResultCloseBuilder =>
+      'Tu es à un pas de la cible. Ajuste d\'un seul incrément et revérifie.';
+
+  @override
+  String get labsNumberLineExplorerNarrationResultCloseNavigator =>
+      'La valeur est à moins d\'un incrément de la cible — un seul ajustement devrait suffire.';
+
+  @override
+  String get labsNumberLineExplorerNarrationCompletionExplorer =>
+      'Exactement juste ! Tu as trouvé la position exacte de la cible sur la ligne.';
+
+  @override
+  String get labsNumberLineExplorerNarrationCompletionBuilder =>
+      'Exactement juste ! Faire correspondre une valeur à sa position, c\'est ce que représente une droite numérique.';
+
+  @override
+  String get labsNumberLineExplorerNarrationCompletionNavigator =>
+      'Correspondance exacte : la position de la valeur sur la ligne correspond précisément à sa valeur numérique, signe et amplitude compris.';
+
+  @override
+  String get labsNumberLineExplorerNarrationHintRepeatedExplorer =>
+      'C\'est le même endroit que la dernière fois — déplace-le avant de revérifier.';
+
+  @override
+  String get labsNumberLineExplorerNarrationHintRepeatedBuilder =>
+      'Tu as revérifié la même valeur. Déplace-la d\'au moins un pas avant la prochaine vérification.';
+
+  @override
+  String get labsNumberLineExplorerNarrationHintRepeatedNavigator =>
+      'La valeur est inchangée depuis la dernière vérification — ajuste-la avant de retester.';
+
+  @override
+  String get labsNumberLineExplorerNarrationHintInactivityExplorer =>
+      'Toujours là ? Fais glisser le repère ou utilise les boutons +/-.';
+
+  @override
+  String get labsNumberLineExplorerNarrationHintInactivityBuilder =>
+      'Prends ton temps — fais glisser le repère ou utilise les boutons +/- quand tu es prêt.';
+
+  @override
+  String get labsNumberLineExplorerNarrationHintInactivityNavigator =>
+      'Aucune saisie récente — ajuste la valeur pour continuer.';
+
+  @override
+  String get labsFractionBuilderNarrationResultWrongExplorer =>
+      'Pas le bon nombre de parts — compte les segments remplis et compare à la cible.';
+
+  @override
+  String get labsFractionBuilderNarrationResultWrongBuilder =>
+      'Compare les segments remplis au numérateur, puis ajoute ou retire-en un pour correspondre.';
+
+  @override
+  String get labsFractionBuilderNarrationResultWrongNavigator =>
+      'Le nombre de segments remplis doit être exactement égal au numérateur — ajuste de la différence.';
+
+  @override
+  String get labsFractionBuilderNarrationCompletionExplorer =>
+      'C\'est ça ! Tu as rempli exactement le bon nombre de parts.';
+
+  @override
+  String get labsFractionBuilderNarrationCompletionBuilder =>
+      'C\'est ça ! Compter les parts remplies par rapport à un numérateur, c\'est exactement ce que représente une fraction.';
+
+  @override
+  String get labsFractionBuilderNarrationCompletionNavigator =>
+      'Correspondance exacte : les segments remplis égalent le numérateur sur le dénominateur affiché, conforme au rapport définissant la fraction.';
+
+  @override
+  String get labsFractionBuilderNarrationHintRepeatedExplorer =>
+      'Même nombre que la dernière fois — change-le avant de revérifier.';
+
+  @override
+  String get labsFractionBuilderNarrationHintRepeatedBuilder =>
+      'Tu as revérifié le même nombre de segments remplis. Change-le avant la prochaine vérification.';
+
+  @override
+  String get labsFractionBuilderNarrationHintRepeatedNavigator =>
+      'Le nombre rempli est inchangé depuis la dernière vérification — ajuste-le avant de retester.';
+
+  @override
+  String get labsFractionBuilderNarrationHintInactivityExplorer =>
+      'Toujours là ? Touche un segment pour le remplir ou le vider.';
+
+  @override
+  String get labsFractionBuilderNarrationHintInactivityBuilder =>
+      'Prends ton temps — touche les segments pour ajuster le nombre quand tu es prêt.';
+
+  @override
+  String get labsFractionBuilderNarrationHintInactivityNavigator =>
+      'Aucune saisie récente — touche un segment pour continuer.';
+
+  @override
+  String get labsAlgebraBalanceNarrationHintNextStepExplorer =>
+      'Retire d\'abord le nombre, puis divise pour trouver x.';
+
+  @override
+  String get labsAlgebraBalanceNarrationHintNextStepBuilder =>
+      'Retire d\'abord la constante des deux côtés, puis divise les deux côtés par le coefficient de x.';
+
+  @override
+  String get labsAlgebraBalanceNarrationHintNextStepNavigator =>
+      'Applique d\'abord l\'opération additive inverse, puis l\'opération multiplicative inverse, pour isoler x.';
+
+  @override
+  String get labsAlgebraBalanceNarrationCompletionExplorer =>
+      'Résolu ! Tu as trouvé la valeur de x.';
+
+  @override
+  String get labsAlgebraBalanceNarrationCompletionBuilder =>
+      'Résolu ! Toute équation de cette forme se résout en retirant la constante, puis en divisant.';
+
+  @override
+  String get labsAlgebraBalanceNarrationCompletionNavigator =>
+      'Résolu : x est isolé par des opérations inverses appliquées aux deux côtés, préservant l\'égalité tout du long.';
+
+  @override
+  String get labsAlgebraBalanceNarrationHintInactivityExplorer =>
+      'Toujours là ? Essaie le premier bouton pour retirer le nombre.';
+
+  @override
+  String get labsAlgebraBalanceNarrationHintInactivityBuilder =>
+      'Prends ton temps — retire la constante, puis divise, quand tu es prêt.';
+
+  @override
+  String get labsAlgebraBalanceNarrationHintInactivityNavigator =>
+      'Aucune saisie récente — applique la prochaine opération inverse pour continuer.';
+
+  @override
+  String get labsDataDetectiveNarrationResultWrongExplorer =>
+      'Pas tout à fait — regarde de combien chaque moyenne a changé, puis choisis à nouveau.';
+
+  @override
+  String get labsDataDetectiveNarrationResultWrongBuilder =>
+      'Compare de combien la moyenne et la médiane ont chacune changé, puis prédis à nouveau selon celle qui a le plus varié.';
+
+  @override
+  String get labsDataDetectiveNarrationResultWrongNavigator =>
+      'Réexamine les variations calculées : prédis à nouveau selon la statistique dont l\'amplitude de changement est la plus grande.';
+
+  @override
+  String get labsDataDetectiveNarrationCompletionExplorer =>
+      'Correct ! Tu as repéré quelle moyenne la valeur aberrante affecte le plus.';
+
+  @override
+  String get labsDataDetectiveNarrationCompletionBuilder =>
+      'Correct ! Identifier quelle statistique une valeur aberrante déforme le plus est exactement l\'idée clé de ce labo.';
+
+  @override
+  String get labsDataDetectiveNarrationCompletionNavigator =>
+      'Correct : la statistique avec la plus grande variation est plus sensible à la valeur aberrante, cohérent avec la sensibilité de la moyenne aux valeurs extrêmes par rapport à la médiane.';
+
+  @override
+  String get labsDataDetectiveNarrationHintRepeatedExplorer =>
+      'Même choix que la dernière fois — essaie l\'autre.';
+
+  @override
+  String get labsDataDetectiveNarrationHintRepeatedBuilder =>
+      'Tu as prédit la même statistique à nouveau. Envisage l\'autre option.';
+
+  @override
+  String get labsDataDetectiveNarrationHintRepeatedNavigator =>
+      'La même prédiction a été répétée — reconsidère-la à l\'aide des variations calculées.';
+
+  @override
+  String get labsDataDetectiveNarrationHintInactivityExplorer =>
+      'Toujours là ? Choisis Moyenne ou Médiane, puis touche Révéler.';
+
+  @override
+  String get labsDataDetectiveNarrationHintInactivityBuilder =>
+      'Prends ton temps — choisis une prédiction et touche Révéler quand tu es prêt.';
+
+  @override
+  String get labsDataDetectiveNarrationHintInactivityNavigator =>
+      'Aucune saisie récente — choisis une prédiction pour continuer.';
+
+  @override
+  String get labsFractionBuilderNarrationIntro =>
+      'Touche les segments pour remplir la fraction, puis vérifie ta réponse.';
+
+  @override
+  String get labsNumberLineExplorerNarrationIntro =>
+      'Déplace le repère vers la valeur cible, puis vérifie ta réponse.';
+
+  @override
+  String get labsAlgebraBalanceNarrationIntro =>
+      'Utilise les opérations de la balance pour isoler x, étape par étape.';
+
+  @override
+  String get labsDataDetectiveNarrationIntro =>
+      'Prédis quelle moyenne la valeur aberrante affecte le plus, puis révèle la réponse.';
 }

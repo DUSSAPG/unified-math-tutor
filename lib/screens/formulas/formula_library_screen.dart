@@ -63,29 +63,11 @@ class _FormulaLibraryScreenState extends State<FormulaLibraryScreen> {
                   ),
                 ),
                 const SizedBox(height: 12),
-                SizedBox(
-                  height: 40,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
-                    children: [
-                      _CategoryChip(
-                        label: 'All',
-                        selected: _selectedCategory == null,
-                        onTap: () => setState(() => _selectedCategory = null),
-                      ),
-                      const SizedBox(width: 8),
-                      for (final category in categories) ...[
-                        _CategoryChip(
-                          label: category,
-                          selected: _selectedCategory == category,
-                          onTap: () =>
-                              setState(() => _selectedCategory = category),
-                        ),
-                        const SizedBox(width: 8),
-                      ],
-                    ],
-                  ),
+                _CategoryFilterRow(
+                  categories: categories,
+                  selectedCategory: _selectedCategory,
+                  onSelected: (category) =>
+                      setState(() => _selectedCategory = category),
                 ),
                 const SizedBox(height: 12),
                 Expanded(
@@ -153,38 +135,182 @@ class _SearchField extends StatelessWidget {
   }
 }
 
-class _CategoryChip extends StatelessWidget {
-  const _CategoryChip({
-    required this.label,
-    required this.selected,
-    required this.onTap,
+/// "All" plus the first few categories stay directly on-screen; the rest
+/// live behind "More" (a bottom sheet) so a growing category list never
+/// crowds a narrow phone. A `Scrollbar` gives a visible affordance for the
+/// row that does still scroll.
+class _CategoryFilterRow extends StatefulWidget {
+  const _CategoryFilterRow({
+    required this.categories,
+    required this.selectedCategory,
+    required this.onSelected,
   });
 
-  final String label;
-  final bool selected;
-  final VoidCallback onTap;
+  final List<String> categories;
+  final String? selectedCategory;
+  final ValueChanged<String?> onSelected;
+
+  @override
+  State<_CategoryFilterRow> createState() => _CategoryFilterRowState();
+}
+
+class _CategoryFilterRowState extends State<_CategoryFilterRow> {
+  final _scrollController = ScrollController();
+
+  List<String> get categories => widget.categories;
+  String? get selectedCategory => widget.selectedCategory;
+  ValueChanged<String?> get onSelected => widget.onSelected;
+
+  static const _inlineCategoryCount = 3;
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _openMoreSheet(BuildContext context, List<String> overflow) async {
+    final chosen = await showModalBottomSheet<String>(
+      context: context,
+      backgroundColor: const Color(0xFF0D1525),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      // A growing category list must scroll within a bounded sheet height
+      // rather than overflow off the bottom of a short phone screen.
+      constraints: BoxConstraints(maxHeight: MediaQuery.of(context).size.height * 0.7),
+      builder: (sheetContext) => SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 12),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Padding(
+                padding: EdgeInsets.fromLTRB(20, 4, 20, 12),
+                child: Text(
+                  'More categories',
+                  style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700),
+                ),
+              ),
+              Flexible(
+                child: ListView(
+                  shrinkWrap: true,
+                  children: [
+                    for (final category in overflow)
+                      Semantics(
+                        button: true,
+                        selected: selectedCategory == category,
+                        label: category,
+                        child: ListTile(
+                          minVerticalPadding: 16,
+                          title: Text(category,
+                              style: const TextStyle(color: Colors.white, fontSize: 15)),
+                          trailing: selectedCategory == category
+                              ? const Icon(Icons.check, color: Color(0xFF5B8EFF))
+                              : null,
+                          onTap: () => Navigator.of(sheetContext).pop(category),
+                        ),
+                      ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+    if (chosen != null) onSelected(chosen);
+  }
+
+  Widget _chip(
+    String label, {
+    required bool selected,
+    bool isMoreChip = false,
+    required VoidCallback onTap,
+  }) {
+    return Semantics(
+      button: true,
+      selected: selected,
+      label: label,
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(20),
+          onTap: onTap,
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(minHeight: 44, minWidth: 44),
+            child: Container(
+              alignment: Alignment.center,
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+              decoration: BoxDecoration(
+                color: selected ? const Color(0xFF3D7EFF) : const Color(0xFF132040),
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(
+                  color: selected ? const Color(0xFF3D7EFF) : const Color(0xFF1F3055),
+                ),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    label,
+                    style: TextStyle(
+                      color: selected ? Colors.white : const Color(0xFF8A9DC0),
+                      fontSize: 13,
+                      fontWeight: selected ? FontWeight.w600 : FontWeight.w400,
+                    ),
+                  ),
+                  if (isMoreChip) ...[
+                    const SizedBox(width: 2),
+                    Icon(
+                      Icons.keyboard_arrow_down,
+                      size: 14,
+                      color: selected ? Colors.white : const Color(0xFF8A9DC0),
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-        decoration: BoxDecoration(
-          color: selected ? const Color(0xFF3D7EFF) : const Color(0xFF132040),
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(
-            color: selected ? const Color(0xFF3D7EFF) : const Color(0xFF1F3055),
-          ),
-        ),
-        alignment: Alignment.center,
-        child: Text(
-          label,
-          style: TextStyle(
-            color: selected ? Colors.white : const Color(0xFF8A9DC0),
-            fontSize: 13,
-            fontWeight: selected ? FontWeight.w600 : FontWeight.w400,
-          ),
+    final inline = categories.take(_inlineCategoryCount).toList();
+    final overflow = categories.skip(_inlineCategoryCount).toList();
+    final isOverflowSelected = selectedCategory != null && overflow.contains(selectedCategory);
+
+    return Scrollbar(
+      controller: _scrollController,
+      thumbVisibility: true,
+      child: SingleChildScrollView(
+        controller: _scrollController,
+        scrollDirection: Axis.horizontal,
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Row(
+          children: [
+            _chip('All', selected: selectedCategory == null, onTap: () => onSelected(null)),
+            const SizedBox(width: 8),
+            for (final category in inline) ...[
+              _chip(
+                category,
+                selected: selectedCategory == category,
+                onTap: () => onSelected(category),
+              ),
+              const SizedBox(width: 8),
+            ],
+            if (overflow.isNotEmpty)
+              _chip(
+                isOverflowSelected ? selectedCategory! : 'More',
+                selected: isOverflowSelected,
+                isMoreChip: true,
+                onTap: () => _openMoreSheet(context, overflow),
+              ),
+          ],
         ),
       ),
     );

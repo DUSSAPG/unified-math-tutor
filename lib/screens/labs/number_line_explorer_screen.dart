@@ -3,6 +3,7 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../models/interactive_lab_id.dart';
 import '../../models/lab_guidance_level.dart';
+import '../../models/lab_narration_trigger.dart';
 import '../../services/audio_cue_service.dart';
 import '../../services/captain_math_service.dart';
 import '../../services/interactive_labs_progress_service.dart';
@@ -12,6 +13,7 @@ import '../../widgets/labs/lab_progress_indicator.dart';
 import '../../widgets/labs/lab_related_links.dart';
 import '../../widgets/labs/lab_result_banner.dart';
 import '../../widgets/labs/lab_scaffold.dart';
+import '../../widgets/labs/simple_lab_narration_mixin.dart';
 import '../../widgets/visual_maths/number_line_widget.dart';
 
 class _NumberLineChallenge {
@@ -57,17 +59,63 @@ class NumberLineExplorerScreen extends StatefulWidget {
   State<NumberLineExplorerScreen> createState() => _NumberLineExplorerScreenState();
 }
 
-class _NumberLineExplorerScreenState extends State<NumberLineExplorerScreen> {
+class _NumberLineExplorerScreenState extends State<NumberLineExplorerScreen>
+    with SimpleLabNarrationMixin {
   int _challengeIndex = 0;
   late num _value;
   bool? _lastResultCorrect;
+  num? _lastCheckedValue;
 
   _NumberLineChallenge get _challenge => _challenges[_challengeIndex];
+
+  @override
+  InteractiveLabId get narrationLabId => InteractiveLabId.numberLineExplorer;
 
   @override
   void initState() {
     super.initState();
     _value = _challenge.min;
+    initNarration();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    maybeIntroduceNarration();
+  }
+
+  @override
+  void dispose() {
+    disposeNarration();
+    super.dispose();
+  }
+
+  @override
+  void onIntroductionNarration() {
+    final level = InteractiveLabsProgressService.instance.guidanceLevel();
+    final l10n = AppLocalizations.of(context);
+    playNarration(
+      messageId: 'labsNumberLineExplorerNarrationIntro',
+      text: l10n.labsNumberLineExplorerNarrationIntro,
+      trigger: LabNarrationTrigger.introduction,
+      level: level,
+    );
+  }
+
+  @override
+  void onInactivityNarration() {
+    final level = InteractiveLabsProgressService.instance.guidanceLevel();
+    final l10n = AppLocalizations.of(context);
+    playNarration(
+      messageId: 'labsNumberLineExplorerNarrationHintInactivity${narrationLevelSuffix(level)}',
+      text: switch (level) {
+        LabGuidanceLevel.explorer => l10n.labsNumberLineExplorerNarrationHintInactivityExplorer,
+        LabGuidanceLevel.builder => l10n.labsNumberLineExplorerNarrationHintInactivityBuilder,
+        LabGuidanceLevel.navigator => l10n.labsNumberLineExplorerNarrationHintInactivityNavigator,
+      },
+      trigger: LabNarrationTrigger.hint,
+      level: level,
+    );
   }
 
   void _step(num delta) {
@@ -76,13 +124,21 @@ class _NumberLineExplorerScreenState extends State<NumberLineExplorerScreen> {
       _value = (_value + delta).clamp(_challenge.min, _challenge.max);
       _lastResultCorrect = null;
     });
+    registerNarrationActivity();
   }
 
   Future<void> _check() async {
     AudioCueService.instance.play(AudioCue.testLaunch);
+    final l10n = AppLocalizations.of(context);
+    final level = InteractiveLabsProgressService.instance.guidanceLevel();
+    final isRepeated = _lastCheckedValue == _value;
+
     final distance = (_value - _challenge.target).abs();
     final correct = distance < 0.001;
     setState(() => _lastResultCorrect = correct);
+    _lastCheckedValue = _value;
+    registerNarrationActivity();
+
     await InteractiveLabsProgressService.instance
         .recordAttempt(InteractiveLabId.numberLineExplorer);
     if (correct) {
@@ -90,10 +146,54 @@ class _NumberLineExplorerScreenState extends State<NumberLineExplorerScreen> {
           .recordCompletion(InteractiveLabId.numberLineExplorer);
       CaptainMathService.instance.showCompletion();
       AudioCueService.instance.play(AudioCue.success);
+      playNarration(
+        messageId: 'labsNumberLineExplorerNarrationCompletion${narrationLevelSuffix(level)}',
+        text: switch (level) {
+          LabGuidanceLevel.explorer => l10n.labsNumberLineExplorerNarrationCompletionExplorer,
+          LabGuidanceLevel.builder => l10n.labsNumberLineExplorerNarrationCompletionBuilder,
+          LabGuidanceLevel.navigator => l10n.labsNumberLineExplorerNarrationCompletionNavigator,
+        },
+        trigger: LabNarrationTrigger.completion,
+        level: level,
+      );
     } else {
+      final close = distance <= _challenge.step;
       CaptainMathService.instance.showEncouragement();
-      if (distance <= _challenge.step) {
-        AudioCueService.instance.play(AudioCue.nearMiss);
+      if (close) AudioCueService.instance.play(AudioCue.nearMiss);
+
+      if (isRepeated) {
+        playNarration(
+          messageId: 'labsNumberLineExplorerNarrationHintRepeated${narrationLevelSuffix(level)}',
+          text: switch (level) {
+            LabGuidanceLevel.explorer => l10n.labsNumberLineExplorerNarrationHintRepeatedExplorer,
+            LabGuidanceLevel.builder => l10n.labsNumberLineExplorerNarrationHintRepeatedBuilder,
+            LabGuidanceLevel.navigator => l10n.labsNumberLineExplorerNarrationHintRepeatedNavigator,
+          },
+          trigger: LabNarrationTrigger.hint,
+          level: level,
+        );
+      } else if (close) {
+        playNarration(
+          messageId: 'labsNumberLineExplorerNarrationResultClose${narrationLevelSuffix(level)}',
+          text: switch (level) {
+            LabGuidanceLevel.explorer => l10n.labsNumberLineExplorerNarrationResultCloseExplorer,
+            LabGuidanceLevel.builder => l10n.labsNumberLineExplorerNarrationResultCloseBuilder,
+            LabGuidanceLevel.navigator => l10n.labsNumberLineExplorerNarrationResultCloseNavigator,
+          },
+          trigger: LabNarrationTrigger.nearSuccess,
+          level: level,
+        );
+      } else {
+        playNarration(
+          messageId: 'labsNumberLineExplorerNarrationResultWrong${narrationLevelSuffix(level)}',
+          text: switch (level) {
+            LabGuidanceLevel.explorer => l10n.labsNumberLineExplorerNarrationResultWrongExplorer,
+            LabGuidanceLevel.builder => l10n.labsNumberLineExplorerNarrationResultWrongBuilder,
+            LabGuidanceLevel.navigator => l10n.labsNumberLineExplorerNarrationResultWrongNavigator,
+          },
+          trigger: LabNarrationTrigger.resultExplanation,
+          level: level,
+        );
       }
     }
   }
@@ -104,6 +204,7 @@ class _NumberLineExplorerScreenState extends State<NumberLineExplorerScreen> {
       _value = _challenge.min;
       _lastResultCorrect = null;
     });
+    registerNarrationActivity();
   }
 
   void _next() {
@@ -113,6 +214,8 @@ class _NumberLineExplorerScreenState extends State<NumberLineExplorerScreen> {
       _value = _challenge.min;
       _lastResultCorrect = null;
     });
+    _lastCheckedValue = null;
+    registerNarrationActivity();
   }
 
   @override
@@ -169,6 +272,7 @@ class _NumberLineExplorerScreenState extends State<NumberLineExplorerScreen> {
                   _value = next;
                   _lastResultCorrect = null;
                 });
+                registerNarrationActivity();
               },
             ),
             const SizedBox(height: AppSpacing.sm),

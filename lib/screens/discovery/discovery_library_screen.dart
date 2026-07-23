@@ -107,7 +107,11 @@ class _DiscoveryLibraryScreenState extends State<DiscoveryLibraryScreen> {
                     padding: const EdgeInsets.all(AppSpacing.md),
                     gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                       maxCrossAxisExtent: 260,
-                      mainAxisExtent: 196,
+                      // A little taller than the tile's nominal content
+                      // height so locale text-length/font-metric variance
+                      // (and larger text scales) can't tip it into a
+                      // RenderFlex overflow on narrow phones.
+                      mainAxisExtent: 216,
                       crossAxisSpacing: AppSpacing.sm,
                       mainAxisSpacing: AppSpacing.sm,
                     ),

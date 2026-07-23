@@ -4074,6 +4074,54 @@ abstract class AppLocalizations {
   /// **'Help'**
   String get labsHelpButton;
 
+  /// No description provided for @labsNarrationReplayButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Replay'**
+  String get labsNarrationReplayButton;
+
+  /// No description provided for @labsNarrationSectionLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'CAPTAIN MATH NARRATION'**
+  String get labsNarrationSectionLabel;
+
+  /// No description provided for @labsNarrationOnOffLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Narration'**
+  String get labsNarrationOnOffLabel;
+
+  /// No description provided for @labsNarrationTextOnlyLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Text only (no spoken audio)'**
+  String get labsNarrationTextOnlyLabel;
+
+  /// No description provided for @labsNarrationSpeedLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Speed'**
+  String get labsNarrationSpeedLabel;
+
+  /// No description provided for @labsNarrationSpeedSlower.
+  ///
+  /// In en, this message translates to:
+  /// **'Slower'**
+  String get labsNarrationSpeedSlower;
+
+  /// No description provided for @labsNarrationSpeedNormal.
+  ///
+  /// In en, this message translates to:
+  /// **'Normal'**
+  String get labsNarrationSpeedNormal;
+
+  /// No description provided for @labsNarrationSpeedFaster.
+  ///
+  /// In en, this message translates to:
+  /// **'Faster'**
+  String get labsNarrationSpeedFaster;
+
   /// No description provided for @labsHelpTitle.
   ///
   /// In en, this message translates to:
@@ -4614,6 +4662,482 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Drag the plane to turn it'**
   String get labsFlightPathLabDragCue;
+
+  /// No description provided for @labsFlightPathLabNarrationIntroExplorer.
+  ///
+  /// In en, this message translates to:
+  /// **'Point the plane at the yellow target, then press Test Flight to see where it lands.'**
+  String get labsFlightPathLabNarrationIntroExplorer;
+
+  /// No description provided for @labsFlightPathLabNarrationIntroBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'Set a heading and speed, predict where you\'ll land, then test your prediction.'**
+  String get labsFlightPathLabNarrationIntroBuilder;
+
+  /// No description provided for @labsFlightPathLabNarrationIntroNavigator.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a bearing and speed; the resulting displacement is bearing and speed-time combined into one vector.'**
+  String get labsFlightPathLabNarrationIntroNavigator;
+
+  /// No description provided for @labsFlightPathLabNarrationResultNearMissExplorer.
+  ///
+  /// In en, this message translates to:
+  /// **'So close! Try a slightly different speed or direction and test again.'**
+  String get labsFlightPathLabNarrationResultNearMissExplorer;
+
+  /// No description provided for @labsFlightPathLabNarrationResultNearMissBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'You landed close to the target. Check whether you\'re slightly early or late, and adjust speed or heading a little.'**
+  String get labsFlightPathLabNarrationResultNearMissBuilder;
+
+  /// No description provided for @labsFlightPathLabNarrationResultNearMissNavigator.
+  ///
+  /// In en, this message translates to:
+  /// **'The resultant displacement is close to the target vector but not exact — refine heading and/or speed and re-test.'**
+  String get labsFlightPathLabNarrationResultNearMissNavigator;
+
+  /// No description provided for @labsFlightPathLabNarrationResultCorrectHeadingTooFarExplorer.
+  ///
+  /// In en, this message translates to:
+  /// **'Good direction! But the plane flew too far. Try a slower speed.'**
+  String get labsFlightPathLabNarrationResultCorrectHeadingTooFarExplorer;
+
+  /// No description provided for @labsFlightPathLabNarrationResultCorrectHeadingTooFarBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'The heading is right, but you travelled further than the target distance. Keep the direction and lower the speed.'**
+  String get labsFlightPathLabNarrationResultCorrectHeadingTooFarBuilder;
+
+  /// No description provided for @labsFlightPathLabNarrationResultCorrectHeadingTooFarNavigator.
+  ///
+  /// In en, this message translates to:
+  /// **'Bearing matches the target vector; the magnitude (speed × time) overshoots it — reduce speed to shorten the displacement.'**
+  String get labsFlightPathLabNarrationResultCorrectHeadingTooFarNavigator;
+
+  /// No description provided for @labsFlightPathLabNarrationResultCorrectHeadingTooShortExplorer.
+  ///
+  /// In en, this message translates to:
+  /// **'Good direction! But the plane didn\'t fly far enough. Try a faster speed.'**
+  String get labsFlightPathLabNarrationResultCorrectHeadingTooShortExplorer;
+
+  /// No description provided for @labsFlightPathLabNarrationResultCorrectHeadingTooShortBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'The heading is right, but you didn\'t travel far enough. Keep the direction and raise the speed.'**
+  String get labsFlightPathLabNarrationResultCorrectHeadingTooShortBuilder;
+
+  /// No description provided for @labsFlightPathLabNarrationResultCorrectHeadingTooShortNavigator.
+  ///
+  /// In en, this message translates to:
+  /// **'Bearing matches the target vector; the magnitude falls short — increase speed to extend the displacement.'**
+  String get labsFlightPathLabNarrationResultCorrectHeadingTooShortNavigator;
+
+  /// No description provided for @labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceExplorer.
+  ///
+  /// In en, this message translates to:
+  /// **'The distance is right, but the plane is pointing the wrong way. Turn it toward the yellow target.'**
+  String
+      get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceExplorer;
+
+  /// No description provided for @labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'You flew the right distance, but the wrong direction. Adjust the heading toward the target bearing and keep the speed.'**
+  String get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceBuilder;
+
+  /// No description provided for @labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceNavigator.
+  ///
+  /// In en, this message translates to:
+  /// **'The magnitude is correct but the bearing is off — rotate the heading toward the target bearing without changing speed.'**
+  String
+      get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceNavigator;
+
+  /// No description provided for @labsFlightPathLabNarrationResultWrongHeadingAndDistanceExplorer.
+  ///
+  /// In en, this message translates to:
+  /// **'The plane is pointing the wrong way and went the wrong distance. Aim at the target, then choose a speed.'**
+  String get labsFlightPathLabNarrationResultWrongHeadingAndDistanceExplorer;
+
+  /// No description provided for @labsFlightPathLabNarrationResultWrongHeadingAndDistanceBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'Both the direction and the distance need adjusting. Re-aim toward the target bearing, then set a speed for the right distance.'**
+  String get labsFlightPathLabNarrationResultWrongHeadingAndDistanceBuilder;
+
+  /// No description provided for @labsFlightPathLabNarrationResultWrongHeadingAndDistanceNavigator.
+  ///
+  /// In en, this message translates to:
+  /// **'Both bearing and magnitude are off the target vector — correct the heading first, then adjust speed for the required distance.'**
+  String get labsFlightPathLabNarrationResultWrongHeadingAndDistanceNavigator;
+
+  /// No description provided for @labsFlightPathLabNarrationCompletionExplorer.
+  ///
+  /// In en, this message translates to:
+  /// **'Excellent! You aimed the plane and picked the right speed to land exactly on target.'**
+  String get labsFlightPathLabNarrationCompletionExplorer;
+
+  /// No description provided for @labsFlightPathLabNarrationCompletionBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'Excellent! Matching heading and speed to a target is exactly how real flight plans are built.'**
+  String get labsFlightPathLabNarrationCompletionBuilder;
+
+  /// No description provided for @labsFlightPathLabNarrationCompletionNavigator.
+  ///
+  /// In en, this message translates to:
+  /// **'Exact match: the displacement vector (bearing and magnitude) equals the target vector — this is how flight planning and navigation calculations work in practice.'**
+  String get labsFlightPathLabNarrationCompletionNavigator;
+
+  /// No description provided for @labsFlightPathLabNarrationHintRepeatedExplorer.
+  ///
+  /// In en, this message translates to:
+  /// **'That\'s the same try as last time. Change the direction or speed before testing again.'**
+  String get labsFlightPathLabNarrationHintRepeatedExplorer;
+
+  /// No description provided for @labsFlightPathLabNarrationHintRepeatedBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'You tested the exact same heading and speed again. Try changing one of them before the next test.'**
+  String get labsFlightPathLabNarrationHintRepeatedBuilder;
+
+  /// No description provided for @labsFlightPathLabNarrationHintRepeatedNavigator.
+  ///
+  /// In en, this message translates to:
+  /// **'Heading and speed are unchanged from the previous attempt — vary at least one variable to gather new information.'**
+  String get labsFlightPathLabNarrationHintRepeatedNavigator;
+
+  /// No description provided for @labsFlightPathLabNarrationHintInactivityExplorer.
+  ///
+  /// In en, this message translates to:
+  /// **'Still there? Drag the plane or move the speed slider to keep going.'**
+  String get labsFlightPathLabNarrationHintInactivityExplorer;
+
+  /// No description provided for @labsFlightPathLabNarrationHintInactivityBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'Take your time — drag the plane to aim it, or adjust the speed, whenever you\'re ready.'**
+  String get labsFlightPathLabNarrationHintInactivityBuilder;
+
+  /// No description provided for @labsFlightPathLabNarrationHintInactivityNavigator.
+  ///
+  /// In en, this message translates to:
+  /// **'No input recorded recently — adjust heading or speed to continue refining the solution.'**
+  String get labsFlightPathLabNarrationHintInactivityNavigator;
+
+  /// No description provided for @labsNumberLineExplorerNarrationResultWrongExplorer.
+  ///
+  /// In en, this message translates to:
+  /// **'Not quite — look at whether you need to move left or right, then try again.'**
+  String get labsNumberLineExplorerNarrationResultWrongExplorer;
+
+  /// No description provided for @labsNumberLineExplorerNarrationResultWrongBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'Compare your value to the target: move toward it by the difference, then check again.'**
+  String get labsNumberLineExplorerNarrationResultWrongBuilder;
+
+  /// No description provided for @labsNumberLineExplorerNarrationResultWrongNavigator.
+  ///
+  /// In en, this message translates to:
+  /// **'The value differs from the target by more than one step — adjust by the required increment and retest.'**
+  String get labsNumberLineExplorerNarrationResultWrongNavigator;
+
+  /// No description provided for @labsNumberLineExplorerNarrationResultCloseExplorer.
+  ///
+  /// In en, this message translates to:
+  /// **'So close! Just one small step away — try nudging it once more.'**
+  String get labsNumberLineExplorerNarrationResultCloseExplorer;
+
+  /// No description provided for @labsNumberLineExplorerNarrationResultCloseBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re one step away from the target. Adjust by a single increment and check again.'**
+  String get labsNumberLineExplorerNarrationResultCloseBuilder;
+
+  /// No description provided for @labsNumberLineExplorerNarrationResultCloseNavigator.
+  ///
+  /// In en, this message translates to:
+  /// **'The value is within one increment of the target — a single adjustment should resolve it.'**
+  String get labsNumberLineExplorerNarrationResultCloseNavigator;
+
+  /// No description provided for @labsNumberLineExplorerNarrationCompletionExplorer.
+  ///
+  /// In en, this message translates to:
+  /// **'Exactly right! You found the target\'s exact position on the line.'**
+  String get labsNumberLineExplorerNarrationCompletionExplorer;
+
+  /// No description provided for @labsNumberLineExplorerNarrationCompletionBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'Exactly right! Matching a value to its position is how number lines represent size and order.'**
+  String get labsNumberLineExplorerNarrationCompletionBuilder;
+
+  /// No description provided for @labsNumberLineExplorerNarrationCompletionNavigator.
+  ///
+  /// In en, this message translates to:
+  /// **'Exact match: the value\'s position on the line corresponds precisely to its numeric value, including sign and magnitude.'**
+  String get labsNumberLineExplorerNarrationCompletionNavigator;
+
+  /// No description provided for @labsNumberLineExplorerNarrationHintRepeatedExplorer.
+  ///
+  /// In en, this message translates to:
+  /// **'That\'s the same spot as last time — move it before checking again.'**
+  String get labsNumberLineExplorerNarrationHintRepeatedExplorer;
+
+  /// No description provided for @labsNumberLineExplorerNarrationHintRepeatedBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'You checked the same value again. Move it by at least one step before the next check.'**
+  String get labsNumberLineExplorerNarrationHintRepeatedBuilder;
+
+  /// No description provided for @labsNumberLineExplorerNarrationHintRepeatedNavigator.
+  ///
+  /// In en, this message translates to:
+  /// **'The value is unchanged from the previous check — adjust before retesting.'**
+  String get labsNumberLineExplorerNarrationHintRepeatedNavigator;
+
+  /// No description provided for @labsNumberLineExplorerNarrationHintInactivityExplorer.
+  ///
+  /// In en, this message translates to:
+  /// **'Still there? Drag the marker or use the +/- buttons.'**
+  String get labsNumberLineExplorerNarrationHintInactivityExplorer;
+
+  /// No description provided for @labsNumberLineExplorerNarrationHintInactivityBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'Take your time — drag the marker or use the +/- buttons whenever you\'re ready.'**
+  String get labsNumberLineExplorerNarrationHintInactivityBuilder;
+
+  /// No description provided for @labsNumberLineExplorerNarrationHintInactivityNavigator.
+  ///
+  /// In en, this message translates to:
+  /// **'No input recorded recently — adjust the value to continue.'**
+  String get labsNumberLineExplorerNarrationHintInactivityNavigator;
+
+  /// No description provided for @labsFractionBuilderNarrationResultWrongExplorer.
+  ///
+  /// In en, this message translates to:
+  /// **'Not quite the right number of parts — count the filled segments and compare to the target.'**
+  String get labsFractionBuilderNarrationResultWrongExplorer;
+
+  /// No description provided for @labsFractionBuilderNarrationResultWrongBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'Compare the filled segments to the numerator, then add or remove one to match.'**
+  String get labsFractionBuilderNarrationResultWrongBuilder;
+
+  /// No description provided for @labsFractionBuilderNarrationResultWrongNavigator.
+  ///
+  /// In en, this message translates to:
+  /// **'The filled-segment count must equal the numerator exactly — adjust by the difference.'**
+  String get labsFractionBuilderNarrationResultWrongNavigator;
+
+  /// No description provided for @labsFractionBuilderNarrationCompletionExplorer.
+  ///
+  /// In en, this message translates to:
+  /// **'That\'s it! You filled exactly the right number of parts.'**
+  String get labsFractionBuilderNarrationCompletionExplorer;
+
+  /// No description provided for @labsFractionBuilderNarrationCompletionBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'That\'s it! Counting filled parts against a numerator is exactly what a fraction represents.'**
+  String get labsFractionBuilderNarrationCompletionBuilder;
+
+  /// No description provided for @labsFractionBuilderNarrationCompletionNavigator.
+  ///
+  /// In en, this message translates to:
+  /// **'Exact match: filled segments equal the numerator over the shown denominator, matching the fraction\'s defining ratio.'**
+  String get labsFractionBuilderNarrationCompletionNavigator;
+
+  /// No description provided for @labsFractionBuilderNarrationHintRepeatedExplorer.
+  ///
+  /// In en, this message translates to:
+  /// **'Same count as last time — change it before checking again.'**
+  String get labsFractionBuilderNarrationHintRepeatedExplorer;
+
+  /// No description provided for @labsFractionBuilderNarrationHintRepeatedBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'You checked the same filled count again. Change it before the next check.'**
+  String get labsFractionBuilderNarrationHintRepeatedBuilder;
+
+  /// No description provided for @labsFractionBuilderNarrationHintRepeatedNavigator.
+  ///
+  /// In en, this message translates to:
+  /// **'The filled count is unchanged from the previous check — adjust before retesting.'**
+  String get labsFractionBuilderNarrationHintRepeatedNavigator;
+
+  /// No description provided for @labsFractionBuilderNarrationHintInactivityExplorer.
+  ///
+  /// In en, this message translates to:
+  /// **'Still there? Tap a segment to fill or unfill it.'**
+  String get labsFractionBuilderNarrationHintInactivityExplorer;
+
+  /// No description provided for @labsFractionBuilderNarrationHintInactivityBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'Take your time — tap segments to adjust the count whenever you\'re ready.'**
+  String get labsFractionBuilderNarrationHintInactivityBuilder;
+
+  /// No description provided for @labsFractionBuilderNarrationHintInactivityNavigator.
+  ///
+  /// In en, this message translates to:
+  /// **'No input recorded recently — tap a segment to continue.'**
+  String get labsFractionBuilderNarrationHintInactivityNavigator;
+
+  /// No description provided for @labsAlgebraBalanceNarrationHintNextStepExplorer.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove the number first, then divide to find x.'**
+  String get labsAlgebraBalanceNarrationHintNextStepExplorer;
+
+  /// No description provided for @labsAlgebraBalanceNarrationHintNextStepBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'First remove the constant from both sides, then divide both sides by the coefficient of x.'**
+  String get labsAlgebraBalanceNarrationHintNextStepBuilder;
+
+  /// No description provided for @labsAlgebraBalanceNarrationHintNextStepNavigator.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply the inverse additive operation first, then the inverse multiplicative operation, to isolate x.'**
+  String get labsAlgebraBalanceNarrationHintNextStepNavigator;
+
+  /// No description provided for @labsAlgebraBalanceNarrationCompletionExplorer.
+  ///
+  /// In en, this message translates to:
+  /// **'Solved! You found the value of x.'**
+  String get labsAlgebraBalanceNarrationCompletionExplorer;
+
+  /// No description provided for @labsAlgebraBalanceNarrationCompletionBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'Solved! Every equation of this form is solved by removing the constant, then dividing.'**
+  String get labsAlgebraBalanceNarrationCompletionBuilder;
+
+  /// No description provided for @labsAlgebraBalanceNarrationCompletionNavigator.
+  ///
+  /// In en, this message translates to:
+  /// **'Solved: x is isolated by inverse operations applied to both sides, preserving equality throughout.'**
+  String get labsAlgebraBalanceNarrationCompletionNavigator;
+
+  /// No description provided for @labsAlgebraBalanceNarrationHintInactivityExplorer.
+  ///
+  /// In en, this message translates to:
+  /// **'Still there? Try the first button to remove the number.'**
+  String get labsAlgebraBalanceNarrationHintInactivityExplorer;
+
+  /// No description provided for @labsAlgebraBalanceNarrationHintInactivityBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'Take your time — remove the constant, then divide, whenever you\'re ready.'**
+  String get labsAlgebraBalanceNarrationHintInactivityBuilder;
+
+  /// No description provided for @labsAlgebraBalanceNarrationHintInactivityNavigator.
+  ///
+  /// In en, this message translates to:
+  /// **'No input recorded recently — apply the next inverse operation to continue.'**
+  String get labsAlgebraBalanceNarrationHintInactivityNavigator;
+
+  /// No description provided for @labsDataDetectiveNarrationResultWrongExplorer.
+  ///
+  /// In en, this message translates to:
+  /// **'Not quite — look at how much each average moved and pick again.'**
+  String get labsDataDetectiveNarrationResultWrongExplorer;
+
+  /// No description provided for @labsDataDetectiveNarrationResultWrongBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'Compare how much the mean and median each changed, then predict again based on which shifted more.'**
+  String get labsDataDetectiveNarrationResultWrongBuilder;
+
+  /// No description provided for @labsDataDetectiveNarrationResultWrongNavigator.
+  ///
+  /// In en, this message translates to:
+  /// **'Re-examine the computed shifts: predict again based on which statistic changed by the larger magnitude.'**
+  String get labsDataDetectiveNarrationResultWrongNavigator;
+
+  /// No description provided for @labsDataDetectiveNarrationCompletionExplorer.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct! You spotted which average the outlier affects most.'**
+  String get labsDataDetectiveNarrationCompletionExplorer;
+
+  /// No description provided for @labsDataDetectiveNarrationCompletionBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct! Identifying which statistic an outlier distorts most is exactly this lab\'s key idea.'**
+  String get labsDataDetectiveNarrationCompletionBuilder;
+
+  /// No description provided for @labsDataDetectiveNarrationCompletionNavigator.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct: the statistic with the larger shift is more sensitive to the outlier, consistent with the mean\'s sensitivity to extreme values relative to the median.'**
+  String get labsDataDetectiveNarrationCompletionNavigator;
+
+  /// No description provided for @labsDataDetectiveNarrationHintRepeatedExplorer.
+  ///
+  /// In en, this message translates to:
+  /// **'Same guess as last time — try the other one.'**
+  String get labsDataDetectiveNarrationHintRepeatedExplorer;
+
+  /// No description provided for @labsDataDetectiveNarrationHintRepeatedBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'You predicted the same statistic again. Consider the other option.'**
+  String get labsDataDetectiveNarrationHintRepeatedBuilder;
+
+  /// No description provided for @labsDataDetectiveNarrationHintRepeatedNavigator.
+  ///
+  /// In en, this message translates to:
+  /// **'The same prediction was repeated — reconsider using the computed shift values.'**
+  String get labsDataDetectiveNarrationHintRepeatedNavigator;
+
+  /// No description provided for @labsDataDetectiveNarrationHintInactivityExplorer.
+  ///
+  /// In en, this message translates to:
+  /// **'Still there? Pick Mean or Median, then tap Reveal.'**
+  String get labsDataDetectiveNarrationHintInactivityExplorer;
+
+  /// No description provided for @labsDataDetectiveNarrationHintInactivityBuilder.
+  ///
+  /// In en, this message translates to:
+  /// **'Take your time — pick a prediction and tap Reveal whenever you\'re ready.'**
+  String get labsDataDetectiveNarrationHintInactivityBuilder;
+
+  /// No description provided for @labsDataDetectiveNarrationHintInactivityNavigator.
+  ///
+  /// In en, this message translates to:
+  /// **'No input recorded recently — choose a prediction to continue.'**
+  String get labsDataDetectiveNarrationHintInactivityNavigator;
+
+  /// No description provided for @labsFractionBuilderNarrationIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap segments to fill the fraction, then check your answer.'**
+  String get labsFractionBuilderNarrationIntro;
+
+  /// No description provided for @labsNumberLineExplorerNarrationIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Move the marker to the target value, then check your answer.'**
+  String get labsNumberLineExplorerNarrationIntro;
+
+  /// No description provided for @labsAlgebraBalanceNarrationIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Use the balance operations to isolate x, one step at a time.'**
+  String get labsAlgebraBalanceNarrationIntro;
+
+  /// No description provided for @labsDataDetectiveNarrationIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Predict which average the outlier affects most, then reveal the answer.'**
+  String get labsDataDetectiveNarrationIntro;
 }
 
 class _AppLocalizationsDelegate
