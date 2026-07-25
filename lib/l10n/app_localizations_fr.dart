@@ -1550,6 +1550,57 @@ class AppLocalizationsFr extends AppLocalizations {
       'Real-world maths, one card at a time';
 
   @override
+  String get mathStudioMathMagicTitle => 'Math & Magic';
+
+  @override
+  String get mathStudioMathMagicSubtitle =>
+      'Puzzles, patterns and playful mathematical surprises';
+
+  @override
+  String get mathStudioMathMagicBody =>
+      'Recreational puzzles, number tricks and mathematical curiosities';
+
+  @override
+  String get mathStudioSpatialIntelligenceTitle => 'Spatial Intelligence';
+
+  @override
+  String get mathStudioSpatialIntelligenceSubtitle =>
+      'Build your sense of shape, space and movement';
+
+  @override
+  String get mathStudioSpatialIntelligenceBody =>
+      'Cube nets, rotations, transformations and spatial puzzles';
+
+  @override
+  String get mathStudioInDevelopmentBadge => 'In development';
+
+  @override
+  String get mathStudioInDevelopmentNote =>
+      'This area is still being built — check back soon for new content.';
+
+  @override
+  String get mathStudioSpatialCubeActivitiesLabel => 'Cube activities';
+
+  @override
+  String get mathStudioSpatialRotationsLabel => 'Rotations';
+
+  @override
+  String get mathStudioSpatialTransformationsLabel => 'Transformations';
+
+  @override
+  String get mathStudioSpatialPuzzlesLabel => 'Spatial puzzles';
+
+  @override
+  String get mathStudioFeaturedFormatsSectionLabel => 'Featured formats';
+
+  @override
+  String get mathStudioRelatedLabsSectionLabel => 'Related labs';
+
+  @override
+  String get mathStudioSpatialLabsEntrySubtitle =>
+      'Try Flight Path Lab and other hands-on tools that build spatial reasoning';
+
+  @override
   String get mathStudioCategoryEverydayLife => 'Everyday Life';
 
   @override
@@ -4359,6 +4410,57 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
   @override
   String get mathStudioDiscoverySubtitle =>
       'Des maths bien reelles, une carte a la fois';
+
+  @override
+  String get mathStudioMathMagicTitle => 'Maths & Magie';
+
+  @override
+  String get mathStudioMathMagicSubtitle =>
+      'Enigmes, motifs et surprises mathematiques ludiques';
+
+  @override
+  String get mathStudioMathMagicBody =>
+      'Enigmes recreatives, tours de magie numeriques et curiosites mathematiques';
+
+  @override
+  String get mathStudioSpatialIntelligenceTitle => 'Intelligence spatiale';
+
+  @override
+  String get mathStudioSpatialIntelligenceSubtitle =>
+      'Developpe ton sens de la forme, de l\'espace et du mouvement';
+
+  @override
+  String get mathStudioSpatialIntelligenceBody =>
+      'Patrons de cubes, rotations, transformations et casse-tetes spatiaux';
+
+  @override
+  String get mathStudioInDevelopmentBadge => 'En developpement';
+
+  @override
+  String get mathStudioInDevelopmentNote =>
+      'Cette section est encore en construction - reviens bientot pour du nouveau contenu.';
+
+  @override
+  String get mathStudioSpatialCubeActivitiesLabel => 'Activites avec des cubes';
+
+  @override
+  String get mathStudioSpatialRotationsLabel => 'Rotations';
+
+  @override
+  String get mathStudioSpatialTransformationsLabel => 'Transformations';
+
+  @override
+  String get mathStudioSpatialPuzzlesLabel => 'Casse-tetes spatiaux';
+
+  @override
+  String get mathStudioFeaturedFormatsSectionLabel => 'Formats a decouvrir';
+
+  @override
+  String get mathStudioRelatedLabsSectionLabel => 'Laboratoires lies';
+
+  @override
+  String get mathStudioSpatialLabsEntrySubtitle =>
+      'Essaie Flight Path Lab et d\'autres outils pratiques qui developpent le raisonnement spatial';
 
   @override
   String get mathStudioCategoryEverydayLife => 'Vie quotidienne';

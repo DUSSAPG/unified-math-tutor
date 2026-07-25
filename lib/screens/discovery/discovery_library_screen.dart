@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../app/safe_navigation.dart';
@@ -7,6 +8,8 @@ import '../../models/discovery_card.dart';
 import '../../services/discovery_card_catalog_service.dart';
 import '../../shared/theme/app_spacing.dart';
 import '../../widgets/discovery/discovery_illustration.dart';
+import '../../widgets/shared/route_link_card.dart';
+import '../../widgets/shared/section_label.dart';
 import 'discovery_category_labels.dart';
 
 /// Real-world Discovery Cards, filterable by category. Reachable without any
@@ -128,6 +131,28 @@ class _DiscoveryLibraryScreenState extends State<DiscoveryLibraryScreen> {
                         onTap: () => context.push('/math-studio/discovery/${card.id}'),
                       );
                     },
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(
+                    AppSpacing.md,
+                    0,
+                    AppSpacing.md,
+                    AppSpacing.md,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SectionLabel(text: l10n.mathStudioRelatedLabsSectionLabel),
+                      const SizedBox(height: AppSpacing.sm),
+                      RouteLinkCard(
+                        icon: LucideIcons.flaskConical,
+                        iconColor: const Color(0xFF00BCD4),
+                        title: l10n.mathStudioInteractiveLabsTitle,
+                        subtitle: l10n.mathStudioInteractiveLabsSubtitle,
+                        onTap: () => context.push('/math-studio/interactive-labs'),
+                      ),
+                    ],
                   ),
                 ),
               ],

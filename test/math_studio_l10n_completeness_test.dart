@@ -42,6 +42,10 @@ const _cognateProneKeyPrefixes = [
   'labsNarrationSpeedNormal',
   // "Narration" is the same word in English and French.
   'labsNarrationOnOffLabel',
+  // "Rotations" is the same word in English and French.
+  'mathStudioSpatialRotationsLabel',
+  // "Transformations" is the same word in English and French.
+  'mathStudioSpatialTransformationsLabel',
 ];
 
 Map<String, dynamic> _loadArb(String filename) {

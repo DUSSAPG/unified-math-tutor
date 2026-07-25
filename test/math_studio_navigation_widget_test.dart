@@ -6,10 +6,10 @@ import 'package:unified_math_tutor/app/router.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 import 'package:unified_math_tutor/screens/build_confidence/build_confidence_screen.dart';
 import 'package:unified_math_tutor/screens/discovery/discovery_library_screen.dart';
+import 'package:unified_math_tutor/screens/math_magic/math_magic_screen.dart';
 import 'package:unified_math_tutor/screens/math_studio/math_studio_hub_screen.dart';
-import 'package:unified_math_tutor/screens/labs/interactive_labs_hub_screen.dart';
 import 'package:unified_math_tutor/screens/mental_maths/mental_maths_hub_screen.dart';
-import 'package:unified_math_tutor/screens/recall/recall_cards_hub_screen.dart';
+import 'package:unified_math_tutor/screens/spatial_intelligence/spatial_intelligence_screen.dart';
 import 'package:unified_math_tutor/screens/visual_maths/visual_maths_hub_screen.dart';
 import 'package:unified_math_tutor/services/discovery_card_catalog_service.dart';
 import 'package:unified_math_tutor/services/learner_profiles_service.dart';
@@ -40,10 +40,10 @@ void main() {
     Size(1280, 800), // landscape tablet / desktop
   ];
 
-  // Pre-warm the Discovery catalog's cache once, outside any testWidgets
-  // FakeAsync zone, so the Discovery Library route's byId()/all() calls
-  // resolve from cache synchronously rather than needing to complete real
-  // file I/O mid-pump.
+  // Pre-warm the Discovery/Recall catalog caches once, outside any
+  // testWidgets FakeAsync zone, so their byId()/all() calls resolve from
+  // cache synchronously rather than needing to complete real file I/O
+  // mid-pump.
   setUpAll(() async {
     TestWidgetsFlutterBinding.ensureInitialized();
     await DiscoveryCardCatalogService.instance.all();
@@ -61,8 +61,36 @@ void main() {
     await RecallCardsProgressService.instance.init();
   });
 
+  Future<void> pumpHub(
+    WidgetTester tester,
+    Locale locale, {
+    double textScale = 1.0,
+  }) async {
+    // No curriculum stage has been selected on this "device" — Math Studio
+    // must still be fully reachable.
+    appRouter.go('/math-studio');
+    await tester.pumpWidget(
+      MaterialApp.router(
+        routerConfig: appRouter,
+        locale: locale,
+        supportedLocales: AppLocalizations.supportedLocales,
+        localizationsDelegates: const [
+          AppLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        builder: (context, child) => MediaQuery(
+          data: MediaQuery.of(context).copyWith(textScaler: TextScaler.linear(textScale)),
+          child: child!,
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+  }
+
   testWidgets(
-    'Math Studio hub reaches all six pillars with no exam/curriculum selection required',
+    'Math Studio hub reaches all six RC1 pillars in order with no exam/curriculum selection required',
     (tester) async {
       addTearDown(tester.view.resetPhysicalSize);
       addTearDown(tester.view.resetDevicePixelRatio);
@@ -74,23 +102,7 @@ void main() {
         for (final locale in locales) {
           final l10n = await AppLocalizations.delegate.load(locale);
 
-          // No curriculum stage has been selected on this "device" — Math
-          // Studio must still be fully reachable.
-          appRouter.go('/math-studio');
-          await tester.pumpWidget(
-            MaterialApp.router(
-              routerConfig: appRouter,
-              locale: locale,
-              supportedLocales: AppLocalizations.supportedLocales,
-              localizationsDelegates: const [
-                AppLocalizations.delegate,
-                GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-                GlobalCupertinoLocalizations.delegate,
-              ],
-            ),
-          );
-          await tester.pumpAndSettle();
+          await pumpHub(tester, locale);
 
           expect(
             find.byType(MathStudioHubScreen),
@@ -98,6 +110,30 @@ void main() {
             reason: 'Hub failed to load for $locale at $viewport',
           );
           expect(find.text(l10n.mathStudioHubTagline), findsOneWidget);
+
+          // Pillar titles must appear in this exact order (top to bottom):
+          // Build Confidence, Mental Maths, Visual Maths, Math & Magic,
+          // Spatial Intelligence, Discovery Library.
+          final pillarTitles = [
+            l10n.mathStudioBuildConfidenceTitle,
+            l10n.mathStudioMentalMathsTitle,
+            l10n.mathStudioVisualMathsTitle,
+            l10n.mathStudioMathMagicTitle,
+            l10n.mathStudioSpatialIntelligenceTitle,
+            l10n.mathStudioDiscoveryTitle,
+          ];
+          final positions = [
+            for (final title in pillarTitles)
+              tester.getTopLeft(find.text(title).first).dy,
+          ];
+          for (var i = 1; i < positions.length; i++) {
+            expect(
+              positions[i],
+              greaterThan(positions[i - 1]),
+              reason:
+                  'Pillar "${pillarTitles[i]}" is not below "${pillarTitles[i - 1]}" for $locale at $viewport',
+            );
+          }
 
           await tester.ensureVisible(find.text(l10n.mathStudioBuildConfidenceTitle));
           await tester.tap(find.text(l10n.mathStudioBuildConfidenceTitle));
@@ -126,6 +162,26 @@ void main() {
           await tester.tap(find.byIcon(Icons.arrow_back));
           await tester.pumpAndSettle();
 
+          await tester.ensureVisible(find.text(l10n.mathStudioMathMagicTitle));
+          await tester.tap(find.text(l10n.mathStudioMathMagicTitle));
+          await tester.pumpAndSettle();
+          expect(find.byType(MathMagicScreen), findsOneWidget);
+          expect(find.text(l10n.mathStudioInDevelopmentBadge), findsWidgets);
+          expect(tester.takeException(), isNull,
+              reason: 'Math & Magic overflowed for $locale at $viewport');
+          await tester.tap(find.byIcon(Icons.arrow_back));
+          await tester.pumpAndSettle();
+
+          await tester.ensureVisible(find.text(l10n.mathStudioSpatialIntelligenceTitle));
+          await tester.tap(find.text(l10n.mathStudioSpatialIntelligenceTitle));
+          await tester.pumpAndSettle();
+          expect(find.byType(SpatialIntelligenceScreen), findsOneWidget);
+          expect(find.text(l10n.mathStudioInDevelopmentBadge), findsWidgets);
+          expect(tester.takeException(), isNull,
+              reason: 'Spatial Intelligence overflowed for $locale at $viewport');
+          await tester.tap(find.byIcon(Icons.arrow_back));
+          await tester.pumpAndSettle();
+
           await tester.ensureVisible(find.text(l10n.mathStudioDiscoveryTitle));
           await tester.tap(find.text(l10n.mathStudioDiscoveryTitle));
           await tester.pumpAndSettle();
@@ -135,23 +191,11 @@ void main() {
           await tester.tap(find.byIcon(Icons.arrow_back));
           await tester.pumpAndSettle();
 
-          await tester.ensureVisible(find.text(l10n.mathStudioRecallCardsTitle));
-          await tester.tap(find.text(l10n.mathStudioRecallCardsTitle));
-          await tester.pumpAndSettle();
-          expect(find.byType(RecallCardsHubScreen), findsOneWidget);
-          expect(tester.takeException(), isNull,
-              reason: 'Recall Cards hub overflowed for $locale at $viewport');
-          await tester.tap(find.byIcon(Icons.arrow_back));
-          await tester.pumpAndSettle();
-
-          await tester.ensureVisible(find.text(l10n.mathStudioInteractiveLabsTitle));
-          await tester.tap(find.text(l10n.mathStudioInteractiveLabsTitle));
-          await tester.pumpAndSettle();
-          expect(find.byType(InteractiveLabsHubScreen), findsOneWidget);
-          expect(tester.takeException(), isNull,
-              reason: 'Interactive Labs hub overflowed for $locale at $viewport');
-          await tester.tap(find.byIcon(Icons.arrow_back));
-          await tester.pumpAndSettle();
+          // Recall Cards and Interactive Labs are no longer top-level hub
+          // tiles — see math_studio_pillar_reachability_widget_test.dart for
+          // their embedded-entry-card reachability coverage.
+          expect(find.text(l10n.mathStudioRecallCardsTitle), findsNothing);
+          expect(find.text(l10n.mathStudioInteractiveLabsTitle), findsNothing);
 
           expect(
             tester.takeException(),
@@ -161,6 +205,42 @@ void main() {
 
           await tester.pumpWidget(const SizedBox.shrink());
         }
+      }
+    },
+  );
+
+  testWidgets(
+    'Math Studio hub and all six pillars render without overflow at 1.6x text scale',
+    (tester) async {
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+
+      for (final viewport in viewports) {
+        tester.view.physicalSize = viewport;
+        tester.view.devicePixelRatio = 1;
+
+        final l10n = await AppLocalizations.delegate.load(const Locale('en'));
+        await pumpHub(tester, const Locale('en'), textScale: 1.6);
+
+        expect(
+          tester.takeException(),
+          isNull,
+          reason: 'Hub overflowed at 1.6x text scale, $viewport',
+        );
+
+        final pillarTitles = [
+          l10n.mathStudioBuildConfidenceTitle,
+          l10n.mathStudioMentalMathsTitle,
+          l10n.mathStudioVisualMathsTitle,
+          l10n.mathStudioMathMagicTitle,
+          l10n.mathStudioSpatialIntelligenceTitle,
+          l10n.mathStudioDiscoveryTitle,
+        ];
+        for (final title in pillarTitles) {
+          expect(find.text(title), findsOneWidget, reason: '$title missing at 1.6x, $viewport');
+        }
+
+        await tester.pumpWidget(const SizedBox.shrink());
       }
     },
   );

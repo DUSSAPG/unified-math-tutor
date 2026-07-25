@@ -38,6 +38,8 @@ import '../screens/visual_maths/number_line_screen.dart';
 import '../screens/visual_maths/fraction_bars_screen.dart';
 import '../screens/visual_maths/abacus_screen.dart';
 import '../screens/visual_maths/place_value_explorer_screen.dart';
+import '../screens/math_magic/math_magic_screen.dart';
+import '../screens/spatial_intelligence/spatial_intelligence_screen.dart';
 import '../screens/discovery/discovery_library_screen.dart';
 import '../screens/discovery/discovery_card_detail_screen.dart';
 import '../models/recall_card.dart';
@@ -176,6 +178,14 @@ final GoRouter appRouter = GoRouter(
               builder: (context, state) => const PlaceValueExplorerScreen(),
             ),
           ],
+        ),
+        GoRoute(
+          path: 'math-magic',
+          builder: (context, state) => const MathMagicScreen(),
+        ),
+        GoRoute(
+          path: 'spatial-intelligence',
+          builder: (context, state) => const SpatialIntelligenceScreen(),
         ),
         GoRoute(
           path: 'discovery',

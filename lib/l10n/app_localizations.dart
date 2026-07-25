@@ -2922,6 +2922,96 @@ abstract class AppLocalizations {
   /// **'Real-world maths, one card at a time'**
   String get mathStudioDiscoverySubtitle;
 
+  /// No description provided for @mathStudioMathMagicTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Math & Magic'**
+  String get mathStudioMathMagicTitle;
+
+  /// No description provided for @mathStudioMathMagicSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Puzzles, patterns and playful mathematical surprises'**
+  String get mathStudioMathMagicSubtitle;
+
+  /// No description provided for @mathStudioMathMagicBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Recreational puzzles, number tricks and mathematical curiosities'**
+  String get mathStudioMathMagicBody;
+
+  /// No description provided for @mathStudioSpatialIntelligenceTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Spatial Intelligence'**
+  String get mathStudioSpatialIntelligenceTitle;
+
+  /// No description provided for @mathStudioSpatialIntelligenceSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Build your sense of shape, space and movement'**
+  String get mathStudioSpatialIntelligenceSubtitle;
+
+  /// No description provided for @mathStudioSpatialIntelligenceBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Cube nets, rotations, transformations and spatial puzzles'**
+  String get mathStudioSpatialIntelligenceBody;
+
+  /// No description provided for @mathStudioInDevelopmentBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'In development'**
+  String get mathStudioInDevelopmentBadge;
+
+  /// No description provided for @mathStudioInDevelopmentNote.
+  ///
+  /// In en, this message translates to:
+  /// **'This area is still being built — check back soon for new content.'**
+  String get mathStudioInDevelopmentNote;
+
+  /// No description provided for @mathStudioSpatialCubeActivitiesLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cube activities'**
+  String get mathStudioSpatialCubeActivitiesLabel;
+
+  /// No description provided for @mathStudioSpatialRotationsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Rotations'**
+  String get mathStudioSpatialRotationsLabel;
+
+  /// No description provided for @mathStudioSpatialTransformationsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Transformations'**
+  String get mathStudioSpatialTransformationsLabel;
+
+  /// No description provided for @mathStudioSpatialPuzzlesLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Spatial puzzles'**
+  String get mathStudioSpatialPuzzlesLabel;
+
+  /// No description provided for @mathStudioFeaturedFormatsSectionLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Featured formats'**
+  String get mathStudioFeaturedFormatsSectionLabel;
+
+  /// No description provided for @mathStudioRelatedLabsSectionLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Related labs'**
+  String get mathStudioRelatedLabsSectionLabel;
+
+  /// No description provided for @mathStudioSpatialLabsEntrySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Try Flight Path Lab and other hands-on tools that build spatial reasoning'**
+  String get mathStudioSpatialLabsEntrySubtitle;
+
   /// No description provided for @mathStudioCategoryEverydayLife.
   ///
   /// In en, this message translates to:

@@ -5,6 +5,7 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../app/safe_navigation.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../widgets/shared/route_link_card.dart';
 
 /// Interactive Labs landing page. Curriculum-independent, reachable from the
 /// Math Studio hub — mirrors [MathStudioHubScreen]'s route-card layout.
@@ -42,7 +43,7 @@ class InteractiveLabsHubScreen extends StatelessWidget {
                     style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 15, height: 1.4),
                   ),
                   const SizedBox(height: AppSpacing.lg),
-                  _LabRouteCard(
+                  RouteLinkCard(
                     icon: LucideIcons.divide,
                     iconColor: const Color(0xFF34C759),
                     title: l10n.labsFractionBuilderTitle,
@@ -50,7 +51,7 @@ class InteractiveLabsHubScreen extends StatelessWidget {
                     onTap: () => context.push('/math-studio/interactive-labs/fraction-builder'),
                   ),
                   const SizedBox(height: 10),
-                  _LabRouteCard(
+                  RouteLinkCard(
                     icon: LucideIcons.scale,
                     iconColor: const Color(0xFF5B8EFF),
                     title: l10n.labsAlgebraBalanceTitle,
@@ -58,7 +59,7 @@ class InteractiveLabsHubScreen extends StatelessWidget {
                     onTap: () => context.push('/math-studio/interactive-labs/algebra-balance'),
                   ),
                   const SizedBox(height: 10),
-                  _LabRouteCard(
+                  RouteLinkCard(
                     icon: LucideIcons.moveHorizontal,
                     iconColor: const Color(0xFF7C5FFF),
                     title: l10n.labsNumberLineExplorerTitle,
@@ -67,7 +68,7 @@ class InteractiveLabsHubScreen extends StatelessWidget {
                         context.push('/math-studio/interactive-labs/number-line-explorer'),
                   ),
                   const SizedBox(height: 10),
-                  _LabRouteCard(
+                  RouteLinkCard(
                     icon: LucideIcons.plane,
                     iconColor: const Color(0xFFFFBD00),
                     title: l10n.labsFlightPathLabTitle,
@@ -75,7 +76,7 @@ class InteractiveLabsHubScreen extends StatelessWidget {
                     onTap: () => context.push('/math-studio/interactive-labs/flight-path-lab'),
                   ),
                   const SizedBox(height: 10),
-                  _LabRouteCard(
+                  RouteLinkCard(
                     icon: LucideIcons.barChart2,
                     iconColor: const Color(0xFF00BCD4),
                     title: l10n.labsDataDetectiveTitle,
@@ -85,76 +86,6 @@ class InteractiveLabsHubScreen extends StatelessWidget {
                 ],
               ),
             ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _LabRouteCard extends StatelessWidget {
-  final IconData icon;
-  final Color iconColor;
-  final String title;
-  final String subtitle;
-  final VoidCallback onTap;
-
-  const _LabRouteCard({
-    required this.icon,
-    required this.iconColor,
-    required this.title,
-    required this.subtitle,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      color: const Color(0xFF132040),
-      borderRadius: BorderRadius.circular(14),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(14),
-        onTap: onTap,
-        child: Container(
-          padding: const EdgeInsets.all(14),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(14),
-            border: Border.all(color: const Color(0xFF1F3055)),
-          ),
-          child: Row(
-            children: [
-              Container(
-                width: 44,
-                height: 44,
-                decoration: BoxDecoration(
-                  color: iconColor.withValues(alpha: 0.15),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Icon(icon, color: iconColor, size: 22),
-              ),
-              const SizedBox(width: 14),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                    const SizedBox(height: 3),
-                    Text(
-                      subtitle,
-                      style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13, height: 1.3),
-                    ),
-                  ],
-                ),
-              ),
-              const Icon(Icons.chevron_right, color: Color(0xFF4A6080)),
-            ],
           ),
         ),
       ),

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../app/safe_navigation.dart';
 import '../../models/mental_maths_challenge.dart';
 import '../../services/mental_maths_progress_service.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../widgets/shared/route_link_card.dart';
+import '../../widgets/shared/section_label.dart';
 import 'mental_maths_category_labels.dart';
 
 /// Lists the 10 Mental Maths categories. Untimed by default, deterministic
@@ -47,6 +50,16 @@ class MentalMathsHubScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(bottom: AppSpacing.sm),
                     child: _CategoryCard(category: category),
                   ),
+                const SizedBox(height: AppSpacing.md),
+                SectionLabel(text: l10n.mathStudioFeaturedFormatsSectionLabel),
+                const SizedBox(height: AppSpacing.sm),
+                RouteLinkCard(
+                  icon: LucideIcons.zap,
+                  iconColor: const Color(0xFF34C759),
+                  title: l10n.mathStudioRecallCardsTitle,
+                  subtitle: l10n.mathStudioRecallCardsSubtitle,
+                  onTap: () => context.push('/math-studio/recall-cards'),
+                ),
               ],
             ),
           ),

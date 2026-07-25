@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../app/safe_navigation.dart';
 import '../../models/visual_maths_tool.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../widgets/shared/route_link_card.dart';
+import '../../widgets/shared/section_label.dart';
 
 /// Lists the 4 Visual Maths tools. Number Line is the RC1 polished
 /// interactive; the other 3 are bounded static-example placeholders — the
@@ -42,6 +45,24 @@ class VisualMathsHubScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(bottom: AppSpacing.sm),
                     child: _ToolCard(meta: meta),
                   ),
+                const SizedBox(height: AppSpacing.md),
+                SectionLabel(text: l10n.mathStudioFeaturedFormatsSectionLabel),
+                const SizedBox(height: AppSpacing.sm),
+                RouteLinkCard(
+                  icon: LucideIcons.zap,
+                  iconColor: const Color(0xFF34C759),
+                  title: l10n.mathStudioRecallCardsTitle,
+                  subtitle: l10n.mathStudioRecallCardsSubtitle,
+                  onTap: () => context.push('/math-studio/recall-cards'),
+                ),
+                const SizedBox(height: AppSpacing.sm),
+                RouteLinkCard(
+                  icon: LucideIcons.flaskConical,
+                  iconColor: const Color(0xFF00BCD4),
+                  title: l10n.mathStudioInteractiveLabsTitle,
+                  subtitle: l10n.mathStudioInteractiveLabsSubtitle,
+                  onTap: () => context.push('/math-studio/interactive-labs'),
+                ),
               ],
             ),
           ),
