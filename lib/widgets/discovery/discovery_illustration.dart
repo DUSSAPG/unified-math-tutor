@@ -2,19 +2,47 @@ import 'package:flutter/material.dart';
 
 import '../../models/discovery_card.dart';
 
-/// Renders a card's illustration. RC1 ships no bundled per-card artwork yet
-/// (see the ComfyUI-ready asset-interface deliverable for the future
-/// pipeline), so every [illustrationAssetId] currently resolves to this
-/// accessible, deterministic, category-based placeholder rather than a
-/// missing-image glyph.
+/// Illustration ids with an approved, promoted PNG under
+/// `assets/discovery_illustrations/`. The generation/approval record for
+/// each — prompt, seed, checkpoint, reviewer timestamp — lives in
+/// `content/pipelines/discovery_illustrations/manifest.json`; nothing here
+/// is added except through that reviewed, approved pipeline.
+const _approvedIllustrationIds = <String>{
+  'shopping_percentage_discount',
+  'shopping_comparing_offers',
+  'cooking_fraction_conversion',
+  'everyday_household_budgeting',
+  'cricket_batting_average',
+  'football_pass_accuracy',
+  'football_goal_conversion',
+  'basketball_shooting_percentage',
+  'basketball_points_per_shot',
+  'baseball_batting_average',
+  'baseball_field_geometry',
+  'tennis_first_serve_percentage',
+  'aviation_speed_distance_time',
+  'trucking_fuel_economy',
+  'trucking_delivery_scheduling',
+  'healthcare_nurse_metric_conversion',
+  'healthcare_temperature_conversion',
+  'aviation_fuel_endurance',
+  'americanfootball_completion_percentage',
+  'everyday_split_a_bill',
+  'americanfootball_yards_per_play',
+  'cooking_scale_a_recipe',
+  'cricket_required_run_rate',
+  'tennis_court_dimensions',
+};
+
+/// Renders a card's illustration: an approved, generated PNG where one
+/// exists for [DiscoveryCard.illustrationAssetId], otherwise the
+/// accessible, deterministic, category-based icon placeholder below — never
+/// a missing-image glyph.
 ///
-/// [headerImageAssetPath] is the prepared slot for that future mid-century
-/// ComfyUI artwork: no Discovery Card sets it today (no unapproved artwork
-/// has been generated or installed), so every call site currently falls
-/// straight through to the icon placeholder below. Once an approved image
-/// is installed for a card, passing its asset path here is the only change
-/// needed — the icon rendering remains as the permanent fallback if the
-/// asset is ever missing.
+/// [headerImageAssetPath] is an explicit override for a specific asset path
+/// (rarely needed — the approved-id lookup above covers normal cases); the
+/// icon fallback remains the permanent fallback if a referenced asset is
+/// ever missing.
 class DiscoveryIllustration extends StatelessWidget {
   const DiscoveryIllustration({
     super.key,
@@ -84,7 +112,10 @@ class DiscoveryIllustration extends StatelessWidget {
     final sport = card.sport;
     final icon = sport != null ? _sportIcons[sport]! : _categoryIcons[card.category]!;
     final color = _categoryColors[card.category]!;
-    final imagePath = headerImageAssetPath;
+    final imagePath = headerImageAssetPath ??
+        (_approvedIllustrationIds.contains(card.illustrationAssetId)
+            ? 'assets/discovery_illustrations/${card.illustrationAssetId}.png'
+            : null);
 
     return Semantics(
       label: semanticLabel,
