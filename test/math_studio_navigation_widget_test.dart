@@ -32,11 +32,14 @@ void main() {
   const viewports = [
     Size(320, 568), // smallest supported phone (iPhone SE-class)
     Size(360, 640), // common small Android phone
+    Size(375, 667), // iPhone 6/7/8-class
     Size(390, 844), // phone (Pixel 6a-class)
     Size(412, 915), // common large Android phone
+    Size(430, 932), // iPhone 14/15 Pro Max-class
     Size(600, 960), // small tablet
     Size(768, 1024), // portrait tablet
     Size(844, 390), // landscape phone
+    Size(915, 412), // landscape phone (large Android)
     Size(1280, 800), // landscape tablet / desktop
   ];
 
@@ -209,39 +212,42 @@ void main() {
     },
   );
 
-  testWidgets(
-    'Math Studio hub and all six pillars render without overflow at 1.6x text scale',
-    (tester) async {
-      addTearDown(tester.view.resetPhysicalSize);
-      addTearDown(tester.view.resetDevicePixelRatio);
+  for (final scale in [1.3, 1.6, 2.0]) {
+    testWidgets(
+      'Math Studio hub and all six pillars render without overflow at ${scale}x text scale',
+      (tester) async {
+        addTearDown(tester.view.resetPhysicalSize);
+        addTearDown(tester.view.resetDevicePixelRatio);
 
-      for (final viewport in viewports) {
-        tester.view.physicalSize = viewport;
-        tester.view.devicePixelRatio = 1;
+        for (final viewport in viewports) {
+          tester.view.physicalSize = viewport;
+          tester.view.devicePixelRatio = 1;
 
-        final l10n = await AppLocalizations.delegate.load(const Locale('en'));
-        await pumpHub(tester, const Locale('en'), textScale: 1.6);
+          final l10n = await AppLocalizations.delegate.load(const Locale('en'));
+          await pumpHub(tester, const Locale('en'), textScale: scale);
 
-        expect(
-          tester.takeException(),
-          isNull,
-          reason: 'Hub overflowed at 1.6x text scale, $viewport',
-        );
+          expect(
+            tester.takeException(),
+            isNull,
+            reason: 'Hub overflowed at ${scale}x text scale, $viewport',
+          );
 
-        final pillarTitles = [
-          l10n.mathStudioBuildConfidenceTitle,
-          l10n.mathStudioMentalMathsTitle,
-          l10n.mathStudioVisualMathsTitle,
-          l10n.mathStudioMathMagicTitle,
-          l10n.mathStudioSpatialIntelligenceTitle,
-          l10n.mathStudioDiscoveryTitle,
-        ];
-        for (final title in pillarTitles) {
-          expect(find.text(title), findsOneWidget, reason: '$title missing at 1.6x, $viewport');
+          final pillarTitles = [
+            l10n.mathStudioBuildConfidenceTitle,
+            l10n.mathStudioMentalMathsTitle,
+            l10n.mathStudioVisualMathsTitle,
+            l10n.mathStudioMathMagicTitle,
+            l10n.mathStudioSpatialIntelligenceTitle,
+            l10n.mathStudioDiscoveryTitle,
+          ];
+          for (final title in pillarTitles) {
+            expect(find.text(title), findsOneWidget,
+                reason: '$title missing at ${scale}x, $viewport');
+          }
+
+          await tester.pumpWidget(const SizedBox.shrink());
         }
-
-        await tester.pumpWidget(const SizedBox.shrink());
-      }
-    },
-  );
+      },
+    );
+  }
 }

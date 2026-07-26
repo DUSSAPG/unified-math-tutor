@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
+import '../../shared/responsive/app_breakpoints.dart';
 import '../../shared/theme/app_spacing.dart';
 
 /// Shared shell for the 3 bounded Visual Maths placeholders (Fraction Bars,
@@ -40,7 +41,7 @@ class VisualMathsPlaceholderScaffold extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 560),
+            constraints: BoxConstraints(maxWidth: AppResponsive.contentMaxWidth(context)),
             child: Padding(
               padding: const EdgeInsets.all(AppSpacing.md),
               child: Column(

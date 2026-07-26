@@ -1601,6 +1601,10 @@ class AppLocalizationsIt extends AppLocalizations {
       'Try Flight Path Lab and other hands-on tools that build spatial reasoning';
 
   @override
+  String get mathStudioDiscoveryEmptyCategory =>
+      'More cards for this category are coming soon.';
+
+  @override
   String get mathStudioCategoryEverydayLife => 'Everyday Life';
 
   @override
@@ -4454,6 +4458,10 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
   @override
   String get mathStudioSpatialLabsEntrySubtitle =>
       'Prova Flight Path Lab e altri strumenti pratici che sviluppano il ragionamento spaziale';
+
+  @override
+  String get mathStudioDiscoveryEmptyCategory =>
+      'Altre carte per questa categoria arriveranno presto.';
 
   @override
   String get mathStudioCategoryEverydayLife => 'Vita quotidiana';

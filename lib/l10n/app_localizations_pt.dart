@@ -1598,6 +1598,10 @@ class AppLocalizationsPt extends AppLocalizations {
       'Try Flight Path Lab and other hands-on tools that build spatial reasoning';
 
   @override
+  String get mathStudioDiscoveryEmptyCategory =>
+      'More cards for this category are coming soon.';
+
+  @override
   String get mathStudioCategoryEverydayLife => 'Everyday Life';
 
   @override

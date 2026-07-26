@@ -6,6 +6,7 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 import '../../app/safe_navigation.dart';
 import '../../models/discovery_card.dart';
 import '../../services/discovery_card_catalog_service.dart';
+import '../../shared/responsive/app_breakpoints.dart';
 import '../../shared/theme/app_spacing.dart';
 import '../../widgets/discovery/discovery_illustration.dart';
 import '../../widgets/shared/route_link_card.dart';
@@ -52,7 +53,8 @@ class _DiscoveryLibraryScreenState extends State<DiscoveryLibraryScreen> {
         ),
         title: Text(
           l10n.mathStudioDiscoveryTitle,
-          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+          style:
+              const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
         ),
       ),
       body: SafeArea(
@@ -61,7 +63,8 @@ class _DiscoveryLibraryScreenState extends State<DiscoveryLibraryScreen> {
           builder: (context, snapshot) {
             if (snapshot.hasError) {
               return const Center(
-                child: Icon(Icons.error_outline, color: Color(0xFF8A9DC0), size: 32),
+                child: Icon(Icons.error_outline,
+                    color: Color(0xFF8A9DC0), size: 32),
               );
             }
             final cards = snapshot.data;
@@ -71,93 +74,160 @@ class _DiscoveryLibraryScreenState extends State<DiscoveryLibraryScreen> {
             final visible = _filter == null
                 ? cards
                 : cards.where((card) => card.category == _filter).toList();
+            // A little taller than the tile's nominal content height, and
+            // scaled (bounded, not unlimited) with the active text scale
+            // factor, so locale text-length/font-metric variance and large
+            // accessibility text sizes can't tip it into a RenderFlex
+            // overflow on narrow phones.
+            final tileExtent = 216 *
+                MediaQuery.textScalerOf(context).scale(1.0).clamp(1.0, 1.6);
 
-            return Column(
-              children: [
-                SizedBox(
-                  height: 52,
-                  // A visible scrollbar affordance so narrow-phone learners
-                  // can see there are more categories than fit on screen,
-                  // not just discover it by accidentally swiping.
-                  child: Scrollbar(
-                    controller: _categoryScrollController,
-                    thumbVisibility: true,
-                    child: ListView(
-                      controller: _categoryScrollController,
-                      scrollDirection: Axis.horizontal,
-                      padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
-                      children: [
-                        _FilterChip(
-                          label: l10n.mathStudioCategoryAll,
-                          selected: _filter == null,
-                          onTap: () => setState(() => _filter = null),
+            return Center(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                    maxWidth: AppResponsive.contentMaxWidth(context)),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 52,
+                      // A visible scrollbar affordance so narrow-phone learners
+                      // can see there are more categories than fit on screen,
+                      // not just discover it by accidentally swiping.
+                      child: Scrollbar(
+                        controller: _categoryScrollController,
+                        thumbVisibility: true,
+                        child: ListView(
+                          key: const Key('discoveryCategoryChipRow'),
+                          controller: _categoryScrollController,
+                          scrollDirection: Axis.horizontal,
+                          padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
+                          children: [
+                            _FilterChip(
+                              label: l10n.mathStudioCategoryAll,
+                              selected: _filter == null,
+                              onTap: () => setState(() => _filter = null),
+                            ),
+                            for (final category in DiscoveryCategory.values)
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8),
+                                child: _FilterChip(
+                                  label: discoveryCategoryLabel(l10n, category),
+                                  selected: _filter == category,
+                                  onTap: () =>
+                                      setState(() => _filter = category),
+                                ),
+                              ),
+                          ],
                         ),
-                        for (final category in DiscoveryCategory.values)
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8),
-                            child: _FilterChip(
-                              label: discoveryCategoryLabel(l10n, category),
-                              selected: _filter == category,
-                              onTap: () => setState(() => _filter = category),
+                      ),
+                    ),
+                    // Grid (or the empty-category message) and the
+                    // "Related labs" footer share one scrollable region
+                    // (rather than the footer sitting as a rigid,
+                    // non-scrolling sibling) so a tall footer at large text
+                    // scale can never push the Column past the available
+                    // height — it scrolls with the content instead of
+                    // forcing an overflow.
+                    Expanded(
+                      child: CustomScrollView(
+                        key: const Key('discoveryContentScrollView'),
+                        slivers: [
+                          if (visible.isEmpty)
+                            SliverFillRemaining(
+                              hasScrollBody: false,
+                              child: _EmptyCategoryState(
+                                message: l10n.mathStudioDiscoveryEmptyCategory,
+                              ),
+                            )
+                          else
+                            SliverPadding(
+                              padding: const EdgeInsets.all(AppSpacing.md),
+                              sliver: SliverGrid(
+                                gridDelegate:
+                                    SliverGridDelegateWithMaxCrossAxisExtent(
+                                  maxCrossAxisExtent: 260,
+                                  mainAxisExtent: tileExtent,
+                                  crossAxisSpacing: AppSpacing.sm,
+                                  mainAxisSpacing: AppSpacing.sm,
+                                ),
+                                delegate: SliverChildBuilderDelegate(
+                                  (context, index) {
+                                    final card = visible[index];
+                                    final text = card.textFor(
+                                        Localizations.localeOf(context));
+                                    return _DiscoveryCardTile(
+                                      card: card,
+                                      title: text.title,
+                                      illustrationAlt: text.illustrationAlt,
+                                      categoryLabel: discoveryCategoryLabel(
+                                          l10n, card.category),
+                                      difficultyLabel: discoveryDifficultyLabel(
+                                          l10n, card.difficulty),
+                                      onTap: () => context.push(
+                                          '/math-studio/discovery/${card.id}'),
+                                    );
+                                  },
+                                  childCount: visible.length,
+                                ),
+                              ),
+                            ),
+                          SliverToBoxAdapter(
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(
+                                AppSpacing.md,
+                                0,
+                                AppSpacing.md,
+                                AppSpacing.md,
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SectionLabel(
+                                      text: l10n
+                                          .mathStudioRelatedLabsSectionLabel),
+                                  const SizedBox(height: AppSpacing.sm),
+                                  RouteLinkCard(
+                                    icon: LucideIcons.flaskConical,
+                                    iconColor: const Color(0xFF00BCD4),
+                                    title: l10n.mathStudioInteractiveLabsTitle,
+                                    subtitle:
+                                        l10n.mathStudioInteractiveLabsSubtitle,
+                                    onTap: () => context
+                                        .push('/math-studio/interactive-labs'),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
-                      ],
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: GridView.builder(
-                    padding: const EdgeInsets.all(AppSpacing.md),
-                    gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                      maxCrossAxisExtent: 260,
-                      // A little taller than the tile's nominal content
-                      // height so locale text-length/font-metric variance
-                      // (and larger text scales) can't tip it into a
-                      // RenderFlex overflow on narrow phones.
-                      mainAxisExtent: 216,
-                      crossAxisSpacing: AppSpacing.sm,
-                      mainAxisSpacing: AppSpacing.sm,
-                    ),
-                    itemCount: visible.length,
-                    itemBuilder: (context, index) {
-                      final card = visible[index];
-                      final text = card.textFor(Localizations.localeOf(context));
-                      return _DiscoveryCardTile(
-                        card: card,
-                        title: text.title,
-                        illustrationAlt: text.illustrationAlt,
-                        categoryLabel: discoveryCategoryLabel(l10n, card.category),
-                        difficultyLabel: discoveryDifficultyLabel(l10n, card.difficulty),
-                        onTap: () => context.push('/math-studio/discovery/${card.id}'),
-                      );
-                    },
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(
-                    AppSpacing.md,
-                    0,
-                    AppSpacing.md,
-                    AppSpacing.md,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SectionLabel(text: l10n.mathStudioRelatedLabsSectionLabel),
-                      const SizedBox(height: AppSpacing.sm),
-                      RouteLinkCard(
-                        icon: LucideIcons.flaskConical,
-                        iconColor: const Color(0xFF00BCD4),
-                        title: l10n.mathStudioInteractiveLabsTitle,
-                        subtitle: l10n.mathStudioInteractiveLabsSubtitle,
-                        onTap: () => context.push('/math-studio/interactive-labs'),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             );
           },
+        ),
+      ),
+    );
+  }
+}
+
+class _EmptyCategoryState extends StatelessWidget {
+  const _EmptyCategoryState({required this.message});
+
+  final String message;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(AppSpacing.lg),
+        child: Text(
+          message,
+          textAlign: TextAlign.center,
+          style: const TextStyle(
+              color: Color(0xFF8A9DC0), fontSize: 14, height: 1.4),
         ),
       ),
     );
@@ -169,7 +239,8 @@ class _FilterChip extends StatelessWidget {
   final bool selected;
   final VoidCallback onTap;
 
-  const _FilterChip({required this.label, required this.selected, required this.onTap});
+  const _FilterChip(
+      {required this.label, required this.selected, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -183,7 +254,8 @@ class _FilterChip extends StatelessWidget {
         color: selected ? Colors.white : const Color(0xFF8A9DC0),
         fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
       ),
-      side: BorderSide(color: selected ? const Color(0xFF5B8EFF) : const Color(0xFF1F3055)),
+      side: BorderSide(
+          color: selected ? const Color(0xFF5B8EFF) : const Color(0xFF1F3055)),
     );
   }
 }
@@ -223,7 +295,8 @@ class _DiscoveryCardTile extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              DiscoveryIllustration(card: card, semanticLabel: illustrationAlt, size: 48),
+              DiscoveryIllustration(
+                  card: card, semanticLabel: illustrationAlt, size: 48),
               const SizedBox(height: 8),
               Text(
                 title,
@@ -269,7 +342,8 @@ class _Badge extends StatelessWidget {
       ),
       child: Text(
         text,
-        style: TextStyle(color: color, fontSize: 10, fontWeight: FontWeight.w600),
+        style:
+            TextStyle(color: color, fontSize: 10, fontWeight: FontWeight.w600),
       ),
     );
   }

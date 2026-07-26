@@ -77,7 +77,8 @@ void main() {
       // above this entry card), so the card isn't in the element tree until
       // scrolled into range — scrollUntilVisible handles that; ensureVisible
       // does not.
-      await tester.scrollUntilVisible(find.text(l10n.mathStudioRecallCardsTitle), 200);
+      await tester.scrollUntilVisible(
+          find.text(l10n.mathStudioRecallCardsTitle), 200);
       await tester.tap(find.text(l10n.mathStudioRecallCardsTitle));
       await tester.pumpAndSettle();
       expect(find.byType(RecallCardsHubScreen), findsOneWidget);
@@ -85,7 +86,8 @@ void main() {
       await tester.tap(find.byIcon(Icons.arrow_back));
       await tester.pumpAndSettle();
       expect(find.byType(MentalMathsHubScreen), findsOneWidget,
-          reason: 'Back from Recall Cards should return to Mental Maths, not the Studio hub');
+          reason:
+              'Back from Recall Cards should return to Mental Maths, not the Studio hub');
     },
   );
 
@@ -97,7 +99,8 @@ void main() {
 
       // VisualMathsHubScreen is also a lazily-built ListView — see the note
       // in the Mental Maths test above.
-      await tester.scrollUntilVisible(find.text(l10n.mathStudioRecallCardsTitle), 200);
+      await tester.scrollUntilVisible(
+          find.text(l10n.mathStudioRecallCardsTitle), 200);
       await tester.tap(find.text(l10n.mathStudioRecallCardsTitle));
       await tester.pumpAndSettle();
       expect(find.byType(RecallCardsHubScreen), findsOneWidget);
@@ -105,7 +108,8 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.byType(VisualMathsHubScreen), findsOneWidget);
 
-      await tester.scrollUntilVisible(find.text(l10n.mathStudioInteractiveLabsTitle), 200);
+      await tester.scrollUntilVisible(
+          find.text(l10n.mathStudioInteractiveLabsTitle), 200);
       await tester.tap(find.text(l10n.mathStudioInteractiveLabsTitle));
       await tester.pumpAndSettle();
       expect(find.byType(InteractiveLabsHubScreen), findsOneWidget);
@@ -121,7 +125,8 @@ void main() {
       final l10n = await pumpRoute(tester, '/math-studio/spatial-intelligence');
       expect(find.byType(SpatialIntelligenceScreen), findsOneWidget);
 
-      await tester.ensureVisible(find.text(l10n.mathStudioInteractiveLabsTitle));
+      await tester
+          .ensureVisible(find.text(l10n.mathStudioInteractiveLabsTitle));
       await tester.tap(find.text(l10n.mathStudioInteractiveLabsTitle));
       await tester.pumpAndSettle();
       expect(find.byType(InteractiveLabsHubScreen), findsOneWidget);
@@ -129,7 +134,8 @@ void main() {
       await tester.tap(find.byIcon(Icons.arrow_back));
       await tester.pumpAndSettle();
       expect(find.byType(SpatialIntelligenceScreen), findsOneWidget,
-          reason: 'Back from Interactive Labs should return to Spatial Intelligence');
+          reason:
+              'Back from Interactive Labs should return to Spatial Intelligence');
     },
   );
 
@@ -139,7 +145,19 @@ void main() {
       final l10n = await pumpRoute(tester, '/math-studio/discovery');
       expect(find.byType(DiscoveryLibraryScreen), findsOneWidget);
 
-      await tester.ensureVisible(find.text(l10n.mathStudioInteractiveLabsTitle));
+      // Discovery Library's grid + "Related labs" footer share one
+      // CustomScrollView (a lazily-built sliver list) — ensureVisible
+      // throws "No element" on a target beyond the initial viewport/cache
+      // extent; scrollUntilVisible is required, mirroring the same gotcha
+      // already documented for Mental Maths/Visual Maths hub's ListViews.
+      await tester.scrollUntilVisible(
+        find.text(l10n.mathStudioInteractiveLabsTitle),
+        200,
+        scrollable: find.descendant(
+          of: find.byKey(const Key('discoveryContentScrollView')),
+          matching: find.byType(Scrollable),
+        ),
+      );
       await tester.tap(find.text(l10n.mathStudioInteractiveLabsTitle));
       await tester.pumpAndSettle();
       expect(find.byType(InteractiveLabsHubScreen), findsOneWidget);

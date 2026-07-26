@@ -5,6 +5,7 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 import '../../app/safe_navigation.dart';
 import '../../models/recall_card.dart';
 import '../../services/recall_card_catalog_service.dart';
+import '../../shared/responsive/app_breakpoints.dart';
 import '../../shared/theme/app_spacing.dart';
 import '../../widgets/recall/recall_illustration.dart';
 import 'recall_card_labels.dart';
@@ -16,13 +17,15 @@ import 'recall_card_labels.dart';
 /// an initial filter via [initialTopic]/[initialType]; the "Search" entry
 /// point opens the same screen with both unset and the search field focused.
 class RecallCardsBrowseScreen extends StatefulWidget {
-  const RecallCardsBrowseScreen({super.key, this.initialTopic, this.initialType});
+  const RecallCardsBrowseScreen(
+      {super.key, this.initialTopic, this.initialType});
 
   final RecallTopic? initialTopic;
   final RecallCardType? initialType;
 
   @override
-  State<RecallCardsBrowseScreen> createState() => _RecallCardsBrowseScreenState();
+  State<RecallCardsBrowseScreen> createState() =>
+      _RecallCardsBrowseScreenState();
 }
 
 class _RecallCardsBrowseScreenState extends State<RecallCardsBrowseScreen> {
@@ -75,7 +78,8 @@ class _RecallCardsBrowseScreenState extends State<RecallCardsBrowseScreen> {
         ),
         title: Text(
           l10n.recallCardsHubTitle,
-          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+          style:
+              const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
         ),
       ),
       body: SafeArea(
@@ -85,129 +89,151 @@ class _RecallCardsBrowseScreenState extends State<RecallCardsBrowseScreen> {
             final cards = snapshot.data;
             if (snapshot.hasError) {
               return const Center(
-                child: Icon(Icons.error_outline, color: Color(0xFF8A9DC0), size: 32),
+                child: Icon(Icons.error_outline,
+                    color: Color(0xFF8A9DC0), size: 32),
               );
             }
             if (cards == null) {
               return const Center(child: CircularProgressIndicator());
             }
             final visible = _filtered(cards);
+            // Bounded growth with text scale — mirrors
+            // discovery_library_screen.dart's identical fix for the same
+            // fixed-height grid-tile clipping risk.
+            final tileExtent = 216 *
+                MediaQuery.textScalerOf(context).scale(1.0).clamp(1.0, 1.6);
 
-            return Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
-                  child: TextField(
-                    controller: _searchController,
-                    onChanged: (value) => setState(() => _query = value),
-                    style: const TextStyle(color: Colors.white),
-                    decoration: InputDecoration(
-                      hintText: l10n.recallCardsSearchHint,
-                      hintStyle: const TextStyle(color: Color(0xFF8A9DC0)),
-                      prefixIcon: const Icon(Icons.search, color: Color(0xFF8A9DC0)),
-                      filled: true,
-                      fillColor: const Color(0xFF132040),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide.none,
+            return Center(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                    maxWidth: AppResponsive.contentMaxWidth(context)),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+                      child: TextField(
+                        controller: _searchController,
+                        onChanged: (value) => setState(() => _query = value),
+                        style: const TextStyle(color: Colors.white),
+                        decoration: InputDecoration(
+                          hintText: l10n.recallCardsSearchHint,
+                          hintStyle: const TextStyle(color: Color(0xFF8A9DC0)),
+                          prefixIcon: const Icon(Icons.search,
+                              color: Color(0xFF8A9DC0)),
+                          filled: true,
+                          fillColor: const Color(0xFF132040),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12),
+                            borderSide: BorderSide.none,
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ),
-                SizedBox(
-                  height: 40,
-                  child: Scrollbar(
-                    controller: _topicScrollController,
-                    thumbVisibility: true,
-                    child: ListView(
-                      controller: _topicScrollController,
-                      scrollDirection: Axis.horizontal,
-                      padding: const EdgeInsets.symmetric(horizontal: 12),
-                      children: [
-                        _FilterChip(
-                          label: l10n.mathStudioCategoryAll,
-                          selected: _topicFilter == null,
-                          onTap: () => setState(() => _topicFilter = null),
-                        ),
-                        for (final topic in RecallTopic.values)
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8),
-                            child: _FilterChip(
-                              label: recallTopicLabel(l10n, topic),
-                              selected: _topicFilter == topic,
-                              onTap: () => setState(() => _topicFilter = topic),
+                    SizedBox(
+                      height: 40,
+                      child: Scrollbar(
+                        controller: _topicScrollController,
+                        thumbVisibility: true,
+                        child: ListView(
+                          controller: _topicScrollController,
+                          scrollDirection: Axis.horizontal,
+                          padding: const EdgeInsets.symmetric(horizontal: 12),
+                          children: [
+                            _FilterChip(
+                              label: l10n.mathStudioCategoryAll,
+                              selected: _topicFilter == null,
+                              onTap: () => setState(() => _topicFilter = null),
                             ),
-                          ),
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 6),
-                SizedBox(
-                  height: 40,
-                  child: Scrollbar(
-                    controller: _typeScrollController,
-                    thumbVisibility: true,
-                    child: ListView(
-                      controller: _typeScrollController,
-                      scrollDirection: Axis.horizontal,
-                      padding: const EdgeInsets.symmetric(horizontal: 12),
-                      children: [
-                        _FilterChip(
-                          label: l10n.mathStudioCategoryAll,
-                          selected: _typeFilter == null,
-                          onTap: () => setState(() => _typeFilter = null),
+                            for (final topic in RecallTopic.values)
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8),
+                                child: _FilterChip(
+                                  label: recallTopicLabel(l10n, topic),
+                                  selected: _topicFilter == topic,
+                                  onTap: () =>
+                                      setState(() => _topicFilter = topic),
+                                ),
+                              ),
+                          ],
                         ),
-                        for (final type in RecallCardType.values)
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8),
-                            child: _FilterChip(
-                              label: recallCardTypeLabel(l10n, type),
-                              selected: _typeFilter == type,
-                              onTap: () => setState(() => _typeFilter = type),
+                      ),
+                    ),
+                    const SizedBox(height: 6),
+                    SizedBox(
+                      height: 40,
+                      child: Scrollbar(
+                        controller: _typeScrollController,
+                        thumbVisibility: true,
+                        child: ListView(
+                          controller: _typeScrollController,
+                          scrollDirection: Axis.horizontal,
+                          padding: const EdgeInsets.symmetric(horizontal: 12),
+                          children: [
+                            _FilterChip(
+                              label: l10n.mathStudioCategoryAll,
+                              selected: _typeFilter == null,
+                              onTap: () => setState(() => _typeFilter = null),
                             ),
-                          ),
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 8),
-                Expanded(
-                  child: visible.isEmpty
-                      ? Center(
-                          child: Text(
-                            l10n.recallCardsNoResults,
-                            style: const TextStyle(color: Color(0xFF8A9DC0)),
-                          ),
-                        )
-                      : GridView.builder(
-                          padding: const EdgeInsets.all(AppSpacing.md),
-                          gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                            maxCrossAxisExtent: 260,
-                            // Extra headroom over the tile's nominal content
-                            // height so locale text-length/font-metric
-                            // variance can't tip it into overflow on narrow
-                            // phones (mirrors discovery_library_screen.dart).
-                            mainAxisExtent: 216,
-                            crossAxisSpacing: AppSpacing.sm,
-                            mainAxisSpacing: AppSpacing.sm,
-                          ),
-                          itemCount: visible.length,
-                          itemBuilder: (context, index) {
-                            final card = visible[index];
-                            final text = card.textFor(Localizations.localeOf(context));
-                            return _RecallCardTile(
-                              card: card,
-                              prompt: text.frontPrompt,
-                              typeLabel: recallCardTypeLabel(l10n, card.cardType),
-                              difficultyLabel: discoveryDifficultyLabel(l10n, card.difficulty),
-                              onTap: () =>
-                                  context.push('/math-studio/recall-cards/card/${card.id}'),
-                            );
-                          },
+                            for (final type in RecallCardType.values)
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8),
+                                child: _FilterChip(
+                                  label: recallCardTypeLabel(l10n, type),
+                                  selected: _typeFilter == type,
+                                  onTap: () =>
+                                      setState(() => _typeFilter = type),
+                                ),
+                              ),
+                          ],
                         ),
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Expanded(
+                      child: visible.isEmpty
+                          ? Center(
+                              child: Text(
+                                l10n.recallCardsNoResults,
+                                style:
+                                    const TextStyle(color: Color(0xFF8A9DC0)),
+                              ),
+                            )
+                          : GridView.builder(
+                              padding: const EdgeInsets.all(AppSpacing.md),
+                              gridDelegate:
+                                  SliverGridDelegateWithMaxCrossAxisExtent(
+                                maxCrossAxisExtent: 260,
+                                // Extra headroom over the tile's nominal content
+                                // height, scaled with the active text scale
+                                // factor, so locale text-length/font-metric
+                                // variance and large accessibility text sizes
+                                // can't tip it into overflow on narrow phones
+                                // (mirrors discovery_library_screen.dart).
+                                mainAxisExtent: tileExtent,
+                                crossAxisSpacing: AppSpacing.sm,
+                                mainAxisSpacing: AppSpacing.sm,
+                              ),
+                              itemCount: visible.length,
+                              itemBuilder: (context, index) {
+                                final card = visible[index];
+                                final text = card
+                                    .textFor(Localizations.localeOf(context));
+                                return _RecallCardTile(
+                                  card: card,
+                                  prompt: text.frontPrompt,
+                                  typeLabel:
+                                      recallCardTypeLabel(l10n, card.cardType),
+                                  difficultyLabel: discoveryDifficultyLabel(
+                                      l10n, card.difficulty),
+                                  onTap: () => context.push(
+                                      '/math-studio/recall-cards/card/${card.id}'),
+                                );
+                              },
+                            ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             );
           },
         ),
@@ -221,7 +247,8 @@ class _FilterChip extends StatelessWidget {
   final bool selected;
   final VoidCallback onTap;
 
-  const _FilterChip({required this.label, required this.selected, required this.onTap});
+  const _FilterChip(
+      {required this.label, required this.selected, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -235,7 +262,8 @@ class _FilterChip extends StatelessWidget {
         color: selected ? Colors.white : const Color(0xFF8A9DC0),
         fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
       ),
-      side: BorderSide(color: selected ? const Color(0xFF5B8EFF) : const Color(0xFF1F3055)),
+      side: BorderSide(
+          color: selected ? const Color(0xFF5B8EFF) : const Color(0xFF1F3055)),
     );
   }
 }
@@ -279,7 +307,10 @@ class _RecallCardTile extends StatelessWidget {
                 prompt,
                 maxLines: 3,
                 overflow: TextOverflow.ellipsis,
-                style: const TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w700),
+                style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 13,
+                    fontWeight: FontWeight.w700),
               ),
               const Spacer(),
               Wrap(
@@ -315,7 +346,8 @@ class _Badge extends StatelessWidget {
       ),
       child: Text(
         text,
-        style: TextStyle(color: color, fontSize: 10, fontWeight: FontWeight.w600),
+        style:
+            TextStyle(color: color, fontSize: 10, fontWeight: FontWeight.w600),
       ),
     );
   }

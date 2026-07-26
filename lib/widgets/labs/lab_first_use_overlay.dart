@@ -7,14 +7,24 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 /// widget: it needs to block interaction with the lab until dismissed and
 /// must work identically with a screen reader, which a dialog already does
 /// for free.
-Future<void> showLabFirstUseWalkthrough(BuildContext context, List<String> steps) {
+Future<void> showLabFirstUseWalkthrough(
+    BuildContext context, List<String> steps) {
   final l10n = AppLocalizations.of(context);
   return showDialog<void>(
     context: context,
     barrierDismissible: true,
     builder: (context) => AlertDialog(
       backgroundColor: const Color(0xFF132040),
-      title: Text(l10n.labsFirstUseTitle, style: const TextStyle(color: Colors.white)),
+      // Flutter's default 40px horizontal inset leaves only ~240px of
+      // usable width on a 320px phone — tight for a numbered-step list.
+      // Narrower insets below a small-phone width give the content more
+      // room without risking the dialog exceeding a wider viewport.
+      insetPadding: EdgeInsets.symmetric(
+        horizontal: MediaQuery.sizeOf(context).width < 360 ? 16 : 40,
+        vertical: 24,
+      ),
+      title: Text(l10n.labsFirstUseTitle,
+          style: const TextStyle(color: Colors.white)),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,7 +56,8 @@ Future<void> showLabFirstUseWalkthrough(BuildContext context, List<String> steps
                   Expanded(
                     child: Text(
                       steps[i],
-                      style: const TextStyle(color: Colors.white, fontSize: 14, height: 1.35),
+                      style: const TextStyle(
+                          color: Colors.white, fontSize: 14, height: 1.35),
                     ),
                   ),
                 ],

@@ -3012,6 +3012,12 @@ abstract class AppLocalizations {
   /// **'Try Flight Path Lab and other hands-on tools that build spatial reasoning'**
   String get mathStudioSpatialLabsEntrySubtitle;
 
+  /// No description provided for @mathStudioDiscoveryEmptyCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'More cards for this category are coming soon.'**
+  String get mathStudioDiscoveryEmptyCategory;
+
   /// No description provided for @mathStudioCategoryEverydayLife.
   ///
   /// In en, this message translates to:

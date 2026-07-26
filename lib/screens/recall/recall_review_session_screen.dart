@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../app/safe_navigation.dart';
+import '../../shared/responsive/app_breakpoints.dart';
 import '../../models/recall_card.dart';
 import '../../services/nav_visibility_service.dart';
 import '../../services/recall_cards_progress_service.dart';
@@ -100,7 +101,7 @@ class _RecallReviewSessionScreenState extends State<RecallReviewSessionScreen> {
       body: SafeArea(
         child: Center(
           child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 560),
+            constraints: BoxConstraints(maxWidth: AppResponsive.contentMaxWidth(context)),
             child: complete
                 ? _SessionCompleteView(
                     onDone: () => popOrGo(context, '/math-studio/recall-cards'),

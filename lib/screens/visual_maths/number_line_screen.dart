@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../app/safe_navigation.dart';
+import '../../shared/responsive/app_breakpoints.dart';
 import '../../models/number_line_example.dart';
 import '../../services/nav_visibility_service.dart';
 import '../../services/number_line_examples_service.dart';
@@ -83,7 +84,7 @@ class _NumberLineScreenState extends State<NumberLineScreen> {
 
             return Center(
               child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 560),
+                constraints: BoxConstraints(maxWidth: AppResponsive.contentMaxWidth(context)),
                 child: Padding(
                   padding: const EdgeInsets.all(AppSpacing.md),
                   child: Column(

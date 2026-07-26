@@ -4,6 +4,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../app/safe_navigation.dart';
+import '../../shared/responsive/app_breakpoints.dart';
 import '../../models/visual_maths_tool.dart';
 import '../../shared/theme/app_spacing.dart';
 import '../../widgets/shared/route_link_card.dart';
@@ -36,7 +37,7 @@ class VisualMathsHubScreen extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 560),
+            constraints: BoxConstraints(maxWidth: AppResponsive.contentMaxWidth(context)),
             child: ListView(
               padding: const EdgeInsets.all(AppSpacing.md),
               children: [

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../app/safe_navigation.dart';
+import '../../shared/responsive/app_breakpoints.dart';
 import '../../models/interactive_lab_id.dart';
 import '../../services/audio_cue_service.dart';
 import '../../services/captain_math_service.dart';
@@ -157,7 +158,7 @@ class _LabScaffoldState extends State<LabScaffold> {
       body: SafeArea(
         child: Center(
           child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 640),
+            constraints: BoxConstraints(maxWidth: AppResponsive.contentMaxWidth(context)),
             child: SingleChildScrollView(
               padding: const EdgeInsets.fromLTRB(16, 8, 16, 40),
               child: Column(

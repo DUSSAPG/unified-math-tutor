@@ -4,6 +4,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../app/safe_navigation.dart';
+import '../../shared/responsive/app_breakpoints.dart';
 import '../../models/mental_maths_challenge.dart';
 import '../../services/mental_maths_progress_service.dart';
 import '../../shared/theme/app_spacing.dart';
@@ -36,7 +37,7 @@ class MentalMathsHubScreen extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 560),
+            constraints: BoxConstraints(maxWidth: AppResponsive.contentMaxWidth(context)),
             child: ListView(
               padding: const EdgeInsets.all(AppSpacing.md),
               children: [

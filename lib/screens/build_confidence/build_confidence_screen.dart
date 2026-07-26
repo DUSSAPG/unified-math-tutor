@@ -3,6 +3,7 @@ import 'package:flutter_shared_models/question_item.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../app/safe_navigation.dart';
+import '../../shared/responsive/app_breakpoints.dart';
 import '../../services/captain_math_service.dart';
 import '../../services/jsonl_pack_loader.dart';
 import '../../services/nav_visibility_service.dart';
@@ -102,7 +103,7 @@ class _BuildConfidenceScreenState extends State<BuildConfidenceScreen> {
             final question = questions[_index];
             return Center(
               child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 560),
+                constraints: BoxConstraints(maxWidth: AppResponsive.contentMaxWidth(context)),
                 child: SingleChildScrollView(
                   padding: const EdgeInsets.fromLTRB(16, 8, 16, 40),
                   child: Column(
@@ -213,7 +214,7 @@ class _CompletionView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: 480),
+        constraints: BoxConstraints(maxWidth: AppResponsive.contentMaxWidth(context)),
         child: Padding(
           padding: const EdgeInsets.all(24),
           child: Column(

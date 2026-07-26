@@ -39,6 +39,15 @@ const _branchCount = 8;
 // past Journey collapses behind a "More" sheet instead of its own tab.
 const _mobileMoreSlot = 4;
 
+// Above this text scale, a translated label (e.g. German compound words) in
+// one of 5 fixed ~64px-wide bottom-nav slots risks overflowing into a
+// neighbouring tab — Flutter's default BottomNavigationBarType.fixed layout
+// gives labels no built-in overflow protection. Rather than clip or remove
+// labels at ordinary scale, switch to icon-only above this threshold, with
+// the name preserved via Tooltip (visual long-press hint + screen-reader
+// semantics) so no information is lost, just its always-visible rendering.
+const _navLabelHideTextScaleThreshold = 1.3;
+
 class AppShell extends StatelessWidget {
   final StatefulNavigationShell shell;
 
@@ -98,46 +107,56 @@ class AppShell extends StatelessWidget {
             ? shell.currentIndex
             : 0;
 
+    // Rail labels have more room than the bottom bar's fixed slots, but no
+    // built-in overflow protection either — cap at 2 lines with ellipsis,
+    // matching _RailExploreButton's existing defensive pattern below.
+    Widget railLabel(String text) => Text(
+          text,
+          textAlign: TextAlign.center,
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+        );
+
     final railDestinations = [
       NavigationRailDestination(
         icon: const Icon(LucideIcons.home, size: 24),
         selectedIcon: const Icon(LucideIcons.home, size: 24),
-        label: Text(l10n.navHome),
+        label: railLabel(l10n.navHome),
       ),
       NavigationRailDestination(
         icon: const Icon(LucideIcons.bookOpen, size: 24),
         selectedIcon: const Icon(LucideIcons.bookOpen, size: 24),
-        label: Text(l10n.navTopics),
+        label: railLabel(l10n.navTopics),
       ),
       NavigationRailDestination(
         icon: const Icon(LucideIcons.calculator, size: 24),
         selectedIcon: const Icon(LucideIcons.calculator, size: 24),
-        label: Text(l10n.navPractice),
+        label: railLabel(l10n.navPractice),
       ),
       NavigationRailDestination(
         icon: const Icon(LucideIcons.flame, size: 24),
         selectedIcon: const Icon(LucideIcons.flame, size: 24),
-        label: Text(l10n.navJourney),
+        label: railLabel(l10n.navJourney),
       ),
       NavigationRailDestination(
         icon: const Icon(LucideIcons.functionSquare, size: 24),
         selectedIcon: const Icon(LucideIcons.functionSquare, size: 24),
-        label: Text(l10n.homeFormulaLibraryTitle),
+        label: railLabel(l10n.homeFormulaLibraryTitle),
       ),
       NavigationRailDestination(
         icon: const Icon(LucideIcons.settings, size: 24),
         selectedIcon: const Icon(LucideIcons.settings, size: 24),
-        label: Text(l10n.navProfile),
+        label: railLabel(l10n.navProfile),
       ),
       NavigationRailDestination(
         icon: const Icon(LucideIcons.brain, size: 24),
         selectedIcon: const Icon(LucideIcons.brain, size: 24),
-        label: Text(l10n.navTutor),
+        label: railLabel(l10n.navTutor),
       ),
       NavigationRailDestination(
         icon: const Icon(LucideIcons.helpCircle, size: 24),
         selectedIcon: const Icon(LucideIcons.helpCircle, size: 24),
-        label: Text(l10n.navHelp),
+        label: railLabel(l10n.navHelp),
       ),
     ];
 
@@ -166,7 +185,8 @@ class AppShell extends StatelessWidget {
                     builder: (context, constraints) {
                       return SingleChildScrollView(
                         child: ConstrainedBox(
-                          constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                          constraints:
+                              BoxConstraints(minHeight: constraints.maxHeight),
                           child: IntrinsicHeight(
                             child: NavigationRail(
                               selectedIndex: currentIndex,
@@ -220,46 +240,84 @@ class AppShell extends StatelessWidget {
           ),
           bottomNavigationBar: (useRail || !showChrome)
               ? null
-              : BottomNavigationBar(
-                  type: BottomNavigationBarType.fixed,
-                  currentIndex: currentIndex <= _branchJourney
-                      ? currentIndex
-                      : _mobileMoreSlot,
-                  onTap: (index) {
-                    if (index == _mobileMoreSlot) {
-                      _openMoreSheet(context);
-                      return;
+              : Builder(
+                  builder: (context) {
+                    final hideLabels =
+                        MediaQuery.textScalerOf(context).scale(1.0) >
+                            _navLabelHideTextScaleThreshold;
+                    Widget navIcon(IconData icon, String label,
+                        {required bool active}) {
+                      final child = active
+                          ? _NavGlowIcon(icon: icon)
+                          : Icon(icon, size: 24);
+                      // Tooltip carries the name via long-press + screen-reader
+                      // semantics even when the visual label is hidden at large
+                      // text scale, so no information is lost — only its
+                      // always-visible rendering is.
+                      return hideLabels
+                          ? Tooltip(message: label, child: child)
+                          : child;
                     }
-                    _goBranch(index);
+
+                    return BottomNavigationBar(
+                      type: BottomNavigationBarType.fixed,
+                      showSelectedLabels: !hideLabels,
+                      showUnselectedLabels: !hideLabels,
+                      currentIndex: currentIndex <= _branchJourney
+                          ? currentIndex
+                          : _mobileMoreSlot,
+                      onTap: (index) {
+                        if (index == _mobileMoreSlot) {
+                          _openMoreSheet(context);
+                          return;
+                        }
+                        _goBranch(index);
+                      },
+                      items: [
+                        BottomNavigationBarItem(
+                          icon: navIcon(LucideIcons.home, l10n.navHome,
+                              active: false),
+                          activeIcon: navIcon(LucideIcons.home, l10n.navHome,
+                              active: true),
+                          label: l10n.navHome,
+                        ),
+                        BottomNavigationBarItem(
+                          icon: navIcon(LucideIcons.bookOpen, l10n.navTopics,
+                              active: false),
+                          activeIcon: navIcon(
+                              LucideIcons.bookOpen, l10n.navTopics,
+                              active: true),
+                          label: l10n.navTopics,
+                        ),
+                        BottomNavigationBarItem(
+                          icon: navIcon(
+                              LucideIcons.calculator, l10n.navPractice,
+                              active: false),
+                          activeIcon: navIcon(
+                              LucideIcons.calculator, l10n.navPractice,
+                              active: true),
+                          label: l10n.navPractice,
+                        ),
+                        BottomNavigationBarItem(
+                          icon: navIcon(LucideIcons.flame, l10n.navJourney,
+                              active: false),
+                          activeIcon: navIcon(
+                              LucideIcons.flame, l10n.navJourney,
+                              active: true),
+                          label: l10n.navJourney,
+                        ),
+                        BottomNavigationBarItem(
+                          icon: navIcon(
+                              LucideIcons.moreHorizontal, l10n.navMore,
+                              active: false),
+                          activeIcon: navIcon(
+                              LucideIcons.moreHorizontal, l10n.navMore,
+                              active: true),
+                          label: l10n.navMore,
+                        ),
+                      ],
+                    );
                   },
-                  items: [
-                    BottomNavigationBarItem(
-                      icon: const Icon(LucideIcons.home, size: 24),
-                      activeIcon: _NavGlowIcon(icon: LucideIcons.home),
-                      label: l10n.navHome,
-                    ),
-                    BottomNavigationBarItem(
-                      icon: const Icon(LucideIcons.bookOpen, size: 24),
-                      activeIcon: _NavGlowIcon(icon: LucideIcons.bookOpen),
-                      label: l10n.navTopics,
-                    ),
-                    BottomNavigationBarItem(
-                      icon: const Icon(LucideIcons.calculator, size: 24),
-                      activeIcon: _NavGlowIcon(icon: LucideIcons.calculator),
-                      label: l10n.navPractice,
-                    ),
-                    BottomNavigationBarItem(
-                      icon: const Icon(LucideIcons.flame, size: 24),
-                      activeIcon: _NavGlowIcon(icon: LucideIcons.flame),
-                      label: l10n.navJourney,
-                    ),
-                    BottomNavigationBarItem(
-                      icon: const Icon(LucideIcons.moreHorizontal, size: 24),
-                      activeIcon:
-                          _NavGlowIcon(icon: LucideIcons.moreHorizontal),
-                      label: l10n.navMore,
-                    ),
-                  ],
                 ),
         );
       },
@@ -868,8 +926,9 @@ class _HeroGreeting extends StatelessWidget {
       builder: (context, _) {
         final isLearnerRole = onboarding.userType.value == 'parent' ||
             onboarding.userType.value == 'teacher';
-        final name =
-            isLearnerRole ? onboarding.childName.value : onboarding.preferredDisplayName.value;
+        final name = isLearnerRole
+            ? onboarding.childName.value
+            : onboarding.preferredDisplayName.value;
         final greeting = greetingFor(
           l10n,
           greetingPeriodFor(DateTime.now()),
@@ -905,9 +964,11 @@ class _HeroGreeting extends StatelessWidget {
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      if (LearnerProfilesService.instance.profiles.value.isNotEmpty) ...[
+                      if (LearnerProfilesService
+                          .instance.profiles.value.isNotEmpty) ...[
                         Text(
-                          l10n.homeLearningAsLabel(onboarding.childName.value ?? ''),
+                          l10n.homeLearningAsLabel(
+                              onboarding.childName.value ?? ''),
                           style: const TextStyle(
                             color: Color(0xFF8A9BB8),
                             fontSize: 12,
@@ -1151,41 +1212,49 @@ class _StartPracticeButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(14),
-      child: Container(
-        height: 52,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Color(0xFF7B3FFF), Color(0xFF5B8EFF)],
+      // A minimum rather than a fixed height: at ordinary text scale the
+      // button is the same 52px it always was, but at large accessibility
+      // text scales a 2-line label can grow past that instead of being
+      // clipped by the ClipRRect above (a fixed height would crop the
+      // second line on this — the single most prominent CTA on Home).
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: 52),
+        child: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Color(0xFF7B3FFF), Color(0xFF5B8EFF)],
+            ),
           ),
-        ),
-        child: Material(
-          color: Colors.transparent,
-          child: InkWell(
-            onTap: () => context.go('/practice'),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
-                children: [
-                  const Icon(
-                    LucideIcons.sparkles,
-                    color: Colors.white,
-                    size: 18,
-                  ),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: Text(
-                      AppLocalizations.of(context).homeStartPracticeSession,
-                      textAlign: TextAlign.center,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: () => context.go('/practice'),
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                child: Row(
+                  children: [
+                    const Icon(
+                      LucideIcons.sparkles,
+                      color: Colors.white,
+                      size: 18,
+                    ),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: Text(
+                        AppLocalizations.of(context).homeStartPracticeSession,
+                        textAlign: TextAlign.center,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),

@@ -4,6 +4,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../app/safe_navigation.dart';
+import '../../shared/responsive/app_breakpoints.dart';
 import '../../models/recall_card.dart';
 import '../../models/recall_card_state.dart';
 import '../../services/recall_card_catalog_service.dart';
@@ -100,7 +101,7 @@ class _RecallCardsHubScreenState extends State<RecallCardsHubScreen> {
 
             return Center(
               child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 560),
+                constraints: BoxConstraints(maxWidth: AppResponsive.contentMaxWidth(context)),
                 child: ListenableBuilder(
                   listenable: RecallCardsProgressService.instance.updateSerial,
                   builder: (context, _) => SingleChildScrollView(

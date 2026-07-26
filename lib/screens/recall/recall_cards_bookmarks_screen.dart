@@ -6,6 +6,7 @@ import '../../app/safe_navigation.dart';
 import '../../models/recall_card.dart';
 import '../../services/recall_card_catalog_service.dart';
 import '../../services/recall_cards_progress_service.dart';
+import '../../shared/responsive/app_breakpoints.dart';
 import '../../shared/theme/app_spacing.dart';
 import '../../widgets/recall/recall_illustration.dart';
 
@@ -16,10 +17,12 @@ class RecallCardsBookmarksScreen extends StatefulWidget {
   const RecallCardsBookmarksScreen({super.key});
 
   @override
-  State<RecallCardsBookmarksScreen> createState() => _RecallCardsBookmarksScreenState();
+  State<RecallCardsBookmarksScreen> createState() =>
+      _RecallCardsBookmarksScreenState();
 }
 
-class _RecallCardsBookmarksScreenState extends State<RecallCardsBookmarksScreen> {
+class _RecallCardsBookmarksScreenState
+    extends State<RecallCardsBookmarksScreen> {
   late final Future<List<RecallCard>> _cardsFuture;
 
   @override
@@ -42,7 +45,8 @@ class _RecallCardsBookmarksScreenState extends State<RecallCardsBookmarksScreen>
         ),
         title: Text(
           l10n.recallCardsBookmarksTitle,
-          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+          style:
+              const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
         ),
       ),
       body: SafeArea(
@@ -52,72 +56,86 @@ class _RecallCardsBookmarksScreenState extends State<RecallCardsBookmarksScreen>
             final cards = snapshot.data;
             if (snapshot.hasError) {
               return const Center(
-                child: Icon(Icons.error_outline, color: Color(0xFF8A9DC0), size: 32),
+                child: Icon(Icons.error_outline,
+                    color: Color(0xFF8A9DC0), size: 32),
               );
             }
             if (cards == null) {
               return const Center(child: CircularProgressIndicator());
             }
-            return ListenableBuilder(
-              listenable: RecallCardsProgressService.instance.updateSerial,
-              builder: (context, _) {
-                final bookmarked = RecallCardsProgressService.instance.bookmarkedIds();
-                final visible = [
-                  for (final card in cards)
-                    if (bookmarked.contains(card.id)) card,
-                ];
-                if (visible.isEmpty) {
-                  return Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(32),
-                      child: Text(
-                        l10n.recallCardsEmptyBookmarks,
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(color: Color(0xFF8A9DC0)),
-                      ),
-                    ),
-                  );
-                }
-                return ListView.separated(
-                  padding: const EdgeInsets.all(AppSpacing.md),
-                  itemCount: visible.length,
-                  separatorBuilder: (_, __) => const SizedBox(height: 8),
-                  itemBuilder: (context, index) {
-                    final card = visible[index];
-                    final text = card.textFor(Localizations.localeOf(context));
-                    return Material(
-                      color: const Color(0xFF132040),
-                      borderRadius: BorderRadius.circular(14),
-                      child: InkWell(
-                        borderRadius: BorderRadius.circular(14),
-                        onTap: () => context.push('/math-studio/recall-cards/card/${card.id}'),
+            return Center(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                    maxWidth: AppResponsive.contentMaxWidth(context)),
+                child: ListenableBuilder(
+                  listenable: RecallCardsProgressService.instance.updateSerial,
+                  builder: (context, _) {
+                    final bookmarked =
+                        RecallCardsProgressService.instance.bookmarkedIds();
+                    final visible = [
+                      for (final card in cards)
+                        if (bookmarked.contains(card.id)) card,
+                    ];
+                    if (visible.isEmpty) {
+                      return Center(
                         child: Padding(
-                          padding: const EdgeInsets.all(12),
-                          child: Row(
-                            children: [
-                              RecallIllustration(card: card, semanticLabel: text.frontPrompt, size: 40),
-                              const SizedBox(width: 12),
-                              Expanded(
-                                child: Text(
-                                  text.frontPrompt,
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w700,
-                                  ),
-                                ),
-                              ),
-                              const Icon(Icons.chevron_right, color: Color(0xFF4A6080)),
-                            ],
+                          padding: const EdgeInsets.all(32),
+                          child: Text(
+                            l10n.recallCardsEmptyBookmarks,
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(color: Color(0xFF8A9DC0)),
                           ),
                         ),
-                      ),
+                      );
+                    }
+                    return ListView.separated(
+                      padding: const EdgeInsets.all(AppSpacing.md),
+                      itemCount: visible.length,
+                      separatorBuilder: (_, __) => const SizedBox(height: 8),
+                      itemBuilder: (context, index) {
+                        final card = visible[index];
+                        final text =
+                            card.textFor(Localizations.localeOf(context));
+                        return Material(
+                          color: const Color(0xFF132040),
+                          borderRadius: BorderRadius.circular(14),
+                          child: InkWell(
+                            borderRadius: BorderRadius.circular(14),
+                            onTap: () => context.push(
+                                '/math-studio/recall-cards/card/${card.id}'),
+                            child: Padding(
+                              padding: const EdgeInsets.all(12),
+                              child: Row(
+                                children: [
+                                  RecallIllustration(
+                                      card: card,
+                                      semanticLabel: text.frontPrompt,
+                                      size: 40),
+                                  const SizedBox(width: 12),
+                                  Expanded(
+                                    child: Text(
+                                      text.frontPrompt,
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ),
+                                  const Icon(Icons.chevron_right,
+                                      color: Color(0xFF4A6080)),
+                                ],
+                              ),
+                            ),
+                          ),
+                        );
+                      },
                     );
                   },
-                );
-              },
+                ),
+              ),
             );
           },
         ),

@@ -299,6 +299,13 @@ class DiscoveryCard {
     final tags = <String>[
       if (countryCode != null && countryCode.isNotEmpty) '$languageCode-$countryCode',
       languageCode,
+      // Card content only ships region-qualified translations (de-CH,
+      // fr-CH, it-CH), narrower than the app's 20-locale UI-chrome ARB
+      // coverage. Before falling all the way to English, try the same
+      // language's Swiss-region translation if one exists — a bare `de`,
+      // `fr` or `it` learner gets real content in their language instead
+      // of silently losing translated text the app already has.
+      if (languageCode != 'en') '$languageCode-CH',
       if (languageCode != 'en') 'en',
     ];
     for (final tag in tags) {
