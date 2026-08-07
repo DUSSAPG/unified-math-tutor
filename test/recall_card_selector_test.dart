@@ -2,7 +2,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:unified_math_tutor/services/recall_card_selector.dart';
 
 void main() {
-  test('quickReview is deterministic for the same date and same candidate membership', () {
+  test(
+      'quickReview is deterministic for the same date and same candidate membership',
+      () {
     final date = DateTime.utc(2026, 3, 1);
     final due = ['a', 'b'];
     final learning = ['c', 'd', 'e'];
@@ -39,7 +41,8 @@ void main() {
     expect(result.where((id) => id.startsWith('learn')).length, 3);
   });
 
-  test('quickReview skips recently-shown ids when enough alternatives exist', () {
+  test('quickReview skips recently-shown ids when enough alternatives exist',
+      () {
     final result = RecallCardSelector.quickReview(
       date: DateTime.utc(2026, 3, 1),
       reviewDueIdsSorted: [],
@@ -51,7 +54,9 @@ void main() {
     expect(result.toSet().intersection({'a', 'b', 'c'}), isEmpty);
   });
 
-  test('quickReview falls back to a repeat rather than returning fewer than requested', () {
+  test(
+      'quickReview falls back to a repeat rather than returning fewer than requested',
+      () {
     final result = RecallCardSelector.quickReview(
       date: DateTime.utc(2026, 3, 1),
       reviewDueIdsSorted: [],
@@ -63,7 +68,8 @@ void main() {
     expect(result, hasLength(2));
   });
 
-  test('quickReview returns fewer than count when total candidates are scarce', () {
+  test('quickReview returns fewer than count when total candidates are scarce',
+      () {
     final result = RecallCardSelector.quickReview(
       date: DateTime.utc(2026, 3, 1),
       reviewDueIdsSorted: ['only-one'],

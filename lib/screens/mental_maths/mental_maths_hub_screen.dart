@@ -31,19 +31,22 @@ class MentalMathsHubScreen extends StatelessWidget {
         ),
         title: Text(
           l10n.mathStudioMentalMathsTitle,
-          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+          style:
+              const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
         ),
       ),
       body: SafeArea(
         child: Center(
           child: ConstrainedBox(
-            constraints: BoxConstraints(maxWidth: AppResponsive.contentMaxWidth(context)),
+            constraints: BoxConstraints(
+                maxWidth: AppResponsive.contentMaxWidth(context)),
             child: ListView(
               padding: const EdgeInsets.all(AppSpacing.md),
               children: [
                 Text(
                   l10n.mentalMathsUntimedNote,
-                  style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13),
+                  style:
+                      const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13),
                 ),
                 const SizedBox(height: AppSpacing.md),
                 for (final category in MentalMathsCategory.values)
@@ -81,7 +84,8 @@ class _CategoryCard extends StatelessWidget {
     return Card(
       child: ListTile(
         contentPadding: const EdgeInsets.all(14),
-        leading: const Icon(Icons.calculate_outlined, color: Color(0xFF5B8EFF), size: 28),
+        leading: const Icon(Icons.calculate_outlined,
+            color: Color(0xFF5B8EFF), size: 28),
         title: Text(
           mentalMathsCategoryLabel(l10n, category),
           style: const TextStyle(fontWeight: FontWeight.w700),
@@ -93,7 +97,8 @@ class _CategoryCard extends StatelessWidget {
     );
   }
 
-  String _tierLabel(AppLocalizations l10n, MentalMathsTier tier) => switch (tier) {
+  String _tierLabel(AppLocalizations l10n, MentalMathsTier tier) =>
+      switch (tier) {
         MentalMathsTier.foundation => l10n.mathStudioDifficultyFoundation,
         MentalMathsTier.intermediate => l10n.mathStudioDifficultyIntermediate,
         MentalMathsTier.advanced => l10n.mathStudioDifficultyAdvanced,

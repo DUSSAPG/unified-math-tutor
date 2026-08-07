@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "assets": [
+    {
+      "animationId": "flight_path_rc2_intro",
+      "conceptId": "bearing_distance_route_correction",
+      "locale": "en",
+      "sourceScene": "scenes/rc2/flight_path_intro.py::FlightPathIntro",
+      "sourceHash": "pending-offline-render",
+      "manimVersion": "0.20.1",
+      "renderProfile": "static_fallback_rc2",
+      "outputAsset": "assets/manim_static/flight_path.svg",
+      "durationMs": 12000,
+      "contentVersion": 1,
+      "reviewStatus": "fallback-approved",
+      "accessibilityDescription": "Starting point, bearing, distance, target and route correction."
+    },
+    {
+      "animationId": "football_precision_rc2_intro",
+      "conceptId": "angle_power_score_accuracy",
+      "locale": "en",
+      "sourceScene": "scenes/rc2/football_precision_intro.py::FootballPrecisionIntro",
+      "sourceHash": "pending-offline-render",
+      "manimVersion": "0.20.1",
+      "renderProfile": "static_fallback_rc2",
+      "outputAsset": "assets/manim_static/football_precision.svg",
+      "durationMs": 12000,
+      "contentVersion": 1,
+      "reviewStatus": "fallback-approved",
+      "accessibilityDescription": "Robot, ball, kick direction, target zones, score and average accuracy."
+    },
+    {
+      "animationId": "maze_driver_rc2_intro",
+      "conceptId": "route_turn_sequence_elapsed_time",
+      "locale": "en",
+      "sourceScene": "scenes/rc2/maze_driver_intro.py::MazeDriverIntro",
+      "sourceHash": "pending-offline-render",
+      "manimVersion": "0.20.1",
+      "renderProfile": "static_fallback_rc2",
+      "outputAsset": "assets/manim_static/maze_driver.svg",
+      "durationMs": 10000,
+      "contentVersion": 1,
+      "reviewStatus": "fallback-approved",
+      "accessibilityDescription": "Route, turn sequence, elapsed time, and shorter versus longer path."
+    },
+    {
+      "animationId": "place_value_rc2_intro",
+      "conceptId": "ones_tens_hundreds_thousands_regrouping",
+      "locale": "en",
+      "sourceScene": "scenes/rc2/place_value_intro.py::PlaceValueIntro",
+      "sourceHash": "pending-offline-render",
+      "manimVersion": "0.20.1",
+      "renderProfile": "static_fallback_rc2",
+      "outputAsset": "assets/manim_static/place_value.svg",
+      "durationMs": 14000,
+      "contentVersion": 1,
+      "reviewStatus": "fallback-approved",
+      "accessibilityDescription": "Ones, tens, hundreds, thousands and regrouping."
+    }
+  ]
+}

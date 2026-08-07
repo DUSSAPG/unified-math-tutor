@@ -150,6 +150,13 @@ void main() {
       // throws "No element" on a target beyond the initial viewport/cache
       // extent; scrollUntilVisible is required, mirroring the same gotcha
       // already documented for Mental Maths/Visual Maths hub's ListViews.
+      // scrollUntilVisible only guarantees the target has *appeared* in
+      // the viewport, not that it's fully clear of the edge — with the
+      // Applied Discovery Category Pack's 30 extra cards, the grid is
+      // tall enough that the stop-scrolling offset can land the target
+      // a few pixels past the bottom edge (a real flake this sprint's
+      // content growth triggered). A follow-up ensureVisible() settles
+      // it fully on-screen before the tap.
       await tester.scrollUntilVisible(
         find.text(l10n.mathStudioInteractiveLabsTitle),
         200,
@@ -158,6 +165,9 @@ void main() {
           matching: find.byType(Scrollable),
         ),
       );
+      await tester
+          .ensureVisible(find.text(l10n.mathStudioInteractiveLabsTitle));
+      await tester.pump();
       await tester.tap(find.text(l10n.mathStudioInteractiveLabsTitle));
       await tester.pumpAndSettle();
       expect(find.byType(InteractiveLabsHubScreen), findsOneWidget);

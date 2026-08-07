@@ -42,7 +42,8 @@ void main() {
     await tester.pumpAndSettle();
   }
 
-  testWidgets('shows Think state first, then Reveal after tapping the reveal button',
+  testWidgets(
+      'shows Think state first, then Reveal after tapping the reveal button',
       (tester) async {
     await tester.runAsync(() async {
       await pumpCard(tester, 'shopping-percentage-discount');
@@ -60,7 +61,8 @@ void main() {
     });
   });
 
-  testWidgets('follow-up question accepts a correct numeric answer', (tester) async {
+  testWidgets('follow-up question accepts a correct numeric answer',
+      (tester) async {
     await tester.runAsync(() async {
       await pumpCard(tester, 'shopping-percentage-discount');
       await tester.tap(find.text('Reveal the solution'));
@@ -77,7 +79,8 @@ void main() {
     });
   });
 
-  testWidgets('follow-up question flags an incorrect numeric answer without punitive language',
+  testWidgets(
+      'follow-up question flags an incorrect numeric answer without punitive language',
       (tester) async {
     await tester.runAsync(() async {
       await pumpCard(tester, 'shopping-percentage-discount');
@@ -90,14 +93,16 @@ void main() {
       await tester.tap(find.text('Check my answer'));
       await tester.pumpAndSettle();
 
-      expect(find.text('Not quite — take another look at the steps above.'), findsOneWidget);
+      expect(find.text('Not quite — take another look at the steps above.'),
+          findsOneWidget);
       expect(find.textContaining('wrong'), findsNothing);
       expect(find.textContaining('fail'), findsNothing);
       expect(tester.takeException(), isNull);
     });
   });
 
-  testWidgets('renders professional math notation, not raw programming operators',
+  testWidgets(
+      'renders professional math notation, not raw programming operators',
       (tester) async {
     await tester.runAsync(() async {
       await pumpCard(tester, 'shopping-percentage-discount');

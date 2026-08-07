@@ -12,11 +12,18 @@ import '../services/local_preferences_service.dart';
 /// [state] pins the widget to a specific moment (e.g. always "curious" on a
 /// Discovery Card's Think state); omit it to instead follow
 /// [CaptainMathService.instance.state] live.
+///
+/// [message] overrides the mood's canned copy with authored, per-activity
+/// text — still pre-authored and deterministic, never generated at runtime
+/// (used by Family Maths activities, e.g. "Can you build a tower with
+/// exactly twelve cubes?").
 class CaptainMathCard extends StatefulWidget {
-  const CaptainMathCard({super.key, this.state, this.compact = false});
+  const CaptainMathCard(
+      {super.key, this.state, this.compact = false, this.message});
 
   final CaptainMathState? state;
   final bool compact;
+  final String? message;
 
   @override
   State<CaptainMathCard> createState() => _CaptainMathCardState();
@@ -71,7 +78,8 @@ class _CaptainMathCardState extends State<CaptainMathCard>
     super.dispose();
   }
 
-  String _message(AppLocalizations l10n, CaptainMathState state) => switch (state) {
+  String _message(AppLocalizations l10n, CaptainMathState state) =>
+      switch (state) {
         CaptainMathState.curious => l10n.captainMathCurious,
         CaptainMathState.encouraging => l10n.captainMathEncouraging,
         CaptainMathState.calm => l10n.captainMathCalm,
@@ -81,7 +89,8 @@ class _CaptainMathCardState extends State<CaptainMathCard>
   @override
   Widget build(BuildContext context) {
     final state = widget.state ?? _lastState;
-    final message = _message(AppLocalizations.of(context), state);
+    final message =
+        widget.message ?? _message(AppLocalizations.of(context), state);
     final size = widget.compact ? 44.0 : 56.0;
 
     return Semantics(
@@ -92,7 +101,8 @@ class _CaptainMathCardState extends State<CaptainMathCard>
           children: [
             AnimatedBuilder(
               animation: _controller,
-              child: SvgPicture.asset('assets/icons/captain_math.svg', width: size, height: size),
+              child: SvgPicture.asset('assets/icons/captain_math.svg',
+                  width: size, height: size),
               builder: (context, child) {
                 if (!_motionEnabled) return child!;
                 final value = _controller.value;
@@ -107,7 +117,8 @@ class _CaptainMathCardState extends State<CaptainMathCard>
             Flexible(
               child: Text(
                 message,
-                style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13, height: 1.3),
+                style: const TextStyle(
+                    color: Color(0xFF8A9DC0), fontSize: 13, height: 1.3),
               ),
             ),
           ],

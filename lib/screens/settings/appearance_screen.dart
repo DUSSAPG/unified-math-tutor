@@ -4,6 +4,8 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../app/safe_navigation.dart';
 import '../../services/locale_service.dart';
+import '../../services/local_preferences_service.dart';
+import '../../shared/theme/app_theme.dart';
 
 class AppearanceScreen extends StatefulWidget {
   const AppearanceScreen({super.key});
@@ -28,16 +30,17 @@ class _AppearanceScreenState extends State<AppearanceScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0B1120),
+        backgroundColor: colors.background,
         elevation: 0,
         scrolledUnderElevation: 0,
         centerTitle: false,
         titleSpacing: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: colors.primaryText),
           onPressed: () => popOrGo(context, '/profile'),
         ),
         title: Column(
@@ -45,14 +48,14 @@ class _AppearanceScreenState extends State<AppearanceScreen> {
           children: [
             Text(
               l10n.profileAppearance,
-              style: const TextStyle(
-                  color: Colors.white,
+              style: TextStyle(
+                  color: colors.primaryText,
                   fontSize: 20,
                   fontWeight: FontWeight.w700),
             ),
             Text(
               l10n.profileAppearanceSub,
-              style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 12),
+              style: TextStyle(color: colors.secondaryText, fontSize: 12),
             ),
           ],
         ),
@@ -66,24 +69,46 @@ class _AppearanceScreenState extends State<AppearanceScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Colour Scheme — Dark only for v1
-                  _sectionCard(
-                    title: 'Appearance',
-                    subtitle:
-                        'Math Intelligence currently uses our optimized Dark Theme '
-                        'to improve focus and readability. Future themes may '
-                        'be introduced in later releases.',
-                    child: Row(
-                      children: [
-                        _ThemeOption(
-                          label: 'Dark',
-                          selected: true,
-                          topColor: const Color(0xFF1C1C1E),
-                          bottomColor: const Color(0xFF0B1120),
-                          onTap: () {},
+                  // Theme mode — System / Dark / Light
+                  ValueListenableBuilder<ThemeMode>(
+                    valueListenable: LocalPreferencesService.instance.themeMode,
+                    builder: (context, themeMode, _) {
+                      return _sectionCard(
+                        colors: colors,
+                        title: l10n.appearanceThemeTitle,
+                        subtitle: l10n.appearanceThemeSub,
+                        child: Row(
+                          children: [
+                            _ThemeOption(
+                              label: l10n.appearanceThemeSystem,
+                              selected: themeMode == ThemeMode.system,
+                              topColor: colors.cardSurface,
+                              bottomColor: colors.background,
+                              onTap: () => LocalPreferencesService.instance
+                                  .setThemeMode(ThemeMode.system),
+                            ),
+                            const SizedBox(width: 8),
+                            _ThemeOption(
+                              label: l10n.appearanceThemeDark,
+                              selected: themeMode == ThemeMode.dark,
+                              topColor: const Color(0xFF1C1C1E),
+                              bottomColor: const Color(0xFF0B1120),
+                              onTap: () => LocalPreferencesService.instance
+                                  .setThemeMode(ThemeMode.dark),
+                            ),
+                            const SizedBox(width: 8),
+                            _ThemeOption(
+                              label: l10n.appearanceThemeLight,
+                              selected: themeMode == ThemeMode.light,
+                              topColor: const Color(0xFFF3EFFC),
+                              bottomColor: const Color(0xFFEDF1F8),
+                              onTap: () => LocalPreferencesService.instance
+                                  .setThemeMode(ThemeMode.light),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                      );
+                    },
                   ),
                   const SizedBox(height: 12),
 
@@ -94,25 +119,25 @@ class _AppearanceScreenState extends State<AppearanceScreen> {
                       return Container(
                         padding: const EdgeInsets.all(16),
                         decoration: BoxDecoration(
-                          color: const Color(0xFF132040),
+                          color: colors.cardSurface,
                           borderRadius: BorderRadius.circular(14),
-                          border: Border.all(color: const Color(0xFF1F3055)),
+                          border: Border.all(color: colors.divider),
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               l10n.appearanceLanguageTitle,
-                              style: const TextStyle(
-                                  color: Colors.white,
+                              style: TextStyle(
+                                  color: colors.primaryText,
                                   fontSize: 15,
                                   fontWeight: FontWeight.w600),
                             ),
                             const SizedBox(height: 4),
                             Text(
                               l10n.appearanceLanguageSub,
-                              style: const TextStyle(
-                                  color: Color(0xFF8A9DC0), fontSize: 13),
+                              style: TextStyle(
+                                  color: colors.secondaryText, fontSize: 13),
                             ),
                             const SizedBox(height: 14),
                             ...List.generate(
@@ -143,8 +168,8 @@ class _AppearanceScreenState extends State<AppearanceScreen> {
                                               name,
                                               style: TextStyle(
                                                 color: isSelected
-                                                    ? const Color(0xFF5B8EFF)
-                                                    : Colors.white,
+                                                    ? colors.accent
+                                                    : colors.primaryText,
                                                 fontSize: 14,
                                                 fontWeight: isSelected
                                                     ? FontWeight.w600
@@ -153,16 +178,14 @@ class _AppearanceScreenState extends State<AppearanceScreen> {
                                             ),
                                           ),
                                           if (isSelected)
-                                            const Icon(Icons.check,
-                                                color: Color(0xFF5B8EFF),
-                                                size: 18),
+                                            Icon(Icons.check,
+                                                color: colors.accent, size: 18),
                                         ],
                                       ),
                                     ),
                                   ),
                                   if (!isLast)
-                                    const Divider(
-                                        color: Color(0xFF1F3055), height: 1),
+                                    Divider(color: colors.divider, height: 1),
                                 ],
                               );
                             }),
@@ -175,9 +198,9 @@ class _AppearanceScreenState extends State<AppearanceScreen> {
 
                   // Quiet Study Mode toggle
                   _ToggleCard(
+                    colors: colors,
                     icon: Icons.self_improvement,
-                    iconColor: const Color(0xFF5B8EFF),
-                    iconBg: const Color(0xFF0D1F40),
+                    iconColor: colors.accent,
                     title: l10n.quietStudyModeLabel,
                     subtitle: l10n.quietStudyModeTooltip,
                     value: _focusMode,
@@ -189,17 +212,17 @@ class _AppearanceScreenState extends State<AppearanceScreen> {
                   Container(
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF132040),
+                      color: colors.cardSurface,
                       borderRadius: BorderRadius.circular(14),
-                      border: Border.all(color: const Color(0xFF1F3055)),
+                      border: Border.all(color: colors.divider),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
-                          'ACCESSIBILITY',
+                        Text(
+                          l10n.appearanceAccessibilityHeading,
                           style: TextStyle(
-                            color: Color(0xFF8A9DC0),
+                            color: colors.secondaryText,
                             fontSize: 11,
                             fontWeight: FontWeight.w600,
                             letterSpacing: 1.2,
@@ -207,19 +230,22 @@ class _AppearanceScreenState extends State<AppearanceScreen> {
                         ),
                         const SizedBox(height: 12),
                         _bulletItem(
-                          'Reading Size',
-                          'Small, Default, or Large text scaling',
-                          const Color(0xFF5B8EFF),
+                          colors: colors,
+                          title: l10n.appearanceReadingSizeTitle,
+                          subtitle: l10n.appearanceReadingSizeSub,
+                          dotColor: colors.accent,
                         ),
                         _bulletItem(
-                          'Touch Targets 44px',
-                          'Ergonomic controls',
-                          const Color(0xFF34C759),
+                          colors: colors,
+                          title: l10n.appearanceTouchTargetsTitle,
+                          subtitle: l10n.appearanceTouchTargetsSub,
+                          dotColor: colors.success,
                         ),
                         _bulletItem(
-                          'Clear Typography',
-                          'Readable font at all sizes',
-                          const Color(0xFF00BCD4),
+                          colors: colors,
+                          title: l10n.appearanceTypographyTitle,
+                          subtitle: l10n.appearanceTypographySub,
+                          dotColor: colors.primaryAction,
                           last: true,
                         ),
                       ],
@@ -231,27 +257,27 @@ class _AppearanceScreenState extends State<AppearanceScreen> {
                   Container(
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF132040),
+                      color: colors.cardSurface,
                       borderRadius: BorderRadius.circular(14),
-                      border: Border.all(color: const Color(0xFF1F3055)),
+                      border: Border.all(color: colors.divider),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
-                          'RESET ONBOARDING',
+                        Text(
+                          l10n.appearanceResetOnboardingHeading,
                           style: TextStyle(
-                            color: Color(0xFF8A9DC0),
+                            color: colors.secondaryText,
                             fontSize: 11,
                             fontWeight: FontWeight.w600,
                             letterSpacing: 1.2,
                           ),
                         ),
                         const SizedBox(height: 8),
-                        const Text(
-                          'Reset the app introduction to go through the initial setup again.',
-                          style:
-                              TextStyle(color: Color(0xFF8A9DC0), fontSize: 13),
+                        Text(
+                          l10n.appearanceResetOnboardingSub,
+                          style: TextStyle(
+                              color: colors.secondaryText, fontSize: 13),
                         ),
                         const SizedBox(height: 14),
                         SizedBox(
@@ -259,15 +285,16 @@ class _AppearanceScreenState extends State<AppearanceScreen> {
                           child: OutlinedButton(
                             onPressed: () => context.go('/onboarding'),
                             style: OutlinedButton.styleFrom(
-                              foregroundColor: const Color(0xFFFF3B30),
-                              side: const BorderSide(color: Color(0xFFFF3B30)),
+                              foregroundColor: colors.error,
+                              side: BorderSide(color: colors.error),
                               padding: const EdgeInsets.symmetric(vertical: 12),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(12)),
                             ),
-                            child: const Text(
-                              'Reset Onboarding',
-                              style: TextStyle(fontWeight: FontWeight.w600),
+                            child: Text(
+                              l10n.appearanceResetOnboardingButton,
+                              style:
+                                  const TextStyle(fontWeight: FontWeight.w600),
                             ),
                           ),
                         ),
@@ -283,28 +310,30 @@ class _AppearanceScreenState extends State<AppearanceScreen> {
     );
   }
 
-  Widget _sectionCard(
-      {required String title,
-      required String subtitle,
-      required Widget child}) {
+  Widget _sectionCard({
+    required AppSemanticColors colors,
+    required String title,
+    required String subtitle,
+    required Widget child,
+  }) {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF132040),
+        color: colors.cardSurface,
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: const Color(0xFF1F3055)),
+        border: Border.all(color: colors.divider),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(title,
-              style: const TextStyle(
-                  color: Colors.white,
+              style: TextStyle(
+                  color: colors.primaryText,
                   fontSize: 15,
                   fontWeight: FontWeight.w600)),
           const SizedBox(height: 4),
           Text(subtitle,
-              style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13)),
+              style: TextStyle(color: colors.secondaryText, fontSize: 13)),
           const SizedBox(height: 14),
           child,
         ],
@@ -312,8 +341,13 @@ class _AppearanceScreenState extends State<AppearanceScreen> {
     );
   }
 
-  Widget _bulletItem(String title, String subtitle, Color dotColor,
-      {bool last = false}) {
+  Widget _bulletItem({
+    required AppSemanticColors colors,
+    required String title,
+    required String subtitle,
+    required Color dotColor,
+    bool last = false,
+  }) {
     return Padding(
       padding: EdgeInsets.only(bottom: last ? 0 : 10),
       child: Row(
@@ -330,13 +364,13 @@ class _AppearanceScreenState extends State<AppearanceScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(title,
-                    style: const TextStyle(
-                        color: Colors.white,
+                    style: TextStyle(
+                        color: colors.primaryText,
                         fontSize: 14,
                         fontWeight: FontWeight.w600)),
                 Text(subtitle,
-                    style: const TextStyle(
-                        color: Color(0xFF8A9DC0), fontSize: 12)),
+                    style:
+                        TextStyle(color: colors.secondaryText, fontSize: 12)),
               ],
             ),
           ),
@@ -365,16 +399,16 @@ class _ThemeOption extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Expanded(
       child: GestureDetector(
         onTap: onTap,
         child: Container(
           decoration: BoxDecoration(
-            color: const Color(0xFF0D1525),
+            color: colors.elevatedSurface,
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
-              color:
-                  selected ? const Color(0xFF5B8EFF) : const Color(0xFF1F3055),
+              color: selected ? colors.accent : colors.divider,
               width: selected ? 2 : 1,
             ),
           ),
@@ -399,9 +433,7 @@ class _ThemeOption extends StatelessWidget {
                 child: Text(
                   label,
                   style: TextStyle(
-                    color: selected
-                        ? const Color(0xFF5B8EFF)
-                        : const Color(0xFF8A9DC0),
+                    color: selected ? colors.accent : colors.secondaryText,
                     fontSize: 12,
                     fontWeight: selected ? FontWeight.w600 : FontWeight.w400,
                   ),
@@ -418,18 +450,18 @@ class _ThemeOption extends StatelessWidget {
 // ─── Toggle Card ─────────────────────────────────────────────────────────────
 
 class _ToggleCard extends StatelessWidget {
+  final AppSemanticColors colors;
   final IconData icon;
   final Color iconColor;
-  final Color iconBg;
   final String title;
   final String subtitle;
   final bool value;
   final ValueChanged<bool> onChanged;
 
   const _ToggleCard({
+    required this.colors,
     required this.icon,
     required this.iconColor,
-    required this.iconBg,
     required this.title,
     required this.subtitle,
     required this.value,
@@ -441,9 +473,9 @@ class _ToggleCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
       decoration: BoxDecoration(
-        color: const Color(0xFF132040),
+        color: colors.cardSurface,
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: const Color(0xFF1F3055)),
+        border: Border.all(color: colors.divider),
       ),
       child: Row(
         children: [
@@ -451,7 +483,7 @@ class _ToggleCard extends StatelessWidget {
             width: 40,
             height: 40,
             decoration: BoxDecoration(
-              color: iconBg,
+              color: iconColor.withValues(alpha: 0.15),
               borderRadius: BorderRadius.circular(10),
             ),
             child: Icon(icon, color: iconColor, size: 20),
@@ -462,21 +494,21 @@ class _ToggleCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(title,
-                    style: const TextStyle(
-                        color: Colors.white,
+                    style: TextStyle(
+                        color: colors.primaryText,
                         fontSize: 15,
                         fontWeight: FontWeight.w600)),
                 const SizedBox(height: 2),
                 Text(subtitle,
-                    style: const TextStyle(
-                        color: Color(0xFF8A9DC0), fontSize: 13)),
+                    style:
+                        TextStyle(color: colors.secondaryText, fontSize: 13)),
               ],
             ),
           ),
           Switch(
             value: value,
             onChanged: onChanged,
-            activeThumbColor: const Color(0xFF5B8EFF),
+            activeThumbColor: colors.accent,
           ),
         ],
       ),

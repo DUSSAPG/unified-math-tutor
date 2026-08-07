@@ -45,20 +45,25 @@ class LabNarrationControls extends StatelessWidget {
             const SizedBox(height: 8),
             SwitchListTile(
               contentPadding: EdgeInsets.zero,
-              title: Text(l10n.labsNarrationOnOffLabel, style: const TextStyle(color: Colors.white)),
+              title: Text(l10n.labsNarrationOnOffLabel,
+                  style: const TextStyle(color: Colors.white)),
               value: !muted,
-              onChanged: (enabled) => GuidedNarrationService.instance.setMuted(!enabled),
+              onChanged: (enabled) =>
+                  GuidedNarrationService.instance.setMuted(!enabled),
             ),
             SwitchListTile(
               contentPadding: EdgeInsets.zero,
               title: Text(l10n.labsNarrationTextOnlyLabel,
                   style: const TextStyle(color: Colors.white)),
               value: textOnly,
-              onChanged:
-                  muted ? null : (value) => GuidedNarrationService.instance.setTextOnly(value),
+              onChanged: muted
+                  ? null
+                  : (value) =>
+                      GuidedNarrationService.instance.setTextOnly(value),
             ),
             const SizedBox(height: 4),
-            Text(l10n.labsNarrationSpeedLabel, style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 12)),
+            Text(l10n.labsNarrationSpeedLabel,
+                style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 12)),
             const SizedBox(height: 8),
             Wrap(
               spacing: 8,
@@ -67,7 +72,8 @@ class LabNarrationControls extends StatelessWidget {
                   ChoiceChip(
                     label: Text(_speedLabel(l10n, candidate)),
                     selected: speed == candidate,
-                    onSelected: (_) => GuidedNarrationService.instance.setSpeed(candidate),
+                    onSelected: (_) =>
+                        GuidedNarrationService.instance.setSpeed(candidate),
                   ),
               ],
             ),

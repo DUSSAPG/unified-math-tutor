@@ -20,7 +20,8 @@ class RecallReviewSessionScreen extends StatefulWidget {
   final List<RecallCard> cards;
 
   @override
-  State<RecallReviewSessionScreen> createState() => _RecallReviewSessionScreenState();
+  State<RecallReviewSessionScreen> createState() =>
+      _RecallReviewSessionScreenState();
 }
 
 class _RecallReviewSessionScreenState extends State<RecallReviewSessionScreen> {
@@ -46,7 +47,8 @@ class _RecallReviewSessionScreenState extends State<RecallReviewSessionScreen> {
     }
   }
 
-  Future<void> _handleRemembered(RecallCard card, bool revealedBeforeAnswer) async {
+  Future<void> _handleRemembered(
+      RecallCard card, bool revealedBeforeAnswer) async {
     await RecallCardsProgressService.instance.recordAttempt(
       card,
       remembered: true,
@@ -87,7 +89,8 @@ class _RecallReviewSessionScreenState extends State<RecallReviewSessionScreen> {
           complete
               ? l10n.recallCardsSessionComplete
               : l10n.recallCardsCardOf(_index + 1, widget.cards.length),
-          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+          style:
+              const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
         ),
         actions: [
           if (!complete)
@@ -101,7 +104,8 @@ class _RecallReviewSessionScreenState extends State<RecallReviewSessionScreen> {
       body: SafeArea(
         child: Center(
           child: ConstrainedBox(
-            constraints: BoxConstraints(maxWidth: AppResponsive.contentMaxWidth(context)),
+            constraints: BoxConstraints(
+                maxWidth: AppResponsive.contentMaxWidth(context)),
             child: complete
                 ? _SessionCompleteView(
                     onDone: () => popOrGo(context, '/math-studio/recall-cards'),
@@ -114,26 +118,32 @@ class _RecallReviewSessionScreenState extends State<RecallReviewSessionScreen> {
                         child: LinearProgressIndicator(
                           value: (_index) / widget.cards.length,
                           backgroundColor: const Color(0xFF1F3055),
-                          valueColor: const AlwaysStoppedAnimation(Color(0xFF34C759)),
+                          valueColor:
+                              const AlwaysStoppedAnimation(Color(0xFF34C759)),
                         ),
                       ),
                       Expanded(
                         child: ListenableBuilder(
-                          listenable: RecallCardsProgressService.instance.updateSerial,
+                          listenable:
+                              RecallCardsProgressService.instance.updateSerial,
                           builder: (context, _) {
                             final card = widget.cards[_index];
                             return RecallCardBody(
                               key: ValueKey(card.id),
                               card: card,
-                              isBookmarked:
-                                  RecallCardsProgressService.instance.isBookmarked(card.id),
-                              onBookmarkToggle: () =>
-                                  RecallCardsProgressService.instance.setBookmarked(
+                              isBookmarked: RecallCardsProgressService.instance
+                                  .isBookmarked(card.id),
+                              onBookmarkToggle: () => RecallCardsProgressService
+                                  .instance
+                                  .setBookmarked(
                                 card.id,
-                                !RecallCardsProgressService.instance.isBookmarked(card.id),
+                                !RecallCardsProgressService.instance
+                                    .isBookmarked(card.id),
                               ),
-                              onRemembered: (revealed) => _handleRemembered(card, revealed),
-                              onNotYet: (revealed) => _handleNotYet(card, revealed),
+                              onRemembered: (revealed) =>
+                                  _handleRemembered(card, revealed),
+                              onNotYet: (revealed) =>
+                                  _handleNotYet(card, revealed),
                               onAskMeTomorrow: () => _handleAskMeTomorrow(card),
                             );
                           },
@@ -161,11 +171,13 @@ class _SessionCompleteView extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Icon(Icons.check_circle_outline, color: Color(0xFF34C759), size: 56),
+          const Icon(Icons.check_circle_outline,
+              color: Color(0xFF34C759), size: 56),
           const SizedBox(height: AppSpacing.md),
           Text(
             l10n.recallCardsSessionComplete,
-            style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w700),
+            style: const TextStyle(
+                color: Colors.white, fontSize: 20, fontWeight: FontWeight.w700),
           ),
           const SizedBox(height: AppSpacing.sm),
           Text(

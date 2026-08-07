@@ -5,7 +5,11 @@ import '../../app/safe_navigation.dart';
 import 'visual_maths_placeholder_scaffold.dart';
 
 class _AbacusExample {
-  const _AbacusExample({required this.ones, required this.tens, required this.hundreds, required this.captionKey});
+  const _AbacusExample(
+      {required this.ones,
+      required this.tens,
+      required this.hundreds,
+      required this.captionKey});
   final int ones;
   final int tens;
   final int hundreds;
@@ -13,9 +17,12 @@ class _AbacusExample {
 }
 
 final _examples = <_AbacusExample>[
-  _AbacusExample(ones: 1, tens: 0, hundreds: 0, captionKey: (l10n) => l10n.abacusCaption1),
-  _AbacusExample(ones: 0, tens: 1, hundreds: 0, captionKey: (l10n) => l10n.abacusCaption2),
-  _AbacusExample(ones: 0, tens: 0, hundreds: 1, captionKey: (l10n) => l10n.abacusCaption3),
+  _AbacusExample(
+      ones: 1, tens: 0, hundreds: 0, captionKey: (l10n) => l10n.abacusCaption1),
+  _AbacusExample(
+      ones: 0, tens: 1, hundreds: 0, captionKey: (l10n) => l10n.abacusCaption2),
+  _AbacusExample(
+      ones: 0, tens: 0, hundreds: 1, captionKey: (l10n) => l10n.abacusCaption3),
 ];
 
 /// Bounded, non-interactive Visual Maths placeholder for the future
@@ -38,11 +45,13 @@ class _AbacusScreenState extends State<AbacusScreen> {
       title: l10n.visualMathsAbacusTitle,
       onBack: () => popOrGo(context, '/math-studio/visual-maths'),
       caption: example.captionKey(l10n),
-      onTryAnother: () => setState(() => _index = (_index + 1) % _examples.length),
+      onTryAnother: () =>
+          setState(() => _index = (_index + 1) % _examples.length),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          _AbacusColumn(label: l10n.abacusColumnHundreds, active: example.hundreds),
+          _AbacusColumn(
+              label: l10n.abacusColumnHundreds, active: example.hundreds),
           _AbacusColumn(label: l10n.abacusColumnTens, active: example.tens),
           _AbacusColumn(label: l10n.abacusColumnOnes, active: example.ones),
         ],
@@ -71,13 +80,16 @@ class _AbacusColumn extends StatelessWidget {
                   height: 22,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: i < active ? const Color(0xFF5B8EFF) : Colors.transparent,
+                    color: i < active
+                        ? const Color(0xFF5B8EFF)
+                        : Colors.transparent,
                     border: Border.all(color: const Color(0xFF1F3055)),
                   ),
                 ),
               ),
             const SizedBox(height: 8),
-            Text(label, style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 12)),
+            Text(label,
+                style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 12)),
           ],
         ),
       ),

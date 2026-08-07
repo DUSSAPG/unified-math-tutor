@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" role="img" aria-label="Football precision explanation">
+  <rect width="640" height="260" rx="28" fill="#0B1120"/>
+  <rect x="28" y="28" width="584" height="204" rx="20" fill="#0E2A22" stroke="#1F3055" stroke-width="4"/>
+  <g font-family="DMSans, Arial, sans-serif" font-weight="700" text-anchor="middle">
+    <rect x="90" y="45" width="70" height="46" rx="12" fill="#132040" stroke="#5B8EFF"/>
+    <rect x="180" y="45" width="70" height="46" rx="12" fill="#132040" stroke="#5B8EFF"/>
+    <rect x="270" y="45" width="70" height="46" rx="12" fill="#FFBD00"/>
+    <rect x="360" y="45" width="70" height="46" rx="12" fill="#132040" stroke="#5B8EFF"/>
+    <rect x="450" y="45" width="70" height="46" rx="12" fill="#132040" stroke="#5B8EFF"/>
+    <text x="125" y="75" fill="#FFFFFF" font-size="24">1</text>
+    <text x="215" y="75" fill="#FFFFFF" font-size="24">2</text>
+    <text x="305" y="75" fill="#FFFFFF" font-size="24">3</text>
+    <text x="395" y="75" fill="#FFFFFF" font-size="24">4</text>
+    <text x="485" y="75" fill="#FFFFFF" font-size="24">5</text>
+  </g>
+  <g transform="translate(248 164)">
+    <rect x="-30" y="-28" width="60" height="56" rx="16" fill="#5B8EFF"/>
+    <circle cx="-12" cy="-8" r="5" fill="#FFFFFF"/>
+    <circle cx="12" cy="-8" r="5" fill="#FFFFFF"/>
+    <path d="M-14 12 Q0 22 14 12" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <circle cx="350" cy="180" r="18" fill="#FFFFFF"/>
+  <path d="M350 180 L305 92" stroke="#34C759" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="305" cy="92" r="10" fill="#34C759"/>
+  <text x="460" y="154" fill="#8A9DC0" font-family="DMSans, Arial, sans-serif" font-size="20">angle + power</text>
+  <text x="460" y="184" fill="#FFFFFF" font-family="DMSans, Arial, sans-serif" font-size="22" font-weight="700">score accuracy</text>
+</svg>

@@ -18,12 +18,15 @@ void main() {
         home: child,
       );
 
-  testWidgets('Fraction Bars shows the Preview badge and cycles captions on tap', (tester) async {
+  testWidgets(
+      'Fraction Bars shows the Preview badge and cycles captions on tap',
+      (tester) async {
     await tester.pumpWidget(wrap(const FractionBarsScreen()));
     await tester.pumpAndSettle();
 
     expect(find.text('Preview'), findsOneWidget);
-    expect(find.text('Interactive version coming in a future release.'), findsOneWidget);
+    expect(find.text('Interactive version coming in a future release.'),
+        findsOneWidget);
     expect(find.text('1/2 is exactly half of the whole bar.'), findsOneWidget);
 
     await tester.tap(find.text('Try another example'));
@@ -36,12 +39,14 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('Abacus shows the Preview badge and cycles captions on tap', (tester) async {
+  testWidgets('Abacus shows the Preview badge and cycles captions on tap',
+      (tester) async {
     await tester.pumpWidget(wrap(const AbacusScreen()));
     await tester.pumpAndSettle();
 
     expect(find.text('Preview'), findsOneWidget);
-    expect(find.text('One bead moved in the ones column represents 1.'), findsOneWidget);
+    expect(find.text('One bead moved in the ones column represents 1.'),
+        findsOneWidget);
 
     await tester.tap(find.text('Try another example'));
     await tester.pumpAndSettle();
@@ -53,7 +58,8 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('Place Value Explorer shows the Preview badge and cycles captions on tap',
+  testWidgets(
+      'Place Value Explorer shows the Preview badge and cycles captions on tap',
       (tester) async {
     await tester.pumpWidget(wrap(const PlaceValueExplorerScreen()));
     await tester.pumpAndSettle();

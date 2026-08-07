@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" role="img" aria-label="Flight path visual explanation">
+  <rect width="640" height="260" rx="28" fill="#0B1120"/>
+  <circle cx="190" cy="190" r="120" fill="#132040" stroke="#1F3055" stroke-width="4"/>
+  <path d="M190 190 L350 75" stroke="#5B8EFF" stroke-width="8" stroke-linecap="round"/>
+  <path d="M190 190 L332 105" stroke="#34C759" stroke-width="4" stroke-dasharray="12 10"/>
+  <circle cx="190" cy="190" r="8" fill="#FFFFFF"/>
+  <path d="M350 75 l-18 4 a18 18 0 1 1 22 22 z" fill="#FFBD00" stroke="#FFFFFF" stroke-width="3"/>
+  <text x="390" y="84" fill="#FFFFFF" font-family="DMSans, Arial, sans-serif" font-size="24" font-weight="700">bearing</text>
+  <text x="390" y="120" fill="#8A9DC0" font-family="DMSans, Arial, sans-serif" font-size="20">distance to target</text>
+  <text x="390" y="156" fill="#34C759" font-family="DMSans, Arial, sans-serif" font-size="20">route correction</text>
+</svg>

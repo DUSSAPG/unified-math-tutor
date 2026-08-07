@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" role="img" aria-label="Maze sequencing explanation">
+  <rect width="640" height="260" rx="28" fill="#0B1120"/>
+  <g transform="translate(70 34)">
+    <rect width="336" height="192" rx="18" fill="#132040" stroke="#1F3055" stroke-width="4"/>
+    <g stroke="#1F3055" stroke-width="2">
+      <path d="M48 0 V192M96 0 V192M144 0 V192M192 0 V192M240 0 V192M288 0 V192"/>
+      <path d="M0 48 H336M0 96 H336M0 144 H336"/>
+    </g>
+    <g fill="#0B1120">
+      <rect x="48" y="48" width="48" height="144"/>
+      <rect x="144" y="0" width="48" height="96"/>
+      <rect x="144" y="144" width="48" height="48"/>
+      <rect x="240" y="96" width="48" height="96"/>
+    </g>
+    <rect x="10" y="154" width="28" height="28" rx="6" fill="#34C759"/>
+    <text x="24" y="175" fill="#FFFFFF" text-anchor="middle" font-family="DMSans, Arial, sans-serif" font-size="20" font-weight="700">S</text>
+    <rect x="298" y="10" width="28" height="28" rx="6" fill="#FFBD00"/>
+    <text x="312" y="31" fill="#FFFFFF" text-anchor="middle" font-family="DMSans, Arial, sans-serif" font-size="20" font-weight="700">D</text>
+    <path d="M24 168 H120 V120 H216 V72 H312" fill="none" stroke="#5B8EFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="102" y="106" width="36" height="24" rx="8" fill="#5B8EFF"/>
+    <circle cx="112" cy="132" r="5" fill="#FFFFFF"/>
+    <circle cx="128" cy="132" r="5" fill="#FFFFFF"/>
+  </g>
+  <g font-family="DMSans, Arial, sans-serif">
+    <text x="455" y="82" fill="#FFFFFF" font-size="24" font-weight="700">turn sequence</text>
+    <text x="455" y="116" fill="#8A9DC0" font-size="19">right, up, right, up</text>
+    <text x="455" y="160" fill="#FFFFFF" font-size="24" font-weight="700">elapsed time</text>
+    <text x="455" y="194" fill="#8A9DC0" font-size="19">shorter path = fewer moves</text>
+  </g>
+</svg>

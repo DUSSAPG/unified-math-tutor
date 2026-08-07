@@ -8,6 +8,7 @@ import '../../services/audio_cue_service.dart';
 import '../../services/captain_math_service.dart';
 import '../../services/interactive_labs_progress_service.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 import 'guided_narration_banner.dart';
 import 'lab_first_use_overlay.dart';
 import 'lab_help_sheet.dart';
@@ -95,9 +96,12 @@ class _LabScaffoldState extends State<LabScaffold> {
 
   Future<void> _maybeShowFirstUse() async {
     if (!mounted) return;
-    if (InteractiveLabsProgressService.instance.hasSeenFirstUse(widget.labId)) return;
+    if (InteractiveLabsProgressService.instance.hasSeenFirstUse(widget.labId)) {
+      return;
+    }
     await showLabFirstUseWalkthrough(context, widget.firstUseSteps);
-    await InteractiveLabsProgressService.instance.markFirstUseSeen(widget.labId);
+    await InteractiveLabsProgressService.instance
+        .markFirstUseSeen(widget.labId);
   }
 
   @override
@@ -124,22 +128,25 @@ class _LabScaffoldState extends State<LabScaffold> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0B1120),
+        backgroundColor: colors.background,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: colors.primaryText),
           onPressed: () => popOrGo(context, '/math-studio/interactive-labs'),
         ),
-        title: Text(widget.title, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700)),
+        title: Text(widget.title,
+            style: TextStyle(
+                color: colors.primaryText, fontWeight: FontWeight.w700)),
         actions: [
           Semantics(
             button: true,
             label: l10n.labsHelpButton,
             child: IconButton(
-              icon: const Icon(Icons.help_outline, color: Colors.white),
+              icon: Icon(Icons.help_outline, color: colors.primaryText),
               tooltip: l10n.labsHelpButton,
               onPressed: () => showLabHelpSheet(context, widget.helpContent),
             ),
@@ -148,7 +155,7 @@ class _LabScaffoldState extends State<LabScaffold> {
             button: true,
             label: l10n.labsResetButton,
             child: IconButton(
-              icon: const Icon(Icons.refresh, color: Colors.white),
+              icon: Icon(Icons.refresh, color: colors.primaryText),
               tooltip: l10n.labsResetButton,
               onPressed: widget.onReset,
             ),
@@ -158,7 +165,8 @@ class _LabScaffoldState extends State<LabScaffold> {
       body: SafeArea(
         child: Center(
           child: ConstrainedBox(
-            constraints: BoxConstraints(maxWidth: AppResponsive.contentMaxWidth(context)),
+            constraints: BoxConstraints(
+                maxWidth: AppResponsive.contentMaxWidth(context)),
             child: SingleChildScrollView(
               padding: const EdgeInsets.fromLTRB(16, 8, 16, 40),
               child: Column(
@@ -173,11 +181,15 @@ class _LabScaffoldState extends State<LabScaffold> {
                     padding: const EdgeInsets.only(top: AppSpacing.sm),
                     child: GuidedNarrationBanner(labId: widget.labId),
                   ),
-                  if (widget.conceptText != null && widget.conceptText!.isNotEmpty) ...[
+                  if (widget.conceptText != null &&
+                      widget.conceptText!.isNotEmpty) ...[
                     const SizedBox(height: AppSpacing.sm),
                     Text(
                       widget.conceptText!,
-                      style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13, height: 1.4),
+                      style: TextStyle(
+                          color: colors.secondaryText,
+                          fontSize: 13,
+                          height: 1.4),
                     ),
                   ],
                   const SizedBox(height: AppSpacing.lg),
@@ -199,7 +211,8 @@ class _LabScaffoldState extends State<LabScaffold> {
                   const SizedBox(height: AppSpacing.sm),
                   Text(
                     widget.whereYoullUseThis,
-                    style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13, height: 1.4),
+                    style: TextStyle(
+                        color: colors.secondaryText, fontSize: 13, height: 1.4),
                   ),
                   const SizedBox(height: AppSpacing.lg),
                   widget.relatedLinks,
@@ -221,8 +234,8 @@ class _SectionHeading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: const TextStyle(
-        color: Color(0xFF5B8EFF),
+      style: TextStyle(
+        color: context.appColors.accent,
         fontSize: 12,
         fontWeight: FontWeight.w700,
         letterSpacing: 1.1,

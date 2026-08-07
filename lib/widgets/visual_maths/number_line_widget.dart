@@ -102,15 +102,19 @@ class _NumberLineWidgetState extends State<NumberLineWidget>
             return GestureDetector(
               onHorizontalDragUpdate: (details) =>
                   _updateFromLocalX(details.localPosition.dx, width),
-              onTapUp: (details) => _updateFromLocalX(details.localPosition.dx, width),
+              onTapUp: (details) =>
+                  _updateFromLocalX(details.localPosition.dx, width),
               child: SizedBox(
                 height: 72,
                 width: double.infinity,
                 child: AnimatedBuilder(
                   animation: _controller,
                   builder: (context, _) {
-                    final t = _motionEnabled ? Curves.easeOut.transform(_controller.value) : 1.0;
-                    final animatedValue = _animatedFrom + (_animatedTo - _animatedFrom) * t;
+                    final t = _motionEnabled
+                        ? Curves.easeOut.transform(_controller.value)
+                        : 1.0;
+                    final animatedValue =
+                        _animatedFrom + (_animatedTo - _animatedFrom) * t;
                     return CustomPaint(
                       painter: _NumberLinePainter(
                         min: widget.min,
@@ -185,7 +189,8 @@ class _NumberLinePainter extends CustomPainter {
 
   void _drawLabel(Canvas canvas, String text, Offset offset) {
     final painter = TextPainter(
-      text: TextSpan(text: text, style: const TextStyle(color: _labelColor, fontSize: 12)),
+      text: TextSpan(
+          text: text, style: const TextStyle(color: _labelColor, fontSize: 12)),
       textDirection: TextDirection.ltr,
     )..layout();
     painter.paint(canvas, offset);
@@ -193,5 +198,7 @@ class _NumberLinePainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant _NumberLinePainter oldDelegate) =>
-      oldDelegate.value != value || oldDelegate.min != min || oldDelegate.max != max;
+      oldDelegate.value != value ||
+      oldDelegate.min != min ||
+      oldDelegate.max != max;
 }

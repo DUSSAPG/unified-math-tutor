@@ -37,7 +37,8 @@ class ExploreMathIntelligenceScreen extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: ConstrainedBox(
-            constraints: BoxConstraints(maxWidth: AppResponsive.contentMaxWidth(context)),
+            constraints: BoxConstraints(
+                maxWidth: AppResponsive.contentMaxWidth(context)),
             child: SingleChildScrollView(
               padding: const EdgeInsets.fromLTRB(16, 8, 16, 40),
               child: Column(
@@ -57,11 +58,21 @@ class ExploreMathIntelligenceScreen extends StatelessWidget {
                     color: const Color(0xFF34C759),
                   ),
                   const SizedBox(height: AppSpacing.sm),
+                  // This screen is itself pushed above the bottom-nav shell
+                  // (a root-navigator route), so any card below that opens a
+                  // shell-tab destination (Practice, Topics, Journey, Formula
+                  // Library) MUST use go(), never push() — see the ownership
+                  // model comment above the navigator keys in
+                  // lib/app/router.dart for why push() here duplicates a
+                  // Navigator GlobalKey and crashes. Cards that open
+                  // non-shell destinations (Math Studio, Exam Packs, ...)
+                  // are unaffected and may keep using push().
                   _AvailableFeatureCard(
                     icon: LucideIcons.calculator,
                     iconColor: const Color(0xFF3D7EFF),
                     title: l10n.explorePersonalisedPracticeTitle,
                     body: l10n.explorePersonalisedPracticeBody,
+                    onTap: () => context.go('/practice'),
                   ),
                   const SizedBox(height: 10),
                   _AvailableFeatureCard(
@@ -69,6 +80,7 @@ class ExploreMathIntelligenceScreen extends StatelessWidget {
                     iconColor: const Color(0xFF7C5FFF),
                     title: l10n.exploreTopicLearningTitle,
                     body: l10n.exploreTopicLearningBody,
+                    onTap: () => context.go('/topics'),
                   ),
                   const SizedBox(height: 10),
                   _AvailableFeatureCard(
@@ -76,6 +88,7 @@ class ExploreMathIntelligenceScreen extends StatelessWidget {
                     iconColor: const Color(0xFFFFBD00),
                     title: l10n.exploreTimedChallengesTitle,
                     body: l10n.exploreTimedChallengesBody,
+                    onTap: () => context.push('/math-studio/mental-maths'),
                   ),
                   const SizedBox(height: 10),
                   _AvailableFeatureCard(
@@ -83,6 +96,7 @@ class ExploreMathIntelligenceScreen extends StatelessWidget {
                     iconColor: const Color(0xFF00BCD4),
                     title: l10n.exploreExamSimulatorTitle,
                     body: l10n.exploreExamSimulatorBody,
+                    onTap: () => context.push('/packs'),
                   ),
                   const SizedBox(height: 10),
                   _AvailableFeatureCard(
@@ -90,6 +104,7 @@ class ExploreMathIntelligenceScreen extends StatelessWidget {
                     iconColor: const Color(0xFFFF6B35),
                     title: l10n.exploreMathsJourneyTitle,
                     body: l10n.exploreMathsJourneyBody,
+                    onTap: () => context.go('/journey'),
                   ),
                   const SizedBox(height: 10),
                   _AvailableFeatureCard(
@@ -97,6 +112,7 @@ class ExploreMathIntelligenceScreen extends StatelessWidget {
                     iconColor: const Color(0xFF00BCD4),
                     title: l10n.learningAnalyticsTitle,
                     body: l10n.exploreLearningAnalyticsBody,
+                    onTap: () => context.go('/journey'),
                   ),
                   const SizedBox(height: 10),
                   _AvailableFeatureCard(
@@ -104,6 +120,7 @@ class ExploreMathIntelligenceScreen extends StatelessWidget {
                     iconColor: const Color(0xFF34C759),
                     title: l10n.homeFormulaLibraryTitle,
                     body: l10n.exploreFormulaLibraryBody,
+                    onTap: () => context.go('/formulas'),
                   ),
                   const SizedBox(height: 10),
                   _AvailableFeatureCard(
@@ -413,7 +430,8 @@ class _RoadmapPhilosophyCard extends StatelessWidget {
         children: [
           Row(
             children: [
-              const Icon(LucideIcons.compass, color: Color(0xFF5B8EFF), size: 16),
+              const Icon(LucideIcons.compass,
+                  color: Color(0xFF5B8EFF), size: 16),
               const SizedBox(width: 8),
               Expanded(
                 child: Text(

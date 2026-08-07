@@ -10,7 +10,8 @@ class CaptainMathService {
   CaptainMathService._();
   static final instance = CaptainMathService._();
 
-  final ValueNotifier<CaptainMathState> state = ValueNotifier(CaptainMathState.calm);
+  final ValueNotifier<CaptainMathState> state =
+      ValueNotifier(CaptainMathState.calm);
   final ValueNotifier<int> celebrationSerial = ValueNotifier(0);
 
   void showDiscoveryIntro() => state.value = CaptainMathState.curious;

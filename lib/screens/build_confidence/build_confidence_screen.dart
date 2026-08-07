@@ -79,7 +79,8 @@ class _BuildConfidenceScreenState extends State<BuildConfidenceScreen> {
         ),
         title: Text(
           l10n.mathStudioBuildConfidenceTitle,
-          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+          style:
+              const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
         ),
       ),
       body: SafeArea(
@@ -88,7 +89,8 @@ class _BuildConfidenceScreenState extends State<BuildConfidenceScreen> {
           builder: (context, snapshot) {
             if (snapshot.hasError) {
               return const Center(
-                child: Icon(Icons.error_outline, color: Color(0xFF8A9DC0), size: 32),
+                child: Icon(Icons.error_outline,
+                    color: Color(0xFF8A9DC0), size: 32),
               );
             }
             final questions = snapshot.data;
@@ -103,7 +105,8 @@ class _BuildConfidenceScreenState extends State<BuildConfidenceScreen> {
             final question = questions[_index];
             return Center(
               child: ConstrainedBox(
-                constraints: BoxConstraints(maxWidth: AppResponsive.contentMaxWidth(context)),
+                constraints: BoxConstraints(
+                    maxWidth: AppResponsive.contentMaxWidth(context)),
                 child: SingleChildScrollView(
                   padding: const EdgeInsets.fromLTRB(16, 8, 16, 40),
                   child: Column(
@@ -114,12 +117,15 @@ class _BuildConfidenceScreenState extends State<BuildConfidenceScreen> {
                         minHeight: 5,
                         borderRadius: BorderRadius.circular(4),
                         backgroundColor: const Color(0xFF1F3055),
-                        valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFF34C759)),
+                        valueColor: const AlwaysStoppedAnimation<Color>(
+                            Color(0xFF34C759)),
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        l10n.buildConfidenceProgress(_index + 1, questions.length),
-                        style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 12),
+                        l10n.buildConfidenceProgress(
+                            _index + 1, questions.length),
+                        style: const TextStyle(
+                            color: Color(0xFF8A9DC0), fontSize: 12),
                       ),
                       const SizedBox(height: AppSpacing.md),
                       CaptainMathCard(state: CaptainMathState.calm),
@@ -153,7 +159,10 @@ class _BuildConfidenceScreenState extends State<BuildConfidenceScreen> {
                           ),
                           child: Text(
                             MathNotationFormatter.format(question.explanation),
-                            style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13, height: 1.4),
+                            style: const TextStyle(
+                                color: Color(0xFF8A9DC0),
+                                fontSize: 13,
+                                height: 1.4),
                           ),
                         ),
                         const SizedBox(height: AppSpacing.md),
@@ -179,7 +188,8 @@ class _OptionTile extends StatelessWidget {
   final bool selected;
   final VoidCallback onTap;
 
-  const _OptionTile({required this.label, required this.selected, required this.onTap});
+  const _OptionTile(
+      {required this.label, required this.selected, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -214,13 +224,15 @@ class _CompletionView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: ConstrainedBox(
-        constraints: BoxConstraints(maxWidth: AppResponsive.contentMaxWidth(context)),
+        constraints:
+            BoxConstraints(maxWidth: AppResponsive.contentMaxWidth(context)),
         child: Padding(
           padding: const EdgeInsets.all(24),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Icon(Icons.check_circle_outline, color: Color(0xFF34C759), size: 48),
+              const Icon(Icons.check_circle_outline,
+                  color: Color(0xFF34C759), size: 48),
               const SizedBox(height: AppSpacing.md),
               Text(
                 l10n.buildConfidenceCompletionTitle,
@@ -234,7 +246,8 @@ class _CompletionView extends StatelessWidget {
               Text(
                 l10n.buildConfidenceCompletionBody,
                 textAlign: TextAlign.center,
-                style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 14, height: 1.4),
+                style: const TextStyle(
+                    color: Color(0xFF8A9DC0), fontSize: 14, height: 1.4),
               ),
               const SizedBox(height: AppSpacing.lg),
               ElevatedButton(

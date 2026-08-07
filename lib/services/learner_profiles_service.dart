@@ -104,7 +104,8 @@ class LearnerProfilesService {
     ];
     await _persistProfiles();
     if (activeLearnerId.value == id) {
-      final fallback = profiles.value.isNotEmpty ? profiles.value.first.id : null;
+      final fallback =
+          profiles.value.isNotEmpty ? profiles.value.first.id : null;
       if (fallback != null) {
         await setActiveLearner(fallback);
       } else {

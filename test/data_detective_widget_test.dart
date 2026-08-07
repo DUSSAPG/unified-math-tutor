@@ -41,14 +41,16 @@ void main() {
       'first dataset shows 7 value chips, an outlier explanation, and live mean/median/range stats',
       (tester) async {
     await pump(tester);
-    expect(find.textContaining('90'), findsWidgets); // the outlier value, chip + explanation
+    expect(find.textContaining('90'),
+        findsWidgets); // the outlier value, chip + explanation
     expect(find.textContaining('stands out'), findsOneWidget);
     expect(find.text('33.4'), findsOneWidget); // mean, 1dp
     expect(find.text('24'), findsWidgets); // median tile and/or a value chip
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('predicting mean and revealing gives correct feedback (mean shifts more than median)',
+  testWidgets(
+      'predicting mean and revealing gives correct feedback (mean shifts more than median)',
       (tester) async {
     await pump(tester);
     await tester.ensureVisible(find.widgetWithText(ChoiceChip, 'Mean'));
@@ -66,7 +68,8 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('predicting median instead gives the not-quite feedback', (tester) async {
+  testWidgets('predicting median instead gives the not-quite feedback',
+      (tester) async {
     await pump(tester);
     await tester.ensureVisible(find.widgetWithText(ChoiceChip, 'Median'));
     await tester.tap(find.widgetWithText(ChoiceChip, 'Median'));
@@ -79,10 +82,11 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('Reveal is disabled until a prediction is chosen', (tester) async {
+  testWidgets('Reveal is disabled until a prediction is chosen',
+      (tester) async {
     await pump(tester);
-    final revealButton =
-        tester.widget<ElevatedButton>(find.widgetWithText(ElevatedButton, 'Remove outlier & reveal'));
+    final revealButton = tester.widget<ElevatedButton>(
+        find.widgetWithText(ElevatedButton, 'Remove outlier & reveal'));
     expect(revealButton.onPressed, isNull);
     expect(tester.takeException(), isNull);
   });
@@ -96,10 +100,13 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('the outlier chip carries a warning icon, not colour alone', (tester) async {
+  testWidgets('the outlier chip carries a warning icon, not colour alone',
+      (tester) async {
     await pump(tester);
     final outlierChip = tester.widget<InputChip>(
-      find.ancestor(of: find.text('90'), matching: find.byType(InputChip)).first,
+      find
+          .ancestor(of: find.text('90'), matching: find.byType(InputChip))
+          .first,
     );
     expect(outlierChip.avatar, isNotNull);
     expect(tester.takeException(), isNull);

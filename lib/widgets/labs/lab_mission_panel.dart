@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../shared/theme/app_theme.dart';
+
 /// The "Mission" stage of the shared guided-lab flow (Mission → Try →
 /// Predict → Test → Notice → Explain → Try another): a short, always-visible
 /// statement of what this lab session is asking the learner to do. Kept
@@ -12,25 +14,26 @@ class LabMissionPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Semantics(
       container: true,
       child: Container(
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
-          color: const Color(0xFF132040),
+          color: colors.cardSurface,
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: const Color(0xFF34C759).withValues(alpha: 0.4)),
+          border: Border.all(color: colors.success.withValues(alpha: 0.4)),
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Icon(Icons.flag_outlined, color: Color(0xFF34C759), size: 20),
+            Icon(Icons.flag_outlined, color: colors.success, size: 20),
             const SizedBox(width: 10),
             Expanded(
               child: Text(
                 text,
-                style: const TextStyle(
-                  color: Colors.white,
+                style: TextStyle(
+                  color: colors.primaryText,
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                   height: 1.35,

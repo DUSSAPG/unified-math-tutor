@@ -9,10 +9,12 @@ import '../models/discovery_card.dart';
 /// convention: any structural problem in the bundled JSON throws at load
 /// time rather than surfacing as a broken card mid-session.
 class DiscoveryCardCatalogService {
-  DiscoveryCardCatalogService({AssetBundle? bundle}) : _bundle = bundle ?? rootBundle;
+  DiscoveryCardCatalogService({AssetBundle? bundle})
+      : _bundle = bundle ?? rootBundle;
 
   static const assetPath = 'assets/config/discovery_cards.json';
-  static final DiscoveryCardCatalogService instance = DiscoveryCardCatalogService();
+  static final DiscoveryCardCatalogService instance =
+      DiscoveryCardCatalogService();
 
   final AssetBundle _bundle;
   List<DiscoveryCard>? _cards;
@@ -23,14 +25,17 @@ class DiscoveryCardCatalogService {
 
     final decoded = jsonDecode(await _bundle.loadString(assetPath));
     if (decoded is! Map<String, dynamic>) {
-      throw const FormatException('Discovery card catalog root must be an object.');
+      throw const FormatException(
+          'Discovery card catalog root must be an object.');
     }
     if (decoded['version'] is! int) {
-      throw const FormatException('Discovery card catalog "version" must be an integer.');
+      throw const FormatException(
+          'Discovery card catalog "version" must be an integer.');
     }
     final cardsValue = decoded['cards'];
     if (cardsValue is! List || cardsValue.isEmpty) {
-      throw const FormatException('Discovery card catalog "cards" must be a non-empty list.');
+      throw const FormatException(
+          'Discovery card catalog "cards" must be a non-empty list.');
     }
 
     final cards = <DiscoveryCard>[];
@@ -41,7 +46,8 @@ class DiscoveryCardCatalogService {
       }
       final card = DiscoveryCard.fromJson(value);
       if (!seenIds.add(card.id)) {
-        throw FormatException('Discovery card catalog contains duplicate id "${card.id}".');
+        throw FormatException(
+            'Discovery card catalog contains duplicate id "${card.id}".');
       }
       cards.add(card);
     }
@@ -75,4 +81,3 @@ class DiscoveryCardCatalogService {
     return byId(id);
   }
 }
-

@@ -7,7 +7,8 @@ import '../../services/onboarding_profile_service.dart';
 
 enum _ExportMode { challenge, solution, combined }
 
-Future<void> showDiscoveryExportSheet(BuildContext context, DiscoveryCard card) {
+Future<void> showDiscoveryExportSheet(
+    BuildContext context, DiscoveryCard card) {
   return showModalBottomSheet<void>(
     context: context,
     backgroundColor: const Color(0xFF132040),
@@ -36,7 +37,8 @@ class _DiscoveryExportSheetState extends State<_DiscoveryExportSheet> {
 
   Future<void> _share() async {
     final text = widget.card.textFor(Localizations.localeOf(context));
-    final name = _includeName ? OnboardingProfileService.instance.childName.value : null;
+    final name =
+        _includeName ? OnboardingProfileService.instance.childName.value : null;
     const service = DiscoveryCardExportService();
     final navigator = Navigator.of(context);
 
@@ -107,7 +109,8 @@ class _DiscoveryExportSheetState extends State<_DiscoveryExportSheet> {
             ),
             CheckboxListTile(
               value: _includeName,
-              onChanged: (value) => setState(() => _includeName = value ?? false),
+              onChanged: (value) =>
+                  setState(() => _includeName = value ?? false),
               controlAffinity: ListTileControlAffinity.leading,
               title: Text(l10n.mathStudioExportIncludeNameLabel,
                   style: const TextStyle(color: Colors.white)),

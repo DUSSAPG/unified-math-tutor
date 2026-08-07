@@ -28,7 +28,9 @@ class LabRelatedLinks extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    if (recallCardIds.isEmpty && discoveryCardIds.isEmpty && practiceTopicIds.isEmpty) {
+    if (recallCardIds.isEmpty &&
+        discoveryCardIds.isEmpty &&
+        practiceTopicIds.isEmpty) {
       return const SizedBox.shrink();
     }
 
@@ -45,7 +47,8 @@ class LabRelatedLinks extends StatelessWidget {
                 ActionChip(
                   label: Text(id),
                   onPressed: () {
-                    InteractiveLabsProgressService.instance.recordLinkedRecallUse(labId);
+                    InteractiveLabsProgressService.instance
+                        .recordLinkedRecallUse(labId);
                     context.push('/math-studio/recall-cards/card/$id');
                   },
                 ),
@@ -63,7 +66,8 @@ class LabRelatedLinks extends StatelessWidget {
                 ActionChip(
                   label: Text(id),
                   onPressed: () {
-                    InteractiveLabsProgressService.instance.recordLinkedDiscoveryUse(labId);
+                    InteractiveLabsProgressService.instance
+                        .recordLinkedDiscoveryUse(labId);
                     context.push('/math-studio/discovery/$id');
                   },
                 ),
@@ -81,8 +85,9 @@ class LabRelatedLinks extends StatelessWidget {
                 ActionChip(
                   label: Text(id),
                   onPressed: () {
-                    InteractiveLabsProgressService.instance.recordLinkedPracticeUse(labId);
-                    context.push('/topics/$id');
+                    InteractiveLabsProgressService.instance
+                        .recordLinkedPracticeUse(labId);
+                    context.push('/topics');
                   },
                 ),
             ],
@@ -103,7 +108,10 @@ class _GroupLabel extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 6),
       child: Text(
         text,
-        style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 12, fontWeight: FontWeight.w600),
+        style: const TextStyle(
+            color: Color(0xFF8A9DC0),
+            fontSize: 12,
+            fontWeight: FontWeight.w600),
       ),
     );
   }

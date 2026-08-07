@@ -55,7 +55,8 @@ void main() {
     await tester.pumpAndSettle();
 
     final l10n = lookupAppLocalizations(const Locale('en'));
-    final expected = greetingFor(l10n, greetingPeriodFor(DateTime.now()), 'Sam');
+    final expected =
+        greetingFor(l10n, greetingPeriodFor(DateTime.now()), 'Sam');
     expect(find.text(expected), findsOneWidget);
   });
 

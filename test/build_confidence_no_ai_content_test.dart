@@ -6,7 +6,9 @@ import 'package:unified_math_tutor/services/pack_registry_service.dart';
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  test('Build Confidence is a dedicated pack, not exam questions filtered by difficulty', () async {
+  test(
+      'Build Confidence is a dedicated pack, not exam questions filtered by difficulty',
+      () async {
     final pack = await PackRegistryService.instance.forId('build_confidence');
     final rows = await JsonlPackLoader.instance.load(pack);
     final questions = rows.map(QuestionItem.fromJson).toList();
@@ -17,23 +19,33 @@ void main() {
     }
   });
 
-  test('no punitive or AI-related language anywhere in the pack content', () async {
+  test('no punitive or AI-related language anywhere in the pack content',
+      () async {
     final pack = await PackRegistryService.instance.forId('build_confidence');
     final rows = await JsonlPackLoader.instance.load(pack);
     final questions = rows.map(QuestionItem.fromJson).toList();
 
-    const forbidden = ['wrong', 'incorrect', 'fail', ' ai ', 'artificial intelligence'];
+    const forbidden = [
+      'wrong',
+      'incorrect',
+      'fail',
+      ' ai ',
+      'artificial intelligence'
+    ];
     for (final question in questions) {
       final haystack =
           ' ${question.question} ${question.explanation} ${question.options.join(' ')} '
               .toLowerCase();
       for (final term in forbidden) {
-        expect(haystack.contains(term), isFalse, reason: 'Found "$term" in ${question.id}');
+        expect(haystack.contains(term), isFalse,
+            reason: 'Found "$term" in ${question.id}');
       }
     }
   });
 
-  test('difficulty tiers represent gradual progression, not exam difficulty labels', () async {
+  test(
+      'difficulty tiers represent gradual progression, not exam difficulty labels',
+      () async {
     final pack = await PackRegistryService.instance.forId('build_confidence');
     final rows = await JsonlPackLoader.instance.load(pack);
     final questions = rows.map(QuestionItem.fromJson).toList();

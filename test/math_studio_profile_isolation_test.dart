@@ -15,20 +15,27 @@ void main() {
     await MentalMathsProgressService.instance.init();
   });
 
-  test('Mental Maths tier and recent-shown history do not leak between learner profiles',
+  test(
+      'Mental Maths tier and recent-shown history do not leak between learner profiles',
       () async {
     const category = MentalMathsCategory.percentages;
-    final learnerAId = await LearnerProfilesService.instance.addLearner('Learner A');
-    final learnerBId = await LearnerProfilesService.instance.addLearner('Learner B');
+    final learnerAId =
+        await LearnerProfilesService.instance.addLearner('Learner A');
+    final learnerBId =
+        await LearnerProfilesService.instance.addLearner('Learner B');
 
     await LearnerProfilesService.instance.setActiveLearner(learnerAId);
     for (var i = 0; i < 10; i++) {
-      await MentalMathsProgressService.instance.recordAttempt(category, correct: true);
+      await MentalMathsProgressService.instance
+          .recordAttempt(category, correct: true);
     }
-    await MentalMathsProgressService.instance.recordShown(category, 'percentages-01');
+    await MentalMathsProgressService.instance
+        .recordShown(category, 'percentages-01');
 
-    expect(MentalMathsProgressService.instance.tierFor(category), MentalMathsTier.intermediate);
-    expect(MentalMathsProgressService.instance.recentlyShown(category), ['percentages-01']);
+    expect(MentalMathsProgressService.instance.tierFor(category),
+        MentalMathsTier.intermediate);
+    expect(MentalMathsProgressService.instance.recentlyShown(category),
+        ['percentages-01']);
 
     await LearnerProfilesService.instance.setActiveLearner(learnerBId);
 
@@ -44,15 +51,22 @@ void main() {
     );
 
     await LearnerProfilesService.instance.setActiveLearner(learnerAId);
-    expect(MentalMathsProgressService.instance.tierFor(category), MentalMathsTier.intermediate);
-    expect(MentalMathsProgressService.instance.recentlyShown(category), ['percentages-01']);
+    expect(MentalMathsProgressService.instance.tierFor(category),
+        MentalMathsTier.intermediate);
+    expect(MentalMathsProgressService.instance.recentlyShown(category),
+        ['percentages-01']);
   });
 
-  test('progress falls back to a stable "default" namespace with no active learner', () async {
+  test(
+      'progress falls back to a stable "default" namespace with no active learner',
+      () async {
     const category = MentalMathsCategory.fractions;
     expect(LearnerProfilesService.instance.activeLearnerId.value, isNull);
-    expect(MentalMathsProgressService.instance.tierFor(category), MentalMathsTier.foundation);
-    await MentalMathsProgressService.instance.recordShown(category, 'fractions-01');
-    expect(MentalMathsProgressService.instance.recentlyShown(category), ['fractions-01']);
+    expect(MentalMathsProgressService.instance.tierFor(category),
+        MentalMathsTier.foundation);
+    await MentalMathsProgressService.instance
+        .recordShown(category, 'fractions-01');
+    expect(MentalMathsProgressService.instance.recentlyShown(category),
+        ['fractions-01']);
   });
 }

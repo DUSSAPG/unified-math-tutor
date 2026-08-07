@@ -11,6 +11,7 @@ import '../../services/local_account_service.dart';
 import '../../services/onboarding_profile_service.dart';
 import '../../services/sign_out_service.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../widgets/onboarding/who_is_learning_sheet.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -86,6 +87,7 @@ class _ProfileContentState extends State<_ProfileContent> {
         AppSpacing.xl;
 
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return SingleChildScrollView(
       key: const PageStorageKey<String>('profile'),
       padding: EdgeInsets.only(bottom: bottomPadding),
@@ -101,8 +103,8 @@ class _ProfileContentState extends State<_ProfileContent> {
           const SizedBox(height: 28),
           Text(
             l10n.profileSettingsLabel,
-            style: const TextStyle(
-              color: Color(0xFF8A9DC0),
+            style: TextStyle(
+              color: colors.secondaryText,
               fontSize: 11,
               fontWeight: FontWeight.w600,
               letterSpacing: 1.2,
@@ -178,8 +180,8 @@ class _ProfileContentState extends State<_ProfileContent> {
           const SizedBox(height: 28),
           Text(
             l10n.profileAboutLabel.toUpperCase(),
-            style: const TextStyle(
-              color: Color(0xFF8A9DC0),
+            style: TextStyle(
+              color: colors.secondaryText,
               fontSize: 11,
               fontWeight: FontWeight.w600,
               letterSpacing: 1.2,
@@ -188,9 +190,9 @@ class _ProfileContentState extends State<_ProfileContent> {
           const SizedBox(height: 10),
           Container(
             decoration: BoxDecoration(
-              color: const Color(0xFF132040),
+              color: colors.cardSurface,
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: const Color(0xFF1F3055)),
+              border: Border.all(color: colors.divider),
             ),
             child: Column(
               children: [
@@ -199,15 +201,15 @@ class _ProfileContentState extends State<_ProfileContent> {
                   label: l10n.termsTitle,
                   onTap: () => context.push('/profile/terms'),
                 ),
-                const Divider(color: Color(0xFF1F3055), height: 1, indent: 52),
+                Divider(color: colors.divider, height: 1, indent: 52),
                 _AboutRow(
                   icon: Icons.shield_outlined,
                   label: l10n.profilePrivacyData,
                   onTap: () => context.push('/profile/privacy'),
                 ),
                 if (BuildFlags.enableDevUi) ...[
-                  const Divider(
-                    color: Color(0xFF1F3055),
+                  Divider(
+                    color: colors.divider,
                     height: 1,
                     indent: 52,
                   ),
@@ -227,17 +229,17 @@ class _ProfileContentState extends State<_ProfileContent> {
             width: double.infinity,
             padding: const EdgeInsets.symmetric(vertical: 14),
             decoration: BoxDecoration(
-              color: const Color(0xFF132040),
+              color: colors.cardSurface,
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: const Color(0xFF1F3055)),
+              border: Border.all(color: colors.divider),
             ),
             child: Column(
               children: [
-                const Text(
+                Text(
                   'Math Intelligence',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Color(0xFF8A9DC0),
+                    color: colors.secondaryText,
                     fontSize: 13,
                     fontWeight: FontWeight.w500,
                   ),
@@ -247,21 +249,20 @@ class _ProfileContentState extends State<_ProfileContent> {
                   Text(
                     l10n.profileVersionNumber(_appVersion!),
                     textAlign: TextAlign.center,
-                    style: const TextStyle(
-                        color: Color(0xFF4A6080), fontSize: 12),
+                    style: TextStyle(color: colors.tertiaryText, fontSize: 12),
                   ),
                 ],
                 const SizedBox(height: 6),
                 Text(
                   l10n.onboardingTechBadge,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(color: Color(0xFF4A6080), fontSize: 11),
+                  style: TextStyle(color: colors.tertiaryText, fontSize: 11),
                 ),
                 const SizedBox(height: 6),
                 Text(
                   l10n.profileCopyright,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(color: Color(0xFF4A6080), fontSize: 11),
+                  style: TextStyle(color: colors.tertiaryText, fontSize: 11),
                 ),
               ],
             ),
@@ -279,8 +280,11 @@ class _ProfileHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Column(
       children: [
+        // Avatar chip keeps a fixed brand-blue treatment regardless of
+        // theme — same "celebration badge" pattern used elsewhere.
         Container(
           width: 72,
           height: 72,
@@ -301,8 +305,8 @@ class _ProfileHeader extends StatelessWidget {
         const SizedBox(height: 14),
         Text(
           AppLocalizations.of(context).profileHeaderTitle,
-          style: const TextStyle(
-            color: Colors.white,
+          style: TextStyle(
+            color: colors.primaryText,
             fontSize: 22,
             fontWeight: FontWeight.w700,
           ),
@@ -310,8 +314,8 @@ class _ProfileHeader extends StatelessWidget {
         const SizedBox(height: 4),
         Text(
           AppLocalizations.of(context).profileHeaderSubtitle,
-          style: const TextStyle(
-            color: Color(0xFF8A9DC0),
+          style: TextStyle(
+            color: colors.secondaryText,
             fontSize: 14,
           ),
         ),
@@ -327,21 +331,21 @@ class _AccountStateCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return ValueListenableBuilder<AccountState>(
       valueListenable: LocalAccountService.instance.notifier,
       builder: (context, account, _) {
         return Container(
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
-            color: const Color(0xFF132040),
+            color: colors.cardSurface,
             borderRadius: BorderRadius.circular(14),
-            border: Border.all(color: const Color(0xFF1F3055)),
+            border: Border.all(color: colors.divider),
           ),
           child: account.isSignedIn
               ? Row(
                   children: [
-                    const Icon(Icons.verified_user,
-                        color: Color(0xFF34C759), size: 22),
+                    Icon(Icons.verified_user, color: colors.success, size: 22),
                     const SizedBox(width: 12),
                     Expanded(
                       child: Column(
@@ -349,8 +353,8 @@ class _AccountStateCard extends StatelessWidget {
                         children: [
                           Text(
                             'Signed in as ${account.displayName}',
-                            style: const TextStyle(
-                              color: Colors.white,
+                            style: TextStyle(
+                              color: colors.primaryText,
                               fontSize: 15,
                               fontWeight: FontWeight.w600,
                             ),
@@ -358,8 +362,8 @@ class _AccountStateCard extends StatelessWidget {
                           const SizedBox(height: 2),
                           Text(
                             account.email,
-                            style: const TextStyle(
-                              color: Color(0xFF8A9DC0),
+                            style: TextStyle(
+                              color: colors.secondaryText,
                               fontSize: 13,
                             ),
                           ),
@@ -373,14 +377,14 @@ class _AccountStateCard extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        const Icon(Icons.person_outline,
-                            color: Color(0xFF8A9DC0), size: 22),
+                        Icon(Icons.person_outline,
+                            color: colors.secondaryText, size: 22),
                         const SizedBox(width: 12),
-                        const Expanded(
+                        Expanded(
                           child: Text(
                             "You're browsing as a guest",
                             style: TextStyle(
-                              color: Colors.white,
+                              color: colors.primaryText,
                               fontSize: 15,
                               fontWeight: FontWeight.w600,
                             ),
@@ -389,12 +393,12 @@ class _AccountStateCard extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 4),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 34),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 34),
                       child: Text(
                         'Sign in to save progress, Maths Journey data and achievements on this device.',
                         style: TextStyle(
-                          color: Color(0xFF8A9DC0),
+                          color: colors.secondaryText,
                           fontSize: 13,
                         ),
                       ),
@@ -406,8 +410,8 @@ class _AccountStateCard extends StatelessWidget {
                           child: OutlinedButton(
                             onPressed: () => context.push('/auth/sign-in'),
                             style: OutlinedButton.styleFrom(
-                              foregroundColor: const Color(0xFF5B8EFF),
-                              side: const BorderSide(color: Color(0xFF3D7EFF)),
+                              foregroundColor: colors.accent,
+                              side: BorderSide(color: colors.primaryAction),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12),
                               ),
@@ -420,7 +424,7 @@ class _AccountStateCard extends StatelessWidget {
                           child: FilledButton(
                             onPressed: () => context.push('/auth/create'),
                             style: FilledButton.styleFrom(
-                              backgroundColor: const Color(0xFF3D7EFF),
+                              backgroundColor: colors.primaryAction,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12),
                               ),
@@ -445,25 +449,26 @@ class _IdentitySection extends StatelessWidget {
 
   Future<void> _editDisplayName(BuildContext context) async {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     final controller = TextEditingController(
       text: OnboardingProfileService.instance.preferredDisplayName.value ?? '',
     );
     final result = await showDialog<String>(
       context: context,
       builder: (dialogContext) => AlertDialog(
-        backgroundColor: const Color(0xFF132040),
+        backgroundColor: colors.cardSurface,
         title: Text(
           l10n.profileChangeDisplayName,
-          style: const TextStyle(color: Colors.white),
+          style: TextStyle(color: colors.primaryText),
         ),
         content: TextField(
           controller: controller,
           autofocus: true,
           textCapitalization: TextCapitalization.words,
-          style: const TextStyle(color: Colors.white),
+          style: TextStyle(color: colors.primaryText),
           decoration: InputDecoration(
             hintText: l10n.profileDisplayNameDialogHint,
-            hintStyle: const TextStyle(color: Color(0xFF4A6080)),
+            hintStyle: TextStyle(color: colors.tertiaryText),
           ),
           onSubmitted: (value) => Navigator.of(dialogContext).pop(value),
         ),
@@ -540,6 +545,15 @@ class _IdentitySection extends StatelessWidget {
                 subtitle: onboarding.childName.value ?? '',
                 onTap: () => showWhoIsLearningSheet(context),
               ),
+              const SizedBox(height: 10),
+              _SettingCard(
+                icon: Icons.family_restroom,
+                iconColor: const Color(0xFF5B8EFF),
+                iconBg: const Color(0xFF0D1F40),
+                title: l10n.familyStudioHubTitle,
+                subtitle: l10n.familyStudioProfileEntrySubtitle,
+                onTap: () => context.push('/family-studio'),
+              ),
             ],
           ],
         );
@@ -565,6 +579,7 @@ class _AboutRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return InkWell(
       borderRadius: BorderRadius.circular(isLast ? 14 : 0).copyWith(
         topLeft: const Radius.circular(14),
@@ -577,19 +592,19 @@ class _AboutRow extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
         child: Row(
           children: [
-            Icon(icon, color: const Color(0xFF5B8EFF), size: 20),
+            Icon(icon, color: colors.accent, size: 20),
             const SizedBox(width: 14),
             Expanded(
               child: Text(
                 label,
-                style: const TextStyle(
-                  color: Colors.white,
+                style: TextStyle(
+                  color: colors.primaryText,
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
                 ),
               ),
             ),
-            const Icon(Icons.chevron_right, color: Color(0xFF4A6080), size: 20),
+            Icon(Icons.chevron_right, color: colors.tertiaryText, size: 20),
           ],
         ),
       ),
@@ -623,15 +638,16 @@ class _SettingCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return InkWell(
       borderRadius: BorderRadius.circular(14),
       onTap: onTap,
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
         decoration: BoxDecoration(
-          color: const Color(0xFF132040),
+          color: colors.cardSurface,
           borderRadius: BorderRadius.circular(14),
-          border: Border.all(color: const Color(0xFF1F3055)),
+          border: Border.all(color: colors.divider),
         ),
         child: Row(
           children: [
@@ -668,8 +684,8 @@ class _SettingCard extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: const TextStyle(
-                      color: Colors.white,
+                    style: TextStyle(
+                      color: colors.primaryText,
                       fontSize: 15,
                       fontWeight: FontWeight.w600,
                     ),
@@ -677,14 +693,13 @@ class _SettingCard extends StatelessWidget {
                   const SizedBox(height: 2),
                   Text(
                     subtitle,
-                    style:
-                        const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13),
+                    style: TextStyle(color: colors.secondaryText, fontSize: 13),
                   ),
                 ],
               ),
             ),
             if (showChevron)
-              const Icon(Icons.chevron_right, color: Color(0xFF4A6080))
+              Icon(Icons.chevron_right, color: colors.tertiaryText)
             else if (isBusy)
               const SizedBox(
                 width: 24,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../app/safe_navigation.dart';
 import '../../services/local_preferences_service.dart';
+import '../../shared/theme/app_theme.dart';
 
 class AccessibilityScreen extends StatefulWidget {
   const AccessibilityScreen({super.key});
@@ -12,8 +13,8 @@ class AccessibilityScreen extends StatefulWidget {
 class _AccessibilityScreenState extends State<AccessibilityScreen> {
   static const List<double> _textScales = [0.9, 1.0, 1.15];
 
-  late int _textSize = _textScaleIndex(
-      LocalPreferencesService.instance.textScale.value); // 0=Small 1=Default 2=Large
+  late int _textSize = _textScaleIndex(LocalPreferencesService
+      .instance.textScale.value); // 0=Small 1=Default 2=Large
   bool _reduceMotion = LocalPreferencesService.instance.reduceMotion.value;
   bool _quietStudyMode = LocalPreferencesService.instance.quietStudyMode.value;
   bool _soundEnabled = LocalPreferencesService.instance.soundEnabled.value;
@@ -38,31 +39,32 @@ class _AccessibilityScreenState extends State<AccessibilityScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0B1120),
+        backgroundColor: colors.background,
         elevation: 0,
         scrolledUnderElevation: 0,
         centerTitle: false,
         titleSpacing: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: colors.primaryText),
           onPressed: () => popOrGo(context, '/profile'),
         ),
-        title: const Column(
+        title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               'Accessibility',
               style: TextStyle(
-                  color: Colors.white,
+                  color: colors.primaryText,
                   fontSize: 20,
                   fontWeight: FontWeight.w700),
             ),
             Text(
               'Adjust for comfort and readability',
-              style: TextStyle(color: Color(0xFF8A9DC0), fontSize: 12),
+              style: TextStyle(color: colors.secondaryText, fontSize: 12),
             ),
           ],
         ),
@@ -78,6 +80,7 @@ class _AccessibilityScreenState extends State<AccessibilityScreen> {
                 children: [
                   // Reading Size
                   _sectionCard(
+                    context,
                     title: 'Reading Size',
                     subtitle: 'Choose a comfortable reading size',
                     child: Row(
@@ -132,7 +135,8 @@ class _AccessibilityScreenState extends State<AccessibilityScreen> {
                         'Inspired by Nyepi, a Balinese tradition of reflection, stillness and focus — reduces Captain Math and sound cues',
                     value: _quietStudyMode,
                     onChanged: (v) async {
-                      await LocalPreferencesService.instance.setQuietStudyMode(v);
+                      await LocalPreferencesService.instance
+                          .setQuietStudyMode(v);
                       if (mounted) setState(() => _quietStudyMode = v);
                     },
                   ),
@@ -144,7 +148,8 @@ class _AccessibilityScreenState extends State<AccessibilityScreen> {
                     iconColor: const Color(0xFFFFBD00),
                     iconBg: const Color(0xFF2E2500),
                     title: 'Sound Cues',
-                    subtitle: 'Short, optional sounds for Interactive Labs actions',
+                    subtitle:
+                        'Short, optional sounds for Interactive Labs actions',
                     value: _soundEnabled,
                     onChanged: (v) async {
                       await LocalPreferencesService.instance.setSoundEnabled(v);
@@ -160,28 +165,29 @@ class _AccessibilityScreenState extends State<AccessibilityScreen> {
     );
   }
 
-  Widget _sectionCard(
+  Widget _sectionCard(BuildContext context,
       {required String title,
       required String subtitle,
       required Widget child}) {
+    final colors = context.appColors;
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF132040),
+        color: colors.cardSurface,
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: const Color(0xFF1F3055)),
+        border: Border.all(color: colors.divider),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(title,
-              style: const TextStyle(
-                  color: Colors.white,
+              style: TextStyle(
+                  color: colors.primaryText,
                   fontSize: 15,
                   fontWeight: FontWeight.w600)),
           const SizedBox(height: 4),
           Text(subtitle,
-              style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13)),
+              style: TextStyle(color: colors.secondaryText, fontSize: 13)),
           const SizedBox(height: 14),
           child,
         ],
@@ -207,17 +213,17 @@ class _SizeOption extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Expanded(
       child: GestureDetector(
         onTap: onTap,
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: 16),
           decoration: BoxDecoration(
-            color: const Color(0xFF0D1525),
+            color: colors.elevatedSurface,
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
-              color:
-                  selected ? const Color(0xFF5B8EFF) : const Color(0xFF1F3055),
+              color: selected ? colors.accent : colors.divider,
               width: selected ? 2 : 1,
             ),
           ),
@@ -226,9 +232,7 @@ class _SizeOption extends StatelessWidget {
               Text(
                 'Aa',
                 style: TextStyle(
-                  color: selected
-                      ? const Color(0xFF5B8EFF)
-                      : const Color(0xFF8A9DC0),
+                  color: selected ? colors.accent : colors.secondaryText,
                   fontSize: fontSize,
                   fontWeight: FontWeight.w600,
                 ),
@@ -237,9 +241,7 @@ class _SizeOption extends StatelessWidget {
               Text(
                 label,
                 style: TextStyle(
-                  color: selected
-                      ? const Color(0xFF5B8EFF)
-                      : const Color(0xFF8A9DC0),
+                  color: selected ? colors.accent : colors.secondaryText,
                   fontSize: 11,
                   fontWeight: selected ? FontWeight.w600 : FontWeight.w400,
                 ),
@@ -275,12 +277,13 @@ class _ToggleCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
       decoration: BoxDecoration(
-        color: const Color(0xFF132040),
+        color: colors.cardSurface,
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: const Color(0xFF1F3055)),
+        border: Border.all(color: colors.divider),
       ),
       child: Row(
         children: [
@@ -299,21 +302,21 @@ class _ToggleCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(title,
-                    style: const TextStyle(
-                        color: Colors.white,
+                    style: TextStyle(
+                        color: colors.primaryText,
                         fontSize: 15,
                         fontWeight: FontWeight.w600)),
                 const SizedBox(height: 2),
                 Text(subtitle,
-                    style: const TextStyle(
-                        color: Color(0xFF8A9DC0), fontSize: 13)),
+                    style:
+                        TextStyle(color: colors.secondaryText, fontSize: 13)),
               ],
             ),
           ),
           Switch(
             value: value,
             onChanged: onChanged,
-            activeThumbColor: const Color(0xFF5B8EFF),
+            activeThumbColor: colors.accent,
           ),
         ],
       ),

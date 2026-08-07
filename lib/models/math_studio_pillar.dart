@@ -60,14 +60,14 @@ class MathStudioPillarMeta {
       icon: LucideIcons.sparkles,
       iconColor: Color(0xFFE85DAA),
       routeSuffix: 'math-magic',
-      isInDevelopment: true,
+      isInDevelopment: false,
     ),
     MathStudioPillarId.spatialIntelligence: MathStudioPillarMeta(
       id: MathStudioPillarId.spatialIntelligence,
       icon: LucideIcons.box,
       iconColor: Color(0xFFFF7A45),
       routeSuffix: 'spatial-intelligence',
-      isInDevelopment: true,
+      isInDevelopment: false,
     ),
     MathStudioPillarId.discoveryLibrary: MathStudioPillarMeta(
       id: MathStudioPillarId.discoveryLibrary,

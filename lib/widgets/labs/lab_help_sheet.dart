@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
+import '../../shared/theme/app_theme.dart';
 import 'lab_guidance_level_selector.dart';
 import 'lab_narration_controls.dart';
 
@@ -25,7 +26,7 @@ class LabHelpContent {
 Future<void> showLabHelpSheet(BuildContext context, LabHelpContent content) {
   return showModalBottomSheet<void>(
     context: context,
-    backgroundColor: const Color(0xFF132040),
+    backgroundColor: context.appColors.cardSurface,
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
     ),
@@ -40,6 +41,7 @@ class _LabHelpSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return SafeArea(
       top: false,
       child: SingleChildScrollView(
@@ -54,22 +56,28 @@ class _LabHelpSheet extends StatelessWidget {
               margin: const EdgeInsets.only(bottom: 16),
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                color: const Color(0xFF1F3055),
+                color: colors.divider,
                 borderRadius: BorderRadius.circular(2),
               ),
             ),
             Text(
               l10n.labsHelpTitle,
-              style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700),
+              style: TextStyle(
+                  color: colors.primaryText,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w700),
             ),
             const SizedBox(height: 16),
             _HelpSection(label: l10n.labsHelpWhatToDo, text: content.whatToDo),
-            _HelpSection(label: l10n.labsHelpWhatToNotice, text: content.whatToNotice),
-            _HelpSection(label: l10n.labsHelpWhatItMeans, text: content.whatItMeans),
-            _HelpSection(label: l10n.labsHelpWhereUsed, text: content.whereUsed),
-            const Divider(color: Color(0xFF1F3055), height: 24),
+            _HelpSection(
+                label: l10n.labsHelpWhatToNotice, text: content.whatToNotice),
+            _HelpSection(
+                label: l10n.labsHelpWhatItMeans, text: content.whatItMeans),
+            _HelpSection(
+                label: l10n.labsHelpWhereUsed, text: content.whereUsed),
+            Divider(color: colors.divider, height: 24),
             const LabGuidanceLevelSelector(),
-            const Divider(color: Color(0xFF1F3055), height: 24),
+            Divider(color: colors.divider, height: 24),
             const LabNarrationControls(),
           ],
         ),
@@ -85,6 +93,7 @@ class _HelpSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Padding(
       padding: const EdgeInsets.only(bottom: 14),
       child: Column(
@@ -92,15 +101,17 @@ class _HelpSection extends StatelessWidget {
         children: [
           Text(
             label,
-            style: const TextStyle(
-              color: Color(0xFF5B8EFF),
+            style: TextStyle(
+              color: colors.accent,
               fontSize: 12,
               fontWeight: FontWeight.w700,
               letterSpacing: 1.1,
             ),
           ),
           const SizedBox(height: 4),
-          Text(text, style: const TextStyle(color: Colors.white, fontSize: 14, height: 1.4)),
+          Text(text,
+              style: TextStyle(
+                  color: colors.primaryText, fontSize: 14, height: 1.4)),
         ],
       ),
     );

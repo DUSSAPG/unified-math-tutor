@@ -17,11 +17,12 @@ class NarrationManifestService {
 
   Future<void> init() async {
     try {
-      final raw =
-          await rootBundle.loadString('assets/config/captain_math_narration_manifest.json');
+      final raw = await rootBundle
+          .loadString('assets/config/captain_math_narration_manifest.json');
       final decoded = jsonDecode(raw) as List<dynamic>;
       _entries = decoded
-          .map((entry) => NarrationAudioManifestEntry.fromJson(entry as Map<String, dynamic>))
+          .map((entry) => NarrationAudioManifestEntry.fromJson(
+              entry as Map<String, dynamic>))
           .toList(growable: false);
     } catch (_) {
       // A missing or corrupt manifest is never fatal: every call site falls

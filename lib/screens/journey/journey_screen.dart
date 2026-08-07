@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../services/onboarding_profile_service.dart';
 import '../../services/session_history_service.dart';
 import '../../services/streak_service.dart';
@@ -64,6 +65,7 @@ class JourneyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     final bottomPadding =
         MediaQuery.viewPaddingOf(context).bottom + AppSpacing.xl;
 
@@ -88,7 +90,7 @@ class JourneyScreen extends StatelessWidget {
               const SizedBox(height: 4),
               Text(
                 l10n.journeySubtitle,
-                style: const TextStyle(color: Color(0xFF8A9BB8), fontSize: 13),
+                style: TextStyle(color: colors.secondaryText, fontSize: 13),
               ),
               const SizedBox(height: AppSpacing.lg),
               const _MathsJourneyCard(),
@@ -138,7 +140,8 @@ class JourneyScreen extends StatelessWidget {
               const SizedBox(height: AppSpacing.lg),
               SectionLabel(text: l10n.homeDailyGoalTitle),
               const SizedBox(height: AppSpacing.sm),
-              _DailyGoalCard(questionsAnsweredToday: activity.questionsAnsweredToday),
+              _DailyGoalCard(
+                  questionsAnsweredToday: activity.questionsAnsweredToday),
             ],
           ),
         );
@@ -185,6 +188,7 @@ class _MathsJourneyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return ValueListenableBuilder<String?>(
       valueListenable: OnboardingProfileService.instance.childName,
       builder: (context, childName, _) {
@@ -194,13 +198,13 @@ class _MathsJourneyCard extends StatelessWidget {
         return Container(
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
-            gradient: const LinearGradient(
+            gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [Color(0xFF132040), Color(0xFF0D1830)],
+              colors: [colors.cardSurface, colors.elevatedSurface],
             ),
             borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: const Color(0xFF1F3055)),
+            border: Border.all(color: colors.divider),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -211,18 +215,18 @@ class _MathsJourneyCard extends StatelessWidget {
                     width: 36,
                     height: 36,
                     decoration: BoxDecoration(
-                      color: const Color(0xFF3D7EFF).withValues(alpha: 0.15),
+                      color: colors.primaryAction.withValues(alpha: 0.15),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: const Icon(Icons.explore_outlined,
-                        color: Color(0xFF5B8EFF), size: 20),
+                    child: Icon(Icons.explore_outlined,
+                        color: colors.accent, size: 20),
                   ),
                   const SizedBox(width: 10),
                   Expanded(
                     child: Text(
                       title,
-                      style: const TextStyle(
-                        color: Colors.white,
+                      style: TextStyle(
+                        color: colors.primaryText,
                         fontSize: 16,
                         fontWeight: FontWeight.w700,
                       ),
@@ -302,10 +306,11 @@ class _JourneyRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Icon(icon, color: const Color(0xFF8A9DC0), size: 16),
+        Icon(icon, color: colors.secondaryText, size: 16),
         const SizedBox(width: 8),
         Expanded(
           child: Column(
@@ -313,8 +318,8 @@ class _JourneyRow extends StatelessWidget {
             children: [
               Text(
                 label,
-                style: const TextStyle(
-                  color: Color(0xFF8A9DC0),
+                style: TextStyle(
+                  color: colors.secondaryText,
                   fontSize: 11,
                   fontWeight: FontWeight.w600,
                   letterSpacing: 0.4,
@@ -323,8 +328,8 @@ class _JourneyRow extends StatelessWidget {
               const SizedBox(height: 2),
               Text(
                 value,
-                style: const TextStyle(
-                  color: Colors.white,
+                style: TextStyle(
+                  color: colors.primaryText,
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                 ),
@@ -356,6 +361,7 @@ class _ProgressCompactCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(AppSpacing.md),
@@ -371,8 +377,8 @@ class _ProgressCompactCard extends StatelessWidget {
                     header,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                      color: Color(0xFF8A9BB8),
+                    style: TextStyle(
+                      color: colors.secondaryText,
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
                     ),
@@ -383,18 +389,18 @@ class _ProgressCompactCard extends StatelessWidget {
             const SizedBox(height: 8),
             Text(
               value,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: colors.primaryText,
               ),
             ),
             const SizedBox(height: 2),
             Text(
               label,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 11,
-                color: Color(0xFF8A9BB8),
+                color: colors.secondaryText,
               ),
             ),
           ],
@@ -412,14 +418,18 @@ class _AchievementsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return ValueListenableBuilder<int>(
       valueListenable: StreakService.instance.days,
       builder: (context, days, _) {
         final unlocked = StreakService.milestones
             .where((milestone) => milestone <= days)
             .isNotEmpty;
-        final iconBase = unlocked ? const Color(0xFF3D2A00) : const Color(0xFF132040);
-        final iconColor = unlocked ? const Color(0xFFFFBD00) : const Color(0xFF4A6080);
+        // Unlocked badge keeps a fixed amber-tinted background regardless
+        // of theme — same "celebration badge" treatment used elsewhere.
+        final iconBase =
+            unlocked ? const Color(0xFF3D2A00) : colors.cardSurface;
+        final iconColor = unlocked ? colors.warning : colors.tertiaryText;
         return Card(
           child: Padding(
             padding: const EdgeInsets.all(AppSpacing.md),
@@ -432,7 +442,10 @@ class _AchievementsCard extends StatelessWidget {
                     gradient: LinearGradient(
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
-                      colors: [iconBase, Color.lerp(iconBase, iconColor, 0.15)!],
+                      colors: [
+                        iconBase,
+                        Color.lerp(iconBase, iconColor, 0.15)!
+                      ],
                     ),
                     borderRadius: BorderRadius.circular(12),
                     boxShadow: unlocked
@@ -459,7 +472,9 @@ class _AchievementsCard extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
-                          color: unlocked ? Colors.white : const Color(0xFF8A9DC0),
+                          color: unlocked
+                              ? colors.primaryText
+                              : colors.secondaryText,
                         ),
                       ),
                       const SizedBox(height: 2),
@@ -467,8 +482,8 @@ class _AchievementsCard extends StatelessWidget {
                         unlocked
                             ? l10n.homeAchievementStreakSubtitle
                             : l10n.homeAchievementStreakLocked,
-                        style: const TextStyle(
-                            fontSize: 13, color: Color(0xFF8A9BB8)),
+                        style: TextStyle(
+                            fontSize: 13, color: colors.secondaryText),
                       ),
                     ],
                   ),
@@ -505,7 +520,9 @@ class _AchievementBadgesRow extends StatelessWidget {
           _AchievementChip(
             icon: Icons.emoji_events,
             label: l10n.homeBadgeFirstSession,
-            sublabel: hasAnySession ? l10n.homeAchievementUnlocked : l10n.homeBadgeLocked,
+            sublabel: hasAnySession
+                ? l10n.homeAchievementUnlocked
+                : l10n.homeBadgeLocked,
             unlocked: hasAnySession,
           ),
           const SizedBox(width: 10),
@@ -545,11 +562,14 @@ class _AchievementChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = unlocked ? const Color(0xFFFFBD00) : const Color(0xFF4A6080);
-    final bg = unlocked ? const Color(0xFF2A1F00) : const Color(0xFF132040);
+    final colors = context.appColors;
+    // Unlocked badges keep a fixed amber-tinted background/border regardless
+    // of theme — same "celebration badge" treatment used elsewhere.
+    final color = unlocked ? colors.warning : colors.tertiaryText;
+    final bg = unlocked ? const Color(0xFF2A1F00) : colors.cardSurface;
     final borderColor = unlocked
         ? const Color(0xFFFFBD00).withValues(alpha: 0.35)
-        : const Color(0xFF1F3055);
+        : colors.divider;
 
     return Container(
       width: 110,
@@ -570,7 +590,7 @@ class _AchievementChip extends StatelessWidget {
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
-              color: unlocked ? Colors.white : const Color(0xFF8A9DC0),
+              color: unlocked ? colors.primaryText : colors.secondaryText,
               fontSize: 11,
               fontWeight: FontWeight.w600,
             ),
@@ -602,13 +622,14 @@ class _DailyGoalCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     final progress = (questionsAnsweredToday / _dailyTarget).clamp(0.0, 1.0);
     return Container(
       padding: const EdgeInsets.all(AppSpacing.md),
       decoration: BoxDecoration(
-        color: const Color(0xFF132040),
+        color: colors.cardSurface,
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: const Color(0xFF1F3055)),
+        border: Border.all(color: colors.divider),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -619,12 +640,12 @@ class _DailyGoalCard extends StatelessWidget {
                 width: 36,
                 height: 36,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF34C759).withValues(alpha: 0.12),
+                  color: colors.success.withValues(alpha: 0.12),
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: const Icon(
+                child: Icon(
                   Icons.flag_outlined,
-                  color: Color(0xFF34C759),
+                  color: colors.success,
                   size: 18,
                 ),
               ),
@@ -635,8 +656,8 @@ class _DailyGoalCard extends StatelessWidget {
                   children: [
                     Text(
                       l10n.homeDailyGoalSubtitle,
-                      style: const TextStyle(
-                        color: Colors.white,
+                      style: TextStyle(
+                        color: colors.primaryText,
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
                       ),
@@ -645,9 +666,10 @@ class _DailyGoalCard extends StatelessWidget {
                 ),
               ),
               Text(
-                l10n.homeDailyGoalProgress(questionsAnsweredToday, _dailyTarget),
-                style: const TextStyle(
-                  color: Color(0xFF34C759),
+                l10n.homeDailyGoalProgress(
+                    questionsAnsweredToday, _dailyTarget),
+                style: TextStyle(
+                  color: colors.success,
                   fontSize: 13,
                   fontWeight: FontWeight.w600,
                 ),
@@ -660,8 +682,8 @@ class _DailyGoalCard extends StatelessWidget {
             child: LinearProgressIndicator(
               value: progress,
               minHeight: 6,
-              backgroundColor: const Color(0xFF1F3055),
-              valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFF34C759)),
+              backgroundColor: colors.divider,
+              valueColor: AlwaysStoppedAnimation<Color>(colors.success),
             ),
           ),
         ],

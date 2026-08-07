@@ -54,7 +54,8 @@ void main() {
     expect(cards.single.category, DiscoveryCategory.shopping);
   });
 
-  test('throws on duplicate card ids (fail fast, not silently drops)', () async {
+  test('throws on duplicate card ids (fail fast, not silently drops)',
+      () async {
     final service = DiscoveryCardCatalogService(
       bundle: _CatalogBundle(
         '{"version": 1, "cards": [$_minimalCard, $_minimalCard]}',
@@ -94,11 +95,11 @@ void main() {
     final withFrenchOnly = _minimalCard.replaceFirst(
       '"illustrationAlt": "Alt"\n    }',
       '"illustrationAlt": "Alt"\n    },'
-      '\n    "fr": {"title": "Titre FR", "scenario": "Scenario FR", '
-      '"challengeQuestion": "Q FR?", "thinkPrompt": "Reflechis", '
-      '"workedSteps": ["Etape 1"], "explanation": "Pourquoi", '
-      '"whereYoullUseThis": "Usages", "followUpQuestion": "FQ FR?", '
-      '"followUpAnswerText": "5", "illustrationAlt": "Alt FR"}',
+          '\n    "fr": {"title": "Titre FR", "scenario": "Scenario FR", '
+          '"challengeQuestion": "Q FR?", "thinkPrompt": "Reflechis", '
+          '"workedSteps": ["Etape 1"], "explanation": "Pourquoi", '
+          '"whereYoullUseThis": "Usages", "followUpQuestion": "FQ FR?", '
+          '"followUpAnswerText": "5", "illustrationAlt": "Alt FR"}',
     );
     final service = DiscoveryCardCatalogService(
       bundle: _CatalogBundle('{"version": 1, "cards": [$withFrenchOnly]}'),

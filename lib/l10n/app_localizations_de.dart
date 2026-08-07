@@ -132,6 +132,168 @@ class AppLocalizationsDe extends AppLocalizations {
   String get practiceExamSwissGymnasium => 'Swiss Gymnasium';
 
   @override
+  String get practiceExamEntranceExamPrep => 'Entrance Exam Prep';
+
+  @override
+  String get entranceExamHubTitle => 'Entrance Exam Preparation';
+
+  @override
+  String get entranceExamHubIntro =>
+      'Independent-school entrance exam practice, separate from GCSE Exam Simulator — built for the 11+ age group and marked by comparing your own working to a model answer, not typed multiple choice.';
+
+  @override
+  String get entranceExamDisclaimerHeading =>
+      'Not affiliated with any school or exam board';
+
+  @override
+  String get entranceExamAgeBandLabel => 'Age band';
+
+  @override
+  String get entranceExamDurationLabel => 'Duration';
+
+  @override
+  String get entranceExamCalculatorLabel => 'Calculator';
+
+  @override
+  String get entranceExamCalculatorNone => 'Not allowed';
+
+  @override
+  String get entranceExamCalculatorAllowed => 'Allowed';
+
+  @override
+  String get entranceExamCalculatorAllowedNonScientific =>
+      'Allowed (non-scientific)';
+
+  @override
+  String entranceExamDurationMinutes(int minutes) {
+    return '$minutes min';
+  }
+
+  @override
+  String get entranceExamModePracticeBySkillTitle => 'Practice by Skill';
+
+  @override
+  String get entranceExamModePracticeBySkillSub =>
+      'Work through questions grouped by skill, with worked methods to compare against.';
+
+  @override
+  String get entranceExamModeReviewMethodsTitle => 'Review Methods';
+
+  @override
+  String get entranceExamModeReviewMethodsSub =>
+      'Revisit every available question\'s full worked method — no timer, no marking.';
+
+  @override
+  String get entranceExamModeUntimedPaperTitle => 'Untimed Paper';
+
+  @override
+  String get entranceExamModeUntimedPaperSub =>
+      'Sit the complete paper with no time limit.';
+
+  @override
+  String get entranceExamModeTimedMockTitle => 'Timed Mock';
+
+  @override
+  String get entranceExamModeTimedMockSub =>
+      'Sit the complete paper under real exam timing.';
+
+  @override
+  String get entranceExamModeScholarshipChallengeTitle =>
+      'Scholarship Challenge';
+
+  @override
+  String get entranceExamModeScholarshipChallengeSub =>
+      'A stretch paper for scholarship-tier candidates.';
+
+  @override
+  String entranceExamModeLockedFullPaperReason(int declared, int authored) {
+    return 'Unlocks once the full $declared-question paper is ready — $authored authored so far.';
+  }
+
+  @override
+  String get entranceExamModeLockedScholarshipReason =>
+      'This pack is Foundation tier — Scholarship Challenge needs a scholarship-tier pack.';
+
+  @override
+  String get entranceExamModeLockedBadge => 'Coming soon';
+
+  @override
+  String get entranceExamSkillPickerTitle => 'Choose a Skill';
+
+  @override
+  String entranceExamSkillQuestionCountLabel(int count) {
+    return '$count questions available';
+  }
+
+  @override
+  String get entranceExamSkillNumberFluency => 'Number Fluency';
+
+  @override
+  String get entranceExamSkillFractionsAndPercentages =>
+      'Fractions & Percentages';
+
+  @override
+  String get entranceExamSkillRatioAndProportion => 'Ratio & Proportion';
+
+  @override
+  String get entranceExamSkillAlgebraicReasoning => 'Algebraic Reasoning';
+
+  @override
+  String get entranceExamSkillShapeAndSpace => 'Shape & Space';
+
+  @override
+  String get entranceExamSkillDataAndLogic => 'Data & Logic';
+
+  @override
+  String entranceExamQuestionOf(int current, int total) {
+    return 'Question $current of $total';
+  }
+
+  @override
+  String get entranceExamRevealMethodButton => 'Reveal worked method';
+
+  @override
+  String get entranceExamMethodMarkPrompt =>
+      'Compare this to your own working. Which best matches what you wrote?';
+
+  @override
+  String get entranceExamMethodMarkCorrect => 'Correct — full method shown';
+
+  @override
+  String get entranceExamMethodMarkSlip => 'Method right, one slip';
+
+  @override
+  String get entranceExamMethodMarkPartial => 'Partial reasoning';
+
+  @override
+  String get entranceExamMethodMarkUnsupported => 'Answer only, no method';
+
+  @override
+  String get entranceExamMethodMarkBlank => 'I didn\'t attempt this';
+
+  @override
+  String get entranceExamNextQuestionButton => 'Next question';
+
+  @override
+  String get entranceExamSessionCompleteTitle => 'Practice Complete';
+
+  @override
+  String entranceExamSessionEstimatedMarks(String marks, int total) {
+    return 'Estimated marks: $marks / $total';
+  }
+
+  @override
+  String get entranceExamSessionEstimatedMarksNote =>
+      'An estimate from your own self-marking, not an official mark scheme — see the guidance under each question.';
+
+  @override
+  String get entranceExamReviewTitle => 'Review Methods';
+
+  @override
+  String get entranceExamNoHandwritingNote =>
+      'This app never reads or grades your handwritten working — you compare it yourself against the worked method shown.';
+
+  @override
   String get practiceExit => 'Exit';
 
   @override
@@ -1559,6 +1721,34 @@ class AppLocalizationsDe extends AppLocalizations {
       'Recreational puzzles, number tricks and mathematical curiosities';
 
   @override
+  String get mathStudioMathMagicNumberTricksLabel => 'Visual Number Tricks';
+
+  @override
+  String get mathStudioMathMagicNumberTricksSubtitle =>
+      'Watch a number trick unfold, step by step';
+
+  @override
+  String get mathStudioMathMagicPatternsLabel => 'Patterns';
+
+  @override
+  String get mathStudioMathMagicPatternsSubtitle =>
+      'Grow a dot pattern and discover the rule behind it';
+
+  @override
+  String get mathStudioMathMagicMagicSquaresLabel => 'Magic Squares';
+
+  @override
+  String get mathStudioMathMagicMagicSquaresSubtitle =>
+      'Arrange numbers so every line adds up the same';
+
+  @override
+  String get mathStudioMathMagicParityLabel => 'Parity';
+
+  @override
+  String get mathStudioMathMagicParitySubtitle =>
+      'Explore what happens when you add odd and even numbers';
+
+  @override
   String get mathStudioSpatialIntelligenceTitle => 'Spatial Intelligence';
 
   @override
@@ -1587,6 +1777,25 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get mathStudioSpatialPuzzlesLabel => 'Spatial puzzles';
+
+  @override
+  String get mathStudioSpatialCubeNetsLabel => 'Cube Nets';
+
+  @override
+  String get mathStudioSpatialCubeNetsSubtitle =>
+      'Decide which nets fold into a closed cube';
+
+  @override
+  String get mathStudioSpatialRotationsSubtitle =>
+      'Turn a shape around a fixed point and see what changes';
+
+  @override
+  String get mathStudioSpatialTransformationsSubtitle =>
+      'Translate, reflect, rotate and enlarge on a coordinate grid';
+
+  @override
+  String get mathStudioSpatialPuzzlesSubtitle =>
+      'Short puzzles about shape, space and 3D thinking';
 
   @override
   String get mathStudioFeaturedFormatsSectionLabel => 'Featured formats';
@@ -1635,6 +1844,17 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get mathStudioCategoryBusinessFinance => 'Business & Finance';
+
+  @override
+  String get mathStudioCategoryArchitectureConstruction =>
+      'Architecture & Construction';
+
+  @override
+  String get mathStudioCategoryEnvironmentClimate => 'Environment & Climate';
+
+  @override
+  String get mathStudioCategoryComputingCryptography =>
+      'Computing & Cryptography';
 
   @override
   String get mathStudioCategoryAll => 'All';
@@ -1900,6 +2120,24 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get recallCardsBrowseByTypeTitle => 'Browse by Card Type';
+
+  @override
+  String get recallCardsTopicFilterGroupLabel => 'Topic';
+
+  @override
+  String get recallCardsTypeFilterGroupLabel => 'Card type';
+
+  @override
+  String get recallCardsMoreChipLabel => 'More';
+
+  @override
+  String get recallCardsMoreTopicsSheetTitle => 'More topics';
+
+  @override
+  String get recallCardsMoreTypesSheetTitle => 'More card types';
+
+  @override
+  String get recallCardsClearFiltersButton => 'Clear filters';
 
   @override
   String get recallCardsSearchTitle => 'Search';
@@ -2240,6 +2478,518 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get labsDataDetectiveRangeLabel => 'Range';
+
+  @override
+  String get labsSpatialCubeLabTitle => 'Spatial Cube Lab';
+
+  @override
+  String get labsSpatialCubeLabSubtitle =>
+      'Rotate, fold and explore a labelled cube';
+
+  @override
+  String get labsSpatialCubeLabIntro =>
+      'Drag the cube to turn it. Notice how faces stay in the same place relative to each other, no matter which way you turn.';
+
+  @override
+  String get labsSpatialCubeLabFreePlayCaption =>
+      'Try it: drag the cube, or use the buttons below.';
+
+  @override
+  String get labsSpatialCubeWhichFaceOppositeTitle => 'Which Face Is Opposite?';
+
+  @override
+  String get labsSpatialCubeWhichFaceOppositeSubtitle =>
+      'Predict the opposite face, then check by rotating';
+
+  @override
+  String get labsSpatialCubeRotateToMatchTitle => 'Rotate to Match';
+
+  @override
+  String get labsSpatialCubeRotateToMatchSubtitle =>
+      'Turn your cube to match the target orientation';
+
+  @override
+  String get labsSpatialCubeHiddenFaceTitle => 'Hidden Face';
+
+  @override
+  String get labsSpatialCubeHiddenFaceSubtitle =>
+      'Work out which label is on a face you can\'t see';
+
+  @override
+  String get labsSpatialCubeNetExplorerTitle => 'Cube Net Explorer';
+
+  @override
+  String get labsSpatialCubeNetExplorerSubtitle =>
+      'Predict opposite faces on a flat net, then fold it';
+
+  @override
+  String get labsEarlyMathsPlaygroundTitle => 'Early Maths Playground';
+
+  @override
+  String get labsEarlyMathsPlaygroundSubtitle =>
+      'Calm, playful counting activities for younger learners';
+
+  @override
+  String get earlyMathsPlaygroundIntro =>
+      'A calm, untimed space for younger learners to practise counting — no scores, no timers, no pressure.';
+
+  @override
+  String get feedTheHungryPandaTitle => 'Feed the Hungry Panda';
+
+  @override
+  String get feedTheHungryPandaSubtitle =>
+      'Count out apples one at a time to feed Panda';
+
+  @override
+  String feedPandaInstruction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count apples',
+      one: '1 apple',
+    );
+    return 'Feed Panda $_temp0.';
+  }
+
+  @override
+  String feedPandaWellDone(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count apples',
+      one: '1 apple',
+    );
+    return 'Well done! Panda ate $_temp0.';
+  }
+
+  @override
+  String get feedPandaHowManyLeft => 'How many apples are left?';
+
+  @override
+  String get feedPandaHasEnough => 'Panda has enough. Let\'s count together.';
+
+  @override
+  String get feedPandaReplayInstructionButton => 'Replay instruction';
+
+  @override
+  String get feedPandaNewRoundButton => 'New Round';
+
+  @override
+  String feedPandaFruitSemanticLabel(int position, int total) {
+    return 'Apple $position of $total. Double tap to select.';
+  }
+
+  @override
+  String get feedPandaSelectedSuffix => 'Selected.';
+
+  @override
+  String feedPandaPandaSemanticReady(int remaining) {
+    String _temp0 = intl.Intl.pluralLogic(
+      remaining,
+      locale: localeName,
+      other: '$remaining more apples needed',
+      one: '1 more apple needed',
+    );
+    return 'Feed Panda. $_temp0.';
+  }
+
+  @override
+  String get feedPandaPandaSemanticFull => 'Panda has enough for this round.';
+
+  @override
+  String feedPandaAnswerChoiceSemanticLabel(int value) {
+    return 'Answer $value.';
+  }
+
+  @override
+  String get feedPandaTryAgainMessage => 'Not quite — let\'s try again!';
+
+  @override
+  String get feedPandaRoundCompleteMessage => 'You counted brilliantly!';
+
+  @override
+  String get labsSpatialCubeWhichFaceOppositeMission =>
+      'Look at the cube, then decide which face is opposite the one asked about.';
+
+  @override
+  String labsSpatialCubeWhichFaceOppositeQuestion(String faceLabel) {
+    return 'Which face is opposite $faceLabel?';
+  }
+
+  @override
+  String get labsSpatialCubeWhichFaceOppositeHintButton => 'Hint';
+
+  @override
+  String get labsSpatialCubeWhichFaceOppositeHintText =>
+      'Opposite faces never share an edge — front/back, top/bottom and left/right are always the three pairs.';
+
+  @override
+  String get labsSpatialCubeWhichFaceOppositeCorrect =>
+      'Good thinking. You kept the face relationships in mind.';
+
+  @override
+  String get labsSpatialCubeWhichFaceOppositeIncorrect =>
+      'Nearly there. Try looking at which faces share an edge.';
+
+  @override
+  String get labsSpatialCubeWhichFaceOppositeWhereUsed =>
+      'Packing boxes, reading dice, and working with 3D nets all rely on knowing which faces of a cube are opposite each other.';
+
+  @override
+  String get labsSpatialCubeWhichFaceOppositeHelpWhatToDo =>
+      'Rotate the cube if you like, then choose the face you think is opposite the one asked about.';
+
+  @override
+  String get labsSpatialCubeWhichFaceOppositeHelpWhatToNotice =>
+      'Notice that opposite faces are never next to each other, however you turn the cube.';
+
+  @override
+  String get labsSpatialCubeWhichFaceOppositeHelpWhatItMeans =>
+      'Every cube has exactly three pairs of opposite faces — front/back, top/bottom, left/right — and rotating the cube never changes which faces are paired.';
+
+  @override
+  String labsSpatialCubeWhichFaceOppositeReveal(
+      String correctLabel, String askedLabel) {
+    return '$correctLabel is opposite $askedLabel.';
+  }
+
+  @override
+  String get labsSpatialCubeRotateToMatchMission =>
+      'Rotate your cube until it matches the target orientation shown.';
+
+  @override
+  String get labsSpatialCubeRotateToMatchTargetLabel => 'Target orientation';
+
+  @override
+  String get labsSpatialCubeRotateToMatchYourCubeLabel => 'Your cube';
+
+  @override
+  String get labsSpatialCubeRotateToMatchTestButton => 'Test my rotation';
+
+  @override
+  String get labsSpatialCubeRotateToMatchCorrect =>
+      'Well done — that\'s a close match.';
+
+  @override
+  String get labsSpatialCubeRotateToMatchIncorrect =>
+      'Not quite yet. Compare which face is at the front and which is on top.';
+
+  @override
+  String get labsSpatialCubeRotateToMatchWhereUsed =>
+      'Matching an object\'s orientation to a diagram is part of reading technical drawings and assembly instructions.';
+
+  @override
+  String get labsSpatialCubeRotateToMatchHelpWhatToDo =>
+      'Drag your cube so its faces line up with the target shown alongside it, then test your rotation.';
+
+  @override
+  String get labsSpatialCubeRotateToMatchHelpWhatToNotice =>
+      'Notice you don\'t need a pixel-perfect match — being close enough that the same faces are at the front and top counts.';
+
+  @override
+  String get labsSpatialCubeRotateToMatchHelpWhatItMeans =>
+      'An orientation is fully described by which face is at the front and which is on top — those two facts fix everything else.';
+
+  @override
+  String get labsSpatialCubeHiddenFaceMission =>
+      'Look at the three visible faces, then work out what\'s on the hidden one.';
+
+  @override
+  String labsSpatialCubeHiddenFaceQuestion(String direction) {
+    return 'Which label is on the face $direction?';
+  }
+
+  @override
+  String get labsSpatialCubeHiddenFaceHintButton => 'Hint';
+
+  @override
+  String get labsSpatialCubeHiddenFaceHintText =>
+      'Work out which faces you CAN see first — the hidden face is one of the three left over.';
+
+  @override
+  String get labsSpatialCubeHiddenFaceCorrect =>
+      'Well done. You predicted the hidden face correctly.';
+
+  @override
+  String get labsSpatialCubeHiddenFaceIncorrect =>
+      'Good attempt. Rotate the cube to check, then try the next one.';
+
+  @override
+  String get labsSpatialCubeHiddenFaceWhereUsed =>
+      'Reading isometric diagrams and technical drawings means reasoning about faces you can\'t directly see.';
+
+  @override
+  String get labsSpatialCubeHiddenFaceHelpWhatToDo =>
+      'Look at the three faces you can see, then choose the label you think is on the hidden face named.';
+
+  @override
+  String get labsSpatialCubeHiddenFaceHelpWhatToNotice =>
+      'Notice only three faces are ever visible at once from this angle — the other three are always hidden.';
+
+  @override
+  String get labsSpatialCubeHiddenFaceHelpWhatItMeans =>
+      'A cube only ever shows three faces from one viewpoint, so working out a hidden face means reasoning about the whole cube, not just what\'s in view.';
+
+  @override
+  String get labsSpatialCubeNetExplorerMission =>
+      'Look at the flat net, predict which faces will end up opposite each other, then fold it to check.';
+
+  @override
+  String get labsSpatialCubeNetExplorerPredictPrompt =>
+      'Which two squares do you think will end up opposite each other?';
+
+  @override
+  String get labsSpatialCubeNetExplorerFoldButton => 'Fold';
+
+  @override
+  String get labsSpatialCubeNetExplorerUnfoldButton => 'Unfold';
+
+  @override
+  String get labsSpatialCubeNetExplorerNextNetButton => 'Next net';
+
+  @override
+  String get labsSpatialCubeNetExplorerStepBackButton => 'Back';
+
+  @override
+  String get labsSpatialCubeNetExplorerStepForwardButton => 'Next step';
+
+  @override
+  String get labsSpatialCubeNetExplorerWhereUsed =>
+      'Packaging design and sheet-metal work both start from a flat net that folds into a finished 3D shape.';
+
+  @override
+  String get labsSpatialCubeNetExplorerHelpWhatToDo =>
+      'Study the flat net, then press Fold to see whether it closes into a cube.';
+
+  @override
+  String get labsSpatialCubeNetExplorerHelpWhatToNotice =>
+      'Notice that not every arrangement of six squares folds into a closed cube — some overlap or leave a gap.';
+
+  @override
+  String get labsSpatialCubeNetExplorerHelpWhatItMeans =>
+      'A net is a 2D shape that folds along its edges into a 3D solid — the same square can end up on very different sides of the cube depending on the net\'s shape.';
+
+  @override
+  String get labsAircraftLandingLabTitle => 'Aircraft Landing Lab';
+
+  @override
+  String get labsAircraftLandingLabSubtitle =>
+      'Fly the descent angle, distance and speed that bring a plane in safely';
+
+  @override
+  String get labsAircraftLandingLabIntro =>
+      'Adjust the descent angle and speed, then press Test Approach to watch the aircraft fly the path and see where it touches down.';
+
+  @override
+  String get labsAircraftLandingLabFreePlayCaption =>
+      'Try it: drag the sliders, then press Test Approach.';
+
+  @override
+  String get labsAircraftLandingFindTheTimeTitle => 'Find the Time';
+
+  @override
+  String get labsAircraftLandingFindTheTimeSubtitle =>
+      'Work out how long the flight to the runway takes';
+
+  @override
+  String get labsAircraftLandingDescentLineTitle => 'Follow the Descent Line';
+
+  @override
+  String get labsAircraftLandingDescentLineSubtitle =>
+      'Match your descent angle to a target glide line';
+
+  @override
+  String get labsAircraftLandingGlidePathTitle => 'Land on the Glide Path';
+
+  @override
+  String get labsAircraftLandingGlidePathSubtitle =>
+      'Choose angle and speed to land safely on the runway';
+
+  @override
+  String get labsAircraftLandingVectorApproachTitle => 'Vector Approach';
+
+  @override
+  String get labsAircraftLandingVectorApproachSubtitle =>
+      'Adjust horizontal and vertical speed to match a target approach';
+
+  @override
+  String labsAircraftLandingDescentAngleLabel(int degrees) {
+    return 'Descent angle: $degrees°';
+  }
+
+  @override
+  String labsAircraftLandingAirspeedLabel(int metresPerSecond) {
+    return 'Airspeed: $metresPerSecond m/s';
+  }
+
+  @override
+  String get labsAircraftLandingTestApproachButton => 'Test Approach';
+
+  @override
+  String labsAircraftLandingFindTheTimeDiagramLabel(
+      int distanceM, int speedMps) {
+    return 'An aircraft $distanceM metres from the runway, flying at $speedMps metres per second.';
+  }
+
+  @override
+  String labsAircraftLandingFindTheTimeSpeedLabel(int speedMps) {
+    return 'Speed: $speedMps m/s';
+  }
+
+  @override
+  String get labsAircraftLandingFindTheTimeQuestion =>
+      'How long will it take to reach the runway?';
+
+  @override
+  String get labsAircraftLandingFindTheTimeHintButton => 'Hint';
+
+  @override
+  String get labsAircraftLandingFindTheTimeHintText =>
+      'Time = distance ÷ speed.';
+
+  @override
+  String get labsAircraftLandingFindTheTimeMission =>
+      'Use the distance and speed shown to work out how long the flight to the runway will take.';
+
+  @override
+  String get labsAircraftLandingFindTheTimeWhereUsed =>
+      'Pilots and air traffic controllers constantly estimate time-to-runway from speed and distance to sequence safe landings.';
+
+  @override
+  String get labsAircraftLandingFindTheTimeCorrect =>
+      'Correct — you found the time to the runway.';
+
+  @override
+  String get labsAircraftLandingFindTheTimeIncorrect =>
+      'Not quite. Try dividing the distance by the speed.';
+
+  @override
+  String labsAircraftLandingFindTheTimeReveal(int seconds) {
+    return 'The correct time is $seconds seconds.';
+  }
+
+  @override
+  String get labsAircraftLandingFindTheTimeHelpWhatToDo =>
+      'Read the distance and speed shown, then choose the matching time from the options.';
+
+  @override
+  String get labsAircraftLandingFindTheTimeHelpWhatToNotice =>
+      'Notice that a faster speed always means a shorter time for the same distance.';
+
+  @override
+  String get labsAircraftLandingFindTheTimeHelpWhatItMeans =>
+      'Time, distance and speed are always connected by time = distance ÷ speed — the same relationship used for any journey, not just flights.';
+
+  @override
+  String get labsAircraftLandingDescentLineTestButton => 'Test my line';
+
+  @override
+  String get labsAircraftLandingDescentLineMission =>
+      'Adjust your descent angle until your line matches the dashed target line.';
+
+  @override
+  String get labsAircraftLandingDescentLineWhereUsed =>
+      'Matching a required gradient comes up whenever a path, ramp or pipe has to follow a fixed slope.';
+
+  @override
+  String get labsAircraftLandingDescentLineCorrect =>
+      'Well done — your line matches the target glide path.';
+
+  @override
+  String get labsAircraftLandingDescentLineIncorrect =>
+      'Not yet. Compare how steep your line is against the dashed target.';
+
+  @override
+  String get labsAircraftLandingDescentLineHelpWhatToDo =>
+      'Move the descent-angle slider until your solid line sits on top of the dashed target line, then test it.';
+
+  @override
+  String get labsAircraftLandingDescentLineHelpWhatToNotice =>
+      'Notice that a steeper angle makes the line fall faster — a bigger negative gradient.';
+
+  @override
+  String get labsAircraftLandingDescentLineHelpWhatItMeans =>
+      'The descent angle is the line\'s gradient: altitude change divided by distance travelled, written as y = mx + c with a negative m.';
+
+  @override
+  String get labsAircraftLandingGlidePathSafe =>
+      'Smooth landing — right on the runway.';
+
+  @override
+  String get labsAircraftLandingGlidePathTooSteep =>
+      'Too steep — the aircraft touched down before the runway.';
+
+  @override
+  String get labsAircraftLandingGlidePathTooShallow =>
+      'Too shallow — the aircraft was still airborne past the runway.';
+
+  @override
+  String get labsAircraftLandingGlidePathMission =>
+      'Choose an angle and speed, then test your approach to land safely on the runway.';
+
+  @override
+  String get labsAircraftLandingGlidePathWhereUsed =>
+      'Every real landing balances a safe descent angle against speed and distance to touch down in exactly the right place.';
+
+  @override
+  String labsAircraftLandingGlidePathTouchdownError(int metres) {
+    return '$metres metres from the runway threshold.';
+  }
+
+  @override
+  String get labsAircraftLandingGlidePathHelpWhatToDo =>
+      'Adjust the angle and speed, then press Test Approach to see where the aircraft actually touches down.';
+
+  @override
+  String get labsAircraftLandingGlidePathHelpWhatToNotice =>
+      'Notice how the touchdown point moves as you change the angle, even when the speed stays the same.';
+
+  @override
+  String get labsAircraftLandingGlidePathHelpWhatItMeans =>
+      'tan(angle) = altitude ÷ distance — this exact ratio is what makes a descent land precisely on the runway instead of short or long.';
+
+  @override
+  String labsAircraftLandingVectorHorizontalLabel(int metresPerSecond) {
+    return 'Horizontal speed: $metresPerSecond m/s';
+  }
+
+  @override
+  String labsAircraftLandingVectorVerticalLabel(int metresPerSecond) {
+    return 'Vertical speed: $metresPerSecond m/s';
+  }
+
+  @override
+  String labsAircraftLandingVectorResultantLabel(int metresPerSecond) {
+    return 'Combined (resultant) speed: $metresPerSecond m/s';
+  }
+
+  @override
+  String get labsAircraftLandingVectorApproachMission =>
+      'Adjust the horizontal and vertical speed components to match the target approach.';
+
+  @override
+  String get labsAircraftLandingVectorApproachWhereUsed =>
+      'Combining a horizontal and vertical speed into one resultant vector is exactly how a real flight path, or any 2D motion, is described mathematically.';
+
+  @override
+  String get labsAircraftLandingVectorApproachCorrect =>
+      'Correct — your components match the target approach.';
+
+  @override
+  String get labsAircraftLandingVectorApproachIncorrect =>
+      'Not yet. Compare your horizontal and vertical speeds to the target.';
+
+  @override
+  String get labsAircraftLandingVectorApproachHelpWhatToDo =>
+      'Adjust the horizontal and vertical speed sliders, then test your approach.';
+
+  @override
+  String get labsAircraftLandingVectorApproachHelpWhatToNotice =>
+      'Notice how the resultant speed and the descent path both change as you adjust either component.';
+
+  @override
+  String get labsAircraftLandingVectorApproachHelpWhatItMeans =>
+      'Any velocity can be split into a horizontal and a vertical component, and recombined using Pythagoras\' theorem to find the resultant speed.';
 
   @override
   String get labsTryAgainButton => 'Try again';
@@ -2929,6 +3679,515 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get labsDataDetectiveNarrationIntro =>
       'Predict which average the outlier affects most, then reveal the answer.';
+
+  @override
+  String get allieLabel => 'Allie';
+
+  @override
+  String get familyMathsEntryTitle => 'Family Maths';
+
+  @override
+  String get familyMathsWelcomeTitle => 'Welcome';
+
+  @override
+  String get familyMathsWelcomeBody =>
+      'Helping your child with maths doesn\'t require perfect knowledge. Small conversations. Simple games. Curiosity. Consistency. We\'ll help with the rest.';
+
+  @override
+  String get familyMathsAllieIntro =>
+      'You don\'t need to remember every school method. Choose one topic. I\'ll suggest a five-minute activity that helps your child think mathematically.';
+
+  @override
+  String get familyMathsPhilosophyTagline =>
+      'Parents don\'t need to become teachers.';
+
+  @override
+  String get familyMathsStartActivityButton => 'Start a Family Activity';
+
+  @override
+  String get familyMathsBrowseTopicsButton => 'Browse Topics';
+
+  @override
+  String get familyMathsLibraryTitle => 'Family Activities';
+
+  @override
+  String get familyMathsEmptyCategory =>
+      'No activities yet for this topic. More are on the way.';
+
+  @override
+  String familyActivityAgeRange(int min, int max) {
+    return 'Ages $min-$max';
+  }
+
+  @override
+  String familyActivityTimeRange(int min, int max) {
+    return '$min-$max min';
+  }
+
+  @override
+  String get familyActivityMaterialsLabel => 'Materials Needed';
+
+  @override
+  String get familyActivityWhatYourChildLearnsLabel => 'What Your Child Learns';
+
+  @override
+  String get familyActivityLetsExploreLabel => 'Let\'s Explore';
+
+  @override
+  String get familyActivityQuestionsToAskLabel => 'Questions to Ask';
+
+  @override
+  String get familyActivityMisconceptionsLabel => 'Common Misconceptions';
+
+  @override
+  String get familyActivityTryTomorrowLabel => 'Try Tomorrow';
+
+  @override
+  String get familyActivityStudioConnectionLabel => 'Studio Connection';
+
+  @override
+  String get familyMathsCategoryNumberSense => 'Number Sense';
+
+  @override
+  String get familyMathsCategoryAddition => 'Addition';
+
+  @override
+  String get familyMathsCategorySubtraction => 'Subtraction';
+
+  @override
+  String get familyMathsCategoryMultiplication => 'Multiplication';
+
+  @override
+  String get familyMathsCategoryDivision => 'Division';
+
+  @override
+  String get familyMathsCategoryFractions => 'Fractions';
+
+  @override
+  String get familyMathsCategoryDecimals => 'Decimals';
+
+  @override
+  String get familyMathsCategoryRatio => 'Ratio';
+
+  @override
+  String get familyMathsCategoryPercentages => 'Percentages';
+
+  @override
+  String get familyMathsCategoryGeometry => 'Geometry';
+
+  @override
+  String get familyMathsCategoryMeasurement => 'Measurement';
+
+  @override
+  String get familyMathsCategoryAlgebra => 'Algebra';
+
+  @override
+  String get familyMathsCategoryPatterns => 'Patterns';
+
+  @override
+  String get familyMathsCategoryLogic => 'Logic';
+
+  @override
+  String get familyMathsCategorySpatialReasoning => 'Spatial Reasoning';
+
+  @override
+  String get familyMathsReassurance1 =>
+      'You do not need to know the answer immediately.';
+
+  @override
+  String get familyMathsReassurance2 =>
+      'Ask your child to explain what they notice.';
+
+  @override
+  String get familyMathsReassurance3 =>
+      'A wrong answer can start a useful conversation.';
+
+  @override
+  String get familyMathsReassurance4 => 'Five focused minutes is enough.';
+
+  @override
+  String get familyMathsReassurance5 => 'Let your child choose the objects.';
+
+  @override
+  String get familyMathsReassurance6 =>
+      'Try a different representation if the first one does not help.';
+
+  @override
+  String get onboardingFamilyRoleDetailTitle => 'Tell us about your family';
+
+  @override
+  String get onboardingFamilyRoleDetailSub =>
+      'A couple of quick questions so we can help the right way.';
+
+  @override
+  String get onboardingFamilyLearnerNamesLabel => 'Learner name(s)';
+
+  @override
+  String get onboardingFamilyLearnerNamesSub =>
+      'Add at least one — you can add more later.';
+
+  @override
+  String get onboardingFamilyAddAnotherLearner => 'Add another learner';
+
+  @override
+  String get onboardingFamilyLearnerContextTitle =>
+      'What stage is your child at?';
+
+  @override
+  String get onboardingFamilyLearnerContextSub =>
+      'This helps us suggest the right activities and topics.';
+
+  @override
+  String get onboardingFamilyGoalTitle => 'What brings you here?';
+
+  @override
+  String get onboardingFamilyGoalSub =>
+      'Choose what matters most right now — you can change this later.';
+
+  @override
+  String get onboardingFamilyGoalHomework => 'Help with homework';
+
+  @override
+  String get onboardingFamilyGoalUnderstandMethods =>
+      'Understand modern methods';
+
+  @override
+  String get onboardingFamilyGoalBuildConfidence => 'Build confidence';
+
+  @override
+  String get onboardingFamilyGoalPractiseTogether => 'Practise together';
+
+  @override
+  String get onboardingFamilyGoalPrepareExam => 'Prepare for an exam';
+
+  @override
+  String get onboardingFamilyGoalMonitorProgress => 'Monitor progress';
+
+  @override
+  String get onboardingFamilyGoalSupportStruggling =>
+      'Support a learner who finds maths difficult';
+
+  @override
+  String get onboardingFamilyActivityLengthLabel => 'Preferred activity length';
+
+  @override
+  String get onboardingFamilyActivityLengthShort => '~10 minutes';
+
+  @override
+  String get onboardingFamilyActivityLengthMedium => '~20 minutes';
+
+  @override
+  String get onboardingFamilyActivityLengthLong => '~30 minutes';
+
+  @override
+  String get onboardingFamilyPreferencesTitle => 'Almost done';
+
+  @override
+  String get onboardingFamilyPreferencesSub =>
+      'A couple of optional extras, then you\'re in.';
+
+  @override
+  String get onboardingFamilyAllieIntro =>
+      'You do not need to explain everything immediately.';
+
+  @override
+  String get onboardingFamilyNotificationsLabel => 'Gentle reminders';
+
+  @override
+  String get onboardingFamilyNotificationsSub =>
+      'Optional — occasional nudges about your family activity.';
+
+  @override
+  String get onboardingFamilyPinLabel => 'Set a Parent PIN (optional)';
+
+  @override
+  String get onboardingFamilyPinSub =>
+      'Protects Family Maths and parent content on a shared device. You can set this later in Settings instead.';
+
+  @override
+  String get onboardingFamilyFinishButton => 'Go to Family Studio';
+
+  @override
+  String get recallTopicNumber => 'Number';
+
+  @override
+  String get recallTopicRatioAndProportion => 'Ratio and Proportion';
+
+  @override
+  String get recallTopicAlgebra => 'Algebra';
+
+  @override
+  String get recallTopicGeometryAndMeasures => 'Geometry and Measures';
+
+  @override
+  String get recallTopicStatistics => 'Statistics';
+
+  @override
+  String get recallTopicProbability => 'Probability';
+
+  @override
+  String get familyStudioHubTitle => 'Family Studio';
+
+  @override
+  String get familyStudioHubOpeningPromise =>
+      'Parents do not need to become teachers.';
+
+  @override
+  String get familyStudioHubSupportingCopy =>
+      'Choose a topic, a short activity or a homework goal. Math Intelligence will help you begin.';
+
+  @override
+  String get familyStudioHubAllieMessage =>
+      'Ask what your child notices first.';
+
+  @override
+  String get familyStudioProfileEntrySubtitle =>
+      'Activities, homework help and progress for your family.';
+
+  @override
+  String get familyStudioPrimaryActionStartActivity =>
+      'Start a Family Activity';
+
+  @override
+  String get familyStudioPrimaryActionHomework => 'Help with Homework';
+
+  @override
+  String get familyStudioPrimaryActionLearning =>
+      'See What My Child Is Learning';
+
+  @override
+  String get familyStudioPrimaryActionGuides => 'Browse Parent Guides';
+
+  @override
+  String get familyStudioSectionTodaysActivityTitle =>
+      'Today\'s Family Activity';
+
+  @override
+  String get familyStudioSectionTodaysActivitySubtitle =>
+      'One deterministic pick for today, from Family Maths.';
+
+  @override
+  String get familyStudioSectionHomeworkCompanionTitle => 'Homework Companion';
+
+  @override
+  String get familyStudioSectionHomeworkCompanionSubtitle =>
+      'A short, deterministic session for tonight\'s homework.';
+
+  @override
+  String get familyStudioSectionLearningTitle => 'What Your Child Is Learning';
+
+  @override
+  String get familyStudioSectionLearningSubtitle => 'Recent Practice topics.';
+
+  @override
+  String get familyStudioSectionExplainTitle => 'Explain This Method';
+
+  @override
+  String get familyStudioSectionExplainSubtitle => 'Open the Formula Library.';
+
+  @override
+  String get familyStudioSectionConversationStartersTitle =>
+      'Conversation Starters';
+
+  @override
+  String get familyStudioSectionConversationStartersSubtitle =>
+      'Questions to ask while you work together.';
+
+  @override
+  String get familyStudioSectionParentRecallCardsTitle => 'Eltern-Merkkarten';
+
+  @override
+  String get familyStudioSectionParentRecallCardsSubtitle =>
+      'Warmherzige, praktische Tipps — keine Pruefungsfragen.';
+
+  @override
+  String get familyStudioSectionFractionsRatioTitle => 'Fractions and Ratio';
+
+  @override
+  String get familyStudioSectionFractionsRatioSubtitle =>
+      'Family Maths activities for this topic.';
+
+  @override
+  String get familyStudioSectionMentalMathsTitle => 'Mental Maths Together';
+
+  @override
+  String get familyStudioSectionMentalMathsSubtitle =>
+      'Quick number challenges for two.';
+
+  @override
+  String get familyStudioSectionCubeSpatialTitle =>
+      'Cube and Spatial Activities';
+
+  @override
+  String get familyStudioSectionCubeSpatialSubtitle =>
+      'Build and view together.';
+
+  @override
+  String get familyStudioSectionProgressTitle => 'Progress Snapshot';
+
+  @override
+  String get familyStudioSectionProgressSubtitle =>
+      'Topics studied, strengths and areas to revisit.';
+
+  @override
+  String get familyStudioSectionTutorToolsTitle => 'Tutor Tools';
+
+  @override
+  String get familyStudioSectionTutorToolsSubtitle =>
+      'Choose a learner, assign practice, add a note.';
+
+  @override
+  String get familyStudioPinReminderTitle => 'Family Studio schützen';
+
+  @override
+  String get familyStudioPinReminderBody =>
+      'Erstelle eine Eltern-PIN, um Aufgaben, Berichte und Lerneinstellungen zu schützen.';
+
+  @override
+  String get familyStudioPinReminderSetPinButton => 'PIN festlegen';
+
+  @override
+  String get familyStudioPinReminderLaterButton => 'Später erinnern';
+
+  @override
+  String get familyStudioTodayStartButton => 'Start this activity';
+
+  @override
+  String get familyStudioLearningNoDataYet =>
+      'No Practice sessions yet — recent topics will appear here.';
+
+  @override
+  String get familyStudioLearningTopicSubtitle =>
+      'Recently studied in Practice.';
+
+  @override
+  String get familyStudioConversationAllieMessage =>
+      'A mistake can start a useful conversation.';
+
+  @override
+  String get familyStudioHomeworkTopicLabel => 'Topic';
+
+  @override
+  String get familyStudioHomeworkTimeLabel => 'Time available';
+
+  @override
+  String familyStudioHomeworkMinutes(int minutes) {
+    return '$minutes min';
+  }
+
+  @override
+  String get familyStudioHomeworkHelpTypeLabel => 'Type of help needed';
+
+  @override
+  String get familyStudioHomeworkHelpUnderstandMethod =>
+      'Understand the method';
+
+  @override
+  String get familyStudioHomeworkHelpPractiseTogether => 'Practise together';
+
+  @override
+  String get familyStudioHomeworkHelpReviewMistakes => 'Review mistakes';
+
+  @override
+  String get familyStudioHomeworkHelpPrepareTomorrow => 'Prepare for tomorrow';
+
+  @override
+  String get familyStudioHomeworkHelpBuildConfidence => 'Build confidence';
+
+  @override
+  String get familyStudioHomeworkGenerateButton => 'Generate session';
+
+  @override
+  String get familyStudioHomeworkEmptySession =>
+      'Nothing to suggest yet for this combination — try a different topic or time.';
+
+  @override
+  String get familyStudioProgressRecentTopics => 'Topics recently studied';
+
+  @override
+  String get familyStudioProgressActivitiesCompleted => 'Activities completed';
+
+  @override
+  String get familyStudioProgressAreasToRevisit => 'Areas to revisit';
+
+  @override
+  String get familyStudioProgressSuggestedActivity =>
+      'Suggested family activity';
+
+  @override
+  String get familyStudioProgressNoDataYet =>
+      'Not enough data yet — this will fill in as your family uses the app.';
+
+  @override
+  String get familyStudioTutorChooseLearnerLabel => 'Choose a learner';
+
+  @override
+  String get familyStudioTutorAssignLabel => 'Assign';
+
+  @override
+  String get familyStudioTutorAssignPractice => 'Assign Practice';
+
+  @override
+  String get familyStudioTutorAssignRecallCards => 'Assign Recall Cards';
+
+  @override
+  String familyStudioTutorCompletionLabel(int count) {
+    return '$count interactive lab completions so far';
+  }
+
+  @override
+  String get familyStudioTutorNotesLabel => 'Notes';
+
+  @override
+  String get familyStudioTutorNotesHint => 'A short note for next time';
+
+  @override
+  String get appearanceThemeTitle => 'Appearance';
+
+  @override
+  String get appearanceThemeSub =>
+      'Choose how Math Intelligence looks — match your device, or pick Dark or Light.';
+
+  @override
+  String get appearanceThemeSystem => 'System';
+
+  @override
+  String get appearanceThemeDark => 'Dark';
+
+  @override
+  String get appearanceThemeLight => 'Light';
+
+  @override
+  String get appearanceAccessibilityHeading => 'ACCESSIBILITY';
+
+  @override
+  String get appearanceReadingSizeTitle => 'Reading Size';
+
+  @override
+  String get appearanceReadingSizeSub =>
+      'Small, Default, or Large text scaling';
+
+  @override
+  String get appearanceTouchTargetsTitle => 'Touch Targets 44px';
+
+  @override
+  String get appearanceTouchTargetsSub => 'Ergonomic controls';
+
+  @override
+  String get appearanceTypographyTitle => 'Clear Typography';
+
+  @override
+  String get appearanceTypographySub => 'Readable font at all sizes';
+
+  @override
+  String get appearanceResetOnboardingHeading => 'RESET ONBOARDING';
+
+  @override
+  String get appearanceResetOnboardingSub =>
+      'Reset the app introduction to go through the initial setup again.';
+
+  @override
+  String get appearanceResetOnboardingButton => 'Reset Onboarding';
 }
 
 /// The translations for German, as used in Switzerland (`de_CH`).
@@ -3044,6 +4303,171 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
   @override
   String get practiceModeExamSimulatorSub =>
       'Eine Prüfungssituation simulieren';
+
+  @override
+  String get practiceExamEntranceExamPrep => 'Aufnahmepruefung-Vorbereitung';
+
+  @override
+  String get entranceExamHubTitle => 'Vorbereitung auf die Aufnahmepruefung';
+
+  @override
+  String get entranceExamHubIntro =>
+      'Uebung fuer Aufnahmepruefungen an Privatschulen, getrennt vom GCSE-Pruefungssimulator — konzipiert fuer die Altersgruppe 11+ und bewertet, indem du deinen eigenen Loesungsweg mit einer Musterloesung vergleichst, nicht per Multiple-Choice.';
+
+  @override
+  String get entranceExamDisclaimerHeading =>
+      'Nicht verbunden mit einer Schule oder Pruefungsbehoerde';
+
+  @override
+  String get entranceExamAgeBandLabel => 'Altersgruppe';
+
+  @override
+  String get entranceExamDurationLabel => 'Dauer';
+
+  @override
+  String get entranceExamCalculatorLabel => 'Taschenrechner';
+
+  @override
+  String get entranceExamCalculatorNone => 'Nicht erlaubt';
+
+  @override
+  String get entranceExamCalculatorAllowed => 'Erlaubt';
+
+  @override
+  String get entranceExamCalculatorAllowedNonScientific =>
+      'Erlaubt (nicht wissenschaftlich)';
+
+  @override
+  String entranceExamDurationMinutes(int minutes) {
+    return '$minutes Min.';
+  }
+
+  @override
+  String get entranceExamModePracticeBySkillTitle =>
+      'Uebung nach Themenbereich';
+
+  @override
+  String get entranceExamModePracticeBySkillSub =>
+      'Bearbeite Aufgaben, die nach Themenbereich gruppiert sind, mit Loesungswegen zum Vergleichen.';
+
+  @override
+  String get entranceExamModeReviewMethodsTitle => 'Loesungswege ueberpruefen';
+
+  @override
+  String get entranceExamModeReviewMethodsSub =>
+      'Sieh dir den vollstaendigen Loesungsweg jeder verfuegbaren Aufgabe noch einmal an — ohne Zeitlimit, ohne Bewertung.';
+
+  @override
+  String get entranceExamModeUntimedPaperTitle => 'Pruefung ohne Zeitlimit';
+
+  @override
+  String get entranceExamModeUntimedPaperSub =>
+      'Bearbeite die vollstaendige Pruefung ohne Zeitlimit.';
+
+  @override
+  String get entranceExamModeTimedMockTitle =>
+      'Zeitlich begrenzte Probepruefung';
+
+  @override
+  String get entranceExamModeTimedMockSub =>
+      'Bearbeite die vollstaendige Pruefung unter echten Pruefungsbedingungen mit Zeitlimit.';
+
+  @override
+  String get entranceExamModeScholarshipChallengeTitle =>
+      'Stipendium-Herausforderung';
+
+  @override
+  String get entranceExamModeScholarshipChallengeSub =>
+      'Eine anspruchsvollere Pruefung fuer Kandidatinnen und Kandidaten auf Stipendiumsniveau.';
+
+  @override
+  String entranceExamModeLockedFullPaperReason(int declared, int authored) {
+    return 'Wird freigeschaltet, sobald die vollstaendige Pruefung mit $declared Aufgaben bereit ist — bisher sind $authored verfasst.';
+  }
+
+  @override
+  String get entranceExamModeLockedScholarshipReason =>
+      'Dieses Paket ist auf Grundniveau — die Stipendium-Herausforderung braucht ein Paket auf Stipendiumsniveau.';
+
+  @override
+  String get entranceExamModeLockedBadge => 'Demnaechst';
+
+  @override
+  String get entranceExamSkillPickerTitle => 'Themenbereich waehlen';
+
+  @override
+  String entranceExamSkillQuestionCountLabel(int count) {
+    return '$count Aufgaben verfuegbar';
+  }
+
+  @override
+  String get entranceExamSkillNumberFluency => 'Rechenfertigkeit';
+
+  @override
+  String get entranceExamSkillFractionsAndPercentages => 'Brueche & Prozente';
+
+  @override
+  String get entranceExamSkillRatioAndProportion => 'Verhaeltnis & Proportion';
+
+  @override
+  String get entranceExamSkillAlgebraicReasoning => 'Algebraisches Denken';
+
+  @override
+  String get entranceExamSkillShapeAndSpace => 'Form & Raum';
+
+  @override
+  String get entranceExamSkillDataAndLogic => 'Daten & Logik';
+
+  @override
+  String entranceExamQuestionOf(int current, int total) {
+    return 'Aufgabe $current von $total';
+  }
+
+  @override
+  String get entranceExamRevealMethodButton => 'Loesungsweg anzeigen';
+
+  @override
+  String get entranceExamMethodMarkPrompt =>
+      'Vergleiche dies mit deinem eigenen Loesungsweg. Was passt am besten zu dem, was du geschrieben hast?';
+
+  @override
+  String get entranceExamMethodMarkCorrect =>
+      'Richtig — vollstaendiger Loesungsweg gezeigt';
+
+  @override
+  String get entranceExamMethodMarkSlip => 'Loesungsweg richtig, ein Fehler';
+
+  @override
+  String get entranceExamMethodMarkPartial => 'Teilweise Begruendung';
+
+  @override
+  String get entranceExamMethodMarkUnsupported =>
+      'Nur Antwort, kein Loesungsweg';
+
+  @override
+  String get entranceExamMethodMarkBlank => 'Ich habe das nicht versucht';
+
+  @override
+  String get entranceExamNextQuestionButton => 'Naechste Aufgabe';
+
+  @override
+  String get entranceExamSessionCompleteTitle => 'Uebung abgeschlossen';
+
+  @override
+  String entranceExamSessionEstimatedMarks(String marks, int total) {
+    return 'Geschaetzte Punkte: $marks / $total';
+  }
+
+  @override
+  String get entranceExamSessionEstimatedMarksNote =>
+      'Eine Schaetzung aus deiner eigenen Selbstbewertung, kein offizielles Bewertungsschema — siehe die Hinweise unter jeder Aufgabe.';
+
+  @override
+  String get entranceExamReviewTitle => 'Loesungswege ueberpruefen';
+
+  @override
+  String get entranceExamNoHandwritingNote =>
+      'Diese App liest oder bewertet deinen handschriftlichen Loesungsweg niemals — du vergleichst ihn selbst mit dem gezeigten Loesungsweg.';
 
   @override
   String get practiceExit => 'Beenden';
@@ -4415,6 +5839,34 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
       'Denksportaufgaben, Zahlentricks und mathematische Kuriositaeten';
 
   @override
+  String get mathStudioMathMagicNumberTricksLabel => 'Zahlentricks';
+
+  @override
+  String get mathStudioMathMagicNumberTricksSubtitle =>
+      'Verfolge Schritt fuer Schritt, wie ein Zahlentrick funktioniert';
+
+  @override
+  String get mathStudioMathMagicPatternsLabel => 'Muster';
+
+  @override
+  String get mathStudioMathMagicPatternsSubtitle =>
+      'Lass ein Punktmuster wachsen und entdecke die Regel dahinter';
+
+  @override
+  String get mathStudioMathMagicMagicSquaresLabel => 'Magische Quadrate';
+
+  @override
+  String get mathStudioMathMagicMagicSquaresSubtitle =>
+      'Ordne Zahlen so an, dass jede Linie die gleiche Summe ergibt';
+
+  @override
+  String get mathStudioMathMagicParityLabel => 'Gerade und ungerade';
+
+  @override
+  String get mathStudioMathMagicParitySubtitle =>
+      'Erforsche, was beim Addieren gerader und ungerader Zahlen passiert';
+
+  @override
   String get mathStudioSpatialIntelligenceTitle => 'Raeumliches Denken';
 
   @override
@@ -4443,6 +5895,25 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
 
   @override
   String get mathStudioSpatialPuzzlesLabel => 'Raumraetsel';
+
+  @override
+  String get mathStudioSpatialCubeNetsLabel => 'Wuerfelnetze';
+
+  @override
+  String get mathStudioSpatialCubeNetsSubtitle =>
+      'Entscheide, welche Netze sich zu einem geschlossenen Wuerfel falten lassen';
+
+  @override
+  String get mathStudioSpatialRotationsSubtitle =>
+      'Drehe eine Form um einen festen Punkt und beobachte, was sich aendert';
+
+  @override
+  String get mathStudioSpatialTransformationsSubtitle =>
+      'Verschieben, spiegeln, drehen und vergroessern auf einem Koordinatengitter';
+
+  @override
+  String get mathStudioSpatialPuzzlesSubtitle =>
+      'Kurze Raetsel zu Form, Raum und 3D-Denken';
 
   @override
   String get mathStudioFeaturedFormatsSectionLabel => 'Ausgewaehlte Formate';
@@ -4490,6 +5961,17 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
 
   @override
   String get mathStudioCategoryBusinessFinance => 'Wirtschaft & Finanzen';
+
+  @override
+  String get mathStudioCategoryArchitectureConstruction =>
+      'Architektur & Bauwesen';
+
+  @override
+  String get mathStudioCategoryEnvironmentClimate => 'Umwelt & Klima';
+
+  @override
+  String get mathStudioCategoryComputingCryptography =>
+      'Informatik & Kryptografie';
 
   @override
   String get mathStudioCategoryAll => 'Alle';
@@ -4762,6 +6244,24 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
 
   @override
   String get recallCardsBrowseByTypeTitle => 'Nach Kartentyp durchsuchen';
+
+  @override
+  String get recallCardsTopicFilterGroupLabel => 'Thema';
+
+  @override
+  String get recallCardsTypeFilterGroupLabel => 'Kartentyp';
+
+  @override
+  String get recallCardsMoreChipLabel => 'Mehr';
+
+  @override
+  String get recallCardsMoreTopicsSheetTitle => 'Weitere Themen';
+
+  @override
+  String get recallCardsMoreTypesSheetTitle => 'Weitere Kartentypen';
+
+  @override
+  String get recallCardsClearFiltersButton => 'Filter zuruecksetzen';
 
   @override
   String get recallCardsSearchTitle => 'Suche';
@@ -5104,6 +6604,521 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
 
   @override
   String get labsDataDetectiveRangeLabel => 'Spannweite';
+
+  @override
+  String get labsSpatialCubeLabTitle => 'Raumwuerfel-Labor';
+
+  @override
+  String get labsSpatialCubeLabSubtitle =>
+      'Drehe, falte und erkunde einen beschrifteten Wuerfel';
+
+  @override
+  String get labsSpatialCubeLabIntro =>
+      'Ziehe am Wuerfel, um ihn zu drehen. Beachte, wie die Flaechen zueinander an derselben Stelle bleiben, egal wie du drehst.';
+
+  @override
+  String get labsSpatialCubeLabFreePlayCaption =>
+      'Probier\'s aus: Ziehe am Wuerfel oder nutze die Schaltflaechen unten.';
+
+  @override
+  String get labsSpatialCubeWhichFaceOppositeTitle =>
+      'Welche Flaeche liegt gegenueber?';
+
+  @override
+  String get labsSpatialCubeWhichFaceOppositeSubtitle =>
+      'Sage die gegenueberliegende Flaeche voraus und pruefe durch Drehen';
+
+  @override
+  String get labsSpatialCubeRotateToMatchTitle => 'Drehen zum Abgleichen';
+
+  @override
+  String get labsSpatialCubeRotateToMatchSubtitle =>
+      'Drehe deinen Wuerfel, bis er zur Zielausrichtung passt';
+
+  @override
+  String get labsSpatialCubeHiddenFaceTitle => 'Versteckte Flaeche';
+
+  @override
+  String get labsSpatialCubeHiddenFaceSubtitle =>
+      'Finde heraus, welche Beschriftung auf einer unsichtbaren Flaeche steht';
+
+  @override
+  String get labsSpatialCubeNetExplorerTitle => 'Wuerfelnetz-Entdecker';
+
+  @override
+  String get labsSpatialCubeNetExplorerSubtitle =>
+      'Sage gegenueberliegende Flaechen auf einem flachen Netz voraus und falte es dann';
+
+  @override
+  String get labsEarlyMathsPlaygroundTitle => 'Fruehe Mathe-Spielwiese';
+
+  @override
+  String get labsEarlyMathsPlaygroundSubtitle =>
+      'Ruhige, spielerische Zaehlaktivitaeten fuer juengere Lernende';
+
+  @override
+  String get earlyMathsPlaygroundIntro =>
+      'Ein ruhiger, zeitlich unbegrenzter Bereich, in dem juengere Lernende das Zaehlen ueben koennen — keine Punkte, keine Zeitlimits, kein Druck.';
+
+  @override
+  String get feedTheHungryPandaTitle => 'Fuettere den hungrigen Panda';
+
+  @override
+  String get feedTheHungryPandaSubtitle =>
+      'Zaehle Aepfel einzeln ab, um den Panda zu fuettern';
+
+  @override
+  String feedPandaInstruction(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count Aepfeln',
+      one: '1 Apfel',
+    );
+    return 'Fuettere den Panda mit $_temp0.';
+  }
+
+  @override
+  String feedPandaWellDone(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count Aepfel',
+      one: '1 Apfel',
+    );
+    return 'Gut gemacht! Der Panda hat $_temp0 gegessen.';
+  }
+
+  @override
+  String get feedPandaHowManyLeft => 'Wie viele Aepfel sind noch uebrig?';
+
+  @override
+  String get feedPandaHasEnough =>
+      'Der Panda hat genug. Lass uns zusammen zaehlen.';
+
+  @override
+  String get feedPandaReplayInstructionButton => 'Anweisung wiederholen';
+
+  @override
+  String get feedPandaNewRoundButton => 'Neue Runde';
+
+  @override
+  String feedPandaFruitSemanticLabel(int position, int total) {
+    return 'Apfel $position von $total. Doppeltippen zum Auswaehlen.';
+  }
+
+  @override
+  String get feedPandaSelectedSuffix => 'Ausgewaehlt.';
+
+  @override
+  String feedPandaPandaSemanticReady(int remaining) {
+    String _temp0 = intl.Intl.pluralLogic(
+      remaining,
+      locale: localeName,
+      other: 'Noch $remaining Aepfel noetig',
+      one: 'Noch 1 Apfel noetig',
+    );
+    return 'Fuettere den Panda. $_temp0.';
+  }
+
+  @override
+  String get feedPandaPandaSemanticFull =>
+      'Der Panda hat fuer diese Runde genug.';
+
+  @override
+  String feedPandaAnswerChoiceSemanticLabel(int value) {
+    return 'Antwort $value.';
+  }
+
+  @override
+  String get feedPandaTryAgainMessage => 'Nicht ganz — versuch es nochmal!';
+
+  @override
+  String get feedPandaRoundCompleteMessage => 'Du hast super gezaehlt!';
+
+  @override
+  String get labsSpatialCubeWhichFaceOppositeMission =>
+      'Schau dir den Wuerfel an und entscheide, welche Flaeche der genannten gegenueberliegt.';
+
+  @override
+  String labsSpatialCubeWhichFaceOppositeQuestion(String faceLabel) {
+    return 'Welche Flaeche liegt $faceLabel gegenueber?';
+  }
+
+  @override
+  String get labsSpatialCubeWhichFaceOppositeHintButton => 'Tipp';
+
+  @override
+  String get labsSpatialCubeWhichFaceOppositeHintText =>
+      'Gegenueberliegende Flaechen teilen sich nie eine Kante — vorne/hinten, oben/unten und links/rechts sind immer die drei Paare.';
+
+  @override
+  String get labsSpatialCubeWhichFaceOppositeCorrect =>
+      'Gut gedacht. Du hast die Beziehungen zwischen den Flaechen im Kopf behalten.';
+
+  @override
+  String get labsSpatialCubeWhichFaceOppositeIncorrect =>
+      'Fast geschafft. Schau, welche Flaechen sich eine Kante teilen.';
+
+  @override
+  String get labsSpatialCubeWhichFaceOppositeWhereUsed =>
+      'Kartons packen, Wuerfel lesen und mit 3D-Netzen arbeiten beruhen alle darauf, zu wissen, welche Flaechen eines Wuerfels sich gegenueberliegen.';
+
+  @override
+  String get labsSpatialCubeWhichFaceOppositeHelpWhatToDo =>
+      'Drehe den Wuerfel, wenn du moechtest, und waehle dann die Flaeche, die deiner Meinung nach gegenueberliegt.';
+
+  @override
+  String get labsSpatialCubeWhichFaceOppositeHelpWhatToNotice =>
+      'Beachte, dass gegenueberliegende Flaechen nie nebeneinander sind, egal wie du den Wuerfel drehst.';
+
+  @override
+  String get labsSpatialCubeWhichFaceOppositeHelpWhatItMeans =>
+      'Jeder Wuerfel hat genau drei Paare gegenueberliegender Flaechen — vorne/hinten, oben/unten, links/rechts — und Drehen aendert nie, welche Flaechen zusammengehoeren.';
+
+  @override
+  String labsSpatialCubeWhichFaceOppositeReveal(
+      String correctLabel, String askedLabel) {
+    return '$correctLabel liegt $askedLabel gegenueber.';
+  }
+
+  @override
+  String get labsSpatialCubeRotateToMatchMission =>
+      'Drehe deinen Wuerfel, bis er zur gezeigten Zielausrichtung passt.';
+
+  @override
+  String get labsSpatialCubeRotateToMatchTargetLabel => 'Zielausrichtung';
+
+  @override
+  String get labsSpatialCubeRotateToMatchYourCubeLabel => 'Dein Wuerfel';
+
+  @override
+  String get labsSpatialCubeRotateToMatchTestButton => 'Drehung pruefen';
+
+  @override
+  String get labsSpatialCubeRotateToMatchCorrect =>
+      'Gut gemacht — das passt sehr gut.';
+
+  @override
+  String get labsSpatialCubeRotateToMatchIncorrect =>
+      'Noch nicht ganz. Vergleiche, welche Flaeche vorne und welche oben ist.';
+
+  @override
+  String get labsSpatialCubeRotateToMatchWhereUsed =>
+      'Die Ausrichtung eines Objekts an ein Diagramm anzupassen gehoert zum Lesen von technischen Zeichnungen und Montageanleitungen.';
+
+  @override
+  String get labsSpatialCubeRotateToMatchHelpWhatToDo =>
+      'Ziehe deinen Wuerfel, bis seine Flaechen mit dem daneben gezeigten Ziel uebereinstimmen, und pruefe dann deine Drehung.';
+
+  @override
+  String get labsSpatialCubeRotateToMatchHelpWhatToNotice =>
+      'Beachte, dass du keine pixelgenaue Uebereinstimmung brauchst — es reicht, wenn dieselben Flaechen vorne und oben sind.';
+
+  @override
+  String get labsSpatialCubeRotateToMatchHelpWhatItMeans =>
+      'Eine Ausrichtung wird vollstaendig dadurch beschrieben, welche Flaeche vorne und welche oben ist — diese beiden Angaben legen alles andere fest.';
+
+  @override
+  String get labsSpatialCubeHiddenFaceMission =>
+      'Schau dir die drei sichtbaren Flaechen an und finde heraus, was auf der versteckten steht.';
+
+  @override
+  String labsSpatialCubeHiddenFaceQuestion(String direction) {
+    return 'Welche Beschriftung steht auf der Flaeche $direction?';
+  }
+
+  @override
+  String get labsSpatialCubeHiddenFaceHintButton => 'Tipp';
+
+  @override
+  String get labsSpatialCubeHiddenFaceHintText =>
+      'Finde zuerst heraus, welche Flaechen du SEHEN kannst — die versteckte Flaeche ist eine der drei uebrigen.';
+
+  @override
+  String get labsSpatialCubeHiddenFaceCorrect =>
+      'Gut gemacht. Du hast die versteckte Flaeche richtig vorausgesagt.';
+
+  @override
+  String get labsSpatialCubeHiddenFaceIncorrect =>
+      'Guter Versuch. Drehe den Wuerfel zur Kontrolle und probiere dann die naechste Aufgabe.';
+
+  @override
+  String get labsSpatialCubeHiddenFaceWhereUsed =>
+      'Isometrische Diagramme und technische Zeichnungen zu lesen bedeutet, ueber Flaechen nachzudenken, die man nicht direkt sieht.';
+
+  @override
+  String get labsSpatialCubeHiddenFaceHelpWhatToDo =>
+      'Schau dir die drei sichtbaren Flaechen an und waehle dann die Beschriftung, die deiner Meinung nach auf der genannten versteckten Flaeche steht.';
+
+  @override
+  String get labsSpatialCubeHiddenFaceHelpWhatToNotice =>
+      'Beachte, dass aus diesem Blickwinkel immer nur drei Flaechen sichtbar sind — die anderen drei sind immer versteckt.';
+
+  @override
+  String get labsSpatialCubeHiddenFaceHelpWhatItMeans =>
+      'Ein Wuerfel zeigt aus einem Blickwinkel immer nur drei Flaechen, daher bedeutet das Erschliessen einer versteckten Flaeche, ueber den ganzen Wuerfel nachzudenken, nicht nur ueber das Sichtbare.';
+
+  @override
+  String get labsSpatialCubeNetExplorerMission =>
+      'Schau dir das flache Netz an, sage voraus, welche Flaechen sich gegenueberliegen werden, und falte es dann zur Kontrolle.';
+
+  @override
+  String get labsSpatialCubeNetExplorerPredictPrompt =>
+      'Welche zwei Quadrate werden deiner Meinung nach gegenueberliegen?';
+
+  @override
+  String get labsSpatialCubeNetExplorerFoldButton => 'Falten';
+
+  @override
+  String get labsSpatialCubeNetExplorerUnfoldButton => 'Entfalten';
+
+  @override
+  String get labsSpatialCubeNetExplorerNextNetButton => 'Naechstes Netz';
+
+  @override
+  String get labsSpatialCubeNetExplorerStepBackButton => 'Zurueck';
+
+  @override
+  String get labsSpatialCubeNetExplorerStepForwardButton => 'Naechster Schritt';
+
+  @override
+  String get labsSpatialCubeNetExplorerWhereUsed =>
+      'Verpackungsdesign und Blechbearbeitung beginnen beide mit einem flachen Netz, das sich zu einer fertigen 3D-Form faltet.';
+
+  @override
+  String get labsSpatialCubeNetExplorerHelpWhatToDo =>
+      'Betrachte das flache Netz und druecke dann Falten, um zu sehen, ob es sich zu einem Wuerfel schliesst.';
+
+  @override
+  String get labsSpatialCubeNetExplorerHelpWhatToNotice =>
+      'Beachte, dass nicht jede Anordnung von sechs Quadraten sich zu einem geschlossenen Wuerfel faltet — manche ueberlappen sich oder lassen eine Luecke.';
+
+  @override
+  String get labsSpatialCubeNetExplorerHelpWhatItMeans =>
+      'Ein Netz ist eine 2D-Form, die sich entlang ihrer Kanten zu einem 3D-Koerper faltet — dasselbe Quadrat kann je nach Form des Netzes auf ganz unterschiedlichen Seiten des Wuerfels landen.';
+
+  @override
+  String get labsAircraftLandingLabTitle => 'Flugzeuglandungs-Labor';
+
+  @override
+  String get labsAircraftLandingLabSubtitle =>
+      'Fliege den Sinkwinkel, die Distanz und die Geschwindigkeit, die ein Flugzeug sicher landen lassen';
+
+  @override
+  String get labsAircraftLandingLabIntro =>
+      'Passe Sinkwinkel und Geschwindigkeit an und druecke dann Anflug testen, um zu sehen, wie das Flugzeug die Strecke fliegt und wo es aufsetzt.';
+
+  @override
+  String get labsAircraftLandingLabFreePlayCaption =>
+      'Probier\'s aus: Ziehe an den Reglern und druecke dann Anflug testen.';
+
+  @override
+  String get labsAircraftLandingFindTheTimeTitle => 'Finde die Zeit';
+
+  @override
+  String get labsAircraftLandingFindTheTimeSubtitle =>
+      'Finde heraus, wie lange der Flug zur Landebahn dauert';
+
+  @override
+  String get labsAircraftLandingDescentLineTitle => 'Folge der Sinkfluglinie';
+
+  @override
+  String get labsAircraftLandingDescentLineSubtitle =>
+      'Passe deinen Sinkwinkel an eine Ziel-Gleitlinie an';
+
+  @override
+  String get labsAircraftLandingGlidePathTitle => 'Lande auf dem Gleitpfad';
+
+  @override
+  String get labsAircraftLandingGlidePathSubtitle =>
+      'Waehle Winkel und Geschwindigkeit, um sicher auf der Landebahn zu landen';
+
+  @override
+  String get labsAircraftLandingVectorApproachTitle => 'Vektor-Anflug';
+
+  @override
+  String get labsAircraftLandingVectorApproachSubtitle =>
+      'Passe horizontale und vertikale Geschwindigkeit an einen Ziel-Anflug an';
+
+  @override
+  String labsAircraftLandingDescentAngleLabel(int degrees) {
+    return 'Sinkwinkel: $degrees°';
+  }
+
+  @override
+  String labsAircraftLandingAirspeedLabel(int metresPerSecond) {
+    return 'Fluggeschwindigkeit: $metresPerSecond m/s';
+  }
+
+  @override
+  String get labsAircraftLandingTestApproachButton => 'Anflug testen';
+
+  @override
+  String labsAircraftLandingFindTheTimeDiagramLabel(
+      int distanceM, int speedMps) {
+    return 'Ein Flugzeug $distanceM Meter von der Landebahn entfernt, mit einer Geschwindigkeit von $speedMps Metern pro Sekunde.';
+  }
+
+  @override
+  String labsAircraftLandingFindTheTimeSpeedLabel(int speedMps) {
+    return 'Geschwindigkeit: $speedMps m/s';
+  }
+
+  @override
+  String get labsAircraftLandingFindTheTimeQuestion =>
+      'Wie lange dauert es, bis die Landebahn erreicht wird?';
+
+  @override
+  String get labsAircraftLandingFindTheTimeHintButton => 'Tipp';
+
+  @override
+  String get labsAircraftLandingFindTheTimeHintText =>
+      'Zeit = Distanz ÷ Geschwindigkeit.';
+
+  @override
+  String get labsAircraftLandingFindTheTimeMission =>
+      'Nutze die gezeigte Distanz und Geschwindigkeit, um herauszufinden, wie lange der Flug zur Landebahn dauert.';
+
+  @override
+  String get labsAircraftLandingFindTheTimeWhereUsed =>
+      'Piloten und Fluglotsen schaetzen staendig die Zeit bis zur Landebahn aus Geschwindigkeit und Distanz, um sichere Landungen zu staffeln.';
+
+  @override
+  String get labsAircraftLandingFindTheTimeCorrect =>
+      'Richtig — du hast die Zeit bis zur Landebahn gefunden.';
+
+  @override
+  String get labsAircraftLandingFindTheTimeIncorrect =>
+      'Noch nicht ganz. Versuche, die Distanz durch die Geschwindigkeit zu teilen.';
+
+  @override
+  String labsAircraftLandingFindTheTimeReveal(int seconds) {
+    return 'Die richtige Zeit ist $seconds Sekunden.';
+  }
+
+  @override
+  String get labsAircraftLandingFindTheTimeHelpWhatToDo =>
+      'Lies die gezeigte Distanz und Geschwindigkeit ab und waehle dann die passende Zeit aus den Optionen.';
+
+  @override
+  String get labsAircraftLandingFindTheTimeHelpWhatToNotice =>
+      'Beachte, dass eine hoehere Geschwindigkeit bei gleicher Distanz immer eine kuerzere Zeit bedeutet.';
+
+  @override
+  String get labsAircraftLandingFindTheTimeHelpWhatItMeans =>
+      'Zeit, Distanz und Geschwindigkeit haengen immer ueber Zeit = Distanz ÷ Geschwindigkeit zusammen — dieselbe Beziehung gilt fuer jede Reise, nicht nur fuer Fluege.';
+
+  @override
+  String get labsAircraftLandingDescentLineTestButton => 'Meine Linie testen';
+
+  @override
+  String get labsAircraftLandingDescentLineMission =>
+      'Passe deinen Sinkwinkel an, bis deine Linie mit der gestrichelten Ziellinie uebereinstimmt.';
+
+  @override
+  String get labsAircraftLandingDescentLineWhereUsed =>
+      'Eine geforderte Steigung zu treffen kommt immer dann vor, wenn ein Weg, eine Rampe oder ein Rohr einer festen Neigung folgen muss.';
+
+  @override
+  String get labsAircraftLandingDescentLineCorrect =>
+      'Gut gemacht — deine Linie stimmt mit dem Ziel-Gleitpfad ueberein.';
+
+  @override
+  String get labsAircraftLandingDescentLineIncorrect =>
+      'Noch nicht. Vergleiche, wie steil deine Linie im Vergleich zur gestrichelten Ziellinie ist.';
+
+  @override
+  String get labsAircraftLandingDescentLineHelpWhatToDo =>
+      'Bewege den Sinkwinkel-Regler, bis deine durchgezogene Linie genau auf der gestrichelten Ziellinie liegt, und teste sie dann.';
+
+  @override
+  String get labsAircraftLandingDescentLineHelpWhatToNotice =>
+      'Beachte, dass ein steilerer Winkel die Linie schneller fallen laesst — eine groessere negative Steigung.';
+
+  @override
+  String get labsAircraftLandingDescentLineHelpWhatItMeans =>
+      'Der Sinkwinkel ist die Steigung der Linie: Hoehenaenderung geteilt durch zurueckgelegte Distanz, geschrieben als y = mx + c mit einem negativen m.';
+
+  @override
+  String get labsAircraftLandingGlidePathSafe =>
+      'Sanfte Landung — genau auf der Landebahn.';
+
+  @override
+  String get labsAircraftLandingGlidePathTooSteep =>
+      'Zu steil — das Flugzeug ist vor der Landebahn aufgesetzt.';
+
+  @override
+  String get labsAircraftLandingGlidePathTooShallow =>
+      'Zu flach — das Flugzeug war hinter der Landebahn noch in der Luft.';
+
+  @override
+  String get labsAircraftLandingGlidePathMission =>
+      'Waehle Winkel und Geschwindigkeit und teste dann deinen Anflug, um sicher auf der Landebahn zu landen.';
+
+  @override
+  String get labsAircraftLandingGlidePathWhereUsed =>
+      'Jede echte Landung balanciert einen sicheren Sinkwinkel gegen Geschwindigkeit und Distanz, um genau an der richtigen Stelle aufzusetzen.';
+
+  @override
+  String labsAircraftLandingGlidePathTouchdownError(int metres) {
+    return '$metres Meter von der Landebahnschwelle entfernt.';
+  }
+
+  @override
+  String get labsAircraftLandingGlidePathHelpWhatToDo =>
+      'Passe Winkel und Geschwindigkeit an und druecke dann Anflug testen, um zu sehen, wo das Flugzeug tatsaechlich aufsetzt.';
+
+  @override
+  String get labsAircraftLandingGlidePathHelpWhatToNotice =>
+      'Beachte, wie sich der Aufsetzpunkt aendert, wenn du den Winkel aenderst, auch wenn die Geschwindigkeit gleich bleibt.';
+
+  @override
+  String get labsAircraftLandingGlidePathHelpWhatItMeans =>
+      'tan(Winkel) = Hoehe ÷ Distanz — genau dieses Verhaeltnis sorgt dafuer, dass eine Landung genau auf der Landebahn aufsetzt statt zu kurz oder zu weit.';
+
+  @override
+  String labsAircraftLandingVectorHorizontalLabel(int metresPerSecond) {
+    return 'Horizontale Geschwindigkeit: $metresPerSecond m/s';
+  }
+
+  @override
+  String labsAircraftLandingVectorVerticalLabel(int metresPerSecond) {
+    return 'Vertikale Geschwindigkeit: $metresPerSecond m/s';
+  }
+
+  @override
+  String labsAircraftLandingVectorResultantLabel(int metresPerSecond) {
+    return 'Kombinierte (resultierende) Geschwindigkeit: $metresPerSecond m/s';
+  }
+
+  @override
+  String get labsAircraftLandingVectorApproachMission =>
+      'Passe die horizontale und vertikale Geschwindigkeitskomponente an den Ziel-Anflug an.';
+
+  @override
+  String get labsAircraftLandingVectorApproachWhereUsed =>
+      'Eine horizontale und eine vertikale Geschwindigkeit zu einem resultierenden Vektor zu kombinieren ist genau die Art, wie ein echter Flugpfad oder jede 2D-Bewegung mathematisch beschrieben wird.';
+
+  @override
+  String get labsAircraftLandingVectorApproachCorrect =>
+      'Richtig — deine Komponenten stimmen mit dem Ziel-Anflug ueberein.';
+
+  @override
+  String get labsAircraftLandingVectorApproachIncorrect =>
+      'Noch nicht. Vergleiche deine horizontale und vertikale Geschwindigkeit mit dem Ziel.';
+
+  @override
+  String get labsAircraftLandingVectorApproachHelpWhatToDo =>
+      'Passe die Regler fuer horizontale und vertikale Geschwindigkeit an und teste dann deinen Anflug.';
+
+  @override
+  String get labsAircraftLandingVectorApproachHelpWhatToNotice =>
+      'Beachte, wie sich die resultierende Geschwindigkeit und der Sinkflugpfad aendern, wenn du eine der beiden Komponenten anpasst.';
+
+  @override
+  String get labsAircraftLandingVectorApproachHelpWhatItMeans =>
+      'Jede Geschwindigkeit laesst sich in eine horizontale und eine vertikale Komponente zerlegen und mit dem Satz des Pythagoras zur resultierenden Geschwindigkeit zusammensetzen.';
 
   @override
   String get labsTryAgainButton => 'Nochmal versuchen';
@@ -5794,4 +7809,515 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
   @override
   String get labsDataDetectiveNarrationIntro =>
       'Sage voraus, welchen Durchschnitt der Ausreißer am stärksten beeinflusst, und decke dann die Antwort auf.';
+
+  @override
+  String get allieLabel => 'Allie';
+
+  @override
+  String get familyMathsEntryTitle => 'Familien-Mathe';
+
+  @override
+  String get familyMathsWelcomeTitle => 'Willkommen';
+
+  @override
+  String get familyMathsWelcomeBody =>
+      'Deinem Kind bei Mathe zu helfen, braucht kein perfektes Wissen. Kleine Gespräche. Einfache Spiele. Neugier. Beständigkeit. Den Rest übernehmen wir.';
+
+  @override
+  String get familyMathsAllieIntro =>
+      'Du musst dich nicht an jede Schulmethode erinnern. Wähle ein Thema. Ich schlage eine fünfminütige Aktivität vor, die deinem Kind hilft, mathematisch zu denken.';
+
+  @override
+  String get familyMathsPhilosophyTagline =>
+      'Eltern müssen nicht zu Lehrpersonen werden.';
+
+  @override
+  String get familyMathsStartActivityButton => 'Familienaktivität starten';
+
+  @override
+  String get familyMathsBrowseTopicsButton => 'Themen durchsuchen';
+
+  @override
+  String get familyMathsLibraryTitle => 'Familienaktivitäten';
+
+  @override
+  String get familyMathsEmptyCategory =>
+      'Noch keine Aktivitäten zu diesem Thema. Weitere sind unterwegs.';
+
+  @override
+  String familyActivityAgeRange(int min, int max) {
+    return '$min-$max Jahre';
+  }
+
+  @override
+  String familyActivityTimeRange(int min, int max) {
+    return '$min-$max Min.';
+  }
+
+  @override
+  String get familyActivityMaterialsLabel => 'Benötigtes Material';
+
+  @override
+  String get familyActivityWhatYourChildLearnsLabel => 'Was dein Kind lernt';
+
+  @override
+  String get familyActivityLetsExploreLabel => 'Gemeinsam entdecken';
+
+  @override
+  String get familyActivityQuestionsToAskLabel => 'Fragen zum Stellen';
+
+  @override
+  String get familyActivityMisconceptionsLabel => 'Häufige Missverständnisse';
+
+  @override
+  String get familyActivityTryTomorrowLabel => 'Morgen ausprobieren';
+
+  @override
+  String get familyActivityStudioConnectionLabel => 'Verbindung zum Studio';
+
+  @override
+  String get familyMathsCategoryNumberSense => 'Zahlverständnis';
+
+  @override
+  String get familyMathsCategoryAddition => 'Addition';
+
+  @override
+  String get familyMathsCategorySubtraction => 'Subtraktion';
+
+  @override
+  String get familyMathsCategoryMultiplication => 'Multiplikation';
+
+  @override
+  String get familyMathsCategoryDivision => 'Division';
+
+  @override
+  String get familyMathsCategoryFractions => 'Brüche';
+
+  @override
+  String get familyMathsCategoryDecimals => 'Dezimalzahlen';
+
+  @override
+  String get familyMathsCategoryRatio => 'Verhältnis';
+
+  @override
+  String get familyMathsCategoryPercentages => 'Prozente';
+
+  @override
+  String get familyMathsCategoryGeometry => 'Geometrie';
+
+  @override
+  String get familyMathsCategoryMeasurement => 'Messen';
+
+  @override
+  String get familyMathsCategoryAlgebra => 'Algebra';
+
+  @override
+  String get familyMathsCategoryPatterns => 'Muster';
+
+  @override
+  String get familyMathsCategoryLogic => 'Logik';
+
+  @override
+  String get familyMathsCategorySpatialReasoning => 'Räumliches Denken';
+
+  @override
+  String get familyMathsReassurance1 =>
+      'Du musst die Antwort nicht sofort wissen.';
+
+  @override
+  String get familyMathsReassurance2 =>
+      'Bitte dein Kind zu erklären, was ihm auffällt.';
+
+  @override
+  String get familyMathsReassurance3 =>
+      'Eine falsche Antwort kann ein nützliches Gespräch auslösen.';
+
+  @override
+  String get familyMathsReassurance4 =>
+      'Fünf konzentrierte Minuten reichen aus.';
+
+  @override
+  String get familyMathsReassurance5 =>
+      'Lass dein Kind die Gegenstände auswählen.';
+
+  @override
+  String get familyMathsReassurance6 =>
+      'Probiert eine andere Darstellung aus, wenn die erste nicht hilft.';
+
+  @override
+  String get onboardingFamilyRoleDetailTitle => 'Tell us about your family';
+
+  @override
+  String get onboardingFamilyRoleDetailSub =>
+      'A couple of quick questions so we can help the right way.';
+
+  @override
+  String get onboardingFamilyLearnerNamesLabel => 'Learner name(s)';
+
+  @override
+  String get onboardingFamilyLearnerNamesSub =>
+      'Add at least one — you can add more later.';
+
+  @override
+  String get onboardingFamilyAddAnotherLearner => 'Add another learner';
+
+  @override
+  String get onboardingFamilyLearnerContextTitle =>
+      'What stage is your child at?';
+
+  @override
+  String get onboardingFamilyLearnerContextSub =>
+      'This helps us suggest the right activities and topics.';
+
+  @override
+  String get onboardingFamilyGoalTitle => 'What brings you here?';
+
+  @override
+  String get onboardingFamilyGoalSub =>
+      'Choose what matters most right now — you can change this later.';
+
+  @override
+  String get onboardingFamilyGoalHomework => 'Help with homework';
+
+  @override
+  String get onboardingFamilyGoalUnderstandMethods =>
+      'Understand modern methods';
+
+  @override
+  String get onboardingFamilyGoalBuildConfidence => 'Build confidence';
+
+  @override
+  String get onboardingFamilyGoalPractiseTogether => 'Practise together';
+
+  @override
+  String get onboardingFamilyGoalPrepareExam => 'Prepare for an exam';
+
+  @override
+  String get onboardingFamilyGoalMonitorProgress => 'Monitor progress';
+
+  @override
+  String get onboardingFamilyGoalSupportStruggling =>
+      'Support a learner who finds maths difficult';
+
+  @override
+  String get onboardingFamilyActivityLengthLabel => 'Preferred activity length';
+
+  @override
+  String get onboardingFamilyActivityLengthShort => '~10 minutes';
+
+  @override
+  String get onboardingFamilyActivityLengthMedium => '~20 minutes';
+
+  @override
+  String get onboardingFamilyActivityLengthLong => '~30 minutes';
+
+  @override
+  String get onboardingFamilyPreferencesTitle => 'Almost done';
+
+  @override
+  String get onboardingFamilyPreferencesSub =>
+      'A couple of optional extras, then you\'re in.';
+
+  @override
+  String get onboardingFamilyAllieIntro =>
+      'You do not need to explain everything immediately.';
+
+  @override
+  String get onboardingFamilyNotificationsLabel => 'Gentle reminders';
+
+  @override
+  String get onboardingFamilyNotificationsSub =>
+      'Optional — occasional nudges about your family activity.';
+
+  @override
+  String get onboardingFamilyPinLabel => 'Set a Parent PIN (optional)';
+
+  @override
+  String get onboardingFamilyPinSub =>
+      'Protects Family Maths and parent content on a shared device. You can set this later in Settings instead.';
+
+  @override
+  String get onboardingFamilyFinishButton => 'Go to Family Studio';
+
+  @override
+  String get recallTopicNumber => 'Number';
+
+  @override
+  String get recallTopicRatioAndProportion => 'Ratio and Proportion';
+
+  @override
+  String get recallTopicAlgebra => 'Algebra';
+
+  @override
+  String get recallTopicGeometryAndMeasures => 'Geometry and Measures';
+
+  @override
+  String get recallTopicStatistics => 'Statistics';
+
+  @override
+  String get recallTopicProbability => 'Probability';
+
+  @override
+  String get familyStudioHubTitle => 'Family Studio';
+
+  @override
+  String get familyStudioHubOpeningPromise =>
+      'Parents do not need to become teachers.';
+
+  @override
+  String get familyStudioHubSupportingCopy =>
+      'Choose a topic, a short activity or a homework goal. Math Intelligence will help you begin.';
+
+  @override
+  String get familyStudioHubAllieMessage =>
+      'Ask what your child notices first.';
+
+  @override
+  String get familyStudioProfileEntrySubtitle =>
+      'Activities, homework help and progress for your family.';
+
+  @override
+  String get familyStudioPrimaryActionStartActivity =>
+      'Start a Family Activity';
+
+  @override
+  String get familyStudioPrimaryActionHomework => 'Help with Homework';
+
+  @override
+  String get familyStudioPrimaryActionLearning =>
+      'See What My Child Is Learning';
+
+  @override
+  String get familyStudioPrimaryActionGuides => 'Browse Parent Guides';
+
+  @override
+  String get familyStudioSectionTodaysActivityTitle =>
+      'Today\'s Family Activity';
+
+  @override
+  String get familyStudioSectionTodaysActivitySubtitle =>
+      'One deterministic pick for today, from Family Maths.';
+
+  @override
+  String get familyStudioSectionHomeworkCompanionTitle => 'Homework Companion';
+
+  @override
+  String get familyStudioSectionHomeworkCompanionSubtitle =>
+      'A short, deterministic session for tonight\'s homework.';
+
+  @override
+  String get familyStudioSectionLearningTitle => 'What Your Child Is Learning';
+
+  @override
+  String get familyStudioSectionLearningSubtitle => 'Recent Practice topics.';
+
+  @override
+  String get familyStudioSectionExplainTitle => 'Explain This Method';
+
+  @override
+  String get familyStudioSectionExplainSubtitle => 'Open the Formula Library.';
+
+  @override
+  String get familyStudioSectionConversationStartersTitle =>
+      'Conversation Starters';
+
+  @override
+  String get familyStudioSectionConversationStartersSubtitle =>
+      'Questions to ask while you work together.';
+
+  @override
+  String get familyStudioSectionParentRecallCardsTitle => 'Eltern-Merkkarten';
+
+  @override
+  String get familyStudioSectionParentRecallCardsSubtitle =>
+      'Warmherzige, praktische Tipps — keine Pruefungsfragen.';
+
+  @override
+  String get familyStudioSectionFractionsRatioTitle => 'Fractions and Ratio';
+
+  @override
+  String get familyStudioSectionFractionsRatioSubtitle =>
+      'Family Maths activities for this topic.';
+
+  @override
+  String get familyStudioSectionMentalMathsTitle => 'Mental Maths Together';
+
+  @override
+  String get familyStudioSectionMentalMathsSubtitle =>
+      'Quick number challenges for two.';
+
+  @override
+  String get familyStudioSectionCubeSpatialTitle =>
+      'Cube and Spatial Activities';
+
+  @override
+  String get familyStudioSectionCubeSpatialSubtitle =>
+      'Build and view together.';
+
+  @override
+  String get familyStudioSectionProgressTitle => 'Progress Snapshot';
+
+  @override
+  String get familyStudioSectionProgressSubtitle =>
+      'Topics studied, strengths and areas to revisit.';
+
+  @override
+  String get familyStudioSectionTutorToolsTitle => 'Tutor Tools';
+
+  @override
+  String get familyStudioSectionTutorToolsSubtitle =>
+      'Choose a learner, assign practice, add a note.';
+
+  @override
+  String get familyStudioPinReminderTitle => 'Family Studio schützen';
+
+  @override
+  String get familyStudioPinReminderBody =>
+      'Erstelle eine Eltern-PIN, um Aufgaben, Berichte und Lerneinstellungen zu schützen.';
+
+  @override
+  String get familyStudioPinReminderSetPinButton => 'PIN festlegen';
+
+  @override
+  String get familyStudioPinReminderLaterButton => 'Später erinnern';
+
+  @override
+  String get familyStudioTodayStartButton => 'Start this activity';
+
+  @override
+  String get familyStudioLearningNoDataYet =>
+      'No Practice sessions yet — recent topics will appear here.';
+
+  @override
+  String get familyStudioLearningTopicSubtitle =>
+      'Recently studied in Practice.';
+
+  @override
+  String get familyStudioConversationAllieMessage =>
+      'A mistake can start a useful conversation.';
+
+  @override
+  String get familyStudioHomeworkTopicLabel => 'Topic';
+
+  @override
+  String get familyStudioHomeworkTimeLabel => 'Time available';
+
+  @override
+  String familyStudioHomeworkMinutes(int minutes) {
+    return '$minutes min';
+  }
+
+  @override
+  String get familyStudioHomeworkHelpTypeLabel => 'Type of help needed';
+
+  @override
+  String get familyStudioHomeworkHelpUnderstandMethod =>
+      'Understand the method';
+
+  @override
+  String get familyStudioHomeworkHelpPractiseTogether => 'Practise together';
+
+  @override
+  String get familyStudioHomeworkHelpReviewMistakes => 'Review mistakes';
+
+  @override
+  String get familyStudioHomeworkHelpPrepareTomorrow => 'Prepare for tomorrow';
+
+  @override
+  String get familyStudioHomeworkHelpBuildConfidence => 'Build confidence';
+
+  @override
+  String get familyStudioHomeworkGenerateButton => 'Generate session';
+
+  @override
+  String get familyStudioHomeworkEmptySession =>
+      'Nothing to suggest yet for this combination — try a different topic or time.';
+
+  @override
+  String get familyStudioProgressRecentTopics => 'Topics recently studied';
+
+  @override
+  String get familyStudioProgressActivitiesCompleted => 'Activities completed';
+
+  @override
+  String get familyStudioProgressAreasToRevisit => 'Areas to revisit';
+
+  @override
+  String get familyStudioProgressSuggestedActivity =>
+      'Suggested family activity';
+
+  @override
+  String get familyStudioProgressNoDataYet =>
+      'Not enough data yet — this will fill in as your family uses the app.';
+
+  @override
+  String get familyStudioTutorChooseLearnerLabel => 'Choose a learner';
+
+  @override
+  String get familyStudioTutorAssignLabel => 'Assign';
+
+  @override
+  String get familyStudioTutorAssignPractice => 'Assign Practice';
+
+  @override
+  String get familyStudioTutorAssignRecallCards => 'Assign Recall Cards';
+
+  @override
+  String familyStudioTutorCompletionLabel(int count) {
+    return '$count interactive lab completions so far';
+  }
+
+  @override
+  String get familyStudioTutorNotesLabel => 'Notes';
+
+  @override
+  String get familyStudioTutorNotesHint => 'A short note for next time';
+
+  @override
+  String get appearanceThemeTitle => 'Appearance';
+
+  @override
+  String get appearanceThemeSub =>
+      'Choose how Math Intelligence looks — match your device, or pick Dark or Light.';
+
+  @override
+  String get appearanceThemeSystem => 'System';
+
+  @override
+  String get appearanceThemeDark => 'Dark';
+
+  @override
+  String get appearanceThemeLight => 'Light';
+
+  @override
+  String get appearanceAccessibilityHeading => 'ACCESSIBILITY';
+
+  @override
+  String get appearanceReadingSizeTitle => 'Reading Size';
+
+  @override
+  String get appearanceReadingSizeSub =>
+      'Small, Default, or Large text scaling';
+
+  @override
+  String get appearanceTouchTargetsTitle => 'Touch Targets 44px';
+
+  @override
+  String get appearanceTouchTargetsSub => 'Ergonomic controls';
+
+  @override
+  String get appearanceTypographyTitle => 'Clear Typography';
+
+  @override
+  String get appearanceTypographySub => 'Readable font at all sizes';
+
+  @override
+  String get appearanceResetOnboardingHeading => 'RESET ONBOARDING';
+
+  @override
+  String get appearanceResetOnboardingSub =>
+      'Reset the app introduction to go through the initial setup again.';
+
+  @override
+  String get appearanceResetOnboardingButton => 'Reset Onboarding';
 }

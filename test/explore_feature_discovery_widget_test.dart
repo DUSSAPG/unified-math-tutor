@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:unified_math_tutor/app/router.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 import 'package:unified_math_tutor/screens/explore/explore_math_intelligence_screen.dart';
+import 'package:unified_math_tutor/screens/formulas/formula_library_screen.dart';
 import 'package:unified_math_tutor/services/local_preferences_service.dart';
 import 'package:unified_math_tutor/services/mascot_fuel_service.dart';
 import 'package:unified_math_tutor/services/streak_service.dart';
@@ -23,7 +24,7 @@ void main() {
     Size(1280, 800), // tablet
   ];
 
-  setUp(() async {
+  setUpAll(() async {
     SharedPreferences.setMockInitialValues({});
     await LocalPreferencesService.instance.init();
     await StreakService.instance.init();
@@ -77,7 +78,8 @@ void main() {
           expect(
             find.byType(ExploreMathIntelligenceScreen),
             findsOneWidget,
-            reason: 'Failed to navigate to Explore screen for $locale at $viewport',
+            reason:
+                'Failed to navigate to Explore screen for $locale at $viewport',
           );
           expect(find.text(l10n.exploreAvailableTodaySection), findsOneWidget);
           expect(find.text(l10n.exploreInAtelierSection), findsOneWidget);
@@ -103,4 +105,49 @@ void main() {
       }
     },
   );
+
+  testWidgets('Explore shell destinations do not create duplicate navigators',
+      (tester) async {
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+
+    tester.view.physicalSize = const Size(390, 844);
+    tester.view.devicePixelRatio = 1;
+
+    final l10n = await AppLocalizations.delegate.load(const Locale('en'));
+    appRouter.go('/home');
+    await tester.pumpWidget(
+      MaterialApp.router(
+        routerConfig: appRouter,
+        locale: const Locale('en'),
+        supportedLocales: AppLocalizations.supportedLocales,
+        localizationsDelegates: const [
+          AppLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    await tester.tap(
+      find.descendant(
+        of: find.byType(BottomNavigationBar),
+        matching: find.text(l10n.navMore),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text(l10n.exploreMathIntelligenceTitle).last);
+    await tester.pumpAndSettle();
+    expect(find.byType(ExploreMathIntelligenceScreen), findsOneWidget);
+
+    await tester.ensureVisible(find.text(l10n.homeFormulaLibraryTitle));
+    await tester.tap(find.text(l10n.homeFormulaLibraryTitle));
+    await tester.pumpAndSettle();
+
+    expect(find.byType(FormulaLibraryScreen), findsWidgets);
+    expect(tester.takeException(), isNull);
+  });
 }

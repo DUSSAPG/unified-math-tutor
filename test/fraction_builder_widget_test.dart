@@ -39,7 +39,8 @@ void main() {
     await tester.pumpAndSettle();
   }
 
-  testWidgets('first challenge starts with 0 of 2 filled and no feedback shown', (tester) async {
+  testWidgets('first challenge starts with 0 of 2 filled and no feedback shown',
+      (tester) async {
     await pump(tester);
     expect(find.text('Fill in 1 out of 2 equal parts.'), findsOneWidget);
     expect(find.text('0 of 2 filled'), findsOneWidget);
@@ -47,7 +48,8 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('tapping a segment then Check gives correct feedback when it matches the target',
+  testWidgets(
+      'tapping a segment then Check gives correct feedback when it matches the target',
       (tester) async {
     await pump(tester);
     await tester.tap(find.byKey(const Key('fractionSegment0')));
@@ -60,13 +62,15 @@ void main() {
 
     expect(find.text("Nice work — that's right."), findsOneWidget);
     expect(
-      InteractiveLabsProgressService.instance.completedFor(InteractiveLabId.fractionBuilder),
+      InteractiveLabsProgressService.instance
+          .completedFor(InteractiveLabId.fractionBuilder),
       1,
     );
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('checking without filling the target segment count gives try-again feedback',
+  testWidgets(
+      'checking without filling the target segment count gives try-again feedback',
       (tester) async {
     await pump(tester);
     await tester.ensureVisible(find.text('Check'));
@@ -77,7 +81,8 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('Next cycles to the next deterministic challenge', (tester) async {
+  testWidgets('Next cycles to the next deterministic challenge',
+      (tester) async {
     await pump(tester);
     await tester.ensureVisible(find.text('Next'));
     await tester.tap(find.text('Next'));
@@ -87,7 +92,8 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('Reset (app bar icon) clears the current fill without changing challenge',
+  testWidgets(
+      'Reset (app bar icon) clears the current fill without changing challenge',
       (tester) async {
     await pump(tester);
     await tester.tap(find.byKey(const Key('fractionSegment0')));
@@ -102,7 +108,8 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('correct check shows the symbolic result alongside the visual', (tester) async {
+  testWidgets('correct check shows the symbolic result alongside the visual',
+      (tester) async {
     await pump(tester);
     await tester.tap(find.byKey(const Key('fractionSegment0')));
     await tester.pump();

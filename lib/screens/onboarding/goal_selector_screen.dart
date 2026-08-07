@@ -51,16 +51,40 @@ class _GoalSelectorScreenState extends State<GoalSelectorScreen> {
           ]
         : isTeacher
             ? [
-                (l10n.onboardingTeacherGoal1Label, l10n.onboardingTeacherGoal1Sub),
-                (l10n.onboardingTeacherGoal2Label, l10n.onboardingTeacherGoal2Sub),
-                (l10n.onboardingTeacherGoal3Label, l10n.onboardingTeacherGoal3Sub),
-                (l10n.onboardingTeacherGoal4Label, l10n.onboardingTeacherGoal4Sub),
+                (
+                  l10n.onboardingTeacherGoal1Label,
+                  l10n.onboardingTeacherGoal1Sub
+                ),
+                (
+                  l10n.onboardingTeacherGoal2Label,
+                  l10n.onboardingTeacherGoal2Sub
+                ),
+                (
+                  l10n.onboardingTeacherGoal3Label,
+                  l10n.onboardingTeacherGoal3Sub
+                ),
+                (
+                  l10n.onboardingTeacherGoal4Label,
+                  l10n.onboardingTeacherGoal4Sub
+                ),
               ]
             : [
-                (l10n.onboardingParentGoal1Label, l10n.onboardingParentGoal1Sub),
-                (l10n.onboardingParentGoal2Label, l10n.onboardingParentGoal2Sub),
-                (l10n.onboardingParentGoal3Label, l10n.onboardingParentGoal3Sub),
-                (l10n.onboardingParentGoal4Label, l10n.onboardingParentGoal4Sub),
+                (
+                  l10n.onboardingParentGoal1Label,
+                  l10n.onboardingParentGoal1Sub
+                ),
+                (
+                  l10n.onboardingParentGoal2Label,
+                  l10n.onboardingParentGoal2Sub
+                ),
+                (
+                  l10n.onboardingParentGoal3Label,
+                  l10n.onboardingParentGoal3Sub
+                ),
+                (
+                  l10n.onboardingParentGoal4Label,
+                  l10n.onboardingParentGoal4Sub
+                ),
               ];
     final goalKeys = isStudent
         ? _goalKeys

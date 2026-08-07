@@ -12,6 +12,7 @@ import '../services/onboarding_profile_service.dart';
 import '../services/recall_cards_progress_service.dart';
 import '../services/streak_service.dart';
 import '../services/tutor_credit_service.dart';
+import '../services/tutor_notes_service.dart';
 
 /// Runs all service initialization concurrently and exactly once. Kicked off
 /// as early as possible in `main()`, before `runApp`, so it overlaps with the
@@ -45,6 +46,7 @@ class AppBootstrap {
       RecallCardsProgressService.instance.init(),
       InteractiveLabsProgressService.instance.init(),
       MentalMathsProgressService.instance.init(),
+      TutorNotesService.instance.init(),
     ]);
     await MarketSmoke.printStartupState();
   }

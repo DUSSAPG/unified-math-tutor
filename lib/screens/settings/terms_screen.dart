@@ -26,6 +26,7 @@ class TermsScreen extends StatelessWidget {
           children: [
             Text(
               l10n.termsTitle,
+              overflow: TextOverflow.ellipsis,
               style: const TextStyle(
                   color: Colors.white,
                   fontSize: 20,
@@ -33,6 +34,7 @@ class TermsScreen extends StatelessWidget {
             ),
             Text(
               l10n.termsSub,
+              overflow: TextOverflow.ellipsis,
               style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 12),
             ),
           ],
@@ -154,13 +156,16 @@ class _TermsSection extends StatelessWidget {
             children: [
               Icon(icon, color: iconColor, size: 14),
               const SizedBox(width: 6),
-              Text(
-                title,
-                style: const TextStyle(
-                  color: Color(0xFF8A9DC0),
-                  fontSize: 11,
-                  fontWeight: FontWeight.w600,
-                  letterSpacing: 1.1,
+              Expanded(
+                child: Text(
+                  title,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    color: Color(0xFF8A9DC0),
+                    fontSize: 11,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 1.1,
+                  ),
                 ),
               ),
             ],

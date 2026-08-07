@@ -1,0 +1,1783 @@
+{
+  "version": 1,
+  "activities": [
+    {
+      "id": "build-twenty",
+      "category": "numberSense",
+      "minAgeYears": 5,
+      "maxAgeYears": 8,
+      "minMinutes": 5,
+      "maxMinutes": 10,
+      "contentVersion": 1,
+      "studioConnectionRouteSuffix": "mental-maths",
+      "locales": {
+        "en": {
+          "title": "Build Twenty",
+          "materialsNeeded": [
+            "20 small objects you already have — blocks, coins, or dried pasta",
+            "A flat surface to build on"
+          ],
+          "whatYourChildLearns": "How numbers up to 20 break apart and come back together — the foundation for addition and subtraction.",
+          "letsExplore": "Ask your child to build a tower of exactly twenty. They can count out loud, build in smaller groups, or start again if it doesn't look right — there's no wrong way to get there.",
+          "questionsToAsk": [
+            "How did you know when to stop?",
+            "Could you build twenty a different way?",
+            "What if we split your tower into two shorter ones?"
+          ],
+          "commonMisconceptions": "Children often count each object individually every time, even after building the same tower before. That's normal — recognising a group without recounting takes lots of practice.",
+          "tryTomorrow": "Ask your child to build a number close to twenty and tell you how many more or fewer it is.",
+          "captainMathPrompt": "Can you build a tower with exactly twelve cubes?",
+          "alliePrompt": "Don't help immediately. Ask your child how they know there are twelve — their answer tells you more than the number does.",
+          "studioConnectionNote": "For more short, no-pressure number practice, take a look at Mental Maths in Math Studio."
+        },
+        "en-GB": {
+          "title": "Build Twenty",
+          "materialsNeeded": [
+            "20 small objects you already have — blocks, coins, or dried pasta",
+            "A flat surface to build on"
+          ],
+          "whatYourChildLearns": "How numbers up to 20 break apart and come back together — the foundation for addition and subtraction.",
+          "letsExplore": "Ask your child to build a tower of exactly twenty. They can count out loud, build in smaller groups, or start again if it doesn't look right — there's no wrong way to get there.",
+          "questionsToAsk": [
+            "How did you know when to stop?",
+            "Could you build twenty a different way?",
+            "What if we split your tower into two shorter ones?"
+          ],
+          "commonMisconceptions": "Children often count each object individually every time, even after building the same tower before. That's normal — recognising a group without recounting takes lots of practice.",
+          "tryTomorrow": "Ask your child to build a number close to twenty and tell you how many more or fewer it is.",
+          "captainMathPrompt": "Can you build a tower with exactly twelve cubes?",
+          "alliePrompt": "Don't help immediately. Ask your child how they know there are twelve — their answer tells you more than the number does.",
+          "studioConnectionNote": "For more short, no-pressure number practice, take a look at Mental Maths in Math Studio."
+        },
+        "de-CH": {
+          "title": "Baue Zwanzig",
+          "materialsNeeded": [
+            "20 kleine Gegenstände, die du schon zu Hause hast – Bauklötze, Münzen oder Teigwaren",
+            "Eine ebene Fläche zum Bauen"
+          ],
+          "whatYourChildLearns": "Wie sich Zahlen bis 20 zerlegen und wieder zusammensetzen lassen – die Grundlage für Addition und Subtraktion.",
+          "letsExplore": "Bitte dein Kind, einen Turm aus genau zwanzig Teilen zu bauen. Es darf laut zählen, in kleineren Gruppen bauen oder nochmals von vorn beginnen, wenn es nicht stimmt – es gibt keinen falschen Weg dorthin.",
+          "questionsToAsk": [
+            "Woher wusstest du, wann du aufhören sollst?",
+            "Könntest du zwanzig auf eine andere Art bauen?",
+            "Was, wenn wir deinen Turm in zwei kürzere teilen?"
+          ],
+          "commonMisconceptions": "Kinder zählen oft jeden Gegenstand einzeln nach, selbst wenn sie denselben Turm schon einmal gebaut haben. Das ist normal – eine Gruppe zu erkennen, ohne nachzuzählen, braucht viel Übung.",
+          "tryTomorrow": "Bitte dein Kind, eine Zahl nahe bei zwanzig zu bauen und dir zu sagen, wie viel mehr oder weniger das ist.",
+          "captainMathPrompt": "Kannst du einen Turm aus genau zwölf Würfeln bauen?",
+          "alliePrompt": "Hilf nicht sofort. Frag dein Kind, woher es weiss, dass es zwölf sind – seine Antwort verrät mehr als die Zahl selbst.",
+          "studioConnectionNote": "Für mehr kurze, druckfreie Zahlenübungen lohnt sich ein Blick auf Mental Maths im Math Studio."
+        },
+        "fr-CH": {
+          "title": "Construire Vingt",
+          "materialsNeeded": [
+            "20 petits objets que tu as déjà à la maison – cubes, pièces de monnaie ou pâtes",
+            "Une surface plane pour construire"
+          ],
+          "whatYourChildLearns": "Comment les nombres jusqu'à 20 se décomposent et se recomposent – la base de l'addition et de la soustraction.",
+          "letsExplore": "Demande à ton enfant de construire une tour d'exactement vingt éléments. Il peut compter à voix haute, construire par petits groupes, ou recommencer si ça ne semble pas juste – il n'y a pas de mauvaise façon d'y arriver.",
+          "questionsToAsk": [
+            "Comment as-tu su quand t'arrêter ?",
+            "Pourrais-tu construire vingt d'une autre façon ?",
+            "Et si on séparait ta tour en deux tours plus petites ?"
+          ],
+          "commonMisconceptions": "Les enfants recomptent souvent chaque objet un par un, même après avoir déjà construit la même tour. C'est normal – reconnaître un groupe sans recompter demande beaucoup de pratique.",
+          "tryTomorrow": "Demande à ton enfant de construire un nombre proche de vingt et de te dire de combien c'est en plus ou en moins.",
+          "captainMathPrompt": "Peux-tu construire une tour d'exactement douze cubes ?",
+          "alliePrompt": "N'aide pas tout de suite. Demande à ton enfant comment il sait qu'il y en a douze – sa réponse en dit plus long que le nombre lui-même.",
+          "studioConnectionNote": "Pour plus d'exercices de calcul courts et sans pression, jette un œil à Mental Maths dans Math Studio."
+        },
+        "it-CH": {
+          "title": "Costruisci Venti",
+          "materialsNeeded": [
+            "20 piccoli oggetti che hai già in casa – cubetti, monete o pasta",
+            "Una superficie piana su cui costruire"
+          ],
+          "whatYourChildLearns": "Come i numeri fino a 20 si scompongono e si ricompongono – la base dell'addizione e della sottrazione.",
+          "letsExplore": "Chiedi a tuo figlio di costruire una torre di esattamente venti pezzi. Può contare ad alta voce, costruire per piccoli gruppi o ricominciare se qualcosa non torna – non c'è un modo sbagliato per arrivarci.",
+          "questionsToAsk": [
+            "Come hai capito quando fermarti?",
+            "Potresti costruire venti in un altro modo?",
+            "E se dividessimo la tua torre in due torri più piccole?"
+          ],
+          "commonMisconceptions": "I bambini spesso ricontano ogni oggetto uno per uno, anche dopo aver già costruito la stessa torre. È normale – riconoscere un gruppo senza ricontare richiede molta pratica.",
+          "tryTomorrow": "Chiedi a tuo figlio di costruire un numero vicino a venti e di dirti di quanto è in più o in meno.",
+          "captainMathPrompt": "Riesci a costruire una torre di esattamente dodici cubetti?",
+          "alliePrompt": "Non aiutare subito. Chiedi a tuo figlio come fa a sapere che sono dodici – la sua risposta dice più del numero stesso.",
+          "studioConnectionNote": "Per altri brevi esercizi di calcolo senza pressione, dai un'occhiata a Mental Maths in Math Studio."
+        }
+      }
+    },
+    {
+      "id": "kitchen-fractions",
+      "category": "fractions",
+      "minAgeYears": 7,
+      "maxAgeYears": 11,
+      "minMinutes": 5,
+      "maxMinutes": 10,
+      "contentVersion": 1,
+      "studioConnectionRouteSuffix": "discovery/cooking-fraction-conversion",
+      "locales": {
+        "en": {
+          "title": "Kitchen Fractions",
+          "materialsNeeded": [
+            "Something you can split evenly — an orange, a sandwich, or a bar of chocolate",
+            "A plate or chopping board"
+          ],
+          "whatYourChildLearns": "What a fraction actually represents — equal parts of a whole — before they ever see the written notation.",
+          "letsExplore": "Cut or break something into equal pieces together. Ask your child to describe how much of the whole one piece is, using their own words first.",
+          "questionsToAsk": [
+            "If we split it into more pieces, does each piece get bigger or smaller?",
+            "Which is more — half of this, or a third of this?",
+            "How would you share this fairly between three people?"
+          ],
+          "commonMisconceptions": "Children often think more pieces always means more food, without connecting piece size to piece count. Cutting the same object into different numbers of pieces side by side makes this visible.",
+          "tryTomorrow": "At your next meal, ask your child to describe one thing on the plate as a fraction of the whole.",
+          "captainMathPrompt": "Can you find something in the kitchen we could split into exactly four equal parts?",
+          "alliePrompt": "You don't need the words 'numerator' or 'denominator' today. 'Equal parts' is enough — the vocabulary comes later.",
+          "studioConnectionNote": "Discovery Library has a real-world fractions card set in the kitchen — a nice follow-up once this one feels easy."
+        },
+        "en-GB": {
+          "title": "Kitchen Fractions",
+          "materialsNeeded": [
+            "Something you can split evenly — an orange, a sandwich, or a bar of chocolate",
+            "A plate or chopping board"
+          ],
+          "whatYourChildLearns": "What a fraction actually represents — equal parts of a whole — before they ever see the written notation.",
+          "letsExplore": "Cut or break something into equal pieces together. Ask your child to describe how much of the whole one piece is, using their own words first.",
+          "questionsToAsk": [
+            "If we split it into more pieces, does each piece get bigger or smaller?",
+            "Which is more — half of this, or a third of this?",
+            "How would you share this fairly between three people?"
+          ],
+          "commonMisconceptions": "Children often think more pieces always means more food, without connecting piece size to piece count. Cutting the same object into different numbers of pieces side by side makes this visible.",
+          "tryTomorrow": "At your next meal, ask your child to describe one thing on the plate as a fraction of the whole.",
+          "captainMathPrompt": "Can you find something in the kitchen we could split into exactly four equal parts?",
+          "alliePrompt": "You don't need the words 'numerator' or 'denominator' today. 'Equal parts' is enough — the vocabulary comes later.",
+          "studioConnectionNote": "Discovery Library has a real-world fractions card set in the kitchen — a nice follow-up once this one feels easy."
+        },
+        "de-CH": {
+          "title": "Bruchrechnen in der Küche",
+          "materialsNeeded": [
+            "Etwas, das sich gleichmässig teilen lässt – eine Orange, ein Sandwich oder eine Tafel Schokolade",
+            "Ein Teller oder ein Schneidebrett"
+          ],
+          "whatYourChildLearns": "Was ein Bruch wirklich bedeutet – gleiche Teile eines Ganzen –, noch bevor die geschriebene Schreibweise dazukommt.",
+          "letsExplore": "Schneidet oder teilt gemeinsam etwas in gleiche Stücke. Bitte dein Kind, mit eigenen Worten zu beschreiben, wie viel ein Stück vom Ganzen ausmacht.",
+          "questionsToAsk": [
+            "Wenn wir es in mehr Stücke teilen, wird jedes Stück dann grösser oder kleiner?",
+            "Was ist mehr – die Hälfte davon oder ein Drittel davon?",
+            "Wie würdest du das gerecht auf drei Personen aufteilen?"
+          ],
+          "commonMisconceptions": "Kinder denken oft, mehr Stücke bedeuten automatisch mehr Essen, ohne die Stückgrösse mit der Stückzahl zu verknüpfen. Denselben Gegenstand nebeneinander in unterschiedlich viele Stücke zu teilen, macht das sichtbar.",
+          "tryTomorrow": "Bitte dein Kind beim nächsten Essen, etwas auf dem Teller als Bruchteil des Ganzen zu beschreiben.",
+          "captainMathPrompt": "Findest du in der Küche etwas, das wir in genau vier gleiche Teile teilen könnten?",
+          "alliePrompt": "Ihr braucht heute nicht die Wörter «Zähler» oder «Nenner». «Gleiche Teile» reicht völlig – der Fachbegriff kommt später.",
+          "studioConnectionNote": "In der Discovery Library gibt es eine Bruchrechnen-Karte rund ums Kochen – eine schöne Fortsetzung, sobald das hier leichtfällt."
+        },
+        "fr-CH": {
+          "title": "Fractions en cuisine",
+          "materialsNeeded": [
+            "Quelque chose que tu peux partager également – une orange, un sandwich ou une tablette de chocolat",
+            "Une assiette ou une planche à découper"
+          ],
+          "whatYourChildLearns": "Ce qu'une fraction représente vraiment – des parts égales d'un tout – avant même de voir la notation écrite.",
+          "letsExplore": "Coupez ou partagez quelque chose ensemble en parts égales. Demande à ton enfant de décrire, avec ses propres mots, quelle part du tout représente un morceau.",
+          "questionsToAsk": [
+            "Si on le partage en plus de morceaux, chaque morceau devient-il plus grand ou plus petit ?",
+            "Qu'est-ce qui est le plus grand – la moitié de ceci, ou un tiers de ceci ?",
+            "Comment partagerais-tu ceci équitablement entre trois personnes ?"
+          ],
+          "commonMisconceptions": "Les enfants pensent souvent que plus de morceaux signifie toujours plus de nourriture, sans relier la taille des morceaux à leur nombre. Couper le même objet en différents nombres de parts, côte à côte, rend cela visible.",
+          "tryTomorrow": "Au prochain repas, demande à ton enfant de décrire un aliment de l'assiette comme une fraction du tout.",
+          "captainMathPrompt": "Peux-tu trouver dans la cuisine quelque chose qu'on pourrait partager en exactement quatre parts égales ?",
+          "alliePrompt": "Pas besoin des mots « numérateur » ou « dénominateur » aujourd'hui. « Parts égales » suffit – le vocabulaire viendra plus tard.",
+          "studioConnectionNote": "La Discovery Library propose une carte sur les fractions en cuisine, dans un contexte réel – une belle suite une fois que celle-ci est acquise."
+        },
+        "it-CH": {
+          "title": "Frazioni in cucina",
+          "materialsNeeded": [
+            "Qualcosa che puoi dividere in parti uguali – un'arancia, un panino o una tavoletta di cioccolato",
+            "Un piatto o un tagliere"
+          ],
+          "whatYourChildLearns": "Cosa rappresenta davvero una frazione – parti uguali di un intero – prima ancora di vedere la notazione scritta.",
+          "letsExplore": "Tagliate o dividete insieme qualcosa in parti uguali. Chiedi a tuo figlio di descrivere, con parole sue, quanto vale un pezzo rispetto al tutto.",
+          "questionsToAsk": [
+            "Se lo dividiamo in più pezzi, ogni pezzo diventa più grande o più piccolo?",
+            "Cos'è di più – metà di questo, o un terzo di questo?",
+            "Come lo divideresti equamente tra tre persone?"
+          ],
+          "commonMisconceptions": "I bambini spesso pensano che più pezzi significhi sempre più cibo, senza collegare la dimensione dei pezzi al loro numero. Tagliare lo stesso oggetto in numeri diversi di pezzi, uno accanto all'altro, rende questo visibile.",
+          "tryTomorrow": "Al prossimo pasto, chiedi a tuo figlio di descrivere qualcosa nel piatto come frazione del tutto.",
+          "captainMathPrompt": "Riesci a trovare in cucina qualcosa che potremmo dividere in esattamente quattro parti uguali?",
+          "alliePrompt": "Oggi non servono le parole «numeratore» o «denominatore». «Parti uguali» basta – il vocabolario arriva più avanti.",
+          "studioConnectionNote": "La Discovery Library ha una scheda sulle frazioni in cucina, calata nella realtà – un bel seguito quando questa attività risulterà facile."
+        }
+      }
+    },
+    {
+      "id": "shape-hunt",
+      "category": "geometry",
+      "minAgeYears": 4,
+      "maxAgeYears": 8,
+      "minMinutes": 5,
+      "maxMinutes": 10,
+      "contentVersion": 1,
+      "studioConnectionRouteSuffix": "visual-maths",
+      "locales": {
+        "en": {
+          "title": "Shape Hunt",
+          "materialsNeeded": [
+            "Nothing required — this works in any room",
+            "Optional: paper and a pencil to keep a tally"
+          ],
+          "whatYourChildLearns": "To recognise shapes in the real world, not just on a worksheet — and to notice their properties, like sides and corners.",
+          "letsExplore": "Pick a shape together — a rectangle, a circle, a triangle — and go looking for it around your home. Count how many you find in five minutes.",
+          "questionsToAsk": [
+            "What made you sure that was a rectangle and not a square?",
+            "Can you find a shape with more sides than a triangle?",
+            "Is a plate still a circle if it's tilted?"
+          ],
+          "commonMisconceptions": "Children often expect shapes to only 'count' in their standard orientation — a tilted square can look like a different shape to them entirely. Turning an object together and re-checking helps.",
+          "tryTomorrow": "Ask your child to spot one shape on the way to school or on a walk and explain why it counts.",
+          "captainMathPrompt": "How many circles can you find before I count to twenty?",
+          "alliePrompt": "If they call a square a rectangle, that's not wrong — just ask what makes it a special kind of rectangle.",
+          "studioConnectionNote": "Visual Maths in Math Studio has more ways to explore shapes once the hunt is done."
+        },
+        "en-GB": {
+          "title": "Shape Hunt",
+          "materialsNeeded": [
+            "Nothing required — this works in any room",
+            "Optional: paper and a pencil to keep a tally"
+          ],
+          "whatYourChildLearns": "To recognise shapes in the real world, not just on a worksheet — and to notice their properties, like sides and corners.",
+          "letsExplore": "Pick a shape together — a rectangle, a circle, a triangle — and go looking for it around your home. Count how many you find in five minutes.",
+          "questionsToAsk": [
+            "What made you sure that was a rectangle and not a square?",
+            "Can you find a shape with more sides than a triangle?",
+            "Is a plate still a circle if it's tilted?"
+          ],
+          "commonMisconceptions": "Children often expect shapes to only 'count' in their standard orientation — a tilted square can look like a different shape to them entirely. Turning an object together and re-checking helps.",
+          "tryTomorrow": "Ask your child to spot one shape on the way to school or on a walk and explain why it counts.",
+          "captainMathPrompt": "How many circles can you find before I count to twenty?",
+          "alliePrompt": "If they call a square a rectangle, that's not wrong — just ask what makes it a special kind of rectangle.",
+          "studioConnectionNote": "Visual Maths in Math Studio has more ways to explore shapes once the hunt is done."
+        },
+        "de-CH": {
+          "title": "Formen-Jagd",
+          "materialsNeeded": [
+            "Nichts nötig – funktioniert in jedem Zimmer",
+            "Optional: Papier und ein Stift zum Strichliste führen"
+          ],
+          "whatYourChildLearns": "Formen in der echten Welt zu erkennen, nicht nur auf einem Arbeitsblatt – und ihre Eigenschaften wie Seiten und Ecken zu bemerken.",
+          "letsExplore": "Wählt gemeinsam eine Form – ein Rechteck, einen Kreis, ein Dreieck – und sucht sie in eurer Wohnung. Zählt, wie viele ihr in fünf Minuten findet.",
+          "questionsToAsk": [
+            "Woran hast du erkannt, dass das ein Rechteck und kein Quadrat ist?",
+            "Findest du eine Form mit mehr Seiten als ein Dreieck?",
+            "Ist ein Teller noch ein Kreis, wenn er schräg liegt?"
+          ],
+          "commonMisconceptions": "Kinder erwarten oft, dass Formen nur in ihrer Standardausrichtung «zählen» – ein gedrehtes Quadrat kann für sie wie eine ganz andere Form aussehen. Den Gegenstand gemeinsam zu drehen und nochmals zu prüfen hilft.",
+          "tryTomorrow": "Bitte dein Kind, auf dem Schulweg oder bei einem Spaziergang eine Form zu entdecken und zu erklären, warum sie zählt.",
+          "captainMathPrompt": "Wie viele Kreise findest du, bevor ich bis zwanzig gezählt habe?",
+          "alliePrompt": "Wenn dein Kind ein Quadrat als Rechteck bezeichnet, ist das nicht falsch – frag einfach, was es zu einem besonderen Rechteck macht.",
+          "studioConnectionNote": "Visual Maths im Math Studio bietet weitere Wege, Formen zu erkunden, sobald die Jagd vorbei ist."
+        },
+        "fr-CH": {
+          "title": "Chasse aux formes",
+          "materialsNeeded": [
+            "Rien n'est nécessaire – ça fonctionne dans n'importe quelle pièce",
+            "Facultatif : papier et crayon pour tenir le compte"
+          ],
+          "whatYourChildLearns": "À reconnaître les formes dans le monde réel, pas seulement sur une feuille d'exercices – et à remarquer leurs propriétés, comme les côtés et les coins.",
+          "letsExplore": "Choisissez ensemble une forme – un rectangle, un cercle, un triangle – et partez à sa recherche dans la maison. Comptez combien vous en trouvez en cinq minutes.",
+          "questionsToAsk": [
+            "Qu'est-ce qui t'a fait dire que c'était un rectangle et non un carré ?",
+            "Peux-tu trouver une forme avec plus de côtés qu'un triangle ?",
+            "Une assiette est-elle toujours un cercle si elle est inclinée ?"
+          ],
+          "commonMisconceptions": "Les enfants s'attendent souvent à ce qu'une forme ne « compte » que dans son orientation habituelle – un carré incliné peut leur sembler être une forme totalement différente. Tourner l'objet ensemble et revérifier aide beaucoup.",
+          "tryTomorrow": "Demande à ton enfant de repérer une forme sur le chemin de l'école ou lors d'une promenade et d'expliquer pourquoi elle compte.",
+          "captainMathPrompt": "Combien de cercles peux-tu trouver avant que je compte jusqu'à vingt ?",
+          "alliePrompt": "S'il appelle un carré un rectangle, ce n'est pas faux – demande-lui simplement ce qui en fait un rectangle particulier.",
+          "studioConnectionNote": "Visual Maths dans Math Studio propose d'autres façons d'explorer les formes une fois la chasse terminée."
+        },
+        "it-CH": {
+          "title": "Caccia alle forme",
+          "materialsNeeded": [
+            "Non serve nulla – funziona in qualsiasi stanza",
+            "Facoltativo: carta e matita per tenere il conto"
+          ],
+          "whatYourChildLearns": "A riconoscere le forme nel mondo reale, non solo su un foglio di esercizi – e a notarne le proprietà, come lati e angoli.",
+          "letsExplore": "Scegliete insieme una forma – un rettangolo, un cerchio, un triangolo – e andate a cercarla in casa. Contate quante ne trovate in cinque minuti.",
+          "questionsToAsk": [
+            "Cosa ti ha fatto capire che era un rettangolo e non un quadrato?",
+            "Riesci a trovare una forma con più lati di un triangolo?",
+            "Un piatto è ancora un cerchio se è inclinato?"
+          ],
+          "commonMisconceptions": "I bambini spesso si aspettano che una forma «conti» solo nel suo orientamento standard – un quadrato inclinato può sembrare loro una forma completamente diversa. Girare insieme l'oggetto e ricontrollare aiuta molto.",
+          "tryTomorrow": "Chiedi a tuo figlio di individuare una forma lungo la strada per la scuola o durante una passeggiata e di spiegare perché conta.",
+          "captainMathPrompt": "Quanti cerchi riesci a trovare prima che io conti fino a venti?",
+          "alliePrompt": "Se chiama un quadrato «rettangolo», non ha torto – chiedigli semplicemente cosa lo rende un rettangolo speciale.",
+          "studioConnectionNote": "Visual Maths in Math Studio propone altri modi per esplorare le forme una volta terminata la caccia."
+        }
+      }
+    },
+    {
+      "id": "dice-race",
+      "category": "addition",
+      "minAgeYears": 5,
+      "maxAgeYears": 7,
+      "minMinutes": 5,
+      "maxMinutes": 10,
+      "contentVersion": 1,
+      "locales": {
+        "en": {
+          "title": "Dice Race",
+          "materialsNeeded": [
+            "One or two dice",
+            "A number track from 0 to 20 drawn on paper, or two counters to move along it"
+          ],
+          "whatYourChildLearns": "Fast, confident addition of small numbers — and that two dice added together is still just addition.",
+          "letsExplore": "Take turns rolling and moving your counter forward by the total. First to reach 20 wins. With two dice, say the total out loud before moving.",
+          "questionsToAsk": [
+            "How did you add those two numbers so quickly?",
+            "Is there a roll that would move you the furthest?",
+            "How many more do you need to reach 20?"
+          ],
+          "commonMisconceptions": "Children often recount from one every single roll instead of counting on from where they already are. Pointing at the counter's current spot before rolling nudges them toward counting on.",
+          "tryTomorrow": "Ask your child to add two small numbers in their head the next time you're waiting somewhere together.",
+          "captainMathPrompt": "If you roll a five and a three, what's the fastest way to know the total?",
+          "alliePrompt": "If they count on their fingers, that's a real strategy, not a shortcut to grow out of yet — let them use whatever gets them there."
+        },
+        "en-GB": {
+          "title": "Dice Race",
+          "materialsNeeded": [
+            "One or two dice",
+            "A number track from 0 to 20 drawn on paper, or two counters to move along it"
+          ],
+          "whatYourChildLearns": "Fast, confident addition of small numbers — and that two dice added together is still just addition.",
+          "letsExplore": "Take turns rolling and moving your counter forward by the total. First to reach 20 wins. With two dice, say the total out loud before moving.",
+          "questionsToAsk": [
+            "How did you add those two numbers so quickly?",
+            "Is there a roll that would move you the furthest?",
+            "How many more do you need to reach 20?"
+          ],
+          "commonMisconceptions": "Children often recount from one every single roll instead of counting on from where they already are. Pointing at the counter's current spot before rolling nudges them toward counting on.",
+          "tryTomorrow": "Ask your child to add two small numbers in their head the next time you're waiting somewhere together.",
+          "captainMathPrompt": "If you roll a five and a three, what's the fastest way to know the total?",
+          "alliePrompt": "If they count on their fingers, that's a real strategy, not a shortcut to grow out of yet — let them use whatever gets them there."
+        },
+        "de-CH": {
+          "title": "Würfelrennen",
+          "materialsNeeded": [
+            "Ein oder zwei Würfel",
+            "Eine auf Papier gezeichnete Zahlenreihe von 0 bis 20, oder zwei Spielsteine, um sie entlangzubewegen"
+          ],
+          "whatYourChildLearns": "Schnelles, sicheres Addieren kleiner Zahlen – und dass zwei Würfel zusammen immer noch einfach addiert werden.",
+          "letsExplore": "Würfelt abwechselnd und bewegt euren Spielstein um die Summe vorwärts. Wer zuerst 20 erreicht, gewinnt. Bei zwei Würfeln sagt die Summe laut, bevor ihr zieht.",
+          "questionsToAsk": [
+            "Wie hast du diese beiden Zahlen so schnell addiert?",
+            "Gibt es einen Wurf, der dich am weitesten bringen würde?",
+            "Wie viele brauchst du noch, um 20 zu erreichen?"
+          ],
+          "commonMisconceptions": "Kinder fangen bei jedem Wurf oft wieder bei eins an zu zählen, statt von ihrer aktuellen Position weiterzuzählen. Auf die aktuelle Position des Spielsteins zu zeigen, bevor gewürfelt wird, hilft beim Weiterzählen.",
+          "tryTomorrow": "Bitte dein Kind, das nächste Mal, wenn ihr zusammen wartet, zwei kleine Zahlen im Kopf zu addieren.",
+          "captainMathPrompt": "Wenn du eine Fünf und eine Drei würfelst, wie findest du am schnellsten die Summe heraus?",
+          "alliePrompt": "Wenn dein Kind an den Fingern zählt, ist das eine echte Strategie und noch kein Umweg, den es ablegen muss – lass es machen, was funktioniert."
+        },
+        "fr-CH": {
+          "title": "Course de dés",
+          "materialsNeeded": [
+            "Un ou deux dés",
+            "Une piste numérotée de 0 à 20 dessinée sur papier, ou deux pions pour avancer dessus"
+          ],
+          "whatYourChildLearns": "L'addition rapide et sûre de petits nombres – et que deux dés ensemble, c'est toujours juste une addition.",
+          "letsExplore": "Lancez les dés à tour de rôle et avancez votre pion du total obtenu. Le premier à atteindre 20 gagne. Avec deux dés, dites le total à voix haute avant d'avancer.",
+          "questionsToAsk": [
+            "Comment as-tu additionné ces deux nombres si vite ?",
+            "Y a-t-il un lancer qui t'avancerait le plus ?",
+            "Combien te faut-il encore pour atteindre 20 ?"
+          ],
+          "commonMisconceptions": "Les enfants recomptent souvent depuis un à chaque lancer au lieu de continuer à partir de là où ils sont. Montrer la position actuelle du pion avant de lancer les encourage à compter à partir de là.",
+          "tryTomorrow": "La prochaine fois que vous attendez quelque part ensemble, demande à ton enfant d'additionner deux petits nombres de tête.",
+          "captainMathPrompt": "Si tu lances un cinq et un trois, quelle est la façon la plus rapide de connaître le total ?",
+          "alliePrompt": "S'il compte sur ses doigts, c'est une vraie stratégie, pas un raccourci à abandonner tout de suite – laisse-le utiliser ce qui fonctionne pour lui."
+        },
+        "it-CH": {
+          "title": "Corsa dei dadi",
+          "materialsNeeded": [
+            "Uno o due dadi",
+            "Un percorso numerato da 0 a 20 disegnato su carta, o due pedine da spostare lungo di esso"
+          ],
+          "whatYourChildLearns": "Un'addizione rapida e sicura di numeri piccoli – e che due dadi insieme sono comunque solo un'addizione.",
+          "letsExplore": "Lanciate i dadi a turno e spostate la vostra pedina in avanti del totale ottenuto. Chi arriva primo a 20 vince. Con due dadi, dite il totale ad alta voce prima di muovervi.",
+          "questionsToAsk": [
+            "Come hai sommato quei due numeri così in fretta?",
+            "C'è un lancio che ti farebbe avanzare di più?",
+            "Quanto ti manca ancora per arrivare a 20?"
+          ],
+          "commonMisconceptions": "I bambini spesso ricontano da uno ad ogni lancio invece di continuare da dove si trovano già. Indicare la posizione attuale della pedina prima di lanciare li aiuta a contare in avanti.",
+          "tryTomorrow": "La prossima volta che aspettate insieme da qualche parte, chiedi a tuo figlio di sommare a mente due numeri piccoli.",
+          "captainMathPrompt": "Se lanci un cinque e un tre, qual è il modo più veloce per sapere il totale?",
+          "alliePrompt": "Se conta con le dita, è una strategia vera, non una scorciatoia da abbandonare subito – lascialo usare ciò che funziona per lui."
+        }
+      }
+    },
+    {
+      "id": "the-shopkeeper",
+      "category": "subtraction",
+      "minAgeYears": 7,
+      "maxAgeYears": 9,
+      "minMinutes": 5,
+      "maxMinutes": 10,
+      "contentVersion": 1,
+      "locales": {
+        "en": {
+          "title": "Shopkeeper",
+          "materialsNeeded": [
+            "A handful of coins or pretend money (or slips of paper marked with amounts)",
+            "A few household items with prices written on sticky notes"
+          ],
+          "whatYourChildLearns": "How to work out change by counting up or subtracting — a real reason to subtract that isn't a worksheet.",
+          "letsExplore": "Take turns being the shopkeeper and the customer. The customer picks an item, pays with a round amount, and works out the change together before checking with coins.",
+          "questionsToAsk": [
+            "How did you work out the change — counting up, or subtracting?",
+            "What if you paid with more money than that — how would the change change?",
+            "Could you have paid with fewer coins?"
+          ],
+          "commonMisconceptions": "Children often subtract digit by digit without checking the answer makes sense, which can produce a nonsense amount of change. Asking 'does that feel about right?' catches it faster than checking the working.",
+          "tryTomorrow": "Next time you're actually shopping, ask your child to guess the change before the receipt shows it.",
+          "captainMathPrompt": "If something costs eight and you pay with a ten, how much change should you get back?",
+          "alliePrompt": "You don't need to demonstrate the 'correct' method. However they get to the right change is worth celebrating."
+        },
+        "en-GB": {
+          "title": "Shopkeeper",
+          "materialsNeeded": [
+            "A handful of coins or pretend money (or slips of paper marked with amounts)",
+            "A few household items with prices written on sticky notes"
+          ],
+          "whatYourChildLearns": "How to work out change by counting up or subtracting — a real reason to subtract that isn't a worksheet.",
+          "letsExplore": "Take turns being the shopkeeper and the customer. The customer picks an item, pays with a round amount, and works out the change together before checking with coins.",
+          "questionsToAsk": [
+            "How did you work out the change — counting up, or subtracting?",
+            "What if you paid with more money than that — how would the change change?",
+            "Could you have paid with fewer coins?"
+          ],
+          "commonMisconceptions": "Children often subtract digit by digit without checking the answer makes sense, which can produce a nonsense amount of change. Asking 'does that feel about right?' catches it faster than checking the working.",
+          "tryTomorrow": "Next time you're actually shopping, ask your child to guess the change before the receipt shows it.",
+          "captainMathPrompt": "If something costs eight and you pay with a ten, how much change should you get back?",
+          "alliePrompt": "You don't need to demonstrate the 'correct' method. However they get to the right change is worth celebrating."
+        },
+        "de-CH": {
+          "title": "Ladenbesitzer",
+          "materialsNeeded": [
+            "Ein paar Münzen oder Spielgeld (oder Zettel mit aufgeschriebenen Beträgen)",
+            "Ein paar Haushaltsgegenstände mit Preisen auf Klebezetteln"
+          ],
+          "whatYourChildLearns": "Wie man Wechselgeld durch Weiterzählen oder Subtrahieren herausfindet – ein echter Grund zu subtrahieren, der kein Arbeitsblatt ist.",
+          "letsExplore": "Wechselt euch ab als Ladenbesitzer und Kundschaft. Die Kundschaft wählt einen Gegenstand, zahlt mit einem runden Betrag, und ihr rechnet gemeinsam das Wechselgeld aus, bevor ihr es mit Münzen überprüft.",
+          "questionsToAsk": [
+            "Wie hast du das Wechselgeld herausgefunden – weitergezählt oder subtrahiert?",
+            "Was, wenn du mit mehr Geld bezahlt hättest – wie würde sich das Wechselgeld ändern?",
+            "Hättest du mit weniger Münzen bezahlen können?"
+          ],
+          "commonMisconceptions": "Kinder subtrahieren oft Ziffer für Ziffer, ohne zu prüfen, ob das Ergebnis sinnvoll ist, was zu einem unsinnigen Wechselgeldbetrag führen kann. Die Frage «fühlt sich das ungefähr richtig an?» deckt das schneller auf als das Nachrechnen.",
+          "tryTomorrow": "Bitte dein Kind beim nächsten echten Einkauf, das Wechselgeld zu schätzen, bevor es auf dem Kassenzettel steht.",
+          "captainMathPrompt": "Wenn etwas acht kostet und du mit einem Zehner bezahlst, wie viel Wechselgeld solltest du zurückbekommen?",
+          "alliePrompt": "Du musst die «richtige» Methode nicht vorzeigen. Wie auch immer dein Kind zum richtigen Wechselgeld kommt, ist es wert, gefeiert zu werden."
+        },
+        "fr-CH": {
+          "title": "Le petit commerçant",
+          "materialsNeeded": [
+            "Quelques pièces ou de l'argent factice (ou des papiers avec des montants écrits dessus)",
+            "Quelques objets de la maison avec des prix sur des post-it"
+          ],
+          "whatYourChildLearns": "Comment calculer la monnaie en comptant ou en soustrayant – une vraie raison de soustraire, pas une feuille d'exercices.",
+          "letsExplore": "Alternez les rôles de commerçant et de client. Le client choisit un article, paie avec un montant rond, et vous calculez la monnaie ensemble avant de vérifier avec des pièces.",
+          "questionsToAsk": [
+            "Comment as-tu calculé la monnaie – en comptant, ou en soustrayant ?",
+            "Et si tu avais payé avec plus d'argent – comment la monnaie changerait-elle ?",
+            "Aurais-tu pu payer avec moins de pièces ?"
+          ],
+          "commonMisconceptions": "Les enfants soustraient souvent chiffre par chiffre sans vérifier si le résultat est plausible, ce qui peut donner un montant de monnaie absurde. Demander « est-ce que ça semble à peu près juste ? » repère l'erreur plus vite que de revérifier le calcul.",
+          "tryTomorrow": "La prochaine fois que tu fais vraiment des courses, demande à ton enfant d'estimer la monnaie avant de voir le ticket de caisse.",
+          "captainMathPrompt": "Si quelque chose coûte huit et que tu paies avec un billet de dix, combien de monnaie devrais-tu recevoir ?",
+          "alliePrompt": "Tu n'as pas besoin de montrer la « bonne » méthode. Peu importe comment il arrive à la bonne monnaie, ça mérite d'être célébré."
+        },
+        "it-CH": {
+          "title": "Il bottegaio",
+          "materialsNeeded": [
+            "Alcune monete o soldi finti (o foglietti con importi scritti sopra)",
+            "Alcuni oggetti di casa con i prezzi scritti su post-it"
+          ],
+          "whatYourChildLearns": "Come calcolare il resto contando in avanti o sottraendo – una vera ragione per sottrarre, non un foglio di esercizi.",
+          "letsExplore": "Alternatevi nel ruolo di bottegaio e cliente. Il cliente sceglie un articolo, paga con una cifra tonda, e calcolate insieme il resto prima di verificarlo con le monete.",
+          "questionsToAsk": [
+            "Come hai calcolato il resto – contando in avanti, o sottraendo?",
+            "E se avessi pagato con più soldi – come cambierebbe il resto?",
+            "Avresti potuto pagare con meno monete?"
+          ],
+          "commonMisconceptions": "I bambini spesso sottraggono cifra per cifra senza controllare se il risultato ha senso, il che può dare un resto assurdo. Chiedere «ti sembra giusto più o meno?» individua l'errore più in fretta che ricontrollare i calcoli.",
+          "tryTomorrow": "La prossima volta che fate davvero la spesa, chiedi a tuo figlio di stimare il resto prima di vedere lo scontrino.",
+          "captainMathPrompt": "Se qualcosa costa otto e paghi con un biglietto da dieci, quanto resto dovresti ricevere?",
+          "alliePrompt": "Non serve mostrare il metodo «corretto». Qualunque sia il modo in cui arriva al resto giusto, merita di essere festeggiato."
+        }
+      }
+    },
+    {
+      "id": "array-builder",
+      "category": "multiplication",
+      "minAgeYears": 7,
+      "maxAgeYears": 9,
+      "minMinutes": 5,
+      "maxMinutes": 10,
+      "contentVersion": 1,
+      "studioConnectionRouteSuffix": "visual-maths",
+      "locales": {
+        "en": {
+          "title": "Array Builder",
+          "materialsNeeded": [
+            "20-30 small identical objects — buttons, coins, or pasta",
+            "A flat surface to arrange them on"
+          ],
+          "whatYourChildLearns": "That multiplication is really just equal rows and columns — an array — not a fact to memorise in isolation.",
+          "letsExplore": "Ask your child to arrange objects into neat rows, like 4 rows of 3. Count the total together, then rearrange into a different array with the same total.",
+          "questionsToAsk": [
+            "How many are in each row, and how many rows?",
+            "Can you make a different array with the same total number of objects?",
+            "What happens to the total if you add one more row?"
+          ],
+          "commonMisconceptions": "Children often see 4 rows of 3 and 3 rows of 4 as unrelated facts, rather than the same array turned sideways. Physically rotating the arrangement makes the connection visible instead of abstract.",
+          "tryTomorrow": "Ask your child to spot an array in real life — an egg carton, a muffin tray, tiles on a floor.",
+          "captainMathPrompt": "Can you build an array that has exactly twelve objects in it?",
+          "alliePrompt": "If they count every object one by one instead of using the rows, that's fine for now — the rows will start doing the work for them over time.",
+          "studioConnectionNote": "Visual Maths in Math Studio has more ways to make multiplication visible once this feels easy."
+        },
+        "en-GB": {
+          "title": "Array Builder",
+          "materialsNeeded": [
+            "20-30 small identical objects — buttons, coins, or pasta",
+            "A flat surface to arrange them on"
+          ],
+          "whatYourChildLearns": "That multiplication is really just equal rows and columns — an array — not a fact to memorise in isolation.",
+          "letsExplore": "Ask your child to arrange objects into neat rows, like 4 rows of 3. Count the total together, then rearrange into a different array with the same total.",
+          "questionsToAsk": [
+            "How many are in each row, and how many rows?",
+            "Can you make a different array with the same total number of objects?",
+            "What happens to the total if you add one more row?"
+          ],
+          "commonMisconceptions": "Children often see 4 rows of 3 and 3 rows of 4 as unrelated facts, rather than the same array turned sideways. Physically rotating the arrangement makes the connection visible instead of abstract.",
+          "tryTomorrow": "Ask your child to spot an array in real life — an egg carton, a muffin tray, tiles on a floor.",
+          "captainMathPrompt": "Can you build an array that has exactly twelve objects in it?",
+          "alliePrompt": "If they count every object one by one instead of using the rows, that's fine for now — the rows will start doing the work for them over time.",
+          "studioConnectionNote": "Visual Maths in Math Studio has more ways to make multiplication visible once this feels easy."
+        },
+        "de-CH": {
+          "title": "Reihen-Baumeister",
+          "materialsNeeded": [
+            "20-30 kleine, gleiche Gegenstände – Knöpfe, Münzen oder Teigwaren",
+            "Eine ebene Fläche zum Anordnen"
+          ],
+          "whatYourChildLearns": "Dass Multiplikation eigentlich nur gleiche Reihen und Spalten sind – ein Feld –, keine isoliert auswendig zu lernende Tatsache.",
+          "letsExplore": "Bitte dein Kind, Gegenstände in ordentlichen Reihen anzuordnen, zum Beispiel 4 Reihen zu 3. Zählt gemeinsam die Gesamtzahl, ordnet sie dann in einem anderen Feld mit derselben Gesamtzahl neu an.",
+          "questionsToAsk": [
+            "Wie viele sind in jeder Reihe, und wie viele Reihen gibt es?",
+            "Kannst du ein anderes Feld mit derselben Gesamtzahl bauen?",
+            "Was passiert mit der Gesamtzahl, wenn du eine weitere Reihe hinzufügst?"
+          ],
+          "commonMisconceptions": "Kinder sehen 4 Reihen zu 3 und 3 Reihen zu 4 oft als unabhängige Fakten, statt als dasselbe Feld, nur gedreht. Die Anordnung tatsächlich zu drehen, macht den Zusammenhang sichtbar statt abstrakt.",
+          "tryTomorrow": "Bitte dein Kind, im echten Leben ein Feld zu entdecken – einen Eierkarton, ein Muffinblech, Bodenfliesen.",
+          "captainMathPrompt": "Kannst du ein Feld bauen, das genau zwölf Gegenstände enthält?",
+          "alliePrompt": "Wenn dein Kind jeden Gegenstand einzeln zählt statt die Reihen zu nutzen, ist das für jetzt in Ordnung – die Reihen übernehmen diese Arbeit mit der Zeit von selbst.",
+          "studioConnectionNote": "Visual Maths im Math Studio hat weitere Wege, Multiplikation sichtbar zu machen, sobald das hier leichtfällt."
+        },
+        "fr-CH": {
+          "title": "Le bâtisseur de tableaux",
+          "materialsNeeded": [
+            "20 à 30 petits objets identiques – boutons, pièces ou pâtes",
+            "Une surface plane pour les disposer"
+          ],
+          "whatYourChildLearns": "Que la multiplication, c'est en fait juste des lignes et des colonnes égales – un tableau –, pas un fait à mémoriser isolément.",
+          "letsExplore": "Demande à ton enfant de disposer des objets en lignes bien nettes, comme 4 lignes de 3. Comptez le total ensemble, puis réarrangez en un tableau différent avec le même total.",
+          "questionsToAsk": [
+            "Combien y en a-t-il dans chaque ligne, et combien de lignes ?",
+            "Peux-tu faire un tableau différent avec le même total d'objets ?",
+            "Qu'arrive-t-il au total si tu ajoutes une ligne de plus ?"
+          ],
+          "commonMisconceptions": "Les enfants voient souvent 4 lignes de 3 et 3 lignes de 4 comme des faits séparés, plutôt que le même tableau tourné. Faire physiquement pivoter la disposition rend le lien visible plutôt qu'abstrait.",
+          "tryTomorrow": "Demande à ton enfant de repérer un tableau dans la vraie vie – une boîte à œufs, un moule à muffins, des carreaux au sol.",
+          "captainMathPrompt": "Peux-tu construire un tableau qui contient exactement douze objets ?",
+          "alliePrompt": "S'il compte chaque objet un par un au lieu d'utiliser les lignes, ce n'est pas grave pour l'instant – les lignes feront ce travail pour lui avec le temps.",
+          "studioConnectionNote": "Visual Maths dans Math Studio propose d'autres façons de visualiser la multiplication une fois que ceci est acquis."
+        },
+        "it-CH": {
+          "title": "Il costruttore di schieramenti",
+          "materialsNeeded": [
+            "20-30 piccoli oggetti identici – bottoni, monete o pasta",
+            "Una superficie piana su cui disporli"
+          ],
+          "whatYourChildLearns": "Che la moltiplicazione è in realtà solo righe e colonne uguali – uno schieramento –, non un fatto da memorizzare isolatamente.",
+          "letsExplore": "Chiedi a tuo figlio di disporre gli oggetti in righe ordinate, ad esempio 4 righe da 3. Contate insieme il totale, poi riorganizzate in uno schieramento diverso con lo stesso totale.",
+          "questionsToAsk": [
+            "Quanti ce ne sono in ogni riga, e quante righe ci sono?",
+            "Riesci a costruire uno schieramento diverso con lo stesso totale di oggetti?",
+            "Cosa succede al totale se aggiungi un'altra riga?"
+          ],
+          "commonMisconceptions": "I bambini spesso vedono 4 righe da 3 e 3 righe da 4 come fatti indipendenti, invece che lo stesso schieramento semplicemente ruotato. Ruotare fisicamente la disposizione rende il collegamento visibile invece che astratto.",
+          "tryTomorrow": "Chiedi a tuo figlio di individuare uno schieramento nella vita reale – una confezione di uova, uno stampo per muffin, le piastrelle del pavimento.",
+          "captainMathPrompt": "Riesci a costruire uno schieramento che contenga esattamente dodici oggetti?",
+          "alliePrompt": "Se conta ogni oggetto uno per uno invece di usare le righe, va bene per ora – le righe faranno questo lavoro per lui col tempo.",
+          "studioConnectionNote": "Visual Maths in Math Studio propone altri modi per visualizzare la moltiplicazione quando questa attività risulterà facile."
+        }
+      }
+    },
+    {
+      "id": "fair-shares",
+      "category": "division",
+      "minAgeYears": 7,
+      "maxAgeYears": 9,
+      "minMinutes": 5,
+      "maxMinutes": 10,
+      "contentVersion": 1,
+      "locales": {
+        "en": {
+          "title": "Fair Shares",
+          "materialsNeeded": [
+            "12-20 small identical objects — buttons, grapes, or counters",
+            "2-4 small bowls or plates to share into"
+          ],
+          "whatYourChildLearns": "That division means splitting a total into equal groups — and what to do when it doesn't divide up perfectly.",
+          "letsExplore": "Count out a pile of objects together and share them equally between a few bowls, one at a time, like dealing cards. See how many each bowl ends up with.",
+          "questionsToAsk": [
+            "How many did each bowl get?",
+            "Were there any left over that didn't share evenly?",
+            "What would happen if you used one more bowl instead?"
+          ],
+          "commonMisconceptions": "Children often deal out the objects unevenly at first — giving more to whichever bowl is nearest — before settling into a steady one-at-a-time rhythm. That's a normal step, not a sign the idea hasn't landed.",
+          "tryTomorrow": "Ask your child to share a small snack equally between the people at the table, out loud, one at a time.",
+          "captainMathPrompt": "If you have twelve grapes and three bowls, how many grapes would each bowl get if you shared them equally?",
+          "alliePrompt": "If the total doesn't divide up evenly, that's not a failed activity — 'what do we do with what's left over' is one of the most useful questions in the whole game."
+        },
+        "en-GB": {
+          "title": "Fair Shares",
+          "materialsNeeded": [
+            "12-20 small identical objects — buttons, grapes, or counters",
+            "2-4 small bowls or plates to share into"
+          ],
+          "whatYourChildLearns": "That division means splitting a total into equal groups — and what to do when it doesn't divide up perfectly.",
+          "letsExplore": "Count out a pile of objects together and share them equally between a few bowls, one at a time, like dealing cards. See how many each bowl ends up with.",
+          "questionsToAsk": [
+            "How many did each bowl get?",
+            "Were there any left over that didn't share evenly?",
+            "What would happen if you used one more bowl instead?"
+          ],
+          "commonMisconceptions": "Children often deal out the objects unevenly at first — giving more to whichever bowl is nearest — before settling into a steady one-at-a-time rhythm. That's a normal step, not a sign the idea hasn't landed.",
+          "tryTomorrow": "Ask your child to share a small snack equally between the people at the table, out loud, one at a time.",
+          "captainMathPrompt": "If you have twelve grapes and three bowls, how many grapes would each bowl get if you shared them equally?",
+          "alliePrompt": "If the total doesn't divide up evenly, that's not a failed activity — 'what do we do with what's left over' is one of the most useful questions in the whole game."
+        },
+        "de-CH": {
+          "title": "Gerecht geteilt",
+          "materialsNeeded": [
+            "12-20 kleine, gleiche Gegenstände – Knöpfe, Trauben oder Spielsteine",
+            "2-4 kleine Schüsseln oder Teller zum Verteilen"
+          ],
+          "whatYourChildLearns": "Dass Division bedeutet, eine Gesamtmenge in gleiche Gruppen aufzuteilen – und was zu tun ist, wenn es nicht ganz aufgeht.",
+          "letsExplore": "Zählt gemeinsam einen Stapel Gegenstände ab und verteilt sie gleichmässig auf ein paar Schüsseln, einen nach dem anderen, wie beim Kartenaustragen. Schaut, wie viele jede Schüssel am Ende hat.",
+          "questionsToAsk": [
+            "Wie viele hat jede Schüssel bekommen?",
+            "Blieben welche übrig, die sich nicht gleichmässig verteilen liessen?",
+            "Was würde passieren, wenn du eine Schüssel mehr verwenden würdest?"
+          ],
+          "commonMisconceptions": "Kinder verteilen die Gegenstände zunächst oft ungleichmässig – geben der nächstgelegenen Schüssel mehr –, bevor sie einen gleichmässigen Rhythmus finden. Das ist ein normaler Zwischenschritt, kein Zeichen, dass die Idee nicht angekommen ist.",
+          "tryTomorrow": "Bitte dein Kind, einen kleinen Snack laut, einen nach dem anderen, gerecht unter den Personen am Tisch zu verteilen.",
+          "captainMathPrompt": "Wenn du zwölf Trauben und drei Schüsseln hast, wie viele Trauben bekäme jede Schüssel, wenn ihr sie gleichmässig teilt?",
+          "alliePrompt": "Wenn die Gesamtmenge nicht gleichmässig aufgeht, ist das keine misslungene Aktivität – «was machen wir mit dem Rest?» ist eine der nützlichsten Fragen im ganzen Spiel."
+        },
+        "fr-CH": {
+          "title": "Partage équitable",
+          "materialsNeeded": [
+            "12 à 20 petits objets identiques – boutons, raisins ou jetons",
+            "2 à 4 petits bols ou assiettes pour partager"
+          ],
+          "whatYourChildLearns": "Que la division consiste à répartir un total en groupes égaux – et que faire quand ça ne tombe pas juste.",
+          "letsExplore": "Comptez ensemble un tas d'objets et partagez-les équitablement entre quelques bols, un par un, comme on distribue des cartes. Regardez combien chaque bol reçoit au final.",
+          "questionsToAsk": [
+            "Combien chaque bol a-t-il reçu ?",
+            "Y en avait-il qui restaient et ne se partageaient pas également ?",
+            "Que se passerait-il si tu utilisais un bol de plus ?"
+          ],
+          "commonMisconceptions": "Les enfants distribuent souvent les objets de façon inégale au début – en donnant plus au bol le plus proche –, avant de trouver un rythme régulier, un par un. C'est une étape normale, pas un signe que l'idée n'est pas comprise.",
+          "tryTomorrow": "Demande à ton enfant de partager équitablement un petit goûter entre les personnes à table, à voix haute, un par un.",
+          "captainMathPrompt": "Si tu as douze raisins et trois bols, combien de raisins chaque bol recevrait-il si vous les partagez équitablement ?",
+          "alliePrompt": "Si le total ne se partage pas exactement, ce n'est pas un échec – « que fait-on du reste ? » est l'une des questions les plus utiles de tout le jeu."
+        },
+        "it-CH": {
+          "title": "Condivisione equa",
+          "materialsNeeded": [
+            "12-20 piccoli oggetti identici – bottoni, chicchi d'uva o gettoni",
+            "2-4 piccole ciotole o piatti per la condivisione"
+          ],
+          "whatYourChildLearns": "Che la divisione significa ripartire un totale in gruppi uguali – e cosa fare quando non torna esattamente.",
+          "letsExplore": "Contate insieme un mucchio di oggetti e condivideteli equamente tra alcune ciotole, uno alla volta, come si distribuiscono le carte. Guardate quanti ne riceve ciascuna ciotola alla fine.",
+          "questionsToAsk": [
+            "Quanti ne ha ricevuti ciascuna ciotola?",
+            "Ne sono rimasti alcuni che non si dividevano equamente?",
+            "Cosa succederebbe se usassi una ciotola in più?"
+          ],
+          "commonMisconceptions": "I bambini spesso distribuiscono gli oggetti in modo disuguale all'inizio – dando di più alla ciotola più vicina –, prima di trovare un ritmo costante, uno alla volta. È un passaggio normale, non un segno che l'idea non sia stata capita.",
+          "tryTomorrow": "Chiedi a tuo figlio di condividere equamente uno spuntino tra le persone a tavola, ad alta voce, uno alla volta.",
+          "captainMathPrompt": "Se hai dodici chicchi d'uva e tre ciotole, quanti chicchi riceverebbe ciascuna ciotola se li condivideste equamente?",
+          "alliePrompt": "Se il totale non si divide esattamente, non è un'attività fallita – «cosa facciamo con quello che avanza?» è una delle domande più utili di tutto il gioco."
+        }
+      }
+    },
+    {
+      "id": "ratio-recipes",
+      "category": "ratio",
+      "minAgeYears": 9,
+      "maxAgeYears": 11,
+      "minMinutes": 5,
+      "maxMinutes": 10,
+      "contentVersion": 1,
+      "studioConnectionRouteSuffix": "discovery/cooking-scale-a-recipe",
+      "visual": {
+        "animationId": "family_maths_ratio_recipes_intro"
+      },
+      "locales": {
+        "en": {
+          "title": "Ratio Recipes",
+          "materialsNeeded": [
+            "A simple recipe with 2 or more ingredients (a real one, or one you write down together)",
+            "A measuring cup or spoon, if you have one"
+          ],
+          "whatYourChildLearns": "That a ratio describes how quantities relate to each other — and stays the same even when the amounts scale up or down.",
+          "letsExplore": "Look at a simple recipe together — say, 2 cups of flour to 1 cup of sugar. Ask your child to work out what you'd need to make double, then half.",
+          "questionsToAsk": [
+            "If we doubled every ingredient, would the recipe still taste the same?",
+            "What would happen if you only doubled the flour but not the sugar?",
+            "Could you write this ratio a different way?"
+          ],
+          "commonMisconceptions": "Children often add the same fixed amount to each ingredient instead of scaling proportionally — for example adding 2 cups to everything rather than doubling it. Asking what happens to the taste if that's wrong is a quick, intuitive check.",
+          "tryTomorrow": "Next time you're cooking together, ask your child to work out the ingredients for a bigger or smaller batch.",
+          "captainMathPrompt": "If a recipe needs two cups of flour for every one cup of sugar, how much flour would you need for three cups of sugar?",
+          "alliePrompt": "You don't need to say the word 'ratio' if it hasn't come up at school yet. 'For every' is enough to build the idea.",
+          "studioConnectionNote": "Discovery Library has a real-world recipe-scaling card — a great next step once this feels comfortable."
+        },
+        "en-GB": {
+          "title": "Ratio Recipes",
+          "materialsNeeded": [
+            "A simple recipe with 2 or more ingredients (a real one, or one you write down together)",
+            "A measuring cup or spoon, if you have one"
+          ],
+          "whatYourChildLearns": "That a ratio describes how quantities relate to each other — and stays the same even when the amounts scale up or down.",
+          "letsExplore": "Look at a simple recipe together — say, 2 cups of flour to 1 cup of sugar. Ask your child to work out what you'd need to make double, then half.",
+          "questionsToAsk": [
+            "If we doubled every ingredient, would the recipe still taste the same?",
+            "What would happen if you only doubled the flour but not the sugar?",
+            "Could you write this ratio a different way?"
+          ],
+          "commonMisconceptions": "Children often add the same fixed amount to each ingredient instead of scaling proportionally — for example adding 2 cups to everything rather than doubling it. Asking what happens to the taste if that's wrong is a quick, intuitive check.",
+          "tryTomorrow": "Next time you're cooking together, ask your child to work out the ingredients for a bigger or smaller batch.",
+          "captainMathPrompt": "If a recipe needs two cups of flour for every one cup of sugar, how much flour would you need for three cups of sugar?",
+          "alliePrompt": "You don't need to say the word 'ratio' if it hasn't come up at school yet. 'For every' is enough to build the idea.",
+          "studioConnectionNote": "Discovery Library has a real-world recipe-scaling card — a great next step once this feels comfortable."
+        },
+        "de-CH": {
+          "title": "Verhältnis-Rezepte",
+          "materialsNeeded": [
+            "Ein einfaches Rezept mit 2 oder mehr Zutaten (ein echtes, oder eines, das ihr gemeinsam aufschreibt)",
+            "Ein Messbecher oder -löffel, falls vorhanden"
+          ],
+          "whatYourChildLearns": "Dass ein Verhältnis beschreibt, wie sich Mengen zueinander verhalten – und gleich bleibt, auch wenn die Mengen grösser oder kleiner werden.",
+          "letsExplore": "Schaut euch gemeinsam ein einfaches Rezept an – zum Beispiel 2 Tassen Mehl auf 1 Tasse Zucker. Bitte dein Kind auszurechnen, was für die doppelte Menge nötig wäre, dann für die halbe.",
+          "questionsToAsk": [
+            "Würde das Rezept noch gleich schmecken, wenn wir jede Zutat verdoppeln?",
+            "Was würde passieren, wenn du nur das Mehl verdoppelst, aber nicht den Zucker?",
+            "Könntest du dieses Verhältnis anders aufschreiben?"
+          ],
+          "commonMisconceptions": "Kinder addieren oft dieselbe feste Menge zu jeder Zutat, statt proportional zu skalieren – zum Beispiel überall 2 Tassen hinzuzufügen, statt zu verdoppeln. Zu fragen, was das mit dem Geschmack macht, wenn das falsch ist, ist eine schnelle, intuitive Prüfung.",
+          "tryTomorrow": "Bitte dein Kind beim nächsten gemeinsamen Kochen, die Zutaten für eine grössere oder kleinere Menge auszurechnen.",
+          "captainMathPrompt": "Wenn ein Rezept zwei Tassen Mehl auf eine Tasse Zucker braucht, wie viel Mehl bräuchtest du für drei Tassen Zucker?",
+          "alliePrompt": "Du musst das Wort «Verhältnis» nicht benutzen, wenn es in der Schule noch nicht vorkam. «Für jede» reicht völlig, um die Idee aufzubauen.",
+          "studioConnectionNote": "In der Discovery Library gibt es eine Karte zum Hochrechnen von Rezepten – ein guter nächster Schritt, sobald sich das hier vertraut anfühlt."
+        },
+        "fr-CH": {
+          "title": "Recettes en proportion",
+          "materialsNeeded": [
+            "Une recette simple avec 2 ingrédients ou plus (une vraie, ou une que vous notez ensemble)",
+            "Une tasse ou une cuillère à mesurer, si tu en as une"
+          ],
+          "whatYourChildLearns": "Qu'un rapport décrit comment des quantités sont liées entre elles – et reste le même même quand les quantités augmentent ou diminuent.",
+          "letsExplore": "Regardez une recette simple ensemble – disons 2 tasses de farine pour 1 tasse de sucre. Demande à ton enfant de calculer ce qu'il faudrait pour le double, puis pour la moitié.",
+          "questionsToAsk": [
+            "Si on doublait chaque ingrédient, la recette aurait-elle toujours le même goût ?",
+            "Que se passerait-il si tu doublais seulement la farine, mais pas le sucre ?",
+            "Pourrais-tu écrire ce rapport d'une autre façon ?"
+          ],
+          "commonMisconceptions": "Les enfants ajoutent souvent la même quantité fixe à chaque ingrédient au lieu de multiplier proportionnellement – par exemple ajouter 2 tasses partout plutôt que de doubler. Demander ce que ça donnerait au goût si c'est faux est une vérification rapide et intuitive.",
+          "tryTomorrow": "La prochaine fois que vous cuisinez ensemble, demande à ton enfant de calculer les ingrédients pour une plus grande ou plus petite quantité.",
+          "captainMathPrompt": "Si une recette demande deux tasses de farine pour une tasse de sucre, combien de farine faudrait-il pour trois tasses de sucre ?",
+          "alliePrompt": "Tu n'as pas besoin de dire le mot « rapport » si ça n'a pas encore été vu à l'école. « Pour chaque » suffit pour construire l'idée.",
+          "studioConnectionNote": "La Discovery Library propose une carte sur la mise à l'échelle des recettes, dans un contexte réel – une belle suite une fois que ceci est acquis."
+        },
+        "it-CH": {
+          "title": "Ricette in proporzione",
+          "materialsNeeded": [
+            "Una ricetta semplice con 2 o più ingredienti (una vera, oppure una che scrivete insieme)",
+            "Una tazza o un cucchiaio dosatore, se ne avete uno"
+          ],
+          "whatYourChildLearns": "Che un rapporto descrive come le quantità si relazionano tra loro – e resta lo stesso anche quando le quantità aumentano o diminuiscono.",
+          "letsExplore": "Guardate insieme una ricetta semplice – ad esempio 2 tazze di farina per 1 tazza di zucchero. Chiedi a tuo figlio di calcolare cosa servirebbe per il doppio, poi per la metà.",
+          "questionsToAsk": [
+            "Se raddoppiassimo ogni ingrediente, la ricetta avrebbe ancora lo stesso sapore?",
+            "Cosa succederebbe se raddoppiassi solo la farina, ma non lo zucchero?",
+            "Potresti scrivere questo rapporto in un altro modo?"
+          ],
+          "commonMisconceptions": "I bambini spesso aggiungono la stessa quantità fissa a ogni ingrediente invece di scalare proporzionalmente – ad esempio aggiungendo 2 tazze a tutto invece di raddoppiare. Chiedere cosa succederebbe al sapore se questo fosse sbagliato è una verifica rapida e intuitiva.",
+          "tryTomorrow": "La prossima volta che cucinate insieme, chiedi a tuo figlio di calcolare gli ingredienti per una porzione più grande o più piccola.",
+          "captainMathPrompt": "Se una ricetta richiede due tazze di farina per una tazza di zucchero, quanta farina servirebbe per tre tazze di zucchero?",
+          "alliePrompt": "Non serve dire la parola «rapporto» se non è ancora stata vista a scuola. «Per ogni» basta per costruire l'idea.",
+          "studioConnectionNote": "La Discovery Library ha una scheda sul ridimensionamento delle ricette, calata nella realtà – un bel seguito quando questa attività risulterà familiare."
+        }
+      }
+    },
+    {
+      "id": "pattern-detective",
+      "category": "patterns",
+      "minAgeYears": 5,
+      "maxAgeYears": 8,
+      "minMinutes": 5,
+      "maxMinutes": 10,
+      "contentVersion": 1,
+      "locales": {
+        "en": {
+          "title": "Pattern Detective",
+          "materialsNeeded": [
+            "A handful of objects in 2-3 different colours or types — blocks, buttons, pasta shapes",
+            "A flat surface"
+          ],
+          "whatYourChildLearns": "To spot what repeats in a sequence and predict what comes next — an early step toward algebraic thinking.",
+          "letsExplore": "Build a simple repeating pattern together (red, blue, red, blue...) and ask your child to continue it. Then let them build one for you to continue.",
+          "questionsToAsk": [
+            "What comes next, and how do you know?",
+            "Where does the pattern start repeating?",
+            "Can you make a pattern that repeats every three objects instead of two?"
+          ],
+          "commonMisconceptions": "Children often continue a pattern correctly by copying the rhythm without being able to say what the rule is. Asking them to explain it out loud, even informally, is what builds the underlying understanding.",
+          "tryTomorrow": "Ask your child to spot a pattern somewhere in daily life — a tiled floor, a fence, a piece of clothing.",
+          "captainMathPrompt": "I'm building a pattern: red, blue, red, blue... what comes next, and what comes after that?",
+          "alliePrompt": "Let your child set a pattern for you sometimes, even a tricky one. Being the one who explains the rule is where the real learning happens."
+        },
+        "en-GB": {
+          "title": "Pattern Detective",
+          "materialsNeeded": [
+            "A handful of objects in 2-3 different colours or types — blocks, buttons, pasta shapes",
+            "A flat surface"
+          ],
+          "whatYourChildLearns": "To spot what repeats in a sequence and predict what comes next — an early step toward algebraic thinking.",
+          "letsExplore": "Build a simple repeating pattern together (red, blue, red, blue...) and ask your child to continue it. Then let them build one for you to continue.",
+          "questionsToAsk": [
+            "What comes next, and how do you know?",
+            "Where does the pattern start repeating?",
+            "Can you make a pattern that repeats every three objects instead of two?"
+          ],
+          "commonMisconceptions": "Children often continue a pattern correctly by copying the rhythm without being able to say what the rule is. Asking them to explain it out loud, even informally, is what builds the underlying understanding.",
+          "tryTomorrow": "Ask your child to spot a pattern somewhere in daily life — a tiled floor, a fence, a piece of clothing.",
+          "captainMathPrompt": "I'm building a pattern: red, blue, red, blue... what comes next, and what comes after that?",
+          "alliePrompt": "Let your child set a pattern for you sometimes, even a tricky one. Being the one who explains the rule is where the real learning happens."
+        },
+        "de-CH": {
+          "title": "Muster-Detektiv",
+          "materialsNeeded": [
+            "Ein paar Gegenstände in 2-3 verschiedenen Farben oder Arten – Bauklötze, Knöpfe, Teigwarenformen",
+            "Eine ebene Fläche"
+          ],
+          "whatYourChildLearns": "Zu erkennen, was sich in einer Folge wiederholt, und vorherzusagen, was als Nächstes kommt – ein erster Schritt zum algebraischen Denken.",
+          "letsExplore": "Baut gemeinsam ein einfaches, sich wiederholendes Muster (rot, blau, rot, blau...) und bitte dein Kind, es fortzusetzen. Lasst es dann eines für dich zum Fortsetzen bauen.",
+          "questionsToAsk": [
+            "Was kommt als Nächstes, und woher weisst du das?",
+            "Wo beginnt sich das Muster zu wiederholen?",
+            "Kannst du ein Muster machen, das sich alle drei Gegenstände statt alle zwei wiederholt?"
+          ],
+          "commonMisconceptions": "Kinder setzen ein Muster oft richtig fort, indem sie den Rhythmus nachahmen, ohne die Regel benennen zu können. Sie zu bitten, es laut zu erklären, auch informell, baut das eigentliche Verständnis auf.",
+          "tryTomorrow": "Bitte dein Kind, irgendwo im Alltag ein Muster zu entdecken – einen gefliesten Boden, einen Zaun, ein Kleidungsstück.",
+          "captainMathPrompt": "Ich baue ein Muster: rot, blau, rot, blau... was kommt als Nächstes, und was danach?",
+          "alliePrompt": "Lass dein Kind manchmal ein Muster für dich vorgeben, auch ein kniffliges. Die Regel zu erklären, statt sie nur zu befolgen, ist, wo das eigentliche Lernen passiert."
+        },
+        "fr-CH": {
+          "title": "Détective des motifs",
+          "materialsNeeded": [
+            "Quelques objets de 2-3 couleurs ou types différents – cubes, boutons, formes de pâtes",
+            "Une surface plane"
+          ],
+          "whatYourChildLearns": "À repérer ce qui se répète dans une séquence et à prédire ce qui vient ensuite – un premier pas vers la pensée algébrique.",
+          "letsExplore": "Construisez ensemble un motif simple qui se répète (rouge, bleu, rouge, bleu...) et demande à ton enfant de le continuer. Laisse-le ensuite en créer un que tu dois continuer.",
+          "questionsToAsk": [
+            "Qu'est-ce qui vient ensuite, et comment le sais-tu ?",
+            "Où le motif recommence-t-il à se répéter ?",
+            "Peux-tu créer un motif qui se répète tous les trois objets au lieu de deux ?"
+          ],
+          "commonMisconceptions": "Les enfants continuent souvent un motif correctement en imitant le rythme, sans pouvoir dire quelle est la règle. Leur demander de l'expliquer à voix haute, même de façon informelle, construit la vraie compréhension.",
+          "tryTomorrow": "Demande à ton enfant de repérer un motif quelque part dans la vie quotidienne – un sol carrelé, une clôture, un vêtement.",
+          "captainMathPrompt": "Je construis un motif : rouge, bleu, rouge, bleu... qu'est-ce qui vient ensuite, et après ça ?",
+          "alliePrompt": "Laisse parfois ton enfant te proposer un motif, même compliqué. C'est en expliquant la règle, plutôt qu'en la suivant seulement, que le véritable apprentissage se produit."
+        },
+        "it-CH": {
+          "title": "Detective dei motivi",
+          "materialsNeeded": [
+            "Alcuni oggetti di 2-3 colori o tipi diversi – cubetti, bottoni, forme di pasta",
+            "Una superficie piana"
+          ],
+          "whatYourChildLearns": "A individuare ciò che si ripete in una sequenza e a prevedere cosa viene dopo – un primo passo verso il pensiero algebrico.",
+          "letsExplore": "Costruite insieme un semplice motivo ripetuto (rosso, blu, rosso, blu...) e chiedi a tuo figlio di continuarlo. Poi lascia che ne costruisca uno che tu devi continuare.",
+          "questionsToAsk": [
+            "Cosa viene dopo, e come lo sai?",
+            "Da dove ricomincia a ripetersi il motivo?",
+            "Riesci a creare un motivo che si ripete ogni tre oggetti invece che ogni due?"
+          ],
+          "commonMisconceptions": "I bambini spesso continuano correttamente un motivo imitando il ritmo, senza riuscire a dire qual è la regola. Chiedere loro di spiegarla ad alta voce, anche in modo informale, costruisce la vera comprensione.",
+          "tryTomorrow": "Chiedi a tuo figlio di individuare un motivo nella vita di tutti i giorni – un pavimento piastrellato, una recinzione, un capo di vestiario.",
+          "captainMathPrompt": "Sto costruendo un motivo: rosso, blu, rosso, blu... cosa viene dopo, e cosa viene ancora dopo?",
+          "alliePrompt": "Lascia che tuo figlio a volte proponga un motivo per te, anche complicato. È spiegando la regola, non solo seguendola, che avviene il vero apprendimento."
+        }
+      }
+    },
+    {
+      "id": "measure-everything",
+      "category": "measurement",
+      "minAgeYears": 7,
+      "maxAgeYears": 9,
+      "minMinutes": 5,
+      "maxMinutes": 10,
+      "contentVersion": 1,
+      "locales": {
+        "en": {
+          "title": "Measure Everything",
+          "materialsNeeded": [
+            "A ruler or tape measure",
+            "3-5 household objects to compare"
+          ],
+          "whatYourChildLearns": "To use a measuring tool accurately and compare lengths using real units, not just 'bigger' or 'smaller'.",
+          "letsExplore": "Pick a few objects and measure them together. Line them up from shortest to longest once you have the numbers.",
+          "questionsToAsk": [
+            "Which was the trickiest thing to measure accurately, and why?",
+            "How much longer is the longest object than the shortest?",
+            "If you measured in a different unit, would the order change?"
+          ],
+          "commonMisconceptions": "Children often start measuring from the edge of the ruler rather than its zero mark, which throws every reading off by the same amount. Checking where zero actually is before measuring fixes it for good.",
+          "tryTomorrow": "Ask your child to measure something and guess how many of it would fit across the room.",
+          "captainMathPrompt": "Can you find something in the house that's almost exactly as long as this ruler?",
+          "alliePrompt": "A wobbly first measurement is completely normal. Measuring the same thing twice and comparing is more useful than getting it perfect the first time."
+        },
+        "en-GB": {
+          "title": "Measure Everything",
+          "materialsNeeded": [
+            "A ruler or tape measure",
+            "3-5 household objects to compare"
+          ],
+          "whatYourChildLearns": "To use a measuring tool accurately and compare lengths using real units, not just 'bigger' or 'smaller'.",
+          "letsExplore": "Pick a few objects and measure them together. Line them up from shortest to longest once you have the numbers.",
+          "questionsToAsk": [
+            "Which was the trickiest thing to measure accurately, and why?",
+            "How much longer is the longest object than the shortest?",
+            "If you measured in a different unit, would the order change?"
+          ],
+          "commonMisconceptions": "Children often start measuring from the edge of the ruler rather than its zero mark, which throws every reading off by the same amount. Checking where zero actually is before measuring fixes it for good.",
+          "tryTomorrow": "Ask your child to measure something and guess how many of it would fit across the room.",
+          "captainMathPrompt": "Can you find something in the house that's almost exactly as long as this ruler?",
+          "alliePrompt": "A wobbly first measurement is completely normal. Measuring the same thing twice and comparing is more useful than getting it perfect the first time."
+        },
+        "de-CH": {
+          "title": "Miss Alles",
+          "materialsNeeded": [
+            "Ein Lineal oder Massband",
+            "3-5 Haushaltsgegenstände zum Vergleichen"
+          ],
+          "whatYourChildLearns": "Ein Messwerkzeug genau zu benutzen und Längen mit echten Einheiten zu vergleichen, nicht nur mit «grösser» oder «kleiner».",
+          "letsExplore": "Wählt ein paar Gegenstände aus und messt sie gemeinsam. Ordnet sie dann anhand der Zahlen vom kürzesten zum längsten.",
+          "questionsToAsk": [
+            "Was war am schwierigsten genau zu messen, und warum?",
+            "Um wie viel ist der längste Gegenstand länger als der kürzeste?",
+            "Würde sich die Reihenfolge ändern, wenn du in einer anderen Einheit messen würdest?"
+          ],
+          "commonMisconceptions": "Kinder beginnen das Messen oft am Rand des Lineals statt an der Null-Markierung, was jede Messung um denselben Betrag verfälscht. Vor dem Messen zu prüfen, wo die Null tatsächlich ist, behebt das dauerhaft.",
+          "tryTomorrow": "Bitte dein Kind, etwas zu messen und zu schätzen, wie oft es quer durchs Zimmer passen würde.",
+          "captainMathPrompt": "Findest du im Haus etwas, das fast genau so lang ist wie dieses Lineal?",
+          "alliePrompt": "Eine wacklige erste Messung ist ganz normal. Dasselbe zweimal zu messen und zu vergleichen ist nützlicher, als es beim ersten Mal perfekt zu machen."
+        },
+        "fr-CH": {
+          "title": "Mesure tout",
+          "materialsNeeded": [
+            "Une règle ou un mètre ruban",
+            "3 à 5 objets de la maison à comparer"
+          ],
+          "whatYourChildLearns": "À utiliser un instrument de mesure avec précision et à comparer des longueurs avec de vraies unités, pas seulement « plus grand » ou « plus petit ».",
+          "letsExplore": "Choisissez quelques objets et mesurez-les ensemble. Classez-les ensuite du plus court au plus long une fois que vous avez les chiffres.",
+          "questionsToAsk": [
+            "Qu'est-ce qui était le plus difficile à mesurer précisément, et pourquoi ?",
+            "De combien le plus long objet dépasse-t-il le plus court ?",
+            "Si tu mesurais avec une autre unité, l'ordre changerait-il ?"
+          ],
+          "commonMisconceptions": "Les enfants commencent souvent à mesurer depuis le bord de la règle plutôt que depuis le zéro, ce qui fausse chaque lecture du même montant. Vérifier où se trouve réellement le zéro avant de mesurer règle le problème pour de bon.",
+          "tryTomorrow": "Demande à ton enfant de mesurer quelque chose et d'estimer combien de fois cela tiendrait en travers de la pièce.",
+          "captainMathPrompt": "Peux-tu trouver quelque chose dans la maison qui a presque exactement la même longueur que cette règle ?",
+          "alliePrompt": "Une première mesure imprécise est tout à fait normale. Mesurer deux fois la même chose et comparer est plus utile que de réussir parfaitement du premier coup."
+        },
+        "it-CH": {
+          "title": "Misura tutto",
+          "materialsNeeded": [
+            "Un righello o un metro a nastro",
+            "3-5 oggetti di casa da confrontare"
+          ],
+          "whatYourChildLearns": "A usare uno strumento di misura con precisione e a confrontare le lunghezze usando unità reali, non solo «più grande» o «più piccolo».",
+          "letsExplore": "Scegliete alcuni oggetti e misurateli insieme. Ordinateli poi dal più corto al più lungo una volta ottenuti i numeri.",
+          "questionsToAsk": [
+            "Cosa è stato più difficile misurare con precisione, e perché?",
+            "Di quanto è più lungo l'oggetto più lungo rispetto al più corto?",
+            "Se misurassi con un'altra unità, l'ordine cambierebbe?"
+          ],
+          "commonMisconceptions": "I bambini spesso iniziano a misurare dal bordo del righello invece che dal segno dello zero, il che sfalsa ogni lettura della stessa quantità. Controllare dove si trova davvero lo zero prima di misurare risolve il problema in modo definitivo.",
+          "tryTomorrow": "Chiedi a tuo figlio di misurare qualcosa e di stimare quante volte entrerebbe attraversando la stanza.",
+          "captainMathPrompt": "Riesci a trovare in casa qualcosa che sia quasi esattamente lungo come questo righello?",
+          "alliePrompt": "Una prima misurazione imprecisa è del tutto normale. Misurare due volte la stessa cosa e confrontare è più utile che farla perfetta al primo tentativo."
+        }
+      }
+    },
+    {
+      "id": "cube-views",
+      "category": "spatialReasoning",
+      "minAgeYears": 9,
+      "maxAgeYears": 11,
+      "minMinutes": 5,
+      "maxMinutes": 10,
+      "contentVersion": 1,
+      "studioConnectionRouteSuffix": "spatial-intelligence",
+      "visual": {
+        "animationId": "family_maths_cube_views_intro"
+      },
+      "locales": {
+        "en": {
+          "title": "Cube Views",
+          "materialsNeeded": [
+            "10-15 building cubes or blocks",
+            "A flat surface"
+          ],
+          "whatYourChildLearns": "That the same 3D structure looks different from the front, side, and top — an early step in mental rotation.",
+          "letsExplore": "Build a small structure together, then take turns describing what it looks like from the front, from the side, and from above, without moving it.",
+          "questionsToAsk": [
+            "What changed between the front view and the side view?",
+            "Can you guess the top view before you look?",
+            "Are there any cubes hidden behind others that you can't see from here?"
+          ],
+          "commonMisconceptions": "Children often assume every view of a structure looks the same, especially before they've physically walked around it or picked it up to check. Comparing a guess to the real view, rather than being told it's wrong, builds the skill.",
+          "tryTomorrow": "Ask your child to guess what a household object would look like from directly above, then check.",
+          "captainMathPrompt": "If you look at this stack of cubes from above, how many squares do you think you'd see?",
+          "alliePrompt": "If their first guess doesn't match what they see, that's the useful moment — ask what surprised them, rather than moving straight to the right answer.",
+          "studioConnectionNote": "Spatial Intelligence in Math Studio has more ways to explore views and rotation."
+        },
+        "en-GB": {
+          "title": "Cube Views",
+          "materialsNeeded": [
+            "10-15 building cubes or blocks",
+            "A flat surface"
+          ],
+          "whatYourChildLearns": "That the same 3D structure looks different from the front, side, and top — an early step in mental rotation.",
+          "letsExplore": "Build a small structure together, then take turns describing what it looks like from the front, from the side, and from above, without moving it.",
+          "questionsToAsk": [
+            "What changed between the front view and the side view?",
+            "Can you guess the top view before you look?",
+            "Are there any cubes hidden behind others that you can't see from here?"
+          ],
+          "commonMisconceptions": "Children often assume every view of a structure looks the same, especially before they've physically walked around it or picked it up to check. Comparing a guess to the real view, rather than being told it's wrong, builds the skill.",
+          "tryTomorrow": "Ask your child to guess what a household object would look like from directly above, then check.",
+          "captainMathPrompt": "If you look at this stack of cubes from above, how many squares do you think you'd see?",
+          "alliePrompt": "If their first guess doesn't match what they see, that's the useful moment — ask what surprised them, rather than moving straight to the right answer.",
+          "studioConnectionNote": "Spatial Intelligence in Math Studio has more ways to explore views and rotation."
+        },
+        "de-CH": {
+          "title": "Würfel-Ansichten",
+          "materialsNeeded": [
+            "10-15 Baukuben oder Bauklötze",
+            "Eine ebene Fläche"
+          ],
+          "whatYourChildLearns": "Dass dieselbe 3D-Struktur von vorne, von der Seite und von oben unterschiedlich aussieht – ein früher Schritt zum gedanklichen Drehen.",
+          "letsExplore": "Baut gemeinsam eine kleine Struktur, dann beschreibt abwechselnd, wie sie von vorne, von der Seite und von oben aussieht, ohne sie zu bewegen.",
+          "questionsToAsk": [
+            "Was hat sich zwischen der Vorderansicht und der Seitenansicht verändert?",
+            "Kannst du die Ansicht von oben erraten, bevor du nachschaust?",
+            "Gibt es Würfel, die hinter anderen versteckt sind und die du von hier nicht sehen kannst?"
+          ],
+          "commonMisconceptions": "Kinder nehmen oft an, dass jede Ansicht einer Struktur gleich aussieht, besonders bevor sie tatsächlich herumgegangen sind oder sie in die Hand genommen haben, um es zu prüfen. Eine Vermutung mit der echten Ansicht zu vergleichen, statt gesagt zu bekommen, dass sie falsch ist, baut die Fähigkeit auf.",
+          "tryTomorrow": "Bitte dein Kind zu erraten, wie ein Haushaltsgegenstand von direkt oben aussehen würde, und dann nachzuschauen.",
+          "captainMathPrompt": "Wenn du diesen Würfelstapel von oben anschaust, wie viele Quadrate würdest du sehen?",
+          "alliePrompt": "Wenn die erste Vermutung nicht zu dem passt, was dein Kind sieht, ist genau das der nützliche Moment – frag, was überrascht hat, statt gleich zur richtigen Antwort überzugehen.",
+          "studioConnectionNote": "Spatial Intelligence im Math Studio bietet weitere Wege, Ansichten und Drehungen zu erkunden."
+        },
+        "fr-CH": {
+          "title": "Vues des cubes",
+          "materialsNeeded": [
+            "10 à 15 cubes ou blocs de construction",
+            "Une surface plane"
+          ],
+          "whatYourChildLearns": "Que la même structure en 3D a un aspect différent vue de face, de côté et de dessus – un premier pas vers la rotation mentale.",
+          "letsExplore": "Construisez ensemble une petite structure, puis décrivez chacun votre tour à quoi elle ressemble de face, de côté et de dessus, sans la déplacer.",
+          "questionsToAsk": [
+            "Qu'est-ce qui a changé entre la vue de face et la vue de côté ?",
+            "Peux-tu deviner la vue de dessus avant de regarder ?",
+            "Y a-t-il des cubes cachés derrière d'autres que tu ne peux pas voir d'ici ?"
+          ],
+          "commonMisconceptions": "Les enfants supposent souvent que chaque vue d'une structure se ressemble, surtout avant d'avoir réellement fait le tour ou pris l'objet en main pour vérifier. Comparer une supposition à la vue réelle, plutôt que de se faire dire qu'elle est fausse, construit la compétence.",
+          "tryTomorrow": "Demande à ton enfant de deviner à quoi ressemblerait un objet de la maison vu d'en haut, puis vérifiez.",
+          "captainMathPrompt": "Si tu regardes cette pile de cubes depuis le dessus, combien de carrés penses-tu voir ?",
+          "alliePrompt": "Si sa première idée ne correspond pas à ce qu'il voit, c'est justement le moment intéressant – demande ce qui l'a surpris, plutôt que de passer directement à la bonne réponse.",
+          "studioConnectionNote": "Spatial Intelligence dans Math Studio propose d'autres façons d'explorer les vues et les rotations."
+        },
+        "it-CH": {
+          "title": "Viste dei cubetti",
+          "materialsNeeded": [
+            "10-15 cubetti o blocchi da costruzione",
+            "Una superficie piana"
+          ],
+          "whatYourChildLearns": "Che la stessa struttura 3D appare diversa vista da davanti, di lato e dall'alto – un primo passo verso la rotazione mentale.",
+          "letsExplore": "Costruite insieme una piccola struttura, poi a turno descrivete come appare da davanti, di lato e dall'alto, senza spostarla.",
+          "questionsToAsk": [
+            "Cosa è cambiato tra la vista frontale e quella laterale?",
+            "Riesci a indovinare la vista dall'alto prima di guardare?",
+            "Ci sono cubetti nascosti dietro altri che non riesci a vedere da qui?"
+          ],
+          "commonMisconceptions": "I bambini spesso presumono che ogni vista di una struttura sia uguale, specialmente prima di averla girata attorno o presa in mano per verificare. Confrontare un'ipotesi con la vista reale, invece di sentirsi dire che è sbagliata, costruisce l'abilità.",
+          "tryTomorrow": "Chiedi a tuo figlio di indovinare come apparirebbe un oggetto di casa visto direttamente dall'alto, poi verificate.",
+          "captainMathPrompt": "Se guardi questa pila di cubetti dall'alto, quanti quadrati pensi di vedere?",
+          "alliePrompt": "Se la prima ipotesi non corrisponde a quello che vede, è proprio questo il momento utile – chiedigli cosa lo ha sorpreso, invece di passare subito alla risposta giusta.",
+          "studioConnectionNote": "Spatial Intelligence in Math Studio propone altri modi per esplorare viste e rotazioni."
+        }
+      }
+    },
+    {
+      "id": "make-the-target",
+      "category": "logic",
+      "minAgeYears": 9,
+      "maxAgeYears": 11,
+      "minMinutes": 5,
+      "maxMinutes": 10,
+      "contentVersion": 1,
+      "studioConnectionRouteSuffix": "mental-maths",
+      "locales": {
+        "en": {
+          "title": "Make the Target",
+          "materialsNeeded": [
+            "A small set of number cards or a die (or just say numbers out loud)",
+            "Paper to jot down attempts, if useful"
+          ],
+          "whatYourChildLearns": "To combine numbers flexibly using different operations to reach a target — choosing the operation, not just following one.",
+          "letsExplore": "Pick a target number, like 20. Take turns calling out small numbers and combining them with add, subtract, or multiply to try to land exactly on the target.",
+          "questionsToAsk": [
+            "What operation got you closest?",
+            "Is there more than one way to reach the target?",
+            "What would you try next if that combination didn't work?"
+          ],
+          "commonMisconceptions": "Children often reach for addition first even when subtraction or multiplication would get them there faster, simply because it's the most familiar operation. Asking 'what else could you try' nudges them to consider other options without ruling addition out.",
+          "tryTomorrow": "Pick a new target number together and see how many different ways you can both find to reach it.",
+          "captainMathPrompt": "Can you use three small numbers and any operations to make exactly twenty?",
+          "alliePrompt": "There's often more than one right combination here — if your child finds a different route to the target than you expected, that's a win, not an inconsistency to correct.",
+          "studioConnectionNote": "For more flexible number practice, take a look at Mental Maths in Math Studio."
+        },
+        "en-GB": {
+          "title": "Make the Target",
+          "materialsNeeded": [
+            "A small set of number cards or a die (or just say numbers out loud)",
+            "Paper to jot down attempts, if useful"
+          ],
+          "whatYourChildLearns": "To combine numbers flexibly using different operations to reach a target — choosing the operation, not just following one.",
+          "letsExplore": "Pick a target number, like 20. Take turns calling out small numbers and combining them with add, subtract, or multiply to try to land exactly on the target.",
+          "questionsToAsk": [
+            "What operation got you closest?",
+            "Is there more than one way to reach the target?",
+            "What would you try next if that combination didn't work?"
+          ],
+          "commonMisconceptions": "Children often reach for addition first even when subtraction or multiplication would get them there faster, simply because it's the most familiar operation. Asking 'what else could you try' nudges them to consider other options without ruling addition out.",
+          "tryTomorrow": "Pick a new target number together and see how many different ways you can both find to reach it.",
+          "captainMathPrompt": "Can you use three small numbers and any operations to make exactly twenty?",
+          "alliePrompt": "There's often more than one right combination here — if your child finds a different route to the target than you expected, that's a win, not an inconsistency to correct.",
+          "studioConnectionNote": "For more flexible number practice, take a look at Mental Maths in Math Studio."
+        },
+        "de-CH": {
+          "title": "Triff das Ziel",
+          "materialsNeeded": [
+            "Ein paar Zahlenkarten oder ein Würfel (oder einfach Zahlen laut sagen)",
+            "Papier, um Versuche zu notieren, falls hilfreich"
+          ],
+          "whatYourChildLearns": "Zahlen flexibel mit verschiedenen Rechenarten zu einer Zielzahl zu kombinieren – die Rechenart selbst zu wählen, nicht nur einer zu folgen.",
+          "letsExplore": "Wählt eine Zielzahl, zum Beispiel 20. Ruft abwechselnd kleine Zahlen und kombiniert sie mit Addieren, Subtrahieren oder Multiplizieren, um genau auf die Zielzahl zu kommen.",
+          "questionsToAsk": [
+            "Welche Rechenart hat dich am nächsten drangebracht?",
+            "Gibt es mehr als einen Weg, um zum Ziel zu kommen?",
+            "Was würdest du als Nächstes versuchen, wenn diese Kombination nicht funktioniert hat?"
+          ],
+          "commonMisconceptions": "Kinder greifen oft zuerst zum Addieren, selbst wenn Subtrahieren oder Multiplizieren schneller zum Ziel führen würde, einfach weil es die vertrauteste Rechenart ist. Die Frage «was könntest du sonst noch versuchen» stösst zu anderen Optionen an, ohne das Addieren auszuschliessen.",
+          "tryTomorrow": "Wählt gemeinsam eine neue Zielzahl und schaut, wie viele verschiedene Wege ihr beide findet, um sie zu erreichen.",
+          "captainMathPrompt": "Kannst du drei kleine Zahlen und beliebige Rechenarten verwenden, um genau zwanzig zu erhalten?",
+          "alliePrompt": "Hier gibt es oft mehr als eine richtige Kombination – wenn dein Kind einen anderen Weg zum Ziel findet als erwartet, ist das ein Erfolg, kein Widerspruch, den man korrigieren muss.",
+          "studioConnectionNote": "Für mehr flexible Zahlenübungen lohnt sich ein Blick auf Mental Maths im Math Studio."
+        },
+        "fr-CH": {
+          "title": "Atteins la cible",
+          "materialsNeeded": [
+            "Quelques cartes numérotées ou un dé (ou dites simplement des nombres à voix haute)",
+            "Du papier pour noter les essais, si utile"
+          ],
+          "whatYourChildLearns": "À combiner des nombres avec souplesse en utilisant différentes opérations pour atteindre une cible – choisir l'opération, pas seulement en suivre une.",
+          "letsExplore": "Choisissez un nombre cible, comme 20. Annoncez chacun votre tour de petits nombres et combinez-les avec l'addition, la soustraction ou la multiplication pour essayer d'atteindre exactement la cible.",
+          "questionsToAsk": [
+            "Quelle opération t'a rapproché le plus ?",
+            "Y a-t-il plus d'une façon d'atteindre la cible ?",
+            "Que tenterais-tu ensuite si cette combinaison ne fonctionnait pas ?"
+          ],
+          "commonMisconceptions": "Les enfants se tournent souvent d'abord vers l'addition même quand la soustraction ou la multiplication les mènerait plus vite au but, simplement parce que c'est l'opération la plus familière. Demander « que pourrais-tu essayer d'autre » les pousse à considérer d'autres options sans exclure l'addition.",
+          "tryTomorrow": "Choisissez ensemble un nouveau nombre cible et voyez combien de façons différentes vous trouvez tous les deux pour l'atteindre.",
+          "captainMathPrompt": "Peux-tu utiliser trois petits nombres et n'importe quelles opérations pour faire exactement vingt ?",
+          "alliePrompt": "Il y a souvent plus d'une bonne combinaison ici – si ton enfant trouve un chemin différent vers la cible que celui que tu attendais, c'est une réussite, pas une incohérence à corriger.",
+          "studioConnectionNote": "Pour plus d'exercices de calcul flexibles, jette un œil à Mental Maths dans Math Studio."
+        },
+        "it-CH": {
+          "title": "Colpisci il bersaglio",
+          "materialsNeeded": [
+            "Alcune carte numerate o un dado (o semplicemente dite numeri ad alta voce)",
+            "Carta per annotare i tentativi, se utile"
+          ],
+          "whatYourChildLearns": "A combinare numeri in modo flessibile usando operazioni diverse per raggiungere un bersaglio – scegliere l'operazione, non solo seguirne una.",
+          "letsExplore": "Scegliete un numero bersaglio, ad esempio 20. A turno dite numeri piccoli e combinateli con addizione, sottrazione o moltiplicazione per provare a raggiungere esattamente il bersaglio.",
+          "questionsToAsk": [
+            "Quale operazione ti ha avvicinato di più?",
+            "C'è più di un modo per raggiungere il bersaglio?",
+            "Cosa proveresti dopo se quella combinazione non avesse funzionato?"
+          ],
+          "commonMisconceptions": "I bambini spesso ricorrono prima all'addizione anche quando la sottrazione o la moltiplicazione li porterebbero più velocemente al risultato, semplicemente perché è l'operazione più familiare. Chiedere «cos'altro potresti provare» li spinge a considerare altre opzioni senza escludere l'addizione.",
+          "tryTomorrow": "Scegliete insieme un nuovo numero bersaglio e vedete in quanti modi diversi riuscite entrambi a raggiungerlo.",
+          "captainMathPrompt": "Riesci a usare tre numeri piccoli e qualsiasi operazione per ottenere esattamente venti?",
+          "alliePrompt": "Qui spesso c'è più di una combinazione corretta – se tuo figlio trova un percorso diverso verso il bersaglio rispetto a quello che ti aspettavi, è un successo, non un'incoerenza da correggere.",
+          "studioConnectionNote": "Per altri esercizi di calcolo flessibili, dai un'occhiata a Mental Maths in Math Studio."
+        }
+      }
+    },
+    {
+      "id": "budget-challenge",
+      "category": "percentages",
+      "minAgeYears": 8,
+      "maxAgeYears": 11,
+      "minMinutes": 5,
+      "maxMinutes": 10,
+      "contentVersion": 1,
+      "locales": {
+        "en": {
+          "title": "The Pocket Money Challenge",
+          "materialsNeeded": [
+            "A small amount of real or play money (or just paper and pencil)",
+            "A short wish list of 3-4 things your child would like to buy, with prices"
+          ],
+          "whatYourChildLearns": "How to work out percentages and fractions of an amount when deciding what they can afford.",
+          "letsExplore": "Give your child a pretend budget (say £10) and the wish list. Ask them to figure out what they can buy without going over budget, and how much would be left over.",
+          "questionsToAsk": [
+            "Which combination gets you closest to spending it all?",
+            "If everything was 20% cheaper, what could you buy then?",
+            "How much more would you need to buy everything on the list?"
+          ],
+          "commonMisconceptions": "Children often add prices correctly but forget to check the running total against the budget as they go, only noticing they've overspent right at the end.",
+          "tryTomorrow": "Next time you're shopping together, ask your child to estimate the total before you reach the till.",
+          "captainMathPrompt": "Can you spend exactly your budget with no money left over?",
+          "alliePrompt": "There's no single right answer here — the goal is comparing options, not finding one correct combination."
+        },
+        "en-GB": {
+          "title": "The Pocket Money Challenge",
+          "materialsNeeded": [
+            "A small amount of real or play money (or just paper and pencil)",
+            "A short wish list of 3-4 things your child would like to buy, with prices"
+          ],
+          "whatYourChildLearns": "How to work out percentages and fractions of an amount when deciding what they can afford.",
+          "letsExplore": "Give your child a pretend budget (say £10) and the wish list. Ask them to figure out what they can buy without going over budget, and how much would be left over.",
+          "questionsToAsk": [
+            "Which combination gets you closest to spending it all?",
+            "If everything was 20% cheaper, what could you buy then?",
+            "How much more would you need to buy everything on the list?"
+          ],
+          "commonMisconceptions": "Children often add prices correctly but forget to check the running total against the budget as they go, only noticing they've overspent right at the end.",
+          "tryTomorrow": "Next time you're shopping together, ask your child to estimate the total before you reach the till.",
+          "captainMathPrompt": "Can you spend exactly your budget with no money left over?",
+          "alliePrompt": "There's no single right answer here — the goal is comparing options, not finding one correct combination."
+        },
+        "de-CH": {
+          "title": "Die Taschengeld-Challenge",
+          "materialsNeeded": [
+            "Etwas echtes oder gespieltes Geld (oder einfach Papier und Bleistift)",
+            "Eine kurze Wunschliste mit 3-4 Dingen, die dein Kind kaufen möchte, mit Preisen"
+          ],
+          "whatYourChildLearns": "Wie man Prozentsätze und Bruchteile eines Betrags berechnet, um zu entscheiden, was man sich leisten kann.",
+          "letsExplore": "Gib deinem Kind ein fiktives Budget (z. B. 10 Franken) und die Wunschliste. Es soll herausfinden, was es kaufen kann, ohne das Budget zu überschreiten, und wie viel übrig bliebe.",
+          "questionsToAsk": [
+            "Welche Kombination kommt dem vollen Budget am nächsten?",
+            "Was könntest du kaufen, wenn alles 20% günstiger wäre?",
+            "Wie viel mehr bräuchtest du, um alles auf der Liste zu kaufen?"
+          ],
+          "commonMisconceptions": "Kinder addieren Preise oft korrekt, vergessen aber, die Zwischensumme laufend mit dem Budget zu vergleichen, und merken erst ganz am Schluss, dass sie zu viel ausgegeben haben.",
+          "tryTomorrow": "Bitte dein Kind beim nächsten gemeinsamen Einkauf, die Gesamtsumme zu schätzen, bevor ihr an der Kasse seid.",
+          "captainMathPrompt": "Kannst du dein Budget genau ausgeben, ohne dass Geld übrig bleibt?",
+          "alliePrompt": "Es gibt hier keine einzig richtige Antwort – es geht darum, Optionen zu vergleichen, nicht eine korrekte Kombination zu finden."
+        },
+        "fr-CH": {
+          "title": "Le défi de l'argent de poche",
+          "materialsNeeded": [
+            "Un peu d'argent réel ou fictif (ou simplement du papier et un crayon)",
+            "Une courte liste de souhaits de 3-4 choses que ton enfant aimerait acheter, avec les prix"
+          ],
+          "whatYourChildLearns": "Comment calculer des pourcentages et des fractions d'un montant pour décider de ce qu'on peut se permettre.",
+          "letsExplore": "Donne à ton enfant un budget fictif (par exemple 10 francs) et la liste de souhaits. Il doit trouver ce qu'il peut acheter sans dépasser le budget, et combien il resterait.",
+          "questionsToAsk": [
+            "Quelle combinaison se rapproche le plus du budget complet ?",
+            "Que pourrais-tu acheter si tout coûtait 20% de moins ?",
+            "Combien te faudrait-il de plus pour tout acheter sur la liste ?"
+          ],
+          "commonMisconceptions": "Les enfants additionnent souvent les prix correctement, mais oublient de vérifier le total au fur et à mesure par rapport au budget, et ne remarquent qu'à la fin qu'ils ont trop dépensé.",
+          "tryTomorrow": "La prochaine fois que vous faites des courses ensemble, demande à ton enfant d'estimer le total avant d'arriver à la caisse.",
+          "captainMathPrompt": "Peux-tu dépenser exactement ton budget sans qu'il ne reste rien ?",
+          "alliePrompt": "Il n'y a pas une seule bonne réponse ici — l'objectif est de comparer des options, pas de trouver une combinaison correcte unique."
+        },
+        "it-CH": {
+          "title": "La sfida della paghetta",
+          "materialsNeeded": [
+            "Un po' di denaro reale o finto (o semplicemente carta e matita)",
+            "Una breve lista dei desideri con 3-4 cose che tuo figlio vorrebbe comprare, con i prezzi"
+          ],
+          "whatYourChildLearns": "Come calcolare percentuali e frazioni di un importo per decidere cosa ci si può permettere.",
+          "letsExplore": "Dai a tuo figlio un budget immaginario (ad esempio 10 franchi) e la lista dei desideri. Deve capire cosa può comprare senza superare il budget e quanto rimarrebbe.",
+          "questionsToAsk": [
+            "Quale combinazione si avvicina di più a spendere tutto il budget?",
+            "Cosa potresti comprare se tutto costasse il 20% in meno?",
+            "Quanto ti servirebbe in più per comprare tutto quello in lista?"
+          ],
+          "commonMisconceptions": "I bambini spesso sommano i prezzi correttamente ma dimenticano di controllare il totale parziale rispetto al budget man mano, accorgendosi solo alla fine di aver speso troppo.",
+          "tryTomorrow": "La prossima volta che fate la spesa insieme, chiedi a tuo figlio di stimare il totale prima di arrivare alla cassa.",
+          "captainMathPrompt": "Riesci a spendere esattamente il tuo budget senza avanzare nulla?",
+          "alliePrompt": "Qui non c'è un'unica risposta corretta — l'obiettivo è confrontare le opzioni, non trovare un'unica combinazione giusta."
+        }
+      }
+    },
+    {
+      "id": "travel-maths",
+      "category": "decimals",
+      "minAgeYears": 8,
+      "maxAgeYears": 12,
+      "minMinutes": 5,
+      "maxMinutes": 10,
+      "contentVersion": 1,
+      "studioConnectionRouteSuffix": "discovery/aviation-speed-distance-time",
+      "locales": {
+        "en": {
+          "title": "How Long Will It Take?",
+          "materialsNeeded": [
+            "A map, journey planner app, or a real trip you're planning (car, bus, walk, or bike)",
+            "A pencil and paper"
+          ],
+          "whatYourChildLearns": "How speed, distance and time connect — and how to work with decimal numbers when they don't divide evenly.",
+          "letsExplore": "Pick a real or imaginary journey. Look up (or estimate) the distance and the speed you'd travel at, then work out together roughly how long it should take.",
+          "questionsToAsk": [
+            "What happens to the time if we went twice as fast?",
+            "Why might the actual journey take longer than your answer?",
+            "Could you work it out a different way and check you get the same answer?"
+          ],
+          "commonMisconceptions": "Children often treat 1.5 hours as \"1 hour 5 minutes\" rather than \"1 hour 30 minutes\" — decimal hours don't convert to minutes the same way decimal money does.",
+          "tryTomorrow": "On your next car or bus journey, ask your child to estimate the arrival time before you set off.",
+          "captainMathPrompt": "If we drove twice as fast, would we get there in half the time? Why or why not?",
+          "alliePrompt": "If the decimal-to-minutes conversion trips them up, that's completely normal at this age — it's one of the trickier ideas in this topic.",
+          "studioConnectionNote": "For more on speed, distance and time, explore \"Wind, Speed and Time\" in Discovery Library."
+        },
+        "en-GB": {
+          "title": "How Long Will It Take?",
+          "materialsNeeded": [
+            "A map, journey planner app, or a real trip you're planning (car, bus, walk, or bike)",
+            "A pencil and paper"
+          ],
+          "whatYourChildLearns": "How speed, distance and time connect — and how to work with decimal numbers when they don't divide evenly.",
+          "letsExplore": "Pick a real or imaginary journey. Look up (or estimate) the distance and the speed you'd travel at, then work out together roughly how long it should take.",
+          "questionsToAsk": [
+            "What happens to the time if we went twice as fast?",
+            "Why might the actual journey take longer than your answer?",
+            "Could you work it out a different way and check you get the same answer?"
+          ],
+          "commonMisconceptions": "Children often treat 1.5 hours as \"1 hour 5 minutes\" rather than \"1 hour 30 minutes\" — decimal hours don't convert to minutes the same way decimal money does.",
+          "tryTomorrow": "On your next car or bus journey, ask your child to estimate the arrival time before you set off.",
+          "captainMathPrompt": "If we drove twice as fast, would we get there in half the time? Why or why not?",
+          "alliePrompt": "If the decimal-to-minutes conversion trips them up, that's completely normal at this age — it's one of the trickier ideas in this topic.",
+          "studioConnectionNote": "For more on speed, distance and time, explore \"Wind, Speed and Time\" in Discovery Library."
+        },
+        "de-CH": {
+          "title": "Wie lange dauert es?",
+          "materialsNeeded": [
+            "Eine Karte, eine Routenplaner-App oder eine echte geplante Reise (Auto, Bus, zu Fuss oder Velo)",
+            "Papier und Bleistift"
+          ],
+          "whatYourChildLearns": "Wie Geschwindigkeit, Distanz und Zeit zusammenhängen – und wie man mit Dezimalzahlen rechnet, wenn sie sich nicht glatt aufteilen lassen.",
+          "letsExplore": "Wählt eine echte oder erfundene Reise. Sucht (oder schätzt) die Distanz und die Geschwindigkeit und rechnet gemeinsam ungefähr aus, wie lange es dauern würde.",
+          "questionsToAsk": [
+            "Was passiert mit der Zeit, wenn wir doppelt so schnell fahren würden?",
+            "Warum könnte die echte Reise länger dauern als eure Antwort?",
+            "Könntest du es auf eine andere Art ausrechnen und prüfen, ob du dasselbe Ergebnis bekommst?"
+          ],
+          "commonMisconceptions": "Kinder verstehen 1.5 Stunden oft als «1 Stunde 5 Minuten» statt «1 Stunde 30 Minuten» – Dezimalstunden lassen sich nicht gleich in Minuten umrechnen wie Dezimalgeld.",
+          "tryTomorrow": "Bitte dein Kind bei der nächsten Auto- oder Busfahrt, die Ankunftszeit zu schätzen, bevor ihr losfahrt.",
+          "captainMathPrompt": "Wenn wir doppelt so schnell fahren würden, kämen wir dann in der halben Zeit an? Warum oder warum nicht?",
+          "alliePrompt": "Wenn die Umrechnung von Dezimalzahlen in Minuten Schwierigkeiten macht, ist das in diesem Alter völlig normal – es ist eine der kniffligeren Ideen in diesem Thema.",
+          "studioConnectionNote": "Für mehr zu Geschwindigkeit, Distanz und Zeit, schau dir «Wind, Speed and Time» in der Discovery Library an."
+        },
+        "fr-CH": {
+          "title": "Combien de temps cela prendra-t-il ?",
+          "materialsNeeded": [
+            "Une carte, une appli d'itinéraire, ou un vrai trajet que vous prévoyez (voiture, bus, à pied ou à vélo)",
+            "Un crayon et du papier"
+          ],
+          "whatYourChildLearns": "Comment la vitesse, la distance et le temps sont liés — et comment travailler avec des nombres décimaux quand ils ne se divisent pas exactement.",
+          "letsExplore": "Choisissez un trajet réel ou imaginaire. Cherchez (ou estimez) la distance et la vitesse, puis calculez ensemble environ combien de temps cela devrait prendre.",
+          "questionsToAsk": [
+            "Que se passe-t-il pour le temps si on allait deux fois plus vite ?",
+            "Pourquoi le trajet réel pourrait-il prendre plus de temps que votre réponse ?",
+            "Pourrais-tu le calculer d'une autre façon et vérifier que tu obtiens le même résultat ?"
+          ],
+          "commonMisconceptions": "Les enfants interprètent souvent 1,5 heure comme « 1 heure 5 minutes » plutôt que « 1 heure 30 minutes » — les heures décimales ne se convertissent pas en minutes de la même façon que l'argent décimal.",
+          "tryTomorrow": "Lors de votre prochain trajet en voiture ou en bus, demande à ton enfant d'estimer l'heure d'arrivée avant de partir.",
+          "captainMathPrompt": "Si on roulait deux fois plus vite, arriverait-on en deux fois moins de temps ? Pourquoi ou pourquoi pas ?",
+          "alliePrompt": "Si la conversion décimal-minutes pose problème, c'est tout à fait normal à cet âge — c'est l'une des idées les plus délicates de ce sujet.",
+          "studioConnectionNote": "Pour en savoir plus sur la vitesse, la distance et le temps, découvre « Wind, Speed and Time » dans la Discovery Library."
+        },
+        "it-CH": {
+          "title": "Quanto tempo ci vorrà?",
+          "materialsNeeded": [
+            "Una mappa, un'app per itinerari, o un vero viaggio che state pianificando (auto, bus, a piedi o in bici)",
+            "Carta e matita"
+          ],
+          "whatYourChildLearns": "Come sono collegati velocità, distanza e tempo — e come lavorare con i numeri decimali quando non si dividono esattamente.",
+          "letsExplore": "Scegliete un viaggio reale o immaginario. Cercate (o stimate) la distanza e la velocità, poi calcolate insieme all'incirca quanto tempo ci vorrebbe.",
+          "questionsToAsk": [
+            "Cosa succede al tempo se andassimo il doppio più veloci?",
+            "Perché il viaggio reale potrebbe richiedere più tempo della vostra risposta?",
+            "Potresti calcolarlo in un altro modo e verificare di ottenere lo stesso risultato?"
+          ],
+          "commonMisconceptions": "I bambini spesso interpretano 1,5 ore come «1 ora e 5 minuti» invece di «1 ora e 30 minuti» — le ore decimali non si convertono in minuti come il denaro decimale.",
+          "tryTomorrow": "Nel prossimo viaggio in auto o in bus, chiedi a tuo figlio di stimare l'orario di arrivo prima di partire.",
+          "captainMathPrompt": "Se guidassimo il doppio più veloci, arriveremmo in metà tempo? Perché sì o perché no?",
+          "alliePrompt": "Se la conversione da decimali a minuti crea difficoltà, è del tutto normale a questa età — è una delle idee più insidiose di questo argomento.",
+          "studioConnectionNote": "Per saperne di più su velocità, distanza e tempo, esplora «Wind, Speed and Time» nella Discovery Library."
+        }
+      }
+    },
+    {
+      "id": "garden-geometry",
+      "category": "geometry",
+      "minAgeYears": 6,
+      "maxAgeYears": 10,
+      "minMinutes": 5,
+      "maxMinutes": 10,
+      "contentVersion": 1,
+      "studioConnectionRouteSuffix": "visual-maths",
+      "locales": {
+        "en": {
+          "title": "Garden Geometry",
+          "materialsNeeded": [
+            "Any outdoor space — a garden, yard, balcony, or local park",
+            "A tape measure, piece of string, or just footsteps for measuring"
+          ],
+          "whatYourChildLearns": "How to spot 2D and 3D shapes in the real world, and how to describe and compare their sizes.",
+          "letsExplore": "Go outside together and hunt for shapes — a rectangular lawn, a circular flowerbed, a triangular roofline. For one shape, measure its sides and work out its perimeter together.",
+          "questionsToAsk": [
+            "What's the same and what's different about these two shapes?",
+            "How would the perimeter change if this side was twice as long?",
+            "Can you find a shape with no straight sides at all?"
+          ],
+          "commonMisconceptions": "Children often confuse perimeter (the distance around) with area (the space inside) — measuring around the edge but describing it as \"how big\" the shape is.",
+          "tryTomorrow": "Ask your child to spot one new shape on the way to school or on a walk, and describe it using proper shape names.",
+          "captainMathPrompt": "Can you find three different shapes with exactly four sides?",
+          "alliePrompt": "Naming shapes correctly matters less right now than noticing their properties — sides, corners, curves.",
+          "studioConnectionNote": "For more shape practice indoors, try Visual Maths in Math Studio."
+        },
+        "en-GB": {
+          "title": "Garden Geometry",
+          "materialsNeeded": [
+            "Any outdoor space — a garden, yard, balcony, or local park",
+            "A tape measure, piece of string, or just footsteps for measuring"
+          ],
+          "whatYourChildLearns": "How to spot 2D and 3D shapes in the real world, and how to describe and compare their sizes.",
+          "letsExplore": "Go outside together and hunt for shapes — a rectangular lawn, a circular flowerbed, a triangular roofline. For one shape, measure its sides and work out its perimeter together.",
+          "questionsToAsk": [
+            "What's the same and what's different about these two shapes?",
+            "How would the perimeter change if this side was twice as long?",
+            "Can you find a shape with no straight sides at all?"
+          ],
+          "commonMisconceptions": "Children often confuse perimeter (the distance around) with area (the space inside) — measuring around the edge but describing it as \"how big\" the shape is.",
+          "tryTomorrow": "Ask your child to spot one new shape on the way to school or on a walk, and describe it using proper shape names.",
+          "captainMathPrompt": "Can you find three different shapes with exactly four sides?",
+          "alliePrompt": "Naming shapes correctly matters less right now than noticing their properties — sides, corners, curves.",
+          "studioConnectionNote": "For more shape practice indoors, try Visual Maths in Math Studio."
+        },
+        "de-CH": {
+          "title": "Geometrie im Garten",
+          "materialsNeeded": [
+            "Ein beliebiger Aussenbereich – Garten, Hof, Balkon oder ein Park in der Nähe",
+            "Ein Massband, eine Schnur, oder einfach Schritte zum Messen"
+          ],
+          "whatYourChildLearns": "Wie man 2D- und 3D-Formen in der realen Welt erkennt und ihre Grössen beschreibt und vergleicht.",
+          "letsExplore": "Geht gemeinsam nach draussen und sucht nach Formen – ein rechteckiger Rasen, ein rundes Blumenbeet, ein dreieckiger Dachgiebel. Messt bei einer Form die Seiten und berechnet gemeinsam den Umfang.",
+          "questionsToAsk": [
+            "Was ist bei diesen beiden Formen gleich, was ist unterschiedlich?",
+            "Wie würde sich der Umfang ändern, wenn diese Seite doppelt so lang wäre?",
+            "Findest du eine Form ganz ohne gerade Seiten?"
+          ],
+          "commonMisconceptions": "Kinder verwechseln oft Umfang (die Strecke rundherum) mit Fläche (der Platz innen) – sie messen entlang des Randes, beschreiben es aber als «wie gross» die Form ist.",
+          "tryTomorrow": "Bitte dein Kind, auf dem Schulweg oder einem Spaziergang eine neue Form zu entdecken und sie mit dem richtigen Namen zu beschreiben.",
+          "captainMathPrompt": "Findest du drei verschiedene Formen mit genau vier Seiten?",
+          "alliePrompt": "Formen richtig zu benennen ist jetzt weniger wichtig, als ihre Eigenschaften zu bemerken – Seiten, Ecken, Kurven.",
+          "studioConnectionNote": "Für weitere Formenübungen drinnen, probiere Visual Maths im Math Studio."
+        },
+        "fr-CH": {
+          "title": "Géométrie au jardin",
+          "materialsNeeded": [
+            "N'importe quel espace extérieur – jardin, cour, balcon ou parc à proximité",
+            "Un mètre ruban, une ficelle, ou simplement des pas pour mesurer"
+          ],
+          "whatYourChildLearns": "Comment repérer des formes 2D et 3D dans le monde réel, et comment décrire et comparer leurs tailles.",
+          "letsExplore": "Sortez ensemble et cherchez des formes — une pelouse rectangulaire, un parterre de fleurs circulaire, un toit triangulaire. Pour une forme, mesurez ses côtés et calculez son périmètre ensemble.",
+          "questionsToAsk": [
+            "Qu'est-ce qui est pareil et qu'est-ce qui est différent entre ces deux formes ?",
+            "Comment le périmètre changerait-il si ce côté était deux fois plus long ?",
+            "Peux-tu trouver une forme sans aucun côté droit ?"
+          ],
+          "commonMisconceptions": "Les enfants confondent souvent le périmètre (la distance autour) avec l'aire (l'espace à l'intérieur) — ils mesurent le long du bord mais le décrivent comme « la taille » de la forme.",
+          "tryTomorrow": "Demande à ton enfant de repérer une nouvelle forme sur le chemin de l'école ou lors d'une promenade, et de la décrire avec le bon nom.",
+          "captainMathPrompt": "Peux-tu trouver trois formes différentes avec exactement quatre côtés ?",
+          "alliePrompt": "Nommer correctement les formes compte moins pour l'instant que remarquer leurs propriétés — côtés, coins, courbes.",
+          "studioConnectionNote": "Pour plus d'exercices sur les formes à l'intérieur, essaie Visual Maths dans Math Studio."
+        },
+        "it-CH": {
+          "title": "Geometria in giardino",
+          "materialsNeeded": [
+            "Qualsiasi spazio all'aperto – giardino, cortile, balcone o un parco vicino",
+            "Un metro a nastro, uno spago, oppure semplicemente i passi per misurare"
+          ],
+          "whatYourChildLearns": "Come individuare forme 2D e 3D nel mondo reale, e come descrivere e confrontare le loro dimensioni.",
+          "letsExplore": "Uscite insieme e cercate forme – un prato rettangolare, un'aiuola circolare, un tetto triangolare. Per una forma, misurate insieme i lati e calcolate il perimetro.",
+          "questionsToAsk": [
+            "Cosa è uguale e cosa è diverso tra queste due forme?",
+            "Come cambierebbe il perimetro se questo lato fosse doppio?",
+            "Riesci a trovare una forma senza alcun lato dritto?"
+          ],
+          "commonMisconceptions": "I bambini confondono spesso il perimetro (la distanza intorno) con l'area (lo spazio interno) – misurano lungo il bordo ma lo descrivono come \"quanto è grande\" la forma.",
+          "tryTomorrow": "Chiedi a tuo figlio di individuare una nuova forma andando a scuola o durante una passeggiata, e di descriverla con il nome giusto.",
+          "captainMathPrompt": "Riesci a trovare tre forme diverse con esattamente quattro lati?",
+          "alliePrompt": "Nominare correttamente le forme conta meno, in questo momento, rispetto a notarne le proprietà – lati, angoli, curve.",
+          "studioConnectionNote": "Per altri esercizi sulle forme al chiuso, prova Visual Maths in Math Studio."
+        }
+      }
+    },
+    {
+      "id": "mental-maths-together",
+      "category": "mentalMaths",
+      "minAgeYears": 7,
+      "maxAgeYears": 11,
+      "minMinutes": 5,
+      "maxMinutes": 10,
+      "contentVersion": 1,
+      "studioConnectionRouteSuffix": "mental-maths",
+      "locales": {
+        "en": {
+          "title": "Mental Maths Together",
+          "materialsNeeded": [
+            "Nothing at all — this works anywhere, even in the car or queueing"
+          ],
+          "whatYourChildLearns": "Quick mental strategies for adding, subtracting and multiplying without a pencil, paper, or calculator.",
+          "letsExplore": "Take turns giving each other quick sums to solve in your head — start easy and get a little harder each round. Talk out loud about how you worked each one out, not just the answer.",
+          "questionsToAsk": [
+            "What's a faster way to work that out than counting one by one?",
+            "Did you and I solve that the same way, or differently?",
+            "Which one was the trickiest, and why?"
+          ],
+          "commonMisconceptions": "Children sometimes think there's only one correct method — hearing an adult explain a different (equally valid) mental strategy can be surprising and genuinely useful.",
+          "tryTomorrow": "Turn a five-minute wait — a queue, a car journey, a walk — into a quick round of mental maths.",
+          "captainMathPrompt": "Can you beat your own best time solving five sums in a row?",
+          "alliePrompt": "Saying your own thinking out loud models a strategy for your child just as much as it does for you — you don't need to be fast, just clear.",
+          "studioConnectionNote": "For structured daily practice, try Mental Maths in Math Studio."
+        },
+        "en-GB": {
+          "title": "Mental Maths Together",
+          "materialsNeeded": [
+            "Nothing at all — this works anywhere, even in the car or queueing"
+          ],
+          "whatYourChildLearns": "Quick mental strategies for adding, subtracting and multiplying without a pencil, paper, or calculator.",
+          "letsExplore": "Take turns giving each other quick sums to solve in your head — start easy and get a little harder each round. Talk out loud about how you worked each one out, not just the answer.",
+          "questionsToAsk": [
+            "What's a faster way to work that out than counting one by one?",
+            "Did you and I solve that the same way, or differently?",
+            "Which one was the trickiest, and why?"
+          ],
+          "commonMisconceptions": "Children sometimes think there's only one correct method — hearing an adult explain a different (equally valid) mental strategy can be surprising and genuinely useful.",
+          "tryTomorrow": "Turn a five-minute wait — a queue, a car journey, a walk — into a quick round of mental maths.",
+          "captainMathPrompt": "Can you beat your own best time solving five sums in a row?",
+          "alliePrompt": "Saying your own thinking out loud models a strategy for your child just as much as it does for you — you don't need to be fast, just clear.",
+          "studioConnectionNote": "For structured daily practice, try Mental Maths in Math Studio."
+        },
+        "de-CH": {
+          "title": "Gemeinsam Kopfrechnen",
+          "materialsNeeded": [
+            "Gar nichts – das funktioniert überall, sogar im Auto oder beim Anstehen"
+          ],
+          "whatYourChildLearns": "Schnelle Kopfrechenstrategien für Addition, Subtraktion und Multiplikation, ganz ohne Stift, Papier oder Taschenrechner.",
+          "letsExplore": "Gebt euch abwechselnd kurze Rechenaufgaben zum Kopfrechnen – fangt einfach an und steigert die Schwierigkeit von Runde zu Runde. Sprecht laut darüber, wie ihr gerechnet habt, nicht nur über das Ergebnis.",
+          "questionsToAsk": [
+            "Gibt es einen schnelleren Weg, das zu berechnen, als eins nach dem anderen zu zählen?",
+            "Habt ihr das gleich gerechnet, oder unterschiedlich?",
+            "Welche Aufgabe war am kniffligsten, und warum?"
+          ],
+          "commonMisconceptions": "Kinder denken manchmal, es gebe nur eine richtige Methode – eine andere (ebenso gültige) Rechenstrategie von einem Erwachsenen zu hören, kann überraschend und wirklich hilfreich sein.",
+          "tryTomorrow": "Macht aus fünf Minuten Warten – in einer Schlange, im Auto, beim Spazieren – eine kurze Runde Kopfrechnen.",
+          "captainMathPrompt": "Schaffst du es, deine eigene Bestzeit für fünf Aufgaben hintereinander zu schlagen?",
+          "alliePrompt": "Dein eigenes Denken laut auszusprechen zeigt deinem Kind genauso eine Strategie, wie es dir hilft – du musst nicht schnell sein, nur klar.",
+          "studioConnectionNote": "Für strukturiertes tägliches Üben, probiere Mental Maths im Math Studio."
+        },
+        "fr-CH": {
+          "title": "Calcul mental en famille",
+          "materialsNeeded": [
+            "Rien du tout – ça fonctionne partout, même en voiture ou en faisant la queue"
+          ],
+          "whatYourChildLearns": "Des stratégies rapides de calcul mental pour additionner, soustraire et multiplier sans crayon, papier ni calculatrice.",
+          "letsExplore": "Donnez-vous à tour de rôle des petits calculs à résoudre de tête — commencez facile et augmentez légèrement la difficulté à chaque tour. Dites à voix haute comment vous avez calculé, pas seulement le résultat.",
+          "questionsToAsk": [
+            "Y a-t-il un moyen plus rapide de calculer ça que de compter un par un ?",
+            "Avez-vous calculé de la même façon, ou différemment ?",
+            "Lequel était le plus difficile, et pourquoi ?"
+          ],
+          "commonMisconceptions": "Les enfants pensent parfois qu'il n'y a qu'une seule méthode correcte — entendre un adulte expliquer une stratégie mentale différente (tout aussi valable) peut être surprenant et vraiment utile.",
+          "tryTomorrow": "Transforme cinq minutes d'attente — une file, un trajet en voiture, une promenade — en une petite session de calcul mental.",
+          "captainMathPrompt": "Peux-tu battre ton propre record en résolvant cinq calculs d'affilée ?",
+          "alliePrompt": "Exprimer ta propre réflexion à voix haute montre une stratégie à ton enfant tout autant que ça t'aide toi — pas besoin d'être rapide, juste clair.",
+          "studioConnectionNote": "Pour un entraînement quotidien structuré, essaie Mental Maths dans Math Studio."
+        },
+        "it-CH": {
+          "title": "Calcolo mentale insieme",
+          "materialsNeeded": [
+            "Niente di niente – funziona ovunque, anche in auto o in coda"
+          ],
+          "whatYourChildLearns": "Strategie rapide di calcolo mentale per addizioni, sottrazioni e moltiplicazioni, senza matita, carta o calcolatrice.",
+          "letsExplore": "A turno, datevi piccoli calcoli da risolvere a mente – iniziate facile e aumentate un po' la difficoltà a ogni turno. Parlate ad alta voce di come avete calcolato, non solo del risultato.",
+          "questionsToAsk": [
+            "C'è un modo più veloce di calcolarlo rispetto a contare uno per uno?",
+            "Avete calcolato allo stesso modo, o in modo diverso?",
+            "Qual era il calcolo più difficile, e perché?"
+          ],
+          "commonMisconceptions": "I bambini a volte pensano che esista un solo metodo corretto – sentire un adulto spiegare una strategia mentale diversa (altrettanto valida) può essere sorprendente e davvero utile.",
+          "tryTomorrow": "Trasforma cinque minuti di attesa – in coda, in auto, durante una passeggiata – in un breve giro di calcolo mentale.",
+          "captainMathPrompt": "Riesci a battere il tuo record risolvendo cinque calcoli di fila?",
+          "alliePrompt": "Dire ad alta voce il tuo ragionamento mostra una strategia a tuo figlio tanto quanto aiuta te – non serve essere veloci, solo chiari.",
+          "studioConnectionNote": "Per un allenamento quotidiano strutturato, prova Mental Maths in Math Studio."
+        }
+      }
+    },
+    {
+      "id": "weekend-number-trail",
+      "category": "algebra",
+      "minAgeYears": 8,
+      "maxAgeYears": 12,
+      "minMinutes": 5,
+      "maxMinutes": 10,
+      "contentVersion": 1,
+      "locales": {
+        "en": {
+          "title": "The Weekend Number Trail",
+          "materialsNeeded": [
+            "Anywhere you're walking or driving over the weekend — shops, house numbers, car number plates",
+            "A pencil and paper (optional)"
+          ],
+          "whatYourChildLearns": "How to spot a rule in a sequence of numbers and use it to predict what comes next — an early step toward algebraic thinking.",
+          "letsExplore": "As you're out and about, spot a sequence together — house numbers going up the street, prices on a shelf, anything with a pattern. Ask your child to work out the rule and predict the next one or two.",
+          "questionsToAsk": [
+            "What's the rule that gets you from one number to the next?",
+            "Does the rule stay the same the whole way along, or does it change?",
+            "Could you make up your own number trail for me to solve?"
+          ],
+          "commonMisconceptions": "Children often spot a rule that works for the first two or three numbers but breaks down later — checking the rule against every number in the sequence, not just the start, is the real skill here.",
+          "tryTomorrow": "Ask your child to invent a simple number sequence for you to guess the rule of — being the question-setter is often more revealing than being the solver.",
+          "captainMathPrompt": "I'm thinking of a rule: 2, 5, 8, 11... what comes next, and what's my rule?",
+          "alliePrompt": "If your child gets the next number right but can't explain the rule in words yet, that's completely normal — the words often come after the intuition."
+        },
+        "en-GB": {
+          "title": "The Weekend Number Trail",
+          "materialsNeeded": [
+            "Anywhere you're walking or driving over the weekend — shops, house numbers, car number plates",
+            "A pencil and paper (optional)"
+          ],
+          "whatYourChildLearns": "How to spot a rule in a sequence of numbers and use it to predict what comes next — an early step toward algebraic thinking.",
+          "letsExplore": "As you're out and about, spot a sequence together — house numbers going up the street, prices on a shelf, anything with a pattern. Ask your child to work out the rule and predict the next one or two.",
+          "questionsToAsk": [
+            "What's the rule that gets you from one number to the next?",
+            "Does the rule stay the same the whole way along, or does it change?",
+            "Could you make up your own number trail for me to solve?"
+          ],
+          "commonMisconceptions": "Children often spot a rule that works for the first two or three numbers but breaks down later — checking the rule against every number in the sequence, not just the start, is the real skill here.",
+          "tryTomorrow": "Ask your child to invent a simple number sequence for you to guess the rule of — being the question-setter is often more revealing than being the solver.",
+          "captainMathPrompt": "I'm thinking of a rule: 2, 5, 8, 11... what comes next, and what's my rule?",
+          "alliePrompt": "If your child gets the next number right but can't explain the rule in words yet, that's completely normal — the words often come after the intuition."
+        },
+        "de-CH": {
+          "title": "Die Wochenend-Zahlenspur",
+          "materialsNeeded": [
+            "Überall, wo ihr am Wochenende zu Fuss oder mit dem Auto unterwegs seid – Geschäfte, Hausnummern, Autokennzeichen",
+            "Papier und Bleistift (optional)"
+          ],
+          "whatYourChildLearns": "Wie man eine Regel in einer Zahlenfolge erkennt und damit vorhersagt, was als Nächstes kommt – ein erster Schritt zum algebraischen Denken.",
+          "letsExplore": "Entdeckt unterwegs gemeinsam eine Zahlenfolge – Hausnummern die Strasse hoch, Preise im Regal, alles mit einem Muster. Bitte dein Kind, die Regel herauszufinden und die nächste(n) Zahl(en) vorherzusagen.",
+          "questionsToAsk": [
+            "Welche Regel bringt dich von einer Zahl zur nächsten?",
+            "Bleibt die Regel die ganze Strecke gleich, oder ändert sie sich?",
+            "Könntest du dir selbst eine Zahlenspur ausdenken, die ich lösen soll?"
+          ],
+          "commonMisconceptions": "Kinder erkennen oft eine Regel, die für die ersten zwei oder drei Zahlen passt, aber später nicht mehr stimmt – die Regel bei jeder Zahl der Folge zu prüfen, nicht nur am Anfang, ist hier die eigentliche Fähigkeit.",
+          "tryTomorrow": "Bitte dein Kind, sich eine einfache Zahlenfolge auszudenken, deren Regel du erraten sollst – selbst die Aufgabe zu stellen, verrät oft mehr als sie zu lösen.",
+          "captainMathPrompt": "Ich denke an eine Regel: 2, 5, 8, 11 … was kommt als Nächstes, und wie lautet meine Regel?",
+          "alliePrompt": "Wenn dein Kind die nächste Zahl richtig errät, die Regel aber noch nicht in Worten erklären kann, ist das völlig normal – die Worte kommen oft erst nach dem Gefühl dafür."
+        },
+        "fr-CH": {
+          "title": "La piste des nombres du week-end",
+          "materialsNeeded": [
+            "N'importe où en marchant ou en voiture pendant le week-end — magasins, numéros de maisons, plaques d'immatriculation",
+            "Un crayon et du papier (facultatif)"
+          ],
+          "whatYourChildLearns": "Comment repérer une règle dans une suite de nombres et l'utiliser pour prédire la suite — un premier pas vers la pensée algébrique.",
+          "letsExplore": "Pendant vos sorties, repérez ensemble une suite — les numéros des maisons le long de la rue, les prix sur une étagère, tout ce qui suit un motif. Demande à ton enfant de trouver la règle et de prédire le ou les nombres suivants.",
+          "questionsToAsk": [
+            "Quelle est la règle qui te fait passer d'un nombre au suivant ?",
+            "Est-ce que la règle reste la même tout le long, ou change-t-elle ?",
+            "Pourrais-tu inventer ta propre piste de nombres pour que je la résolve ?"
+          ],
+          "commonMisconceptions": "Les enfants repèrent souvent une règle qui fonctionne pour les deux ou trois premiers nombres mais qui ne tient plus ensuite — vérifier la règle sur chaque nombre de la suite, pas seulement au début, est la vraie compétence ici.",
+          "tryTomorrow": "Demande à ton enfant d'inventer une suite de nombres simple dont tu dois deviner la règle — être celui qui pose la question est souvent plus révélateur que d'être celui qui résout.",
+          "captainMathPrompt": "Je pense à une règle : 2, 5, 8, 11... qu'est-ce qui vient ensuite, et quelle est ma règle ?",
+          "alliePrompt": "Si ton enfant trouve le bon nombre suivant mais ne peut pas encore expliquer la règle avec des mots, c'est tout à fait normal — les mots viennent souvent après l'intuition."
+        },
+        "it-CH": {
+          "title": "La pista dei numeri del weekend",
+          "materialsNeeded": [
+            "Ovunque camminiate o guidiate durante il weekend — negozi, numeri civici, targhe delle auto",
+            "Carta e matita (facoltativo)"
+          ],
+          "whatYourChildLearns": "Come individuare una regola in una sequenza di numeri e usarla per prevedere cosa viene dopo — un primo passo verso il pensiero algebrico.",
+          "letsExplore": "Mentre siete in giro, individuate insieme una sequenza — numeri civici lungo la strada, prezzi su uno scaffale, qualsiasi cosa con un motivo. Chiedi a tuo figlio di trovare la regola e prevedere il numero o i due successivi.",
+          "questionsToAsk": [
+            "Qual è la regola che ti porta da un numero al successivo?",
+            "La regola rimane la stessa per tutto il percorso, o cambia?",
+            "Riusciresti a inventare la tua pista di numeri perché io la risolva?"
+          ],
+          "commonMisconceptions": "I bambini spesso individuano una regola che funziona per i primi due o tre numeri ma che poi non torna più — controllare la regola su ogni numero della sequenza, non solo all'inizio, è qui la vera abilità.",
+          "tryTomorrow": "Chiedi a tuo figlio di inventare una semplice sequenza di numeri di cui tu debba indovinare la regola — porre la domanda è spesso più rivelatore che risolverla.",
+          "captainMathPrompt": "Sto pensando a una regola: 2, 5, 8, 11... cosa viene dopo, e qual è la mia regola?",
+          "alliePrompt": "Se tuo figlio indovina il numero successivo ma non sa ancora spiegare la regola a parole, è del tutto normale — le parole spesso arrivano dopo l'intuizione."
+        }
+      }
+    }
+  ]
+}

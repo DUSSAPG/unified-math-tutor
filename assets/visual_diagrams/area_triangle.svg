@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" role="img" aria-label="Triangle with base b and perpendicular height h labelled">
+  <rect width="640" height="260" rx="28" fill="#0B1120"/>
+  <g font-family="DMSans, Arial, sans-serif" text-anchor="middle">
+    <polygon points="180,210 460,210 350,55" fill="#5B8EFF" fill-opacity="0.18" stroke="#5B8EFF" stroke-width="3"/>
+    <line x1="350" y1="55" x2="350" y2="210" stroke="#FFBD00" stroke-width="2.5" stroke-dasharray="6 6"/>
+    <rect x="340" y="200" width="10" height="10" fill="none" stroke="#FFBD00" stroke-width="2"/>
+    <line x1="180" y1="228" x2="460" y2="228" stroke="#34C759" stroke-width="2.5"/>
+    <line x1="180" y1="222" x2="180" y2="234" stroke="#34C759" stroke-width="2.5"/>
+    <line x1="460" y1="222" x2="460" y2="234" stroke="#34C759" stroke-width="2.5"/>
+    <text x="320" y="252" fill="#34C759" font-size="18" font-weight="700">b (base)</text>
+    <text x="392" y="135" fill="#FFBD00" font-size="18" font-weight="700">h</text>
+    <text x="320" y="30" fill="#FFFFFF" font-size="20" font-weight="700">A = ½ × b × h</text>
+  </g>
+</svg>

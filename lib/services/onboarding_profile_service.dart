@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'local_preferences_service.dart';
+
 /// Persists the selections made during onboarding (role, learning goal,
 /// parent email, preferred display name) so they can inform future
 /// recommendations and the Home greeting.
@@ -15,6 +17,9 @@ class OnboardingProfileService {
   static const _preferredDisplayNameKey = 'identity_preferred_display_name';
   static const _relationshipLabelKey = 'identity_relationship_label';
   static const _hasCompletedOnboardingKey = 'onboarding_has_completed';
+  static const _familyActivityLengthKey = 'onboarding_family_activity_length';
+  static const _familyNotificationsOptInKey =
+      'onboarding_family_notifications_opt_in';
 
   late SharedPreferences _prefs;
   final ValueNotifier<String?> userType = ValueNotifier(null);
@@ -37,6 +42,15 @@ class OnboardingProfileService {
   /// One of 'parent', 'guardian', 'grandparent', 'tutor', 'other'.
   final ValueNotifier<String?> relationshipLabel = ValueNotifier(null);
 
+  /// One of 'short' (~10 min), 'medium' (~20 min), 'long' (~30 min) — set
+  /// during the dedicated Family/Tutor onboarding path.
+  final ValueNotifier<String?> familyActivityLengthPreference =
+      ValueNotifier(null);
+
+  /// Optional, family-onboarding-only preference. Stored only — this app
+  /// has no push-notification delivery to act on it.
+  final ValueNotifier<bool?> familyNotificationsOptIn = ValueNotifier(null);
+
   Future<void> init() async {
     _prefs = await SharedPreferences.getInstance();
     userType.value = _prefs.getString(_userTypeKey);
@@ -44,6 +58,10 @@ class OnboardingProfileService {
     childName.value = _prefs.getString(_childNameKey);
     preferredDisplayName.value = _prefs.getString(_preferredDisplayNameKey);
     relationshipLabel.value = _prefs.getString(_relationshipLabelKey);
+    familyActivityLengthPreference.value =
+        _prefs.getString(_familyActivityLengthKey);
+    familyNotificationsOptIn.value =
+        _prefs.getBool(_familyNotificationsOptInKey);
     hasCompletedOnboarding.value =
         _prefs.getBool(_hasCompletedOnboardingKey) ?? false;
   }
@@ -55,6 +73,11 @@ class OnboardingProfileService {
 
   /// 'student', 'parent' or 'teacher'.
   Future<void> setUserType(String value) async {
+    // A role change ends any active Family Studio onboarding grace window
+    // (see LocalPreferencesService.grantFamilyStudioGraceAccess) — it was
+    // only ever meant to cover the single onboarding session that granted
+    // it, not carry over to a different role.
+    LocalPreferencesService.instance.clearFamilyStudioGraceAccess();
     userType.value = value;
     await _prefs.setString(_userTypeKey, value);
   }
@@ -94,6 +117,16 @@ class OnboardingProfileService {
   Future<void> setRelationshipLabel(String value) async {
     relationshipLabel.value = value;
     await _prefs.setString(_relationshipLabelKey, value);
+  }
+
+  Future<void> setFamilyActivityLengthPreference(String value) async {
+    familyActivityLengthPreference.value = value;
+    await _prefs.setString(_familyActivityLengthKey, value);
+  }
+
+  Future<void> setFamilyNotificationsOptIn(bool value) async {
+    familyNotificationsOptIn.value = value;
+    await _prefs.setBool(_familyNotificationsOptInKey, value);
   }
 
   String? get parentEmail => _prefs.getString(_parentEmailKey);

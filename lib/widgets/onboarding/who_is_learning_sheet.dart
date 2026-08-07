@@ -48,8 +48,7 @@ class _WhoIsLearningSheet extends StatelessWidget {
             child: Text(l10n.commonCancel),
           ),
           FilledButton(
-            onPressed: () =>
-                Navigator.of(dialogContext).pop(controller.text),
+            onPressed: () => Navigator.of(dialogContext).pop(controller.text),
             child: Text(l10n.onboardingContinue),
           ),
         ],
@@ -84,7 +83,8 @@ class _WhoIsLearningSheet extends StatelessWidget {
               valueListenable: LearnerProfilesService.instance.profiles,
               builder: (context, learners, _) {
                 return ValueListenableBuilder<String?>(
-                  valueListenable: LearnerProfilesService.instance.activeLearnerId,
+                  valueListenable:
+                      LearnerProfilesService.instance.activeLearnerId,
                   builder: (context, activeId, _) {
                     return Column(
                       children: [
@@ -155,7 +155,8 @@ class _LearnerRow extends StatelessWidget {
           children: [
             Icon(
               selected ? Icons.radio_button_checked : Icons.radio_button_off,
-              color: selected ? const Color(0xFF3D7EFF) : const Color(0xFF4A6080),
+              color:
+                  selected ? const Color(0xFF3D7EFF) : const Color(0xFF4A6080),
             ),
             const SizedBox(width: 12),
             Text(

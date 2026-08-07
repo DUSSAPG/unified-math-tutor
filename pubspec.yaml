@@ -54,6 +54,9 @@ flutter:
     - assets/packs/it-CH/
     - assets/config/
     - assets/discovery_illustrations/
+    - assets/ldtk/
+    - assets/manim_static/
+    - assets/visual_diagrams/
     - assets/config/mental_math_tricks.json
     - assets/config/captain_math_narration_manifest.json
     - assets/config/daily_brain_teasers.json

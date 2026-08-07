@@ -8,6 +8,7 @@ import '../../models/discovery_card.dart';
 import '../../services/discovery_card_catalog_service.dart';
 import '../../shared/responsive/app_breakpoints.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../widgets/discovery/discovery_illustration.dart';
 import '../../widgets/shared/route_link_card.dart';
 import '../../widgets/shared/section_label.dart';
@@ -42,19 +43,20 @@ class _DiscoveryLibraryScreenState extends State<DiscoveryLibraryScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0B1120),
+        backgroundColor: colors.background,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: colors.primaryText),
           onPressed: () => popOrGo(context, '/math-studio'),
         ),
         title: Text(
           l10n.mathStudioDiscoveryTitle,
           style:
-              const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+              TextStyle(color: colors.primaryText, fontWeight: FontWeight.w700),
         ),
       ),
       body: SafeArea(
@@ -62,9 +64,9 @@ class _DiscoveryLibraryScreenState extends State<DiscoveryLibraryScreen> {
           future: _cardsFuture,
           builder: (context, snapshot) {
             if (snapshot.hasError) {
-              return const Center(
+              return Center(
                 child: Icon(Icons.error_outline,
-                    color: Color(0xFF8A9DC0), size: 32),
+                    color: colors.secondaryText, size: 32),
               );
             }
             final cards = snapshot.data;
@@ -74,6 +76,26 @@ class _DiscoveryLibraryScreenState extends State<DiscoveryLibraryScreen> {
             final visible = _filter == null
                 ? cards
                 : cards.where((card) => card.category == _filter).toList();
+            final categoryCounts = <DiscoveryCategory, int>{};
+            for (final card in cards) {
+              categoryCounts.update(
+                card.category,
+                (count) => count + 1,
+                ifAbsent: () => 1,
+              );
+            }
+            // Every category with at least one real, published card is
+            // selectable — a category is never hidden just because it's
+            // thin (2 cards is a valid, browsable category, not a broken
+            // one). Categories with zero cards are the only ones excluded
+            // from the chip row entirely, per the "never present an
+            // unsupported selection" rule: rather than showing a chip that
+            // leads straight to an empty-state message, we simply don't
+            // offer it yet. See docs/DISCOVERY_RECALL_COVERAGE_AUDIT.md.
+            final categoriesWithContent = [
+              for (final category in DiscoveryCategory.values)
+                if ((categoryCounts[category] ?? 0) > 0) category,
+            ];
             // A little taller than the tile's nominal content height, and
             // scaled (bounded, not unlimited) with the active text scale
             // factor, so locale text-length/font-metric variance and large
@@ -107,7 +129,7 @@ class _DiscoveryLibraryScreenState extends State<DiscoveryLibraryScreen> {
                               selected: _filter == null,
                               onTap: () => setState(() => _filter = null),
                             ),
-                            for (final category in DiscoveryCategory.values)
+                            for (final category in categoriesWithContent)
                               Padding(
                                 padding: const EdgeInsets.only(left: 8),
                                 child: _FilterChip(
@@ -226,8 +248,10 @@ class _EmptyCategoryState extends StatelessWidget {
         child: Text(
           message,
           textAlign: TextAlign.center,
-          style: const TextStyle(
-              color: Color(0xFF8A9DC0), fontSize: 14, height: 1.4),
+          style: TextStyle(
+              color: context.appColors.secondaryText,
+              fontSize: 14,
+              height: 1.4),
         ),
       ),
     );
@@ -244,18 +268,18 @@ class _FilterChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return ChoiceChip(
       label: Text(label),
       selected: selected,
       onSelected: (_) => onTap(),
-      selectedColor: const Color(0xFF5B8EFF),
-      backgroundColor: const Color(0xFF132040),
+      selectedColor: colors.accent,
+      backgroundColor: colors.cardSurface,
       labelStyle: TextStyle(
-        color: selected ? Colors.white : const Color(0xFF8A9DC0),
+        color: selected ? colors.onPrimaryAction : colors.secondaryText,
         fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
       ),
-      side: BorderSide(
-          color: selected ? const Color(0xFF5B8EFF) : const Color(0xFF1F3055)),
+      side: BorderSide(color: selected ? colors.accent : colors.divider),
     );
   }
 }
@@ -279,8 +303,9 @@ class _DiscoveryCardTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Material(
-      color: const Color(0xFF132040),
+      color: colors.cardSurface,
       borderRadius: BorderRadius.circular(14),
       child: InkWell(
         borderRadius: BorderRadius.circular(14),
@@ -289,7 +314,7 @@ class _DiscoveryCardTile extends StatelessWidget {
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(14),
-            border: Border.all(color: const Color(0xFF1F3055)),
+            border: Border.all(color: colors.divider),
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -302,8 +327,8 @@ class _DiscoveryCardTile extends StatelessWidget {
                 title,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
-                style: const TextStyle(
-                  color: Colors.white,
+                style: TextStyle(
+                  color: colors.primaryText,
                   fontSize: 14,
                   fontWeight: FontWeight.w700,
                 ),
@@ -313,8 +338,8 @@ class _DiscoveryCardTile extends StatelessWidget {
                 spacing: 6,
                 runSpacing: 4,
                 children: [
-                  _Badge(text: categoryLabel, color: const Color(0xFF5B8EFF)),
-                  _Badge(text: difficultyLabel, color: const Color(0xFF8A9DC0)),
+                  _Badge(text: categoryLabel, color: colors.accent),
+                  _Badge(text: difficultyLabel, color: colors.secondaryText),
                 ],
               ),
             ],

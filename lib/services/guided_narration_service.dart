@@ -41,7 +41,8 @@ class GuidedNarrationService {
   Future<void> setMuted(bool value) =>
       InteractiveLabsProgressService.instance.setNarrationMuted(value);
 
-  bool get textOnly => InteractiveLabsProgressService.instance.narrationTextOnly();
+  bool get textOnly =>
+      InteractiveLabsProgressService.instance.narrationTextOnly();
   Future<void> setTextOnly(bool value) =>
       InteractiveLabsProgressService.instance.setNarrationTextOnly(value);
 
@@ -50,7 +51,9 @@ class GuidedNarrationService {
       InteractiveLabsProgressService.instance.setNarrationSpeed(value);
 
   bool get _audioSuppressed =>
-      muted || textOnly || LocalPreferencesService.instance.quietStudyMode.value;
+      muted ||
+      textOnly ||
+      LocalPreferencesService.instance.quietStudyMode.value;
 
   /// Shows [message] as text immediately — spoken guidance always has
   /// identical visible text — and, unless muted/text-only/Quiet Study Mode,
@@ -67,7 +70,8 @@ class GuidedNarrationService {
 
     if (_audioSuppressed) return;
 
-    final manifestEntry = NarrationManifestService.instance.lookup(message.messageId, localeTag);
+    final manifestEntry =
+        NarrationManifestService.instance.lookup(message.messageId, localeTag);
     if (manifestEntry != null) {
       _playManifestAudio(manifestEntry, requestId);
       return;

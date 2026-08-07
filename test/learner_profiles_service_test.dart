@@ -41,8 +41,7 @@ void main() {
     expect(OnboardingProfileService.instance.childName.value, 'Sam');
   });
 
-  test('switching the active learner updates childName immediately',
-      () async {
+  test('switching the active learner updates childName immediately', () async {
     await OnboardingProfileService.instance.init();
     await LearnerProfilesService.instance.init();
 

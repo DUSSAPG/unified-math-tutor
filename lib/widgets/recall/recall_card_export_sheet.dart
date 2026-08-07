@@ -10,7 +10,8 @@ enum _RecallExportMode { recallSheet, answerSheet }
 /// Mirrors [showDiscoveryExportSheet]: a modal export sheet, generalised to
 /// take a list of cards (1 for a single-card share, up to 5 for a Quick
 /// Review session's printable recall/answer sheets).
-Future<void> showRecallCardExportSheet(BuildContext context, List<RecallCard> cards) {
+Future<void> showRecallCardExportSheet(
+    BuildContext context, List<RecallCard> cards) {
   return showModalBottomSheet<void>(
     context: context,
     backgroundColor: const Color(0xFF132040),
@@ -21,7 +22,8 @@ Future<void> showRecallCardExportSheet(BuildContext context, List<RecallCard> ca
   );
 }
 
-Future<void> showRecallCardExportSheetSingle(BuildContext context, RecallCard card) {
+Future<void> showRecallCardExportSheetSingle(
+    BuildContext context, RecallCard card) {
   return showRecallCardExportSheet(context, [card]);
 }
 
@@ -43,15 +45,18 @@ class _RecallExportSheetState extends State<_RecallExportSheet> {
 
   Future<void> _share() async {
     final locale = Localizations.localeOf(context);
-    final name = _includeName ? OnboardingProfileService.instance.childName.value : null;
+    final name =
+        _includeName ? OnboardingProfileService.instance.childName.value : null;
     const service = RecallCardExportService();
     final navigator = Navigator.of(context);
 
     switch (_mode) {
       case _RecallExportMode.recallSheet:
-        await service.shareRecallSheet(widget.cards, locale: locale, learnerName: name);
+        await service.shareRecallSheet(widget.cards,
+            locale: locale, learnerName: name);
       case _RecallExportMode.answerSheet:
-        await service.shareAnswerSheet(widget.cards, locale: locale, learnerName: name);
+        await service.shareAnswerSheet(widget.cards,
+            locale: locale, learnerName: name);
     }
 
     if (mounted) navigator.pop();
@@ -80,7 +85,10 @@ class _RecallExportSheetState extends State<_RecallExportSheet> {
             ),
             Text(
               l10n.recallCardsExportButton,
-              style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700),
+              style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w700),
             ),
             const SizedBox(height: 12),
             RadioGroup<_RecallExportMode>(
@@ -103,7 +111,8 @@ class _RecallExportSheetState extends State<_RecallExportSheet> {
             ),
             CheckboxListTile(
               value: _includeName,
-              onChanged: (value) => setState(() => _includeName = value ?? false),
+              onChanged: (value) =>
+                  setState(() => _includeName = value ?? false),
               controlAffinity: ListTileControlAffinity.leading,
               title: Text(l10n.mathStudioExportIncludeNameLabel,
                   style: const TextStyle(color: Colors.white)),

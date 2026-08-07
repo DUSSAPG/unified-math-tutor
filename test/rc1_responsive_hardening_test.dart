@@ -169,29 +169,23 @@ void main() {
 
   group('E3 — Discovery Library empty-category state', () {
     testWidgets(
-        'a category with zero cards shows an honest empty state, not a blank grid',
+        'a category with zero cards is hidden from the RC2 reviewer build',
         (tester) async {
       final l10n = await AppLocalizations.delegate.load(const Locale('en'));
       await pumpRoute(tester, '/math-studio/discovery');
 
-      // engineeringConstruction has zero cards in the RC1 catalog (see
-      // docs/DISCOVERY_LIBRARY_CONTENT_GAP_AUDIT.md, Gap 3). The chip is
-      // present in the element tree from the start (a plain, non-lazy
-      // ListView), but is off-screen at this viewport width — drag the
-      // chip row itself so it lands within the hit-testable viewport
-      // rather than relying on scrollUntilVisible's own Scrollable
-      // resolution.
+      // gaming has zero cards (engineeringConstruction, the category this
+      // test originally used, was populated by Sprint 2's Applied
+      // Discovery Category Pack — see
+      // docs/APPLIED_DISCOVERY_PACK_BUILD_REPORT.md — so it now has a
+      // real chip and would no longer prove this test's point). gaming
+      // and businessFinance remain the only zero-card categories; see
+      // docs/DISCOVERY_RECALL_COVERAGE_AUDIT.md.
       final chipFinder = find.text(
-        discoveryCategoryLabel(l10n, DiscoveryCategory.engineeringConstruction),
+        discoveryCategoryLabel(l10n, DiscoveryCategory.gaming),
       );
-      await tester.drag(find.byKey(const Key('discoveryCategoryChipRow')),
-          const Offset(-2000, 0));
-      await tester.pumpAndSettle();
-      await tester.tap(chipFinder);
-      await tester.pumpAndSettle();
-
-      expect(find.text(l10n.mathStudioDiscoveryEmptyCategory), findsOneWidget);
-      expect(find.byType(GridView), findsNothing);
+      expect(chipFinder, findsNothing);
+      expect(find.text(l10n.mathStudioDiscoveryEmptyCategory), findsNothing);
     });
   });
 }

@@ -23,7 +23,7 @@ class _ParentTeacherToolsScreenState extends State<ParentTeacherToolsScreen> {
     super.dispose();
   }
 
-  Future<void> _submit() async {
+  Future<void> _openDestination(String route) async {
     final prefs = LocalPreferencesService.instance;
     final pin = _pinController.text;
     final l10n = AppLocalizations.of(context);
@@ -37,7 +37,7 @@ class _ParentTeacherToolsScreenState extends State<ParentTeacherToolsScreen> {
       setState(() => _error = l10n.pinIncorrect);
       return;
     }
-    if (mounted) context.push('/help/parent-teacher-tools/cheat-sheet');
+    if (mounted) context.push(route);
   }
 
   Future<void> _resetPin() async {
@@ -130,8 +130,20 @@ class _ParentTeacherToolsScreenState extends State<ParentTeacherToolsScreen> {
                   ),
                 ),
                 FilledButton(
-                  onPressed: _submit,
+                  onPressed: () => _openDestination(
+                      '/help/parent-teacher-tools/cheat-sheet'),
                   child: Text(l10n.openCheatSheet),
+                ),
+                const SizedBox(height: 8),
+                OutlinedButton(
+                  onPressed: () => _openDestination(
+                      '/help/parent-teacher-tools/family-maths'),
+                  child: Text(l10n.familyMathsEntryTitle),
+                ),
+                const SizedBox(height: 8),
+                OutlinedButton(
+                  onPressed: () => _openDestination('/family-studio'),
+                  child: Text(l10n.familyStudioHubTitle),
                 ),
                 if (prefs.hasParentPin)
                   TextButton(

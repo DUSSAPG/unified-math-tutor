@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../shared/responsive/app_breakpoints.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../services/curriculum_service.dart';
 import '../../services/greeting_service.dart';
 import '../../services/learner_profiles_service.dart';
@@ -60,7 +61,7 @@ class AppShell extends StatelessWidget {
   Future<void> _openMoreSheet(BuildContext context) {
     return showModalBottomSheet<void>(
       context: context,
-      backgroundColor: const Color(0xFF132040),
+      backgroundColor: context.appColors.cardSurface,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
@@ -377,6 +378,7 @@ class _MoreSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return SafeArea(
       top: false,
       child: Padding(
@@ -389,7 +391,7 @@ class _MoreSheet extends StatelessWidget {
               height: 4,
               margin: const EdgeInsets.only(bottom: 12),
               decoration: BoxDecoration(
-                color: const Color(0xFF1F3055),
+                color: colors.divider,
                 borderRadius: BorderRadius.circular(2),
               ),
             ),
@@ -399,8 +401,8 @@ class _MoreSheet extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 child: Text(
                   l10n.navMore,
-                  style: const TextStyle(
-                    color: Color(0xFF8A9BB8),
+                  style: TextStyle(
+                    color: colors.secondaryText,
                     fontSize: 11,
                     fontWeight: FontWeight.w600,
                     letterSpacing: 1.2,
@@ -463,9 +465,10 @@ class _MoreSheetTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return ListTile(
-      leading: Icon(icon, color: const Color(0xFF5B8EFF)),
-      title: Text(label, style: const TextStyle(color: Colors.white)),
+      leading: Icon(icon, color: colors.accent),
+      title: Text(label, style: TextStyle(color: colors.primaryText)),
       onTap: onTap,
     );
   }
@@ -762,6 +765,7 @@ class _DailyMissionCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final service = MascotFuelService.instance;
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return ValueListenableBuilder<int>(
       valueListenable: service.dailyMissionProgress,
       builder: (context, progress, _) => Stack(
@@ -797,8 +801,8 @@ class _DailyMissionCard extends StatelessWidget {
                               ),
                               Text(
                                 l10n.dailyMissionSubtitle,
-                                style: const TextStyle(
-                                  color: Color(0xFF8A9DC0),
+                                style: TextStyle(
+                                  color: colors.secondaryText,
                                   fontSize: 12,
                                 ),
                               ),
@@ -813,9 +817,9 @@ class _DailyMissionCard extends StatelessWidget {
                       value: progress / MascotFuelService.missionTarget,
                       minHeight: 7,
                       borderRadius: BorderRadius.circular(5),
-                      backgroundColor: const Color(0xFF1F3055),
-                      valueColor: const AlwaysStoppedAnimation<Color>(
-                        Color(0xFFFFBD00),
+                      backgroundColor: colors.divider,
+                      valueColor: AlwaysStoppedAnimation<Color>(
+                        colors.warning,
                       ),
                     ),
                   ],
@@ -848,6 +852,7 @@ class _JourneyTeaserCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return Card(
       clipBehavior: Clip.antiAlias,
       child: InkWell(
@@ -880,25 +885,25 @@ class _JourneyTeaserCard extends StatelessWidget {
                         days == 0
                             ? l10n.homeStreakDays
                             : l10n.homeStreakCount(days),
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                          color: colors.primaryText,
                         ),
                       ),
                     ),
                     const SizedBox(height: 2),
                     Text(
                       l10n.journeyTeaserSubtitle,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 12,
-                        color: Color(0xFF8A9BB8),
+                        color: colors.secondaryText,
                       ),
                     ),
                   ],
                 ),
               ),
-              const Icon(Icons.chevron_right, color: Color(0xFF4A6080)),
+              Icon(Icons.chevron_right, color: colors.tertiaryText),
             ],
           ),
         ),
@@ -915,6 +920,7 @@ class _HeroGreeting extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     final onboarding = OnboardingProfileService.instance;
     return AnimatedBuilder(
       animation: Listenable.merge([
@@ -946,7 +952,7 @@ class _HeroGreeting extends StatelessWidget {
             const SizedBox(height: 4),
             Text(
               l10n.homeStreakGoalMessage,
-              style: const TextStyle(color: Color(0xFF8A9BB8), fontSize: 13),
+              style: TextStyle(color: colors.secondaryText, fontSize: 13),
             ),
             if (isLearnerRole) ...[
               const SizedBox(height: 10),
@@ -957,9 +963,9 @@ class _HeroGreeting extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(
-                    color: const Color(0xFF132040),
+                    color: colors.cardSurface,
                     borderRadius: BorderRadius.circular(999),
-                    border: Border.all(color: const Color(0xFF1F3055)),
+                    border: Border.all(color: colors.divider),
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
@@ -969,8 +975,8 @@ class _HeroGreeting extends StatelessWidget {
                         Text(
                           l10n.homeLearningAsLabel(
                               onboarding.childName.value ?? ''),
-                          style: const TextStyle(
-                            color: Color(0xFF8A9BB8),
+                          style: TextStyle(
+                            color: colors.secondaryText,
                             fontSize: 12,
                             fontWeight: FontWeight.w500,
                           ),
@@ -978,8 +984,8 @@ class _HeroGreeting extends StatelessWidget {
                         const SizedBox(width: 6),
                         Text(
                           l10n.homeSwitchLearnerAction,
-                          style: const TextStyle(
-                            color: Color(0xFF5B8EFF),
+                          style: TextStyle(
+                            color: colors.accent,
                             fontSize: 12,
                             fontWeight: FontWeight.w700,
                           ),
@@ -987,8 +993,8 @@ class _HeroGreeting extends StatelessWidget {
                       ] else
                         Text(
                           l10n.whoIsLearningAddLearner,
-                          style: const TextStyle(
-                            color: Color(0xFF5B8EFF),
+                          style: TextStyle(
+                            color: colors.accent,
                             fontSize: 12,
                             fontWeight: FontWeight.w700,
                           ),
@@ -996,6 +1002,12 @@ class _HeroGreeting extends StatelessWidget {
                     ],
                   ),
                 ),
+              ),
+              const SizedBox(height: 10),
+              OutlinedButton.icon(
+                onPressed: () => context.push('/family-studio'),
+                icon: const Icon(Icons.family_restroom, size: 16),
+                label: Text(l10n.familyStudioHubTitle),
               ),
             ],
           ],
@@ -1082,6 +1094,7 @@ class _RewardsChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final prefs = LocalPreferencesService.instance;
+    final colors = context.appColors;
     return ValueListenableBuilder<bool>(
       valueListenable: prefs.rewardsEnabled,
       builder: (context, enabled, _) => FilterChip(
@@ -1089,7 +1102,7 @@ class _RewardsChip extends StatelessWidget {
         avatar: Icon(
           Icons.auto_awesome,
           size: 15,
-          color: enabled ? const Color(0xFFFFBD00) : const Color(0xFF8A9DC0),
+          color: enabled ? colors.warning : colors.secondaryText,
         ),
         label: Text(
           enabled
@@ -1285,6 +1298,7 @@ class _TopicRowCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Card(
       clipBehavior: Clip.antiAlias,
       child: InkWell(
@@ -1329,31 +1343,31 @@ class _TopicRowCard extends StatelessWidget {
                       children: [
                         Text(
                           title,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                            color: colors.primaryText,
                           ),
                         ),
                         const SizedBox(height: 2),
                         Text(
                           subtitle,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 12,
-                            color: Color(0xFF8A9BB8),
+                            color: colors.secondaryText,
                           ),
                         ),
                       ],
                     ),
                   ),
-                  const Icon(Icons.chevron_right, color: Color(0xFF4A6080)),
+                  Icon(Icons.chevron_right, color: colors.tertiaryText),
                 ],
               ),
             ),
             LinearProgressIndicator(
               value: progress,
               minHeight: 3,
-              backgroundColor: const Color(0xFF2A3A5A),
+              backgroundColor: colors.divider,
               valueColor: AlwaysStoppedAnimation<Color>(iconColor),
             ),
           ],
@@ -1411,6 +1425,7 @@ class _OxfordTrackCard extends StatelessWidget {
                 child: Builder(
                   builder: (context) {
                     final l10n = AppLocalizations.of(context);
+                    final colors = context.appColors;
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -1420,10 +1435,10 @@ class _OxfordTrackCard extends StatelessWidget {
                           children: [
                             Text(
                               l10n.homeSectionOxfordTrack,
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.white,
+                                color: colors.primaryText,
                               ),
                             ),
                             Container(
@@ -1450,8 +1465,8 @@ class _OxfordTrackCard extends StatelessWidget {
                         const SizedBox(height: 4),
                         Text(
                           l10n.homeOxfordTrackSubtitle,
-                          style: const TextStyle(
-                              fontSize: 13, color: Color(0xFF8A9BB8)),
+                          style: TextStyle(
+                              fontSize: 13, color: colors.secondaryText),
                         ),
                       ],
                     );
@@ -1485,6 +1500,7 @@ class _LearningPathCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Card(
       child: InkWell(
         borderRadius: BorderRadius.circular(16),
@@ -1523,18 +1539,18 @@ class _LearningPathCard extends StatelessWidget {
               const SizedBox(height: AppSpacing.sm),
               Text(
                 title,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  color: colors.primaryText,
                 ),
               ),
               const SizedBox(height: 4),
               Text(
                 subtitle,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 11,
-                  color: Color(0xFF8A9BB8),
+                  color: colors.secondaryText,
                 ),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
@@ -1555,6 +1571,7 @@ class _NavGlowIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final accent = context.appColors.accent;
     return Stack(
       alignment: Alignment.center,
       children: [
@@ -1563,17 +1580,17 @@ class _NavGlowIcon extends StatelessWidget {
           height: 30,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: const Color(0xFF5B8EFF).withValues(alpha: 0.12),
+            color: accent.withValues(alpha: 0.12),
             boxShadow: [
               BoxShadow(
-                color: const Color(0xFF5B8EFF).withValues(alpha: 0.35),
+                color: accent.withValues(alpha: 0.35),
                 blurRadius: 12,
                 spreadRadius: 1,
               ),
             ],
           ),
         ),
-        Icon(icon, color: const Color(0xFF5B8EFF)),
+        Icon(icon, color: accent),
       ],
     );
   }
@@ -1627,23 +1644,24 @@ class _ExamPacksCard extends StatelessWidget {
                   child: Builder(
                     builder: (context) {
                       final l10n = AppLocalizations.of(context);
+                      final colors = context.appColors;
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             l10n.homeSectionExamPacks,
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                              color: colors.primaryText,
                             ),
                           ),
                           const SizedBox(height: 2),
                           Text(
                             l10n.homeExamPacksSubtitle,
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 13,
-                              color: Color(0xFF8A9BB8),
+                              color: colors.secondaryText,
                             ),
                           ),
                         ],
@@ -1654,18 +1672,21 @@ class _ExamPacksCard extends StatelessWidget {
               ],
             ),
             const SizedBox(height: AppSpacing.md),
-            OutlinedButton(
-              onPressed: () => context.push('/packs'),
-              style: OutlinedButton.styleFrom(
-                foregroundColor: const Color(0xFF5B8EFF),
-                side: const BorderSide(color: Color(0xFF5B8EFF)),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
+            Builder(builder: (context) {
+              final accent = context.appColors.accent;
+              return OutlinedButton(
+                onPressed: () => context.push('/packs'),
+                style: OutlinedButton.styleFrom(
+                  foregroundColor: accent,
+                  side: BorderSide(color: accent),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  minimumSize: const Size(double.infinity, 44),
                 ),
-                minimumSize: const Size(double.infinity, 44),
-              ),
-              child: Text(AppLocalizations.of(context).homeViewExamPacks),
-            ),
+                child: Text(AppLocalizations.of(context).homeViewExamPacks),
+              );
+            }),
           ],
         ),
       ),

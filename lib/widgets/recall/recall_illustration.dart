@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 import '../../models/recall_card.dart';
 
@@ -23,7 +24,11 @@ class RecallIllustration extends StatelessWidget {
   static const _typeIcons = <RecallCardType, IconData>{
     RecallCardType.formula: Icons.functions,
     RecallCardType.meaning: Icons.lightbulb_outline,
-    RecallCardType.symbol: Icons.tag,
+    // Was Icons.tag — a generic price-tag glyph with no mathematical
+    // meaning. Sigma is a real, recognisable mathematical symbol, and
+    // reads distinctly from Formula's f(x) glyph rather than overlapping
+    // with it.
+    RecallCardType.symbol: LucideIcons.sigma,
     RecallCardType.vocabulary: Icons.menu_book_outlined,
     RecallCardType.strategy: Icons.route_outlined,
     RecallCardType.misconception: Icons.report_gmailerrorred_outlined,

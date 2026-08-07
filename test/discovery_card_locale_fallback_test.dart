@@ -23,7 +23,8 @@ void main() {
         illustrationAlt: marker,
       );
 
-  DiscoveryCard cardWithLocales(Map<String, DiscoveryCardLocaleText> locales) => DiscoveryCard(
+  DiscoveryCard cardWithLocales(Map<String, DiscoveryCardLocaleText> locales) =>
+      DiscoveryCard(
         id: 'test-card',
         category: DiscoveryCategory.everydayLife,
         sport: null,
@@ -63,7 +64,9 @@ void main() {
     expect(card.textFor(const Locale('it')).title, 'swiss-italian');
   });
 
-  test('a different German region (de-DE) still resolves to de-CH before English', () {
+  test(
+      'a different German region (de-DE) still resolves to de-CH before English',
+      () {
     final card = cardWithLocales({
       'en': text('english'),
       'de-CH': text('swiss-german'),
@@ -90,7 +93,9 @@ void main() {
     expect(card.textFor(const Locale('ko')).title, 'english');
   });
 
-  test('English locale variants resolve directly, never touching the -CH fallback', () {
+  test(
+      'English locale variants resolve directly, never touching the -CH fallback',
+      () {
     final card = cardWithLocales({
       'en': text('english'),
       'en-GB': text('british'),

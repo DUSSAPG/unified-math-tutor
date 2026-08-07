@@ -6,6 +6,7 @@ import '../../app/safe_navigation.dart';
 import '../../shared/responsive/app_breakpoints.dart';
 import '../../models/math_studio_pillar.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../widgets/shared/route_link_card.dart';
 
 /// Math Studio landing page. Curriculum-independent — reachable without any
@@ -22,22 +23,23 @@ class MathStudioHubScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0B1120),
+        backgroundColor: colors.background,
         elevation: 0,
         scrolledUnderElevation: 0,
         centerTitle: false,
         titleSpacing: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: colors.primaryText),
           onPressed: () => popOrGo(context, '/home'),
         ),
         title: Text(
           l10n.mathStudioHubTitle,
-          style: const TextStyle(
-            color: Colors.white,
+          style: TextStyle(
+            color: colors.primaryText,
             fontSize: 20,
             fontWeight: FontWeight.w700,
           ),
@@ -46,7 +48,8 @@ class MathStudioHubScreen extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: ConstrainedBox(
-            constraints: BoxConstraints(maxWidth: AppResponsive.contentMaxWidth(context)),
+            constraints: BoxConstraints(
+                maxWidth: AppResponsive.contentMaxWidth(context)),
             child: SingleChildScrollView(
               padding: const EdgeInsets.fromLTRB(16, 8, 16, 40),
               child: Column(
@@ -54,8 +57,8 @@ class MathStudioHubScreen extends StatelessWidget {
                 children: [
                   Text(
                     l10n.mathStudioHubTagline,
-                    style: const TextStyle(
-                      color: Color(0xFF8A9DC0),
+                    style: TextStyle(
+                      color: colors.secondaryText,
                       fontSize: 15,
                       height: 1.4,
                     ),
@@ -115,7 +118,8 @@ class _PillarCard extends StatelessWidget {
       iconColor: meta.iconColor,
       title: title,
       subtitle: subtitle,
-      badgeText: meta.isInDevelopment ? l10n.mathStudioInDevelopmentBadge : null,
+      badgeText:
+          meta.isInDevelopment ? l10n.mathStudioInDevelopmentBadge : null,
       onTap: () => context.push('/math-studio/${meta.routeSuffix}'),
     );
   }

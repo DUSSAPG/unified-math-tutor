@@ -32,7 +32,10 @@ class MathNotationFormatter {
     if (input.isEmpty) return input;
     final withSuperscripts = input.replaceAllMapped(_exponentPattern, (match) {
       final exponent = match.group(1)!;
-      return exponent.split('').map((ch) => _superscriptDigits[ch] ?? ch).join();
+      return exponent
+          .split('')
+          .map((ch) => _superscriptDigits[ch] ?? ch)
+          .join();
     });
     return withSuperscripts.replaceAll('*', '×');
   }

@@ -10,7 +10,8 @@ class AccountState {
 
   const AccountState.guest() : this._(false, '', '');
 
-  const AccountState.signedIn({required String displayName, required String email})
+  const AccountState.signedIn(
+      {required String displayName, required String email})
       : this._(true, displayName, email);
 
   final bool isSignedIn;

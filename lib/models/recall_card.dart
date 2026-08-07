@@ -170,7 +170,8 @@ class RecallCard {
   factory RecallCard.fromJson(Map<String, dynamic> json) {
     final id = json['id'];
     if (id is! String || !_idPattern.hasMatch(id)) {
-      throw FormatException('Recall card id must match ^[a-z0-9]+(-[a-z0-9]+)+\$, got "$id".');
+      throw FormatException(
+          'Recall card id must match ^[a-z0-9]+(-[a-z0-9]+)+\$, got "$id".');
     }
 
     final topicValue = json['topicId'];
@@ -209,28 +210,34 @@ class RecallCard {
 
     List<String> stringList(String key, {bool allowEmpty = true}) {
       final value = json[key];
-      if (value is! List || value.any((v) => v is! String || v.trim().isEmpty)) {
-        throw FormatException('Recall card "$id" "$key" must be a list of non-empty strings.');
+      if (value is! List ||
+          value.any((v) => v is! String || v.trim().isEmpty)) {
+        throw FormatException(
+            'Recall card "$id" "$key" must be a list of non-empty strings.');
       }
       if (!allowEmpty && value.isEmpty) {
-        throw FormatException('Recall card "$id" "$key" must be a non-empty list.');
+        throw FormatException(
+            'Recall card "$id" "$key" must be a non-empty list.');
       }
       return value.cast<String>();
     }
 
     final contentVersion = json['contentVersion'];
     if (contentVersion is! int || contentVersion < 1) {
-      throw FormatException('Recall card "$id" contentVersion must be an integer >= 1.');
+      throw FormatException(
+          'Recall card "$id" contentVersion must be an integer >= 1.');
     }
 
     final spacedReviewEligibleValue = json['spacedReviewEligible'];
     if (spacedReviewEligibleValue is! bool) {
-      throw FormatException('Recall card "$id" spacedReviewEligible must be a boolean.');
+      throw FormatException(
+          'Recall card "$id" spacedReviewEligible must be a boolean.');
     }
 
     final localesValue = json['locales'];
     if (localesValue is! Map<String, dynamic> || localesValue.isEmpty) {
-      throw FormatException('Recall card "$id" locales must be a non-empty object.');
+      throw FormatException(
+          'Recall card "$id" locales must be a non-empty object.');
     }
     if (!localesValue.containsKey('en')) {
       throw FormatException('Recall card "$id" locales must include "en".');
@@ -239,7 +246,8 @@ class RecallCard {
     for (final entry in localesValue.entries) {
       final value = entry.value;
       if (value is! Map<String, dynamic>) {
-        throw FormatException('Recall card "$id" locale "${entry.key}" must be an object.');
+        throw FormatException(
+            'Recall card "$id" locale "${entry.key}" must be an object.');
       }
       locales[entry.key] = RecallCardLocaleText.fromJson(
         value,
@@ -271,7 +279,8 @@ class RecallCard {
     final countryCode = locale.countryCode;
     final languageCode = locale.languageCode;
     final tags = <String>[
-      if (countryCode != null && countryCode.isNotEmpty) '$languageCode-$countryCode',
+      if (countryCode != null && countryCode.isNotEmpty)
+        '$languageCode-$countryCode',
       languageCode,
       if (languageCode != 'en') 'en',
     ];

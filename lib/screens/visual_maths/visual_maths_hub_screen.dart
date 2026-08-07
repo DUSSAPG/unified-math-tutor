@@ -31,13 +31,15 @@ class VisualMathsHubScreen extends StatelessWidget {
         ),
         title: Text(
           l10n.mathStudioVisualMathsTitle,
-          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+          style:
+              const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
         ),
       ),
       body: SafeArea(
         child: Center(
           child: ConstrainedBox(
-            constraints: BoxConstraints(maxWidth: AppResponsive.contentMaxWidth(context)),
+            constraints: BoxConstraints(
+                maxWidth: AppResponsive.contentMaxWidth(context)),
             child: ListView(
               padding: const EdgeInsets.all(AppSpacing.md),
               children: [
@@ -89,7 +91,10 @@ class _ToolCard extends StatelessWidget {
           l10n.visualMathsFractionBarsTitle,
           l10n.visualMathsFractionBarsSubtitle,
         ),
-      VisualMathsToolId.abacus => (l10n.visualMathsAbacusTitle, l10n.visualMathsAbacusSubtitle),
+      VisualMathsToolId.abacus => (
+          l10n.visualMathsAbacusTitle,
+          l10n.visualMathsAbacusSubtitle
+        ),
       VisualMathsToolId.placeValueExplorer => (
           l10n.visualMathsPlaceValueTitle,
           l10n.visualMathsPlaceValueSubtitle,
@@ -98,8 +103,9 @@ class _ToolCard extends StatelessWidget {
     final badge = meta.hasInteractiveImplementation
         ? l10n.visualMathsInteractiveBadge
         : l10n.visualMathsPreviewBadge;
-    final badgeColor =
-        meta.hasInteractiveImplementation ? const Color(0xFF34C759) : const Color(0xFFFF9500);
+    final badgeColor = meta.hasInteractiveImplementation
+        ? const Color(0xFF34C759)
+        : const Color(0xFFFF9500);
 
     return Card(
       child: ListTile(
@@ -108,21 +114,27 @@ class _ToolCard extends StatelessWidget {
         title: Row(
           children: [
             Expanded(
-              child: Text(title, style: const TextStyle(fontWeight: FontWeight.w700)),
+              child: Text(title,
+                  style: const TextStyle(fontWeight: FontWeight.w700)),
             ),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 3),
-              decoration: BoxDecoration(color: badgeColor, borderRadius: BorderRadius.circular(20)),
+              decoration: BoxDecoration(
+                  color: badgeColor, borderRadius: BorderRadius.circular(20)),
               child: Text(
                 badge,
-                style: const TextStyle(fontSize: 8, fontWeight: FontWeight.bold, color: Colors.white),
+                style: const TextStyle(
+                    fontSize: 8,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
               ),
             ),
           ],
         ),
         subtitle: Text(subtitle),
         trailing: const Icon(Icons.chevron_right),
-        onTap: () => context.push('/math-studio/visual-maths/${meta.routeSuffix}'),
+        onTap: () =>
+            context.push('/math-studio/visual-maths/${meta.routeSuffix}'),
       ),
     );
   }

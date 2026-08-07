@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../shared/theme/app_theme.dart';
+
 /// The result state of a Test/Check/Reveal action. Kept as three states
 /// (not just correct/incorrect) so "near miss" has its own encouraging tone,
 /// matching Flight Path Lab and similar labs where a result can be close
@@ -32,15 +34,17 @@ class LabResultBanner extends StatelessWidget {
     LabResultKind.tryAgain: Icons.refresh,
   };
 
-  static const _colorByKind = <LabResultKind, Color>{
-    LabResultKind.success: Color(0xFF34C759),
-    LabResultKind.nearMiss: Color(0xFFFFBD00),
-    LabResultKind.tryAgain: Color(0xFF8A9DC0),
-  };
+  Color _colorFor(LabResultKind kind, AppSemanticColors colors) =>
+      switch (kind) {
+        LabResultKind.success => colors.success,
+        LabResultKind.nearMiss => colors.warning,
+        LabResultKind.tryAgain => colors.secondaryText,
+      };
 
   @override
   Widget build(BuildContext context) {
-    final color = _colorByKind[kind]!;
+    final colors = context.appColors;
+    final color = _colorFor(kind, colors);
     final icon = _iconByKind[kind]!;
     return Semantics(
       liveRegion: true,
@@ -63,13 +67,19 @@ class LabResultBanner extends StatelessWidget {
                 children: [
                   Text(
                     notice,
-                    style: TextStyle(color: color, fontWeight: FontWeight.w700, fontSize: 14),
+                    style: TextStyle(
+                        color: color,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 14),
                   ),
                   if (explain != null && explain!.isNotEmpty) ...[
                     const SizedBox(height: 4),
                     Text(
                       explain!,
-                      style: const TextStyle(color: Colors.white, fontSize: 13, height: 1.35),
+                      style: TextStyle(
+                          color: colors.primaryText,
+                          fontSize: 13,
+                          height: 1.35),
                     ),
                   ],
                 ],

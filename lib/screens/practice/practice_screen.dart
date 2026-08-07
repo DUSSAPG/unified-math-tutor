@@ -20,6 +20,7 @@ import '../../services/streak_service.dart';
 import '../../services/topic_catalog_service.dart';
 import '../../shared/math_notation_formatter.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../widgets/shared/reward_confetti.dart';
 import '../../widgets/mascot_card.dart';
 import '../../widgets/graphs/simple_graph_card.dart';
@@ -30,11 +31,21 @@ enum _PracticeMode { quickStart, topicDrill, timedChallenge, examSimulator }
 
 enum _ScreenState { setup, session, summary }
 
-enum _ExamChoice { gcseFoundation, gcseHigher, oxfordTrack, swissGymnasium }
+enum _ExamChoice {
+  gcseFoundation,
+  gcseHigher,
+  oxfordTrack,
+  swissGymnasium,
+  entranceExamPrep,
+}
 
 /// Only the GCSE tiers have real question content today (they map to the
 /// KS4 pack). Oxford Track / Swiss Gymnasium are future exam packs and stay
 /// locked — selecting them routes to the upgrade/waitlist screen instead.
+/// entranceExamPrep is always available: it has its own registered pack
+/// (see entrance_exam_hub_screen.dart) and doesn't route through this
+/// screen's generic MCQ session engine at all — selecting it pushes
+/// straight to /entrance-exam instead (see _ExamChoicePicker's onTap).
 bool _examChoiceAvailable(_ExamChoice exam, String stage) {
   switch (exam) {
     case _ExamChoice.gcseFoundation:
@@ -43,6 +54,8 @@ bool _examChoiceAvailable(_ExamChoice exam, String stage) {
     case _ExamChoice.oxfordTrack:
     case _ExamChoice.swissGymnasium:
       return false;
+    case _ExamChoice.entranceExamPrep:
+      return true;
   }
 }
 
@@ -56,6 +69,8 @@ String _examChoiceLabel(AppLocalizations l10n, _ExamChoice exam) {
       return l10n.topicsTrackOxford;
     case _ExamChoice.swissGymnasium:
       return l10n.practiceExamSwissGymnasium;
+    case _ExamChoice.entranceExamPrep:
+      return l10n.practiceExamEntranceExamPrep;
   }
 }
 
@@ -519,6 +534,7 @@ class _SetupView extends StatelessWidget {
         kBottomNavigationBarHeight +
         AppSpacing.xl;
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     final locale = Localizations.localeOf(context);
     final effectiveStage = stages.isEmpty
         ? null
@@ -545,8 +561,8 @@ class _SetupView extends StatelessWidget {
                   l10n.practiceMixedReview;
               return Text(
                 title,
-                style: const TextStyle(
-                  color: Color(0xFF5B8EFF),
+                style: TextStyle(
+                  color: colors.accent,
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                 ),
@@ -556,14 +572,14 @@ class _SetupView extends StatelessWidget {
           const SizedBox(height: 12),
           Text(
             l10n.practiceChooseMode,
-            style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 15),
+            style: TextStyle(color: colors.secondaryText, fontSize: 15),
           ),
           const SizedBox(height: 16),
           // Stage chips (compact, secondary)
           if (stages.isEmpty)
             Text(
               l10n.practiceNoQuestions,
-              style: const TextStyle(color: Color(0xFF8A9DC0)),
+              style: TextStyle(color: colors.secondaryText),
             )
           else
             Wrap(
@@ -578,22 +594,18 @@ class _SetupView extends StatelessWidget {
                         const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
                     decoration: BoxDecoration(
                       color: sel
-                          ? const Color(0xFF0D1F40)
-                          : const Color(0xFF162236),
+                          ? colors.primaryAction.withValues(alpha: 0.14)
+                          : colors.cardSurface,
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(
-                        color: sel
-                            ? const Color(0xFF5B8EFF)
-                            : const Color(0xFF1F3055),
+                        color: sel ? colors.accent : colors.divider,
                         width: sel ? 2 : 1,
                       ),
                     ),
                     child: Text(
                       stage,
                       style: TextStyle(
-                        color: sel
-                            ? const Color(0xFF5B8EFF)
-                            : const Color(0xFF8A9DC0),
+                        color: sel ? colors.accent : colors.secondaryText,
                         fontSize: 13,
                         fontWeight: FontWeight.w500,
                       ),
@@ -606,8 +618,8 @@ class _SetupView extends StatelessWidget {
             const SizedBox(height: 16),
             Text(
               l10n.practiceSelectExamLabel,
-              style: const TextStyle(
-                color: Color(0xFF8A9DC0),
+              style: TextStyle(
+                color: colors.secondaryText,
                 fontSize: 11,
                 fontWeight: FontWeight.w600,
                 letterSpacing: 1.2,
@@ -623,25 +635,36 @@ class _SetupView extends StatelessWidget {
                 final sel = exam == selectedExam;
                 final label = _examChoiceLabel(l10n, exam);
                 return GestureDetector(
-                  onTap: available
-                      ? () => onExamSelected(exam)
-                      : () => context.push('/upgrade'),
+                  onTap: !available
+                      ? () => context.push('/upgrade')
+                      : exam == _ExamChoice.entranceExamPrep
+                          // Entrance Exam Preparation has its own paper
+                          // structure, timing model, and self-assessed
+                          // method-marking flow — it doesn't fit this
+                          // screen's generic MCQ session engine, so
+                          // selecting it navigates straight to its own
+                          // area instead of setting _selectedExam.
+                          ? () => context.push('/entrance-exam')
+                          : () => onExamSelected(exam),
                   child: Container(
                     padding:
                         const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                     decoration: BoxDecoration(
                       color: sel
-                          ? const Color(0xFF0D1F40)
-                          : const Color(0xFF162236),
-                      borderRadius: BorderRadius.circular(20),
+                          ? colors.primaryAction.withValues(alpha: 0.14)
+                          : colors.cardSurface,
+                      // Unavailable-exam border stays a fixed dark-amber
+                      // tint regardless of theme, pairing with the fixed
+                      // premium lock/label below.
                       border: Border.all(
                         color: sel
-                            ? const Color(0xFF5B8EFF)
+                            ? colors.accent
                             : (available
-                                ? const Color(0xFF1F3055)
+                                ? colors.divider
                                 : const Color(0xFF2A2010)),
                         width: sel ? 2 : 1,
                       ),
+                      borderRadius: BorderRadius.circular(20),
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
@@ -655,9 +678,9 @@ class _SetupView extends StatelessWidget {
                           label,
                           style: TextStyle(
                             color: sel
-                                ? const Color(0xFF5B8EFF)
+                                ? colors.accent
                                 : (available
-                                    ? const Color(0xFF8A9DC0)
+                                    ? colors.secondaryText
                                     : const Color(0xFFFF9500)),
                             fontSize: 13,
                             fontWeight: FontWeight.w500,
@@ -673,8 +696,8 @@ class _SetupView extends StatelessWidget {
           const SizedBox(height: 20),
           Text(
             l10n.practiceModeLabel,
-            style: const TextStyle(
-              color: Color(0xFF8A9DC0),
+            style: TextStyle(
+              color: colors.secondaryText,
               fontSize: 11,
               fontWeight: FontWeight.w600,
               letterSpacing: 1.2,
@@ -697,8 +720,8 @@ class _SetupView extends StatelessWidget {
           const SizedBox(height: 20),
           Text(
             l10n.practiceQuestionsLabel,
-            style: const TextStyle(
-              color: Color(0xFF8A9DC0),
+            style: TextStyle(
+              color: colors.secondaryText,
               fontSize: 11,
               fontWeight: FontWeight.w600,
               letterSpacing: 1.2,
@@ -717,13 +740,11 @@ class _SetupView extends StatelessWidget {
                     height: 44,
                     decoration: BoxDecoration(
                       color: sel
-                          ? const Color(0xFF0D1F40)
-                          : const Color(0xFF162236),
+                          ? colors.primaryAction.withValues(alpha: 0.14)
+                          : colors.cardSurface,
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(
-                        color: sel
-                            ? const Color(0xFF5B8EFF)
-                            : const Color(0xFF1F3055),
+                        color: sel ? colors.accent : colors.divider,
                         width: sel ? 2 : 1,
                       ),
                     ),
@@ -731,7 +752,7 @@ class _SetupView extends StatelessWidget {
                       child: Text(
                         '$count',
                         style: TextStyle(
-                          color: sel ? const Color(0xFF5B8EFF) : Colors.white,
+                          color: sel ? colors.accent : colors.primaryText,
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
                         ),
@@ -750,8 +771,8 @@ class _SetupView extends StatelessWidget {
               onPressed: stages.isEmpty ? null : onStart,
               style: FilledButton.styleFrom(
                 backgroundColor: canStart && !isLoading
-                    ? const Color(0xFF3D7EFF)
-                    : const Color(0xFF1F3055),
+                    ? colors.primaryAction
+                    : colors.divider,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),
@@ -810,16 +831,19 @@ class _ModeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return InkWell(
       borderRadius: BorderRadius.circular(16),
       onTap: onTap,
       child: Container(
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: selected ? const Color(0xFF0D1F40) : const Color(0xFF162236),
+          color: selected
+              ? colors.primaryAction.withValues(alpha: 0.14)
+              : colors.cardSurface,
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: selected ? const Color(0xFF5B8EFF) : const Color(0xFF1F3055),
+            color: selected ? colors.accent : colors.divider,
             width: selected ? 2 : 1,
           ),
         ),
@@ -830,15 +854,13 @@ class _ModeCard extends StatelessWidget {
               height: 44,
               decoration: BoxDecoration(
                 color: selected
-                    ? const Color(0xFF1A3A6B)
-                    : const Color(0xFF1A2A40),
+                    ? colors.primaryAction.withValues(alpha: 0.22)
+                    : colors.divider,
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Icon(
                 icon,
-                color: selected
-                    ? const Color(0xFF5B8EFF)
-                    : const Color(0xFF8A9DC0),
+                color: selected ? colors.accent : colors.secondaryText,
                 size: 32,
               ),
             ),
@@ -849,8 +871,8 @@ class _ModeCard extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: const TextStyle(
-                      color: Colors.white,
+                    style: TextStyle(
+                      color: colors.primaryText,
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
                     ),
@@ -858,16 +880,14 @@ class _ModeCard extends StatelessWidget {
                   const SizedBox(height: 2),
                   Text(
                     subtitle,
-                    style:
-                        const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13),
+                    style: TextStyle(color: colors.secondaryText, fontSize: 13),
                   ),
                 ],
               ),
             ),
             Icon(
               selected ? Icons.check_circle : Icons.chevron_right,
-              color:
-                  selected ? const Color(0xFF5B8EFF) : const Color(0xFF4A6080),
+              color: selected ? colors.accent : colors.tertiaryText,
             ),
           ],
         ),
@@ -916,6 +936,7 @@ class _SessionView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     final question = questions[currentIndex];
     final graph = graphsByQuestionId[question.id];
     final isLast = currentIndex == questions.length - 1;
@@ -933,13 +954,13 @@ class _SessionView extends StatelessWidget {
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const Icon(Icons.arrow_back,
-                          color: Colors.white, size: 20),
+                      Icon(Icons.arrow_back,
+                          color: colors.primaryText, size: 20),
                       const SizedBox(width: 6),
                       Text(
                         l10n.practiceExit,
-                        style: const TextStyle(
-                          color: Colors.white,
+                        style: TextStyle(
+                          color: colors.primaryText,
                           fontSize: 15,
                           fontWeight: FontWeight.w500,
                         ),
@@ -952,10 +973,13 @@ class _SessionView extends StatelessWidget {
                   Container(
                     padding:
                         const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                    // Critical countdown (<=30s) stays a fixed dark-red
+                    // badge regardless of theme, same treatment as other
+                    // fixed status badges in this sprint.
                     decoration: BoxDecoration(
                       color: secondsRemaining! <= 30
                           ? const Color(0xFF3A0E0C)
-                          : const Color(0xFF0D1F40),
+                          : colors.primaryAction.withValues(alpha: 0.14),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Row(
@@ -966,7 +990,7 @@ class _SessionView extends StatelessWidget {
                           size: 14,
                           color: secondsRemaining! <= 30
                               ? const Color(0xFFFF3B30)
-                              : const Color(0xFF5B8EFF),
+                              : colors.accent,
                         ),
                         const SizedBox(width: 4),
                         Text(
@@ -974,7 +998,7 @@ class _SessionView extends StatelessWidget {
                           style: TextStyle(
                             color: secondsRemaining! <= 30
                                 ? const Color(0xFFFF3B30)
-                                : const Color(0xFF5B8EFF),
+                                : colors.accent,
                             fontSize: 13,
                             fontWeight: FontWeight.w600,
                           ),
@@ -986,8 +1010,7 @@ class _SessionView extends StatelessWidget {
                 ],
                 Text(
                   l10n.practiceQuestionOf(currentIndex + 1, questions.length),
-                  style:
-                      const TextStyle(color: Color(0xFF8A9DC0), fontSize: 14),
+                  style: TextStyle(color: colors.secondaryText, fontSize: 14),
                 ),
               ],
             ),
@@ -999,7 +1022,7 @@ class _SessionView extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
                 decoration: BoxDecoration(
-                  color: const Color(0xFF0D1F40),
+                  color: colors.primaryAction.withValues(alpha: 0.14),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: FutureBuilder<TopicDisplay>(
@@ -1019,8 +1042,8 @@ class _SessionView extends StatelessWidget {
                             : question.topic);
                     return Text(
                       title,
-                      style: const TextStyle(
-                        color: Color(0xFF5B8EFF),
+                      style: TextStyle(
+                        color: colors.accent,
                         fontSize: 13,
                         fontWeight: FontWeight.w500,
                       ),
@@ -1043,13 +1066,13 @@ class _SessionView extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.all(18),
                       decoration: BoxDecoration(
-                        color: const Color(0xFF162236),
+                        color: colors.cardSurface,
                         borderRadius: BorderRadius.circular(16),
                       ),
                       child: Text(
                         MathNotationFormatter.format(question.question),
-                        style: const TextStyle(
-                          color: Colors.white,
+                        style: TextStyle(
+                          color: colors.primaryText,
                           fontSize: 17,
                           fontWeight: FontWeight.w600,
                           height: 1.4,
@@ -1078,28 +1101,29 @@ class _SessionView extends StatelessWidget {
                       final double borderWidth;
 
                       if (isCorrectOption) {
-                        borderColor = const Color(0xFF34C759);
-                        bgColor = const Color(0xFF0A2015);
-                        labelBgColor = const Color(0xFF0D2B1A);
-                        labelTextColor = const Color(0xFF34C759);
+                        borderColor = colors.success;
+                        bgColor = colors.success.withValues(alpha: 0.12);
+                        labelBgColor = colors.success.withValues(alpha: 0.22);
+                        labelTextColor = colors.success;
                         borderWidth = 2;
                       } else if (isWrongOption) {
-                        borderColor = const Color(0xFFFF3B30);
-                        bgColor = const Color(0xFF2A0A08);
-                        labelBgColor = const Color(0xFF3A0E0C);
-                        labelTextColor = const Color(0xFFFF3B30);
+                        borderColor = colors.error;
+                        bgColor = colors.error.withValues(alpha: 0.12);
+                        labelBgColor = colors.error.withValues(alpha: 0.22);
+                        labelTextColor = colors.error;
                         borderWidth = 2;
                       } else if (isSelected) {
-                        borderColor = const Color(0xFF5B8EFF);
-                        bgColor = const Color(0xFF0D1F40);
-                        labelBgColor = const Color(0xFF122050);
-                        labelTextColor = const Color(0xFF5B8EFF);
+                        borderColor = colors.accent;
+                        bgColor = colors.primaryAction.withValues(alpha: 0.12);
+                        labelBgColor =
+                            colors.primaryAction.withValues(alpha: 0.22);
+                        labelTextColor = colors.accent;
                         borderWidth = 2;
                       } else {
-                        borderColor = const Color(0xFF1F3055);
-                        bgColor = const Color(0xFF162236);
-                        labelBgColor = const Color(0xFF1A2840);
-                        labelTextColor = const Color(0xFF8A9DC0);
+                        borderColor = colors.divider;
+                        bgColor = colors.cardSurface;
+                        labelBgColor = colors.divider;
+                        labelTextColor = colors.secondaryText;
                         borderWidth = 1;
                       }
 
@@ -1139,17 +1163,19 @@ class _SessionView extends StatelessWidget {
                                 const SizedBox(width: 12),
                                 Expanded(
                                   child: Text(
-                                    MathNotationFormatter.format(question.options[i]),
-                                    style: const TextStyle(
-                                        color: Colors.white, fontSize: 15),
+                                    MathNotationFormatter.format(
+                                        question.options[i]),
+                                    style: TextStyle(
+                                        color: colors.primaryText,
+                                        fontSize: 15),
                                   ),
                                 ),
                                 if (isCorrectOption)
-                                  const Icon(Icons.check_circle,
-                                      color: Color(0xFF34C759), size: 20),
+                                  Icon(Icons.check_circle,
+                                      color: colors.success, size: 20),
                                 if (isWrongOption)
-                                  const Icon(Icons.cancel,
-                                      color: Color(0xFFFF3B30), size: 20),
+                                  Icon(Icons.cancel,
+                                      color: colors.error, size: 20),
                               ],
                             ),
                           ),
@@ -1161,26 +1187,27 @@ class _SessionView extends StatelessWidget {
                       Container(
                         padding: const EdgeInsets.all(14),
                         decoration: BoxDecoration(
-                          color: const Color(0xFF0A1525),
+                          color: colors.elevatedSurface,
                           borderRadius: BorderRadius.circular(12),
-                          border: Border.all(color: const Color(0xFF1F3055)),
+                          border: Border.all(color: colors.divider),
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               l10n.practiceExplanation,
-                              style: const TextStyle(
-                                color: Color(0xFF5B8EFF),
+                              style: TextStyle(
+                                color: colors.accent,
                                 fontSize: 13,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
                             const SizedBox(height: 6),
                             Text(
-                              MathNotationFormatter.format(question.explanation),
-                              style: const TextStyle(
-                                color: Color(0xFF8A9DC0),
+                              MathNotationFormatter.format(
+                                  question.explanation),
+                              style: TextStyle(
+                                color: colors.secondaryText,
                                 fontSize: 14,
                                 height: 1.4,
                               ),
@@ -1203,10 +1230,10 @@ class _SessionView extends StatelessWidget {
                     : (selectedOption != null ? () => onCheck() : null),
                 style: FilledButton.styleFrom(
                   backgroundColor: checked
-                      ? const Color(0xFF34C759)
+                      ? colors.success
                       : (selectedOption != null
-                          ? const Color(0xFF3D7EFF)
-                          : const Color(0xFF1F3055)),
+                          ? colors.primaryAction
+                          : colors.divider),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(14),
                   ),
@@ -1254,6 +1281,7 @@ class _SummaryView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     final bottomPadding = MediaQuery.viewPaddingOf(context).bottom +
         kBottomNavigationBarHeight +
         AppSpacing.xl;
@@ -1275,12 +1303,11 @@ class _SummaryView extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: const Color(0xFF0A2015),
                     borderRadius: BorderRadius.circular(40),
-                    border:
-                        Border.all(color: const Color(0xFF34C759), width: 2),
+                    border: Border.all(color: colors.success, width: 2),
                   ),
-                  child: const Icon(
+                  child: Icon(
                     Icons.check_circle_outline,
-                    color: Color(0xFF34C759),
+                    color: colors.success,
                     size: 44,
                   ),
                 ),
@@ -1289,8 +1316,8 @@ class _SummaryView extends StatelessWidget {
               Text(
                 l10n.practiceSummaryTitle,
                 textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: Colors.white,
+                style: TextStyle(
+                  color: colors.primaryText,
                   fontSize: 24,
                   fontWeight: FontWeight.w700,
                 ),
@@ -1299,8 +1326,8 @@ class _SummaryView extends StatelessWidget {
               Text(
                 l10n.practiceSummaryAccuracy(percent),
                 textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: Color(0xFF34C759),
+                style: TextStyle(
+                  color: colors.success,
                   fontSize: 44,
                   fontWeight: FontWeight.w800,
                 ),
@@ -1309,8 +1336,8 @@ class _SummaryView extends StatelessWidget {
               Text(
                 l10n.practiceSummaryCorrect(correctCount, totalCount),
                 textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: Color(0xFF8A9DC0),
+                style: TextStyle(
+                  color: colors.secondaryText,
                   fontSize: 16,
                 ),
               ),
@@ -1318,15 +1345,15 @@ class _SummaryView extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: const Color(0xFF132040),
+                  color: colors.cardSurface,
                   borderRadius: BorderRadius.circular(14),
-                  border: Border.all(color: const Color(0xFF1F3055)),
+                  border: Border.all(color: colors.divider),
                 ),
                 child: Text(
                   l10n.practiceSummaryEncouragement,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    color: Color(0xFF8A9DC0),
+                  style: TextStyle(
+                    color: colors.secondaryText,
                     fontSize: 14,
                     height: 1.4,
                   ),
@@ -1339,7 +1366,7 @@ class _SummaryView extends StatelessWidget {
                 child: FilledButton(
                   onPressed: onClose,
                   style: FilledButton.styleFrom(
-                    backgroundColor: const Color(0xFF3D7EFF),
+                    backgroundColor: colors.primaryAction,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(14),
                     ),

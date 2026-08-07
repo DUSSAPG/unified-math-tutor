@@ -15,5 +15,6 @@ class PublishingConfig {
   static const bool websiteQrEnabled = false;
   static const String? websiteUrl = null;
 
-  static String get publishingHierarchy => '$publisher • $productLine • $pillarName';
+  static String get publishingHierarchy =>
+      '$publisher • $productLine • $pillarName';
 }

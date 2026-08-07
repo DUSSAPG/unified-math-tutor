@@ -36,8 +36,9 @@ class GuidedNarrationBanner extends StatelessWidget {
           // fact at that point.
           return ValueListenableBuilder<bool>(
             valueListenable: LocalPreferencesService.instance.quietStudyMode,
-            builder: (context, quiet, _) =>
-                quiet ? const SizedBox.shrink() : const CaptainMathCard(compact: true),
+            builder: (context, quiet, _) => quiet
+                ? const SizedBox.shrink()
+                : const CaptainMathCard(compact: true),
           );
         }
         return Semantics(
@@ -47,16 +48,19 @@ class GuidedNarrationBanner extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SvgPicture.asset('assets/icons/captain_math.svg', width: 44, height: 44),
+                SvgPicture.asset('assets/icons/captain_math.svg',
+                    width: 44, height: 44),
                 const SizedBox(width: 10),
                 Expanded(
                   child: Text(
                     message.text,
-                    style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13, height: 1.3),
+                    style: const TextStyle(
+                        color: Color(0xFF8A9DC0), fontSize: 13, height: 1.3),
                   ),
                 ),
                 IconButton(
-                  icon: const Icon(Icons.replay, size: 18, color: Color(0xFF8A9DC0)),
+                  icon: const Icon(Icons.replay,
+                      size: 18, color: Color(0xFF8A9DC0)),
                   tooltip: l10n.labsNarrationReplayButton,
                   visualDensity: VisualDensity.compact,
                   onPressed: () => GuidedNarrationService.instance.replayLast(),

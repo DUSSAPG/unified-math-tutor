@@ -4,6 +4,7 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../app/safe_navigation.dart';
 import '../../services/local_preferences_service.dart';
+import '../../shared/theme/app_theme.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -12,8 +13,9 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final prefs = LocalPreferencesService.instance;
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
@@ -79,21 +81,23 @@ class _ToggleTile extends StatelessWidget {
   final ValueChanged<bool> onChanged;
 
   @override
-  Widget build(BuildContext context) => Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-        decoration: BoxDecoration(
-          color: const Color(0xFF132040),
-          borderRadius: BorderRadius.circular(14),
-          border: Border.all(color: const Color(0xFF1F3055)),
-        ),
-        child: SwitchListTile(
-          contentPadding: EdgeInsets.zero,
-          secondary: Icon(icon, color: const Color(0xFF5B8EFF)),
-          title: Text(title, style: const TextStyle(color: Colors.white)),
-          subtitle:
-              Text(subtitle, style: const TextStyle(color: Color(0xFF8A9DC0))),
-          value: value,
-          onChanged: onChanged,
-        ),
-      );
+  Widget build(BuildContext context) {
+    final colors = context.appColors;
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+      decoration: BoxDecoration(
+        color: colors.cardSurface,
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(color: colors.divider),
+      ),
+      child: SwitchListTile(
+        contentPadding: EdgeInsets.zero,
+        secondary: Icon(icon, color: colors.accent),
+        title: Text(title, style: TextStyle(color: colors.primaryText)),
+        subtitle: Text(subtitle, style: TextStyle(color: colors.secondaryText)),
+        value: value,
+        onChanged: onChanged,
+      ),
+    );
+  }
 }

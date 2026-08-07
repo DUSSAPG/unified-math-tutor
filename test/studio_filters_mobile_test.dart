@@ -17,7 +17,9 @@ void main() {
     final router = GoRouter(
       initialLocation: '/topics',
       routes: [
-        GoRoute(path: '/topics', builder: (_, __) => const Scaffold(body: TopicsScreen())),
+        GoRoute(
+            path: '/topics',
+            builder: (_, __) => const Scaffold(body: TopicsScreen())),
         GoRoute(path: '/practice', builder: (_, __) => const SizedBox.shrink()),
         GoRoute(path: '/upgrade', builder: (_, __) => const SizedBox.shrink()),
       ],
@@ -33,7 +35,8 @@ void main() {
         ],
         supportedLocales: AppLocalizations.supportedLocales,
         builder: (context, child) => MediaQuery(
-          data: MediaQuery.of(context).copyWith(textScaler: TextScaler.linear(textScale)),
+          data: MediaQuery.of(context)
+              .copyWith(textScaler: TextScaler.linear(textScale)),
           child: child!,
         ),
       ),
@@ -59,7 +62,8 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('Topics: choosing GCSE from More filters the list and stays visibly selected',
+  testWidgets(
+      'Topics: choosing GCSE from More filters the list and stays visibly selected',
       (tester) async {
     await pumpTopics(tester);
 
@@ -88,7 +92,8 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  Future<void> pumpFormulas(WidgetTester tester, {double textScale = 1.0}) async {
+  Future<void> pumpFormulas(WidgetTester tester,
+      {double textScale = 1.0}) async {
     await tester.pumpWidget(
       MaterialApp(
         localizationsDelegates: const [
@@ -99,7 +104,8 @@ void main() {
         ],
         supportedLocales: AppLocalizations.supportedLocales,
         builder: (context, child) => MediaQuery(
-          data: MediaQuery.of(context).copyWith(textScaler: TextScaler.linear(textScale)),
+          data: MediaQuery.of(context)
+              .copyWith(textScaler: TextScaler.linear(textScale)),
           child: child!,
         ),
         home: const Scaffold(body: FormulaLibraryScreen()),
@@ -108,7 +114,8 @@ void main() {
     await tester.pumpAndSettle();
   }
 
-  testWidgets('Formula Library: overflow categories live behind More and stay selectable',
+  testWidgets(
+      'Formula Library: overflow categories live behind More and stay selectable',
       (tester) async {
     addTearDown(tester.view.resetPhysicalSize);
     addTearDown(tester.view.resetDevicePixelRatio);
@@ -135,7 +142,8 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('Formula Library: no overflow at a large text scale', (tester) async {
+  testWidgets('Formula Library: no overflow at a large text scale',
+      (tester) async {
     addTearDown(tester.view.resetPhysicalSize);
     addTearDown(tester.view.resetDevicePixelRatio);
     tester.view.physicalSize = const Size(320, 568);

@@ -22,7 +22,8 @@ class MentalMathsCategoryScreen extends StatefulWidget {
   final String categoryId;
 
   @override
-  State<MentalMathsCategoryScreen> createState() => _MentalMathsCategoryScreenState();
+  State<MentalMathsCategoryScreen> createState() =>
+      _MentalMathsCategoryScreenState();
 }
 
 class _MentalMathsCategoryScreenState extends State<MentalMathsCategoryScreen> {
@@ -55,7 +56,8 @@ class _MentalMathsCategoryScreenState extends State<MentalMathsCategoryScreen> {
     final tiered = all.where((c) => c.tier == tier).toList();
     final pool = tiered.isNotEmpty ? tiered : all;
     final ids = pool.map((c) => c.id).toList()..sort();
-    final recentlyShown = MentalMathsProgressService.instance.recentlyShown(_category).toSet();
+    final recentlyShown =
+        MentalMathsProgressService.instance.recentlyShown(_category).toSet();
     final id = MentalMathsChallengeSelector.dailyChallengeId(
       date: DateTime.now(),
       categoryIndex: _category.index,
@@ -68,13 +70,16 @@ class _MentalMathsCategoryScreenState extends State<MentalMathsCategoryScreen> {
   }
 
   Future<void> _checkAnswer(MentalMathsChallenge challenge) async {
-    final parsed = num.tryParse(_answerController.text.trim().replaceAll(',', '.'));
-    final correct = parsed != null && (parsed - challenge.answerValue).abs() < 0.001;
+    final parsed =
+        num.tryParse(_answerController.text.trim().replaceAll(',', '.'));
+    final correct =
+        parsed != null && (parsed - challenge.answerValue).abs() < 0.001;
     setState(() {
       _answered = true;
       _correct = correct;
     });
-    await MentalMathsProgressService.instance.recordAttempt(_category, correct: correct);
+    await MentalMathsProgressService.instance
+        .recordAttempt(_category, correct: correct);
     if (correct) {
       CaptainMathService.instance.showCompletion();
     } else {
@@ -96,7 +101,8 @@ class _MentalMathsCategoryScreenState extends State<MentalMathsCategoryScreen> {
         ),
         title: Text(
           mentalMathsCategoryLabel(l10n, _category),
-          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+          style:
+              const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
         ),
       ),
       body: SafeArea(
@@ -105,7 +111,8 @@ class _MentalMathsCategoryScreenState extends State<MentalMathsCategoryScreen> {
           builder: (context, snapshot) {
             if (snapshot.hasError) {
               return const Center(
-                child: Icon(Icons.error_outline, color: Color(0xFF8A9DC0), size: 32),
+                child: Icon(Icons.error_outline,
+                    color: Color(0xFF8A9DC0), size: 32),
               );
             }
             final challenge = snapshot.data;
@@ -116,7 +123,8 @@ class _MentalMathsCategoryScreenState extends State<MentalMathsCategoryScreen> {
 
             return Center(
               child: ConstrainedBox(
-                constraints: BoxConstraints(maxWidth: AppResponsive.contentMaxWidth(context)),
+                constraints: BoxConstraints(
+                    maxWidth: AppResponsive.contentMaxWidth(context)),
                 child: SingleChildScrollView(
                   padding: const EdgeInsets.fromLTRB(16, 8, 16, 40),
                   child: Column(
@@ -146,7 +154,8 @@ class _MentalMathsCategoryScreenState extends State<MentalMathsCategoryScreen> {
                       const SizedBox(height: AppSpacing.md),
                       TextField(
                         controller: _answerController,
-                        keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                        keyboardType: const TextInputType.numberWithOptions(
+                            decimal: true),
                         style: const TextStyle(color: Colors.white),
                         decoration: InputDecoration(
                           labelText: l10n.mathStudioFollowUpAnswerLabel,
@@ -168,7 +177,9 @@ class _MentalMathsCategoryScreenState extends State<MentalMathsCategoryScreen> {
                               ? l10n.mathStudioFollowUpCorrect
                               : l10n.mathStudioFollowUpTryAgain,
                           style: TextStyle(
-                            color: _correct ? const Color(0xFF34C759) : const Color(0xFF8A9DC0),
+                            color: _correct
+                                ? const Color(0xFF34C759)
+                                : const Color(0xFF8A9DC0),
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -195,13 +206,15 @@ class _MentalMathsCategoryScreenState extends State<MentalMathsCategoryScreen> {
                             padding: const EdgeInsets.only(bottom: 6),
                             child: Text(
                               '• ${MathNotationFormatter.format(step)}',
-                              style: const TextStyle(color: Colors.white, fontSize: 14),
+                              style: const TextStyle(
+                                  color: Colors.white, fontSize: 14),
                             ),
                           ),
                         const SizedBox(height: 4),
                         Text(
                           '${l10n.mathStudioFollowUpAnswerLabel}: ${text.answerText}',
-                          style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13),
+                          style: const TextStyle(
+                              color: Color(0xFF8A9DC0), fontSize: 13),
                         ),
                       ],
                     ],

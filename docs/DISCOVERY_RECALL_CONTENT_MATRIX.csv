@@ -1,0 +1,39 @@
+category_id,display_name,audience,registry,visible,feature_flag,card_count,image_count,localisation_status,reachable_route,empty_filter_risk,content_status,recommended_action
+recall-topic-number,Number,student,recall_cards.json,TRUE,none,20,0,CHROME_5_CONTENT_2,/math-studio/recall-cards/browse,LOW,READY,none
+recall-topic-ratioAndProportion,Ratio & Proportion,student,recall_cards.json,TRUE,none,20,0,CHROME_5_CONTENT_2,/math-studio/recall-cards/browse,MEDIUM,READY,none - empty when combined with type=vocabulary; already shows explained empty state
+recall-topic-algebra,Algebra,student,recall_cards.json,TRUE,none,20,0,CHROME_5_CONTENT_2,/math-studio/recall-cards/browse,MEDIUM,READY,none - empty when combined with type=meaning or type=realWorldConnection; already shows explained empty state
+recall-topic-geometryAndMeasures,Geometry & Measures,student,recall_cards.json,TRUE,none,20,0,CHROME_5_CONTENT_2,/math-studio/recall-cards/browse,LOW,READY,none
+recall-topic-statistics,Statistics,student,recall_cards.json,TRUE,none,20,0,CHROME_5_CONTENT_2,/math-studio/recall-cards/browse,LOW,READY,none
+recall-topic-probability,Probability,student,recall_cards.json,TRUE,none,20,0,CHROME_5_CONTENT_2,/math-studio/recall-cards/browse,MEDIUM,READY,none - empty when combined with type=meaning; already shows explained empty state
+recall-type-formula,Formula,student,recall_cards.json,TRUE,none,42,0,CHROME_5_CONTENT_2,/math-studio/recall-cards/browse,LOW,READY,none
+recall-type-strategy,Strategy,student,recall_cards.json,TRUE,none,22,0,CHROME_5_CONTENT_2,/math-studio/recall-cards/browse,LOW,READY,none
+recall-type-vocabulary,Vocabulary,student,recall_cards.json,TRUE,none,12,0,CHROME_5_CONTENT_2,/math-studio/recall-cards/browse,MEDIUM,READY,none - empty when combined with topic=ratioAndProportion; already shows explained empty state
+recall-type-misconception,Misconception,student,recall_cards.json,TRUE,none,10,0,CHROME_5_CONTENT_2,/math-studio/recall-cards/browse,LOW,READY,none
+recall-type-realWorldConnection,Real-World Connection,student,recall_cards.json,TRUE,none,10,0,CHROME_5_CONTENT_2,/math-studio/recall-cards/browse,MEDIUM,READY,none - empty when combined with topic=algebra; already shows explained empty state
+recall-type-symbol,Symbol,student,recall_cards.json,TRUE,none,9,0,CHROME_5_CONTENT_2,/math-studio/recall-cards/browse,LOW,READY,none
+recall-type-visual,Visual,student,recall_cards.json,TRUE,none,9,0,CHROME_5_CONTENT_2,/math-studio/recall-cards/browse,LOW,READY,none
+recall-type-meaning,Meaning,student,recall_cards.json,TRUE,none,6,0,CHROME_5_CONTENT_2,/math-studio/recall-cards/browse,HIGH,READY,none - empty when combined with topic=algebra or topic=probability (2 of 6 topics); already shows explained empty state
+recall-parent-conversationStarters,Conversation Starters,parent,parent_recall_cards.json,TRUE,none,2,0,CONTENT_5_CHROME_UNLOCALIZED,/family-studio/parent-recall-cards,LOW,READY,localize screen chrome text (currently hardcoded English)
+recall-parent-homeworkHints,Homework Hints,parent,parent_recall_cards.json,TRUE,none,2,0,CONTENT_5_CHROME_UNLOCALIZED,/family-studio/parent-recall-cards,LOW,READY,localize screen chrome text (currently hardcoded English)
+recall-parent-kitchenMaths,Kitchen Maths,parent,parent_recall_cards.json,TRUE,none,2,0,CONTENT_5_CHROME_UNLOCALIZED,/family-studio/parent-recall-cards,LOW,READY,localize screen chrome text (currently hardcoded English)
+recall-parent-shoppingMaths,Shopping Maths,parent,parent_recall_cards.json,TRUE,none,2,0,CONTENT_5_CHROME_UNLOCALIZED,/family-studio/parent-recall-cards,LOW,READY,localize screen chrome text (currently hardcoded English)
+recall-parent-realLifeAlgebra,Real-Life Algebra,parent,parent_recall_cards.json,TRUE,none,2,0,CONTENT_5_CHROME_UNLOCALIZED,/family-studio/parent-recall-cards,LOW,READY,localize screen chrome text (currently hardcoded English)
+recall-parent-geometryAroundTheHouse,Geometry Around the House,parent,parent_recall_cards.json,TRUE,none,2,0,CONTENT_5_CHROME_UNLOCALIZED,/family-studio/parent-recall-cards,LOW,READY,localize screen chrome text (currently hardcoded English)
+recall-parent-mentalMathsGames,Mental Maths Games,parent,parent_recall_cards.json,TRUE,none,2,0,CONTENT_5_CHROME_UNLOCALIZED,/family-studio/parent-recall-cards,LOW,READY,localize screen chrome text (currently hardcoded English)
+recall-parent-budgeting,Budgeting,parent,parent_recall_cards.json,TRUE,none,2,0,CONTENT_5_CHROME_UNLOCALIZED,/family-studio/parent-recall-cards,LOW,READY,localize screen chrome text (currently hardcoded English)
+recall-parent-measurement,Measurement,parent,parent_recall_cards.json,TRUE,none,2,0,CONTENT_5_CHROME_UNLOCALIZED,/family-studio/parent-recall-cards,LOW,READY,localize screen chrome text (currently hardcoded English)
+recall-parent-travelPlanning,Travel Planning,parent,parent_recall_cards.json,TRUE,none,2,0,CONTENT_5_CHROME_UNLOCALIZED,/family-studio/parent-recall-cards,LOW,READY,localize screen chrome text (currently hardcoded English)
+discovery-sports,Sport,student,discovery_cards.json,TRUE,none,12,12,COMPLETE_5,/math-studio/discovery,LOW,READY,none
+discovery-shopping,Shopping,student,discovery_cards.json,TRUE,none,2,2,COMPLETE_5,/math-studio/discovery,LOW,PARTIAL,Sprint 2 target (Finance and Shopping) - add 1-2 more cards
+discovery-cooking,Cooking,student,discovery_cards.json,TRUE,none,2,2,COMPLETE_5,/math-studio/discovery,LOW,PARTIAL,Sprint 2 target (Cooking and Measurement) - add 1-2 more cards
+discovery-everydayLife,Everyday Life,student,discovery_cards.json,TRUE,none,2,2,COMPLETE_5,/math-studio/discovery,LOW,PARTIAL,Sprint 2 target (Everyday Life) - add 1-2 more cards
+discovery-aviation,Aviation,student,discovery_cards.json,TRUE,none,2,2,COMPLETE_5,/math-studio/discovery,LOW,PARTIAL,Sprint 2 target (Aviation) - add 1-2 more cards
+discovery-truckingLogistics,Trucking & Logistics,student,discovery_cards.json,TRUE,none,2,2,COMPLETE_5,/math-studio/discovery,LOW,PARTIAL,not in Sprint 2 scope - optional future addition
+discovery-healthcare,Healthcare,student,discovery_cards.json,TRUE,none,2,2,COMPLETE_5,/math-studio/discovery,LOW,PARTIAL,Sprint 2 target (Healthcare) - add 1-2 more cards
+discovery-engineeringConstruction,Engineering & Construction,student,discovery_cards.json,FALSE,none,0,0,N/A,/math-studio/discovery (not selectable),NONE,HIDDEN_EMPTY,Sprint 2 target (Engineering) - highest priority: enum + icon fallback already exist zero cards blocking
+discovery-artDesign,Art & Design,student,discovery_cards.json,FALSE,none,0,0,N/A,/math-studio/discovery (not selectable),NONE,HIDDEN_EMPTY,Sprint 2 target (Art Design and Animation) - enum + icon fallback already exist
+discovery-businessFinance,Business & Finance,student,discovery_cards.json,FALSE,none,0,0,N/A,/math-studio/discovery (not selectable),NONE,HIDDEN_EMPTY,Sprint 2 target (Finance) - enum + icon fallback already exist
+discovery-gaming,Gaming,student,discovery_cards.json,FALSE,none,0,0,N/A,/math-studio/discovery (not selectable),NONE,DEFERRED,not in Sprint 2 scope - no immediate content plan
+discovery-architectureConstruction,Architecture and Construction,student,none - no DiscoveryCategory enum value exists,FALSE,none,0,0,N/A,none,NONE,DEFERRED,Sprint 2 blocker: requires a new DiscoveryCategory enum value or an explicit decision to fold into engineeringConstruction before content can be authored
+discovery-environmentClimate,Environment and Climate,student,none - no DiscoveryCategory enum value exists,FALSE,none,0,0,N/A,none,NONE,DEFERRED,Sprint 2 blocker: requires a new DiscoveryCategory enum value before content can be authored
+discovery-computingCryptography,Computing and Cryptography,student,none - no DiscoveryCategory enum value exists,FALSE,none,0,0,N/A,none,NONE,DEFERRED,Sprint 2 blocker: requires a new DiscoveryCategory enum value before content can be authored (distinct from the existing unrelated gaming value)

@@ -34,7 +34,9 @@ void main() {
   const locale = Locale('en');
   final cards = [_card('card-one'), _card('card-two')];
 
-  test('branded footer contains the publishing hierarchy, tagline, and page number', () {
+  test(
+      'branded footer contains the publishing hierarchy, tagline, and page number',
+      () {
     final footer = RecallCardExportService.buildBrandedFooterLine(1, 2);
     expect(footer, contains('QuantumLexFin'));
     expect(footer, contains('Recall Cards'));
@@ -42,7 +44,8 @@ void main() {
     expect(footer, contains('1/2'));
   });
 
-  test('recall sheet PDF is a valid PDF byte stream containing every card', () async {
+  test('recall sheet PDF is a valid PDF byte stream containing every card',
+      () async {
     const service = RecallCardExportService();
     final bytes = await service.buildRecallSheetPdf(cards, locale: locale);
     expect(bytes.take(4), [37, 80, 68, 70]); // %PDF magic number
@@ -54,21 +57,26 @@ void main() {
     expect(bytes.take(4), [37, 80, 68, 70]);
   });
 
-  test('generation succeeds with no learner name (name-free default)', () async {
+  test('generation succeeds with no learner name (name-free default)',
+      () async {
     const service = RecallCardExportService();
     final bytes = await service.buildRecallSheetPdf(cards, locale: locale);
     expect(bytes.take(4), [37, 80, 68, 70]);
   });
 
-  test('generation succeeds when a learner name is explicitly opted in', () async {
+  test('generation succeeds when a learner name is explicitly opted in',
+      () async {
     const service = RecallCardExportService();
-    final bytes = await service.buildRecallSheetPdf(cards, locale: locale, learnerName: 'Alex');
+    final bytes = await service.buildRecallSheetPdf(cards,
+        locale: locale, learnerName: 'Alex');
     expect(bytes.take(4), [37, 80, 68, 70]);
   });
 
-  test('single-card export works with a list of one (detail-screen share)', () async {
+  test('single-card export works with a list of one (detail-screen share)',
+      () async {
     const service = RecallCardExportService();
-    final bytes = await service.buildAnswerSheetPdf([cards.first], locale: locale);
+    final bytes =
+        await service.buildAnswerSheetPdf([cards.first], locale: locale);
     expect(bytes.take(4), [37, 80, 68, 70]);
   });
 }

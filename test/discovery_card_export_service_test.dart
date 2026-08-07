@@ -36,8 +36,11 @@ void main() {
   final card = _testCard();
   final text = card.locales['en']!;
 
-  test('branded footer contains the publishing hierarchy, tagline, card id/version, and page number', () {
-    final footer = DiscoveryCardExportService.buildBrandedFooterLine(card, 1, 2);
+  test(
+      'branded footer contains the publishing hierarchy, tagline, card id/version, and page number',
+      () {
+    final footer =
+        DiscoveryCardExportService.buildBrandedFooterLine(card, 1, 2);
     expect(footer, contains('QuantumLexFin'));
     expect(footer, contains('Math Intelligence'));
     expect(footer, contains('Math Studio'));
@@ -47,7 +50,8 @@ void main() {
   });
 
   test('branded footer omits the website line while it is disabled', () {
-    final footer = DiscoveryCardExportService.buildBrandedFooterLine(card, 1, 1);
+    final footer =
+        DiscoveryCardExportService.buildBrandedFooterLine(card, 1, 1);
     expect(footer.contains('http'), isFalse);
   });
 
@@ -69,15 +73,18 @@ void main() {
     expect(bytes.take(4), [37, 80, 68, 70]);
   });
 
-  test('generation succeeds with no learner name (name-free default)', () async {
+  test('generation succeeds with no learner name (name-free default)',
+      () async {
     const service = DiscoveryCardExportService();
     final bytes = await service.buildChallengeSheetPdf(card, text);
     expect(bytes.take(4), [37, 80, 68, 70]);
   });
 
-  test('generation succeeds when a learner name is explicitly opted in', () async {
+  test('generation succeeds when a learner name is explicitly opted in',
+      () async {
     const service = DiscoveryCardExportService();
-    final bytes = await service.buildChallengeSheetPdf(card, text, learnerName: 'Alex');
+    final bytes =
+        await service.buildChallengeSheetPdf(card, text, learnerName: 'Alex');
     expect(bytes.take(4), [37, 80, 68, 70]);
   });
 }

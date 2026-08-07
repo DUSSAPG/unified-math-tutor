@@ -37,7 +37,8 @@ void main() {
     await tester.pumpAndSettle();
   }
 
-  testWidgets('first equation renders as 2x + 3 = 11 with a concrete, disabled divide step',
+  testWidgets(
+      'first equation renders as 2x + 3 = 11 with a concrete, disabled divide step',
       (tester) async {
     await pump(tester);
     expect(find.text('2x + 3 = 11'), findsOneWidget);
@@ -55,7 +56,8 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('removing the constant then dividing solves for x', (tester) async {
+  testWidgets('removing the constant then dividing solves for x',
+      (tester) async {
     await pump(tester);
     await tester.tap(find.text('Remove 3 from both sides'));
     await tester.pumpAndSettle();
@@ -69,7 +71,8 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('Reset restores the original equation after solving', (tester) async {
+  testWidgets('Reset restores the original equation after solving',
+      (tester) async {
     await pump(tester);
     await tester.tap(find.text('Remove 3 from both sides'));
     await tester.pumpAndSettle();

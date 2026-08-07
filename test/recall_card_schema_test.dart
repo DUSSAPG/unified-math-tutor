@@ -25,7 +25,8 @@ void main() {
       byTopic[card.topicId] = (byTopic[card.topicId] ?? 0) + 1;
     }
     for (final topic in RecallTopic.values) {
-      expect(byTopic[topic], 20, reason: '${topic.name} should have exactly 20 cards');
+      expect(byTopic[topic], 20,
+          reason: '${topic.name} should have exactly 20 cards');
     }
   });
 
@@ -41,17 +42,22 @@ void main() {
       for (final locale in _launchLocales) {
         final text = card.locales[locale];
         expect(text, isNotNull, reason: '${card.id} missing locale "$locale"');
-        expect(text!.frontPrompt.trim(), isNotEmpty, reason: '${card.id}/$locale frontPrompt empty');
-        expect(text.answer.trim(), isNotEmpty, reason: '${card.id}/$locale answer empty');
-        expect(text.explanation.trim(), isNotEmpty, reason: '${card.id}/$locale explanation empty');
+        expect(text!.frontPrompt.trim(), isNotEmpty,
+            reason: '${card.id}/$locale frontPrompt empty');
+        expect(text.answer.trim(), isNotEmpty,
+            reason: '${card.id}/$locale answer empty');
+        expect(text.explanation.trim(), isNotEmpty,
+            reason: '${card.id}/$locale explanation empty');
         expect(text.commonMistake.trim(), isNotEmpty,
             reason: '${card.id}/$locale commonMistake empty');
-        expect(text.whereUsed, isNotEmpty, reason: '${card.id}/$locale whereUsed empty');
+        expect(text.whereUsed, isNotEmpty,
+            reason: '${card.id}/$locale whereUsed empty');
       }
     }
   });
 
-  test('frontVisualAssetId and frontVisualAlt are set together, never one without the other',
+  test(
+      'frontVisualAssetId and frontVisualAlt are set together, never one without the other',
       () async {
     final cards = await RecallCardCatalogService.instance.all();
     for (final card in cards) {
@@ -70,22 +76,32 @@ void main() {
 
   test('no two cards share the exact same English front prompt', () async {
     final cards = await RecallCardCatalogService.instance.all();
-    final prompts = cards.map((c) => c.locales['en']!.frontPrompt.trim().toLowerCase()).toList();
+    final prompts = cards
+        .map((c) => c.locales['en']!.frontPrompt.trim().toLowerCase())
+        .toList();
     expect(prompts.toSet(), hasLength(prompts.length));
   });
 
-  test('no card exposes raw programming notation (bare ^ or *) in learner-facing text',
+  test(
+      'no card exposes raw programming notation (bare ^ or *) in learner-facing text',
       () async {
     final cards = await RecallCardCatalogService.instance.all();
     for (final card in cards) {
       final text = card.locales['en']!;
-      for (final value in [text.frontPrompt, text.answer, text.explanation, text.commonMistake]) {
-        expect(value.contains('^'), isFalse, reason: '${card.id} exposes a bare "^" in "$value"');
+      for (final value in [
+        text.frontPrompt,
+        text.answer,
+        text.explanation,
+        text.commonMistake
+      ]) {
+        expect(value.contains('^'), isFalse,
+            reason: '${card.id} exposes a bare "^" in "$value"');
       }
     }
   });
 
-  test('relatedDiscoveryCardIds only reference cards that exist in the Discovery catalog',
+  test(
+      'relatedDiscoveryCardIds only reference cards that exist in the Discovery catalog',
       () async {
     final recallCards = await RecallCardCatalogService.instance.all();
     final discoveryCards = await DiscoveryCardCatalogService.instance.all();
@@ -98,11 +114,13 @@ void main() {
     }
   });
 
-  test('relatedPracticeTopicIds only reference topics that exist in the practice topic catalog',
+  test(
+      'relatedPracticeTopicIds only reference topics that exist in the practice topic catalog',
       () async {
     final recallCards = await RecallCardCatalogService.instance.all();
-    final raw = jsonDecode(await rootBundle.loadString(TopicCatalogService.assetPath))
-        as Map<String, dynamic>;
+    final raw =
+        jsonDecode(await rootBundle.loadString(TopicCatalogService.assetPath))
+            as Map<String, dynamic>;
     final topicIds = (raw['topics'] as List)
         .map((t) => (t as Map<String, dynamic>)['id'] as String)
         .toSet();
@@ -114,7 +132,8 @@ void main() {
     }
   });
 
-  test('bundled catalog JSON round-trips through jsonDecode without error', () async {
+  test('bundled catalog JSON round-trips through jsonDecode without error',
+      () async {
     final raw = await rootBundle.loadString(RecallCardCatalogService.assetPath);
     expect(() => jsonDecode(raw), returnsNormally);
   });

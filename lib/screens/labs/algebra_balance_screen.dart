@@ -92,11 +92,15 @@ class _AlgebraBalanceScreenState extends State<AlgebraBalanceScreen>
     final level = InteractiveLabsProgressService.instance.guidanceLevel();
     final l10n = AppLocalizations.of(context);
     playNarration(
-      messageId: 'labsAlgebraBalanceNarrationHintInactivity${narrationLevelSuffix(level)}',
+      messageId:
+          'labsAlgebraBalanceNarrationHintInactivity${narrationLevelSuffix(level)}',
       text: switch (level) {
-        LabGuidanceLevel.explorer => l10n.labsAlgebraBalanceNarrationHintInactivityExplorer,
-        LabGuidanceLevel.builder => l10n.labsAlgebraBalanceNarrationHintInactivityBuilder,
-        LabGuidanceLevel.navigator => l10n.labsAlgebraBalanceNarrationHintInactivityNavigator,
+        LabGuidanceLevel.explorer =>
+          l10n.labsAlgebraBalanceNarrationHintInactivityExplorer,
+        LabGuidanceLevel.builder =>
+          l10n.labsAlgebraBalanceNarrationHintInactivityBuilder,
+        LabGuidanceLevel.navigator =>
+          l10n.labsAlgebraBalanceNarrationHintInactivityNavigator,
       },
       trigger: LabNarrationTrigger.hint,
       level: level,
@@ -119,17 +123,22 @@ class _AlgebraBalanceScreenState extends State<AlgebraBalanceScreen>
       _b = 0;
     });
     registerNarrationActivity();
-    await InteractiveLabsProgressService.instance.recordAttempt(InteractiveLabId.algebraBalance);
+    await InteractiveLabsProgressService.instance
+        .recordAttempt(InteractiveLabId.algebraBalance);
     if (!mounted) return;
     // Removing the constant is step one — guide toward step two next.
     final level = InteractiveLabsProgressService.instance.guidanceLevel();
     final l10n = AppLocalizations.of(context);
     playNarration(
-      messageId: 'labsAlgebraBalanceNarrationHintNextStep${narrationLevelSuffix(level)}',
+      messageId:
+          'labsAlgebraBalanceNarrationHintNextStep${narrationLevelSuffix(level)}',
       text: switch (level) {
-        LabGuidanceLevel.explorer => l10n.labsAlgebraBalanceNarrationHintNextStepExplorer,
-        LabGuidanceLevel.builder => l10n.labsAlgebraBalanceNarrationHintNextStepBuilder,
-        LabGuidanceLevel.navigator => l10n.labsAlgebraBalanceNarrationHintNextStepNavigator,
+        LabGuidanceLevel.explorer =>
+          l10n.labsAlgebraBalanceNarrationHintNextStepExplorer,
+        LabGuidanceLevel.builder =>
+          l10n.labsAlgebraBalanceNarrationHintNextStepBuilder,
+        LabGuidanceLevel.navigator =>
+          l10n.labsAlgebraBalanceNarrationHintNextStepNavigator,
       },
       trigger: LabNarrationTrigger.hint,
       level: level,
@@ -145,19 +154,25 @@ class _AlgebraBalanceScreenState extends State<AlgebraBalanceScreen>
       _solved = true;
     });
     registerNarrationActivity();
-    await InteractiveLabsProgressService.instance.recordAttempt(InteractiveLabId.algebraBalance);
-    await InteractiveLabsProgressService.instance.recordCompletion(InteractiveLabId.algebraBalance);
+    await InteractiveLabsProgressService.instance
+        .recordAttempt(InteractiveLabId.algebraBalance);
+    await InteractiveLabsProgressService.instance
+        .recordCompletion(InteractiveLabId.algebraBalance);
     if (!mounted) return;
     CaptainMathService.instance.showCompletion();
     AudioCueService.instance.play(AudioCue.success);
     final level = InteractiveLabsProgressService.instance.guidanceLevel();
     final l10n = AppLocalizations.of(context);
     playNarration(
-      messageId: 'labsAlgebraBalanceNarrationCompletion${narrationLevelSuffix(level)}',
+      messageId:
+          'labsAlgebraBalanceNarrationCompletion${narrationLevelSuffix(level)}',
       text: switch (level) {
-        LabGuidanceLevel.explorer => l10n.labsAlgebraBalanceNarrationCompletionExplorer,
-        LabGuidanceLevel.builder => l10n.labsAlgebraBalanceNarrationCompletionBuilder,
-        LabGuidanceLevel.navigator => l10n.labsAlgebraBalanceNarrationCompletionNavigator,
+        LabGuidanceLevel.explorer =>
+          l10n.labsAlgebraBalanceNarrationCompletionExplorer,
+        LabGuidanceLevel.builder =>
+          l10n.labsAlgebraBalanceNarrationCompletionBuilder,
+        LabGuidanceLevel.navigator =>
+          l10n.labsAlgebraBalanceNarrationCompletionNavigator,
       },
       trigger: LabNarrationTrigger.completion,
       level: level,
@@ -198,8 +213,9 @@ class _AlgebraBalanceScreenState extends State<AlgebraBalanceScreen>
         : (_b > 0
             ? l10n.labsAlgebraBalanceStep1RemoveButton(_b)
             : l10n.labsAlgebraBalanceStep1AddButton(_b.abs()));
-    final step2Label =
-        (_b == 0 && _a != 1) ? l10n.labsAlgebraBalanceStep2DivideButton(_a) : l10n.labsAlgebraBalanceStep2Button;
+    final step2Label = (_b == 0 && _a != 1)
+        ? l10n.labsAlgebraBalanceStep2DivideButton(_a)
+        : l10n.labsAlgebraBalanceStep2Button;
 
     return ListenableBuilder(
       listenable: InteractiveLabsProgressService.instance.updateSerial,
@@ -231,7 +247,10 @@ class _AlgebraBalanceScreenState extends State<AlgebraBalanceScreen>
               label: l10n.labsAlgebraBalanceEquationLabel(_equationText),
               child: Text(
                 _equationText,
-                style: const TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w700),
+                style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 22,
+                    fontWeight: FontWeight.w700),
               ),
             ),
             const SizedBox(height: AppSpacing.lg),
@@ -241,7 +260,8 @@ class _AlgebraBalanceScreenState extends State<AlgebraBalanceScreen>
                 Expanded(child: _Pan(xTiles: _a, unitTiles: _b)),
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 12),
-                  child: Text('=', style: TextStyle(color: Colors.white, fontSize: 24)),
+                  child: Text('=',
+                      style: TextStyle(color: Colors.white, fontSize: 24)),
                 ),
                 Expanded(child: _Pan(xTiles: 0, unitTiles: _c)),
               ],
@@ -261,7 +281,8 @@ class _AlgebraBalanceScreenState extends State<AlgebraBalanceScreen>
                       Text(
                         l10n.labsAlgebraBalanceStep1Button,
                         textAlign: TextAlign.center,
-                        style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 11),
+                        style: const TextStyle(
+                            color: Color(0xFF8A9DC0), fontSize: 11),
                       ),
                     ],
                   ),
@@ -279,7 +300,8 @@ class _AlgebraBalanceScreenState extends State<AlgebraBalanceScreen>
                       Text(
                         l10n.labsAlgebraBalanceStep2Button,
                         textAlign: TextAlign.center,
-                        style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 11),
+                        style: const TextStyle(
+                            color: Color(0xFF8A9DC0), fontSize: 11),
                       ),
                     ],
                   ),
@@ -290,11 +312,14 @@ class _AlgebraBalanceScreenState extends State<AlgebraBalanceScreen>
             Row(
               children: [
                 Expanded(
-                  child: OutlinedButton(onPressed: _reset, child: Text(l10n.labsTryAgainButton)),
+                  child: OutlinedButton(
+                      onPressed: _reset, child: Text(l10n.labsTryAgainButton)),
                 ),
                 const SizedBox(width: AppSpacing.sm),
                 Expanded(
-                  child: OutlinedButton(onPressed: _next, child: Text(l10n.labsNextChallengeButton)),
+                  child: OutlinedButton(
+                      onPressed: _next,
+                      child: Text(l10n.labsNextChallengeButton)),
                 ),
               ],
             ),
@@ -308,7 +333,10 @@ class _AlgebraBalanceScreenState extends State<AlgebraBalanceScreen>
             : null,
         relatedLinks: const LabRelatedLinks(
           labId: InteractiveLabId.algebraBalance,
-          recallCardIds: ['algebra-solve-linear-equation', 'algebra-substitution-vocabulary'],
+          recallCardIds: [
+            'algebra-solve-linear-equation',
+            'algebra-substitution-vocabulary'
+          ],
           discoveryCardIds: [],
           practiceTopicIds: ['algebra'],
         ),
@@ -337,9 +365,14 @@ class _Pan extends StatelessWidget {
         spacing: 6,
         runSpacing: 6,
         children: [
-          for (var i = 0; i < xTiles; i++) const _Tile(label: 'x', color: Color(0xFF5B8EFF)),
+          for (var i = 0; i < xTiles; i++)
+            const _Tile(label: 'x', color: Color(0xFF5B8EFF)),
           for (var i = 0; i < unitTiles.abs(); i++)
-            _Tile(label: '1', color: unitTiles < 0 ? const Color(0xFFFF6B6B) : const Color(0xFF34C759)),
+            _Tile(
+                label: '1',
+                color: unitTiles < 0
+                    ? const Color(0xFFFF6B6B)
+                    : const Color(0xFF34C759)),
         ],
       ),
     );
@@ -362,7 +395,9 @@ class _Tile extends StatelessWidget {
         border: Border.all(color: color),
         borderRadius: BorderRadius.circular(6),
       ),
-      child: Text(label, style: TextStyle(color: color, fontSize: 13, fontWeight: FontWeight.w700)),
+      child: Text(label,
+          style: TextStyle(
+              color: color, fontSize: 13, fontWeight: FontWeight.w700)),
     );
   }
 }

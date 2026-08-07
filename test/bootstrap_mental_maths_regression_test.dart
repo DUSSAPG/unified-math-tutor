@@ -29,7 +29,8 @@ void main() {
       await AppBootstrap.ensureStarted();
 
       expect(
-        () => MentalMathsProgressService.instance.tierFor(MentalMathsCategory.numberBonds),
+        () => MentalMathsProgressService.instance
+            .tierFor(MentalMathsCategory.numberBonds),
         returnsNormally,
       );
     },

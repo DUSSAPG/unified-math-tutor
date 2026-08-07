@@ -16,6 +16,7 @@ class SignOutService {
     await LocalAccountService.instance.signOut();
     PracticeContextService.instance.clear();
     LocalPreferencesService.instance.clearSessionAccess();
+    LocalPreferencesService.instance.clearFamilyStudioGraceAccess();
     await SessionHistoryService.instance.clear();
     await GuestTipCounter.reset(await SharedPreferences.getInstance());
   }

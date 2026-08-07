@@ -51,7 +51,8 @@ void main() {
     expect(day1 == day2, isFalse);
   });
 
-  test('repeat protection skips ids already recently shown to this learner', () {
+  test('repeat protection skips ids already recently shown to this learner',
+      () {
     final withoutHistory = MentalMathsChallengeSelector.dailyChallengeId(
       date: DateTime.utc(2026, 3, 1),
       categoryIndex: 0,
@@ -67,7 +68,9 @@ void main() {
     expect(withHistory, isNot(withoutHistory));
   });
 
-  test('falls back to allowing a repeat once the whole bank has been recently shown', () {
+  test(
+      'falls back to allowing a repeat once the whole bank has been recently shown',
+      () {
     final result = MentalMathsChallengeSelector.dailyChallengeId(
       date: DateTime.utc(2026, 3, 1),
       categoryIndex: 0,

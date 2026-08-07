@@ -41,7 +41,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             constraints: const BoxConstraints(maxWidth: 430),
             child: SingleChildScrollView(
               padding: const EdgeInsets.all(24),
-              child: _sent ? _ConfirmationView(email: _emailController.text.trim()) : _buildForm(),
+              child: _sent
+                  ? _ConfirmationView(email: _emailController.text.trim())
+                  : _buildForm(),
             ),
           ),
         ),
@@ -108,7 +110,8 @@ class _ConfirmationView extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        const Icon(Icons.mark_email_read_outlined, color: Color(0xFF3D7EFF), size: 56),
+        const Icon(Icons.mark_email_read_outlined,
+            color: Color(0xFF3D7EFF), size: 56),
         const SizedBox(height: 20),
         const Text(
           'Check your email',

@@ -96,7 +96,9 @@ class _RecallCardBodyState extends State<RecallCardBody> {
                     : l10n.recallCardsBookmarkAdd,
                 child: IconButton(
                   icon: Icon(
-                    widget.isBookmarked ? Icons.bookmark : Icons.bookmark_border,
+                    widget.isBookmarked
+                        ? Icons.bookmark
+                        : Icons.bookmark_border,
                     color: const Color(0xFFFFBD00),
                   ),
                   onPressed: widget.onBookmarkToggle,
@@ -118,21 +120,24 @@ class _RecallCardBodyState extends State<RecallCardBody> {
             const SizedBox(height: AppSpacing.sm),
             Text(
               MathNotationFormatter.format(text.answer),
-              style: const TextStyle(color: Colors.white, fontSize: 15, height: 1.4),
+              style: const TextStyle(
+                  color: Colors.white, fontSize: 15, height: 1.4),
             ),
             const SizedBox(height: AppSpacing.lg),
             _SectionHeading(text: l10n.recallCardsExplainLabel),
             const SizedBox(height: AppSpacing.sm),
             Text(
               MathNotationFormatter.format(text.explanation),
-              style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13, height: 1.4),
+              style: const TextStyle(
+                  color: Color(0xFF8A9DC0), fontSize: 13, height: 1.4),
             ),
             const SizedBox(height: AppSpacing.md),
             _SectionHeading(text: l10n.recallCardsCommonMistakeLabel),
             const SizedBox(height: AppSpacing.sm),
             Text(
               MathNotationFormatter.format(text.commonMistake),
-              style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13, height: 1.4),
+              style: const TextStyle(
+                  color: Color(0xFF8A9DC0), fontSize: 13, height: 1.4),
             ),
             const SizedBox(height: AppSpacing.lg),
             _SectionHeading(text: l10n.recallCardsConnectLabel),
@@ -212,7 +217,9 @@ class _RelatedLinks extends StatelessWidget {
     final hasDiscovery = card.relatedDiscoveryCardIds.isNotEmpty;
     final hasLabs = card.relatedInteractiveLabIds.isNotEmpty;
     final hasPractice = card.relatedPracticeTopicIds.isNotEmpty;
-    if (!hasDiscovery && !hasLabs && !hasPractice) return const SizedBox.shrink();
+    if (!hasDiscovery && !hasLabs && !hasPractice) {
+      return const SizedBox.shrink();
+    }
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -242,8 +249,9 @@ class _RelatedLinks extends StatelessWidget {
                 ActionChip(
                   label: Text(id),
                   onPressed: () {
-                    RecallCardsProgressService.instance.recordLinkedPracticeUse(card.id);
-                    context.push('/topics/$id');
+                    RecallCardsProgressService.instance
+                        .recordLinkedPracticeUse(card.id);
+                    context.push('/topics');
                   },
                 ),
             ],
@@ -279,7 +287,10 @@ class _LinkGroupLabel extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 6),
       child: Text(
         text,
-        style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 12, fontWeight: FontWeight.w600),
+        style: const TextStyle(
+            color: Color(0xFF8A9DC0),
+            fontSize: 12,
+            fontWeight: FontWeight.w600),
       ),
     );
   }

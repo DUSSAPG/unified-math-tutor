@@ -26,7 +26,8 @@ class MentalMathsProgressService {
     _prefs = await SharedPreferences.getInstance();
   }
 
-  String _learnerKey() => LearnerProfilesService.instance.activeLearnerId.value ?? 'default';
+  String _learnerKey() =>
+      LearnerProfilesService.instance.activeLearnerId.value ?? 'default';
   String _historyKey(MentalMathsCategory category) =>
       'mental_maths_history_${_learnerKey()}_${category.index}';
   String _tierKey(MentalMathsCategory category) =>
@@ -58,7 +59,8 @@ class MentalMathsProgressService {
     updateSerial.value++;
   }
 
-  Future<void> recordAttempt(MentalMathsCategory category, {required bool correct}) async {
+  Future<void> recordAttempt(MentalMathsCategory category,
+      {required bool correct}) async {
     final history = [..._history(category), correct];
     if (history.length > _windowSize) {
       history.removeAt(0);
@@ -82,7 +84,8 @@ class MentalMathsProgressService {
     updateSerial.value++;
   }
 
-  Future<void> _setTier(MentalMathsCategory category, MentalMathsTier tier) async {
+  Future<void> _setTier(
+      MentalMathsCategory category, MentalMathsTier tier) async {
     await _prefs.setString(_tierKey(category), tier.name);
   }
 

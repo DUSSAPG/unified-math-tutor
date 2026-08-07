@@ -112,18 +112,21 @@ class MentalMathsChallenge {
   ) {
     final id = json['id'];
     if (id is! String || id.trim().isEmpty) {
-      throw const FormatException('Mental maths challenge id must be a non-empty string.');
+      throw const FormatException(
+          'Mental maths challenge id must be a non-empty string.');
     }
 
     final tierValue = json['tier'];
     if (tierValue is! String) {
-      throw FormatException('Mental maths challenge "$id" tier must be a string.');
+      throw FormatException(
+          'Mental maths challenge "$id" tier must be a string.');
     }
     final tier = MentalMathsTier.fromId(tierValue);
 
     final answerValue = json['answerValue'];
     if (answerValue is! num) {
-      throw FormatException('Mental maths challenge "$id" answerValue must be a number.');
+      throw FormatException(
+          'Mental maths challenge "$id" answerValue must be a number.');
     }
     final answerUnit = json['answerUnit'];
     if (answerUnit != null && answerUnit is! String) {
@@ -141,10 +144,12 @@ class MentalMathsChallenge {
 
     final localesValue = json['locales'];
     if (localesValue is! Map<String, dynamic> || localesValue.isEmpty) {
-      throw FormatException('Mental maths challenge "$id" locales must be a non-empty object.');
+      throw FormatException(
+          'Mental maths challenge "$id" locales must be a non-empty object.');
     }
     if (!localesValue.containsKey('en')) {
-      throw FormatException('Mental maths challenge "$id" locales must include "en".');
+      throw FormatException(
+          'Mental maths challenge "$id" locales must include "en".');
     }
     final locales = <String, MentalMathsChallengeLocaleText>{};
     for (final entry in localesValue.entries) {
@@ -173,7 +178,8 @@ class MentalMathsChallenge {
     final countryCode = locale.countryCode;
     final languageCode = locale.languageCode;
     final tags = <String>[
-      if (countryCode != null && countryCode.isNotEmpty) '$languageCode-$countryCode',
+      if (countryCode != null && countryCode.isNotEmpty)
+        '$languageCode-$countryCode',
       languageCode,
       if (languageCode != 'en') 'en',
     ];

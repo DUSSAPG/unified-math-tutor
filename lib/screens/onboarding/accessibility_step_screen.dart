@@ -21,8 +21,8 @@ class _AccessibilityStepScreenState extends State<AccessibilityStepScreen> {
   static const List<double> _textScales = [0.9, 1.0, 1.15];
   static const _sizeLabels = ['Small', 'Default', 'Large'];
 
-  late int _textSize = _textScaleIndex(
-      LocalPreferencesService.instance.textScale.value);
+  late int _textSize =
+      _textScaleIndex(LocalPreferencesService.instance.textScale.value);
   bool _reduceMotion = LocalPreferencesService.instance.reduceMotion.value;
 
   static int _textScaleIndex(double scale) {
@@ -138,7 +138,8 @@ class _AccessibilityStepScreenState extends State<AccessibilityStepScreen> {
                       SizedBox(height: 2),
                       Text(
                         'Minimise animations and transitions',
-                        style: TextStyle(color: Color(0xFF8A9DC0), fontSize: 13),
+                        style:
+                            TextStyle(color: Color(0xFF8A9DC0), fontSize: 13),
                       ),
                     ],
                   ),
@@ -192,7 +193,9 @@ class _SizeOption extends StatelessWidget {
             Text(
               'Aa',
               style: TextStyle(
-                color: selected ? const Color(0xFF5B8EFF) : const Color(0xFF8A9DC0),
+                color: selected
+                    ? const Color(0xFF5B8EFF)
+                    : const Color(0xFF8A9DC0),
                 fontSize: fontSize,
                 fontWeight: FontWeight.w600,
               ),
@@ -201,7 +204,9 @@ class _SizeOption extends StatelessWidget {
             Text(
               label,
               style: TextStyle(
-                color: selected ? const Color(0xFF5B8EFF) : const Color(0xFF8A9DC0),
+                color: selected
+                    ? const Color(0xFF5B8EFF)
+                    : const Color(0xFF8A9DC0),
                 fontSize: 11,
                 fontWeight: selected ? FontWeight.w600 : FontWeight.w400,
               ),

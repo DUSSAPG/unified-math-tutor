@@ -9,6 +9,7 @@ import '../../services/discovery_card_catalog_service.dart';
 import '../../services/nav_visibility_service.dart';
 import '../../shared/math_notation_formatter.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../widgets/captain_math_card.dart';
 import '../../widgets/discovery/discovery_export_sheet.dart';
 import '../../widgets/discovery/discovery_illustration.dart';
@@ -23,7 +24,8 @@ class DiscoveryCardDetailScreen extends StatefulWidget {
   final String cardId;
 
   @override
-  State<DiscoveryCardDetailScreen> createState() => _DiscoveryCardDetailScreenState();
+  State<DiscoveryCardDetailScreen> createState() =>
+      _DiscoveryCardDetailScreenState();
 }
 
 class _DiscoveryCardDetailScreenState extends State<DiscoveryCardDetailScreen> {
@@ -53,8 +55,10 @@ class _DiscoveryCardDetailScreenState extends State<DiscoveryCardDetailScreen> {
   }
 
   void _checkFollowUp(DiscoveryCard card) {
-    final parsed = num.tryParse(_answerController.text.trim().replaceAll(',', '.'));
-    final correct = parsed != null && (parsed - card.followUp.answerValue).abs() < 0.01;
+    final parsed =
+        num.tryParse(_answerController.text.trim().replaceAll(',', '.'));
+    final correct =
+        parsed != null && (parsed - card.followUp.answerValue).abs() < 0.01;
     setState(() {
       _followUpAnswered = true;
       _followUpCorrect = correct;
@@ -65,13 +69,14 @@ class _DiscoveryCardDetailScreenState extends State<DiscoveryCardDetailScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0B1120),
+        backgroundColor: colors.background,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: colors.primaryText),
           onPressed: () => popOrGo(context, '/math-studio/discovery'),
         ),
         actions: [
@@ -81,7 +86,7 @@ class _DiscoveryCardDetailScreenState extends State<DiscoveryCardDetailScreen> {
               final card = snapshot.data;
               if (card == null) return const SizedBox.shrink();
               return IconButton(
-                icon: const Icon(Icons.ios_share, color: Colors.white),
+                icon: Icon(Icons.ios_share, color: colors.primaryText),
                 tooltip: l10n.mathStudioExportButton,
                 onPressed: () => showDiscoveryExportSheet(context, card),
               );
@@ -94,8 +99,9 @@ class _DiscoveryCardDetailScreenState extends State<DiscoveryCardDetailScreen> {
           future: _cardFuture,
           builder: (context, snapshot) {
             if (snapshot.hasError) {
-              return const Center(
-                child: Icon(Icons.error_outline, color: Color(0xFF8A9DC0), size: 32),
+              return Center(
+                child: Icon(Icons.error_outline,
+                    color: colors.secondaryText, size: 32),
               );
             }
             final card = snapshot.data;
@@ -106,7 +112,8 @@ class _DiscoveryCardDetailScreenState extends State<DiscoveryCardDetailScreen> {
 
             return Center(
               child: ConstrainedBox(
-                constraints: BoxConstraints(maxWidth: AppResponsive.contentMaxWidth(context)),
+                constraints: BoxConstraints(
+                    maxWidth: AppResponsive.contentMaxWidth(context)),
                 child: SingleChildScrollView(
                   padding: const EdgeInsets.fromLTRB(16, 8, 16, 40),
                   child: Column(
@@ -126,8 +133,8 @@ class _DiscoveryCardDetailScreenState extends State<DiscoveryCardDetailScreen> {
                               children: [
                                 Text(
                                   text.title,
-                                  style: const TextStyle(
-                                    color: Colors.white,
+                                  style: TextStyle(
+                                    color: colors.primaryText,
                                     fontSize: 20,
                                     fontWeight: FontWeight.w700,
                                   ),
@@ -135,8 +142,8 @@ class _DiscoveryCardDetailScreenState extends State<DiscoveryCardDetailScreen> {
                                 const SizedBox(height: 4),
                                 Text(
                                   discoveryCategoryLabel(l10n, card.category),
-                                  style: const TextStyle(
-                                    color: Color(0xFF8A9DC0),
+                                  style: TextStyle(
+                                    color: colors.secondaryText,
                                     fontSize: 13,
                                   ),
                                 ),
@@ -150,13 +157,16 @@ class _DiscoveryCardDetailScreenState extends State<DiscoveryCardDetailScreen> {
                       const SizedBox(height: AppSpacing.md),
                       Text(
                         MathNotationFormatter.format(text.scenario),
-                        style: const TextStyle(color: Colors.white, fontSize: 15, height: 1.4),
+                        style: TextStyle(
+                            color: colors.primaryText,
+                            fontSize: 15,
+                            height: 1.4),
                       ),
                       const SizedBox(height: AppSpacing.md),
                       Text(
                         MathNotationFormatter.format(text.challengeQuestion),
-                        style: const TextStyle(
-                          color: Colors.white,
+                        style: TextStyle(
+                          color: colors.primaryText,
                           fontSize: 16,
                           fontWeight: FontWeight.w700,
                         ),
@@ -165,8 +175,8 @@ class _DiscoveryCardDetailScreenState extends State<DiscoveryCardDetailScreen> {
                       if (!_revealed) ...[
                         Text(
                           text.thinkPrompt,
-                          style: const TextStyle(
-                            color: Color(0xFF8A9DC0),
+                          style: TextStyle(
+                            color: colors.secondaryText,
                             fontSize: 13,
                             fontStyle: FontStyle.italic,
                           ),
@@ -184,38 +194,48 @@ class _DiscoveryCardDetailScreenState extends State<DiscoveryCardDetailScreen> {
                             padding: const EdgeInsets.only(bottom: 6),
                             child: Text(
                               '• ${MathNotationFormatter.format(step)}',
-                              style: const TextStyle(color: Colors.white, fontSize: 14),
+                              style: TextStyle(
+                                  color: colors.primaryText, fontSize: 14),
                             ),
                           ),
                         const SizedBox(height: AppSpacing.sm),
                         Text(
                           MathNotationFormatter.format(text.explanation),
-                          style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13, height: 1.4),
+                          style: TextStyle(
+                              color: colors.secondaryText,
+                              fontSize: 13,
+                              height: 1.4),
                         ),
                         const SizedBox(height: AppSpacing.lg),
-                        _SectionHeading(text: l10n.mathStudioWhereYoullUseThisLabel),
+                        _SectionHeading(
+                            text: l10n.mathStudioWhereYoullUseThisLabel),
                         const SizedBox(height: AppSpacing.sm),
                         Text(
                           text.whereYoullUseThis,
-                          style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13, height: 1.4),
+                          style: TextStyle(
+                              color: colors.secondaryText,
+                              fontSize: 13,
+                              height: 1.4),
                         ),
                         const SizedBox(height: AppSpacing.lg),
                         _SectionHeading(text: l10n.mathStudioFollowUpLabel),
                         const SizedBox(height: AppSpacing.sm),
                         Text(
                           MathNotationFormatter.format(text.followUpQuestion),
-                          style: const TextStyle(color: Colors.white, fontSize: 14),
+                          style: TextStyle(
+                              color: colors.primaryText, fontSize: 14),
                         ),
                         const SizedBox(height: AppSpacing.sm),
                         TextField(
                           controller: _answerController,
-                          keyboardType: const TextInputType.numberWithOptions(decimal: true),
-                          style: const TextStyle(color: Colors.white),
+                          keyboardType: const TextInputType.numberWithOptions(
+                              decimal: true),
+                          style: TextStyle(color: colors.primaryText),
                           decoration: InputDecoration(
                             labelText: l10n.mathStudioFollowUpAnswerLabel,
-                            labelStyle: const TextStyle(color: Color(0xFF8A9DC0)),
-                            enabledBorder: const OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xFF1F3055)),
+                            labelStyle: TextStyle(color: colors.secondaryText),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: colors.divider),
                             ),
                           ),
                         ),
@@ -232,16 +252,18 @@ class _DiscoveryCardDetailScreenState extends State<DiscoveryCardDetailScreen> {
                                 : l10n.mathStudioFollowUpTryAgain,
                             style: TextStyle(
                               color: _followUpCorrect
-                                  ? const Color(0xFF34C759)
-                                  : const Color(0xFF8A9DC0),
+                                  ? colors.success
+                                  : colors.secondaryText,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
                           if (_followUpCorrect) ...[
                             const SizedBox(height: AppSpacing.sm),
                             Text(
-                              MathNotationFormatter.format(text.followUpAnswerText),
-                              style: const TextStyle(color: Colors.white, fontSize: 13),
+                              MathNotationFormatter.format(
+                                  text.followUpAnswerText),
+                              style: TextStyle(
+                                  color: colors.primaryText, fontSize: 13),
                             ),
                           ],
                         ],
@@ -266,8 +288,8 @@ class _SectionHeading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: const TextStyle(
-        color: Color(0xFF5B8EFF),
+      style: TextStyle(
+        color: context.appColors.accent,
         fontSize: 12,
         fontWeight: FontWeight.w700,
         letterSpacing: 1.1,

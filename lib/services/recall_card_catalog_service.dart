@@ -9,7 +9,8 @@ import '../models/recall_card.dart';
 /// any structural problem in the bundled JSON throws at load time rather
 /// than surfacing as a broken card mid-session.
 class RecallCardCatalogService {
-  RecallCardCatalogService({AssetBundle? bundle}) : _bundle = bundle ?? rootBundle;
+  RecallCardCatalogService({AssetBundle? bundle})
+      : _bundle = bundle ?? rootBundle;
 
   static const assetPath = 'assets/config/recall_cards.json';
   static final RecallCardCatalogService instance = RecallCardCatalogService();
@@ -23,14 +24,17 @@ class RecallCardCatalogService {
 
     final decoded = jsonDecode(await _bundle.loadString(assetPath));
     if (decoded is! Map<String, dynamic>) {
-      throw const FormatException('Recall card catalog root must be an object.');
+      throw const FormatException(
+          'Recall card catalog root must be an object.');
     }
     if (decoded['version'] is! int) {
-      throw const FormatException('Recall card catalog "version" must be an integer.');
+      throw const FormatException(
+          'Recall card catalog "version" must be an integer.');
     }
     final cardsValue = decoded['cards'];
     if (cardsValue is! List || cardsValue.isEmpty) {
-      throw const FormatException('Recall card catalog "cards" must be a non-empty list.');
+      throw const FormatException(
+          'Recall card catalog "cards" must be a non-empty list.');
     }
 
     final cards = <RecallCard>[];
@@ -41,7 +45,8 @@ class RecallCardCatalogService {
       }
       final card = RecallCard.fromJson(value);
       if (!seenIds.add(card.id)) {
-        throw FormatException('Recall card catalog contains duplicate id "${card.id}".');
+        throw FormatException(
+            'Recall card catalog contains duplicate id "${card.id}".');
       }
       cards.add(card);
     }

@@ -54,7 +54,11 @@ class RecallCardSelector {
     int count = 5,
   }) {
     final result = <String>[];
-    for (final bucket in [reviewDueIdsSorted, learningIdsSorted, newIdsSorted]) {
+    for (final bucket in [
+      reviewDueIdsSorted,
+      learningIdsSorted,
+      newIdsSorted
+    ]) {
       if (result.length >= count) break;
       result.addAll(
         _rotate(

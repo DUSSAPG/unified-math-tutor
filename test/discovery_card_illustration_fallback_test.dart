@@ -32,7 +32,8 @@ DiscoveryCard _cardWithAssetId(String illustrationAssetId) {
 }
 
 void main() {
-  testWidgets('renders an accessible category placeholder for an unknown illustrationAssetId',
+  testWidgets(
+      'renders an accessible category placeholder for an unknown illustrationAssetId',
       (tester) async {
     final card = _cardWithAssetId('does-not-exist-in-any-registry');
     await tester.pumpWidget(

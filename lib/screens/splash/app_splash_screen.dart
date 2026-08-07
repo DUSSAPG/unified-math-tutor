@@ -58,9 +58,10 @@ class _AppSplashScreenState extends State<AppSplashScreen> {
     _navigated = true;
     _minTimer?.cancel();
     _maxTimer?.cancel();
-    final destination = OnboardingProfileService.instance.hasCompletedOnboarding.value
-        ? '/home'
-        : '/onboarding';
+    final destination =
+        OnboardingProfileService.instance.hasCompletedOnboarding.value
+            ? '/home'
+            : '/onboarding';
     context.go(destination);
   }
 

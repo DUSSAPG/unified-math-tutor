@@ -1,0 +1,525 @@
+{
+  "version": 1,
+  "cards": [
+    {
+      "id": "conversation-spot-a-number",
+      "category": "conversationStarters",
+      "locales": {
+        "en": {
+          "front": "Ask: \"Where did you spot a number today?\"",
+          "back": "Numbers are everywhere — a bus number, a price tag, a clock. Let your child point one out and say what it means. There's no wrong answer."
+        },
+        "en-GB": {
+          "front": "Ask: \"Where did you spot a number today?\"",
+          "back": "Numbers are everywhere — a bus number, a price tag, a clock. Let your child point one out and say what it means. There's no wrong answer."
+        },
+        "de-CH": {
+          "front": "Frage: \"Wo hast du heute eine Zahl entdeckt?\"",
+          "back": "Zahlen sind ueberall — eine Busnummer, ein Preisschild, eine Uhr. Lass dein Kind eine zeigen und erklaeren, was sie bedeutet. Es gibt keine falsche Antwort."
+        },
+        "fr-CH": {
+          "front": "Demande : \"Ou as-tu repere un nombre aujourd'hui ?\"",
+          "back": "Les nombres sont partout — un numero de bus, une etiquette de prix, une horloge. Laisse ton enfant en montrer un et expliquer ce qu'il signifie. Il n'y a pas de mauvaise reponse."
+        },
+        "it-CH": {
+          "front": "Chiedi: \"Dove hai visto un numero oggi?\"",
+          "back": "I numeri sono ovunque — un numero di autobus, un cartellino del prezzo, un orologio. Lascia che tuo figlio ne indichi uno e spieghi cosa significa. Non c'e una risposta sbagliata."
+        }
+      }
+    },
+    {
+      "id": "conversation-favourite-number",
+      "category": "conversationStarters",
+      "locales": {
+        "en": {
+          "front": "Ask: \"What's your favourite number and why?\"",
+          "back": "This isn't a maths test — it opens a relaxed chat about numbers and often reveals what your child finds interesting, or tricky."
+        },
+        "en-GB": {
+          "front": "Ask: \"What's your favourite number and why?\"",
+          "back": "This isn't a maths test — it opens a relaxed chat about numbers and often reveals what your child finds interesting, or tricky."
+        },
+        "de-CH": {
+          "front": "Frage: \"Was ist deine Lieblingszahl und warum?\"",
+          "back": "Das ist kein Mathetest — es eroeffnet ein entspanntes Gespraech ueber Zahlen und zeigt oft, was dein Kind spannend oder schwierig findet."
+        },
+        "fr-CH": {
+          "front": "Demande : \"Quel est ton nombre prefere et pourquoi ?\"",
+          "back": "Ce n'est pas un test de maths — cela ouvre une discussion detendue sur les nombres et revele souvent ce que ton enfant trouve interessant, ou difficile."
+        },
+        "it-CH": {
+          "front": "Chiedi: \"Qual e il tuo numero preferito e perche?\"",
+          "back": "Non e un test di matematica — apre una chiacchierata rilassata sui numeri e spesso rivela cosa tuo figlio trova interessante, o difficile."
+        }
+      }
+    },
+    {
+      "id": "homework-explain-first",
+      "category": "homeworkHints",
+      "locales": {
+        "en": {
+          "front": "Stuck? Ask them to explain it to you first.",
+          "back": "Before jumping in with the answer, ask your child to talk you through what they've already tried. Explaining out loud often unlocks the next step on its own."
+        },
+        "en-GB": {
+          "front": "Stuck? Ask them to explain it to you first.",
+          "back": "Before jumping in with the answer, ask your child to talk you through what they've already tried. Explaining out loud often unlocks the next step on its own."
+        },
+        "de-CH": {
+          "front": "Haengt fest? Lass es dir zuerst erklaeren.",
+          "back": "Bevor du die Loesung vorgibst, lass dein Kind erzaehlen, was es schon versucht hat. Laut erklaeren loest oft den naechsten Schritt von selbst aus."
+        },
+        "fr-CH": {
+          "front": "Bloque ? Demande-lui de t'expliquer d'abord.",
+          "back": "Avant de donner la reponse, demande a ton enfant de t'expliquer ce qu'il a deja essaye. Expliquer a voix haute debloque souvent l'etape suivante toute seule."
+        },
+        "it-CH": {
+          "front": "Bloccato? Fatti spiegare prima da lui.",
+          "back": "Prima di dare la risposta, chiedi a tuo figlio di raccontarti cosa ha gia provato. Spiegare ad alta voce spesso sblocca da solo il passo successivo."
+        }
+      }
+    },
+    {
+      "id": "homework-find-out-together",
+      "category": "homeworkHints",
+      "locales": {
+        "en": {
+          "front": "It's OK to say \"let's find out together.\"",
+          "back": "You don't need to know the answer. Modelling how to check notes, a textbook, or work it out step by step is more valuable than always knowing everything yourself."
+        },
+        "en-GB": {
+          "front": "It's OK to say \"let's find out together.\"",
+          "back": "You don't need to know the answer. Modelling how to check notes, a textbook, or work it out step by step is more valuable than always knowing everything yourself."
+        },
+        "de-CH": {
+          "front": "Es ist in Ordnung zu sagen: \"Lass uns das gemeinsam herausfinden.\"",
+          "back": "Du musst die Antwort nicht kennen. Zu zeigen, wie man Notizen, ein Buch nachschlaegt oder Schritt fuer Schritt vorgeht, ist wertvoller, als immer alles zu wissen."
+        },
+        "fr-CH": {
+          "front": "C'est normal de dire : \"cherchons ensemble.\"",
+          "back": "Tu n'as pas besoin de connaitre la reponse. Montrer comment verifier ses notes, un manuel, ou raisonner etape par etape est plus utile que de tout savoir soi-meme."
+        },
+        "it-CH": {
+          "front": "Va benissimo dire: \"scopriamolo insieme.\"",
+          "back": "Non devi conoscere la risposta. Mostrare come controllare gli appunti, un libro, o ragionare passo dopo passo vale piu che sapere sempre tutto tu."
+        }
+      }
+    },
+    {
+      "id": "kitchen-halve-or-double",
+      "category": "kitchenMaths",
+      "locales": {
+        "en": {
+          "front": "Halve or double a recipe together.",
+          "back": "Cooking for more or fewer people is real fraction and ratio practice. Ask: \"If this needs 2 eggs for 4 people, how many for 8?\""
+        },
+        "en-GB": {
+          "front": "Halve or double a recipe together.",
+          "back": "Cooking for more or fewer people is real fraction and ratio practice. Ask: \"If this needs 2 eggs for 4 people, how many for 8?\""
+        },
+        "de-CH": {
+          "front": "Halbiert oder verdoppelt gemeinsam ein Rezept.",
+          "back": "Fuer mehr oder weniger Personen zu kochen ist echte Bruch- und Verhaeltnisuebung. Frage: \"Wenn das 2 Eier fuer 4 Personen braucht, wie viele fuer 8?\""
+        },
+        "fr-CH": {
+          "front": "Divise ou double une recette ensemble.",
+          "back": "Cuisiner pour plus ou moins de personnes, c'est un vrai exercice de fractions et de proportions. Demande : \"S'il faut 2 oeufs pour 4 personnes, combien pour 8 ?\""
+        },
+        "it-CH": {
+          "front": "Dimezza o raddoppia una ricetta insieme.",
+          "back": "Cucinare per piu o meno persone e un vero esercizio di frazioni e proporzioni. Chiedi: \"Se servono 2 uova per 4 persone, quante per 8?\""
+        }
+      }
+    },
+    {
+      "id": "kitchen-estimate-the-timer",
+      "category": "kitchenMaths",
+      "locales": {
+        "en": {
+          "front": "Set a timer and estimate first.",
+          "back": "Before starting the microwave or oven timer, ask your child to guess how long something will take, then compare their guess to the real time."
+        },
+        "en-GB": {
+          "front": "Set a timer and estimate first.",
+          "back": "Before starting the microwave or oven timer, ask your child to guess how long something will take, then compare their guess to the real time."
+        },
+        "de-CH": {
+          "front": "Stellt einen Timer, aber schaetzt zuerst.",
+          "back": "Bevor du die Mikrowelle oder den Ofen startest, lass dein Kind schaetzen, wie lange es dauert, und vergleicht danach mit der echten Zeit."
+        },
+        "fr-CH": {
+          "front": "Regle un minuteur, mais estime d'abord.",
+          "back": "Avant de lancer le micro-ondes ou le four, demande a ton enfant de deviner combien de temps cela prendra, puis compare avec le temps reel."
+        },
+        "it-CH": {
+          "front": "Imposta un timer, ma prima stima il tempo.",
+          "back": "Prima di avviare il microonde o il forno, chiedi a tuo figlio di indovinare quanto tempo servira, poi confrontate con il tempo reale."
+        }
+      }
+    },
+    {
+      "id": "shopping-better-value",
+      "category": "shoppingMaths",
+      "locales": {
+        "en": {
+          "front": "Let them find the better value.",
+          "back": "Compare two sizes of the same product in a shop or online. Which costs less per 100g? A calculator is fine — the thinking matters more than mental arithmetic."
+        },
+        "en-GB": {
+          "front": "Let them find the better value.",
+          "back": "Compare two sizes of the same product in a shop or online. Which costs less per 100g? A calculator is fine — the thinking matters more than mental arithmetic."
+        },
+        "de-CH": {
+          "front": "Lass dein Kind das bessere Angebot finden.",
+          "back": "Vergleicht zwei Groessen desselben Produkts im Laden oder online. Was kostet weniger pro 100g? Ein Taschenrechner ist erlaubt — das Denken zaehlt mehr als Kopfrechnen."
+        },
+        "fr-CH": {
+          "front": "Laisse-le trouver la meilleure affaire.",
+          "back": "Comparez deux tailles du meme produit en magasin ou en ligne. Lequel coute moins cher pour 100g ? Une calculatrice, c'est permis — le raisonnement compte plus que le calcul mental."
+        },
+        "it-CH": {
+          "front": "Fagli trovare l'offerta migliore.",
+          "back": "Confrontate due formati dello stesso prodotto in negozio o online. Quale costa meno per 100g? Va bene usare una calcolatrice — conta il ragionamento, non il calcolo a mente."
+        }
+      }
+    },
+    {
+      "id": "shopping-estimate-the-total",
+      "category": "shoppingMaths",
+      "locales": {
+        "en": {
+          "front": "Estimate the total before you pay.",
+          "back": "As you add items to a trolley or basket, ask your child to keep a rough running total. Checking against the receipt afterwards makes it a game, not a test."
+        },
+        "en-GB": {
+          "front": "Estimate the total before you pay.",
+          "back": "As you add items to a trolley or basket, ask your child to keep a rough running total. Checking against the receipt afterwards makes it a game, not a test."
+        },
+        "de-CH": {
+          "front": "Schaetzt die Summe, bevor ihr bezahlt.",
+          "back": "Waehrend ihr Sachen in den Wagen oder Korb legt, soll dein Kind ungefaehr mitzaehlen. Der Vergleich mit der Quittung danach macht daraus ein Spiel, keinen Test."
+        },
+        "fr-CH": {
+          "front": "Estime le total avant de payer.",
+          "back": "Pendant que vous remplissez le chariot ou le panier, demande a ton enfant de garder un total approximatif. Comparer avec le ticket de caisse en fait un jeu, pas un test."
+        },
+        "it-CH": {
+          "front": "Stima il totale prima di pagare.",
+          "back": "Mentre riempite il carrello o il cestino, chiedi a tuo figlio di tenere un totale approssimativo. Confrontarlo con lo scontrino dopo lo trasforma in un gioco, non in una verifica."
+        }
+      }
+    },
+    {
+      "id": "algebra-family-rule",
+      "category": "realLifeAlgebra",
+      "locales": {
+        "en": {
+          "front": "Turn a family rule into an equation.",
+          "back": "\"Everyone gets £5 pocket money plus £1 per chore\" can be written as p = 5 + c. Ask how much pocket money for 3 chores — that's algebra, no worksheet needed."
+        },
+        "en-GB": {
+          "front": "Turn a family rule into an equation.",
+          "back": "\"Everyone gets £5 pocket money plus £1 per chore\" can be written as p = 5 + c. Ask how much pocket money for 3 chores — that's algebra, no worksheet needed."
+        },
+        "de-CH": {
+          "front": "Macht aus einer Familienregel eine Gleichung.",
+          "back": "\"Jeder bekommt 5 Franken Taschengeld plus 1 Franken pro Aufgabe\" laesst sich als t = 5 + a schreiben. Frage, wie viel Taschengeld bei 3 Aufgaben — das ist Algebra, ganz ohne Arbeitsblatt."
+        },
+        "fr-CH": {
+          "front": "Transforme une regle familiale en equation.",
+          "back": "\"Chacun recoit 5 francs d'argent de poche plus 1 franc par tache\" s'ecrit a = 5 + t. Demande combien d'argent de poche pour 3 taches — c'est de l'algebre, sans feuille d'exercices."
+        },
+        "it-CH": {
+          "front": "Trasforma una regola di famiglia in un'equazione.",
+          "back": "\"Ognuno riceve 5 franchi di paghetta piu 1 franco per faccenda\" si scrive p = 5 + f. Chiedi quanta paghetta per 3 faccende — e algebra, senza nessuna scheda."
+        }
+      }
+    },
+    {
+      "id": "algebra-missing-number",
+      "category": "realLifeAlgebra",
+      "locales": {
+        "en": {
+          "front": "Ask \"what's the missing number?\" out loud.",
+          "back": "\"I bought something and now have £7 left from £20 — how much did I spend?\" is exactly the same skill as solving 20 − x = 7, just without the letters."
+        },
+        "en-GB": {
+          "front": "Ask \"what's the missing number?\" out loud.",
+          "back": "\"I bought something and now have £7 left from £20 — how much did I spend?\" is exactly the same skill as solving 20 − x = 7, just without the letters."
+        },
+        "de-CH": {
+          "front": "Frage laut: \"Welche Zahl fehlt?\"",
+          "back": "\"Ich habe etwas gekauft und habe noch 7 Franken von 20 uebrig — wie viel habe ich ausgegeben?\" ist genau dieselbe Faehigkeit wie 20 − x = 7 zu loesen, nur ohne Buchstaben."
+        },
+        "fr-CH": {
+          "front": "Demande a voix haute : \"quel est le nombre manquant ?\"",
+          "back": "\"J'ai achete quelque chose et il me reste 7 francs sur 20 — combien ai-je depense ?\" demande exactement la meme competence que resoudre 20 − x = 7, sans les lettres."
+        },
+        "it-CH": {
+          "front": "Chiedi ad alta voce: \"qual e il numero mancante?\"",
+          "back": "\"Ho comprato qualcosa e mi restano 7 franchi su 20 — quanto ho speso?\" richiede esattamente la stessa abilita di risolvere 20 − x = 7, solo senza le lettere."
+        }
+      }
+    },
+    {
+      "id": "geometry-spot-a-shape",
+      "category": "geometryAroundTheHouse",
+      "locales": {
+        "en": {
+          "front": "Spot a shape and name its properties.",
+          "back": "Pick an object — a door, a plate, a road sign — and ask how many sides, corners, or lines of symmetry it has. Real objects make abstract shape vocabulary stick."
+        },
+        "en-GB": {
+          "front": "Spot a shape and name its properties.",
+          "back": "Pick an object — a door, a plate, a road sign — and ask how many sides, corners, or lines of symmetry it has. Real objects make abstract shape vocabulary stick."
+        },
+        "de-CH": {
+          "front": "Entdeckt eine Form und benennt ihre Eigenschaften.",
+          "back": "Waehlt einen Gegenstand — eine Tuer, einen Teller, ein Verkehrsschild — und fragt, wie viele Seiten, Ecken oder Symmetrieachsen er hat. Echte Objekte machen abstrakte Begriffe greifbar."
+        },
+        "fr-CH": {
+          "front": "Repere une forme et nomme ses proprietes.",
+          "back": "Choisissez un objet — une porte, une assiette, un panneau routier — et demande combien de cotes, de coins ou d'axes de symetrie il a. Les objets reels font retenir le vocabulaire des formes."
+        },
+        "it-CH": {
+          "front": "Individua una forma e nominane le proprieta.",
+          "back": "Scegliete un oggetto — una porta, un piatto, un cartello stradale — e chiedi quanti lati, angoli o assi di simmetria ha. Gli oggetti reali fanno ricordare il vocabolario delle forme."
+        }
+      }
+    },
+    {
+      "id": "geometry-measure-a-room",
+      "category": "geometryAroundTheHouse",
+      "locales": {
+        "en": {
+          "front": "Measure a room together before rearranging furniture.",
+          "back": "Working out if a piece of furniture will fit is real-world area and perimeter — no textbook required, and the result actually matters to your child."
+        },
+        "en-GB": {
+          "front": "Measure a room together before rearranging furniture.",
+          "back": "Working out if a piece of furniture will fit is real-world area and perimeter — no textbook required, and the result actually matters to your child."
+        },
+        "de-CH": {
+          "front": "Messt gemeinsam ein Zimmer aus, bevor ihr Moebel umstellt.",
+          "back": "Herauszufinden, ob ein Moebelstueck passt, ist echte Flaechen- und Umfangberechnung — ganz ohne Lehrbuch, und das Ergebnis ist deinem Kind wirklich wichtig."
+        },
+        "fr-CH": {
+          "front": "Mesurez une piece ensemble avant de deplacer les meubles.",
+          "back": "Determiner si un meuble va rentrer, c'est du calcul d'aire et de perimetre bien reel — sans manuel, et le resultat compte vraiment pour ton enfant."
+        },
+        "it-CH": {
+          "front": "Misurate insieme una stanza prima di spostare i mobili.",
+          "back": "Capire se un mobile ci sta e un vero calcolo di area e perimetro — senza libro di testo, e il risultato conta davvero per tuo figlio."
+        }
+      }
+    },
+    {
+      "id": "mental-guess-my-number",
+      "category": "mentalMathsGames",
+      "locales": {
+        "en": {
+          "front": "Play \"guess my number\" on a car or bus journey.",
+          "back": "Think of a number 1–100. Your child asks yes/no questions (\"Is it more than 50?\") to narrow it down — a fun way to practise number sense and logical thinking."
+        },
+        "en-GB": {
+          "front": "Play \"guess my number\" on a car or bus journey.",
+          "back": "Think of a number 1–100. Your child asks yes/no questions (\"Is it more than 50?\") to narrow it down — a fun way to practise number sense and logical thinking."
+        },
+        "de-CH": {
+          "front": "Spielt \"Zahlenraten\" im Auto oder Bus.",
+          "back": "Denk dir eine Zahl zwischen 1 und 100. Dein Kind stellt Ja/Nein-Fragen (\"Ist sie groesser als 50?\"), um sie einzugrenzen — eine unterhaltsame Uebung fuer Zahlengefuehl und logisches Denken."
+        },
+        "fr-CH": {
+          "front": "Joue a \"devine mon nombre\" en voiture ou en bus.",
+          "back": "Pense a un nombre entre 1 et 100. Ton enfant pose des questions oui/non (\"Est-ce plus que 50 ?\") pour le trouver — une facon amusante de travailler le sens du nombre et la logique."
+        },
+        "it-CH": {
+          "front": "Giocate a \"indovina il mio numero\" in auto o in autobus.",
+          "back": "Pensa a un numero tra 1 e 100. Tuo figlio fa domande si/no (\"E piu di 50?\") per restringere il campo — un modo divertente per allenare il senso del numero e la logica."
+        }
+      }
+    },
+    {
+      "id": "mental-count-down",
+      "category": "mentalMathsGames",
+      "locales": {
+        "en": {
+          "front": "Count down together instead of up.",
+          "back": "Try counting backwards in 3s or 7s from 100. It's genuinely harder than counting up and builds real fluency with number bonds."
+        },
+        "en-GB": {
+          "front": "Count down together instead of up.",
+          "back": "Try counting backwards in 3s or 7s from 100. It's genuinely harder than counting up and builds real fluency with number bonds."
+        },
+        "de-CH": {
+          "front": "Zaehlt gemeinsam rueckwaerts statt vorwaerts.",
+          "back": "Versucht, von 100 in 3er- oder 7er-Schritten rueckwaerts zu zaehlen. Das ist wirklich schwieriger als vorwaerts und staerkt das Gefuehl fuer Zahlenbeziehungen."
+        },
+        "fr-CH": {
+          "front": "Comptez a rebours ensemble, pas en avant.",
+          "back": "Essayez de compter a rebours de 3 en 3 ou de 7 en 7 depuis 100. C'est vraiment plus difficile que compter en avant et renforce la maitrise des relations entre nombres."
+        },
+        "it-CH": {
+          "front": "Contate insieme all'indietro, non in avanti.",
+          "back": "Provate a contare all'indietro di 3 in 3 o di 7 in 7 da 100. E davvero piu difficile che contare in avanti e rafforza davvero la padronanza delle relazioni tra numeri."
+        }
+      }
+    },
+    {
+      "id": "budgeting-small-decision",
+      "category": "budgeting",
+      "locales": {
+        "en": {
+          "front": "Give a small budget for one decision.",
+          "back": "Let your child choose between two options within a fixed amount — snacks for a trip, or how to spend birthday money. Real trade-offs teach budgeting better than any worksheet."
+        },
+        "en-GB": {
+          "front": "Give a small budget for one decision.",
+          "back": "Let your child choose between two options within a fixed amount — snacks for a trip, or how to spend birthday money. Real trade-offs teach budgeting better than any worksheet."
+        },
+        "de-CH": {
+          "front": "Gib fuer eine Entscheidung ein kleines Budget vor.",
+          "back": "Lass dein Kind zwischen zwei Optionen innerhalb eines festen Betrags waehlen — Snacks fuer einen Ausflug, oder wie das Geburtstagsgeld ausgegeben wird. Echte Abwaegungen lehren Budgetieren besser als jedes Arbeitsblatt."
+        },
+        "fr-CH": {
+          "front": "Donne un petit budget pour une decision.",
+          "back": "Laisse ton enfant choisir entre deux options avec un montant fixe — des collations pour une sortie, ou comment depenser l'argent d'anniversaire. Les vrais compromis enseignent mieux la gestion du budget qu'une feuille d'exercices."
+        },
+        "it-CH": {
+          "front": "Dai un piccolo budget per una decisione.",
+          "back": "Lascia che tuo figlio scelga tra due opzioni con un importo fisso — snack per una gita, o come spendere i soldi del compleanno. I compromessi reali insegnano a gestire un budget meglio di qualsiasi scheda."
+        }
+      }
+    },
+    {
+      "id": "budgeting-track-a-week",
+      "category": "budgeting",
+      "locales": {
+        "en": {
+          "front": "Track one week of pocket money together.",
+          "back": "A simple notebook or shared note: what came in, what went out, what's left. Seeing the numbers change over days makes budgeting concrete."
+        },
+        "en-GB": {
+          "front": "Track one week of pocket money together.",
+          "back": "A simple notebook or shared note: what came in, what went out, what's left. Seeing the numbers change over days makes budgeting concrete."
+        },
+        "de-CH": {
+          "front": "Verfolgt gemeinsam eine Woche Taschengeld.",
+          "back": "Ein einfaches Heft oder eine gemeinsame Notiz: was reinkam, was rausging, was uebrig ist. Die Zahlen ueber Tage veraendern zu sehen macht Budgetieren greifbar."
+        },
+        "fr-CH": {
+          "front": "Suivez ensemble une semaine d'argent de poche.",
+          "back": "Un simple carnet ou une note partagee : ce qui rentre, ce qui sort, ce qui reste. Voir les chiffres changer au fil des jours rend la gestion du budget concrete."
+        },
+        "it-CH": {
+          "front": "Tracciate insieme una settimana di paghetta.",
+          "back": "Un semplice quaderno o una nota condivisa: cosa entra, cosa esce, cosa resta. Vedere i numeri cambiare giorno dopo giorno rende concreto il concetto di budget."
+        }
+      }
+    },
+    {
+      "id": "measurement-guess-before-measure",
+      "category": "measurement",
+      "locales": {
+        "en": {
+          "front": "Guess before you measure.",
+          "back": "How tall is the fridge? How long is the sofa? Estimate together first, then check with a tape measure — the gap between guess and reality is where the learning happens."
+        },
+        "en-GB": {
+          "front": "Guess before you measure.",
+          "back": "How tall is the fridge? How long is the sofa? Estimate together first, then check with a tape measure — the gap between guess and reality is where the learning happens."
+        },
+        "de-CH": {
+          "front": "Schaetzt, bevor ihr messt.",
+          "back": "Wie hoch ist der Kuehlschrank? Wie lang ist das Sofa? Schaetzt zuerst gemeinsam, dann mit dem Massband nachmessen — im Unterschied zwischen Schaetzung und Realitaet steckt das Lernen."
+        },
+        "fr-CH": {
+          "front": "Devine avant de mesurer.",
+          "back": "Quelle est la hauteur du frigo ? Quelle est la longueur du canape ? Estimez d'abord ensemble, puis verifiez avec un metre — c'est dans l'ecart entre l'estimation et la realite que se trouve l'apprentissage."
+        },
+        "it-CH": {
+          "front": "Indovina prima di misurare.",
+          "back": "Quant'e alto il frigorifero? Quant'e lungo il divano? Stimate prima insieme, poi verificate con un metro — l'apprendimento sta proprio nel divario tra la stima e la realta."
+        }
+      }
+    },
+    {
+      "id": "measurement-everyday-units",
+      "category": "measurement",
+      "locales": {
+        "en": {
+          "front": "Compare using everyday units.",
+          "back": "\"This table is about 3 hand-spans wide\" is a genuine measurement skill — estimating with a familiar unit before reaching for a ruler."
+        },
+        "en-GB": {
+          "front": "Compare using everyday units.",
+          "back": "\"This table is about 3 hand-spans wide\" is a genuine measurement skill — estimating with a familiar unit before reaching for a ruler."
+        },
+        "de-CH": {
+          "front": "Vergleicht mit Alltagsmassen.",
+          "back": "\"Dieser Tisch ist etwa 3 Handspannen breit\" ist eine echte Messfaehigkeit — mit einer vertrauten Einheit schaetzen, bevor man zum Lineal greift."
+        },
+        "fr-CH": {
+          "front": "Compare avec des unites du quotidien.",
+          "back": "\"Cette table fait environ 3 empans de large\" est une vraie competence de mesure — estimer avec une unite familiere avant de prendre une regle."
+        },
+        "it-CH": {
+          "front": "Confronta usando unita quotidiane.",
+          "back": "\"Questo tavolo e largo circa 3 spanne\" e una vera abilita di misura — stimare con un'unita familiare prima di prendere un righello."
+        }
+      }
+    },
+    {
+      "id": "travel-arrival-time",
+      "category": "travelPlanning",
+      "locales": {
+        "en": {
+          "front": "Work out arrival time together before a trip.",
+          "back": "\"We're leaving at 2pm and it takes 45 minutes — what time will we arrive?\" is real speed-distance-time thinking, dressed as trip planning."
+        },
+        "en-GB": {
+          "front": "Work out arrival time together before a trip.",
+          "back": "\"We're leaving at 2pm and it takes 45 minutes — what time will we arrive?\" is real speed-distance-time thinking, dressed as trip planning."
+        },
+        "de-CH": {
+          "front": "Berechnet vor einer Reise gemeinsam die Ankunftszeit.",
+          "back": "\"Wir fahren um 14 Uhr los und es dauert 45 Minuten — wann kommen wir an?\" ist echtes Denken in Geschwindigkeit-Strecke-Zeit, verpackt als Reiseplanung."
+        },
+        "fr-CH": {
+          "front": "Calculez ensemble l'heure d'arrivee avant un trajet.",
+          "back": "\"On part a 14h et ca prend 45 minutes — a quelle heure arrivera-t-on ?\" est un vrai raisonnement vitesse-distance-temps, deguise en planification de voyage."
+        },
+        "it-CH": {
+          "front": "Calcolate insieme l'orario di arrivo prima di un viaggio.",
+          "back": "\"Partiamo alle 14 e ci vogliono 45 minuti — a che ora arriviamo?\" e un vero ragionamento su velocita, distanza e tempo, travestito da pianificazione di viaggio."
+        }
+      }
+    },
+    {
+      "id": "travel-read-a-map",
+      "category": "travelPlanning",
+      "locales": {
+        "en": {
+          "front": "Read a map or app and estimate distance.",
+          "back": "Ask your child to spot the distance to your destination and guess how long it'll take at walking or driving speed — a natural way to connect numbers to the real world."
+        },
+        "en-GB": {
+          "front": "Read a map or app and estimate distance.",
+          "back": "Ask your child to spot the distance to your destination and guess how long it'll take at walking or driving speed — a natural way to connect numbers to the real world."
+        },
+        "de-CH": {
+          "front": "Lest gemeinsam eine Karte oder App und schaetzt die Distanz.",
+          "back": "Lass dein Kind die Entfernung zum Ziel finden und schaetzen, wie lange es zu Fuss oder mit dem Auto dauert — eine natuerliche Verbindung von Zahlen zur echten Welt."
+        },
+        "fr-CH": {
+          "front": "Lisez une carte ou une appli et estimez la distance.",
+          "back": "Demande a ton enfant de reperer la distance jusqu'a la destination et de deviner combien de temps cela prendra a pied ou en voiture — une facon naturelle de relier les nombres au monde reel."
+        },
+        "it-CH": {
+          "front": "Leggete insieme una mappa o un'app e stimate la distanza.",
+          "back": "Chiedi a tuo figlio di individuare la distanza dalla destinazione e indovinare quanto tempo ci vorra a piedi o in auto — un modo naturale per collegare i numeri al mondo reale."
+        }
+      }
+    }
+  ]
+}

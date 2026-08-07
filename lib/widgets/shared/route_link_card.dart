@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../shared/theme/app_theme.dart';
+
 /// Icon-chip / title / subtitle / chevron tile that pushes a route on tap.
 /// Shared shape for Math Studio hub tiles, Interactive Labs hub tiles, and
 /// pillar-embedded entry cards for reusable formats (Recall Cards,
@@ -27,20 +29,23 @@ class RouteLinkCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Material(
-      color: const Color(0xFF132040),
+      color: colors.cardSurface,
       borderRadius: BorderRadius.circular(14),
       child: InkWell(
         borderRadius: BorderRadius.circular(14),
         onTap: onTap,
         child: Semantics(
           button: true,
-          label: badgeText == null ? '$title. $subtitle' : '$title. $subtitle. $badgeText',
+          label: badgeText == null
+              ? '$title. $subtitle'
+              : '$title. $subtitle. $badgeText',
           child: Container(
             padding: const EdgeInsets.all(14),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: const Color(0xFF1F3055)),
+              border: Border.all(color: colors.divider),
             ),
             child: Row(
               children: [
@@ -64,8 +69,8 @@ class RouteLinkCard extends StatelessWidget {
                           Expanded(
                             child: Text(
                               title,
-                              style: const TextStyle(
-                                color: Colors.white,
+                              style: TextStyle(
+                                color: colors.primaryText,
                                 fontSize: 15,
                                 fontWeight: FontWeight.w700,
                               ),
@@ -83,7 +88,8 @@ class RouteLinkCard extends StatelessWidget {
                               data: MediaQuery.of(context)
                                   .copyWith(textScaler: TextScaler.noScaling),
                               child: Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 3),
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 7, vertical: 3),
                                 decoration: BoxDecoration(
                                   color: badgeColor,
                                   borderRadius: BorderRadius.circular(20),
@@ -105,8 +111,8 @@ class RouteLinkCard extends StatelessWidget {
                       const SizedBox(height: 3),
                       Text(
                         subtitle,
-                        style: const TextStyle(
-                          color: Color(0xFF8A9DC0),
+                        style: TextStyle(
+                          color: colors.secondaryText,
                           fontSize: 13,
                           height: 1.3,
                         ),
@@ -115,7 +121,7 @@ class RouteLinkCard extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 8),
-                const Icon(Icons.chevron_right, color: Color(0xFF4A6080)),
+                Icon(Icons.chevron_right, color: colors.tertiaryText),
               ],
             ),
           ),

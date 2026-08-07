@@ -16,10 +16,21 @@ const _prefixes = [
   'placeValueCaption',
   'recallCards',
   'labs',
+  'familyMaths',
+  'familyActivity',
+  'allieLabel',
+  'feedPanda',
+  'feedTheHungryPanda',
+  'earlyMathsPlayground',
 ];
 
 // Brand terms deliberately kept identical across every locale.
-const _brandTermKeys = {'mathStudioNavCardTitle', 'mathStudioHubTitle'};
+const _brandTermKeys = {
+  'mathStudioNavCardTitle',
+  'mathStudioHubTitle',
+  // Allie is a persona name, not translated prose.
+  'allieLabel',
+};
 
 // Short category/theme-name keys are excluded from the "must differ" check:
 // single mathematical/domain words (Aviation, Estimation, Compensation,
@@ -46,6 +57,17 @@ const _cognateProneKeyPrefixes = [
   'mathStudioSpatialRotationsLabel',
   // "Transformations" is the same word in English and French.
   'mathStudioSpatialTransformationsLabel',
+  // "Addition"/"Division" are spelled identically in English, German and
+  // French; "Multiplication"/"Fractions" identically in English and French;
+  // "Algebra" identically in English, German and Italian — genuine
+  // mathematical-vocabulary cognates, not missed translations.
+  'familyMathsCategoryAddition',
+  'familyMathsCategoryDivision',
+  'familyMathsCategoryMultiplication',
+  'familyMathsCategoryFractions',
+  'familyMathsCategoryAlgebra',
+  // "min" is a universal SI-style abbreviation for minutes, reused as-is.
+  'familyActivityTimeRange',
 ];
 
 Map<String, dynamic> _loadArb(String filename) {
@@ -68,24 +90,33 @@ void main() {
     expect(mathStudioKeys, isNotEmpty);
   });
 
-  for (final locale in ['app_en_GB.arb', 'app_de_CH.arb', 'app_fr_CH.arb', 'app_it_CH.arb']) {
+  for (final locale in [
+    'app_en_GB.arb',
+    'app_de_CH.arb',
+    'app_fr_CH.arb',
+    'app_it_CH.arb'
+  ]) {
     test('$locale has a non-empty value for every Math Studio key', () {
       final arb = _loadArb(locale);
       for (final key in mathStudioKeys) {
         final value = arb[key];
         expect(value, isA<String>(), reason: '$locale missing key "$key"');
-        expect((value as String).trim(), isNotEmpty, reason: '$locale key "$key" is empty');
+        expect((value as String).trim(), isNotEmpty,
+            reason: '$locale key "$key" is empty');
       }
     });
   }
 
   for (final locale in ['app_de_CH.arb', 'app_fr_CH.arb', 'app_it_CH.arb']) {
-    test('$locale does not silently fall back to the English string (excluding preserved brand terms)',
+    test(
+        '$locale does not silently fall back to the English string (excluding preserved brand terms)',
         () {
       final arb = _loadArb(locale);
       for (final key in mathStudioKeys) {
         if (_brandTermKeys.contains(key)) continue;
-        if (_cognateProneKeyPrefixes.any((prefix) => key.startsWith(prefix))) continue;
+        if (_cognateProneKeyPrefixes.any((prefix) => key.startsWith(prefix))) {
+          continue;
+        }
         final englishValue = templateArb[key] as String;
         final localizedValue = arb[key] as String;
         expect(

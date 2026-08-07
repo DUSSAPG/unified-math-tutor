@@ -12,10 +12,12 @@ class FormulaVariable {
     final symbol = json['symbol'];
     final meaning = json['meaning'];
     if (symbol is! String || symbol.trim().isEmpty) {
-      throw const FormatException('Formula variable "symbol" must be a string.');
+      throw const FormatException(
+          'Formula variable "symbol" must be a string.');
     }
     if (meaning is! String || meaning.trim().isEmpty) {
-      throw const FormatException('Formula variable "meaning" must be a string.');
+      throw const FormatException(
+          'Formula variable "meaning" must be a string.');
     }
     return FormulaVariable(symbol: symbol, meaning: meaning);
   }
@@ -31,6 +33,7 @@ class FormulaEntry {
     required this.variables,
     required this.explanation,
     required this.example,
+    this.diagramAssetId,
   });
 
   final String id;
@@ -42,6 +45,11 @@ class FormulaEntry {
   final String explanation;
   final String example;
 
+  /// Optional [VisualAsset.id] rendered above the explanation when set —
+  /// most entries have none and render exactly as before. Part of the
+  /// Visual Asset System's Formula Library integration.
+  final String? diagramAssetId;
+
   factory FormulaEntry.fromJson(Map<String, dynamic> json) {
     final id = json['id'];
     final category = json['category'];
@@ -51,7 +59,8 @@ class FormulaEntry {
     final explanation = json['explanation'];
     final example = json['example'];
     if (id is! String || id.trim().isEmpty) {
-      throw const FormatException('Formula catalog entry "id" must be a string.');
+      throw const FormatException(
+          'Formula catalog entry "id" must be a string.');
     }
     if (category is! String || category.trim().isEmpty) {
       throw FormatException('Formula catalog "$id" is missing a category.');
@@ -63,17 +72,26 @@ class FormulaEntry {
       throw FormatException('Formula catalog "$id" is missing a formula.');
     }
     if (meaning is! String) {
-      throw FormatException('Formula catalog "$id" "meaning" must be a string.');
+      throw FormatException(
+          'Formula catalog "$id" "meaning" must be a string.');
     }
     if (explanation is! String) {
-      throw FormatException('Formula catalog "$id" "explanation" must be a string.');
+      throw FormatException(
+          'Formula catalog "$id" "explanation" must be a string.');
     }
     if (example is! String) {
-      throw FormatException('Formula catalog "$id" "example" must be a string.');
+      throw FormatException(
+          'Formula catalog "$id" "example" must be a string.');
     }
     final variablesValue = json['variables'];
     if (variablesValue is! List) {
-      throw FormatException('Formula catalog "$id" "variables" must be a list.');
+      throw FormatException(
+          'Formula catalog "$id" "variables" must be a list.');
+    }
+    final diagramAssetIdValue = json['diagramAssetId'];
+    if (diagramAssetIdValue != null && diagramAssetIdValue is! String) {
+      throw FormatException(
+          'Formula catalog "$id" "diagramAssetId" must be a string if present.');
     }
     return FormulaEntry(
       id: id,
@@ -87,6 +105,7 @@ class FormulaEntry {
           .toList(),
       explanation: explanation,
       example: example,
+      diagramAssetId: diagramAssetIdValue as String?,
     );
   }
 
@@ -120,7 +139,8 @@ class FormulaLibraryService {
       throw const FormatException('Formula catalog root must be an object.');
     }
     if (decoded['version'] is! int) {
-      throw const FormatException('Formula catalog "version" must be an integer.');
+      throw const FormatException(
+          'Formula catalog "version" must be an integer.');
     }
     final formulas = decoded['formulas'];
     if (formulas is! List || formulas.isEmpty) {
@@ -143,7 +163,8 @@ class FormulaLibraryService {
   Future<List<FormulaEntry>> search(String query, {String? category}) async {
     final entries = await load();
     return entries
-        .where((e) => (category == null || e.category == category) && e.matches(query))
+        .where((e) =>
+            (category == null || e.category == category) && e.matches(query))
         .toList(growable: false);
   }
 }

@@ -34,7 +34,8 @@ const _datasets = <_Dataset>[
   _Dataset([28, 27, 29, 28, 30, 27, 55], 55, 28),
 ];
 
-double _mean(List<int> values) => values.reduce((a, b) => a + b) / values.length;
+double _mean(List<int> values) =>
+    values.reduce((a, b) => a + b) / values.length;
 
 double _median(List<int> values) {
   final sorted = [...values]..sort();
@@ -111,11 +112,15 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen>
     final level = InteractiveLabsProgressService.instance.guidanceLevel();
     final l10n = AppLocalizations.of(context);
     playNarration(
-      messageId: 'labsDataDetectiveNarrationHintInactivity${narrationLevelSuffix(level)}',
+      messageId:
+          'labsDataDetectiveNarrationHintInactivity${narrationLevelSuffix(level)}',
       text: switch (level) {
-        LabGuidanceLevel.explorer => l10n.labsDataDetectiveNarrationHintInactivityExplorer,
-        LabGuidanceLevel.builder => l10n.labsDataDetectiveNarrationHintInactivityBuilder,
-        LabGuidanceLevel.navigator => l10n.labsDataDetectiveNarrationHintInactivityNavigator,
+        LabGuidanceLevel.explorer =>
+          l10n.labsDataDetectiveNarrationHintInactivityExplorer,
+        LabGuidanceLevel.builder =>
+          l10n.labsDataDetectiveNarrationHintInactivityBuilder,
+        LabGuidanceLevel.navigator =>
+          l10n.labsDataDetectiveNarrationHintInactivityNavigator,
       },
       trigger: LabNarrationTrigger.hint,
       level: level,
@@ -166,9 +171,8 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen>
     final meanShift = (meanAfter - meanBefore).abs();
     final medianShift = (medianAfter - medianBefore).abs();
     final meanShiftedMore = meanShift > medianShift;
-    final correct =
-        (_prediction == _Prediction.mean && meanShiftedMore) ||
-            (_prediction == _Prediction.median && !meanShiftedMore);
+    final correct = (_prediction == _Prediction.mean && meanShiftedMore) ||
+        (_prediction == _Prediction.median && !meanShiftedMore);
 
     final l10n = AppLocalizations.of(context);
     setState(() {
@@ -178,22 +182,29 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen>
       _meanAfter = meanAfter;
       _medianBefore = medianBefore;
       _medianAfter = medianAfter;
-      _revealSummary = l10n.labsDataDetectiveShiftSummary(_fmt(meanShift), _fmt(medianShift));
+      _revealSummary = l10n.labsDataDetectiveShiftSummary(
+          _fmt(meanShift), _fmt(medianShift));
     });
     _lastRevealedPrediction = _prediction;
     registerNarrationActivity();
 
-    await InteractiveLabsProgressService.instance.recordAttempt(InteractiveLabId.dataDetective);
+    await InteractiveLabsProgressService.instance
+        .recordAttempt(InteractiveLabId.dataDetective);
     if (correct) {
-      await InteractiveLabsProgressService.instance.recordCompletion(InteractiveLabId.dataDetective);
+      await InteractiveLabsProgressService.instance
+          .recordCompletion(InteractiveLabId.dataDetective);
       CaptainMathService.instance.showCompletion();
       AudioCueService.instance.play(AudioCue.success);
       playNarration(
-        messageId: 'labsDataDetectiveNarrationCompletion${narrationLevelSuffix(level)}',
+        messageId:
+            'labsDataDetectiveNarrationCompletion${narrationLevelSuffix(level)}',
         text: switch (level) {
-          LabGuidanceLevel.explorer => l10n.labsDataDetectiveNarrationCompletionExplorer,
-          LabGuidanceLevel.builder => l10n.labsDataDetectiveNarrationCompletionBuilder,
-          LabGuidanceLevel.navigator => l10n.labsDataDetectiveNarrationCompletionNavigator,
+          LabGuidanceLevel.explorer =>
+            l10n.labsDataDetectiveNarrationCompletionExplorer,
+          LabGuidanceLevel.builder =>
+            l10n.labsDataDetectiveNarrationCompletionBuilder,
+          LabGuidanceLevel.navigator =>
+            l10n.labsDataDetectiveNarrationCompletionNavigator,
         },
         trigger: LabNarrationTrigger.completion,
         level: level,
@@ -202,22 +213,30 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen>
       CaptainMathService.instance.showEncouragement();
       if (isRepeated) {
         playNarration(
-          messageId: 'labsDataDetectiveNarrationHintRepeated${narrationLevelSuffix(level)}',
+          messageId:
+              'labsDataDetectiveNarrationHintRepeated${narrationLevelSuffix(level)}',
           text: switch (level) {
-            LabGuidanceLevel.explorer => l10n.labsDataDetectiveNarrationHintRepeatedExplorer,
-            LabGuidanceLevel.builder => l10n.labsDataDetectiveNarrationHintRepeatedBuilder,
-            LabGuidanceLevel.navigator => l10n.labsDataDetectiveNarrationHintRepeatedNavigator,
+            LabGuidanceLevel.explorer =>
+              l10n.labsDataDetectiveNarrationHintRepeatedExplorer,
+            LabGuidanceLevel.builder =>
+              l10n.labsDataDetectiveNarrationHintRepeatedBuilder,
+            LabGuidanceLevel.navigator =>
+              l10n.labsDataDetectiveNarrationHintRepeatedNavigator,
           },
           trigger: LabNarrationTrigger.hint,
           level: level,
         );
       } else {
         playNarration(
-          messageId: 'labsDataDetectiveNarrationResultWrong${narrationLevelSuffix(level)}',
+          messageId:
+              'labsDataDetectiveNarrationResultWrong${narrationLevelSuffix(level)}',
           text: switch (level) {
-            LabGuidanceLevel.explorer => l10n.labsDataDetectiveNarrationResultWrongExplorer,
-            LabGuidanceLevel.builder => l10n.labsDataDetectiveNarrationResultWrongBuilder,
-            LabGuidanceLevel.navigator => l10n.labsDataDetectiveNarrationResultWrongNavigator,
+            LabGuidanceLevel.explorer =>
+              l10n.labsDataDetectiveNarrationResultWrongExplorer,
+            LabGuidanceLevel.builder =>
+              l10n.labsDataDetectiveNarrationResultWrongBuilder,
+            LabGuidanceLevel.navigator =>
+              l10n.labsDataDetectiveNarrationResultWrongNavigator,
           },
           trigger: LabNarrationTrigger.resultExplanation,
           level: level,
@@ -266,7 +285,8 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen>
     final median = _working.isEmpty ? 0.0 : _median(_working);
     final range = _working.isEmpty
         ? 0
-        : (_working.reduce((a, b) => a > b ? a : b) - _working.reduce((a, b) => a < b ? a : b));
+        : (_working.reduce((a, b) => a > b ? a : b) -
+            _working.reduce((a, b) => a < b ? a : b));
 
     return ListenableBuilder(
       listenable: InteractiveLabsProgressService.instance.updateSerial,
@@ -299,7 +319,8 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen>
                 padding: const EdgeInsets.only(bottom: AppSpacing.sm),
                 child: Text(
                   l10n.labsDataDetectiveOutlierExplanation(_dataset.outlier),
-                  style: const TextStyle(color: Colors.white, fontSize: 14, height: 1.4),
+                  style: const TextStyle(
+                      color: Colors.white, fontSize: 14, height: 1.4),
                 ),
               ),
             Wrap(
@@ -312,7 +333,8 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen>
                     // addition to any colour, so it never depends on colour
                     // alone to stand out.
                     avatar: _working[i] == _dataset.outlier
-                        ? const Icon(Icons.warning_amber_rounded, color: Color(0xFFFFBD00), size: 18)
+                        ? const Icon(Icons.warning_amber_rounded,
+                            color: Color(0xFFFFBD00), size: 18)
                         : null,
                     label: Text('${_working[i]}'),
                     onDeleted: () => _removeAt(i),
@@ -322,13 +344,18 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen>
               ],
             ),
             const SizedBox(height: AppSpacing.sm),
-            OutlinedButton(onPressed: _addTypicalValue, child: Text(l10n.labsDataDetectiveAddValueButton)),
+            OutlinedButton(
+                onPressed: _addTypicalValue,
+                child: Text(l10n.labsDataDetectiveAddValueButton)),
             const SizedBox(height: AppSpacing.lg),
             _StatsRow(mean: mean, median: median, range: range, l10n: l10n),
             const SizedBox(height: AppSpacing.lg),
             Text(
               l10n.labsDataDetectivePredictionPrompt,
-              style: const TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w700),
+              style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w700),
             ),
             const SizedBox(height: AppSpacing.sm),
             Row(
@@ -355,7 +382,9 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen>
               children: [
                 Expanded(
                   child: ElevatedButton(
-                    onPressed: (_prediction != null && outlierPresent) ? _reveal : null,
+                    onPressed: (_prediction != null && outlierPresent)
+                        ? _reveal
+                        : null,
                     child: Text(l10n.labsDataDetectiveRevealButton),
                   ),
                 ),
@@ -381,7 +410,9 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen>
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   LabResultBanner(
-                    kind: _predictionCorrect! ? LabResultKind.success : LabResultKind.tryAgain,
+                    kind: _predictionCorrect!
+                        ? LabResultKind.success
+                        : LabResultKind.tryAgain,
                     notice: _predictionCorrect!
                         ? l10n.labsDataDetectiveCorrectPrediction
                         : l10n.labsDataDetectiveIncorrectPrediction,
@@ -395,13 +426,17 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen>
                       _fmt(_medianBefore!),
                       _fmt(_medianAfter!),
                     ),
-                    style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 12, height: 1.4),
+                    style: const TextStyle(
+                        color: Color(0xFF8A9DC0), fontSize: 12, height: 1.4),
                   ),
                 ],
               ),
         relatedLinks: const LabRelatedLinks(
           labId: InteractiveLabId.dataDetective,
-          recallCardIds: ['stats-mean-vs-median-outlier-misconception', 'stats-mean-formula'],
+          recallCardIds: [
+            'stats-mean-vs-median-outlier-misconception',
+            'stats-mean-formula'
+          ],
           discoveryCardIds: [],
           practiceTopicIds: ['statistics_probability'],
         ),
@@ -411,7 +446,11 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen>
 }
 
 class _StatsRow extends StatelessWidget {
-  const _StatsRow({required this.mean, required this.median, required this.range, required this.l10n});
+  const _StatsRow(
+      {required this.mean,
+      required this.median,
+      required this.range,
+      required this.l10n});
 
   final double mean;
   final double median;
@@ -422,9 +461,15 @@ class _StatsRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(child: _StatTile(label: l10n.labsDataDetectiveMeanLabel, value: _fmt(mean))),
-        Expanded(child: _StatTile(label: l10n.labsDataDetectiveMedianLabel, value: _fmt(median))),
-        Expanded(child: _StatTile(label: l10n.labsDataDetectiveRangeLabel, value: '$range')),
+        Expanded(
+            child: _StatTile(
+                label: l10n.labsDataDetectiveMeanLabel, value: _fmt(mean))),
+        Expanded(
+            child: _StatTile(
+                label: l10n.labsDataDetectiveMedianLabel, value: _fmt(median))),
+        Expanded(
+            child: _StatTile(
+                label: l10n.labsDataDetectiveRangeLabel, value: '$range')),
       ],
     );
   }
@@ -451,9 +496,14 @@ class _StatTile extends StatelessWidget {
           child: Column(
             children: [
               Text(value,
-                  style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w700)),
+                  style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w700)),
               const SizedBox(height: 2),
-              Text(label, style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 11)),
+              Text(label,
+                  style:
+                      const TextStyle(color: Color(0xFF8A9DC0), fontSize: 11)),
             ],
           ),
         ),

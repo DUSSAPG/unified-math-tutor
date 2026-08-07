@@ -22,7 +22,10 @@ class LabProgressIndicator extends StatelessWidget {
           ),
           child: Text(
             label,
-            style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 12, fontWeight: FontWeight.w600),
+            style: const TextStyle(
+                color: Color(0xFF8A9DC0),
+                fontSize: 12,
+                fontWeight: FontWeight.w600),
           ),
         ),
       ),

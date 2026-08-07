@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" role="img" aria-label="Place value regrouping explanation">
+  <rect width="640" height="260" rx="28" fill="#0B1120"/>
+  <g font-family="DMSans, Arial, sans-serif" text-anchor="middle">
+    <g transform="translate(70 55)">
+      <rect width="110" height="135" rx="16" fill="#132040" stroke="#1F3055"/>
+      <text x="55" y="32" fill="#8A9DC0" font-size="18">ones</text>
+      <circle cx="38" cy="75" r="9" fill="#5B8EFF"/><circle cx="62" cy="75" r="9" fill="#5B8EFF"/><circle cx="86" cy="75" r="9" fill="#5B8EFF"/>
+    </g>
+    <g transform="translate(200 55)">
+      <rect width="110" height="135" rx="16" fill="#132040" stroke="#1F3055"/>
+      <text x="55" y="32" fill="#8A9DC0" font-size="18">tens</text>
+      <rect x="38" y="58" width="16" height="58" rx="5" fill="#34C759"/><rect x="62" y="58" width="16" height="58" rx="5" fill="#34C759"/>
+    </g>
+    <g transform="translate(330 55)">
+      <rect width="110" height="135" rx="16" fill="#132040" stroke="#1F3055"/>
+      <text x="55" y="32" fill="#8A9DC0" font-size="18">hundreds</text>
+      <rect x="35" y="62" width="50" height="50" rx="6" fill="#FFBD00"/>
+    </g>
+    <g transform="translate(460 55)">
+      <rect width="110" height="135" rx="16" fill="#132040" stroke="#1F3055"/>
+      <text x="55" y="32" fill="#8A9DC0" font-size="18">thousands</text>
+      <rect x="34" y="58" width="52" height="58" rx="8" fill="#7C5FFF"/>
+    </g>
+    <text x="320" y="225" fill="#FFFFFF" font-size="24" font-weight="700">10 ones regroup into 1 ten</text>
+  </g>
+</svg>

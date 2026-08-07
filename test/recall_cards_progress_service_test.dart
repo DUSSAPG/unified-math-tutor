@@ -41,10 +41,12 @@ void main() {
   });
 
   test('a never-seen card defaults to the "new" state', () {
-    expect(RecallCardsProgressService.instance.stateFor('unseen-card'), RecallCardState.newCard);
+    expect(RecallCardsProgressService.instance.stateFor('unseen-card'),
+        RecallCardState.newCard);
   });
 
-  test('remembering a new card promotes it to "learning" with a future next-review date',
+  test(
+      'remembering a new card promotes it to "learning" with a future next-review date',
       () async {
     final card = _card();
     final before = DateTime.now();
@@ -54,14 +56,17 @@ void main() {
       revealedBeforeAnswer: false,
     );
 
-    expect(RecallCardsProgressService.instance.stateFor(card.id), RecallCardState.learning);
+    expect(RecallCardsProgressService.instance.stateFor(card.id),
+        RecallCardState.learning);
     expect(RecallCardsProgressService.instance.reviewCountFor(card.id), 1);
     final next = RecallCardsProgressService.instance.nextReviewFor(card.id);
     expect(next, isNotNull);
     expect(next!.isAfter(before), isTrue);
   });
 
-  test('a due card is surfaced as "review_due" once its next-review date has elapsed', () async {
+  test(
+      'a due card is surfaced as "review_due" once its next-review date has elapsed',
+      () async {
     final card = _card();
     await RecallCardsProgressService.instance.recordAttempt(
       card,
@@ -75,7 +80,8 @@ void main() {
     );
   });
 
-  test('repeated remembered attempts eventually promote a card to "mastered"', () async {
+  test('repeated remembered attempts eventually promote a card to "mastered"',
+      () async {
     final card = _card();
     // Each remembered attempt grows the interval by the (increasing) ease
     // factor, so the card's own next-review date races far ahead of real
@@ -88,28 +94,34 @@ void main() {
         revealedBeforeAnswer: false,
       );
     }
-    expect(RecallCardsProgressService.instance.stateFor(card.id), RecallCardState.mastered);
+    expect(RecallCardsProgressService.instance.stateFor(card.id),
+        RecallCardState.mastered);
   });
 
-  test('"not yet" demotes back to learning and lowers the ease factor', () async {
+  test('"not yet" demotes back to learning and lowers the ease factor',
+      () async {
     final card = _card();
     await RecallCardsProgressService.instance.recordAttempt(
       card,
       remembered: true,
       revealedBeforeAnswer: false,
     );
-    final easeAfterRemembered = RecallCardsProgressService.instance.easeFactorFor(card.id);
+    final easeAfterRemembered =
+        RecallCardsProgressService.instance.easeFactorFor(card.id);
 
     await RecallCardsProgressService.instance.recordAttempt(
       card,
       remembered: false,
       revealedBeforeAnswer: true,
     );
-    expect(RecallCardsProgressService.instance.stateFor(card.id), RecallCardState.learning);
-    expect(RecallCardsProgressService.instance.easeFactorFor(card.id), lessThan(easeAfterRemembered));
+    expect(RecallCardsProgressService.instance.stateFor(card.id),
+        RecallCardState.learning);
+    expect(RecallCardsProgressService.instance.easeFactorFor(card.id),
+        lessThan(easeAfterRemembered));
   });
 
-  test('a misconception card sets its misconception flag on "not yet" and clears it on remembered',
+  test(
+      'a misconception card sets its misconception flag on "not yet" and clears it on remembered',
       () async {
     final card = _card(cardType: 'misconception');
     await RecallCardsProgressService.instance.recordAttempt(
@@ -117,17 +129,20 @@ void main() {
       remembered: false,
       revealedBeforeAnswer: false,
     );
-    expect(RecallCardsProgressService.instance.misconceptionFlagFor(card.id), isTrue);
+    expect(RecallCardsProgressService.instance.misconceptionFlagFor(card.id),
+        isTrue);
 
     await RecallCardsProgressService.instance.recordAttempt(
       card,
       remembered: true,
       revealedBeforeAnswer: false,
     );
-    expect(RecallCardsProgressService.instance.misconceptionFlagFor(card.id), isFalse);
+    expect(RecallCardsProgressService.instance.misconceptionFlagFor(card.id),
+        isFalse);
   });
 
-  test('Ask Me Tomorrow gives a never-scheduled card a next-review date of tomorrow and records it as recently shown',
+  test(
+      'Ask Me Tomorrow gives a never-scheduled card a next-review date of tomorrow and records it as recently shown',
       () async {
     final card = _card();
     expect(RecallCardsProgressService.instance.nextReviewFor(card.id), isNull);
@@ -138,24 +153,34 @@ void main() {
 
     expect(next, isNotNull);
     expect(next!.difference(before).inHours, greaterThanOrEqualTo(23));
-    expect(RecallCardsProgressService.instance.recentlyShown(), contains(card.id));
+    expect(
+        RecallCardsProgressService.instance.recentlyShown(), contains(card.id));
   });
 
-
-  test('bookmarking a card toggles independently of its scheduler state', () async {
+  test('bookmarking a card toggles independently of its scheduler state',
+      () async {
     final card = _card();
     expect(RecallCardsProgressService.instance.isBookmarked(card.id), isFalse);
     await RecallCardsProgressService.instance.setBookmarked(card.id, true);
     expect(RecallCardsProgressService.instance.isBookmarked(card.id), isTrue);
-    expect(RecallCardsProgressService.instance.stateFor(card.id), RecallCardState.newCard);
+    expect(RecallCardsProgressService.instance.stateFor(card.id),
+        RecallCardState.newCard);
   });
 
-  test('linked-practice and linked-lab use counters increment independently', () async {
+  test('linked-practice and linked-lab use counters increment independently',
+      () async {
     final card = _card();
-    expect(RecallCardsProgressService.instance.linkedPracticeUseCountFor(card.id), 0);
+    expect(
+        RecallCardsProgressService.instance.linkedPracticeUseCountFor(card.id),
+        0);
     await RecallCardsProgressService.instance.recordLinkedPracticeUse(card.id);
     await RecallCardsProgressService.instance.recordLinkedPracticeUse(card.id);
-    expect(RecallCardsProgressService.instance.linkedPracticeUseCountFor(card.id), 2);
-    expect(RecallCardsProgressService.instance.linkedInteractiveLabUseCountFor(card.id), 0);
+    expect(
+        RecallCardsProgressService.instance.linkedPracticeUseCountFor(card.id),
+        2);
+    expect(
+        RecallCardsProgressService.instance
+            .linkedInteractiveLabUseCountFor(card.id),
+        0);
   });
 }

@@ -40,12 +40,30 @@ class _NumberLineChallenge {
 /// levels" — they still exist for every band, just aren't the first ones
 /// an Explorer-band learner meets in the deterministic rotation below.
 const _challenges = <_NumberLineChallenge>[
-  _NumberLineChallenge(min: 0, max: 10, step: 1, target: 7, level: LabGuidanceLevel.explorer),
-  _NumberLineChallenge(min: 0, max: 20, step: 1, target: 13, level: LabGuidanceLevel.explorer),
-  _NumberLineChallenge(min: 0, max: 5, step: 0.5, target: 2.5, level: LabGuidanceLevel.builder),
-  _NumberLineChallenge(min: 0, max: 1, step: 0.25, target: 0.75, level: LabGuidanceLevel.builder),
-  _NumberLineChallenge(min: -10, max: 10, step: 1, target: -4, level: LabGuidanceLevel.navigator),
-  _NumberLineChallenge(min: -5, max: 5, step: 0.5, target: -1.5, level: LabGuidanceLevel.navigator),
+  _NumberLineChallenge(
+      min: 0, max: 10, step: 1, target: 7, level: LabGuidanceLevel.explorer),
+  _NumberLineChallenge(
+      min: 0, max: 20, step: 1, target: 13, level: LabGuidanceLevel.explorer),
+  _NumberLineChallenge(
+      min: 0, max: 5, step: 0.5, target: 2.5, level: LabGuidanceLevel.builder),
+  _NumberLineChallenge(
+      min: 0,
+      max: 1,
+      step: 0.25,
+      target: 0.75,
+      level: LabGuidanceLevel.builder),
+  _NumberLineChallenge(
+      min: -10,
+      max: 10,
+      step: 1,
+      target: -4,
+      level: LabGuidanceLevel.navigator),
+  _NumberLineChallenge(
+      min: -5,
+      max: 5,
+      step: 0.5,
+      target: -1.5,
+      level: LabGuidanceLevel.navigator),
 ];
 
 /// Teaches: a number's position on a number line corresponds to its value,
@@ -56,7 +74,8 @@ class NumberLineExplorerScreen extends StatefulWidget {
   const NumberLineExplorerScreen({super.key});
 
   @override
-  State<NumberLineExplorerScreen> createState() => _NumberLineExplorerScreenState();
+  State<NumberLineExplorerScreen> createState() =>
+      _NumberLineExplorerScreenState();
 }
 
 class _NumberLineExplorerScreenState extends State<NumberLineExplorerScreen>
@@ -107,11 +126,15 @@ class _NumberLineExplorerScreenState extends State<NumberLineExplorerScreen>
     final level = InteractiveLabsProgressService.instance.guidanceLevel();
     final l10n = AppLocalizations.of(context);
     playNarration(
-      messageId: 'labsNumberLineExplorerNarrationHintInactivity${narrationLevelSuffix(level)}',
+      messageId:
+          'labsNumberLineExplorerNarrationHintInactivity${narrationLevelSuffix(level)}',
       text: switch (level) {
-        LabGuidanceLevel.explorer => l10n.labsNumberLineExplorerNarrationHintInactivityExplorer,
-        LabGuidanceLevel.builder => l10n.labsNumberLineExplorerNarrationHintInactivityBuilder,
-        LabGuidanceLevel.navigator => l10n.labsNumberLineExplorerNarrationHintInactivityNavigator,
+        LabGuidanceLevel.explorer =>
+          l10n.labsNumberLineExplorerNarrationHintInactivityExplorer,
+        LabGuidanceLevel.builder =>
+          l10n.labsNumberLineExplorerNarrationHintInactivityBuilder,
+        LabGuidanceLevel.navigator =>
+          l10n.labsNumberLineExplorerNarrationHintInactivityNavigator,
       },
       trigger: LabNarrationTrigger.hint,
       level: level,
@@ -147,11 +170,15 @@ class _NumberLineExplorerScreenState extends State<NumberLineExplorerScreen>
       CaptainMathService.instance.showCompletion();
       AudioCueService.instance.play(AudioCue.success);
       playNarration(
-        messageId: 'labsNumberLineExplorerNarrationCompletion${narrationLevelSuffix(level)}',
+        messageId:
+            'labsNumberLineExplorerNarrationCompletion${narrationLevelSuffix(level)}',
         text: switch (level) {
-          LabGuidanceLevel.explorer => l10n.labsNumberLineExplorerNarrationCompletionExplorer,
-          LabGuidanceLevel.builder => l10n.labsNumberLineExplorerNarrationCompletionBuilder,
-          LabGuidanceLevel.navigator => l10n.labsNumberLineExplorerNarrationCompletionNavigator,
+          LabGuidanceLevel.explorer =>
+            l10n.labsNumberLineExplorerNarrationCompletionExplorer,
+          LabGuidanceLevel.builder =>
+            l10n.labsNumberLineExplorerNarrationCompletionBuilder,
+          LabGuidanceLevel.navigator =>
+            l10n.labsNumberLineExplorerNarrationCompletionNavigator,
         },
         trigger: LabNarrationTrigger.completion,
         level: level,
@@ -163,33 +190,45 @@ class _NumberLineExplorerScreenState extends State<NumberLineExplorerScreen>
 
       if (isRepeated) {
         playNarration(
-          messageId: 'labsNumberLineExplorerNarrationHintRepeated${narrationLevelSuffix(level)}',
+          messageId:
+              'labsNumberLineExplorerNarrationHintRepeated${narrationLevelSuffix(level)}',
           text: switch (level) {
-            LabGuidanceLevel.explorer => l10n.labsNumberLineExplorerNarrationHintRepeatedExplorer,
-            LabGuidanceLevel.builder => l10n.labsNumberLineExplorerNarrationHintRepeatedBuilder,
-            LabGuidanceLevel.navigator => l10n.labsNumberLineExplorerNarrationHintRepeatedNavigator,
+            LabGuidanceLevel.explorer =>
+              l10n.labsNumberLineExplorerNarrationHintRepeatedExplorer,
+            LabGuidanceLevel.builder =>
+              l10n.labsNumberLineExplorerNarrationHintRepeatedBuilder,
+            LabGuidanceLevel.navigator =>
+              l10n.labsNumberLineExplorerNarrationHintRepeatedNavigator,
           },
           trigger: LabNarrationTrigger.hint,
           level: level,
         );
       } else if (close) {
         playNarration(
-          messageId: 'labsNumberLineExplorerNarrationResultClose${narrationLevelSuffix(level)}',
+          messageId:
+              'labsNumberLineExplorerNarrationResultClose${narrationLevelSuffix(level)}',
           text: switch (level) {
-            LabGuidanceLevel.explorer => l10n.labsNumberLineExplorerNarrationResultCloseExplorer,
-            LabGuidanceLevel.builder => l10n.labsNumberLineExplorerNarrationResultCloseBuilder,
-            LabGuidanceLevel.navigator => l10n.labsNumberLineExplorerNarrationResultCloseNavigator,
+            LabGuidanceLevel.explorer =>
+              l10n.labsNumberLineExplorerNarrationResultCloseExplorer,
+            LabGuidanceLevel.builder =>
+              l10n.labsNumberLineExplorerNarrationResultCloseBuilder,
+            LabGuidanceLevel.navigator =>
+              l10n.labsNumberLineExplorerNarrationResultCloseNavigator,
           },
           trigger: LabNarrationTrigger.nearSuccess,
           level: level,
         );
       } else {
         playNarration(
-          messageId: 'labsNumberLineExplorerNarrationResultWrong${narrationLevelSuffix(level)}',
+          messageId:
+              'labsNumberLineExplorerNarrationResultWrong${narrationLevelSuffix(level)}',
           text: switch (level) {
-            LabGuidanceLevel.explorer => l10n.labsNumberLineExplorerNarrationResultWrongExplorer,
-            LabGuidanceLevel.builder => l10n.labsNumberLineExplorerNarrationResultWrongBuilder,
-            LabGuidanceLevel.navigator => l10n.labsNumberLineExplorerNarrationResultWrongNavigator,
+            LabGuidanceLevel.explorer =>
+              l10n.labsNumberLineExplorerNarrationResultWrongExplorer,
+            LabGuidanceLevel.builder =>
+              l10n.labsNumberLineExplorerNarrationResultWrongBuilder,
+            LabGuidanceLevel.navigator =>
+              l10n.labsNumberLineExplorerNarrationResultWrongNavigator,
           },
           trigger: LabNarrationTrigger.resultExplanation,
           level: level,
@@ -226,8 +265,10 @@ class _NumberLineExplorerScreenState extends State<NumberLineExplorerScreen>
     final directionHelper = distanceToTarget == 0
         ? null
         : (distanceToTarget > 0
-            ? l10n.labsNumberLineExplorerMoveRight(distanceToTarget.abs().toString())
-            : l10n.labsNumberLineExplorerMoveLeft(distanceToTarget.abs().toString()));
+            ? l10n.labsNumberLineExplorerMoveRight(
+                distanceToTarget.abs().toString())
+            : l10n.labsNumberLineExplorerMoveLeft(
+                distanceToTarget.abs().toString()));
 
     return ListenableBuilder(
       listenable: InteractiveLabsProgressService.instance.updateSerial,
@@ -265,9 +306,11 @@ class _NumberLineExplorerScreenState extends State<NumberLineExplorerScreen>
               max: challenge.max,
               step: challenge.step,
               value: _value,
-              semanticLabel: l10n.labsNumberLineExplorerMission('${challenge.target}'),
+              semanticLabel:
+                  l10n.labsNumberLineExplorerMission('${challenge.target}'),
               onChanged: (next) {
-                AudioCueService.instance.play(AudioCue.objectSelect, throttle: true);
+                AudioCueService.instance
+                    .play(AudioCue.objectSelect, throttle: true);
                 setState(() {
                   _value = next;
                   _lastResultCorrect = null;
@@ -286,13 +329,15 @@ class _NumberLineExplorerScreenState extends State<NumberLineExplorerScreen>
                 IconButton(
                   tooltip: l10n.labsNumberLineExplorerDecreaseButton,
                   onPressed: () => _step(-challenge.step),
-                  icon: const Icon(Icons.remove_circle_outline, color: Colors.white),
+                  icon: const Icon(Icons.remove_circle_outline,
+                      color: Colors.white),
                 ),
                 const SizedBox(width: AppSpacing.md),
                 IconButton(
                   tooltip: l10n.labsNumberLineExplorerIncreaseButton,
                   onPressed: () => _step(challenge.step),
-                  icon: const Icon(Icons.add_circle_outline, color: Colors.white),
+                  icon:
+                      const Icon(Icons.add_circle_outline, color: Colors.white),
                 ),
               ],
             ),
@@ -301,7 +346,8 @@ class _NumberLineExplorerScreenState extends State<NumberLineExplorerScreen>
                 padding: const EdgeInsets.only(top: AppSpacing.sm),
                 child: Text(
                   directionHelper,
-                  style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 12),
+                  style:
+                      const TextStyle(color: Color(0xFF8A9DC0), fontSize: 12),
                 ),
               ),
             const SizedBox(height: AppSpacing.lg),
@@ -332,12 +378,19 @@ class _NumberLineExplorerScreenState extends State<NumberLineExplorerScreen>
         feedback: _lastResultCorrect == null
             ? null
             : LabResultBanner(
-                kind: _lastResultCorrect! ? LabResultKind.success : LabResultKind.tryAgain,
-                notice: _lastResultCorrect! ? l10n.labsFeedbackCorrect : l10n.labsFeedbackTryAgain,
+                kind: _lastResultCorrect!
+                    ? LabResultKind.success
+                    : LabResultKind.tryAgain,
+                notice: _lastResultCorrect!
+                    ? l10n.labsFeedbackCorrect
+                    : l10n.labsFeedbackTryAgain,
               ),
         relatedLinks: const LabRelatedLinks(
           labId: InteractiveLabId.numberLineExplorer,
-          recallCardIds: ['num-place-value-visual', 'num-negative-times-negative-misconception'],
+          recallCardIds: [
+            'num-place-value-visual',
+            'num-negative-times-negative-misconception'
+          ],
           discoveryCardIds: [],
           practiceTopicIds: ['number_place_value'],
         ),

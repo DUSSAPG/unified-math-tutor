@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../services/formula_library_service.dart';
+import '../../widgets/visual_assets/visual_asset_view.dart';
 
 class FormulaLibraryScreen extends StatefulWidget {
   const FormulaLibraryScreen({super.key});
@@ -169,7 +170,8 @@ class _CategoryFilterRowState extends State<_CategoryFilterRow> {
     super.dispose();
   }
 
-  Future<void> _openMoreSheet(BuildContext context, List<String> overflow) async {
+  Future<void> _openMoreSheet(
+      BuildContext context, List<String> overflow) async {
     final chosen = await showModalBottomSheet<String>(
       context: context,
       backgroundColor: const Color(0xFF0D1525),
@@ -178,7 +180,8 @@ class _CategoryFilterRowState extends State<_CategoryFilterRow> {
       ),
       // A growing category list must scroll within a bounded sheet height
       // rather than overflow off the bottom of a short phone screen.
-      constraints: BoxConstraints(maxHeight: MediaQuery.of(context).size.height * 0.7),
+      constraints:
+          BoxConstraints(maxHeight: MediaQuery.of(context).size.height * 0.7),
       builder: (sheetContext) => SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 12),
@@ -190,7 +193,10 @@ class _CategoryFilterRowState extends State<_CategoryFilterRow> {
                 padding: EdgeInsets.fromLTRB(20, 4, 20, 12),
                 child: Text(
                   'More categories',
-                  style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700),
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700),
                 ),
               ),
               Flexible(
@@ -205,9 +211,11 @@ class _CategoryFilterRowState extends State<_CategoryFilterRow> {
                         child: ListTile(
                           minVerticalPadding: 16,
                           title: Text(category,
-                              style: const TextStyle(color: Colors.white, fontSize: 15)),
+                              style: const TextStyle(
+                                  color: Colors.white, fontSize: 15)),
                           trailing: selectedCategory == category
-                              ? const Icon(Icons.check, color: Color(0xFF5B8EFF))
+                              ? const Icon(Icons.check,
+                                  color: Color(0xFF5B8EFF))
                               : null,
                           onTap: () => Navigator.of(sheetContext).pop(category),
                         ),
@@ -244,10 +252,14 @@ class _CategoryFilterRowState extends State<_CategoryFilterRow> {
               alignment: Alignment.center,
               padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
               decoration: BoxDecoration(
-                color: selected ? const Color(0xFF3D7EFF) : const Color(0xFF132040),
+                color: selected
+                    ? const Color(0xFF3D7EFF)
+                    : const Color(0xFF132040),
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(
-                  color: selected ? const Color(0xFF3D7EFF) : const Color(0xFF1F3055),
+                  color: selected
+                      ? const Color(0xFF3D7EFF)
+                      : const Color(0xFF1F3055),
                 ),
               ),
               child: Row(
@@ -282,7 +294,8 @@ class _CategoryFilterRowState extends State<_CategoryFilterRow> {
   Widget build(BuildContext context) {
     final inline = categories.take(_inlineCategoryCount).toList();
     final overflow = categories.skip(_inlineCategoryCount).toList();
-    final isOverflowSelected = selectedCategory != null && overflow.contains(selectedCategory);
+    final isOverflowSelected =
+        selectedCategory != null && overflow.contains(selectedCategory);
 
     return Scrollbar(
       controller: _scrollController,
@@ -293,7 +306,9 @@ class _CategoryFilterRowState extends State<_CategoryFilterRow> {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Row(
           children: [
-            _chip('All', selected: selectedCategory == null, onTap: () => onSelected(null)),
+            _chip('All',
+                selected: selectedCategory == null,
+                onTap: () => onSelected(null)),
             const SizedBox(width: 8),
             for (final category in inline) ...[
               _chip(
@@ -381,6 +396,10 @@ class _FormulaCard extends StatelessWidget {
                 const SizedBox(height: 12),
                 const Divider(color: Color(0xFF1F3055), height: 1),
                 const SizedBox(height: 12),
+                if (entry.diagramAssetId != null) ...[
+                  VisualAssetView(assetId: entry.diagramAssetId!),
+                  const SizedBox(height: 10),
+                ],
                 if (entry.meaning.isNotEmpty) ...[
                   Text(
                     entry.meaning,

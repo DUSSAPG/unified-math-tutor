@@ -7,6 +7,7 @@ import '../../models/recall_card.dart';
 import '../../services/nav_visibility_service.dart';
 import '../../services/recall_card_catalog_service.dart';
 import '../../services/recall_cards_progress_service.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../widgets/recall/recall_card_body.dart';
 import '../../widgets/recall/recall_card_export_sheet.dart';
 
@@ -38,7 +39,8 @@ class _RecallCardDetailScreenState extends State<RecallCardDetailScreen> {
     super.dispose();
   }
 
-  Future<void> _handleRemembered(RecallCard card, bool revealedBeforeAnswer) async {
+  Future<void> _handleRemembered(
+      RecallCard card, bool revealedBeforeAnswer) async {
     await RecallCardsProgressService.instance.recordAttempt(
       card,
       remembered: true,
@@ -57,13 +59,14 @@ class _RecallCardDetailScreenState extends State<RecallCardDetailScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0B1120),
+        backgroundColor: colors.background,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: colors.primaryText),
           onPressed: () => popOrGo(context, '/math-studio/recall-cards'),
         ),
         actions: [
@@ -73,7 +76,7 @@ class _RecallCardDetailScreenState extends State<RecallCardDetailScreen> {
               final card = snapshot.data;
               if (card == null) return const SizedBox.shrink();
               return IconButton(
-                icon: const Icon(Icons.ios_share, color: Colors.white),
+                icon: Icon(Icons.ios_share, color: colors.primaryText),
                 tooltip: l10n.recallCardsExportButton,
                 onPressed: () => showRecallCardExportSheetSingle(context, card),
               );
@@ -86,8 +89,9 @@ class _RecallCardDetailScreenState extends State<RecallCardDetailScreen> {
           future: _cardFuture,
           builder: (context, snapshot) {
             if (snapshot.hasError) {
-              return const Center(
-                child: Icon(Icons.error_outline, color: Color(0xFF8A9DC0), size: 32),
+              return Center(
+                child: Icon(Icons.error_outline,
+                    color: colors.secondaryText, size: 32),
               );
             }
             final card = snapshot.data;
@@ -98,19 +102,24 @@ class _RecallCardDetailScreenState extends State<RecallCardDetailScreen> {
               listenable: RecallCardsProgressService.instance.updateSerial,
               builder: (context, _) => Center(
                 child: ConstrainedBox(
-                  constraints: BoxConstraints(maxWidth: AppResponsive.contentMaxWidth(context)),
+                  constraints: BoxConstraints(
+                      maxWidth: AppResponsive.contentMaxWidth(context)),
                   child: RecallCardBody(
                     key: ValueKey(card.id),
                     card: card,
-                    isBookmarked: RecallCardsProgressService.instance.isBookmarked(card.id),
-                    onBookmarkToggle: () => RecallCardsProgressService.instance.setBookmarked(
+                    isBookmarked: RecallCardsProgressService.instance
+                        .isBookmarked(card.id),
+                    onBookmarkToggle: () =>
+                        RecallCardsProgressService.instance.setBookmarked(
                       card.id,
-                      !RecallCardsProgressService.instance.isBookmarked(card.id),
+                      !RecallCardsProgressService.instance
+                          .isBookmarked(card.id),
                     ),
-                    onRemembered: (revealed) => _handleRemembered(card, revealed),
+                    onRemembered: (revealed) =>
+                        _handleRemembered(card, revealed),
                     onNotYet: (revealed) => _handleNotYet(card, revealed),
-                    onAskMeTomorrow: () =>
-                        RecallCardsProgressService.instance.askMeTomorrow(card.id),
+                    onAskMeTomorrow: () => RecallCardsProgressService.instance
+                        .askMeTomorrow(card.id),
                   ),
                 ),
               ),

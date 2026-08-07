@@ -27,7 +27,8 @@
         { "symbol": "h", "meaning": "Perpendicular height" }
       ],
       "explanation": "Multiply the base by the height, then halve the result.",
-      "example": "A triangle has base 10 cm and height 6 cm. A = ½ × 10 × 6 = 30 cm²."
+      "example": "A triangle has base 10 cm and height 6 cm. A = ½ × 10 × 6 = 30 cm².",
+      "diagramAssetId": "diagram-area-triangle"
     },
     {
       "id": "area_parallelogram",
@@ -85,7 +86,8 @@
         { "symbol": "h", "meaning": "Height of the cylinder" }
       ],
       "explanation": "Find the area of the circular base (πr²), then multiply by the height.",
-      "example": "A cylinder has radius 3 cm and height 10 cm. V = π × 3² × 10 ≈ 282.7 cm³."
+      "example": "A cylinder has radius 3 cm and height 10 cm. V = π × 3² × 10 ≈ 282.7 cm³.",
+      "diagramAssetId": "diagram-volume-cylinder"
     },
     {
       "id": "volume_sphere",
@@ -214,7 +216,8 @@
         { "symbol": "x", "meaning": "The solution(s) for x" }
       ],
       "explanation": "Substitute a, b, and c into the formula to find the two possible values of x.",
-      "example": "For x² + 3x − 4 = 0: a=1, b=3, c=−4. x = (−3 ± √(9 + 16)) / 2 = 1 or −4."
+      "example": "For x² + 3x − 4 = 0: a=1, b=3, c=−4. x = (−3 ± √(9 + 16)) / 2 = 1 or −4.",
+      "diagramAssetId": "diagram-quadratic-roots"
     },
     {
       "id": "pythagoras_theorem",
@@ -227,7 +230,8 @@
         { "symbol": "c", "meaning": "The hypotenuse (longest side, opposite the right angle)" }
       ],
       "explanation": "The square of the hypotenuse equals the sum of the squares of the other two sides.",
-      "example": "A right triangle has sides 3 cm and 4 cm. c² = 3² + 4² = 25, so c = 5 cm."
+      "example": "A right triangle has sides 3 cm and 4 cm. c² = 3² + 4² = 25, so c = 5 cm.",
+      "diagramAssetId": "diagram-pythagoras-theorem"
     },
     {
       "id": "circle_circumference",
@@ -253,7 +257,8 @@
         { "symbol": "r", "meaning": "Radius" }
       ],
       "explanation": "Square the radius, then multiply by π.",
-      "example": "A circle has radius 4 cm. A = π × 4² ≈ 50.3 cm²."
+      "example": "A circle has radius 4 cm. A = π × 4² ≈ 50.3 cm².",
+      "diagramAssetId": "diagram-circle-area"
     },
     {
       "id": "circle_arc_length",

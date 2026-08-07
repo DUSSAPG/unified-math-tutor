@@ -31,7 +31,8 @@ enum LabGuidanceLevel {
 /// content pipeline, just a small record so every guided-lab string carries
 /// its three variants together instead of three parallel lookup tables.
 class LevelText {
-  const LevelText({required this.explorer, required this.builder, required this.navigator});
+  const LevelText(
+      {required this.explorer, required this.builder, required this.navigator});
 
   final String explorer;
   final String builder;

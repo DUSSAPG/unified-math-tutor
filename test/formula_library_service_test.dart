@@ -21,6 +21,29 @@ void main() {
     expect(ids.length, entries.length, reason: 'formula ids must be unique');
   });
 
+  test(
+      'the 5 diagram-equipped entries carry a diagramAssetId; every other entry has none',
+      () async {
+    final entries = await FormulaLibraryService.instance.load();
+    const withDiagram = {
+      'area_triangle',
+      'circle_area',
+      'pythagoras_theorem',
+      'algebra_quadratic_formula',
+      'volume_cylinder',
+    };
+    for (final entry in entries) {
+      if (withDiagram.contains(entry.id)) {
+        expect(entry.diagramAssetId, isNotNull,
+            reason: '${entry.id} should reference a diagram');
+      } else {
+        expect(entry.diagramAssetId, isNull,
+            reason:
+                '${entry.id} was not part of this sprint\'s diagram proof-of-concept');
+      }
+    }
+  });
+
   test('search matches by title and by category, and respects category filter',
       () async {
     final byTitle = await FormulaLibraryService.instance.search('pythagoras');

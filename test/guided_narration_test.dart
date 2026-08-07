@@ -65,14 +65,15 @@ void main() {
   }
 
   group('Deterministic outcome classification', () {
-    testWidgets('correct heading, too far selects the matching narration message',
+    testWidgets(
+        'correct heading, too far selects the matching narration message',
         (tester) async {
       await pumpFlightLab(tester);
 
       // Default heading (090) already matches scenario 1's target bearing;
       // pushing speed well past the target distance produces "too far"
       // while staying outside the near-miss band.
-      final speedSlider = find.byType(Slider).first;
+      final speedSlider = find.byKey(const Key('flightPathSpeedSlider'));
       tester.widget<Slider>(speedSlider).onChanged!(150);
       await tester.pump();
 
@@ -86,10 +87,12 @@ void main() {
       expect(message.trigger, LabNarrationTrigger.resultExplanation);
       // Default guidance level is Builder.
       final l10n = await AppLocalizations.delegate.load(const Locale('en'));
-      expect(message.text, l10n.labsFlightPathLabNarrationResultCorrectHeadingTooFarBuilder);
+      expect(message.text,
+          l10n.labsFlightPathLabNarrationResultCorrectHeadingTooFarBuilder);
     });
 
-    testWidgets('the same outcome selects different, level-appropriate wording per band',
+    testWidgets(
+        'the same outcome selects different, level-appropriate wording per band',
         (tester) async {
       final l10n = await AppLocalizations.delegate.load(const Locale('en'));
 
@@ -101,7 +104,7 @@ void main() {
         GuidedNarrationService.instance.debugReset();
         await InteractiveLabsProgressService.instance.setGuidanceLevel(level);
         await pumpFlightLab(tester);
-        final speedSlider = find.byType(Slider).first;
+        final speedSlider = find.byKey(const Key('flightPathSpeedSlider'));
         tester.widget<Slider>(speedSlider).onChanged!(150);
         await tester.pump();
         await tester.ensureVisible(find.text('Test Flight'));
@@ -114,17 +117,28 @@ void main() {
       final builderText = await textForLevel(LabGuidanceLevel.builder);
       final navigatorText = await textForLevel(LabGuidanceLevel.navigator);
 
-      expect(explorerText, l10n.labsFlightPathLabNarrationResultCorrectHeadingTooFarExplorer);
-      expect(builderText, l10n.labsFlightPathLabNarrationResultCorrectHeadingTooFarBuilder);
-      expect(navigatorText, l10n.labsFlightPathLabNarrationResultCorrectHeadingTooFarNavigator);
+      expect(explorerText,
+          l10n.labsFlightPathLabNarrationResultCorrectHeadingTooFarExplorer);
+      expect(builderText,
+          l10n.labsFlightPathLabNarrationResultCorrectHeadingTooFarBuilder);
+      expect(navigatorText,
+          l10n.labsFlightPathLabNarrationResultCorrectHeadingTooFarNavigator);
       expect(explorerText, isNot(builderText));
       expect(builderText, isNot(navigatorText));
     });
 
-    testWidgets('no generic-only response — every result message states what to change',
+    testWidgets(
+        'no generic-only response — every result message states what to change',
         (tester) async {
       final l10n = await AppLocalizations.delegate.load(const Locale('en'));
-      const genericOnly = {'Wrong', 'Wrong.', 'Try again', 'Try again.', 'Almost', 'Almost.'};
+      const genericOnly = {
+        'Wrong',
+        'Wrong.',
+        'Try again',
+        'Try again.',
+        'Almost',
+        'Almost.'
+      };
 
       final messages = [
         l10n.labsFlightPathLabNarrationResultNearMissBuilder,
@@ -135,7 +149,8 @@ void main() {
       ];
 
       for (final message in messages) {
-        expect(genericOnly.contains(message), isFalse, reason: 'Too generic: "$message"');
+        expect(genericOnly.contains(message), isFalse,
+            reason: 'Too generic: "$message"');
         expect(message.length, greaterThan(20));
       }
     });
@@ -156,7 +171,8 @@ void main() {
       );
       GuidedNarrationService.instance.play(message, localeTag: 'en');
 
-      expect(GuidedNarrationService.instance.current.value?.text, 'Some guidance text.');
+      expect(GuidedNarrationService.instance.current.value?.text,
+          'Some guidance text.');
       expect(fake.spoken, isEmpty);
     });
 
@@ -174,11 +190,13 @@ void main() {
       );
       GuidedNarrationService.instance.play(message, localeTag: 'en');
 
-      expect(GuidedNarrationService.instance.current.value?.text, 'Some other guidance text.');
+      expect(GuidedNarrationService.instance.current.value?.text,
+          'Some other guidance text.');
       expect(fake.spoken, isEmpty);
     });
 
-    test('a message with no pre-generated audio falls back to device TTS', () async {
+    test('a message with no pre-generated audio falls back to device TTS',
+        () async {
       final fake = _FakeTtsNarrator();
       GuidedNarrationService.instance.debugSetTtsNarrator(fake);
 
@@ -194,7 +212,8 @@ void main() {
       expect(fake.spoken, ['Fallback guidance text.']);
     });
 
-    test('a message with pre-generated audio does not fall back to TTS', () async {
+    test('a message with pre-generated audio does not fall back to TTS',
+        () async {
       final fake = _FakeTtsNarrator();
       GuidedNarrationService.instance.debugSetTtsNarrator(fake);
       final l10n = await AppLocalizations.delegate.load(const Locale('en'));
@@ -271,16 +290,20 @@ void main() {
       final serialAfterFirst = GuidedNarrationService.instance.requestSerial;
       GuidedNarrationService.instance.play(second, localeTag: 'en');
 
-      expect(GuidedNarrationService.instance.requestSerial, greaterThan(serialAfterFirst));
-      expect(GuidedNarrationService.instance.current.value?.text, 'Second message.');
+      expect(GuidedNarrationService.instance.requestSerial,
+          greaterThan(serialAfterFirst));
+      expect(GuidedNarrationService.instance.current.value?.text,
+          'Second message.');
       expect(fake.stopCount, greaterThanOrEqualTo(2));
     });
   });
 
   group('Profile isolation', () {
     test('narration preferences are isolated per learner profile', () async {
-      final learnerAId = await LearnerProfilesService.instance.addLearner('Learner A');
-      final learnerBId = await LearnerProfilesService.instance.addLearner('Learner B');
+      final learnerAId =
+          await LearnerProfilesService.instance.addLearner('Learner A');
+      final learnerBId =
+          await LearnerProfilesService.instance.addLearner('Learner B');
 
       await LearnerProfilesService.instance.setActiveLearner(learnerAId);
       await GuidedNarrationService.instance.setMuted(true);
@@ -314,15 +337,17 @@ void main() {
       expect(fallback!.locale, 'de-CH');
     });
 
-    test('returns null for a message that genuinely has no pre-generated audio', () {
-      final result =
-          NarrationManifestService.instance.lookup('thisMessageIdDoesNotExist', 'en');
+    test('returns null for a message that genuinely has no pre-generated audio',
+        () {
+      final result = NarrationManifestService.instance
+          .lookup('thisMessageIdDoesNotExist', 'en');
       expect(result, isNull);
     });
   });
 
   group('Accessibility', () {
-    testWidgets('spoken guidance has an identical, screen-reader-visible text', (tester) async {
+    testWidgets('spoken guidance has an identical, screen-reader-visible text',
+        (tester) async {
       const message = NarrationMessage(
         messageId: 'test.notInManifest.a11y',
         text: 'Screen reader guidance text.',
@@ -349,7 +374,8 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.text('Screen reader guidance text.'), findsOneWidget);
-      expect(find.bySemanticsLabel('Screen reader guidance text.'), findsOneWidget);
+      expect(find.bySemanticsLabel('Screen reader guidance text.'),
+          findsOneWidget);
     });
   });
 }

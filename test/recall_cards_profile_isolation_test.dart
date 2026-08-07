@@ -40,11 +40,14 @@ void main() {
     await RecallCardsProgressService.instance.init();
   });
 
-  test('Recall Cards scheduler state and bookmarks do not leak between learner profiles',
+  test(
+      'Recall Cards scheduler state and bookmarks do not leak between learner profiles',
       () async {
     final card = _card();
-    final learnerAId = await LearnerProfilesService.instance.addLearner('Learner A');
-    final learnerBId = await LearnerProfilesService.instance.addLearner('Learner B');
+    final learnerAId =
+        await LearnerProfilesService.instance.addLearner('Learner A');
+    final learnerBId =
+        await LearnerProfilesService.instance.addLearner('Learner B');
 
     await LearnerProfilesService.instance.setActiveLearner(learnerAId);
     await RecallCardsProgressService.instance.recordAttempt(
@@ -54,7 +57,8 @@ void main() {
     );
     await RecallCardsProgressService.instance.setBookmarked(card.id, true);
 
-    expect(RecallCardsProgressService.instance.stateFor(card.id), RecallCardState.learning);
+    expect(RecallCardsProgressService.instance.stateFor(card.id),
+        RecallCardState.learning);
     expect(RecallCardsProgressService.instance.isBookmarked(card.id), isTrue);
 
     await LearnerProfilesService.instance.setActiveLearner(learnerBId);
@@ -71,14 +75,18 @@ void main() {
     );
 
     await LearnerProfilesService.instance.setActiveLearner(learnerAId);
-    expect(RecallCardsProgressService.instance.stateFor(card.id), RecallCardState.learning);
+    expect(RecallCardsProgressService.instance.stateFor(card.id),
+        RecallCardState.learning);
     expect(RecallCardsProgressService.instance.isBookmarked(card.id), isTrue);
   });
 
-  test('progress falls back to a stable "default" namespace with no active learner', () async {
+  test(
+      'progress falls back to a stable "default" namespace with no active learner',
+      () async {
     final card = _card();
     expect(LearnerProfilesService.instance.activeLearnerId.value, isNull);
-    expect(RecallCardsProgressService.instance.stateFor(card.id), RecallCardState.newCard);
+    expect(RecallCardsProgressService.instance.stateFor(card.id),
+        RecallCardState.newCard);
     await RecallCardsProgressService.instance.setBookmarked(card.id, true);
     expect(RecallCardsProgressService.instance.isBookmarked(card.id), isTrue);
   });

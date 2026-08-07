@@ -36,20 +36,24 @@ class VisualMathsPlaceholderScaffold extends StatelessWidget {
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: onBack,
         ),
-        title: Text(title, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700)),
+        title: Text(title,
+            style: const TextStyle(
+                color: Colors.white, fontWeight: FontWeight.w700)),
       ),
       body: SafeArea(
         child: Center(
           child: ConstrainedBox(
-            constraints: BoxConstraints(maxWidth: AppResponsive.contentMaxWidth(context)),
-            child: Padding(
+            constraints: BoxConstraints(
+                maxWidth: AppResponsive.contentMaxWidth(context)),
+            child: SingleChildScrollView(
               padding: const EdgeInsets.all(AppSpacing.md),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
                       color: const Color(0xFFFF9500),
                       borderRadius: BorderRadius.circular(20),
@@ -77,7 +81,8 @@ class VisualMathsPlaceholderScaffold extends StatelessWidget {
                   const SizedBox(height: AppSpacing.md),
                   Text(
                     caption,
-                    style: const TextStyle(color: Colors.white, fontSize: 15, height: 1.4),
+                    style: const TextStyle(
+                        color: Colors.white, fontSize: 15, height: 1.4),
                   ),
                   const SizedBox(height: AppSpacing.lg),
                   OutlinedButton(

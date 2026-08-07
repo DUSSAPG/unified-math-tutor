@@ -40,8 +40,10 @@ class _FractionBarsScreenState extends State<FractionBarsScreen> {
       title: l10n.visualMathsFractionBarsTitle,
       onBack: () => popOrGo(context, '/math-studio/visual-maths'),
       caption: example.captionKey(l10n),
-      onTryAnother: () => setState(() => _index = (_index + 1) % _examples.length),
-      child: _FractionBar(numerator: example.numerator, denominator: example.denominator),
+      onTryAnother: () =>
+          setState(() => _index = (_index + 1) % _examples.length),
+      child: _FractionBar(
+          numerator: example.numerator, denominator: example.denominator),
     );
   }
 }
@@ -64,11 +66,15 @@ class _FractionBar extends StatelessWidget {
                   height: 56,
                   margin: EdgeInsets.only(right: i == denominator - 1 ? 0 : 2),
                   decoration: BoxDecoration(
-                    color: i < numerator ? const Color(0xFF5B8EFF) : const Color(0xFF132040),
+                    color: i < numerator
+                        ? const Color(0xFF5B8EFF)
+                        : const Color(0xFF132040),
                     border: Border.all(color: const Color(0xFF1F3055)),
                     borderRadius: BorderRadius.horizontal(
                       left: i == 0 ? const Radius.circular(8) : Radius.zero,
-                      right: i == denominator - 1 ? const Radius.circular(8) : Radius.zero,
+                      right: i == denominator - 1
+                          ? const Radius.circular(8)
+                          : Radius.zero,
                     ),
                   ),
                 ),

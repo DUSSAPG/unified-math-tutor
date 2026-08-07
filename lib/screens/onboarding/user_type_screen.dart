@@ -24,8 +24,14 @@ class _UserTypeScreenState extends State<UserTypeScreen> {
       setState(() => _showError = true);
       return;
     }
-    OnboardingProfileService.instance.setUserType(_roles[_selected!]);
-    context.go('/onboarding/stage');
+    final role = _roles[_selected!];
+    OnboardingProfileService.instance.setUserType(role);
+    // Parent/Teacher get a dedicated onboarding path (see
+    // lib/screens/onboarding/family/) rather than continuing through the
+    // student-shaped stage/goal/accessibility/profile screens.
+    context.go(role == 'student'
+        ? '/onboarding/stage'
+        : '/onboarding/family/role-detail');
   }
 
   void _onGuestMode() {

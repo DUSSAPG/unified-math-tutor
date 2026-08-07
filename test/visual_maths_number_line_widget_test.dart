@@ -13,7 +13,8 @@ void main() {
 
   Widget wrap(Widget child) => MaterialApp(home: Scaffold(body: child));
 
-  testWidgets('exposes a Semantics slider with the current value', (tester) async {
+  testWidgets('exposes a Semantics slider with the current value',
+      (tester) async {
     final handle = tester.ensureSemantics();
     await tester.pumpWidget(
       wrap(
@@ -36,7 +37,8 @@ void main() {
     handle.dispose();
   });
 
-  testWidgets('increase/decrease semantics actions step the value', (tester) async {
+  testWidgets('increase/decrease semantics actions step the value',
+      (tester) async {
     final handle = tester.ensureSemantics();
     num? lastValue;
     await tester.pumpWidget(
@@ -55,13 +57,15 @@ void main() {
 
     final id = tester.getSemantics(find.byType(NumberLineWidget)).id;
     // ignore: deprecated_member_use
-    tester.binding.pipelineOwner.semanticsOwner!.performAction(id, SemanticsAction.increase);
+    tester.binding.pipelineOwner.semanticsOwner!
+        .performAction(id, SemanticsAction.increase);
     await tester.pumpAndSettle();
     expect(lastValue, 8);
     handle.dispose();
   });
 
-  testWidgets('dragging horizontally reports a new value via onChanged', (tester) async {
+  testWidgets('dragging horizontally reports a new value via onChanged',
+      (tester) async {
     num? lastValue;
     await tester.pumpWidget(
       wrap(
@@ -87,7 +91,8 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('suppresses the hop animation when Reduce Motion is enabled', (tester) async {
+  testWidgets('suppresses the hop animation when Reduce Motion is enabled',
+      (tester) async {
     await LocalPreferencesService.instance.setReduceMotion(true);
     num value = 2;
 

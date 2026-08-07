@@ -154,8 +154,8 @@ class _StudyProfileScreenState extends State<StudyProfileScreen> {
                 return GestureDetector(
                   onTap: () => setState(() => _selectedRelationship = key),
                   child: Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 14, vertical: 9),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 14, vertical: 9),
                     decoration: BoxDecoration(
                       color: selected
                           ? const Color(0xFF3D7EFF)
@@ -170,7 +170,8 @@ class _StudyProfileScreenState extends State<StudyProfileScreen> {
                     child: Text(
                       label,
                       style: TextStyle(
-                        color: selected ? Colors.white : const Color(0xFF8A9DC0),
+                        color:
+                            selected ? Colors.white : const Color(0xFF8A9DC0),
                         fontSize: 13,
                         fontWeight:
                             selected ? FontWeight.w600 : FontWeight.w400,

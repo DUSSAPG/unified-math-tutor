@@ -141,8 +141,9 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                       ),
                     ),
                     const SizedBox(height: 20),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                    Wrap(
+                      alignment: WrapAlignment.center,
+                      crossAxisAlignment: WrapCrossAlignment.center,
                       children: [
                         const Text(
                           'Already have an account?',
@@ -152,6 +153,11 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                           ),
                         ),
                         TextButton(
+                          style: TextButton.styleFrom(
+                            padding: const EdgeInsets.symmetric(horizontal: 6),
+                            minimumSize: Size.zero,
+                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                          ),
                           onPressed: () => context.push('/auth/sign-in'),
                           child: const Text(
                             'Sign in',

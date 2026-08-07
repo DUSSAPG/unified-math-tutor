@@ -11,7 +11,8 @@ class _PlaceValueExample {
 }
 
 final _examples = <_PlaceValueExample>[
-  _PlaceValueExample(['3,000', '700', '40', '2'], (l10n) => l10n.placeValueCaption1),
+  _PlaceValueExample(
+      ['3,000', '700', '40', '2'], (l10n) => l10n.placeValueCaption1),
   _PlaceValueExample(['6', '0.4'], (l10n) => l10n.placeValueCaption2),
   _PlaceValueExample(['800', '0', '5'], (l10n) => l10n.placeValueCaption3),
 ];
@@ -22,7 +23,8 @@ class PlaceValueExplorerScreen extends StatefulWidget {
   const PlaceValueExplorerScreen({super.key});
 
   @override
-  State<PlaceValueExplorerScreen> createState() => _PlaceValueExplorerScreenState();
+  State<PlaceValueExplorerScreen> createState() =>
+      _PlaceValueExplorerScreenState();
 }
 
 class _PlaceValueExplorerScreenState extends State<PlaceValueExplorerScreen> {
@@ -36,7 +38,8 @@ class _PlaceValueExplorerScreenState extends State<PlaceValueExplorerScreen> {
       title: l10n.visualMathsPlaceValueTitle,
       onBack: () => popOrGo(context, '/math-studio/visual-maths'),
       caption: example.captionKey(l10n),
-      onTryAnother: () => setState(() => _index = (_index + 1) % _examples.length),
+      onTryAnother: () =>
+          setState(() => _index = (_index + 1) % _examples.length),
       child: Wrap(
         spacing: 10,
         runSpacing: 10,

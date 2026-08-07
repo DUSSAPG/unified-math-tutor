@@ -74,7 +74,9 @@ class _AuthTextFieldState extends State<AuthTextField> {
             suffixIcon: widget.obscureText
                 ? IconButton(
                     icon: Icon(
-                      _obscured ? Icons.visibility_outlined : Icons.visibility_off_outlined,
+                      _obscured
+                          ? Icons.visibility_outlined
+                          : Icons.visibility_off_outlined,
                       color: _labelColor,
                     ),
                     onPressed: () => setState(() => _obscured = !_obscured),

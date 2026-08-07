@@ -23,7 +23,8 @@ void main() {
     expect(
       NavVisibilityService.instance.hidden.value,
       isFalse,
-      reason: 'Mutating synchronously would notify listeners mid-build if called from '
+      reason:
+          'Mutating synchronously would notify listeners mid-build if called from '
           'initState()/dispose() — the fix must defer to a post-frame callback',
     );
 

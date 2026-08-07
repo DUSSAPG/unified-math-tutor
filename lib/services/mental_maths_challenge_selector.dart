@@ -17,7 +17,8 @@ class MentalMathsChallengeSelector {
     required Set<String> recentlyShownIds,
   }) {
     if (bankIdsSorted.isEmpty) {
-      throw ArgumentError.value(bankIdsSorted, 'bankIdsSorted', 'must not be empty');
+      throw ArgumentError.value(
+          bankIdsSorted, 'bankIdsSorted', 'must not be empty');
     }
     final utcDay = DateTime.utc(date.year, date.month, date.day);
     final dayOffset = utcDay.difference(_epoch).inDays;

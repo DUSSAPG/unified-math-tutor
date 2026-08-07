@@ -17,8 +17,10 @@ Widget _wrap(Widget child) => MaterialApp(
     );
 
 void main() {
-  testWidgets('shows the message for the pinned state with a semantic label', (tester) async {
-    await tester.pumpWidget(_wrap(const CaptainMathCard(state: CaptainMathState.encouraging)));
+  testWidgets('shows the message for the pinned state with a semantic label',
+      (tester) async {
+    await tester.pumpWidget(
+        _wrap(const CaptainMathCard(state: CaptainMathState.encouraging)));
     await tester.pumpAndSettle();
 
     final l10n = await AppLocalizations.delegate.load(const Locale('en'));
@@ -26,14 +28,17 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('suppresses bounce animation when Reduce Motion is requested', (tester) async {
+  testWidgets('suppresses bounce animation when Reduce Motion is requested',
+      (tester) async {
     await tester.binding.setSurfaceSize(const Size(400, 400));
-    tester.platformDispatcher.accessibilityFeaturesTestValue = const FakeAccessibilityFeatures(
+    tester.platformDispatcher.accessibilityFeaturesTestValue =
+        const FakeAccessibilityFeatures(
       disableAnimations: true,
     );
     addTearDown(tester.platformDispatcher.clearAccessibilityFeaturesTestValue);
 
-    await tester.pumpWidget(_wrap(const CaptainMathCard(state: CaptainMathState.curious)));
+    await tester.pumpWidget(
+        _wrap(const CaptainMathCard(state: CaptainMathState.curious)));
     await tester.pump();
 
     // With animations disabled, no Transform.translate offset should be

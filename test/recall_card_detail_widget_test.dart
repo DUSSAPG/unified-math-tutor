@@ -41,7 +41,8 @@ void main() {
     await tester.pumpAndSettle();
   }
 
-  testWidgets('shows the prompt first, then Reveal after tapping the reveal button',
+  testWidgets(
+      'shows the prompt first, then Reveal after tapping the reveal button',
       (tester) async {
     await tester.runAsync(() async {
       await pumpCard(tester, 'num-order-of-operations');
@@ -60,7 +61,8 @@ void main() {
     });
   });
 
-  testWidgets('remembering the card records a "learning" scheduler state', (tester) async {
+  testWidgets('remembering the card records a "learning" scheduler state',
+      (tester) async {
     await tester.runAsync(() async {
       await pumpCard(tester, 'num-order-of-operations');
       await tester.tap(find.text('Reveal the answer'));
@@ -78,21 +80,29 @@ void main() {
     });
   });
 
-  testWidgets('bookmarking toggles via the bookmark icon button', (tester) async {
+  testWidgets('bookmarking toggles via the bookmark icon button',
+      (tester) async {
     await tester.runAsync(() async {
       await pumpCard(tester, 'num-order-of-operations');
-      expect(RecallCardsProgressService.instance.isBookmarked('num-order-of-operations'), isFalse);
+      expect(
+          RecallCardsProgressService.instance
+              .isBookmarked('num-order-of-operations'),
+          isFalse);
 
       await tester.tap(find.byIcon(Icons.bookmark_border));
       await tester.pumpAndSettle();
 
-      expect(RecallCardsProgressService.instance.isBookmarked('num-order-of-operations'), isTrue);
+      expect(
+          RecallCardsProgressService.instance
+              .isBookmarked('num-order-of-operations'),
+          isTrue);
       expect(find.byIcon(Icons.bookmark), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
   });
 
-  testWidgets('renders professional math notation, not raw programming operators',
+  testWidgets(
+      'renders professional math notation, not raw programming operators',
       (tester) async {
     await tester.runAsync(() async {
       await pumpCard(tester, 'algebra-quadratic-formula');

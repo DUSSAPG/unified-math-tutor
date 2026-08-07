@@ -69,6 +69,9 @@ class DiscoveryIllustration extends StatelessWidget {
     DiscoveryCategory.artDesign: Icons.palette_outlined,
     DiscoveryCategory.gaming: Icons.sports_esports_outlined,
     DiscoveryCategory.businessFinance: Icons.trending_up_outlined,
+    DiscoveryCategory.architectureConstruction: Icons.architecture_outlined,
+    DiscoveryCategory.environmentClimate: Icons.eco_outlined,
+    DiscoveryCategory.computingCryptography: Icons.computer_outlined,
   };
 
   static const _sportIcons = <SportType, IconData>{
@@ -92,6 +95,9 @@ class DiscoveryIllustration extends StatelessWidget {
     DiscoveryCategory.artDesign: Color(0xFFE056FD),
     DiscoveryCategory.gaming: Color(0xFF3D7EFF),
     DiscoveryCategory.businessFinance: Color(0xFF00BCD4),
+    DiscoveryCategory.architectureConstruction: Color(0xFFB08968),
+    DiscoveryCategory.environmentClimate: Color(0xFF43A047),
+    DiscoveryCategory.computingCryptography: Color(0xFF546E7A),
   };
 
   Widget _iconFallback(Color color, IconData icon) {
@@ -110,7 +116,8 @@ class DiscoveryIllustration extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final sport = card.sport;
-    final icon = sport != null ? _sportIcons[sport]! : _categoryIcons[card.category]!;
+    final icon =
+        sport != null ? _sportIcons[sport]! : _categoryIcons[card.category]!;
     final color = _categoryColors[card.category]!;
     final imagePath = headerImageAssetPath ??
         (_approvedIllustrationIds.contains(card.illustrationAssetId)
@@ -130,7 +137,8 @@ class DiscoveryIllustration extends StatelessWidget {
                   width: size,
                   height: size,
                   fit: BoxFit.cover,
-                  errorBuilder: (context, error, stackTrace) => _iconFallback(color, icon),
+                  errorBuilder: (context, error, stackTrace) =>
+                      _iconFallback(color, icon),
                 ),
         ),
       ),

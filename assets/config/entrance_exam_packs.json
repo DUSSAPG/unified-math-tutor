@@ -1,0 +1,533 @@
+{
+  "version": 1,
+  "packs": [
+    {
+      "packId": "independent-school-year7-foundation",
+      "displayName": "Independent School Year 7 Mathematics — Foundation Pack",
+      "region": "England",
+      "ageBand": "10-11 (11+)",
+      "targetEntryYear": "Year 7",
+      "paperType": "writtenMethod",
+      "difficultyTier": "foundation",
+      "durationMinutes": 45,
+      "calculatorPolicy": "none",
+      "questionCount": 24,
+      "totalMarks": 60,
+      "sectionStructure": "Section A: Arithmetic and Number (10 questions, non-calculator) — Section B: Reasoning and Problem Solving (10 questions) — Section C: Shape, Space and Data (4 questions).",
+      "skillsCovered": [
+        "numberFluency",
+        "fractionsAndPercentages",
+        "ratioAndProportion",
+        "algebraicReasoning",
+        "shapeAndSpace",
+        "dataAndLogic"
+      ],
+      "methodMarkingSupported": true,
+      "sourceStatus": "contentInProgress",
+      "version": 1,
+      "effectiveFrom": "2026-08-06",
+      "effectiveTo": null,
+      "nonAffiliationDisclaimer": "This preparation pack is produced independently by Math Intelligence. It is not affiliated with, endorsed by, or produced in partnership with any specific independent school, examination board, admissions consortium, or 11+ testing organisation (e.g. GL Assessment, CEM/Durham University). It reflects the general style and difficulty of commonly-used Year 7 entry mathematics assessments and does not reproduce any real school's past paper or any copyrighted question — every question here was originated for this pack.",
+      "questions": [
+        {
+          "id": "entrance-y7-numberfluency-bookshop-stock",
+          "skillId": "numberFluency",
+          "sectionNumber": 1,
+          "marks": 2,
+          "contentVersion": 1,
+          "locales": {
+            "en": {
+              "prompt": "A bookshop had 236 books. It sold 89 books on Monday and received a delivery of 150 new books on Tuesday. How many books does the shop have now?",
+              "workedMethodSteps": ["236 - 89 = 147", "147 + 150 = 297"],
+              "correctAnswerText": "297 books.",
+              "methodMarkGuidance": "Full marks needs both steps shown: the subtraction (236 - 89) and the addition (+150), ending at 297. Getting the working right but the final number wrong is a method slip. Writing 297 with no subtraction or addition shown is unsupported."
+            },
+            "en-GB": {
+              "prompt": "A bookshop had 236 books. It sold 89 books on Monday and received a delivery of 150 new books on Tuesday. How many books does the shop have now?",
+              "workedMethodSteps": ["236 - 89 = 147", "147 + 150 = 297"],
+              "correctAnswerText": "297 books.",
+              "methodMarkGuidance": "Full marks needs both steps shown: the subtraction (236 - 89) and the addition (+150), ending at 297. Getting the working right but the final number wrong is a method slip. Writing 297 with no subtraction or addition shown is unsupported."
+            },
+            "de-CH": {
+              "prompt": "Eine Buchhandlung hatte 236 Buecher. Am Montag verkaufte sie 89 Buecher und am Dienstag erhielt sie eine Lieferung von 150 neuen Buechern. Wie viele Buecher hat die Buchhandlung jetzt?",
+              "workedMethodSteps": ["236 - 89 = 147", "147 + 150 = 297"],
+              "correctAnswerText": "297 Buecher.",
+              "methodMarkGuidance": "Fuer die volle Punktzahl muessen beide Schritte gezeigt werden: die Subtraktion (236 - 89) und die Addition (+150), mit dem Ergebnis 297. Ist der Rechenweg richtig, aber das Endergebnis falsch, ist das ein Rechenfehler (method slip). Nur 297 hinzuschreiben, ohne Subtraktion oder Addition zu zeigen, gilt als unbegruendet."
+            },
+            "fr-CH": {
+              "prompt": "Une librairie avait 236 livres. Elle a vendu 89 livres lundi et a recu une livraison de 150 nouveaux livres mardi. Combien de livres la librairie a-t-elle maintenant ?",
+              "workedMethodSteps": ["236 - 89 = 147", "147 + 150 = 297"],
+              "correctAnswerText": "297 livres.",
+              "methodMarkGuidance": "Pour obtenir tous les points, les deux etapes doivent etre montrees : la soustraction (236 - 89) et l'addition (+150), aboutissant a 297. Si le calcul est juste mais le resultat final faux, c'est une erreur d'etourderie (method slip). Ecrire seulement 297 sans montrer la soustraction ni l'addition n'est pas justifie (unsupported)."
+            },
+            "it-CH": {
+              "prompt": "Una libreria aveva 236 libri. Ha venduto 89 libri lunedi e ha ricevuto una consegna di 150 nuovi libri martedi. Quanti libri ha ora la libreria?",
+              "workedMethodSteps": ["236 - 89 = 147", "147 + 150 = 297"],
+              "correctAnswerText": "297 libri.",
+              "methodMarkGuidance": "Per il punteggio pieno servono entrambi i passaggi: la sottrazione (236 - 89) e l'addizione (+150), arrivando a 297. Se il procedimento e corretto ma il risultato finale e sbagliato, e un errore di distrazione (method slip). Scrivere solo 297 senza mostrare sottrazione o addizione non e giustificato (unsupported)."
+            }
+          }
+        },
+        {
+          "id": "entrance-y7-numberfluency-minibus-passengers",
+          "skillId": "numberFluency",
+          "sectionNumber": 1,
+          "marks": 1,
+          "contentVersion": 1,
+          "locales": {
+            "en": {
+              "prompt": "A minibus can carry 14 passengers. How many passengers can 6 minibuses carry in total?",
+              "workedMethodSteps": ["14 x 6 = 84"],
+              "correctAnswerText": "84 passengers.",
+              "methodMarkGuidance": "Full marks needs the multiplication shown (14 x 6), reaching 84. The correct answer with no working shown at all counts as unsupported, even if it's right."
+            },
+            "en-GB": {
+              "prompt": "A minibus can carry 14 passengers. How many passengers can 6 minibuses carry in total?",
+              "workedMethodSteps": ["14 x 6 = 84"],
+              "correctAnswerText": "84 passengers.",
+              "methodMarkGuidance": "Full marks needs the multiplication shown (14 x 6), reaching 84. The correct answer with no working shown at all counts as unsupported, even if it's right."
+            },
+            "de-CH": {
+              "prompt": "Ein Kleinbus kann 14 Passagiere befoerdern. Wie viele Passagiere koennen 6 Kleinbusse insgesamt befoerdern?",
+              "workedMethodSteps": ["14 x 6 = 84"],
+              "correctAnswerText": "84 Passagiere.",
+              "methodMarkGuidance": "Fuer die volle Punktzahl muss die Multiplikation gezeigt werden (14 x 6), mit dem Ergebnis 84. Die richtige Antwort ganz ohne Rechenweg gilt als unbegruendet, auch wenn sie richtig ist."
+            },
+            "fr-CH": {
+              "prompt": "Un minibus peut transporter 14 passagers. Combien de passagers 6 minibus peuvent-ils transporter au total ?",
+              "workedMethodSteps": ["14 x 6 = 84"],
+              "correctAnswerText": "84 passagers.",
+              "methodMarkGuidance": "Pour tous les points, la multiplication doit etre montree (14 x 6), aboutissant a 84. La bonne reponse sans aucun calcul montre est consideree comme non justifiee, meme si elle est juste."
+            },
+            "it-CH": {
+              "prompt": "Un minibus puo trasportare 14 passeggeri. Quanti passeggeri possono trasportare 6 minibus in totale?",
+              "workedMethodSteps": ["14 x 6 = 84"],
+              "correctAnswerText": "84 passeggeri.",
+              "methodMarkGuidance": "Per il punteggio pieno serve mostrare la moltiplicazione (14 x 6), arrivando a 84. La risposta corretta senza alcun procedimento mostrato e considerata non giustificata, anche se e esatta."
+            }
+          }
+        },
+        {
+          "id": "entrance-y7-fractions-class-walking",
+          "skillId": "fractionsAndPercentages",
+          "sectionNumber": 1,
+          "marks": 1,
+          "contentVersion": 1,
+          "locales": {
+            "en": {
+              "prompt": "In a class of 30 pupils, 2/5 of them walk to school. How many pupils walk to school?",
+              "workedMethodSteps": ["30 / 5 = 6", "6 x 2 = 12"],
+              "correctAnswerText": "12 pupils.",
+              "methodMarkGuidance": "Full marks needs the class divided into fifths (30 / 5 = 6) before multiplying by 2. Reaching 12 by only guessing or skipping the division step is unsupported."
+            },
+            "en-GB": {
+              "prompt": "In a class of 30 pupils, 2/5 of them walk to school. How many pupils walk to school?",
+              "workedMethodSteps": ["30 / 5 = 6", "6 x 2 = 12"],
+              "correctAnswerText": "12 pupils.",
+              "methodMarkGuidance": "Full marks needs the class divided into fifths (30 / 5 = 6) before multiplying by 2. Reaching 12 by only guessing or skipping the division step is unsupported."
+            },
+            "de-CH": {
+              "prompt": "In einer Klasse mit 30 Schuelern gehen 2/5 von ihnen zu Fuss zur Schule. Wie viele Schueler gehen zu Fuss zur Schule?",
+              "workedMethodSteps": ["30 / 5 = 6", "6 x 2 = 12"],
+              "correctAnswerText": "12 Schueler.",
+              "methodMarkGuidance": "Fuer die volle Punktzahl muss die Klasse zuerst in Fuenftel geteilt werden (30 / 5 = 6), bevor mit 2 multipliziert wird. Wird der Divisionsschritt ausgelassen und einfach 12 geraten, gilt das als unbegruendet."
+            },
+            "fr-CH": {
+              "prompt": "Dans une classe de 30 eleves, 2/5 d'entre eux vont a l'ecole a pied. Combien d'eleves vont a l'ecole a pied ?",
+              "workedMethodSteps": ["30 / 5 = 6", "6 x 2 = 12"],
+              "correctAnswerText": "12 eleves.",
+              "methodMarkGuidance": "Pour tous les points, la classe doit d'abord etre divisee en cinquiemes (30 / 5 = 6) avant de multiplier par 2. Arriver a 12 en devinant ou en sautant l'etape de division n'est pas justifie."
+            },
+            "it-CH": {
+              "prompt": "In una classe di 30 alunni, 2/5 di loro vanno a scuola a piedi. Quanti alunni vanno a scuola a piedi?",
+              "workedMethodSteps": ["30 / 5 = 6", "6 x 2 = 12"],
+              "correctAnswerText": "12 alunni.",
+              "methodMarkGuidance": "Per il punteggio pieno la classe deve prima essere divisa in quinti (30 / 5 = 6) prima di moltiplicare per 2. Arrivare a 12 indovinando o saltando il passaggio della divisione non e giustificato."
+            }
+          }
+        },
+        {
+          "id": "entrance-y7-fractions-book-sale-price",
+          "skillId": "fractionsAndPercentages",
+          "sectionNumber": 1,
+          "marks": 2,
+          "contentVersion": 1,
+          "locales": {
+            "en": {
+              "prompt": "A book costs £16. In a sale, its price is reduced by 25%. What is the sale price?",
+              "workedMethodSteps": ["25% of 16 = 4", "16 - 4 = 12"],
+              "correctAnswerText": "£12.",
+              "methodMarkGuidance": "Full marks needs the discount amount found first (25% of £16 = £4), then subtracted from the original price. Writing £12 with no discount calculation shown is unsupported."
+            },
+            "en-GB": {
+              "prompt": "A book costs £16. In a sale, its price is reduced by 25%. What is the sale price?",
+              "workedMethodSteps": ["25% of 16 = 4", "16 - 4 = 12"],
+              "correctAnswerText": "£12.",
+              "methodMarkGuidance": "Full marks needs the discount amount found first (25% of £16 = £4), then subtracted from the original price. Writing £12 with no discount calculation shown is unsupported."
+            },
+            "de-CH": {
+              "prompt": "Ein Buch kostet CHF 16. Im Sonderangebot wird der Preis um 25% reduziert. Wie hoch ist der Angebotspreis?",
+              "workedMethodSteps": ["25% von 16 = 4", "16 - 4 = 12"],
+              "correctAnswerText": "CHF 12.",
+              "methodMarkGuidance": "Fuer die volle Punktzahl muss zuerst der Rabattbetrag berechnet werden (25% von CHF 16 = CHF 4), der dann vom Originalpreis abgezogen wird. CHF 12 ohne gezeigte Rabattberechnung gilt als unbegruendet."
+            },
+            "fr-CH": {
+              "prompt": "Un livre coute CHF 16. En solde, son prix est reduit de 25%. Quel est le prix solde ?",
+              "workedMethodSteps": ["25% de 16 = 4", "16 - 4 = 12"],
+              "correctAnswerText": "CHF 12.",
+              "methodMarkGuidance": "Pour tous les points, le montant de la reduction doit d'abord etre trouve (25% de CHF 16 = CHF 4), puis soustrait du prix initial. Ecrire CHF 12 sans montrer le calcul de la reduction n'est pas justifie."
+            },
+            "it-CH": {
+              "prompt": "Un libro costa CHF 16. In saldo, il suo prezzo viene ridotto del 25%. Qual e il prezzo scontato?",
+              "workedMethodSteps": ["25% di 16 = 4", "16 - 4 = 12"],
+              "correctAnswerText": "CHF 12.",
+              "methodMarkGuidance": "Per il punteggio pieno bisogna prima trovare l'importo dello sconto (25% di CHF 16 = CHF 4), poi sottrarlo dal prezzo originale. Scrivere CHF 12 senza mostrare il calcolo dello sconto non e giustificato."
+            }
+          }
+        },
+        {
+          "id": "entrance-y7-ratio-pancake-mixture",
+          "skillId": "ratioAndProportion",
+          "sectionNumber": 1,
+          "marks": 2,
+          "contentVersion": 1,
+          "locales": {
+            "en": {
+              "prompt": "A recipe for pancake batter uses flour and milk in the ratio 2:3. If 8 cups of flour are used, how many cups of milk are needed?",
+              "workedMethodSteps": ["8 / 2 = 4", "3 x 4 = 12"],
+              "correctAnswerText": "12 cups of milk.",
+              "methodMarkGuidance": "Full marks needs the scale factor found first (8 / 2 = 4), then applied to the milk part of the ratio (3 x 4). A correct answer of 12 with no scale factor shown is unsupported."
+            },
+            "en-GB": {
+              "prompt": "A recipe for pancake batter uses flour and milk in the ratio 2:3. If 8 cups of flour are used, how many cups of milk are needed?",
+              "workedMethodSteps": ["8 / 2 = 4", "3 x 4 = 12"],
+              "correctAnswerText": "12 cups of milk.",
+              "methodMarkGuidance": "Full marks needs the scale factor found first (8 / 2 = 4), then applied to the milk part of the ratio (3 x 4). A correct answer of 12 with no scale factor shown is unsupported."
+            },
+            "de-CH": {
+              "prompt": "Ein Rezept fuer Pfannkuchenteig verwendet Mehl und Milch im Verhaeltnis 2:3. Wenn 8 Tassen Mehl verwendet werden, wie viele Tassen Milch werden benoetigt?",
+              "workedMethodSteps": ["8 / 2 = 4", "3 x 4 = 12"],
+              "correctAnswerText": "12 Tassen Milch.",
+              "methodMarkGuidance": "Fuer die volle Punktzahl muss zuerst der Skalierungsfaktor gefunden werden (8 / 2 = 4), der dann auf den Milchanteil des Verhaeltnisses angewendet wird (3 x 4). Eine richtige Antwort von 12 ohne gezeigten Skalierungsfaktor gilt als unbegruendet."
+            },
+            "fr-CH": {
+              "prompt": "Une recette de pate a crepes utilise farine et lait dans un ratio de 2:3. Si 8 tasses de farine sont utilisees, combien de tasses de lait faut-il ?",
+              "workedMethodSteps": ["8 / 2 = 4", "3 x 4 = 12"],
+              "correctAnswerText": "12 tasses de lait.",
+              "methodMarkGuidance": "Pour tous les points, le facteur d'echelle doit d'abord etre trouve (8 / 2 = 4), puis applique a la part de lait du ratio (3 x 4). Une bonne reponse de 12 sans facteur d'echelle montre n'est pas justifiee."
+            },
+            "it-CH": {
+              "prompt": "Una ricetta per la pastella delle crepes usa farina e latte nel rapporto 2:3. Se si usano 8 tazze di farina, quante tazze di latte servono?",
+              "workedMethodSteps": ["8 / 2 = 4", "3 x 4 = 12"],
+              "correctAnswerText": "12 tazze di latte.",
+              "methodMarkGuidance": "Per il punteggio pieno bisogna prima trovare il fattore di scala (8 / 2 = 4), poi applicarlo alla parte di latte del rapporto (3 x 4). Una risposta corretta di 12 senza il fattore di scala mostrato non e giustificata."
+            }
+          }
+        },
+        {
+          "id": "entrance-y7-ratio-sharing-money",
+          "skillId": "ratioAndProportion",
+          "sectionNumber": 1,
+          "marks": 2,
+          "contentVersion": 1,
+          "locales": {
+            "en": {
+              "prompt": "Three friends share £45 in the ratio 1:2:2. How much does the friend with the smallest share receive?",
+              "workedMethodSteps": ["1 + 2 + 2 = 5", "45 / 5 = 9"],
+              "correctAnswerText": "£9.",
+              "methodMarkGuidance": "Full marks needs the ratio parts added first (1 + 2 + 2 = 5) before dividing the total. Writing £9 with no working shown is unsupported, even though it's correct."
+            },
+            "en-GB": {
+              "prompt": "Three friends share £45 in the ratio 1:2:2. How much does the friend with the smallest share receive?",
+              "workedMethodSteps": ["1 + 2 + 2 = 5", "45 / 5 = 9"],
+              "correctAnswerText": "£9.",
+              "methodMarkGuidance": "Full marks needs the ratio parts added first (1 + 2 + 2 = 5) before dividing the total. Writing £9 with no working shown is unsupported, even though it's correct."
+            },
+            "de-CH": {
+              "prompt": "Drei Freunde teilen CHF 45 im Verhaeltnis 1:2:2. Wie viel erhaelt der Freund mit dem kleinsten Anteil?",
+              "workedMethodSteps": ["1 + 2 + 2 = 5", "45 / 5 = 9"],
+              "correctAnswerText": "CHF 9.",
+              "methodMarkGuidance": "Fuer die volle Punktzahl muessen zuerst die Verhaeltnisteile addiert werden (1 + 2 + 2 = 5), bevor der Gesamtbetrag geteilt wird. CHF 9 ohne gezeigten Rechenweg gilt als unbegruendet, auch wenn es richtig ist."
+            },
+            "fr-CH": {
+              "prompt": "Trois amis partagent CHF 45 dans un ratio de 1:2:2. Combien recoit l'ami ayant la plus petite part ?",
+              "workedMethodSteps": ["1 + 2 + 2 = 5", "45 / 5 = 9"],
+              "correctAnswerText": "CHF 9.",
+              "methodMarkGuidance": "Pour tous les points, les parts du ratio doivent d'abord etre additionnees (1 + 2 + 2 = 5) avant de diviser le total. Ecrire CHF 9 sans montrer le calcul n'est pas justifie, meme si c'est juste."
+            },
+            "it-CH": {
+              "prompt": "Tre amici si dividono CHF 45 nel rapporto 1:2:2. Quanto riceve l'amico con la quota piu piccola?",
+              "workedMethodSteps": ["1 + 2 + 2 = 5", "45 / 5 = 9"],
+              "correctAnswerText": "CHF 9.",
+              "methodMarkGuidance": "Per il punteggio pieno bisogna prima sommare le parti del rapporto (1 + 2 + 2 = 5) prima di dividere il totale. Scrivere CHF 9 senza mostrare il procedimento non e giustificato, anche se e corretto."
+            }
+          }
+        },
+        {
+          "id": "entrance-y7-algebra-number-pattern",
+          "skillId": "algebraicReasoning",
+          "sectionNumber": 2,
+          "marks": 1,
+          "contentVersion": 1,
+          "locales": {
+            "en": {
+              "prompt": "Look at this number pattern: 4, 9, 14, 19, ... Each term increases by the same amount. What is the next term?",
+              "workedMethodSteps": ["The difference between each term is 5", "19 + 5 = 24"],
+              "correctAnswerText": "24.",
+              "methodMarkGuidance": "Full marks needs the constant difference identified (5) before adding it on. Writing 24 without stating the difference between terms is a method slip if the pattern is otherwise understood, or unsupported if there's no working at all."
+            },
+            "en-GB": {
+              "prompt": "Look at this number pattern: 4, 9, 14, 19, ... Each term increases by the same amount. What is the next term?",
+              "workedMethodSteps": ["The difference between each term is 5", "19 + 5 = 24"],
+              "correctAnswerText": "24.",
+              "methodMarkGuidance": "Full marks needs the constant difference identified (5) before adding it on. Writing 24 without stating the difference between terms is a method slip if the pattern is otherwise understood, or unsupported if there's no working at all."
+            },
+            "de-CH": {
+              "prompt": "Betrachte dieses Zahlenmuster: 4, 9, 14, 19, ... Jedes Glied steigt um denselben Betrag. Was ist das naechste Glied?",
+              "workedMethodSteps": ["Die Differenz zwischen den Gliedern betraegt 5", "19 + 5 = 24"],
+              "correctAnswerText": "24.",
+              "methodMarkGuidance": "Fuer die volle Punktzahl muss die konstante Differenz (5) erkannt werden, bevor sie addiert wird. 24 ohne Angabe der Differenz zu schreiben ist ein Rechenfehler, wenn das Muster sonst verstanden wurde, oder unbegruendet, wenn gar kein Rechenweg gezeigt wird."
+            },
+            "fr-CH": {
+              "prompt": "Observe cette suite de nombres : 4, 9, 14, 19, ... Chaque terme augmente de la meme quantite. Quel est le terme suivant ?",
+              "workedMethodSteps": ["La difference entre chaque terme est 5", "19 + 5 = 24"],
+              "correctAnswerText": "24.",
+              "methodMarkGuidance": "Pour tous les points, la difference constante (5) doit etre identifiee avant de l'ajouter. Ecrire 24 sans indiquer la difference entre les termes est une erreur d'etourderie si le motif est par ailleurs compris, ou non justifie s'il n'y a aucun calcul du tout."
+            },
+            "it-CH": {
+              "prompt": "Osserva questa sequenza numerica: 4, 9, 14, 19, ... Ogni termine aumenta della stessa quantita. Qual e il termine successivo?",
+              "workedMethodSteps": ["La differenza tra ogni termine e 5", "19 + 5 = 24"],
+              "correctAnswerText": "24.",
+              "methodMarkGuidance": "Per il punteggio pieno bisogna individuare la differenza costante (5) prima di sommarla. Scrivere 24 senza indicare la differenza tra i termini e un errore di distrazione se lo schema e comunque compreso, oppure non giustificato se non c'e alcun procedimento."
+            }
+          }
+        },
+        {
+          "id": "entrance-y7-algebra-solve-for-n",
+          "skillId": "algebraicReasoning",
+          "sectionNumber": 2,
+          "marks": 2,
+          "contentVersion": 1,
+          "locales": {
+            "en": {
+              "prompt": "If 3n + 4 = 19, what is the value of n?",
+              "workedMethodSteps": ["3n = 19 - 4 = 15", "n = 15 / 3 = 5"],
+              "correctAnswerText": "n = 5.",
+              "methodMarkGuidance": "Full marks needs both the subtraction (19 - 4) and the division (15 / 3) shown. n = 5 with no working shown at all is unsupported, even though it's correct."
+            },
+            "en-GB": {
+              "prompt": "If 3n + 4 = 19, what is the value of n?",
+              "workedMethodSteps": ["3n = 19 - 4 = 15", "n = 15 / 3 = 5"],
+              "correctAnswerText": "n = 5.",
+              "methodMarkGuidance": "Full marks needs both the subtraction (19 - 4) and the division (15 / 3) shown. n = 5 with no working shown at all is unsupported, even though it's correct."
+            },
+            "de-CH": {
+              "prompt": "Wenn 3n + 4 = 19 ist, wie gross ist n?",
+              "workedMethodSteps": ["3n = 19 - 4 = 15", "n = 15 / 3 = 5"],
+              "correctAnswerText": "n = 5.",
+              "methodMarkGuidance": "Fuer die volle Punktzahl muessen sowohl die Subtraktion (19 - 4) als auch die Division (15 / 3) gezeigt werden. n = 5 ganz ohne Rechenweg gilt als unbegruendet, auch wenn es richtig ist."
+            },
+            "fr-CH": {
+              "prompt": "Si 3n + 4 = 19, quelle est la valeur de n ?",
+              "workedMethodSteps": ["3n = 19 - 4 = 15", "n = 15 / 3 = 5"],
+              "correctAnswerText": "n = 5.",
+              "methodMarkGuidance": "Pour tous les points, la soustraction (19 - 4) et la division (15 / 3) doivent toutes deux etre montrees. n = 5 sans aucun calcul montre n'est pas justifie, meme si c'est juste."
+            },
+            "it-CH": {
+              "prompt": "Se 3n + 4 = 19, qual e il valore di n?",
+              "workedMethodSteps": ["3n = 19 - 4 = 15", "n = 15 / 3 = 5"],
+              "correctAnswerText": "n = 5.",
+              "methodMarkGuidance": "Per il punteggio pieno servono sia la sottrazione (19 - 4) sia la divisione (15 / 3). n = 5 senza alcun procedimento mostrato non e giustificato, anche se e corretto."
+            }
+          }
+        },
+        {
+          "id": "entrance-y7-logic-race-order",
+          "skillId": "dataAndLogic",
+          "sectionNumber": 2,
+          "marks": 2,
+          "contentVersion": 1,
+          "locales": {
+            "en": {
+              "prompt": "Four children — Alex, Bo, Cara and Dev — took part in a race. Alex finished before Bo. Cara finished after Dev but before Alex. What was the finishing order, from first to last?",
+              "workedMethodSteps": [
+                "Cara finished before Alex, and Alex finished before Bo: Cara, Alex, Bo",
+                "Dev finished before Cara, so Dev goes first: Dev, Cara, Alex, Bo"
+              ],
+              "correctAnswerText": "Dev, Cara, Alex, Bo.",
+              "methodMarkGuidance": "Full marks needs the two clues combined step by step, showing how each child's position was fixed relative to the others. Writing the correct order with no reasoning shown is unsupported."
+            },
+            "en-GB": {
+              "prompt": "Four children — Alex, Bo, Cara and Dev — took part in a race. Alex finished before Bo. Cara finished after Dev but before Alex. What was the finishing order, from first to last?",
+              "workedMethodSteps": [
+                "Cara finished before Alex, and Alex finished before Bo: Cara, Alex, Bo",
+                "Dev finished before Cara, so Dev goes first: Dev, Cara, Alex, Bo"
+              ],
+              "correctAnswerText": "Dev, Cara, Alex, Bo.",
+              "methodMarkGuidance": "Full marks needs the two clues combined step by step, showing how each child's position was fixed relative to the others. Writing the correct order with no reasoning shown is unsupported."
+            },
+            "de-CH": {
+              "prompt": "Vier Kinder — Alex, Bo, Cara und Dev — nahmen an einem Wettlauf teil. Alex kam vor Bo ins Ziel. Cara kam nach Dev, aber vor Alex ins Ziel. Wie war die Reihenfolge im Ziel, vom Ersten zum Letzten?",
+              "workedMethodSteps": [
+                "Cara kam vor Alex ins Ziel, und Alex kam vor Bo: Cara, Alex, Bo",
+                "Dev kam vor Cara ins Ziel, also steht Dev an erster Stelle: Dev, Cara, Alex, Bo"
+              ],
+              "correctAnswerText": "Dev, Cara, Alex, Bo.",
+              "methodMarkGuidance": "Fuer die volle Punktzahl muessen die beiden Hinweise Schritt fuer Schritt kombiniert werden, wobei gezeigt wird, wie die Position jedes Kindes relativ zu den anderen festgelegt wurde. Die richtige Reihenfolge ohne gezeigte Ueberlegung aufzuschreiben gilt als unbegruendet."
+            },
+            "fr-CH": {
+              "prompt": "Quatre enfants — Alex, Bo, Cara et Dev — ont participe a une course. Alex a fini avant Bo. Cara a fini apres Dev mais avant Alex. Quel etait l'ordre d'arrivee, du premier au dernier ?",
+              "workedMethodSteps": [
+                "Cara a fini avant Alex, et Alex a fini avant Bo : Cara, Alex, Bo",
+                "Dev a fini avant Cara, donc Dev est en tete : Dev, Cara, Alex, Bo"
+              ],
+              "correctAnswerText": "Dev, Cara, Alex, Bo.",
+              "methodMarkGuidance": "Pour tous les points, les deux indices doivent etre combines etape par etape, en montrant comment la position de chaque enfant a ete fixee par rapport aux autres. Ecrire le bon ordre sans montrer le raisonnement n'est pas justifie."
+            },
+            "it-CH": {
+              "prompt": "Quattro bambini — Alex, Bo, Cara e Dev — hanno partecipato a una gara. Alex ha finito prima di Bo. Cara ha finito dopo Dev ma prima di Alex. Qual e stato l'ordine di arrivo, dal primo all'ultimo?",
+              "workedMethodSteps": [
+                "Cara ha finito prima di Alex, e Alex prima di Bo: Cara, Alex, Bo",
+                "Dev ha finito prima di Cara, quindi Dev e primo: Dev, Cara, Alex, Bo"
+              ],
+              "correctAnswerText": "Dev, Cara, Alex, Bo.",
+              "methodMarkGuidance": "Per il punteggio pieno i due indizi vanno combinati passo dopo passo, mostrando come la posizione di ogni bambino sia stata stabilita rispetto agli altri. Scrivere l'ordine corretto senza mostrare il ragionamento non e giustificato."
+            }
+          }
+        },
+        {
+          "id": "entrance-y7-shape-garden-perimeter",
+          "skillId": "shapeAndSpace",
+          "sectionNumber": 3,
+          "marks": 1,
+          "contentVersion": 1,
+          "locales": {
+            "en": {
+              "prompt": "A rectangular garden is 12 m long and 7 m wide. What is its perimeter?",
+              "workedMethodSteps": ["12 + 7 = 19", "19 x 2 = 38"],
+              "correctAnswerText": "38 m.",
+              "methodMarkGuidance": "Full marks needs the length and width added first, then doubled — or each side doubled and added. Writing 38 m with no working shown is unsupported."
+            },
+            "en-GB": {
+              "prompt": "A rectangular garden is 12 m long and 7 m wide. What is its perimeter?",
+              "workedMethodSteps": ["12 + 7 = 19", "19 x 2 = 38"],
+              "correctAnswerText": "38 m.",
+              "methodMarkGuidance": "Full marks needs the length and width added first, then doubled — or each side doubled and added. Writing 38 m with no working shown is unsupported."
+            },
+            "de-CH": {
+              "prompt": "Ein rechteckiger Garten ist 12 m lang und 7 m breit. Wie gross ist sein Umfang?",
+              "workedMethodSteps": ["12 + 7 = 19", "19 x 2 = 38"],
+              "correctAnswerText": "38 m.",
+              "methodMarkGuidance": "Fuer die volle Punktzahl muessen zuerst Laenge und Breite addiert und dann verdoppelt werden — oder jede Seite verdoppelt und addiert werden. 38 m ohne gezeigten Rechenweg gilt als unbegruendet."
+            },
+            "fr-CH": {
+              "prompt": "Un jardin rectangulaire mesure 12 m de long et 7 m de large. Quel est son perimetre ?",
+              "workedMethodSteps": ["12 + 7 = 19", "19 x 2 = 38"],
+              "correctAnswerText": "38 m.",
+              "methodMarkGuidance": "Pour tous les points, la longueur et la largeur doivent d'abord etre additionnees puis doublees — ou chaque cote double puis additionne. Ecrire 38 m sans montrer le calcul n'est pas justifie."
+            },
+            "it-CH": {
+              "prompt": "Un giardino rettangolare e lungo 12 m e largo 7 m. Qual e il suo perimetro?",
+              "workedMethodSteps": ["12 + 7 = 19", "19 x 2 = 38"],
+              "correctAnswerText": "38 m.",
+              "methodMarkGuidance": "Per il punteggio pieno bisogna prima sommare lunghezza e larghezza e poi raddoppiare — oppure raddoppiare ogni lato e sommare. Scrivere 38 m senza mostrare il procedimento non e giustificato."
+            }
+          }
+        },
+        {
+          "id": "entrance-y7-shape-square-side-length",
+          "skillId": "shapeAndSpace",
+          "sectionNumber": 3,
+          "marks": 2,
+          "contentVersion": 1,
+          "locales": {
+            "en": {
+              "prompt": "A square has an area of 49 cm2. What is the length of one side?",
+              "workedMethodSteps": [
+                "Find the number that multiplies by itself to give 49",
+                "7 x 7 = 49, so the side length is 7"
+              ],
+              "correctAnswerText": "7 cm.",
+              "methodMarkGuidance": "Full marks needs the reasoning that side x side = area shown, i.e. checking 7 x 7 = 49. Writing 7 cm with no check shown is a method slip if the square-root idea is otherwise clear from context, or unsupported if not."
+            },
+            "en-GB": {
+              "prompt": "A square has an area of 49 cm2. What is the length of one side?",
+              "workedMethodSteps": [
+                "Find the number that multiplies by itself to give 49",
+                "7 x 7 = 49, so the side length is 7"
+              ],
+              "correctAnswerText": "7 cm.",
+              "methodMarkGuidance": "Full marks needs the reasoning that side x side = area shown, i.e. checking 7 x 7 = 49. Writing 7 cm with no check shown is a method slip if the square-root idea is otherwise clear from context, or unsupported if not."
+            },
+            "de-CH": {
+              "prompt": "Ein Quadrat hat eine Flaeche von 49 cm2. Wie lang ist eine Seite?",
+              "workedMethodSteps": [
+                "Finde die Zahl, die mit sich selbst multipliziert 49 ergibt",
+                "7 x 7 = 49, also betraegt die Seitenlaenge 7"
+              ],
+              "correctAnswerText": "7 cm.",
+              "methodMarkGuidance": "Fuer die volle Punktzahl muss der Zusammenhang Seite x Seite = Flaeche gezeigt werden, d.h. die Probe 7 x 7 = 49. 7 cm ohne gezeigte Probe ist ein Rechenfehler, wenn die Idee der Quadratwurzel sonst aus dem Zusammenhang klar wird, sonst unbegruendet."
+            },
+            "fr-CH": {
+              "prompt": "Un carre a une aire de 49 cm2. Quelle est la longueur d'un cote ?",
+              "workedMethodSteps": [
+                "Trouve le nombre qui multiplie par lui-meme donne 49",
+                "7 x 7 = 49, donc la longueur du cote est 7"
+              ],
+              "correctAnswerText": "7 cm.",
+              "methodMarkGuidance": "Pour tous les points, le raisonnement cote x cote = aire doit etre montre, c'est-a-dire la verification 7 x 7 = 49. Ecrire 7 cm sans verification montree est une erreur d'etourderie si l'idee de racine carree est par ailleurs claire du contexte, sinon ce n'est pas justifie."
+            },
+            "it-CH": {
+              "prompt": "Un quadrato ha un'area di 49 cm2. Quanto e lungo un lato?",
+              "workedMethodSteps": [
+                "Trova il numero che moltiplicato per se stesso da 49",
+                "7 x 7 = 49, quindi il lato misura 7"
+              ],
+              "correctAnswerText": "7 cm.",
+              "methodMarkGuidance": "Per il punteggio pieno va mostrato il ragionamento lato x lato = area, cioe la verifica 7 x 7 = 49. Scrivere 7 cm senza la verifica mostrata e un errore di distrazione se l'idea di radice quadrata e comunque chiara dal contesto, altrimenti non e giustificato."
+            }
+          }
+        },
+        {
+          "id": "entrance-y7-data-pets-bar-chart",
+          "skillId": "dataAndLogic",
+          "sectionNumber": 3,
+          "marks": 1,
+          "contentVersion": 1,
+          "locales": {
+            "en": {
+              "prompt": "A bar chart shows the number of pets owned by 5 friends: Amir 2, Beth 1, Chen 3, Dana 0, Eve 4. What is the total number of pets owned by all five friends?",
+              "workedMethodSteps": ["2 + 1 + 3 + 0 + 4 = 10"],
+              "correctAnswerText": "10 pets.",
+              "methodMarkGuidance": "Full marks needs all five values added together, shown as one sum. Writing 10 with no addition shown is unsupported, even though it's correct."
+            },
+            "en-GB": {
+              "prompt": "A bar chart shows the number of pets owned by 5 friends: Amir 2, Beth 1, Chen 3, Dana 0, Eve 4. What is the total number of pets owned by all five friends?",
+              "workedMethodSteps": ["2 + 1 + 3 + 0 + 4 = 10"],
+              "correctAnswerText": "10 pets.",
+              "methodMarkGuidance": "Full marks needs all five values added together, shown as one sum. Writing 10 with no addition shown is unsupported, even though it's correct."
+            },
+            "de-CH": {
+              "prompt": "Ein Balkendiagramm zeigt die Anzahl Haustiere von 5 Freunden: Amir 2, Beth 1, Chen 3, Dana 0, Eve 4. Wie viele Haustiere haben alle fuenf Freunde zusammen?",
+              "workedMethodSteps": ["2 + 1 + 3 + 0 + 4 = 10"],
+              "correctAnswerText": "10 Haustiere.",
+              "methodMarkGuidance": "Fuer die volle Punktzahl muessen alle fuenf Werte zusammen addiert werden, gezeigt als eine Summe. 10 ohne gezeigte Addition gilt als unbegruendet, auch wenn es richtig ist."
+            },
+            "fr-CH": {
+              "prompt": "Un diagramme en barres montre le nombre d'animaux de compagnie de 5 amis : Amir 2, Beth 1, Chen 3, Dana 0, Eve 4. Quel est le nombre total d'animaux pour les cinq amis ?",
+              "workedMethodSteps": ["2 + 1 + 3 + 0 + 4 = 10"],
+              "correctAnswerText": "10 animaux.",
+              "methodMarkGuidance": "Pour tous les points, les cinq valeurs doivent etre additionnees ensemble, montrees comme une seule somme. Ecrire 10 sans addition montree n'est pas justifie, meme si c'est juste."
+            },
+            "it-CH": {
+              "prompt": "Un grafico a barre mostra il numero di animali domestici di 5 amici: Amir 2, Beth 1, Chen 3, Dana 0, Eve 4. Qual e il numero totale di animali di tutti e cinque gli amici?",
+              "workedMethodSteps": ["2 + 1 + 3 + 0 + 4 = 10"],
+              "correctAnswerText": "10 animali.",
+              "methodMarkGuidance": "Per il punteggio pieno bisogna sommare tutti e cinque i valori insieme, mostrati come un'unica somma. Scrivere 10 senza l'addizione mostrata non e giustificato, anche se e corretto."
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

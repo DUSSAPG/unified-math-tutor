@@ -4,6 +4,7 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../services/topic_catalog_service.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../widgets/shared/fade_in.dart';
 
 // ─── Filter ───────────────────────────────────────────────────────────────────
@@ -179,7 +180,8 @@ class _TopicsContentState extends State<_TopicsContent> {
 
   Future<Map<String, TopicDisplay>> _loadDisplays(Locale locale) async {
     final resolved = await Future.wait(
-      _topics.map((topic) => TopicCatalogService.instance.byId(topic.id, locale)),
+      _topics
+          .map((topic) => TopicCatalogService.instance.byId(topic.id, locale)),
     );
     return {for (final display in resolved) display.id: display};
   }
@@ -263,7 +265,8 @@ class _TopicsContentState extends State<_TopicsContent> {
                   ...List.generate(topics.length, (i) {
                     final topic = topics[i];
                     final display = displaysById[topic.id] ??
-                        TopicDisplay(id: topic.id, title: topic.id, subtitle: '');
+                        TopicDisplay(
+                            id: topic.id, title: topic.id, subtitle: '');
                     return Padding(
                       padding: EdgeInsets.only(
                           bottom: i < topics.length - 1 ? 10 : 0),
@@ -294,26 +297,27 @@ class _SearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Container(
       width: double.infinity,
       constraints: const BoxConstraints(minHeight: 44),
       decoration: BoxDecoration(
-        color: const Color(0xFF132040),
+        color: colors.cardSurface,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: const Color(0xFF1F3055)),
+        border: Border.all(color: colors.divider),
       ),
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: Row(
         children: [
           const SizedBox(width: 12),
-          const Icon(Icons.search, color: Color(0xFF8A9DC0), size: 20),
+          Icon(Icons.search, color: colors.secondaryText, size: 20),
           const SizedBox(width: 8),
           Expanded(
             child: Text(
               AppLocalizations.of(context).topicsSearchHint,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: const TextStyle(color: Color(0xFF4A6080), fontSize: 14),
+              style: TextStyle(color: colors.tertiaryText, fontSize: 14),
             ),
           ),
           const SizedBox(width: 12),
@@ -350,10 +354,15 @@ class _FilterRowState extends State<_FilterRow> {
   // "All", "Practice" and "Recommended" always stay on-screen; curriculum
   // filters (and any future ones added here) live behind "More" so the
   // primary row never crowds out on narrow phones.
-  static const _primaryFilters = [_Filter.all, _Filter.practice, _Filter.recommended];
+  static const _primaryFilters = [
+    _Filter.all,
+    _Filter.practice,
+    _Filter.recommended
+  ];
   static const _secondaryFilters = [_Filter.oxfordTrack, _Filter.gcse];
 
-  static String _labelFor(AppLocalizations l10n, _Filter filter) => switch (filter) {
+  static String _labelFor(AppLocalizations l10n, _Filter filter) =>
+      switch (filter) {
         _Filter.all => l10n.topicsFilterAll,
         _Filter.practice => l10n.topicsFilterPractice,
         _Filter.recommended => l10n.topicsFilterRecommended,
@@ -364,15 +373,17 @@ class _FilterRowState extends State<_FilterRow> {
 
   Future<void> _openMoreSheet(BuildContext context) async {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     final chosen = await showModalBottomSheet<_Filter>(
       context: context,
-      backgroundColor: const Color(0xFF0D1525),
+      backgroundColor: colors.elevatedSurface,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
       // Bounded and scrollable so a growing list of future curriculum/formula
       // filters can never overflow off the bottom of a short phone screen.
-      constraints: BoxConstraints(maxHeight: MediaQuery.of(context).size.height * 0.7),
+      constraints:
+          BoxConstraints(maxHeight: MediaQuery.of(context).size.height * 0.7),
       builder: (sheetContext) => SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 12),
@@ -384,8 +395,8 @@ class _FilterRowState extends State<_FilterRow> {
                 padding: const EdgeInsets.fromLTRB(20, 4, 20, 12),
                 child: Text(
                   l10n.topicsFilterMore,
-                  style: const TextStyle(
-                    color: Colors.white,
+                  style: TextStyle(
+                    color: colors.primaryText,
                     fontSize: 16,
                     fontWeight: FontWeight.w700,
                   ),
@@ -404,10 +415,11 @@ class _FilterRowState extends State<_FilterRow> {
                           minVerticalPadding: 16,
                           title: Text(
                             _labelFor(l10n, filter),
-                            style: const TextStyle(color: Colors.white, fontSize: 15),
+                            style: TextStyle(
+                                color: colors.primaryText, fontSize: 15),
                           ),
                           trailing: selected == filter
-                              ? const Icon(Icons.check, color: Color(0xFF5B8EFF))
+                              ? Icon(Icons.check, color: colors.accent)
                               : null,
                           onTap: () => Navigator.of(sheetContext).pop(filter),
                         ),
@@ -433,6 +445,7 @@ class _FilterRowState extends State<_FilterRow> {
     VoidCallback? onTapOverride,
   }) {
     final isSel = selectedOverride ?? (selected == filter);
+    final colors = context.appColors;
     return Semantics(
       button: true,
       selected: isSel,
@@ -448,10 +461,10 @@ class _FilterRowState extends State<_FilterRow> {
               alignment: Alignment.center,
               padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
               decoration: BoxDecoration(
-                color: isSel ? const Color(0xFF3D7EFF) : const Color(0xFF132040),
+                color: isSel ? colors.primaryAction : colors.cardSurface,
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(
-                  color: isSel ? const Color(0xFF3D7EFF) : const Color(0xFF1F3055),
+                  color: isSel ? colors.primaryAction : colors.divider,
                 ),
               ),
               child: Row(
@@ -460,7 +473,8 @@ class _FilterRowState extends State<_FilterRow> {
                   Text(
                     label,
                     style: TextStyle(
-                      color: isSel ? Colors.white : const Color(0xFF8A9DC0),
+                      color:
+                          isSel ? colors.onPrimaryAction : colors.secondaryText,
                       fontSize: 13,
                       fontWeight: isSel ? FontWeight.w600 : FontWeight.w400,
                     ),
@@ -470,7 +484,8 @@ class _FilterRowState extends State<_FilterRow> {
                     Icon(
                       Icons.keyboard_arrow_down,
                       size: 14,
-                      color: isSel ? Colors.white : const Color(0xFF8A9DC0),
+                      color:
+                          isSel ? colors.onPrimaryAction : colors.secondaryText,
                     ),
                   ],
                 ],
@@ -489,7 +504,8 @@ class _FilterRowState extends State<_FilterRow> {
     // The More chip shows the active secondary filter's own name once one is
     // chosen, so the selection stays visible without needing to reopen the
     // sheet — this is how "preserve selected state" reads on-screen.
-    final moreLabel = isSecondarySelected ? _labelFor(l10n, selected) : l10n.topicsFilterMore;
+    final moreLabel =
+        isSecondarySelected ? _labelFor(l10n, selected) : l10n.topicsFilterMore;
 
     return Scrollbar(
       controller: _scrollController,
@@ -535,12 +551,13 @@ class _TrackPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF0D1525),
+        color: colors.elevatedSurface,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: const Color(0xFF1F3055)),
+        border: Border.all(color: colors.divider),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -550,17 +567,17 @@ class _TrackPanel extends StatelessWidget {
             children: [
               Text(
                 l10n.topicsSelectTrack,
-                style: const TextStyle(
-                  color: Colors.white,
+                style: TextStyle(
+                  color: colors.primaryText,
                   fontSize: 16,
                   fontWeight: FontWeight.w700,
                 ),
               ),
               GestureDetector(
                 onTap: onClose,
-                child: const Icon(
+                child: Icon(
                   Icons.close,
-                  color: Color(0xFF8A9DC0),
+                  color: colors.secondaryText,
                   size: 18,
                 ),
               ),
@@ -615,6 +632,7 @@ class _TrackCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Material(
       color: Colors.transparent,
       child: InkWell(
@@ -623,11 +641,12 @@ class _TrackCard extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
           decoration: BoxDecoration(
-            color: const Color(0xFF132040),
+            color: colors.cardSurface,
             borderRadius: BorderRadius.circular(12),
+            // Premium border stays a fixed dark-amber tint regardless of
+            // theme — it pairs with the fixed premium badge below.
             border: Border.all(
-              color:
-                  premium ? const Color(0xFF2A2010) : const Color(0xFF1F3055),
+              color: premium ? const Color(0xFF2A2010) : colors.divider,
             ),
           ),
           child: Row(
@@ -638,8 +657,8 @@ class _TrackCard extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style: const TextStyle(
-                        color: Colors.white,
+                      style: TextStyle(
+                        color: colors.primaryText,
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
                       ),
@@ -647,8 +666,8 @@ class _TrackCard extends StatelessWidget {
                     const SizedBox(height: 2),
                     Text(
                       subtitle,
-                      style: const TextStyle(
-                          color: Color(0xFF8A9DC0), fontSize: 12),
+                      style:
+                          TextStyle(color: colors.secondaryText, fontSize: 12),
                     ),
                   ],
                 ),
@@ -674,7 +693,7 @@ class _TrackCard extends StatelessWidget {
                   ),
                 )
               else
-                const Icon(Icons.chevron_right, color: Color(0xFF4A6080)),
+                Icon(Icons.chevron_right, color: colors.tertiaryText),
             ],
           ),
         ),
@@ -698,6 +717,7 @@ class _TopicCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Material(
       color: Colors.transparent,
       child: InkWell(
@@ -706,12 +726,12 @@ class _TopicCard extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
           decoration: BoxDecoration(
-            color: const Color(0xFF132040),
+            color: colors.cardSurface,
             borderRadius: BorderRadius.circular(14),
+            // Premium border stays a fixed dark-amber tint regardless of
+            // theme — it pairs with the fixed premium badge below.
             border: Border.all(
-              color: topic.premium
-                  ? const Color(0xFF2A2010)
-                  : const Color(0xFF1F3055),
+              color: topic.premium ? const Color(0xFF2A2010) : colors.divider,
             ),
           ),
           child: Column(
@@ -762,8 +782,8 @@ class _TopicCard extends StatelessWidget {
                       children: [
                         Text(
                           display.title,
-                          style: const TextStyle(
-                            color: Colors.white,
+                          style: TextStyle(
+                            color: colors.primaryText,
                             fontSize: 15,
                             fontWeight: FontWeight.w600,
                           ),
@@ -771,17 +791,17 @@ class _TopicCard extends StatelessWidget {
                         const SizedBox(height: 2),
                         Text(
                           display.subtitle,
-                          style: const TextStyle(
-                              color: Color(0xFF8A9DC0), fontSize: 13),
+                          style: TextStyle(
+                              color: colors.secondaryText, fontSize: 13),
                         ),
                         if (topic.nextUp != null) ...[
                           const SizedBox(height: 4),
                           Row(
                             children: [
-                              const Icon(
+                              Icon(
                                 Icons.play_circle_outline,
                                 size: 12,
-                                color: Color(0xFF5B8EFF),
+                                color: colors.accent,
                               ),
                               const SizedBox(width: 4),
                               Expanded(
@@ -790,8 +810,8 @@ class _TopicCard extends StatelessWidget {
                                       .nextUp(topic.nextUp!),
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
-                                  style: const TextStyle(
-                                    color: Color(0xFF5B8EFF),
+                                  style: TextStyle(
+                                    color: colors.accent,
                                     fontSize: 12,
                                   ),
                                 ),
@@ -806,7 +826,7 @@ class _TopicCard extends StatelessWidget {
                   if (topic.premium)
                     const Icon(Icons.lock, color: Color(0xFFFF9500), size: 18)
                   else
-                    const Icon(Icons.chevron_right, color: Color(0xFF4A6080)),
+                    Icon(Icons.chevron_right, color: colors.tertiaryText),
                 ],
               ),
               // Progress bar (only when progress > 0)
@@ -817,7 +837,7 @@ class _TopicCard extends StatelessWidget {
                   child: LinearProgressIndicator(
                     value: topic.progress,
                     minHeight: 3,
-                    backgroundColor: const Color(0xFF1F3055),
+                    backgroundColor: colors.divider,
                     valueColor: AlwaysStoppedAnimation<Color>(topic.iconColor),
                   ),
                 ),
@@ -864,20 +884,21 @@ class _NoResultsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 20),
       decoration: BoxDecoration(
-        color: const Color(0xFF132040),
+        color: colors.cardSurface,
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: const Color(0xFF1F3055)),
+        border: Border.all(color: colors.divider),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
             AppLocalizations.of(context).topicsNoResults,
-            style: const TextStyle(
-              color: Colors.white,
+            style: TextStyle(
+              color: colors.primaryText,
               fontSize: 16,
               fontWeight: FontWeight.w600,
             ),
@@ -887,8 +908,8 @@ class _NoResultsCard extends StatelessWidget {
             onTap: onClear,
             child: Text(
               AppLocalizations.of(context).topicsClearFilters,
-              style: const TextStyle(
-                color: Color(0xFF5B8EFF),
+              style: TextStyle(
+                color: colors.accent,
                 fontSize: 14,
                 fontWeight: FontWeight.w500,
               ),
@@ -908,6 +929,7 @@ class _ExamPacksCta extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return Material(
       color: Colors.transparent,
       child: InkWell(
@@ -916,9 +938,9 @@ class _ExamPacksCta extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
-            color: const Color(0xFF132040),
+            color: colors.cardSurface,
             borderRadius: BorderRadius.circular(14),
-            border: Border.all(color: const Color(0xFF1F3055)),
+            border: Border.all(color: colors.divider),
           ),
           child: Row(
             children: [
@@ -928,8 +950,8 @@ class _ExamPacksCta extends StatelessWidget {
                   children: [
                     Text(
                       l10n.homeSectionExamPacks,
-                      style: const TextStyle(
-                        color: Colors.white,
+                      style: TextStyle(
+                        color: colors.primaryText,
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
                       ),
@@ -937,8 +959,8 @@ class _ExamPacksCta extends StatelessWidget {
                     const SizedBox(height: 4),
                     Text(
                       l10n.examPacksCtaSubtitle,
-                      style: const TextStyle(
-                        color: Color(0xFF8A9DC0),
+                      style: TextStyle(
+                        color: colors.secondaryText,
                         fontSize: 13,
                       ),
                     ),
@@ -947,14 +969,14 @@ class _ExamPacksCta extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 14, vertical: 8),
                       decoration: BoxDecoration(
-                        color: const Color(0xFF0D1F40),
+                        color: colors.primaryAction.withValues(alpha: 0.14),
                         borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: const Color(0xFF3D7EFF)),
+                        border: Border.all(color: colors.primaryAction),
                       ),
                       child: Text(
                         l10n.homeViewExamPacks,
-                        style: const TextStyle(
-                          color: Color(0xFF5B8EFF),
+                        style: TextStyle(
+                          color: colors.accent,
                           fontSize: 13,
                           fontWeight: FontWeight.w600,
                         ),
@@ -964,9 +986,9 @@ class _ExamPacksCta extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 12),
-              const Icon(
+              Icon(
                 Icons.chevron_right,
-                color: Color(0xFF4A6080),
+                color: colors.tertiaryText,
               ),
             ],
           ),

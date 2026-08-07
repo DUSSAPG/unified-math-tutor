@@ -25,6 +25,7 @@ class ReleaseNotesScreen extends StatelessWidget {
           children: [
             Text(
               'Release Notes',
+              overflow: TextOverflow.ellipsis,
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
@@ -32,6 +33,7 @@ class ReleaseNotesScreen extends StatelessWidget {
             ),
             Text(
               'What\'s new in Math Intelligence',
+              overflow: TextOverflow.ellipsis,
               style: TextStyle(color: Color(0xFF8A9DC0), fontSize: 12),
             ),
           ],
@@ -212,11 +214,15 @@ class _ReleaseSection extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              Text(
-                date,
-                style: const TextStyle(
-                  color: Color(0xFF4A6080),
-                  fontSize: 12,
+              Flexible(
+                child: Text(
+                  date,
+                  textAlign: TextAlign.end,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    color: Color(0xFF4A6080),
+                    fontSize: 12,
+                  ),
                 ),
               ),
             ],

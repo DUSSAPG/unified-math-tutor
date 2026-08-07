@@ -18,9 +18,10 @@ class RecallCardExportService {
   const RecallCardExportService();
 
   static String buildBrandedFooterLine(int pageNumber, int pageCount) {
-    final website = PublishingConfig.websiteQrEnabled && PublishingConfig.websiteUrl != null
-        ? '  —  ${PublishingConfig.websiteUrl}'
-        : '';
+    final website =
+        PublishingConfig.websiteQrEnabled && PublishingConfig.websiteUrl != null
+            ? '  —  ${PublishingConfig.websiteUrl}'
+            : '';
     return '${PublishingConfig.publishingHierarchy}'
         '  —  Recall Cards'
         '  —  ${PublishingConfig.tagline}'
@@ -30,12 +31,14 @@ class RecallCardExportService {
   }
 
   Future<pw.Font> _font() async {
-    return pw.Font.ttf(await rootBundle.load('assets/fonts/DMSans-Variable.ttf'));
+    return pw.Font.ttf(
+        await rootBundle.load('assets/fonts/DMSans-Variable.ttf'));
   }
 
   pw.Widget _header(String title, {String? learnerName}) {
-    final subtitle =
-        learnerName != null && learnerName.trim().isNotEmpty ? ' — ${learnerName.trim()}' : '';
+    final subtitle = learnerName != null && learnerName.trim().isNotEmpty
+        ? ' — ${learnerName.trim()}'
+        : '';
     return pw.Column(
       crossAxisAlignment: pw.CrossAxisAlignment.start,
       children: [
@@ -74,7 +77,8 @@ class RecallCardExportService {
           pw.SizedBox(height: 12),
           for (var i = 0; i < cards.length; i++) ...[
             pw.Text('${i + 1}. ${cards[i].textFor(locale).frontPrompt}',
-                style: pw.TextStyle(fontSize: 13, fontWeight: pw.FontWeight.bold)),
+                style:
+                    pw.TextStyle(fontSize: 13, fontWeight: pw.FontWeight.bold)),
             pw.SizedBox(height: 28),
             pw.Divider(color: PdfColors.grey300),
           ],
@@ -111,12 +115,14 @@ class RecallCardExportService {
                 crossAxisAlignment: pw.CrossAxisAlignment.start,
                 children: [
                   pw.Text('${i + 1}. ${text.frontPrompt}',
-                      style: pw.TextStyle(fontSize: 12, fontWeight: pw.FontWeight.bold)),
+                      style: pw.TextStyle(
+                          fontSize: 12, fontWeight: pw.FontWeight.bold)),
                   pw.SizedBox(height: 4),
                   pw.Text(text.answer, style: const pw.TextStyle(fontSize: 11)),
                   pw.SizedBox(height: 2),
                   pw.Text(text.explanation,
-                      style: const pw.TextStyle(fontSize: 9, color: PdfColors.grey700)),
+                      style: const pw.TextStyle(
+                          fontSize: 9, color: PdfColors.grey700)),
                   pw.SizedBox(height: 10),
                 ],
               );
@@ -134,7 +140,8 @@ class RecallCardExportService {
     String? learnerName,
   }) async {
     await Printing.sharePdf(
-      bytes: await buildRecallSheetPdf(cards, locale: locale, learnerName: learnerName),
+      bytes: await buildRecallSheetPdf(cards,
+          locale: locale, learnerName: learnerName),
       filename: 'math-studio-recall-cards-sheet.pdf',
     );
   }
@@ -145,7 +152,8 @@ class RecallCardExportService {
     String? learnerName,
   }) async {
     await Printing.sharePdf(
-      bytes: await buildAnswerSheetPdf(cards, locale: locale, learnerName: learnerName),
+      bytes: await buildAnswerSheetPdf(cards,
+          locale: locale, learnerName: learnerName),
       filename: 'math-studio-recall-cards-answers.pdf',
     );
   }

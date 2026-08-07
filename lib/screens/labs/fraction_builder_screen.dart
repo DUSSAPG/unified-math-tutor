@@ -92,11 +92,15 @@ class _FractionBuilderScreenState extends State<FractionBuilderScreen>
     final level = InteractiveLabsProgressService.instance.guidanceLevel();
     final l10n = AppLocalizations.of(context);
     playNarration(
-      messageId: 'labsFractionBuilderNarrationHintInactivity${narrationLevelSuffix(level)}',
+      messageId:
+          'labsFractionBuilderNarrationHintInactivity${narrationLevelSuffix(level)}',
       text: switch (level) {
-        LabGuidanceLevel.explorer => l10n.labsFractionBuilderNarrationHintInactivityExplorer,
-        LabGuidanceLevel.builder => l10n.labsFractionBuilderNarrationHintInactivityBuilder,
-        LabGuidanceLevel.navigator => l10n.labsFractionBuilderNarrationHintInactivityNavigator,
+        LabGuidanceLevel.explorer =>
+          l10n.labsFractionBuilderNarrationHintInactivityExplorer,
+        LabGuidanceLevel.builder =>
+          l10n.labsFractionBuilderNarrationHintInactivityBuilder,
+        LabGuidanceLevel.navigator =>
+          l10n.labsFractionBuilderNarrationHintInactivityNavigator,
       },
       trigger: LabNarrationTrigger.hint,
       level: level,
@@ -123,18 +127,23 @@ class _FractionBuilderScreenState extends State<FractionBuilderScreen>
     _lastCheckedFilled = _filled;
     registerNarrationActivity();
 
-    await InteractiveLabsProgressService.instance.recordAttempt(InteractiveLabId.fractionBuilder);
+    await InteractiveLabsProgressService.instance
+        .recordAttempt(InteractiveLabId.fractionBuilder);
     if (correct) {
       await InteractiveLabsProgressService.instance
           .recordCompletion(InteractiveLabId.fractionBuilder);
       CaptainMathService.instance.showCompletion();
       AudioCueService.instance.play(AudioCue.success);
       playNarration(
-        messageId: 'labsFractionBuilderNarrationCompletion${narrationLevelSuffix(level)}',
+        messageId:
+            'labsFractionBuilderNarrationCompletion${narrationLevelSuffix(level)}',
         text: switch (level) {
-          LabGuidanceLevel.explorer => l10n.labsFractionBuilderNarrationCompletionExplorer,
-          LabGuidanceLevel.builder => l10n.labsFractionBuilderNarrationCompletionBuilder,
-          LabGuidanceLevel.navigator => l10n.labsFractionBuilderNarrationCompletionNavigator,
+          LabGuidanceLevel.explorer =>
+            l10n.labsFractionBuilderNarrationCompletionExplorer,
+          LabGuidanceLevel.builder =>
+            l10n.labsFractionBuilderNarrationCompletionBuilder,
+          LabGuidanceLevel.navigator =>
+            l10n.labsFractionBuilderNarrationCompletionNavigator,
         },
         trigger: LabNarrationTrigger.completion,
         level: level,
@@ -143,22 +152,30 @@ class _FractionBuilderScreenState extends State<FractionBuilderScreen>
       CaptainMathService.instance.showEncouragement();
       if (isRepeated) {
         playNarration(
-          messageId: 'labsFractionBuilderNarrationHintRepeated${narrationLevelSuffix(level)}',
+          messageId:
+              'labsFractionBuilderNarrationHintRepeated${narrationLevelSuffix(level)}',
           text: switch (level) {
-            LabGuidanceLevel.explorer => l10n.labsFractionBuilderNarrationHintRepeatedExplorer,
-            LabGuidanceLevel.builder => l10n.labsFractionBuilderNarrationHintRepeatedBuilder,
-            LabGuidanceLevel.navigator => l10n.labsFractionBuilderNarrationHintRepeatedNavigator,
+            LabGuidanceLevel.explorer =>
+              l10n.labsFractionBuilderNarrationHintRepeatedExplorer,
+            LabGuidanceLevel.builder =>
+              l10n.labsFractionBuilderNarrationHintRepeatedBuilder,
+            LabGuidanceLevel.navigator =>
+              l10n.labsFractionBuilderNarrationHintRepeatedNavigator,
           },
           trigger: LabNarrationTrigger.hint,
           level: level,
         );
       } else {
         playNarration(
-          messageId: 'labsFractionBuilderNarrationResultWrong${narrationLevelSuffix(level)}',
+          messageId:
+              'labsFractionBuilderNarrationResultWrong${narrationLevelSuffix(level)}',
           text: switch (level) {
-            LabGuidanceLevel.explorer => l10n.labsFractionBuilderNarrationResultWrongExplorer,
-            LabGuidanceLevel.builder => l10n.labsFractionBuilderNarrationResultWrongBuilder,
-            LabGuidanceLevel.navigator => l10n.labsFractionBuilderNarrationResultWrongNavigator,
+            LabGuidanceLevel.explorer =>
+              l10n.labsFractionBuilderNarrationResultWrongExplorer,
+            LabGuidanceLevel.builder =>
+              l10n.labsFractionBuilderNarrationResultWrongBuilder,
+            LabGuidanceLevel.navigator =>
+              l10n.labsFractionBuilderNarrationResultWrongNavigator,
           },
           trigger: LabNarrationTrigger.resultExplanation,
           level: level,
@@ -197,8 +214,8 @@ class _FractionBuilderScreenState extends State<FractionBuilderScreen>
       builder: (context, _) => LabScaffold(
         labId: InteractiveLabId.fractionBuilder,
         title: l10n.labsFractionBuilderTitle,
-        missionText:
-            l10n.labsFractionBuilderMission(challenge.numerator, challenge.denominator),
+        missionText: l10n.labsFractionBuilderMission(
+            challenge.numerator, challenge.denominator),
         conceptText: l10n.labsFractionBuilderConcept,
         whereYoullUseThis: l10n.labsFractionBuilderWhereUsed,
         onReset: _reset,
@@ -225,7 +242,8 @@ class _FractionBuilderScreenState extends State<FractionBuilderScreen>
             ),
             const SizedBox(height: AppSpacing.sm),
             Semantics(
-              label: l10n.labsFractionBuilderFilledCount(_filled, challenge.denominator),
+              label: l10n.labsFractionBuilderFilledCount(
+                  _filled, challenge.denominator),
               child: ExcludeSemantics(
                 child: Row(
                   children: [
@@ -240,10 +258,15 @@ class _FractionBuilderScreenState extends State<FractionBuilderScreen>
                               right: i == challenge.denominator - 1 ? 0 : 2,
                             ),
                             decoration: BoxDecoration(
-                              color: i < _filled ? const Color(0xFF34C759) : const Color(0xFF132040),
-                              border: Border.all(color: const Color(0xFF1F3055)),
+                              color: i < _filled
+                                  ? const Color(0xFF34C759)
+                                  : const Color(0xFF132040),
+                              border:
+                                  Border.all(color: const Color(0xFF1F3055)),
                               borderRadius: BorderRadius.horizontal(
-                                left: i == 0 ? const Radius.circular(8) : Radius.zero,
+                                left: i == 0
+                                    ? const Radius.circular(8)
+                                    : Radius.zero,
                                 right: i == challenge.denominator - 1
                                     ? const Radius.circular(8)
                                     : Radius.zero,
@@ -258,7 +281,8 @@ class _FractionBuilderScreenState extends State<FractionBuilderScreen>
             ),
             const SizedBox(height: AppSpacing.sm),
             Text(
-              l10n.labsFractionBuilderFilledCount(_filled, challenge.denominator),
+              l10n.labsFractionBuilderFilledCount(
+                  _filled, challenge.denominator),
               style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13),
             ),
             const SizedBox(height: AppSpacing.md),
@@ -289,8 +313,12 @@ class _FractionBuilderScreenState extends State<FractionBuilderScreen>
         feedback: _lastResultCorrect == null
             ? null
             : LabResultBanner(
-                kind: _lastResultCorrect! ? LabResultKind.success : LabResultKind.tryAgain,
-                notice: _lastResultCorrect! ? l10n.labsFeedbackCorrect : l10n.labsFeedbackTryAgain,
+                kind: _lastResultCorrect!
+                    ? LabResultKind.success
+                    : LabResultKind.tryAgain,
+                notice: _lastResultCorrect!
+                    ? l10n.labsFeedbackCorrect
+                    : l10n.labsFeedbackTryAgain,
                 explain: _lastResultCorrect!
                     ? l10n.labsFractionBuilderSymbolicResult(
                         challenge.numerator, challenge.denominator)

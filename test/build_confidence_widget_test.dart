@@ -42,7 +42,8 @@ void main() {
     });
   });
 
-  testWidgets('selecting an option shows a calm explanation, never punitive language',
+  testWidgets(
+      'selecting an option shows a calm explanation, never punitive language',
       (tester) async {
     await tester.runAsync(() async {
       await tester.pumpWidget(wrap());
@@ -60,7 +61,8 @@ void main() {
     });
   });
 
-  testWidgets('completing every question shows a quiet completion confirmation, not a big reward screen',
+  testWidgets(
+      'completing every question shows a quiet completion confirmation, not a big reward screen',
       (tester) async {
     await tester.runAsync(() async {
       await tester.pumpWidget(wrap());

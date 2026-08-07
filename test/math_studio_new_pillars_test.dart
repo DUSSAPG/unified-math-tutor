@@ -5,8 +5,16 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:unified_math_tutor/app/router.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 import 'package:unified_math_tutor/screens/math_magic/math_magic_screen.dart';
+import 'package:unified_math_tutor/screens/math_magic/number_tricks_screen.dart';
+import 'package:unified_math_tutor/screens/math_magic/patterns_screen.dart';
+import 'package:unified_math_tutor/screens/math_magic/magic_squares_screen.dart';
+import 'package:unified_math_tutor/screens/math_magic/parity_screen.dart';
 import 'package:unified_math_tutor/screens/math_studio/math_studio_hub_screen.dart';
 import 'package:unified_math_tutor/screens/spatial_intelligence/spatial_intelligence_screen.dart';
+import 'package:unified_math_tutor/screens/spatial_intelligence/cube_nets_screen.dart';
+import 'package:unified_math_tutor/screens/spatial_intelligence/rotations_screen.dart';
+import 'package:unified_math_tutor/screens/spatial_intelligence/transformations_screen.dart';
+import 'package:unified_math_tutor/screens/spatial_intelligence/spatial_puzzles_screen.dart';
 import 'package:unified_math_tutor/services/discovery_card_catalog_service.dart';
 import 'package:unified_math_tutor/services/learner_profiles_service.dart';
 import 'package:unified_math_tutor/services/local_preferences_service.dart';
@@ -64,7 +72,7 @@ void main() {
   }
 
   testWidgets(
-    'Math & Magic hub tile is tappable (not locked) and shows an honest in-development state',
+    'Math & Magic hub tile is tappable and offers 4 real, untimed/unscored activities',
     (tester) async {
       final l10n = await pumpRoute(tester, '/math-studio');
       expect(find.byType(MathStudioHubScreen), findsOneWidget);
@@ -74,21 +82,41 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.byType(MathMagicScreen), findsOneWidget);
-      expect(find.text(l10n.mathStudioInDevelopmentBadge), findsWidgets);
-      expect(find.text(l10n.mathStudioInDevelopmentNote), findsOneWidget);
+      // No longer an "in development" placeholder — every one of the 4
+      // RC1-minimum activities is a real, tappable entry card.
+      expect(find.text(l10n.mathStudioInDevelopmentBadge), findsNothing);
+      expect(find.byType(InDevelopmentFeatureCard), findsNothing);
+      expect(
+          find.text(l10n.mathStudioMathMagicNumberTricksLabel), findsOneWidget);
+      expect(find.text(l10n.mathStudioMathMagicPatternsLabel), findsOneWidget);
+      expect(
+          find.text(l10n.mathStudioMathMagicMagicSquaresLabel), findsOneWidget);
+      expect(find.text(l10n.mathStudioMathMagicParityLabel), findsOneWidget);
 
-      // The in-development card must carry no tap handler — it's inert
-      // descriptive text, not a fake/disabled-looking button.
-      final cardFinder = find.byType(InDevelopmentFeatureCard);
-      expect(cardFinder, findsOneWidget);
-      expect(
-        find.descendant(of: cardFinder, matching: find.byType(InkWell)),
-        findsNothing,
-      );
-      expect(
-        find.descendant(of: cardFinder, matching: find.byType(GestureDetector)),
-        findsNothing,
-      );
+      await tester.tap(find.text(l10n.mathStudioMathMagicNumberTricksLabel));
+      await tester.pumpAndSettle();
+      expect(find.byType(NumberTricksScreen), findsOneWidget);
+      await tester.tap(find.byIcon(Icons.arrow_back));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text(l10n.mathStudioMathMagicPatternsLabel));
+      await tester.pumpAndSettle();
+      expect(find.byType(PatternsScreen), findsOneWidget);
+      await tester.tap(find.byIcon(Icons.arrow_back));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text(l10n.mathStudioMathMagicMagicSquaresLabel));
+      await tester.pumpAndSettle();
+      expect(find.byType(MagicSquaresScreen), findsOneWidget);
+      await tester.tap(find.byIcon(Icons.arrow_back));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text(l10n.mathStudioMathMagicParityLabel));
+      await tester.pumpAndSettle();
+      expect(find.byType(ParityScreen), findsOneWidget);
+      await tester.tap(find.byIcon(Icons.arrow_back));
+      await tester.pumpAndSettle();
+      expect(find.byType(MathMagicScreen), findsOneWidget);
 
       await tester.tap(find.byIcon(Icons.arrow_back));
       await tester.pumpAndSettle();
@@ -97,26 +125,53 @@ void main() {
   );
 
   testWidgets(
-    'Spatial Intelligence hub tile is tappable, shows in-development sub-items, '
+    'Spatial Intelligence hub tile is tappable, offers 4 real activities, '
     'and offers a real Interactive Labs entry point',
     (tester) async {
       final l10n = await pumpRoute(tester, '/math-studio');
       expect(find.byType(MathStudioHubScreen), findsOneWidget);
 
-      await tester.ensureVisible(find.text(l10n.mathStudioSpatialIntelligenceTitle));
+      await tester
+          .ensureVisible(find.text(l10n.mathStudioSpatialIntelligenceTitle));
       await tester.tap(find.text(l10n.mathStudioSpatialIntelligenceTitle));
       await tester.pumpAndSettle();
 
       expect(find.byType(SpatialIntelligenceScreen), findsOneWidget);
-      expect(find.text(l10n.mathStudioInDevelopmentBadge), findsWidgets);
-      // Sub-items render with a bullet prefix ("•  Cube activities").
-      expect(find.textContaining(l10n.mathStudioSpatialCubeActivitiesLabel), findsOneWidget);
-      expect(find.textContaining(l10n.mathStudioSpatialRotationsLabel), findsOneWidget);
-      expect(find.textContaining(l10n.mathStudioSpatialTransformationsLabel), findsOneWidget);
-      expect(find.textContaining(l10n.mathStudioSpatialPuzzlesLabel), findsOneWidget);
+      // No longer an "in development" placeholder — every one of the 4
+      // RC1-minimum activities is a real, tappable entry card.
+      expect(find.text(l10n.mathStudioInDevelopmentBadge), findsNothing);
+      expect(find.text(l10n.mathStudioSpatialCubeNetsLabel), findsOneWidget);
+      expect(find.text(l10n.mathStudioSpatialRotationsLabel), findsOneWidget);
+      expect(find.text(l10n.mathStudioSpatialTransformationsLabel),
+          findsOneWidget);
+      expect(find.text(l10n.mathStudioSpatialPuzzlesLabel), findsOneWidget);
 
-      // Real, working entry point — distinct from the inert in-development
-      // card above it.
+      await tester.tap(find.text(l10n.mathStudioSpatialCubeNetsLabel));
+      await tester.pumpAndSettle();
+      expect(find.byType(CubeNetsScreen), findsOneWidget);
+      await tester.tap(find.byIcon(Icons.arrow_back));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text(l10n.mathStudioSpatialRotationsLabel));
+      await tester.pumpAndSettle();
+      expect(find.byType(RotationsScreen), findsOneWidget);
+      await tester.tap(find.byIcon(Icons.arrow_back));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text(l10n.mathStudioSpatialTransformationsLabel));
+      await tester.pumpAndSettle();
+      expect(find.byType(TransformationsScreen), findsOneWidget);
+      await tester.tap(find.byIcon(Icons.arrow_back));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text(l10n.mathStudioSpatialPuzzlesLabel));
+      await tester.pumpAndSettle();
+      expect(find.byType(SpatialPuzzlesScreen), findsOneWidget);
+      await tester.tap(find.byIcon(Icons.arrow_back));
+      await tester.pumpAndSettle();
+      expect(find.byType(SpatialIntelligenceScreen), findsOneWidget);
+
+      // The existing Interactive Labs entry point is unchanged.
       final labsEntry = find.text(l10n.mathStudioInteractiveLabsTitle);
       expect(labsEntry, findsOneWidget);
       await tester.ensureVisible(labsEntry);
@@ -139,14 +194,47 @@ void main() {
 
     expect(
       find.bySemanticsLabel(
-        RegExp('${RegExp.escape(l10n.mathStudioMathMagicTitle)}.*${RegExp.escape(l10n.mathStudioInDevelopmentBadge)}'),
-      ),
+          RegExp(RegExp.escape(l10n.mathStudioBuildConfidenceTitle))),
       findsOneWidget,
-      reason: 'In-development pillar tiles should surface their badge in semantics too',
+    );
+  });
+
+  // No Math Studio pillar is currently "in development" — both Math &
+  // Magic and Spatial Intelligence shipped real content (see
+  // docs/RC1_FEATURE_FREEZE.md's 2026-08-02 changelog). InDevelopmentFeatureCard
+  // itself still exists for any future pillar that needs it, so its own
+  // semantics contract (badge/note folded into one label, never a fake
+  // tappable element) is verified directly here instead of via a live
+  // pillar screen.
+  testWidgets(
+      'InDevelopmentFeatureCard surfaces its badge in semantics and carries no tap handler',
+      (tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: Scaffold(
+          body: InDevelopmentFeatureCard(
+            icon: Icons.science_outlined,
+            title: 'Example Pillar',
+            body: 'Example body copy.',
+            badge: 'In development',
+            note: 'Check back soon.',
+          ),
+        ),
+      ),
+    );
+
+    expect(
+      find.bySemanticsLabel(RegExp('Example Pillar.*In development')),
+      findsOneWidget,
+    );
+    final cardFinder = find.byType(InDevelopmentFeatureCard);
+    expect(
+      find.descendant(of: cardFinder, matching: find.byType(InkWell)),
+      findsNothing,
     );
     expect(
-      find.bySemanticsLabel(RegExp(RegExp.escape(l10n.mathStudioBuildConfidenceTitle))),
-      findsOneWidget,
+      find.descendant(of: cardFinder, matching: find.byType(GestureDetector)),
+      findsNothing,
     );
   });
 }

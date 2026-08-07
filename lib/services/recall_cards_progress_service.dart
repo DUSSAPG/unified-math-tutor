@@ -37,28 +37,38 @@ class RecallCardsProgressService {
     _prefs = await SharedPreferences.getInstance();
   }
 
-  String _learnerKey() => LearnerProfilesService.instance.activeLearnerId.value ?? 'default';
+  String _learnerKey() =>
+      LearnerProfilesService.instance.activeLearnerId.value ?? 'default';
   String _stageKey(String cardId) => 'recall_stage_${_learnerKey()}_$cardId';
   String _easeKey(String cardId) => 'recall_ease_${_learnerKey()}_$cardId';
-  String _reviewCountKey(String cardId) => 'recall_reviewcount_${_learnerKey()}_$cardId';
-  String _lastReviewedKey(String cardId) => 'recall_lastreviewed_${_learnerKey()}_$cardId';
-  String _nextReviewKey(String cardId) => 'recall_nextreview_${_learnerKey()}_$cardId';
-  String _misconceptionKey(String cardId) => 'recall_misconception_${_learnerKey()}_$cardId';
+  String _reviewCountKey(String cardId) =>
+      'recall_reviewcount_${_learnerKey()}_$cardId';
+  String _lastReviewedKey(String cardId) =>
+      'recall_lastreviewed_${_learnerKey()}_$cardId';
+  String _nextReviewKey(String cardId) =>
+      'recall_nextreview_${_learnerKey()}_$cardId';
+  String _misconceptionKey(String cardId) =>
+      'recall_misconception_${_learnerKey()}_$cardId';
   String _revealBeforeAnswerKey(String cardId) =>
       'recall_revealbeforeanswer_${_learnerKey()}_$cardId';
-  String _linkedPracticeKey(String cardId) => 'recall_linkedpractice_${_learnerKey()}_$cardId';
-  String _linkedLabKey(String cardId) => 'recall_linkedlab_${_learnerKey()}_$cardId';
+  String _linkedPracticeKey(String cardId) =>
+      'recall_linkedpractice_${_learnerKey()}_$cardId';
+  String _linkedLabKey(String cardId) =>
+      'recall_linkedlab_${_learnerKey()}_$cardId';
   String get _bookmarksKey => 'recall_bookmarks_${_learnerKey()}';
   String get _recentKey => 'recall_recent_${_learnerKey()}';
 
   // ── Raw per-card fields ──────────────────────────────────────────────────
 
-  String _stageId(String cardId) => _prefs.getString(_stageKey(cardId)) ?? 'new';
+  String _stageId(String cardId) =>
+      _prefs.getString(_stageKey(cardId)) ?? 'new';
 
   double easeFactorFor(String cardId) =>
-      double.tryParse(_prefs.getString(_easeKey(cardId)) ?? '') ?? _defaultEaseFactor;
+      double.tryParse(_prefs.getString(_easeKey(cardId)) ?? '') ??
+      _defaultEaseFactor;
 
-  int reviewCountFor(String cardId) => _prefs.getInt(_reviewCountKey(cardId)) ?? 0;
+  int reviewCountFor(String cardId) =>
+      _prefs.getInt(_reviewCountKey(cardId)) ?? 0;
 
   DateTime? lastReviewedFor(String cardId) {
     final raw = _prefs.getString(_lastReviewedKey(cardId));
@@ -70,14 +80,17 @@ class RecallCardsProgressService {
     return raw == null ? null : DateTime.tryParse(raw);
   }
 
-  bool misconceptionFlagFor(String cardId) => _prefs.getBool(_misconceptionKey(cardId)) ?? false;
+  bool misconceptionFlagFor(String cardId) =>
+      _prefs.getBool(_misconceptionKey(cardId)) ?? false;
 
   int revealBeforeAnswerCountFor(String cardId) =>
       _prefs.getInt(_revealBeforeAnswerKey(cardId)) ?? 0;
 
-  int linkedPracticeUseCountFor(String cardId) => _prefs.getInt(_linkedPracticeKey(cardId)) ?? 0;
+  int linkedPracticeUseCountFor(String cardId) =>
+      _prefs.getInt(_linkedPracticeKey(cardId)) ?? 0;
 
-  int linkedInteractiveLabUseCountFor(String cardId) => _prefs.getInt(_linkedLabKey(cardId)) ?? 0;
+  int linkedInteractiveLabUseCountFor(String cardId) =>
+      _prefs.getInt(_linkedLabKey(cardId)) ?? 0;
 
   /// Effective scheduler state: "new" and "mastered"/"learning" reflect the
   /// underlying stage, but any scheduled card whose [nextReviewFor] has
@@ -96,7 +109,8 @@ class RecallCardsProgressService {
 
   // ── Bookmarks ────────────────────────────────────────────────────────────
 
-  Set<String> bookmarkedIds() => (_prefs.getStringList(_bookmarksKey) ?? const []).toSet();
+  Set<String> bookmarkedIds() =>
+      (_prefs.getStringList(_bookmarksKey) ?? const []).toSet();
 
   bool isBookmarked(String cardId) => bookmarkedIds().contains(cardId);
 
@@ -133,7 +147,8 @@ class RecallCardsProgressService {
     final due = nextReviewFor(cardId);
     final tomorrow = DateTime.now().add(const Duration(days: 1));
     if (due == null || !due.isAfter(DateTime.now())) {
-      await _prefs.setString(_nextReviewKey(cardId), tomorrow.toIso8601String());
+      await _prefs.setString(
+          _nextReviewKey(cardId), tomorrow.toIso8601String());
     }
     updateSerial.value++;
   }
@@ -155,9 +170,10 @@ class RecallCardsProgressService {
     final now = DateTime.now();
     final prevLastReviewed = lastReviewedFor(cardId);
     final prevNextReview = nextReviewFor(cardId);
-    final prevIntervalDays = (prevLastReviewed != null && prevNextReview != null)
-        ? prevNextReview.difference(prevLastReviewed).inDays.clamp(1, 3650)
-        : 1;
+    final prevIntervalDays =
+        (prevLastReviewed != null && prevNextReview != null)
+            ? prevNextReview.difference(prevLastReviewed).inDays.clamp(1, 3650)
+            : 1;
     final stage = _stageId(cardId);
     var ease = easeFactorFor(cardId);
     final reviewCount = reviewCountFor(cardId);
@@ -171,7 +187,8 @@ class RecallCardsProgressService {
         intervalDays = 1;
       } else {
         intervalDays = (prevIntervalDays * ease).round().clamp(1, 3650);
-        nextStage = intervalDays >= _masteryIntervalDays ? 'mastered' : 'learning';
+        nextStage =
+            intervalDays >= _masteryIntervalDays ? 'mastered' : 'learning';
       }
       if (card.cardType.name == 'misconception') {
         await _prefs.setBool(_misconceptionKey(cardId), false);
@@ -194,19 +211,22 @@ class RecallCardsProgressService {
       now.add(Duration(days: intervalDays)).toIso8601String(),
     );
     if (revealedBeforeAnswer) {
-      await _prefs.setInt(_revealBeforeAnswerKey(cardId), revealBeforeAnswerCountFor(cardId) + 1);
+      await _prefs.setInt(_revealBeforeAnswerKey(cardId),
+          revealBeforeAnswerCountFor(cardId) + 1);
     }
     await recordShown(cardId);
     updateSerial.value++;
   }
 
   Future<void> recordLinkedPracticeUse(String cardId) async {
-    await _prefs.setInt(_linkedPracticeKey(cardId), linkedPracticeUseCountFor(cardId) + 1);
+    await _prefs.setInt(
+        _linkedPracticeKey(cardId), linkedPracticeUseCountFor(cardId) + 1);
     updateSerial.value++;
   }
 
   Future<void> recordLinkedInteractiveLabUse(String cardId) async {
-    await _prefs.setInt(_linkedLabKey(cardId), linkedInteractiveLabUseCountFor(cardId) + 1);
+    await _prefs.setInt(
+        _linkedLabKey(cardId), linkedInteractiveLabUseCountFor(cardId) + 1);
     updateSerial.value++;
   }
 }

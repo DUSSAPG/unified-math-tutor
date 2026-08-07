@@ -10,19 +10,26 @@ const _productionLocales = ['en', 'en-GB', 'de-CH', 'fr-CH', 'it-CH'];
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  test('RC1 catalog contains exactly 24 cards with unique ids', () async {
+  test('catalog contains exactly 54 cards with unique ids', () async {
+    // 24 from RC1 + 30 from Sprint 2's Applied Discovery Category Pack
+    // (see docs/APPLIED_DISCOVERY_PACK_BUILD_REPORT.md). Update this
+    // count deliberately alongside the audit docs on any future content
+    // change.
     final cards = await DiscoveryCardCatalogService.instance.all();
-    expect(cards, hasLength(24));
-    expect(cards.map((c) => c.id).toSet(), hasLength(24));
+    expect(cards, hasLength(54));
+    expect(cards.map((c) => c.id).toSet(), hasLength(54));
   });
 
-  test('every sports card has a sport tag and non-sports cards do not', () async {
+  test('every sports card has a sport tag and non-sports cards do not',
+      () async {
     final cards = await DiscoveryCardCatalogService.instance.all();
     for (final card in cards) {
       if (card.category == DiscoveryCategory.sports) {
-        expect(card.sport, isNotNull, reason: '${card.id} is sports but has no sport tag');
+        expect(card.sport, isNotNull,
+            reason: '${card.id} is sports but has no sport tag');
       } else {
-        expect(card.sport, isNull, reason: '${card.id} is not sports but has a sport tag');
+        expect(card.sport, isNull,
+            reason: '${card.id} is not sports but has a sport tag');
       }
     }
   });
@@ -33,18 +40,23 @@ void main() {
     expect(sports, SportType.values.toSet());
   });
 
-  test('every card has real, non-empty text for all 5 production locales', () async {
+  test('every card has real, non-empty text for all 5 production locales',
+      () async {
     final cards = await DiscoveryCardCatalogService.instance.all();
     for (final card in cards) {
       for (final locale in _productionLocales) {
         final text = card.locales[locale];
         expect(text, isNotNull, reason: '${card.id} missing locale "$locale"');
-        expect(text!.title.trim(), isNotEmpty, reason: '${card.id}/$locale title empty');
-        expect(text.scenario.trim(), isNotEmpty, reason: '${card.id}/$locale scenario empty');
+        expect(text!.title.trim(), isNotEmpty,
+            reason: '${card.id}/$locale title empty');
+        expect(text.scenario.trim(), isNotEmpty,
+            reason: '${card.id}/$locale scenario empty');
         expect(text.challengeQuestion.trim(), isNotEmpty,
             reason: '${card.id}/$locale challengeQuestion empty');
-        expect(text.workedSteps, isNotEmpty, reason: '${card.id}/$locale has no worked steps');
-        expect(text.explanation.trim(), isNotEmpty, reason: '${card.id}/$locale explanation empty');
+        expect(text.workedSteps, isNotEmpty,
+            reason: '${card.id}/$locale has no worked steps');
+        expect(text.explanation.trim(), isNotEmpty,
+            reason: '${card.id}/$locale explanation empty');
         expect(text.whereYoullUseThis.trim(), isNotEmpty,
             reason: '${card.id}/$locale whereYoullUseThis empty');
         expect(text.followUpQuestion.trim(), isNotEmpty,
@@ -73,25 +85,46 @@ void main() {
     }
   });
 
-  test('no runtime-forbidden "Vedic Maths" label anywhere in the catalog', () async {
-    final raw = await rootBundle.loadString(DiscoveryCardCatalogService.assetPath);
+  test('no runtime-forbidden "Vedic Maths" label anywhere in the catalog',
+      () async {
+    final raw =
+        await rootBundle.loadString(DiscoveryCardCatalogService.assetPath);
     expect(raw.toLowerCase().contains('vedic'), isFalse);
   });
 
-  test('deferred categories (no RC1 card) still validate against the schema',
+  test(
+      'deferred categories (still no card, post-Sprint-2) validate against the schema',
       () async {
-    // engineeringConstruction/artDesign/gaming/businessFinance ship no
-    // dedicated RC1 card, but must remain valid, parseable enum values so a
-    // future content-only batch can add cards without a schema change.
-    for (final id in ['engineeringConstruction', 'artDesign', 'gaming', 'businessFinance']) {
+    // gaming/businessFinance ship no dedicated card (Sprint 2's Applied
+    // Discovery Category Pack populated engineeringConstruction and
+    // artDesign, which used to be in this list too — see
+    // docs/APPLIED_DISCOVERY_PACK_BUILD_REPORT.md), but must remain
+    // valid, parseable enum values so a future content-only batch can
+    // add cards without a schema change.
+    for (final id in ['gaming', 'businessFinance']) {
       expect(() => DiscoveryCategory.fromId(id), returnsNormally);
     }
   });
 
-  test('bundled catalog JSON round-trips through jsonDecode without error', () async {
-    final raw = await rootBundle.loadString(DiscoveryCardCatalogService.assetPath);
+  test(
+      "Sprint 2's 3 new categories (no enum value before this sprint) parse correctly",
+      () async {
+    for (final id in [
+      'architectureConstruction',
+      'environmentClimate',
+      'computingCryptography',
+    ]) {
+      expect(() => DiscoveryCategory.fromId(id), returnsNormally);
+    }
+  });
+
+  test('bundled catalog JSON round-trips through jsonDecode without error',
+      () async {
+    final raw =
+        await rootBundle.loadString(DiscoveryCardCatalogService.assetPath);
     expect(() => jsonDecode(raw), returnsNormally);
   });
 }
 
-String _normalize(String value) => value.toLowerCase().replaceAll(RegExp(r'\s+'), ' ').trim();
+String _normalize(String value) =>
+    value.toLowerCase().replaceAll(RegExp(r'\s+'), ' ').trim();

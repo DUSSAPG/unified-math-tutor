@@ -38,14 +38,16 @@ void main() {
     await tester.pumpAndSettle();
   }
 
-  testWidgets('first challenge prompts to reach 7 and reuses NumberLineWidget', (tester) async {
+  testWidgets('first challenge prompts to reach 7 and reuses NumberLineWidget',
+      (tester) async {
     await pump(tester);
     expect(find.text('Move the point to 7.'), findsOneWidget);
     expect(find.byType(NumberLineWidget), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('dragging to the target then Check gives correct feedback', (tester) async {
+  testWidgets('dragging to the target then Check gives correct feedback',
+      (tester) async {
     await pump(tester);
     final rect = tester.getRect(find.byType(NumberLineWidget));
     // Challenge 1 is min:0 max:10 target:7 -> 70% along the widget.
@@ -60,7 +62,8 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('checking without moving from the start gives try-again feedback', (tester) async {
+  testWidgets('checking without moving from the start gives try-again feedback',
+      (tester) async {
     await pump(tester);
     await tester.ensureVisible(find.text('Check'));
     await tester.tap(find.text('Check'));
@@ -70,7 +73,8 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('the + and - buttons step the value for keyboard/switch accessibility',
+  testWidgets(
+      'the + and - buttons step the value for keyboard/switch accessibility',
       (tester) async {
     await pump(tester);
     await tester.tap(find.byIcon(Icons.add_circle_outline));
@@ -84,7 +88,8 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('Next cycles to the next deterministic challenge', (tester) async {
+  testWidgets('Next cycles to the next deterministic challenge',
+      (tester) async {
     await pump(tester);
     await tester.ensureVisible(find.text('Next'));
     await tester.tap(find.text('Next'));

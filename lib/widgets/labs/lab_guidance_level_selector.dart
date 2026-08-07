@@ -11,7 +11,8 @@ import '../../services/interactive_labs_progress_service.dart';
 class LabGuidanceLevelSelector extends StatelessWidget {
   const LabGuidanceLevelSelector({super.key});
 
-  String _labelFor(AppLocalizations l10n, LabGuidanceLevel level) => switch (level) {
+  String _labelFor(AppLocalizations l10n, LabGuidanceLevel level) =>
+      switch (level) {
         LabGuidanceLevel.explorer => l10n.labsGuidanceExplorer,
         LabGuidanceLevel.builder => l10n.labsGuidanceBuilder,
         LabGuidanceLevel.navigator => l10n.labsGuidanceNavigator,
@@ -46,8 +47,8 @@ class LabGuidanceLevelSelector extends StatelessWidget {
                   ChoiceChip(
                     label: Text(_labelFor(l10n, level)),
                     selected: current == level,
-                    onSelected: (_) =>
-                        InteractiveLabsProgressService.instance.setGuidanceLevel(level),
+                    onSelected: (_) => InteractiveLabsProgressService.instance
+                        .setGuidanceLevel(level),
                   ),
               ],
             ),

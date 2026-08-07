@@ -27,15 +27,22 @@ class _RecordingBundle extends CachingAssetBundle {
 
   @override
   Future<ByteData> load(String key) async {
-    return ByteData.sublistView(Uint8List.fromList(utf8.encode(await loadString(key))));
+    return ByteData.sublistView(
+        Uint8List.fromList(utf8.encode(await loadString(key))));
   }
 }
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  group('English-region locales never probe a nonexistent per-locale teaser file', () {
-    for (final locale in [const Locale('en'), const Locale('en', 'GB'), const Locale('en', 'US')]) {
+  group(
+      'English-region locales never probe a nonexistent per-locale teaser file',
+      () {
+    for (final locale in [
+      const Locale('en'),
+      const Locale('en', 'GB'),
+      const Locale('en', 'US')
+    ]) {
       test('$locale only requests the base teasersAssetPath', () async {
         final bundle = _RecordingBundle();
         final service = MentalMathVaultService(bundle: bundle);

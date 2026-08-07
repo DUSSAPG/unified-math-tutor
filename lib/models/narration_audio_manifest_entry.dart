@@ -29,7 +29,8 @@ class NarrationAudioManifestEntry {
   final int durationMs;
   final int contentVersion;
 
-  factory NarrationAudioManifestEntry.fromJson(Map<String, dynamic> json) => NarrationAudioManifestEntry(
+  factory NarrationAudioManifestEntry.fromJson(Map<String, dynamic> json) =>
+      NarrationAudioManifestEntry(
         messageId: json['messageId'] as String,
         locale: json['locale'] as String,
         text: json['text'] as String,

@@ -11,6 +11,7 @@ import '../../services/recall_card_catalog_service.dart';
 import '../../services/recall_card_selector.dart';
 import '../../services/recall_cards_progress_service.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 import 'recall_card_labels.dart';
 
 /// Recall Cards landing page. Curriculum-independent, reachable from the
@@ -37,14 +38,17 @@ class _RecallCardsHubScreenState extends State<RecallCardsHubScreen> {
     final progress = RecallCardsProgressService.instance;
     return [
       for (final card in cards)
-        if (card.spacedReviewEligible && progress.stateFor(card.id) == RecallCardState.reviewDue)
+        if (card.spacedReviewEligible &&
+            progress.stateFor(card.id) == RecallCardState.reviewDue)
           card.id,
     ]..sort();
   }
 
   Future<void> _startSession(List<RecallCard> cards, List<String> ids) async {
     if (ids.isEmpty) return;
-    final selected = [for (final id in ids) cards.firstWhere((c) => c.id == id)];
+    final selected = [
+      for (final id in ids) cards.firstWhere((c) => c.id == id)
+    ];
     await context.push('/math-studio/recall-cards/session', extra: selected);
   }
 
@@ -70,18 +74,20 @@ class _RecallCardsHubScreenState extends State<RecallCardsHubScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0B1120),
+        backgroundColor: colors.background,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: colors.primaryText),
           onPressed: () => popOrGo(context, '/math-studio'),
         ),
         title: Text(
           l10n.recallCardsHubTitle,
-          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+          style:
+              TextStyle(color: colors.primaryText, fontWeight: FontWeight.w700),
         ),
       ),
       body: SafeArea(
@@ -90,8 +96,9 @@ class _RecallCardsHubScreenState extends State<RecallCardsHubScreen> {
           builder: (context, snapshot) {
             final cards = snapshot.data;
             if (snapshot.hasError) {
-              return const Center(
-                child: Icon(Icons.error_outline, color: Color(0xFF8A9DC0), size: 32),
+              return Center(
+                child: Icon(Icons.error_outline,
+                    color: colors.secondaryText, size: 32),
               );
             }
             if (cards == null) {
@@ -101,7 +108,8 @@ class _RecallCardsHubScreenState extends State<RecallCardsHubScreen> {
 
             return Center(
               child: ConstrainedBox(
-                constraints: BoxConstraints(maxWidth: AppResponsive.contentMaxWidth(context)),
+                constraints: BoxConstraints(
+                    maxWidth: AppResponsive.contentMaxWidth(context)),
                 child: ListenableBuilder(
                   listenable: RecallCardsProgressService.instance.updateSerial,
                   builder: (context, _) => SingleChildScrollView(
@@ -111,7 +119,10 @@ class _RecallCardsHubScreenState extends State<RecallCardsHubScreen> {
                       children: [
                         Text(
                           l10n.recallCardsHubSubtitle,
-                          style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 15, height: 1.4),
+                          style: TextStyle(
+                              color: colors.secondaryText,
+                              fontSize: 15,
+                              height: 1.4),
                         ),
                         const SizedBox(height: AppSpacing.lg),
                         _RecallRouteCard(
@@ -129,13 +140,15 @@ class _RecallCardsHubScreenState extends State<RecallCardsHubScreen> {
                           subtitle: dueCount > 0
                               ? l10n.recallCardsReviewDueCount(dueCount)
                               : l10n.recallCardsReviewDueEmpty,
-                          onTap: dueCount > 0 ? () => _startSession(cards, _dueIds(cards)) : null,
+                          onTap: dueCount > 0
+                              ? () => _startSession(cards, _dueIds(cards))
+                              : null,
                         ),
                         const SizedBox(height: AppSpacing.lg),
                         Text(
                           l10n.recallCardsBrowseByTopicTitle,
-                          style: const TextStyle(
-                            color: Colors.white,
+                          style: TextStyle(
+                            color: colors.primaryText,
                             fontSize: 14,
                             fontWeight: FontWeight.w700,
                           ),
@@ -158,8 +171,8 @@ class _RecallCardsHubScreenState extends State<RecallCardsHubScreen> {
                         const SizedBox(height: AppSpacing.lg),
                         Text(
                           l10n.recallCardsBrowseByTypeTitle,
-                          style: const TextStyle(
-                            color: Colors.white,
+                          style: TextStyle(
+                            color: colors.primaryText,
                             fontSize: 14,
                             fontWeight: FontWeight.w700,
                           ),
@@ -185,7 +198,8 @@ class _RecallCardsHubScreenState extends State<RecallCardsHubScreen> {
                           iconColor: const Color(0xFF5B8EFF),
                           title: l10n.recallCardsSearchTitle,
                           subtitle: l10n.recallCardsSearchHint,
-                          onTap: () => context.push('/math-studio/recall-cards/browse'),
+                          onTap: () =>
+                              context.push('/math-studio/recall-cards/browse'),
                         ),
                         const SizedBox(height: 10),
                         _RecallRouteCard(
@@ -193,7 +207,8 @@ class _RecallCardsHubScreenState extends State<RecallCardsHubScreen> {
                           iconColor: const Color(0xFFFFBD00),
                           title: l10n.recallCardsBookmarksTitle,
                           subtitle: '',
-                          onTap: () => context.push('/math-studio/recall-cards/bookmarks'),
+                          onTap: () => context
+                              .push('/math-studio/recall-cards/bookmarks'),
                         ),
                       ],
                     ),
@@ -225,9 +240,10 @@ class _RecallRouteCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     final enabled = onTap != null;
     return Material(
-      color: const Color(0xFF132040),
+      color: colors.cardSurface,
       borderRadius: BorderRadius.circular(14),
       child: InkWell(
         borderRadius: BorderRadius.circular(14),
@@ -238,7 +254,7 @@ class _RecallRouteCard extends StatelessWidget {
             padding: const EdgeInsets.all(14),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: const Color(0xFF1F3055)),
+              border: Border.all(color: colors.divider),
             ),
             child: Row(
               children: [
@@ -258,8 +274,8 @@ class _RecallRouteCard extends StatelessWidget {
                     children: [
                       Text(
                         title,
-                        style: const TextStyle(
-                          color: Colors.white,
+                        style: TextStyle(
+                          color: colors.primaryText,
                           fontSize: 15,
                           fontWeight: FontWeight.w700,
                         ),
@@ -268,13 +284,17 @@ class _RecallRouteCard extends StatelessWidget {
                         const SizedBox(height: 3),
                         Text(
                           subtitle,
-                          style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13, height: 1.3),
+                          style: TextStyle(
+                              color: colors.secondaryText,
+                              fontSize: 13,
+                              height: 1.3),
                         ),
                       ],
                     ],
                   ),
                 ),
-                if (enabled) const Icon(Icons.chevron_right, color: Color(0xFF4A6080)),
+                if (enabled)
+                  Icon(Icons.chevron_right, color: colors.tertiaryText),
               ],
             ),
           ),

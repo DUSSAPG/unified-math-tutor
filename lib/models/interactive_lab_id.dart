@@ -6,7 +6,12 @@ enum InteractiveLabId {
   algebraBalance,
   numberLineExplorer,
   flightPathLab,
-  dataDetective;
+  footballPrecision,
+  mazeDriver,
+  dataDetective,
+  spatialCubeLab,
+  aircraftLandingLab,
+  earlyMathsPlayground;
 
   static InteractiveLabId fromId(String id) {
     for (final value in InteractiveLabId.values) {

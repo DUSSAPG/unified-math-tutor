@@ -14,7 +14,15 @@ enum DiscoveryCategory {
   engineeringConstruction,
   artDesign,
   gaming,
-  businessFinance;
+  businessFinance,
+  // Added for the Applied Discovery Category Pack (Sprint 2). Distinct
+  // from engineeringConstruction (structural/mechanical engineering) —
+  // see docs/DISCOVERY_RECALL_COVERAGE_AUDIT.md's "Open risk flagged
+  // for Sprint 2" section for why these three needed new values rather
+  // than folding into an existing category.
+  architectureConstruction,
+  environmentClimate,
+  computingCryptography;
 
   static DiscoveryCategory fromId(String id) {
     for (final value in DiscoveryCategory.values) {
@@ -155,7 +163,8 @@ class DiscoveryCardFollowUp {
         'Discovery card "$cardId" followUp.answerUnit must be a string if present.',
       );
     }
-    return DiscoveryCardFollowUp(answerValue: value, answerUnit: unit as String?);
+    return DiscoveryCardFollowUp(
+        answerValue: value, answerUnit: unit as String?);
   }
 }
 
@@ -215,17 +224,20 @@ class DiscoveryCard {
         'Discovery card "$id" is not category "sports" and must not set a "sport".',
       );
     }
-    final sport = sportValue == null ? null : SportType.fromId(sportValue as String);
+    final sport =
+        sportValue == null ? null : SportType.fromId(sportValue as String);
 
     final difficultyValue = json['difficulty'];
     if (difficultyValue is! String) {
-      throw FormatException('Discovery card "$id" difficulty must be a string.');
+      throw FormatException(
+          'Discovery card "$id" difficulty must be a string.');
     }
     final difficulty = CardDifficulty.fromId(difficultyValue);
 
     final tagsValue = json['curriculumTags'];
     if (tagsValue != null && tagsValue is! List) {
-      throw FormatException('Discovery card "$id" curriculumTags must be a list.');
+      throw FormatException(
+          'Discovery card "$id" curriculumTags must be a list.');
     }
     final curriculumTags = (tagsValue as List<dynamic>? ?? const [])
         .map((tag) => CurriculumTag.fromId(tag as String))
@@ -261,7 +273,8 @@ class DiscoveryCard {
 
     final localesValue = json['locales'];
     if (localesValue is! Map<String, dynamic> || localesValue.isEmpty) {
-      throw FormatException('Discovery card "$id" locales must be a non-empty object.');
+      throw FormatException(
+          'Discovery card "$id" locales must be a non-empty object.');
     }
     if (!localesValue.containsKey('en')) {
       throw FormatException('Discovery card "$id" locales must include "en".');
@@ -274,7 +287,8 @@ class DiscoveryCard {
           'Discovery card "$id" locale "${entry.key}" must be an object.',
         );
       }
-      locales[entry.key] = DiscoveryCardLocaleText.fromJson(value, id, entry.key);
+      locales[entry.key] =
+          DiscoveryCardLocaleText.fromJson(value, id, entry.key);
     }
 
     return DiscoveryCard(
@@ -297,7 +311,8 @@ class DiscoveryCard {
     final countryCode = locale.countryCode;
     final languageCode = locale.languageCode;
     final tags = <String>[
-      if (countryCode != null && countryCode.isNotEmpty) '$languageCode-$countryCode',
+      if (countryCode != null && countryCode.isNotEmpty)
+        '$languageCode-$countryCode',
       languageCode,
       // Card content only ships region-qualified translations (de-CH,
       // fr-CH, it-CH), narrower than the app's 20-locale UI-chrome ARB

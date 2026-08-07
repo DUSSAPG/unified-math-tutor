@@ -56,7 +56,8 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('category screen shows a prompt and accepts a correct numeric answer',
+  testWidgets(
+      'category screen shows a prompt and accepts a correct numeric answer',
       (tester) async {
     await tester.runAsync(() async {
       await tester.pumpWidget(
@@ -77,7 +78,8 @@ void main() {
     });
   });
 
-  testWidgets('the same category renders the same prompt across two loads on the same day',
+  testWidgets(
+      'the same category renders the same prompt across two loads on the same day',
       (tester) async {
     String? firstPrompt;
     String? secondPrompt;

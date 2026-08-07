@@ -2,9 +2,11 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../models/recall_card.dart';
 import '../../models/recall_card_state.dart';
-import '../discovery/discovery_category_labels.dart' show discoveryDifficultyLabel;
+import '../discovery/discovery_category_labels.dart'
+    show discoveryDifficultyLabel;
 
-export '../discovery/discovery_category_labels.dart' show discoveryDifficultyLabel;
+export '../discovery/discovery_category_labels.dart'
+    show discoveryDifficultyLabel;
 
 /// Centralised topic/type/state display-name lookup, shared by every Recall
 /// Cards screen so labels never drift apart. Difficulty reuses
@@ -30,7 +32,8 @@ String recallCardTypeLabel(AppLocalizations l10n, RecallCardType type) {
     RecallCardType.strategy => l10n.recallCardsTypeStrategy,
     RecallCardType.misconception => l10n.recallCardsTypeMisconception,
     RecallCardType.visual => l10n.recallCardsTypeVisual,
-    RecallCardType.realWorldConnection => l10n.recallCardsTypeRealWorldConnection,
+    RecallCardType.realWorldConnection =>
+      l10n.recallCardsTypeRealWorldConnection,
   };
 }
 

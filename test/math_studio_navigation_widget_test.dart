@@ -84,7 +84,8 @@ void main() {
           GlobalCupertinoLocalizations.delegate,
         ],
         builder: (context, child) => MediaQuery(
-          data: MediaQuery.of(context).copyWith(textScaler: TextScaler.linear(textScale)),
+          data: MediaQuery.of(context)
+              .copyWith(textScaler: TextScaler.linear(textScale)),
           child: child!,
         ),
       ),
@@ -138,7 +139,8 @@ void main() {
             );
           }
 
-          await tester.ensureVisible(find.text(l10n.mathStudioBuildConfidenceTitle));
+          await tester
+              .ensureVisible(find.text(l10n.mathStudioBuildConfidenceTitle));
           await tester.tap(find.text(l10n.mathStudioBuildConfidenceTitle));
           await tester.pumpAndSettle();
           expect(find.byType(BuildConfidenceScreen), findsOneWidget);
@@ -147,7 +149,8 @@ void main() {
           await tester.tap(find.byIcon(Icons.arrow_back));
           await tester.pumpAndSettle();
 
-          await tester.ensureVisible(find.text(l10n.mathStudioMentalMathsTitle));
+          await tester
+              .ensureVisible(find.text(l10n.mathStudioMentalMathsTitle));
           await tester.tap(find.text(l10n.mathStudioMentalMathsTitle));
           await tester.pumpAndSettle();
           expect(find.byType(MentalMathsHubScreen), findsOneWidget);
@@ -156,7 +159,8 @@ void main() {
           await tester.tap(find.byIcon(Icons.arrow_back));
           await tester.pumpAndSettle();
 
-          await tester.ensureVisible(find.text(l10n.mathStudioVisualMathsTitle));
+          await tester
+              .ensureVisible(find.text(l10n.mathStudioVisualMathsTitle));
           await tester.tap(find.text(l10n.mathStudioVisualMathsTitle));
           await tester.pumpAndSettle();
           expect(find.byType(VisualMathsHubScreen), findsOneWidget);
@@ -169,19 +173,25 @@ void main() {
           await tester.tap(find.text(l10n.mathStudioMathMagicTitle));
           await tester.pumpAndSettle();
           expect(find.byType(MathMagicScreen), findsOneWidget);
-          expect(find.text(l10n.mathStudioInDevelopmentBadge), findsWidgets);
+          // Math & Magic shipped its RC1-minimum real content — see
+          // docs/RC1_FEATURE_FREEZE.md's 2026-08-02 changelog entry — and no
+          // longer shows the in-development badge.
+          expect(find.text(l10n.mathStudioInDevelopmentBadge), findsNothing);
           expect(tester.takeException(), isNull,
               reason: 'Math & Magic overflowed for $locale at $viewport');
           await tester.tap(find.byIcon(Icons.arrow_back));
           await tester.pumpAndSettle();
 
-          await tester.ensureVisible(find.text(l10n.mathStudioSpatialIntelligenceTitle));
+          await tester.ensureVisible(
+              find.text(l10n.mathStudioSpatialIntelligenceTitle));
           await tester.tap(find.text(l10n.mathStudioSpatialIntelligenceTitle));
           await tester.pumpAndSettle();
           expect(find.byType(SpatialIntelligenceScreen), findsOneWidget);
-          expect(find.text(l10n.mathStudioInDevelopmentBadge), findsWidgets);
+          // Same for Spatial Intelligence, unfrozen the same day.
+          expect(find.text(l10n.mathStudioInDevelopmentBadge), findsNothing);
           expect(tester.takeException(), isNull,
-              reason: 'Spatial Intelligence overflowed for $locale at $viewport');
+              reason:
+                  'Spatial Intelligence overflowed for $locale at $viewport');
           await tester.tap(find.byIcon(Icons.arrow_back));
           await tester.pumpAndSettle();
 

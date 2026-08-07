@@ -1,0 +1,31 @@
+{
+  "$comment": "Documentation-only schema for assets/config/family_activities.json. Not enforced by a JSON-schema validator at build time — lib/models/family_activity.dart's FamilyActivity.fromJson performs the equivalent fail-fast validation at load time, and test/family_activity_schema_test.dart asserts every activity in the bundled asset satisfies it (including per-locale text completeness for the 5 production locales).",
+  "version": "integer, top-level catalog version",
+  "activities": [
+    {
+      "id": "string, must match ^[a-z0-9]+(-[a-z0-9]+)+$, stable and never reused",
+      "category": "one of: numberSense, addition, subtraction, multiplication, division, fractions, decimals, ratio, percentages, geometry, measurement, algebra, patterns, logic, mentalMaths, spatialReasoning",
+      "minAgeYears": "integer >= 3",
+      "maxAgeYears": "integer >= minAgeYears",
+      "minMinutes": "integer >= 5",
+      "maxMinutes": "integer <= 10, >= minMinutes — every activity must stay within a 5-10 minute window",
+      "contentVersion": "integer >= 1, bump whenever this activity's text changes",
+      "studioConnectionRouteSuffix": "string or null, relative to /math-studio/ (e.g. 'discovery/cooking-fraction-conversion', 'mental-maths') — optional link back into an existing pillar/card, never a new nav destination",
+      "visual": "object or omitted — { animationId: string }, a reference into assets/manim_static/manifest.json's own animationId (a separate pipeline, see docs/MANIM_PIPELINE_SPEC.md); duration/asset-path/review-status live only in that manifest, never duplicated here. No manifest-loading service or UI reads this yet — Phase 2 shipped it as inert data on exactly two candidate activities (ratio-recipes, cube-views) ahead of a future visual-support pass.",
+      "locales": {
+        "<bcp47 tag, e.g. en / en-GB / de-CH / fr-CH / it-CH>": {
+          "title": "string",
+          "materialsNeeded": "array of 1+ strings, everyday household items only",
+          "whatYourChildLearns": "string, the underlying concept in plain language",
+          "letsExplore": "string, what to do together — no worksheet, no right/wrong framing",
+          "questionsToAsk": "array of 2-4 strings, open questions a parent can ask without needing the answer themselves",
+          "commonMisconceptions": "string, what's developmentally normal to see and why",
+          "tryTomorrow": "string, a tiny follow-up that needs no preparation",
+          "captainMathPrompt": "string, Captain Math speaking directly to the child — concrete and inviting",
+          "alliePrompt": "string, Allie speaking to the parent — reassurance/light guidance, never an instruction to 'teach'; always static authored copy, never implies a live/conversational feature",
+          "studioConnectionNote": "string, required only when the activity's studioConnectionRouteSuffix is set; must be omitted otherwise"
+        }
+      }
+    }
+  ]
+}

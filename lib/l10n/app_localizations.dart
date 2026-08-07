@@ -366,6 +366,282 @@ abstract class AppLocalizations {
   /// **'Swiss Gymnasium'**
   String get practiceExamSwissGymnasium;
 
+  /// No description provided for @practiceExamEntranceExamPrep.
+  ///
+  /// In en, this message translates to:
+  /// **'Entrance Exam Prep'**
+  String get practiceExamEntranceExamPrep;
+
+  /// No description provided for @entranceExamHubTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Entrance Exam Preparation'**
+  String get entranceExamHubTitle;
+
+  /// No description provided for @entranceExamHubIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Independent-school entrance exam practice, separate from GCSE Exam Simulator — built for the 11+ age group and marked by comparing your own working to a model answer, not typed multiple choice.'**
+  String get entranceExamHubIntro;
+
+  /// No description provided for @entranceExamDisclaimerHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'Not affiliated with any school or exam board'**
+  String get entranceExamDisclaimerHeading;
+
+  /// No description provided for @entranceExamAgeBandLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Age band'**
+  String get entranceExamAgeBandLabel;
+
+  /// No description provided for @entranceExamDurationLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Duration'**
+  String get entranceExamDurationLabel;
+
+  /// No description provided for @entranceExamCalculatorLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Calculator'**
+  String get entranceExamCalculatorLabel;
+
+  /// No description provided for @entranceExamCalculatorNone.
+  ///
+  /// In en, this message translates to:
+  /// **'Not allowed'**
+  String get entranceExamCalculatorNone;
+
+  /// No description provided for @entranceExamCalculatorAllowed.
+  ///
+  /// In en, this message translates to:
+  /// **'Allowed'**
+  String get entranceExamCalculatorAllowed;
+
+  /// No description provided for @entranceExamCalculatorAllowedNonScientific.
+  ///
+  /// In en, this message translates to:
+  /// **'Allowed (non-scientific)'**
+  String get entranceExamCalculatorAllowedNonScientific;
+
+  /// No description provided for @entranceExamDurationMinutes.
+  ///
+  /// In en, this message translates to:
+  /// **'{minutes} min'**
+  String entranceExamDurationMinutes(int minutes);
+
+  /// No description provided for @entranceExamModePracticeBySkillTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice by Skill'**
+  String get entranceExamModePracticeBySkillTitle;
+
+  /// No description provided for @entranceExamModePracticeBySkillSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Work through questions grouped by skill, with worked methods to compare against.'**
+  String get entranceExamModePracticeBySkillSub;
+
+  /// No description provided for @entranceExamModeReviewMethodsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Review Methods'**
+  String get entranceExamModeReviewMethodsTitle;
+
+  /// No description provided for @entranceExamModeReviewMethodsSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Revisit every available question\'s full worked method — no timer, no marking.'**
+  String get entranceExamModeReviewMethodsSub;
+
+  /// No description provided for @entranceExamModeUntimedPaperTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Untimed Paper'**
+  String get entranceExamModeUntimedPaperTitle;
+
+  /// No description provided for @entranceExamModeUntimedPaperSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Sit the complete paper with no time limit.'**
+  String get entranceExamModeUntimedPaperSub;
+
+  /// No description provided for @entranceExamModeTimedMockTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Timed Mock'**
+  String get entranceExamModeTimedMockTitle;
+
+  /// No description provided for @entranceExamModeTimedMockSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Sit the complete paper under real exam timing.'**
+  String get entranceExamModeTimedMockSub;
+
+  /// No description provided for @entranceExamModeScholarshipChallengeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Scholarship Challenge'**
+  String get entranceExamModeScholarshipChallengeTitle;
+
+  /// No description provided for @entranceExamModeScholarshipChallengeSub.
+  ///
+  /// In en, this message translates to:
+  /// **'A stretch paper for scholarship-tier candidates.'**
+  String get entranceExamModeScholarshipChallengeSub;
+
+  /// No description provided for @entranceExamModeLockedFullPaperReason.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlocks once the full {declared}-question paper is ready — {authored} authored so far.'**
+  String entranceExamModeLockedFullPaperReason(int declared, int authored);
+
+  /// No description provided for @entranceExamModeLockedScholarshipReason.
+  ///
+  /// In en, this message translates to:
+  /// **'This pack is Foundation tier — Scholarship Challenge needs a scholarship-tier pack.'**
+  String get entranceExamModeLockedScholarshipReason;
+
+  /// No description provided for @entranceExamModeLockedBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Coming soon'**
+  String get entranceExamModeLockedBadge;
+
+  /// No description provided for @entranceExamSkillPickerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a Skill'**
+  String get entranceExamSkillPickerTitle;
+
+  /// No description provided for @entranceExamSkillQuestionCountLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} questions available'**
+  String entranceExamSkillQuestionCountLabel(int count);
+
+  /// No description provided for @entranceExamSkillNumberFluency.
+  ///
+  /// In en, this message translates to:
+  /// **'Number Fluency'**
+  String get entranceExamSkillNumberFluency;
+
+  /// No description provided for @entranceExamSkillFractionsAndPercentages.
+  ///
+  /// In en, this message translates to:
+  /// **'Fractions & Percentages'**
+  String get entranceExamSkillFractionsAndPercentages;
+
+  /// No description provided for @entranceExamSkillRatioAndProportion.
+  ///
+  /// In en, this message translates to:
+  /// **'Ratio & Proportion'**
+  String get entranceExamSkillRatioAndProportion;
+
+  /// No description provided for @entranceExamSkillAlgebraicReasoning.
+  ///
+  /// In en, this message translates to:
+  /// **'Algebraic Reasoning'**
+  String get entranceExamSkillAlgebraicReasoning;
+
+  /// No description provided for @entranceExamSkillShapeAndSpace.
+  ///
+  /// In en, this message translates to:
+  /// **'Shape & Space'**
+  String get entranceExamSkillShapeAndSpace;
+
+  /// No description provided for @entranceExamSkillDataAndLogic.
+  ///
+  /// In en, this message translates to:
+  /// **'Data & Logic'**
+  String get entranceExamSkillDataAndLogic;
+
+  /// No description provided for @entranceExamQuestionOf.
+  ///
+  /// In en, this message translates to:
+  /// **'Question {current} of {total}'**
+  String entranceExamQuestionOf(int current, int total);
+
+  /// No description provided for @entranceExamRevealMethodButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Reveal worked method'**
+  String get entranceExamRevealMethodButton;
+
+  /// No description provided for @entranceExamMethodMarkPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Compare this to your own working. Which best matches what you wrote?'**
+  String get entranceExamMethodMarkPrompt;
+
+  /// No description provided for @entranceExamMethodMarkCorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct — full method shown'**
+  String get entranceExamMethodMarkCorrect;
+
+  /// No description provided for @entranceExamMethodMarkSlip.
+  ///
+  /// In en, this message translates to:
+  /// **'Method right, one slip'**
+  String get entranceExamMethodMarkSlip;
+
+  /// No description provided for @entranceExamMethodMarkPartial.
+  ///
+  /// In en, this message translates to:
+  /// **'Partial reasoning'**
+  String get entranceExamMethodMarkPartial;
+
+  /// No description provided for @entranceExamMethodMarkUnsupported.
+  ///
+  /// In en, this message translates to:
+  /// **'Answer only, no method'**
+  String get entranceExamMethodMarkUnsupported;
+
+  /// No description provided for @entranceExamMethodMarkBlank.
+  ///
+  /// In en, this message translates to:
+  /// **'I didn\'t attempt this'**
+  String get entranceExamMethodMarkBlank;
+
+  /// No description provided for @entranceExamNextQuestionButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Next question'**
+  String get entranceExamNextQuestionButton;
+
+  /// No description provided for @entranceExamSessionCompleteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice Complete'**
+  String get entranceExamSessionCompleteTitle;
+
+  /// No description provided for @entranceExamSessionEstimatedMarks.
+  ///
+  /// In en, this message translates to:
+  /// **'Estimated marks: {marks} / {total}'**
+  String entranceExamSessionEstimatedMarks(String marks, int total);
+
+  /// No description provided for @entranceExamSessionEstimatedMarksNote.
+  ///
+  /// In en, this message translates to:
+  /// **'An estimate from your own self-marking, not an official mark scheme — see the guidance under each question.'**
+  String get entranceExamSessionEstimatedMarksNote;
+
+  /// No description provided for @entranceExamReviewTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Review Methods'**
+  String get entranceExamReviewTitle;
+
+  /// No description provided for @entranceExamNoHandwritingNote.
+  ///
+  /// In en, this message translates to:
+  /// **'This app never reads or grades your handwritten working — you compare it yourself against the worked method shown.'**
+  String get entranceExamNoHandwritingNote;
+
   /// No description provided for @practiceExit.
   ///
   /// In en, this message translates to:
@@ -2940,6 +3216,54 @@ abstract class AppLocalizations {
   /// **'Recreational puzzles, number tricks and mathematical curiosities'**
   String get mathStudioMathMagicBody;
 
+  /// No description provided for @mathStudioMathMagicNumberTricksLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Visual Number Tricks'**
+  String get mathStudioMathMagicNumberTricksLabel;
+
+  /// No description provided for @mathStudioMathMagicNumberTricksSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Watch a number trick unfold, step by step'**
+  String get mathStudioMathMagicNumberTricksSubtitle;
+
+  /// No description provided for @mathStudioMathMagicPatternsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Patterns'**
+  String get mathStudioMathMagicPatternsLabel;
+
+  /// No description provided for @mathStudioMathMagicPatternsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Grow a dot pattern and discover the rule behind it'**
+  String get mathStudioMathMagicPatternsSubtitle;
+
+  /// No description provided for @mathStudioMathMagicMagicSquaresLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Magic Squares'**
+  String get mathStudioMathMagicMagicSquaresLabel;
+
+  /// No description provided for @mathStudioMathMagicMagicSquaresSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Arrange numbers so every line adds up the same'**
+  String get mathStudioMathMagicMagicSquaresSubtitle;
+
+  /// No description provided for @mathStudioMathMagicParityLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Parity'**
+  String get mathStudioMathMagicParityLabel;
+
+  /// No description provided for @mathStudioMathMagicParitySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore what happens when you add odd and even numbers'**
+  String get mathStudioMathMagicParitySubtitle;
+
   /// No description provided for @mathStudioSpatialIntelligenceTitle.
   ///
   /// In en, this message translates to:
@@ -2993,6 +3317,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Spatial puzzles'**
   String get mathStudioSpatialPuzzlesLabel;
+
+  /// No description provided for @mathStudioSpatialCubeNetsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cube Nets'**
+  String get mathStudioSpatialCubeNetsLabel;
+
+  /// No description provided for @mathStudioSpatialCubeNetsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Decide which nets fold into a closed cube'**
+  String get mathStudioSpatialCubeNetsSubtitle;
+
+  /// No description provided for @mathStudioSpatialRotationsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn a shape around a fixed point and see what changes'**
+  String get mathStudioSpatialRotationsSubtitle;
+
+  /// No description provided for @mathStudioSpatialTransformationsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Translate, reflect, rotate and enlarge on a coordinate grid'**
+  String get mathStudioSpatialTransformationsSubtitle;
+
+  /// No description provided for @mathStudioSpatialPuzzlesSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Short puzzles about shape, space and 3D thinking'**
+  String get mathStudioSpatialPuzzlesSubtitle;
 
   /// No description provided for @mathStudioFeaturedFormatsSectionLabel.
   ///
@@ -3083,6 +3437,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Business & Finance'**
   String get mathStudioCategoryBusinessFinance;
+
+  /// No description provided for @mathStudioCategoryArchitectureConstruction.
+  ///
+  /// In en, this message translates to:
+  /// **'Architecture & Construction'**
+  String get mathStudioCategoryArchitectureConstruction;
+
+  /// No description provided for @mathStudioCategoryEnvironmentClimate.
+  ///
+  /// In en, this message translates to:
+  /// **'Environment & Climate'**
+  String get mathStudioCategoryEnvironmentClimate;
+
+  /// No description provided for @mathStudioCategoryComputingCryptography.
+  ///
+  /// In en, this message translates to:
+  /// **'Computing & Cryptography'**
+  String get mathStudioCategoryComputingCryptography;
 
   /// No description provided for @mathStudioCategoryAll.
   ///
@@ -3563,6 +3935,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Browse by Card Type'**
   String get recallCardsBrowseByTypeTitle;
+
+  /// No description provided for @recallCardsTopicFilterGroupLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Topic'**
+  String get recallCardsTopicFilterGroupLabel;
+
+  /// No description provided for @recallCardsTypeFilterGroupLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Card type'**
+  String get recallCardsTypeFilterGroupLabel;
+
+  /// No description provided for @recallCardsMoreChipLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'More'**
+  String get recallCardsMoreChipLabel;
+
+  /// No description provided for @recallCardsMoreTopicsSheetTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'More topics'**
+  String get recallCardsMoreTopicsSheetTitle;
+
+  /// No description provided for @recallCardsMoreTypesSheetTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'More card types'**
+  String get recallCardsMoreTypesSheetTitle;
+
+  /// No description provided for @recallCardsClearFiltersButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear filters'**
+  String get recallCardsClearFiltersButton;
 
   /// No description provided for @recallCardsSearchTitle.
   ///
@@ -4157,6 +4565,770 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Range'**
   String get labsDataDetectiveRangeLabel;
+
+  /// No description provided for @labsSpatialCubeLabTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Spatial Cube Lab'**
+  String get labsSpatialCubeLabTitle;
+
+  /// No description provided for @labsSpatialCubeLabSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Rotate, fold and explore a labelled cube'**
+  String get labsSpatialCubeLabSubtitle;
+
+  /// No description provided for @labsSpatialCubeLabIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Drag the cube to turn it. Notice how faces stay in the same place relative to each other, no matter which way you turn.'**
+  String get labsSpatialCubeLabIntro;
+
+  /// No description provided for @labsSpatialCubeLabFreePlayCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'Try it: drag the cube, or use the buttons below.'**
+  String get labsSpatialCubeLabFreePlayCaption;
+
+  /// No description provided for @labsSpatialCubeWhichFaceOppositeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Which Face Is Opposite?'**
+  String get labsSpatialCubeWhichFaceOppositeTitle;
+
+  /// No description provided for @labsSpatialCubeWhichFaceOppositeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Predict the opposite face, then check by rotating'**
+  String get labsSpatialCubeWhichFaceOppositeSubtitle;
+
+  /// No description provided for @labsSpatialCubeRotateToMatchTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Rotate to Match'**
+  String get labsSpatialCubeRotateToMatchTitle;
+
+  /// No description provided for @labsSpatialCubeRotateToMatchSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn your cube to match the target orientation'**
+  String get labsSpatialCubeRotateToMatchSubtitle;
+
+  /// No description provided for @labsSpatialCubeHiddenFaceTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Hidden Face'**
+  String get labsSpatialCubeHiddenFaceTitle;
+
+  /// No description provided for @labsSpatialCubeHiddenFaceSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Work out which label is on a face you can\'t see'**
+  String get labsSpatialCubeHiddenFaceSubtitle;
+
+  /// No description provided for @labsSpatialCubeNetExplorerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Cube Net Explorer'**
+  String get labsSpatialCubeNetExplorerTitle;
+
+  /// No description provided for @labsSpatialCubeNetExplorerSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Predict opposite faces on a flat net, then fold it'**
+  String get labsSpatialCubeNetExplorerSubtitle;
+
+  /// No description provided for @labsEarlyMathsPlaygroundTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Early Maths Playground'**
+  String get labsEarlyMathsPlaygroundTitle;
+
+  /// No description provided for @labsEarlyMathsPlaygroundSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Calm, playful counting activities for younger learners'**
+  String get labsEarlyMathsPlaygroundSubtitle;
+
+  /// No description provided for @earlyMathsPlaygroundIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'A calm, untimed space for younger learners to practise counting — no scores, no timers, no pressure.'**
+  String get earlyMathsPlaygroundIntro;
+
+  /// No description provided for @feedTheHungryPandaTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Feed the Hungry Panda'**
+  String get feedTheHungryPandaTitle;
+
+  /// No description provided for @feedTheHungryPandaSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Count out apples one at a time to feed Panda'**
+  String get feedTheHungryPandaSubtitle;
+
+  /// The quantity instruction at the top of a Feed the Hungry Panda round
+  ///
+  /// In en, this message translates to:
+  /// **'Feed Panda {count, plural, =1{1 apple} other{{count} apples}}.'**
+  String feedPandaInstruction(int count);
+
+  /// Shown once the target count is reached
+  ///
+  /// In en, this message translates to:
+  /// **'Well done! Panda ate {count, plural, =1{1 apple} other{{count} apples}}.'**
+  String feedPandaWellDone(int count);
+
+  /// No description provided for @feedPandaHowManyLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'How many apples are left?'**
+  String get feedPandaHowManyLeft;
+
+  /// Gentle response shown after an attempt to feed Panda beyond the target count
+  ///
+  /// In en, this message translates to:
+  /// **'Panda has enough. Let\'s count together.'**
+  String get feedPandaHasEnough;
+
+  /// No description provided for @feedPandaReplayInstructionButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Replay instruction'**
+  String get feedPandaReplayInstructionButton;
+
+  /// No description provided for @feedPandaNewRoundButton.
+  ///
+  /// In en, this message translates to:
+  /// **'New Round'**
+  String get feedPandaNewRoundButton;
+
+  /// Semantic label for one apple tile in the source matrix
+  ///
+  /// In en, this message translates to:
+  /// **'Apple {position} of {total}. Double tap to select.'**
+  String feedPandaFruitSemanticLabel(int position, int total);
+
+  /// No description provided for @feedPandaSelectedSuffix.
+  ///
+  /// In en, this message translates to:
+  /// **'Selected.'**
+  String get feedPandaSelectedSuffix;
+
+  /// Semantic label for Panda's drop target while still accepting fruit
+  ///
+  /// In en, this message translates to:
+  /// **'Feed Panda. {remaining, plural, =1{1 more apple needed} other{{remaining} more apples needed}}.'**
+  String feedPandaPandaSemanticReady(int remaining);
+
+  /// No description provided for @feedPandaPandaSemanticFull.
+  ///
+  /// In en, this message translates to:
+  /// **'Panda has enough for this round.'**
+  String get feedPandaPandaSemanticFull;
+
+  /// Semantic label for one remaining-quantity answer choice
+  ///
+  /// In en, this message translates to:
+  /// **'Answer {value}.'**
+  String feedPandaAnswerChoiceSemanticLabel(int value);
+
+  /// No description provided for @feedPandaTryAgainMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Not quite — let\'s try again!'**
+  String get feedPandaTryAgainMessage;
+
+  /// No description provided for @feedPandaRoundCompleteMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'You counted brilliantly!'**
+  String get feedPandaRoundCompleteMessage;
+
+  /// No description provided for @labsSpatialCubeWhichFaceOppositeMission.
+  ///
+  /// In en, this message translates to:
+  /// **'Look at the cube, then decide which face is opposite the one asked about.'**
+  String get labsSpatialCubeWhichFaceOppositeMission;
+
+  /// Which Face Is Opposite? question prompt
+  ///
+  /// In en, this message translates to:
+  /// **'Which face is opposite {faceLabel}?'**
+  String labsSpatialCubeWhichFaceOppositeQuestion(String faceLabel);
+
+  /// No description provided for @labsSpatialCubeWhichFaceOppositeHintButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Hint'**
+  String get labsSpatialCubeWhichFaceOppositeHintButton;
+
+  /// No description provided for @labsSpatialCubeWhichFaceOppositeHintText.
+  ///
+  /// In en, this message translates to:
+  /// **'Opposite faces never share an edge — front/back, top/bottom and left/right are always the three pairs.'**
+  String get labsSpatialCubeWhichFaceOppositeHintText;
+
+  /// No description provided for @labsSpatialCubeWhichFaceOppositeCorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'Good thinking. You kept the face relationships in mind.'**
+  String get labsSpatialCubeWhichFaceOppositeCorrect;
+
+  /// No description provided for @labsSpatialCubeWhichFaceOppositeIncorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'Nearly there. Try looking at which faces share an edge.'**
+  String get labsSpatialCubeWhichFaceOppositeIncorrect;
+
+  /// No description provided for @labsSpatialCubeWhichFaceOppositeWhereUsed.
+  ///
+  /// In en, this message translates to:
+  /// **'Packing boxes, reading dice, and working with 3D nets all rely on knowing which faces of a cube are opposite each other.'**
+  String get labsSpatialCubeWhichFaceOppositeWhereUsed;
+
+  /// No description provided for @labsSpatialCubeWhichFaceOppositeHelpWhatToDo.
+  ///
+  /// In en, this message translates to:
+  /// **'Rotate the cube if you like, then choose the face you think is opposite the one asked about.'**
+  String get labsSpatialCubeWhichFaceOppositeHelpWhatToDo;
+
+  /// No description provided for @labsSpatialCubeWhichFaceOppositeHelpWhatToNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Notice that opposite faces are never next to each other, however you turn the cube.'**
+  String get labsSpatialCubeWhichFaceOppositeHelpWhatToNotice;
+
+  /// No description provided for @labsSpatialCubeWhichFaceOppositeHelpWhatItMeans.
+  ///
+  /// In en, this message translates to:
+  /// **'Every cube has exactly three pairs of opposite faces — front/back, top/bottom, left/right — and rotating the cube never changes which faces are paired.'**
+  String get labsSpatialCubeWhichFaceOppositeHelpWhatItMeans;
+
+  /// Reveals the correct opposite-face answer after an attempt
+  ///
+  /// In en, this message translates to:
+  /// **'{correctLabel} is opposite {askedLabel}.'**
+  String labsSpatialCubeWhichFaceOppositeReveal(
+      String correctLabel, String askedLabel);
+
+  /// No description provided for @labsSpatialCubeRotateToMatchMission.
+  ///
+  /// In en, this message translates to:
+  /// **'Rotate your cube until it matches the target orientation shown.'**
+  String get labsSpatialCubeRotateToMatchMission;
+
+  /// No description provided for @labsSpatialCubeRotateToMatchTargetLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Target orientation'**
+  String get labsSpatialCubeRotateToMatchTargetLabel;
+
+  /// No description provided for @labsSpatialCubeRotateToMatchYourCubeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Your cube'**
+  String get labsSpatialCubeRotateToMatchYourCubeLabel;
+
+  /// No description provided for @labsSpatialCubeRotateToMatchTestButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Test my rotation'**
+  String get labsSpatialCubeRotateToMatchTestButton;
+
+  /// No description provided for @labsSpatialCubeRotateToMatchCorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'Well done — that\'s a close match.'**
+  String get labsSpatialCubeRotateToMatchCorrect;
+
+  /// No description provided for @labsSpatialCubeRotateToMatchIncorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'Not quite yet. Compare which face is at the front and which is on top.'**
+  String get labsSpatialCubeRotateToMatchIncorrect;
+
+  /// No description provided for @labsSpatialCubeRotateToMatchWhereUsed.
+  ///
+  /// In en, this message translates to:
+  /// **'Matching an object\'s orientation to a diagram is part of reading technical drawings and assembly instructions.'**
+  String get labsSpatialCubeRotateToMatchWhereUsed;
+
+  /// No description provided for @labsSpatialCubeRotateToMatchHelpWhatToDo.
+  ///
+  /// In en, this message translates to:
+  /// **'Drag your cube so its faces line up with the target shown alongside it, then test your rotation.'**
+  String get labsSpatialCubeRotateToMatchHelpWhatToDo;
+
+  /// No description provided for @labsSpatialCubeRotateToMatchHelpWhatToNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Notice you don\'t need a pixel-perfect match — being close enough that the same faces are at the front and top counts.'**
+  String get labsSpatialCubeRotateToMatchHelpWhatToNotice;
+
+  /// No description provided for @labsSpatialCubeRotateToMatchHelpWhatItMeans.
+  ///
+  /// In en, this message translates to:
+  /// **'An orientation is fully described by which face is at the front and which is on top — those two facts fix everything else.'**
+  String get labsSpatialCubeRotateToMatchHelpWhatItMeans;
+
+  /// No description provided for @labsSpatialCubeHiddenFaceMission.
+  ///
+  /// In en, this message translates to:
+  /// **'Look at the three visible faces, then work out what\'s on the hidden one.'**
+  String get labsSpatialCubeHiddenFaceMission;
+
+  /// Hidden Face question prompt
+  ///
+  /// In en, this message translates to:
+  /// **'Which label is on the face {direction}?'**
+  String labsSpatialCubeHiddenFaceQuestion(String direction);
+
+  /// No description provided for @labsSpatialCubeHiddenFaceHintButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Hint'**
+  String get labsSpatialCubeHiddenFaceHintButton;
+
+  /// No description provided for @labsSpatialCubeHiddenFaceHintText.
+  ///
+  /// In en, this message translates to:
+  /// **'Work out which faces you CAN see first — the hidden face is one of the three left over.'**
+  String get labsSpatialCubeHiddenFaceHintText;
+
+  /// No description provided for @labsSpatialCubeHiddenFaceCorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'Well done. You predicted the hidden face correctly.'**
+  String get labsSpatialCubeHiddenFaceCorrect;
+
+  /// No description provided for @labsSpatialCubeHiddenFaceIncorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'Good attempt. Rotate the cube to check, then try the next one.'**
+  String get labsSpatialCubeHiddenFaceIncorrect;
+
+  /// No description provided for @labsSpatialCubeHiddenFaceWhereUsed.
+  ///
+  /// In en, this message translates to:
+  /// **'Reading isometric diagrams and technical drawings means reasoning about faces you can\'t directly see.'**
+  String get labsSpatialCubeHiddenFaceWhereUsed;
+
+  /// No description provided for @labsSpatialCubeHiddenFaceHelpWhatToDo.
+  ///
+  /// In en, this message translates to:
+  /// **'Look at the three faces you can see, then choose the label you think is on the hidden face named.'**
+  String get labsSpatialCubeHiddenFaceHelpWhatToDo;
+
+  /// No description provided for @labsSpatialCubeHiddenFaceHelpWhatToNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Notice only three faces are ever visible at once from this angle — the other three are always hidden.'**
+  String get labsSpatialCubeHiddenFaceHelpWhatToNotice;
+
+  /// No description provided for @labsSpatialCubeHiddenFaceHelpWhatItMeans.
+  ///
+  /// In en, this message translates to:
+  /// **'A cube only ever shows three faces from one viewpoint, so working out a hidden face means reasoning about the whole cube, not just what\'s in view.'**
+  String get labsSpatialCubeHiddenFaceHelpWhatItMeans;
+
+  /// No description provided for @labsSpatialCubeNetExplorerMission.
+  ///
+  /// In en, this message translates to:
+  /// **'Look at the flat net, predict which faces will end up opposite each other, then fold it to check.'**
+  String get labsSpatialCubeNetExplorerMission;
+
+  /// No description provided for @labsSpatialCubeNetExplorerPredictPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Which two squares do you think will end up opposite each other?'**
+  String get labsSpatialCubeNetExplorerPredictPrompt;
+
+  /// No description provided for @labsSpatialCubeNetExplorerFoldButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Fold'**
+  String get labsSpatialCubeNetExplorerFoldButton;
+
+  /// No description provided for @labsSpatialCubeNetExplorerUnfoldButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Unfold'**
+  String get labsSpatialCubeNetExplorerUnfoldButton;
+
+  /// No description provided for @labsSpatialCubeNetExplorerNextNetButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Next net'**
+  String get labsSpatialCubeNetExplorerNextNetButton;
+
+  /// No description provided for @labsSpatialCubeNetExplorerStepBackButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get labsSpatialCubeNetExplorerStepBackButton;
+
+  /// No description provided for @labsSpatialCubeNetExplorerStepForwardButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Next step'**
+  String get labsSpatialCubeNetExplorerStepForwardButton;
+
+  /// No description provided for @labsSpatialCubeNetExplorerWhereUsed.
+  ///
+  /// In en, this message translates to:
+  /// **'Packaging design and sheet-metal work both start from a flat net that folds into a finished 3D shape.'**
+  String get labsSpatialCubeNetExplorerWhereUsed;
+
+  /// No description provided for @labsSpatialCubeNetExplorerHelpWhatToDo.
+  ///
+  /// In en, this message translates to:
+  /// **'Study the flat net, then press Fold to see whether it closes into a cube.'**
+  String get labsSpatialCubeNetExplorerHelpWhatToDo;
+
+  /// No description provided for @labsSpatialCubeNetExplorerHelpWhatToNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Notice that not every arrangement of six squares folds into a closed cube — some overlap or leave a gap.'**
+  String get labsSpatialCubeNetExplorerHelpWhatToNotice;
+
+  /// No description provided for @labsSpatialCubeNetExplorerHelpWhatItMeans.
+  ///
+  /// In en, this message translates to:
+  /// **'A net is a 2D shape that folds along its edges into a 3D solid — the same square can end up on very different sides of the cube depending on the net\'s shape.'**
+  String get labsSpatialCubeNetExplorerHelpWhatItMeans;
+
+  /// No description provided for @labsAircraftLandingLabTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Aircraft Landing Lab'**
+  String get labsAircraftLandingLabTitle;
+
+  /// No description provided for @labsAircraftLandingLabSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Fly the descent angle, distance and speed that bring a plane in safely'**
+  String get labsAircraftLandingLabSubtitle;
+
+  /// No description provided for @labsAircraftLandingLabIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Adjust the descent angle and speed, then press Test Approach to watch the aircraft fly the path and see where it touches down.'**
+  String get labsAircraftLandingLabIntro;
+
+  /// No description provided for @labsAircraftLandingLabFreePlayCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'Try it: drag the sliders, then press Test Approach.'**
+  String get labsAircraftLandingLabFreePlayCaption;
+
+  /// No description provided for @labsAircraftLandingFindTheTimeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Find the Time'**
+  String get labsAircraftLandingFindTheTimeTitle;
+
+  /// No description provided for @labsAircraftLandingFindTheTimeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Work out how long the flight to the runway takes'**
+  String get labsAircraftLandingFindTheTimeSubtitle;
+
+  /// No description provided for @labsAircraftLandingDescentLineTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Follow the Descent Line'**
+  String get labsAircraftLandingDescentLineTitle;
+
+  /// No description provided for @labsAircraftLandingDescentLineSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Match your descent angle to a target glide line'**
+  String get labsAircraftLandingDescentLineSubtitle;
+
+  /// No description provided for @labsAircraftLandingGlidePathTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Land on the Glide Path'**
+  String get labsAircraftLandingGlidePathTitle;
+
+  /// No description provided for @labsAircraftLandingGlidePathSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose angle and speed to land safely on the runway'**
+  String get labsAircraftLandingGlidePathSubtitle;
+
+  /// No description provided for @labsAircraftLandingVectorApproachTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Vector Approach'**
+  String get labsAircraftLandingVectorApproachTitle;
+
+  /// No description provided for @labsAircraftLandingVectorApproachSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Adjust horizontal and vertical speed to match a target approach'**
+  String get labsAircraftLandingVectorApproachSubtitle;
+
+  /// Descent angle slider label
+  ///
+  /// In en, this message translates to:
+  /// **'Descent angle: {degrees}°'**
+  String labsAircraftLandingDescentAngleLabel(int degrees);
+
+  /// Airspeed slider label
+  ///
+  /// In en, this message translates to:
+  /// **'Airspeed: {metresPerSecond} m/s'**
+  String labsAircraftLandingAirspeedLabel(int metresPerSecond);
+
+  /// No description provided for @labsAircraftLandingTestApproachButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Test Approach'**
+  String get labsAircraftLandingTestApproachButton;
+
+  /// Find the Time diagram semantic label
+  ///
+  /// In en, this message translates to:
+  /// **'An aircraft {distanceM} metres from the runway, flying at {speedMps} metres per second.'**
+  String labsAircraftLandingFindTheTimeDiagramLabel(
+      int distanceM, int speedMps);
+
+  /// Find the Time speed readout
+  ///
+  /// In en, this message translates to:
+  /// **'Speed: {speedMps} m/s'**
+  String labsAircraftLandingFindTheTimeSpeedLabel(int speedMps);
+
+  /// No description provided for @labsAircraftLandingFindTheTimeQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'How long will it take to reach the runway?'**
+  String get labsAircraftLandingFindTheTimeQuestion;
+
+  /// No description provided for @labsAircraftLandingFindTheTimeHintButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Hint'**
+  String get labsAircraftLandingFindTheTimeHintButton;
+
+  /// No description provided for @labsAircraftLandingFindTheTimeHintText.
+  ///
+  /// In en, this message translates to:
+  /// **'Time = distance ÷ speed.'**
+  String get labsAircraftLandingFindTheTimeHintText;
+
+  /// No description provided for @labsAircraftLandingFindTheTimeMission.
+  ///
+  /// In en, this message translates to:
+  /// **'Use the distance and speed shown to work out how long the flight to the runway will take.'**
+  String get labsAircraftLandingFindTheTimeMission;
+
+  /// No description provided for @labsAircraftLandingFindTheTimeWhereUsed.
+  ///
+  /// In en, this message translates to:
+  /// **'Pilots and air traffic controllers constantly estimate time-to-runway from speed and distance to sequence safe landings.'**
+  String get labsAircraftLandingFindTheTimeWhereUsed;
+
+  /// No description provided for @labsAircraftLandingFindTheTimeCorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct — you found the time to the runway.'**
+  String get labsAircraftLandingFindTheTimeCorrect;
+
+  /// No description provided for @labsAircraftLandingFindTheTimeIncorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'Not quite. Try dividing the distance by the speed.'**
+  String get labsAircraftLandingFindTheTimeIncorrect;
+
+  /// Reveals the correct time-to-runway after an attempt
+  ///
+  /// In en, this message translates to:
+  /// **'The correct time is {seconds} seconds.'**
+  String labsAircraftLandingFindTheTimeReveal(int seconds);
+
+  /// No description provided for @labsAircraftLandingFindTheTimeHelpWhatToDo.
+  ///
+  /// In en, this message translates to:
+  /// **'Read the distance and speed shown, then choose the matching time from the options.'**
+  String get labsAircraftLandingFindTheTimeHelpWhatToDo;
+
+  /// No description provided for @labsAircraftLandingFindTheTimeHelpWhatToNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Notice that a faster speed always means a shorter time for the same distance.'**
+  String get labsAircraftLandingFindTheTimeHelpWhatToNotice;
+
+  /// No description provided for @labsAircraftLandingFindTheTimeHelpWhatItMeans.
+  ///
+  /// In en, this message translates to:
+  /// **'Time, distance and speed are always connected by time = distance ÷ speed — the same relationship used for any journey, not just flights.'**
+  String get labsAircraftLandingFindTheTimeHelpWhatItMeans;
+
+  /// No description provided for @labsAircraftLandingDescentLineTestButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Test my line'**
+  String get labsAircraftLandingDescentLineTestButton;
+
+  /// No description provided for @labsAircraftLandingDescentLineMission.
+  ///
+  /// In en, this message translates to:
+  /// **'Adjust your descent angle until your line matches the dashed target line.'**
+  String get labsAircraftLandingDescentLineMission;
+
+  /// No description provided for @labsAircraftLandingDescentLineWhereUsed.
+  ///
+  /// In en, this message translates to:
+  /// **'Matching a required gradient comes up whenever a path, ramp or pipe has to follow a fixed slope.'**
+  String get labsAircraftLandingDescentLineWhereUsed;
+
+  /// No description provided for @labsAircraftLandingDescentLineCorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'Well done — your line matches the target glide path.'**
+  String get labsAircraftLandingDescentLineCorrect;
+
+  /// No description provided for @labsAircraftLandingDescentLineIncorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'Not yet. Compare how steep your line is against the dashed target.'**
+  String get labsAircraftLandingDescentLineIncorrect;
+
+  /// No description provided for @labsAircraftLandingDescentLineHelpWhatToDo.
+  ///
+  /// In en, this message translates to:
+  /// **'Move the descent-angle slider until your solid line sits on top of the dashed target line, then test it.'**
+  String get labsAircraftLandingDescentLineHelpWhatToDo;
+
+  /// No description provided for @labsAircraftLandingDescentLineHelpWhatToNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Notice that a steeper angle makes the line fall faster — a bigger negative gradient.'**
+  String get labsAircraftLandingDescentLineHelpWhatToNotice;
+
+  /// No description provided for @labsAircraftLandingDescentLineHelpWhatItMeans.
+  ///
+  /// In en, this message translates to:
+  /// **'The descent angle is the line\'s gradient: altitude change divided by distance travelled, written as y = mx + c with a negative m.'**
+  String get labsAircraftLandingDescentLineHelpWhatItMeans;
+
+  /// No description provided for @labsAircraftLandingGlidePathSafe.
+  ///
+  /// In en, this message translates to:
+  /// **'Smooth landing — right on the runway.'**
+  String get labsAircraftLandingGlidePathSafe;
+
+  /// No description provided for @labsAircraftLandingGlidePathTooSteep.
+  ///
+  /// In en, this message translates to:
+  /// **'Too steep — the aircraft touched down before the runway.'**
+  String get labsAircraftLandingGlidePathTooSteep;
+
+  /// No description provided for @labsAircraftLandingGlidePathTooShallow.
+  ///
+  /// In en, this message translates to:
+  /// **'Too shallow — the aircraft was still airborne past the runway.'**
+  String get labsAircraftLandingGlidePathTooShallow;
+
+  /// No description provided for @labsAircraftLandingGlidePathMission.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose an angle and speed, then test your approach to land safely on the runway.'**
+  String get labsAircraftLandingGlidePathMission;
+
+  /// No description provided for @labsAircraftLandingGlidePathWhereUsed.
+  ///
+  /// In en, this message translates to:
+  /// **'Every real landing balances a safe descent angle against speed and distance to touch down in exactly the right place.'**
+  String get labsAircraftLandingGlidePathWhereUsed;
+
+  /// Touchdown error distance shown after a test approach
+  ///
+  /// In en, this message translates to:
+  /// **'{metres} metres from the runway threshold.'**
+  String labsAircraftLandingGlidePathTouchdownError(int metres);
+
+  /// No description provided for @labsAircraftLandingGlidePathHelpWhatToDo.
+  ///
+  /// In en, this message translates to:
+  /// **'Adjust the angle and speed, then press Test Approach to see where the aircraft actually touches down.'**
+  String get labsAircraftLandingGlidePathHelpWhatToDo;
+
+  /// No description provided for @labsAircraftLandingGlidePathHelpWhatToNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Notice how the touchdown point moves as you change the angle, even when the speed stays the same.'**
+  String get labsAircraftLandingGlidePathHelpWhatToNotice;
+
+  /// No description provided for @labsAircraftLandingGlidePathHelpWhatItMeans.
+  ///
+  /// In en, this message translates to:
+  /// **'tan(angle) = altitude ÷ distance — this exact ratio is what makes a descent land precisely on the runway instead of short or long.'**
+  String get labsAircraftLandingGlidePathHelpWhatItMeans;
+
+  /// Vector Approach horizontal speed slider label
+  ///
+  /// In en, this message translates to:
+  /// **'Horizontal speed: {metresPerSecond} m/s'**
+  String labsAircraftLandingVectorHorizontalLabel(int metresPerSecond);
+
+  /// Vector Approach vertical speed slider label
+  ///
+  /// In en, this message translates to:
+  /// **'Vertical speed: {metresPerSecond} m/s'**
+  String labsAircraftLandingVectorVerticalLabel(int metresPerSecond);
+
+  /// Vector Approach resultant speed readout
+  ///
+  /// In en, this message translates to:
+  /// **'Combined (resultant) speed: {metresPerSecond} m/s'**
+  String labsAircraftLandingVectorResultantLabel(int metresPerSecond);
+
+  /// No description provided for @labsAircraftLandingVectorApproachMission.
+  ///
+  /// In en, this message translates to:
+  /// **'Adjust the horizontal and vertical speed components to match the target approach.'**
+  String get labsAircraftLandingVectorApproachMission;
+
+  /// No description provided for @labsAircraftLandingVectorApproachWhereUsed.
+  ///
+  /// In en, this message translates to:
+  /// **'Combining a horizontal and vertical speed into one resultant vector is exactly how a real flight path, or any 2D motion, is described mathematically.'**
+  String get labsAircraftLandingVectorApproachWhereUsed;
+
+  /// No description provided for @labsAircraftLandingVectorApproachCorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct — your components match the target approach.'**
+  String get labsAircraftLandingVectorApproachCorrect;
+
+  /// No description provided for @labsAircraftLandingVectorApproachIncorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'Not yet. Compare your horizontal and vertical speeds to the target.'**
+  String get labsAircraftLandingVectorApproachIncorrect;
+
+  /// No description provided for @labsAircraftLandingVectorApproachHelpWhatToDo.
+  ///
+  /// In en, this message translates to:
+  /// **'Adjust the horizontal and vertical speed sliders, then test your approach.'**
+  String get labsAircraftLandingVectorApproachHelpWhatToDo;
+
+  /// No description provided for @labsAircraftLandingVectorApproachHelpWhatToNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Notice how the resultant speed and the descent path both change as you adjust either component.'**
+  String get labsAircraftLandingVectorApproachHelpWhatToNotice;
+
+  /// No description provided for @labsAircraftLandingVectorApproachHelpWhatItMeans.
+  ///
+  /// In en, this message translates to:
+  /// **'Any velocity can be split into a horizontal and a vertical component, and recombined using Pythagoras\' theorem to find the resultant speed.'**
+  String get labsAircraftLandingVectorApproachHelpWhatItMeans;
 
   /// No description provided for @labsTryAgainButton.
   ///
@@ -5234,6 +6406,912 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Predict which average the outlier affects most, then reveal the answer.'**
   String get labsDataDetectiveNarrationIntro;
+
+  /// No description provided for @allieLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Allie'**
+  String get allieLabel;
+
+  /// No description provided for @familyMathsEntryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Family Maths'**
+  String get familyMathsEntryTitle;
+
+  /// No description provided for @familyMathsWelcomeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome'**
+  String get familyMathsWelcomeTitle;
+
+  /// No description provided for @familyMathsWelcomeBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Helping your child with maths doesn\'t require perfect knowledge. Small conversations. Simple games. Curiosity. Consistency. We\'ll help with the rest.'**
+  String get familyMathsWelcomeBody;
+
+  /// No description provided for @familyMathsAllieIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'You don\'t need to remember every school method. Choose one topic. I\'ll suggest a five-minute activity that helps your child think mathematically.'**
+  String get familyMathsAllieIntro;
+
+  /// No description provided for @familyMathsPhilosophyTagline.
+  ///
+  /// In en, this message translates to:
+  /// **'Parents don\'t need to become teachers.'**
+  String get familyMathsPhilosophyTagline;
+
+  /// No description provided for @familyMathsStartActivityButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Start a Family Activity'**
+  String get familyMathsStartActivityButton;
+
+  /// No description provided for @familyMathsBrowseTopicsButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse Topics'**
+  String get familyMathsBrowseTopicsButton;
+
+  /// No description provided for @familyMathsLibraryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Family Activities'**
+  String get familyMathsLibraryTitle;
+
+  /// No description provided for @familyMathsEmptyCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'No activities yet for this topic. More are on the way.'**
+  String get familyMathsEmptyCategory;
+
+  /// No description provided for @familyActivityAgeRange.
+  ///
+  /// In en, this message translates to:
+  /// **'Ages {min}-{max}'**
+  String familyActivityAgeRange(int min, int max);
+
+  /// No description provided for @familyActivityTimeRange.
+  ///
+  /// In en, this message translates to:
+  /// **'{min}-{max} min'**
+  String familyActivityTimeRange(int min, int max);
+
+  /// No description provided for @familyActivityMaterialsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Materials Needed'**
+  String get familyActivityMaterialsLabel;
+
+  /// No description provided for @familyActivityWhatYourChildLearnsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'What Your Child Learns'**
+  String get familyActivityWhatYourChildLearnsLabel;
+
+  /// No description provided for @familyActivityLetsExploreLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s Explore'**
+  String get familyActivityLetsExploreLabel;
+
+  /// No description provided for @familyActivityQuestionsToAskLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Questions to Ask'**
+  String get familyActivityQuestionsToAskLabel;
+
+  /// No description provided for @familyActivityMisconceptionsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Common Misconceptions'**
+  String get familyActivityMisconceptionsLabel;
+
+  /// No description provided for @familyActivityTryTomorrowLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Try Tomorrow'**
+  String get familyActivityTryTomorrowLabel;
+
+  /// No description provided for @familyActivityStudioConnectionLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Studio Connection'**
+  String get familyActivityStudioConnectionLabel;
+
+  /// No description provided for @familyMathsCategoryNumberSense.
+  ///
+  /// In en, this message translates to:
+  /// **'Number Sense'**
+  String get familyMathsCategoryNumberSense;
+
+  /// No description provided for @familyMathsCategoryAddition.
+  ///
+  /// In en, this message translates to:
+  /// **'Addition'**
+  String get familyMathsCategoryAddition;
+
+  /// No description provided for @familyMathsCategorySubtraction.
+  ///
+  /// In en, this message translates to:
+  /// **'Subtraction'**
+  String get familyMathsCategorySubtraction;
+
+  /// No description provided for @familyMathsCategoryMultiplication.
+  ///
+  /// In en, this message translates to:
+  /// **'Multiplication'**
+  String get familyMathsCategoryMultiplication;
+
+  /// No description provided for @familyMathsCategoryDivision.
+  ///
+  /// In en, this message translates to:
+  /// **'Division'**
+  String get familyMathsCategoryDivision;
+
+  /// No description provided for @familyMathsCategoryFractions.
+  ///
+  /// In en, this message translates to:
+  /// **'Fractions'**
+  String get familyMathsCategoryFractions;
+
+  /// No description provided for @familyMathsCategoryDecimals.
+  ///
+  /// In en, this message translates to:
+  /// **'Decimals'**
+  String get familyMathsCategoryDecimals;
+
+  /// No description provided for @familyMathsCategoryRatio.
+  ///
+  /// In en, this message translates to:
+  /// **'Ratio'**
+  String get familyMathsCategoryRatio;
+
+  /// No description provided for @familyMathsCategoryPercentages.
+  ///
+  /// In en, this message translates to:
+  /// **'Percentages'**
+  String get familyMathsCategoryPercentages;
+
+  /// No description provided for @familyMathsCategoryGeometry.
+  ///
+  /// In en, this message translates to:
+  /// **'Geometry'**
+  String get familyMathsCategoryGeometry;
+
+  /// No description provided for @familyMathsCategoryMeasurement.
+  ///
+  /// In en, this message translates to:
+  /// **'Measurement'**
+  String get familyMathsCategoryMeasurement;
+
+  /// No description provided for @familyMathsCategoryAlgebra.
+  ///
+  /// In en, this message translates to:
+  /// **'Algebra'**
+  String get familyMathsCategoryAlgebra;
+
+  /// No description provided for @familyMathsCategoryPatterns.
+  ///
+  /// In en, this message translates to:
+  /// **'Patterns'**
+  String get familyMathsCategoryPatterns;
+
+  /// No description provided for @familyMathsCategoryLogic.
+  ///
+  /// In en, this message translates to:
+  /// **'Logic'**
+  String get familyMathsCategoryLogic;
+
+  /// No description provided for @familyMathsCategorySpatialReasoning.
+  ///
+  /// In en, this message translates to:
+  /// **'Spatial Reasoning'**
+  String get familyMathsCategorySpatialReasoning;
+
+  /// No description provided for @familyMathsReassurance1.
+  ///
+  /// In en, this message translates to:
+  /// **'You do not need to know the answer immediately.'**
+  String get familyMathsReassurance1;
+
+  /// No description provided for @familyMathsReassurance2.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask your child to explain what they notice.'**
+  String get familyMathsReassurance2;
+
+  /// No description provided for @familyMathsReassurance3.
+  ///
+  /// In en, this message translates to:
+  /// **'A wrong answer can start a useful conversation.'**
+  String get familyMathsReassurance3;
+
+  /// No description provided for @familyMathsReassurance4.
+  ///
+  /// In en, this message translates to:
+  /// **'Five focused minutes is enough.'**
+  String get familyMathsReassurance4;
+
+  /// No description provided for @familyMathsReassurance5.
+  ///
+  /// In en, this message translates to:
+  /// **'Let your child choose the objects.'**
+  String get familyMathsReassurance5;
+
+  /// No description provided for @familyMathsReassurance6.
+  ///
+  /// In en, this message translates to:
+  /// **'Try a different representation if the first one does not help.'**
+  String get familyMathsReassurance6;
+
+  /// No description provided for @onboardingFamilyRoleDetailTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Tell us about your family'**
+  String get onboardingFamilyRoleDetailTitle;
+
+  /// No description provided for @onboardingFamilyRoleDetailSub.
+  ///
+  /// In en, this message translates to:
+  /// **'A couple of quick questions so we can help the right way.'**
+  String get onboardingFamilyRoleDetailSub;
+
+  /// No description provided for @onboardingFamilyLearnerNamesLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Learner name(s)'**
+  String get onboardingFamilyLearnerNamesLabel;
+
+  /// No description provided for @onboardingFamilyLearnerNamesSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Add at least one — you can add more later.'**
+  String get onboardingFamilyLearnerNamesSub;
+
+  /// No description provided for @onboardingFamilyAddAnotherLearner.
+  ///
+  /// In en, this message translates to:
+  /// **'Add another learner'**
+  String get onboardingFamilyAddAnotherLearner;
+
+  /// No description provided for @onboardingFamilyLearnerContextTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What stage is your child at?'**
+  String get onboardingFamilyLearnerContextTitle;
+
+  /// No description provided for @onboardingFamilyLearnerContextSub.
+  ///
+  /// In en, this message translates to:
+  /// **'This helps us suggest the right activities and topics.'**
+  String get onboardingFamilyLearnerContextSub;
+
+  /// No description provided for @onboardingFamilyGoalTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What brings you here?'**
+  String get onboardingFamilyGoalTitle;
+
+  /// No description provided for @onboardingFamilyGoalSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose what matters most right now — you can change this later.'**
+  String get onboardingFamilyGoalSub;
+
+  /// No description provided for @onboardingFamilyGoalHomework.
+  ///
+  /// In en, this message translates to:
+  /// **'Help with homework'**
+  String get onboardingFamilyGoalHomework;
+
+  /// No description provided for @onboardingFamilyGoalUnderstandMethods.
+  ///
+  /// In en, this message translates to:
+  /// **'Understand modern methods'**
+  String get onboardingFamilyGoalUnderstandMethods;
+
+  /// No description provided for @onboardingFamilyGoalBuildConfidence.
+  ///
+  /// In en, this message translates to:
+  /// **'Build confidence'**
+  String get onboardingFamilyGoalBuildConfidence;
+
+  /// No description provided for @onboardingFamilyGoalPractiseTogether.
+  ///
+  /// In en, this message translates to:
+  /// **'Practise together'**
+  String get onboardingFamilyGoalPractiseTogether;
+
+  /// No description provided for @onboardingFamilyGoalPrepareExam.
+  ///
+  /// In en, this message translates to:
+  /// **'Prepare for an exam'**
+  String get onboardingFamilyGoalPrepareExam;
+
+  /// No description provided for @onboardingFamilyGoalMonitorProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Monitor progress'**
+  String get onboardingFamilyGoalMonitorProgress;
+
+  /// No description provided for @onboardingFamilyGoalSupportStruggling.
+  ///
+  /// In en, this message translates to:
+  /// **'Support a learner who finds maths difficult'**
+  String get onboardingFamilyGoalSupportStruggling;
+
+  /// No description provided for @onboardingFamilyActivityLengthLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Preferred activity length'**
+  String get onboardingFamilyActivityLengthLabel;
+
+  /// No description provided for @onboardingFamilyActivityLengthShort.
+  ///
+  /// In en, this message translates to:
+  /// **'~10 minutes'**
+  String get onboardingFamilyActivityLengthShort;
+
+  /// No description provided for @onboardingFamilyActivityLengthMedium.
+  ///
+  /// In en, this message translates to:
+  /// **'~20 minutes'**
+  String get onboardingFamilyActivityLengthMedium;
+
+  /// No description provided for @onboardingFamilyActivityLengthLong.
+  ///
+  /// In en, this message translates to:
+  /// **'~30 minutes'**
+  String get onboardingFamilyActivityLengthLong;
+
+  /// No description provided for @onboardingFamilyPreferencesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Almost done'**
+  String get onboardingFamilyPreferencesTitle;
+
+  /// No description provided for @onboardingFamilyPreferencesSub.
+  ///
+  /// In en, this message translates to:
+  /// **'A couple of optional extras, then you\'re in.'**
+  String get onboardingFamilyPreferencesSub;
+
+  /// No description provided for @onboardingFamilyAllieIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'You do not need to explain everything immediately.'**
+  String get onboardingFamilyAllieIntro;
+
+  /// No description provided for @onboardingFamilyNotificationsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Gentle reminders'**
+  String get onboardingFamilyNotificationsLabel;
+
+  /// No description provided for @onboardingFamilyNotificationsSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Optional — occasional nudges about your family activity.'**
+  String get onboardingFamilyNotificationsSub;
+
+  /// No description provided for @onboardingFamilyPinLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Set a Parent PIN (optional)'**
+  String get onboardingFamilyPinLabel;
+
+  /// No description provided for @onboardingFamilyPinSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Protects Family Maths and parent content on a shared device. You can set this later in Settings instead.'**
+  String get onboardingFamilyPinSub;
+
+  /// No description provided for @onboardingFamilyFinishButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Go to Family Studio'**
+  String get onboardingFamilyFinishButton;
+
+  /// No description provided for @recallTopicNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Number'**
+  String get recallTopicNumber;
+
+  /// No description provided for @recallTopicRatioAndProportion.
+  ///
+  /// In en, this message translates to:
+  /// **'Ratio and Proportion'**
+  String get recallTopicRatioAndProportion;
+
+  /// No description provided for @recallTopicAlgebra.
+  ///
+  /// In en, this message translates to:
+  /// **'Algebra'**
+  String get recallTopicAlgebra;
+
+  /// No description provided for @recallTopicGeometryAndMeasures.
+  ///
+  /// In en, this message translates to:
+  /// **'Geometry and Measures'**
+  String get recallTopicGeometryAndMeasures;
+
+  /// No description provided for @recallTopicStatistics.
+  ///
+  /// In en, this message translates to:
+  /// **'Statistics'**
+  String get recallTopicStatistics;
+
+  /// No description provided for @recallTopicProbability.
+  ///
+  /// In en, this message translates to:
+  /// **'Probability'**
+  String get recallTopicProbability;
+
+  /// No description provided for @familyStudioHubTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Family Studio'**
+  String get familyStudioHubTitle;
+
+  /// No description provided for @familyStudioHubOpeningPromise.
+  ///
+  /// In en, this message translates to:
+  /// **'Parents do not need to become teachers.'**
+  String get familyStudioHubOpeningPromise;
+
+  /// No description provided for @familyStudioHubSupportingCopy.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a topic, a short activity or a homework goal. Math Intelligence will help you begin.'**
+  String get familyStudioHubSupportingCopy;
+
+  /// No description provided for @familyStudioHubAllieMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask what your child notices first.'**
+  String get familyStudioHubAllieMessage;
+
+  /// No description provided for @familyStudioProfileEntrySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Activities, homework help and progress for your family.'**
+  String get familyStudioProfileEntrySubtitle;
+
+  /// No description provided for @familyStudioPrimaryActionStartActivity.
+  ///
+  /// In en, this message translates to:
+  /// **'Start a Family Activity'**
+  String get familyStudioPrimaryActionStartActivity;
+
+  /// No description provided for @familyStudioPrimaryActionHomework.
+  ///
+  /// In en, this message translates to:
+  /// **'Help with Homework'**
+  String get familyStudioPrimaryActionHomework;
+
+  /// No description provided for @familyStudioPrimaryActionLearning.
+  ///
+  /// In en, this message translates to:
+  /// **'See What My Child Is Learning'**
+  String get familyStudioPrimaryActionLearning;
+
+  /// No description provided for @familyStudioPrimaryActionGuides.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse Parent Guides'**
+  String get familyStudioPrimaryActionGuides;
+
+  /// No description provided for @familyStudioSectionTodaysActivityTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s Family Activity'**
+  String get familyStudioSectionTodaysActivityTitle;
+
+  /// No description provided for @familyStudioSectionTodaysActivitySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'One deterministic pick for today, from Family Maths.'**
+  String get familyStudioSectionTodaysActivitySubtitle;
+
+  /// No description provided for @familyStudioSectionHomeworkCompanionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Homework Companion'**
+  String get familyStudioSectionHomeworkCompanionTitle;
+
+  /// No description provided for @familyStudioSectionHomeworkCompanionSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'A short, deterministic session for tonight\'s homework.'**
+  String get familyStudioSectionHomeworkCompanionSubtitle;
+
+  /// No description provided for @familyStudioSectionLearningTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What Your Child Is Learning'**
+  String get familyStudioSectionLearningTitle;
+
+  /// No description provided for @familyStudioSectionLearningSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent Practice topics.'**
+  String get familyStudioSectionLearningSubtitle;
+
+  /// No description provided for @familyStudioSectionExplainTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Explain This Method'**
+  String get familyStudioSectionExplainTitle;
+
+  /// No description provided for @familyStudioSectionExplainSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Open the Formula Library.'**
+  String get familyStudioSectionExplainSubtitle;
+
+  /// No description provided for @familyStudioSectionConversationStartersTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Conversation Starters'**
+  String get familyStudioSectionConversationStartersTitle;
+
+  /// No description provided for @familyStudioSectionConversationStartersSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Questions to ask while you work together.'**
+  String get familyStudioSectionConversationStartersSubtitle;
+
+  /// No description provided for @familyStudioSectionParentRecallCardsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Parent Recall Cards'**
+  String get familyStudioSectionParentRecallCardsTitle;
+
+  /// No description provided for @familyStudioSectionParentRecallCardsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Warm, practical tips — not exam questions.'**
+  String get familyStudioSectionParentRecallCardsSubtitle;
+
+  /// No description provided for @familyStudioSectionFractionsRatioTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Fractions and Ratio'**
+  String get familyStudioSectionFractionsRatioTitle;
+
+  /// No description provided for @familyStudioSectionFractionsRatioSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Family Maths activities for this topic.'**
+  String get familyStudioSectionFractionsRatioSubtitle;
+
+  /// No description provided for @familyStudioSectionMentalMathsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Mental Maths Together'**
+  String get familyStudioSectionMentalMathsTitle;
+
+  /// No description provided for @familyStudioSectionMentalMathsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick number challenges for two.'**
+  String get familyStudioSectionMentalMathsSubtitle;
+
+  /// No description provided for @familyStudioSectionCubeSpatialTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Cube and Spatial Activities'**
+  String get familyStudioSectionCubeSpatialTitle;
+
+  /// No description provided for @familyStudioSectionCubeSpatialSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Build and view together.'**
+  String get familyStudioSectionCubeSpatialSubtitle;
+
+  /// No description provided for @familyStudioSectionProgressTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Progress Snapshot'**
+  String get familyStudioSectionProgressTitle;
+
+  /// No description provided for @familyStudioSectionProgressSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Topics studied, strengths and areas to revisit.'**
+  String get familyStudioSectionProgressSubtitle;
+
+  /// No description provided for @familyStudioSectionTutorToolsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Tutor Tools'**
+  String get familyStudioSectionTutorToolsTitle;
+
+  /// No description provided for @familyStudioSectionTutorToolsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a learner, assign practice, add a note.'**
+  String get familyStudioSectionTutorToolsSubtitle;
+
+  /// No description provided for @familyStudioPinReminderTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Protect Family Studio'**
+  String get familyStudioPinReminderTitle;
+
+  /// No description provided for @familyStudioPinReminderBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Create a Parent PIN to protect assignments, reports and learner settings.'**
+  String get familyStudioPinReminderBody;
+
+  /// No description provided for @familyStudioPinReminderSetPinButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Set PIN'**
+  String get familyStudioPinReminderSetPinButton;
+
+  /// No description provided for @familyStudioPinReminderLaterButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Remind Me Later'**
+  String get familyStudioPinReminderLaterButton;
+
+  /// No description provided for @familyStudioTodayStartButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Start this activity'**
+  String get familyStudioTodayStartButton;
+
+  /// No description provided for @familyStudioLearningNoDataYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No Practice sessions yet — recent topics will appear here.'**
+  String get familyStudioLearningNoDataYet;
+
+  /// No description provided for @familyStudioLearningTopicSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Recently studied in Practice.'**
+  String get familyStudioLearningTopicSubtitle;
+
+  /// No description provided for @familyStudioConversationAllieMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'A mistake can start a useful conversation.'**
+  String get familyStudioConversationAllieMessage;
+
+  /// No description provided for @familyStudioHomeworkTopicLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Topic'**
+  String get familyStudioHomeworkTopicLabel;
+
+  /// No description provided for @familyStudioHomeworkTimeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Time available'**
+  String get familyStudioHomeworkTimeLabel;
+
+  /// No description provided for @familyStudioHomeworkMinutes.
+  ///
+  /// In en, this message translates to:
+  /// **'{minutes} min'**
+  String familyStudioHomeworkMinutes(int minutes);
+
+  /// No description provided for @familyStudioHomeworkHelpTypeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Type of help needed'**
+  String get familyStudioHomeworkHelpTypeLabel;
+
+  /// No description provided for @familyStudioHomeworkHelpUnderstandMethod.
+  ///
+  /// In en, this message translates to:
+  /// **'Understand the method'**
+  String get familyStudioHomeworkHelpUnderstandMethod;
+
+  /// No description provided for @familyStudioHomeworkHelpPractiseTogether.
+  ///
+  /// In en, this message translates to:
+  /// **'Practise together'**
+  String get familyStudioHomeworkHelpPractiseTogether;
+
+  /// No description provided for @familyStudioHomeworkHelpReviewMistakes.
+  ///
+  /// In en, this message translates to:
+  /// **'Review mistakes'**
+  String get familyStudioHomeworkHelpReviewMistakes;
+
+  /// No description provided for @familyStudioHomeworkHelpPrepareTomorrow.
+  ///
+  /// In en, this message translates to:
+  /// **'Prepare for tomorrow'**
+  String get familyStudioHomeworkHelpPrepareTomorrow;
+
+  /// No description provided for @familyStudioHomeworkHelpBuildConfidence.
+  ///
+  /// In en, this message translates to:
+  /// **'Build confidence'**
+  String get familyStudioHomeworkHelpBuildConfidence;
+
+  /// No description provided for @familyStudioHomeworkGenerateButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Generate session'**
+  String get familyStudioHomeworkGenerateButton;
+
+  /// No description provided for @familyStudioHomeworkEmptySession.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing to suggest yet for this combination — try a different topic or time.'**
+  String get familyStudioHomeworkEmptySession;
+
+  /// No description provided for @familyStudioProgressRecentTopics.
+  ///
+  /// In en, this message translates to:
+  /// **'Topics recently studied'**
+  String get familyStudioProgressRecentTopics;
+
+  /// No description provided for @familyStudioProgressActivitiesCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Activities completed'**
+  String get familyStudioProgressActivitiesCompleted;
+
+  /// No description provided for @familyStudioProgressAreasToRevisit.
+  ///
+  /// In en, this message translates to:
+  /// **'Areas to revisit'**
+  String get familyStudioProgressAreasToRevisit;
+
+  /// No description provided for @familyStudioProgressSuggestedActivity.
+  ///
+  /// In en, this message translates to:
+  /// **'Suggested family activity'**
+  String get familyStudioProgressSuggestedActivity;
+
+  /// No description provided for @familyStudioProgressNoDataYet.
+  ///
+  /// In en, this message translates to:
+  /// **'Not enough data yet — this will fill in as your family uses the app.'**
+  String get familyStudioProgressNoDataYet;
+
+  /// No description provided for @familyStudioTutorChooseLearnerLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a learner'**
+  String get familyStudioTutorChooseLearnerLabel;
+
+  /// No description provided for @familyStudioTutorAssignLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Assign'**
+  String get familyStudioTutorAssignLabel;
+
+  /// No description provided for @familyStudioTutorAssignPractice.
+  ///
+  /// In en, this message translates to:
+  /// **'Assign Practice'**
+  String get familyStudioTutorAssignPractice;
+
+  /// No description provided for @familyStudioTutorAssignRecallCards.
+  ///
+  /// In en, this message translates to:
+  /// **'Assign Recall Cards'**
+  String get familyStudioTutorAssignRecallCards;
+
+  /// No description provided for @familyStudioTutorCompletionLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} interactive lab completions so far'**
+  String familyStudioTutorCompletionLabel(int count);
+
+  /// No description provided for @familyStudioTutorNotesLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Notes'**
+  String get familyStudioTutorNotesLabel;
+
+  /// No description provided for @familyStudioTutorNotesHint.
+  ///
+  /// In en, this message translates to:
+  /// **'A short note for next time'**
+  String get familyStudioTutorNotesHint;
+
+  /// No description provided for @appearanceThemeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Appearance'**
+  String get appearanceThemeTitle;
+
+  /// No description provided for @appearanceThemeSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose how Math Intelligence looks — match your device, or pick Dark or Light.'**
+  String get appearanceThemeSub;
+
+  /// No description provided for @appearanceThemeSystem.
+  ///
+  /// In en, this message translates to:
+  /// **'System'**
+  String get appearanceThemeSystem;
+
+  /// No description provided for @appearanceThemeDark.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark'**
+  String get appearanceThemeDark;
+
+  /// No description provided for @appearanceThemeLight.
+  ///
+  /// In en, this message translates to:
+  /// **'Light'**
+  String get appearanceThemeLight;
+
+  /// No description provided for @appearanceAccessibilityHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'ACCESSIBILITY'**
+  String get appearanceAccessibilityHeading;
+
+  /// No description provided for @appearanceReadingSizeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Reading Size'**
+  String get appearanceReadingSizeTitle;
+
+  /// No description provided for @appearanceReadingSizeSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Small, Default, or Large text scaling'**
+  String get appearanceReadingSizeSub;
+
+  /// No description provided for @appearanceTouchTargetsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Touch Targets 44px'**
+  String get appearanceTouchTargetsTitle;
+
+  /// No description provided for @appearanceTouchTargetsSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Ergonomic controls'**
+  String get appearanceTouchTargetsSub;
+
+  /// No description provided for @appearanceTypographyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear Typography'**
+  String get appearanceTypographyTitle;
+
+  /// No description provided for @appearanceTypographySub.
+  ///
+  /// In en, this message translates to:
+  /// **'Readable font at all sizes'**
+  String get appearanceTypographySub;
+
+  /// No description provided for @appearanceResetOnboardingHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'RESET ONBOARDING'**
+  String get appearanceResetOnboardingHeading;
+
+  /// No description provided for @appearanceResetOnboardingSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset the app introduction to go through the initial setup again.'**
+  String get appearanceResetOnboardingSub;
+
+  /// No description provided for @appearanceResetOnboardingButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset Onboarding'**
+  String get appearanceResetOnboardingButton;
 }
 
 class _AppLocalizationsDelegate

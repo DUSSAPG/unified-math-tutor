@@ -22,9 +22,10 @@ class DiscoveryCardExportService {
     int pageNumber,
     int pageCount,
   ) {
-    final website = PublishingConfig.websiteQrEnabled && PublishingConfig.websiteUrl != null
-        ? '  —  ${PublishingConfig.websiteUrl}'
-        : '';
+    final website =
+        PublishingConfig.websiteQrEnabled && PublishingConfig.websiteUrl != null
+            ? '  —  ${PublishingConfig.websiteUrl}'
+            : '';
     return '${PublishingConfig.publishingHierarchy}'
         '  —  ${card.id} v${card.contentVersion}'
         '  —  ${PublishingConfig.tagline}'
@@ -36,7 +37,8 @@ class DiscoveryCardExportService {
   static String _defaultTitle() => 'Math Studio Discovery Card';
 
   Future<pw.Font> _font() async {
-    return pw.Font.ttf(await rootBundle.load('assets/fonts/DMSans-Variable.ttf'));
+    return pw.Font.ttf(
+        await rootBundle.load('assets/fonts/DMSans-Variable.ttf'));
   }
 
   pw.Widget _header(
@@ -55,7 +57,8 @@ class DiscoveryCardExportService {
           style: const pw.TextStyle(fontSize: 9, color: PdfColors.grey600),
         ),
         pw.SizedBox(height: 4),
-        pw.Text(title, style: pw.TextStyle(fontSize: 18, fontWeight: pw.FontWeight.bold)),
+        pw.Text(title,
+            style: pw.TextStyle(fontSize: 18, fontWeight: pw.FontWeight.bold)),
         pw.SizedBox(height: 2),
         pw.Text(text.title, style: const pw.TextStyle(fontSize: 14)),
         pw.Divider(),
@@ -85,7 +88,8 @@ class DiscoveryCardExportService {
           pw.SizedBox(height: 12),
           pw.Text(text.scenario),
           pw.SizedBox(height: 10),
-          pw.Text(text.challengeQuestion, style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
+          pw.Text(text.challengeQuestion,
+              style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
           pw.SizedBox(height: 16),
           pw.Container(
             height: 260,
@@ -119,7 +123,8 @@ class DiscoveryCardExportService {
         build: (context) => [
           _header(card, text, learnerName: learnerName),
           pw.SizedBox(height: 12),
-          pw.Text(text.challengeQuestion, style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
+          pw.Text(text.challengeQuestion,
+              style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
           pw.SizedBox(height: 10),
           pw.Header(level: 1, text: 'Worked solution'),
           ...text.workedSteps.map((step) => pw.Bullet(text: step)),
@@ -162,7 +167,8 @@ class DiscoveryCardExportService {
           pw.SizedBox(height: 12),
           pw.Text(text.scenario),
           pw.SizedBox(height: 10),
-          pw.Text(text.challengeQuestion, style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
+          pw.Text(text.challengeQuestion,
+              style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
           pw.SizedBox(height: 16),
           pw.Container(
             height: 260,
