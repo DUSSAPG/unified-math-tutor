@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../shared/theme/app_theme.dart';
+
 class OnboardingSelectionCard extends StatelessWidget {
   final String title;
   final String subtitle;
@@ -16,6 +18,7 @@ class OnboardingSelectionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return InkWell(
       borderRadius: BorderRadius.circular(16),
       onTap: onTap,
@@ -23,10 +26,10 @@ class OnboardingSelectionCard extends StatelessWidget {
         width: double.infinity,
         padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 16),
         decoration: BoxDecoration(
-          color: const Color(0xFF132040),
+          color: colors.cardSurface,
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: selected ? const Color(0xFF3D7EFF) : const Color(0xFF1F3055),
+            color: selected ? colors.primaryAction : colors.divider,
             width: selected ? 2 : 1,
           ),
         ),
@@ -38,18 +41,18 @@ class OnboardingSelectionCard extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w700,
-                      color: Colors.white,
+                      color: colors.primaryText,
                     ),
                   ),
                   const SizedBox(height: 4),
                   Text(
                     subtitle,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 13,
-                      color: Color(0xFF8A9DC0),
+                      color: colors.secondaryText,
                     ),
                   ),
                 ],
@@ -57,8 +60,7 @@ class OnboardingSelectionCard extends StatelessWidget {
             ),
             Icon(
               selected ? Icons.check_circle : Icons.chevron_right,
-              color:
-                  selected ? const Color(0xFF3D7EFF) : const Color(0xFF4A6080),
+              color: selected ? colors.primaryAction : colors.tertiaryText,
             ),
           ],
         ),

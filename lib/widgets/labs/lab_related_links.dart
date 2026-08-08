@@ -5,6 +5,7 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 import '../../models/interactive_lab_id.dart';
 import '../../services/interactive_labs_progress_service.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 
 /// Connect-stage cross-links for an Interactive Lab: Recall Cards, Discovery
 /// Cards and Practice topics. Mirrors [RecallCardBody]'s `_RelatedLinks`
@@ -87,7 +88,13 @@ class LabRelatedLinks extends StatelessWidget {
                   onPressed: () {
                     InteractiveLabsProgressService.instance
                         .recordLinkedPracticeUse(labId);
-                    context.push('/topics');
+                    // Interactive Labs live outside the bottom-nav shell
+                    // (under /math-studio); /topics is a shell-owned branch
+                    // route, so this MUST use go(), never push() — see the
+                    // navigator key ownership model comment in
+                    // lib/app/router.dart. push() here duplicates the
+                    // Topics branch's GlobalKey<NavigatorState> and crashes.
+                    context.go('/topics');
                   },
                 ),
             ],
@@ -108,8 +115,8 @@ class _GroupLabel extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 6),
       child: Text(
         text,
-        style: const TextStyle(
-            color: Color(0xFF8A9DC0),
+        style: TextStyle(
+            color: context.appColors.secondaryText,
             fontSize: 12,
             fontWeight: FontWeight.w600),
       ),

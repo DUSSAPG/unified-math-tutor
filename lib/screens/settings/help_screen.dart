@@ -4,6 +4,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../services/local_preferences_service.dart';
 
 class HelpScreen extends StatelessWidget {
@@ -25,6 +26,7 @@ class _HelpContent extends StatelessWidget {
         AppSpacing.xl;
 
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return SingleChildScrollView(
       key: const PageStorageKey<String>('help'),
       padding: EdgeInsets.only(bottom: bottomPadding),
@@ -64,18 +66,17 @@ class _HelpContent extends StatelessWidget {
               children: [
                 Text(
                   l10n.helpContactIntro,
-                  style:
-                      const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13),
+                  style: TextStyle(color: colors.secondaryText, fontSize: 13),
                 ),
                 const SizedBox(height: 6),
                 Text(
                   l10n.helpContactEmail,
-                  style: const TextStyle(
-                    color: Color(0xFF5B8EFF),
+                  style: TextStyle(
+                    color: colors.accent,
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
                     decoration: TextDecoration.underline,
-                    decorationColor: Color(0xFF5B8EFF),
+                    decorationColor: colors.accent,
                   ),
                 ),
               ],
@@ -93,8 +94,8 @@ class _HelpContent extends StatelessWidget {
               children: [
                 Text(
                   l10n.helpPrivacyHeadline,
-                  style: const TextStyle(
-                    color: Colors.white,
+                  style: TextStyle(
+                    color: colors.primaryText,
                     fontSize: 13,
                     fontWeight: FontWeight.w600,
                   ),
@@ -116,8 +117,8 @@ class _HelpContent extends StatelessWidget {
             title: l10n.helpTermsTitle,
             child: Text(
               l10n.helpTermsBody,
-              style: const TextStyle(
-                  color: Color(0xFF8A9DC0), fontSize: 13, height: 1.4),
+              style: TextStyle(
+                  color: colors.secondaryText, fontSize: 13, height: 1.4),
             ),
           ),
           const SizedBox(height: 12),
@@ -132,8 +133,8 @@ class _HelpContent extends StatelessWidget {
               children: [
                 Text(
                   l10n.helpParentalHeadline,
-                  style: const TextStyle(
-                    color: Colors.white,
+                  style: TextStyle(
+                    color: colors.primaryText,
                     fontSize: 13,
                     fontWeight: FontWeight.w600,
                   ),
@@ -154,18 +155,18 @@ class _HelpContent extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: const Color(0xFF132040),
+                color: colors.cardSurface,
                 borderRadius: BorderRadius.circular(14),
-                border: Border.all(color: const Color(0xFF1F3055)),
+                border: Border.all(color: colors.divider),
               ),
-              child: const Row(
+              child: Row(
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.calculate_outlined,
                     color: Color(0xFFFFBD00),
                     size: 20,
                   ),
-                  SizedBox(width: 12),
+                  const SizedBox(width: 12),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -173,26 +174,26 @@ class _HelpContent extends StatelessWidget {
                         Text(
                           'Mental Math Tricks',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: colors.primaryText,
                             fontSize: 15,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
-                        SizedBox(height: 3),
+                        const SizedBox(height: 3),
                         Text(
                           'Learn 8 quick calculation patterns for ages 7-11.',
                           style: TextStyle(
-                            color: Color(0xFF8A9DC0),
+                            color: colors.secondaryText,
                             fontSize: 13,
                           ),
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(width: 8),
+                  const SizedBox(width: 8),
                   Icon(
                     Icons.chevron_right,
-                    color: Color(0xFF4A6080),
+                    color: colors.tertiaryText,
                     size: 20,
                   ),
                 ],
@@ -216,9 +217,9 @@ class _HelpContent extends StatelessWidget {
                 child: Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: const Color(0xFF132040),
+                    color: colors.cardSurface,
                     borderRadius: BorderRadius.circular(14),
-                    border: Border.all(color: const Color(0xFF1F3055)),
+                    border: Border.all(color: colors.divider),
                   ),
                   child: Row(
                     children: [
@@ -234,8 +235,8 @@ class _HelpContent extends StatelessWidget {
                           children: [
                             Text(
                               l10n.parentTeacherTools,
-                              style: const TextStyle(
-                                color: Colors.white,
+                              style: TextStyle(
+                                color: colors.primaryText,
                                 fontSize: 15,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -243,8 +244,8 @@ class _HelpContent extends StatelessWidget {
                             const SizedBox(height: 3),
                             Text(
                               l10n.parentToolsLocalOnly,
-                              style: const TextStyle(
-                                color: Color(0xFF8A9DC0),
+                              style: TextStyle(
+                                color: colors.secondaryText,
                                 fontSize: 13,
                               ),
                             ),
@@ -252,9 +253,9 @@ class _HelpContent extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(width: 8),
-                      const Icon(
+                      Icon(
                         Icons.chevron_right,
-                        color: Color(0xFF4A6080),
+                        color: colors.tertiaryText,
                         size: 20,
                       ),
                     ],
@@ -274,8 +275,8 @@ class _HelpContent extends StatelessWidget {
               ),
             ),
             style: OutlinedButton.styleFrom(
-              foregroundColor: const Color(0xFF5B8EFF),
-              side: const BorderSide(color: Color(0xFF3D7EFF)),
+              foregroundColor: colors.accent,
+              side: BorderSide(color: colors.primaryAction),
               padding: const EdgeInsets.symmetric(vertical: 14),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(14),
@@ -297,8 +298,8 @@ class _HelpContent extends StatelessWidget {
               ),
             ),
             style: OutlinedButton.styleFrom(
-              foregroundColor: const Color(0xFF8A9DC0),
-              side: const BorderSide(color: Color(0xFF1F3055)),
+              foregroundColor: colors.secondaryText,
+              side: BorderSide(color: colors.divider),
               padding: const EdgeInsets.symmetric(vertical: 14),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(14),
@@ -315,7 +316,7 @@ class _HelpContent extends StatelessWidget {
           Text(
             l10n.helpFooter,
             textAlign: TextAlign.center,
-            style: const TextStyle(color: Color(0xFF4A6080), fontSize: 12),
+            style: TextStyle(color: colors.tertiaryText, fontSize: 12),
           ),
         ],
       ),
@@ -330,8 +331,11 @@ class _HelpHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Column(
       children: [
+        // Avatar chip keeps a fixed brand-blue treatment regardless of
+        // theme — same "celebration badge" pattern used elsewhere.
         Container(
           width: 72,
           height: 72,
@@ -349,8 +353,8 @@ class _HelpHeader extends StatelessWidget {
         const SizedBox(height: 14),
         Text(
           AppLocalizations.of(context).helpHeaderTitle,
-          style: const TextStyle(
-            color: Colors.white,
+          style: TextStyle(
+            color: colors.primaryText,
             fontSize: 22,
             fontWeight: FontWeight.w700,
           ),
@@ -358,7 +362,7 @@ class _HelpHeader extends StatelessWidget {
         const SizedBox(height: 4),
         Text(
           AppLocalizations.of(context).helpHeaderSubtitle,
-          style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 14),
+          style: TextStyle(color: colors.secondaryText, fontSize: 14),
         ),
       ],
     );
@@ -382,12 +386,13 @@ class _HelpSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF132040),
+        color: colors.cardSurface,
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: const Color(0xFF1F3055)),
+        border: Border.all(color: colors.divider),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -398,8 +403,8 @@ class _HelpSection extends StatelessWidget {
               const SizedBox(width: 6),
               Text(
                 title,
-                style: const TextStyle(
-                  color: Color(0xFF8A9DC0),
+                style: TextStyle(
+                  color: colors.secondaryText,
                   fontSize: 11,
                   fontWeight: FontWeight.w600,
                   letterSpacing: 0.8,
@@ -437,6 +442,7 @@ class _FaqItemState extends State<_FaqItem> {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -449,8 +455,8 @@ class _FaqItemState extends State<_FaqItem> {
                 Expanded(
                   child: Text(
                     widget.question,
-                    style: const TextStyle(
-                      color: Colors.white,
+                    style: TextStyle(
+                      color: colors.primaryText,
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
                     ),
@@ -461,7 +467,7 @@ class _FaqItemState extends State<_FaqItem> {
                   _expanded
                       ? Icons.keyboard_arrow_up
                       : Icons.keyboard_arrow_down,
-                  color: const Color(0xFF8A9DC0),
+                  color: colors.secondaryText,
                   size: 18,
                 ),
               ],
@@ -473,16 +479,15 @@ class _FaqItemState extends State<_FaqItem> {
             padding: const EdgeInsets.only(bottom: 10),
             child: Text(
               widget.answer,
-              style: const TextStyle(
-                color: Color(0xFF8A9DC0),
+              style: TextStyle(
+                color: colors.secondaryText,
                 fontSize: 13,
                 height: 1.5,
               ),
             ),
           ),
         ],
-        if (widget.showDivider)
-          const Divider(color: Color(0xFF1F3055), height: 1),
+        if (widget.showDivider) Divider(color: colors.divider, height: 1),
       ],
     );
   }
@@ -497,15 +502,16 @@ class _Bullet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Padding(
       padding: const EdgeInsets.only(bottom: 5),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
+          Text(
             '• ',
             style: TextStyle(
-              color: Color(0xFF5B8EFF),
+              color: colors.accent,
               fontSize: 13,
               fontWeight: FontWeight.w700,
             ),
@@ -513,8 +519,8 @@ class _Bullet extends StatelessWidget {
           Expanded(
             child: Text(
               text,
-              style: const TextStyle(
-                  color: Color(0xFF8A9DC0), fontSize: 13, height: 1.3),
+              style: TextStyle(
+                  color: colors.secondaryText, fontSize: 13, height: 1.3),
             ),
           ),
         ],

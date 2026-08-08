@@ -3,6 +3,7 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../shared/responsive/app_breakpoints.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 
 /// Shared shell for the 3 bounded Visual Maths placeholders (Fraction Bars,
 /// Abacus, Place Value Explorer): a static example visual, a real caption,
@@ -27,18 +28,19 @@ class VisualMathsPlaceholderScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0B1120),
+        backgroundColor: colors.background,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: colors.primaryText),
           onPressed: onBack,
         ),
         title: Text(title,
-            style: const TextStyle(
-                color: Colors.white, fontWeight: FontWeight.w700)),
+            style: TextStyle(
+                color: colors.primaryText, fontWeight: FontWeight.w700)),
       ),
       body: SafeArea(
         child: Center(
@@ -54,9 +56,9 @@ class VisualMathsPlaceholderScaffold extends StatelessWidget {
                   Container(
                     padding:
                         const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFFF9500),
-                      borderRadius: BorderRadius.circular(20),
+                    decoration: const BoxDecoration(
+                      color: Color(0xFFFF9500),
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
                     ),
                     child: Text(
                       l10n.visualMathsPreviewBadge,
@@ -70,8 +72,8 @@ class VisualMathsPlaceholderScaffold extends StatelessWidget {
                   const SizedBox(height: 8),
                   Text(
                     l10n.visualMathsComingSoonNote,
-                    style: const TextStyle(
-                      color: Color(0xFF5F7099),
+                    style: TextStyle(
+                      color: colors.tertiaryText,
                       fontSize: 12,
                       fontStyle: FontStyle.italic,
                     ),
@@ -81,8 +83,8 @@ class VisualMathsPlaceholderScaffold extends StatelessWidget {
                   const SizedBox(height: AppSpacing.md),
                   Text(
                     caption,
-                    style: const TextStyle(
-                        color: Colors.white, fontSize: 15, height: 1.4),
+                    style: TextStyle(
+                        color: colors.primaryText, fontSize: 15, height: 1.4),
                   ),
                   const SizedBox(height: AppSpacing.lg),
                   OutlinedButton(

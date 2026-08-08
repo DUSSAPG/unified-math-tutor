@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../services/mascot_fuel_service.dart';
+import '../shared/theme/app_theme.dart';
 
 class MascotCard extends StatefulWidget {
   const MascotCard({
@@ -62,6 +63,7 @@ class _MascotCardState extends State<MascotCard>
   @override
   Widget build(BuildContext context) {
     final state = widget.state ?? _lastState;
+    final colors = context.appColors;
     return Card(
       child: Padding(
         padding: EdgeInsets.all(widget.compact ? 12 : 16),
@@ -111,8 +113,8 @@ class _MascotCardState extends State<MascotCard>
                     const SizedBox(height: 10),
                     Text(
                       AppLocalizations.of(context).captainNumberFuel,
-                      style: const TextStyle(
-                        color: Color(0xFF8A9DC0),
+                      style: TextStyle(
+                        color: colors.secondaryText,
                         fontSize: 12,
                       ),
                     ),
@@ -122,17 +124,17 @@ class _MascotCardState extends State<MascotCard>
                       child: LinearProgressIndicator(
                         value: fuel / 100,
                         minHeight: 8,
-                        backgroundColor: const Color(0xFF1F3055),
-                        valueColor: const AlwaysStoppedAnimation<Color>(
-                          Color(0xFFFFBD00),
+                        backgroundColor: colors.divider,
+                        valueColor: AlwaysStoppedAnimation<Color>(
+                          colors.warning,
                         ),
                       ),
                     ),
                     const SizedBox(height: 4),
                     Text(
                       '$fuel / 100',
-                      style: const TextStyle(
-                        color: Color(0xFFFFBD00),
+                      style: TextStyle(
+                        color: colors.warning,
                         fontSize: 11,
                       ),
                     ),

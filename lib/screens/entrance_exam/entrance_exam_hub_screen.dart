@@ -319,15 +319,15 @@ class _ModeTile extends StatelessWidget {
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 7, vertical: 3),
                               decoration: BoxDecoration(
-                                color: colors.tertiaryText,
+                                color: colors.divider,
                                 borderRadius: BorderRadius.circular(20),
                               ),
                               child: Text(
                                 l10n.entranceExamModeLockedBadge,
-                                style: const TextStyle(
+                                style: TextStyle(
                                   fontSize: 8,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.white,
+                                  color: colors.secondaryText,
                                 ),
                               ),
                             ),

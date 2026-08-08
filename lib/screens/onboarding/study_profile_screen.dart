@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../l10n/app_localizations.dart';
 import '../../services/learner_profiles_service.dart';
 import '../../services/onboarding_profile_service.dart';
+import '../../shared/theme/app_theme.dart';
 import 'onboarding_shell.dart';
 
 /// Step 4 of 4 — the only place onboarding ever asks for a name, and only
@@ -98,6 +99,7 @@ class _StudyProfileScreenState extends State<StudyProfileScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     final isStudent = _isStudent;
 
     return OnboardingShell(
@@ -132,8 +134,8 @@ class _StudyProfileScreenState extends State<StudyProfileScreen> {
             const SizedBox(height: 20),
             Text(
               l10n.onboardingRelationshipLabel,
-              style: const TextStyle(
-                color: Color(0xFF8A9DC0),
+              style: TextStyle(
+                color: colors.secondaryText,
                 fontSize: 13,
                 fontWeight: FontWeight.w500,
               ),
@@ -157,21 +159,19 @@ class _StudyProfileScreenState extends State<StudyProfileScreen> {
                     padding:
                         const EdgeInsets.symmetric(horizontal: 14, vertical: 9),
                     decoration: BoxDecoration(
-                      color: selected
-                          ? const Color(0xFF3D7EFF)
-                          : const Color(0xFF132040),
+                      color:
+                          selected ? colors.primaryAction : colors.cardSurface,
                       borderRadius: BorderRadius.circular(999),
                       border: Border.all(
-                        color: selected
-                            ? const Color(0xFF3D7EFF)
-                            : const Color(0xFF1F3055),
+                        color: selected ? colors.primaryAction : colors.divider,
                       ),
                     ),
                     child: Text(
                       label,
                       style: TextStyle(
-                        color:
-                            selected ? Colors.white : const Color(0xFF8A9DC0),
+                        color: selected
+                            ? colors.onPrimaryAction
+                            : colors.secondaryText,
                         fontSize: 13,
                         fontWeight:
                             selected ? FontWeight.w600 : FontWeight.w400,
@@ -185,8 +185,8 @@ class _StudyProfileScreenState extends State<StudyProfileScreen> {
           const SizedBox(height: 20),
           Text(
             l10n.onboardingParentEmailLabel,
-            style: const TextStyle(
-              color: Color(0xFF8A9DC0),
+            style: TextStyle(
+              color: colors.secondaryText,
               fontSize: 13,
               fontWeight: FontWeight.w500,
             ),
@@ -194,30 +194,29 @@ class _StudyProfileScreenState extends State<StudyProfileScreen> {
           const SizedBox(height: 4),
           Text(
             l10n.onboardingParentEmailSub,
-            style: const TextStyle(color: Color(0xFF4A6080), fontSize: 12),
+            style: TextStyle(color: colors.tertiaryText, fontSize: 12),
           ),
           const SizedBox(height: 10),
           TextField(
             controller: _emailController,
             keyboardType: TextInputType.emailAddress,
-            style: const TextStyle(color: Colors.white),
+            style: TextStyle(color: colors.primaryText),
             decoration: InputDecoration(
               hintText: l10n.onboardingParentEmailHint,
-              hintStyle: const TextStyle(color: Color(0xFF4A6080)),
+              hintStyle: TextStyle(color: colors.tertiaryText),
               filled: true,
-              fillColor: const Color(0xFF132040),
+              fillColor: colors.cardSurface,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                borderSide: const BorderSide(color: Color(0xFF1F3055)),
+                borderSide: BorderSide(color: colors.divider),
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                borderSide: const BorderSide(color: Color(0xFF1F3055)),
+                borderSide: BorderSide(color: colors.divider),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                borderSide:
-                    const BorderSide(color: Color(0xFF3D7EFF), width: 2),
+                borderSide: BorderSide(color: colors.primaryAction, width: 2),
               ),
               contentPadding: const EdgeInsets.symmetric(
                 horizontal: 16,
@@ -228,14 +227,12 @@ class _StudyProfileScreenState extends State<StudyProfileScreen> {
           const SizedBox(height: 12),
           Row(
             children: [
-              const Icon(Icons.lock_outline,
-                  size: 14, color: Color(0xFF4A6080)),
+              Icon(Icons.lock_outline, size: 14, color: colors.tertiaryText),
               const SizedBox(width: 6),
               Expanded(
                 child: Text(
                   l10n.onboardingPrivacyNote,
-                  style:
-                      const TextStyle(color: Color(0xFF4A6080), fontSize: 12),
+                  style: TextStyle(color: colors.tertiaryText, fontSize: 12),
                 ),
               ),
             ],
@@ -261,13 +258,14 @@ class _NameField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           label,
-          style: const TextStyle(
-            color: Color(0xFF8A9DC0),
+          style: TextStyle(
+            color: colors.secondaryText,
             fontSize: 13,
             fontWeight: FontWeight.w500,
           ),
@@ -275,29 +273,29 @@ class _NameField extends StatelessWidget {
         const SizedBox(height: 4),
         Text(
           sub,
-          style: const TextStyle(color: Color(0xFF4A6080), fontSize: 12),
+          style: TextStyle(color: colors.tertiaryText, fontSize: 12),
         ),
         const SizedBox(height: 10),
         TextField(
           controller: controller,
           textCapitalization: TextCapitalization.words,
-          style: const TextStyle(color: Colors.white),
+          style: TextStyle(color: colors.primaryText),
           decoration: InputDecoration(
             hintText: hint,
-            hintStyle: const TextStyle(color: Color(0xFF4A6080)),
+            hintStyle: TextStyle(color: colors.tertiaryText),
             filled: true,
-            fillColor: const Color(0xFF132040),
+            fillColor: colors.cardSurface,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: Color(0xFF1F3055)),
+              borderSide: BorderSide(color: colors.divider),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: Color(0xFF1F3055)),
+              borderSide: BorderSide(color: colors.divider),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: Color(0xFF3D7EFF), width: 2),
+              borderSide: BorderSide(color: colors.primaryAction, width: 2),
             ),
             contentPadding: const EdgeInsets.symmetric(
               horizontal: 16,

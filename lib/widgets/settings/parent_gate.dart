@@ -3,6 +3,7 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../app/safe_navigation.dart';
 import '../../services/local_preferences_service.dart';
+import '../../shared/theme/app_theme.dart';
 
 /// Wraps a Parent/Teacher Tools destination so a direct route hit (deep
 /// link, browser back/forward, or a stale link) can't bypass the PIN gate —
@@ -26,13 +27,14 @@ class ParentGate extends StatelessWidget {
     final graceOk = allowGraceAccess && prefs.hasFamilyStudioGraceAccess;
     if (!graceOk &&
         (!prefs.parentToolsEnabled.value || !prefs.parentAccessGranted)) {
+      final colors = context.appColors;
       return Scaffold(
-        backgroundColor: const Color(0xFF0B1120),
+        backgroundColor: colors.background,
         appBar: AppBar(
-          backgroundColor: const Color(0xFF0B1120),
+          backgroundColor: colors.background,
           elevation: 0,
           leading: IconButton(
-            icon: const Icon(Icons.arrow_back, color: Colors.white),
+            icon: Icon(Icons.arrow_back, color: colors.primaryText),
             onPressed: () => popOrGo(context, '/help/parent-teacher-tools'),
           ),
         ),
@@ -42,7 +44,7 @@ class ParentGate extends StatelessWidget {
             child: Text(
               AppLocalizations.of(context).parentToolsPinPrompt,
               textAlign: TextAlign.center,
-              style: const TextStyle(color: Colors.white),
+              style: TextStyle(color: colors.primaryText),
             ),
           ),
         ),

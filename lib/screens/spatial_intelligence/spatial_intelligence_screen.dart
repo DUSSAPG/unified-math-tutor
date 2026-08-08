@@ -6,6 +6,7 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 import '../../app/safe_navigation.dart';
 import '../../shared/responsive/app_breakpoints.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../widgets/shared/route_link_card.dart';
 
 /// Spatial Intelligence pillar hub: 4 real, self-contained interactive
@@ -21,19 +22,20 @@ class SpatialIntelligenceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0B1120),
+        backgroundColor: colors.background,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: colors.primaryText),
           onPressed: () => popOrGo(context, '/math-studio'),
         ),
         title: Text(
           l10n.mathStudioSpatialIntelligenceTitle,
           style:
-              const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+              TextStyle(color: colors.primaryText, fontWeight: FontWeight.w700),
         ),
       ),
       body: SafeArea(
@@ -48,8 +50,8 @@ class SpatialIntelligenceScreen extends StatelessWidget {
                 children: [
                   Text(
                     l10n.mathStudioSpatialIntelligenceSubtitle,
-                    style: const TextStyle(
-                        color: Color(0xFF8A9DC0), fontSize: 15, height: 1.4),
+                    style: TextStyle(
+                        color: colors.secondaryText, fontSize: 15, height: 1.4),
                   ),
                   const SizedBox(height: AppSpacing.lg),
                   RouteLinkCard(

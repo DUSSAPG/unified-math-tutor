@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/semantics.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -108,5 +110,60 @@ void main() {
       Theme.of(tester.element(find.byType(AppearanceScreen))).brightness,
       Brightness.light,
     );
+  });
+
+  testWidgets(
+      'each System/Dark/Light option exposes an accessible button role and '
+      'the selected option is marked selected', (tester) async {
+    final handle = tester.ensureSemantics();
+
+    await tester.pumpWidget(_testApp());
+    await tester.pumpAndSettle();
+
+    // Default is System — its Semantics node should be button+selected;
+    // Dark/Light should be button, not selected.
+    SemanticsNode nodeFor(String label) =>
+        tester.getSemantics(find.text(label));
+
+    Matcher optionSemantics({required bool selected}) => matchesSemantics(
+          isButton: true,
+          isSelected: selected,
+          hasSelectedState: true,
+          isFocusable: true,
+          hasTapAction: true,
+          hasFocusAction: true,
+        );
+
+    expect(nodeFor('System'), optionSemantics(selected: true));
+    expect(nodeFor('Dark'), optionSemantics(selected: false));
+    expect(nodeFor('Light'), optionSemantics(selected: false));
+
+    await tester.tap(find.text('Dark'));
+    await tester.pumpAndSettle();
+
+    expect(nodeFor('Dark'), optionSemantics(selected: true));
+    expect(nodeFor('System'), optionSemantics(selected: false));
+    handle.dispose();
+  });
+
+  testWidgets(
+      'theme options are keyboard-operable (focusable and Enter-activatable)',
+      (tester) async {
+    await tester.pumpWidget(_testApp());
+    await tester.pumpAndSettle();
+
+    // FocusableActionDetector/InkWell's own Focus node must be reachable —
+    // confirms this isn't a bare GestureDetector (which has no FocusNode at
+    // all and can't be reached by Tab or activated by Enter/Space).
+    final focusNode = Focus.of(
+      tester.element(find.text('Light')),
+    );
+    focusNode.requestFocus();
+    await tester.pumpAndSettle();
+    expect(focusNode.hasFocus, isTrue);
+
+    await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+    await tester.pumpAndSettle();
+    expect(LocalPreferencesService.instance.themeMode.value, ThemeMode.light);
   });
 }

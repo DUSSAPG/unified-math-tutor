@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../app/safe_navigation.dart';
+import '../../shared/theme/app_theme.dart';
 import 'visual_maths_placeholder_scaffold.dart';
 
 class _PlaceValueExample {
@@ -33,6 +34,7 @@ class _PlaceValueExplorerScreenState extends State<PlaceValueExplorerScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     final example = _examples[_index];
     return VisualMathsPlaceholderScaffold(
       title: l10n.visualMathsPlaceValueTitle,
@@ -48,14 +50,14 @@ class _PlaceValueExplorerScreenState extends State<PlaceValueExplorerScreen> {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               decoration: BoxDecoration(
-                color: const Color(0xFF132040),
+                color: colors.cardSurface,
                 borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: const Color(0xFF1F3055)),
+                border: Border.all(color: colors.divider),
               ),
               child: Text(
                 chip,
-                style: const TextStyle(
-                  color: Colors.white,
+                style: TextStyle(
+                  color: colors.primaryText,
                   fontSize: 18,
                   fontWeight: FontWeight.w700,
                 ),

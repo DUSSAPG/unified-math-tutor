@@ -8,6 +8,7 @@ import '../../services/audio_cue_service.dart';
 import '../../services/captain_math_service.dart';
 import '../../services/interactive_labs_progress_service.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../widgets/labs/lab_help_sheet.dart';
 import '../../widgets/labs/lab_progress_indicator.dart';
 import '../../widgets/labs/lab_related_links.dart';
@@ -202,6 +203,7 @@ class _AlgebraBalanceScreenState extends State<AlgebraBalanceScreen>
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
 
     // Concrete, numbered button labels ("Remove 3 from both sides") rather
     // than abstract ones ("Remove the constant") — the formal operation
@@ -247,8 +249,8 @@ class _AlgebraBalanceScreenState extends State<AlgebraBalanceScreen>
               label: l10n.labsAlgebraBalanceEquationLabel(_equationText),
               child: Text(
                 _equationText,
-                style: const TextStyle(
-                    color: Colors.white,
+                style: TextStyle(
+                    color: colors.primaryText,
                     fontSize: 22,
                     fontWeight: FontWeight.w700),
               ),
@@ -258,10 +260,11 @@ class _AlgebraBalanceScreenState extends State<AlgebraBalanceScreen>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Expanded(child: _Pan(xTiles: _a, unitTiles: _b)),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 12),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
                   child: Text('=',
-                      style: TextStyle(color: Colors.white, fontSize: 24)),
+                      style:
+                          TextStyle(color: colors.primaryText, fontSize: 24)),
                 ),
                 Expanded(child: _Pan(xTiles: 0, unitTiles: _c)),
               ],
@@ -281,8 +284,8 @@ class _AlgebraBalanceScreenState extends State<AlgebraBalanceScreen>
                       Text(
                         l10n.labsAlgebraBalanceStep1Button,
                         textAlign: TextAlign.center,
-                        style: const TextStyle(
-                            color: Color(0xFF8A9DC0), fontSize: 11),
+                        style: TextStyle(
+                            color: colors.secondaryText, fontSize: 11),
                       ),
                     ],
                   ),
@@ -300,8 +303,8 @@ class _AlgebraBalanceScreenState extends State<AlgebraBalanceScreen>
                       Text(
                         l10n.labsAlgebraBalanceStep2Button,
                         textAlign: TextAlign.center,
-                        style: const TextStyle(
-                            color: Color(0xFF8A9DC0), fontSize: 11),
+                        style: TextStyle(
+                            color: colors.secondaryText, fontSize: 11),
                       ),
                     ],
                   ),
@@ -353,12 +356,13 @@ class _Pan extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: const Color(0xFF132040),
+        color: colors.cardSurface,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: const Color(0xFF1F3055)),
+        border: Border.all(color: colors.divider),
       ),
       constraints: const BoxConstraints(minHeight: 72),
       child: Wrap(

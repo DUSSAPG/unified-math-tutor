@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
-const _cardColor = Color(0xFF132040);
-const _borderColor = Color(0xFF1F3055);
-const _focusColor = Color(0xFF3D7EFF);
-const _labelColor = Color(0xFF8A9DC0);
+import '../../shared/theme/app_theme.dart';
 
 /// Text field styled to match the app's onboarding/dark form fields
 /// (see `study_profile_screen.dart`), reused across the auth screens.
@@ -32,13 +29,14 @@ class _AuthTextFieldState extends State<AuthTextField> {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           widget.label,
-          style: const TextStyle(
-            color: _labelColor,
+          style: TextStyle(
+            color: colors.secondaryText,
             fontSize: 13,
             fontWeight: FontWeight.w500,
           ),
@@ -48,26 +46,26 @@ class _AuthTextFieldState extends State<AuthTextField> {
           controller: widget.controller,
           keyboardType: widget.keyboardType,
           obscureText: widget.obscureText && _obscured,
-          style: const TextStyle(color: Colors.white),
+          style: TextStyle(color: colors.primaryText),
           validator: widget.validator,
           decoration: InputDecoration(
             filled: true,
-            fillColor: _cardColor,
+            fillColor: colors.cardSurface,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: _borderColor),
+              borderSide: BorderSide(color: colors.divider),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: _borderColor),
+              borderSide: BorderSide(color: colors.divider),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: _focusColor, width: 2),
+              borderSide: BorderSide(color: colors.primaryAction, width: 2),
             ),
             errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: Color(0xFFE91E63)),
+              borderSide: BorderSide(color: colors.error),
             ),
             contentPadding:
                 const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
@@ -77,7 +75,7 @@ class _AuthTextFieldState extends State<AuthTextField> {
                       _obscured
                           ? Icons.visibility_outlined
                           : Icons.visibility_off_outlined,
-                      color: _labelColor,
+                      color: colors.secondaryText,
                     ),
                     onPressed: () => setState(() => _obscured = !_obscured),
                   )

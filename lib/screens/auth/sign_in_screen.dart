@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../services/local_account_service.dart';
 import '../../services/onboarding_profile_service.dart';
+import '../../shared/theme/app_theme.dart';
 import 'auth_form_fields.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -38,10 +39,11 @@ class _SignInScreenState extends State<SignInScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0B1120),
+        backgroundColor: colors.background,
         elevation: 0,
         title: const Text('Sign In'),
       ),
@@ -56,18 +58,19 @@ class _SignInScreenState extends State<SignInScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    const Text(
+                    Text(
                       'Welcome back',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: colors.primaryText,
                         fontSize: 24,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
                     const SizedBox(height: 6),
-                    const Text(
+                    Text(
                       'Sign in to keep your local progress, Maths Journey data and achievements on this device.',
-                      style: TextStyle(color: Color(0xFF8A9DC0), fontSize: 14),
+                      style:
+                          TextStyle(color: colors.secondaryText, fontSize: 14),
                     ),
                     const SizedBox(height: 28),
                     AuthTextField(
@@ -87,9 +90,9 @@ class _SignInScreenState extends State<SignInScreen> {
                       alignment: Alignment.centerRight,
                       child: TextButton(
                         onPressed: () => context.push('/auth/forgot-password'),
-                        child: const Text(
+                        child: Text(
                           'Forgot password?',
-                          style: TextStyle(color: Color(0xFF5B8EFF)),
+                          style: TextStyle(color: colors.accent),
                         ),
                       ),
                     ),
@@ -99,18 +102,18 @@ class _SignInScreenState extends State<SignInScreen> {
                       child: FilledButton(
                         onPressed: _isSubmitting ? null : _submit,
                         style: FilledButton.styleFrom(
-                          backgroundColor: const Color(0xFF3D7EFF),
+                          backgroundColor: colors.primaryAction,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(14),
                           ),
                         ),
                         child: _isSubmitting
-                            ? const SizedBox(
+                            ? SizedBox(
                                 width: 22,
                                 height: 22,
                                 child: CircularProgressIndicator(
                                   strokeWidth: 2,
-                                  color: Colors.white,
+                                  color: colors.onPrimaryAction,
                                 ),
                               )
                             : const Text(
@@ -127,10 +130,10 @@ class _SignInScreenState extends State<SignInScreen> {
                       alignment: WrapAlignment.center,
                       crossAxisAlignment: WrapCrossAlignment.center,
                       children: [
-                        const Text(
+                        Text(
                           "Don't have an account?",
                           style: TextStyle(
-                            color: Color(0xFF8A9DC0),
+                            color: colors.secondaryText,
                             fontSize: 14,
                           ),
                         ),
@@ -141,10 +144,10 @@ class _SignInScreenState extends State<SignInScreen> {
                             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                           ),
                           onPressed: () => context.push('/auth/create'),
-                          child: const Text(
+                          child: Text(
                             'Create one',
                             style: TextStyle(
-                              color: Color(0xFF5B8EFF),
+                              color: colors.accent,
                               fontWeight: FontWeight.w600,
                             ),
                           ),

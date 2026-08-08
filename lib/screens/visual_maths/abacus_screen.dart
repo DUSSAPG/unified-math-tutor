@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../app/safe_navigation.dart';
+import '../../shared/theme/app_theme.dart';
 import 'visual_maths_placeholder_scaffold.dart';
 
 class _AbacusExample {
@@ -67,6 +68,7 @@ class _AbacusColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Semantics(
       label: '$label column: $active of 9 beads active',
       child: ExcludeSemantics(
@@ -80,16 +82,14 @@ class _AbacusColumn extends StatelessWidget {
                   height: 22,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: i < active
-                        ? const Color(0xFF5B8EFF)
-                        : Colors.transparent,
-                    border: Border.all(color: const Color(0xFF1F3055)),
+                    color: i < active ? colors.accent : Colors.transparent,
+                    border: Border.all(color: colors.divider),
                   ),
                 ),
               ),
             const SizedBox(height: 8),
             Text(label,
-                style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 12)),
+                style: TextStyle(color: colors.secondaryText, fontSize: 12)),
           ],
         ),
       ),

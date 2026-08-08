@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../app/safe_navigation.dart';
+import '../../shared/theme/app_theme.dart';
 
 class SubscriptionScreen extends StatelessWidget {
   const SubscriptionScreen({super.key});
@@ -17,16 +18,17 @@ class SubscriptionScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0B1120),
+        backgroundColor: colors.background,
         elevation: 0,
         scrolledUnderElevation: 0,
         automaticallyImplyLeading: false,
         actions: [
           IconButton(
-            icon: const Icon(Icons.close, color: Colors.white),
+            icon: Icon(Icons.close, color: colors.primaryText),
             onPressed: () => popOrGo(context, '/profile'),
           ),
         ],
@@ -55,29 +57,29 @@ class SubscriptionScreen extends StatelessWidget {
                           color: Color(0xFFFFBD00), size: 36),
                     ),
                   ),
-                  const Text(
+                  Text(
                     'Unlock Your Full\nPotential',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: Colors.white,
+                      color: colors.primaryText,
                       fontSize: 26,
                       fontWeight: FontWeight.w800,
                       height: 1.2,
                     ),
                   ),
                   const SizedBox(height: 8),
-                  const Text(
+                  Text(
                     'Get unlimited access to all features and content',
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Color(0xFF8A9DC0), fontSize: 14),
+                    style: TextStyle(color: colors.secondaryText, fontSize: 14),
                   ),
                   const SizedBox(height: 28),
                   Container(
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF132040),
+                      color: colors.cardSurface,
                       borderRadius: BorderRadius.circular(14),
-                      border: Border.all(color: const Color(0xFF1F3055)),
+                      border: Border.all(color: colors.divider),
                     ),
                     child: const Column(
                       children: [
@@ -96,8 +98,8 @@ class SubscriptionScreen extends StatelessWidget {
                     child: ElevatedButton(
                       onPressed: () => _showComingSoon(context),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFF5B8EFF),
-                        foregroundColor: Colors.white,
+                        backgroundColor: colors.primaryAction,
+                        foregroundColor: colors.onPrimaryAction,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(14),
                         ),
@@ -111,24 +113,26 @@ class SubscriptionScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 8),
-                  const Text(
+                  Text(
                     'Coming soon — payments aren\'t live yet, this won\'t charge you.',
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Color(0xFF4A6080), fontSize: 12),
+                    style: TextStyle(color: colors.tertiaryText, fontSize: 12),
                   ),
                   const SizedBox(height: 12),
                   TextButton(
                     onPressed: () => _showComingSoon(context),
-                    child: const Text(
+                    child: Text(
                       'Restore Purchases',
-                      style: TextStyle(color: Color(0xFF8A9DC0), fontSize: 13),
+                      style:
+                          TextStyle(color: colors.secondaryText, fontSize: 13),
                     ),
                   ),
                   TextButton(
                     onPressed: () => popOrGo(context, '/profile'),
-                    child: const Text(
+                    child: Text(
                       'Maybe Later',
-                      style: TextStyle(color: Color(0xFF4A6080), fontSize: 13),
+                      style:
+                          TextStyle(color: colors.tertiaryText, fontSize: 13),
                     ),
                   ),
                 ],
@@ -149,16 +153,17 @@ class _FeatureRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Padding(
       padding: EdgeInsets.only(bottom: last ? 0 : 12),
       child: Row(
         children: [
-          const Icon(Icons.check_circle, color: Color(0xFF34C759), size: 18),
+          Icon(Icons.check_circle, color: colors.success, size: 18),
           const SizedBox(width: 12),
           Expanded(
             child: Text(
               text,
-              style: const TextStyle(color: Colors.white, fontSize: 14),
+              style: TextStyle(color: colors.primaryText, fontSize: 14),
             ),
           ),
         ],

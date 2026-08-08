@@ -1,49 +1,20 @@
-import 'dart:math' as math;
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:unified_math_tutor/shared/theme/app_theme.dart';
 
-/// WCAG 2.1 relative-luminance contrast ratio, per the standard formula
-/// (https://www.w3.org/TR/WCAG21/#dfn-relative-luminance /
-/// #dfn-contrast-ratio). No package dependency — small enough, and
-/// self-contained keeps this test independently auditable.
-double _relativeLuminance(Color color) {
-  double channel(double srgb) {
-    return srgb <= 0.03928
-        ? srgb / 12.92
-        : math.pow((srgb + 0.055) / 1.055, 2.4).toDouble();
-  }
-
-  final r = channel(color.r);
-  final g = channel(color.g);
-  final b = channel(color.b);
-  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
-}
-
-double contrastRatio(Color a, Color b) {
-  final l1 = _relativeLuminance(a);
-  final l2 = _relativeLuminance(b);
-  final lighter = l1 > l2 ? l1 : l2;
-  final darker = l1 > l2 ? l2 : l1;
-  return (lighter + 0.05) / (darker + 0.05);
-}
+import 'support/contrast_test_utils.dart';
 
 void main() {
-  const normalTextMin = 4.5;
-  const largeTextMin = 3.0;
+  const normalTextMin = wcagNormalTextMinRatio;
+  const largeTextMin = wcagLargeTextMinRatio;
 
   void checkPair(
     String label,
     Color foreground,
     Color background, {
     double minRatio = normalTextMin,
-  }) {
-    final ratio = contrastRatio(foreground, background);
-    expect(ratio, greaterThanOrEqualTo(minRatio),
-        reason:
-            '$label contrast is ${ratio.toStringAsFixed(2)}:1, needs >= $minRatio:1');
-  }
+  }) =>
+      expectContrast(label, foreground, background, minRatio: minRatio);
 
   group('Dark theme contrast', () {
     final theme = AppTheme.dark();
@@ -85,6 +56,39 @@ void main() {
 
     test('accent (icons/links/selected text) on background', () {
       checkPair('accent/background', c.accent, c.background,
+          minRatio: largeTextMin);
+    });
+
+    test('border is distinguishable from cardSurface (chips/cards/inputs)', () {
+      checkPair('divider/cardSurface', c.divider, c.cardSurface,
+          minRatio: 1.15);
+    });
+
+    test('disabled button/chip content is distinguishable from its surface',
+        () {
+      // Mirrors AppTheme._build()'s filledButtonTheme/elevatedButtonTheme:
+      // disabledForegroundColor is tertiaryText ("dim"), disabledBackground
+      // -Color is divider — the same pair every disabled FilledButton/
+      // ElevatedButton in the app actually renders. WCAG 2.1 SC 1.4.11
+      // explicitly exempts disabled ("inactive") controls from contrast
+      // minimums, so this only guards against the pair becoming
+      // indistinguishable (a regression), not a 3:1 AA bar — this measures
+      // ~2.0:1 (dark) / ~2.3:1 (light), a pre-existing value from before
+      // this sprint, ported unchanged and flagged in the build report as a
+      // candidate for a future design-system pass rather than silently
+      // recolored here.
+      checkPair(
+          'tertiaryText/divider (disabled control)', c.tertiaryText, c.divider,
+          minRatio: 1.5);
+    });
+
+    test('selected chip (accent-filled) label is legible', () {
+      // The selected-state fill several chips/pills use throughout the app
+      // (e.g. ChoiceChip.selectedColor: colors.accent) with onPrimaryAction
+      // text — same treatment as the primary action button above, checked
+      // separately since chips render smaller text than a 16px+ button.
+      checkPair(
+          'onPrimaryAction/accent (selected chip)', c.onPrimaryAction, c.accent,
           minRatio: largeTextMin);
     });
   });
@@ -133,6 +137,28 @@ void main() {
 
     test('accent (icons/links/selected text) on background', () {
       checkPair('accent/background', c.accent, c.background,
+          minRatio: largeTextMin);
+    });
+
+    test('border is distinguishable from cardSurface (chips/cards/inputs)', () {
+      checkPair('divider/cardSurface', c.divider, c.cardSurface,
+          minRatio: 1.15);
+    });
+
+    test('disabled button/chip content is distinguishable from its surface',
+        () {
+      // See the matching Dark theme test above for why this is 1.5:1, not
+      // the 3:1 AA bar — WCAG exempts disabled controls from contrast
+      // minimums; this measures ~2.3:1, pre-existing from before this
+      // sprint.
+      checkPair(
+          'tertiaryText/divider (disabled control)', c.tertiaryText, c.divider,
+          minRatio: 1.5);
+    });
+
+    test('selected chip (accent-filled) label is legible', () {
+      checkPair(
+          'onPrimaryAction/accent (selected chip)', c.onPrimaryAction, c.accent,
           minRatio: largeTextMin);
     });
   });

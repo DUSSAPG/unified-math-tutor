@@ -3,6 +3,12 @@ import 'package:go_router/go_router.dart';
 
 import '../../app/safe_navigation.dart';
 import '../../services/local_data_reset_service.dart';
+import '../../shared/theme/app_theme.dart';
+
+// Fixed destructive-action red, consistent with the same value used for the
+// Sign Out icon badge elsewhere in Settings — deliberately not a theme
+// token, so "this is destructive" reads identically in both themes.
+const _destructiveRed = Color(0xFFFF3B30);
 
 class PrivacyDataScreen extends StatefulWidget {
   const PrivacyDataScreen({super.key});
@@ -31,9 +37,7 @@ class _PrivacyDataScreenState extends State<PrivacyDataScreen> {
           ),
           FilledButton(
             onPressed: () => Navigator.of(dialogContext).pop(true),
-            style: FilledButton.styleFrom(
-              backgroundColor: const Color(0xFFFF3B30),
-            ),
+            style: FilledButton.styleFrom(backgroundColor: _destructiveRed),
             child: const Text('Delete Everything'),
           ),
         ],
@@ -60,31 +64,32 @@ class _PrivacyDataScreenState extends State<PrivacyDataScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0B1120),
+        backgroundColor: colors.background,
         elevation: 0,
         scrolledUnderElevation: 0,
         centerTitle: false,
         titleSpacing: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: colors.primaryText),
           onPressed: () => popOrGo(context, '/profile'),
         ),
-        title: const Column(
+        title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               'Privacy & Data',
               style: TextStyle(
-                  color: Colors.white,
+                  color: colors.primaryText,
                   fontSize: 20,
                   fontWeight: FontWeight.w700),
             ),
             Text(
               'How we use and protect your data',
-              style: TextStyle(color: Color(0xFF8A9DC0), fontSize: 12),
+              style: TextStyle(color: colors.secondaryText, fontSize: 12),
             ),
           ],
         ),
@@ -146,8 +151,8 @@ class _PrivacyDataScreenState extends State<PrivacyDataScreen> {
                     child: OutlinedButton(
                       onPressed: () => context.go('/profile/terms'),
                       style: OutlinedButton.styleFrom(
-                        foregroundColor: const Color(0xFF5B8EFF),
-                        side: const BorderSide(color: Color(0xFF1F3055)),
+                        foregroundColor: colors.accent,
+                        side: BorderSide(color: colors.divider),
                         padding: const EdgeInsets.symmetric(vertical: 14),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12)),
@@ -164,8 +169,8 @@ class _PrivacyDataScreenState extends State<PrivacyDataScreen> {
                     child: OutlinedButton(
                       onPressed: _isDeleting ? null : _confirmDeleteData,
                       style: OutlinedButton.styleFrom(
-                        foregroundColor: const Color(0xFFFF3B30),
-                        side: const BorderSide(color: Color(0xFFFF3B30)),
+                        foregroundColor: _destructiveRed,
+                        side: const BorderSide(color: _destructiveRed),
                         padding: const EdgeInsets.symmetric(vertical: 14),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12)),
@@ -176,7 +181,7 @@ class _PrivacyDataScreenState extends State<PrivacyDataScreen> {
                               height: 20,
                               child: CircularProgressIndicator(
                                 strokeWidth: 2,
-                                color: Color(0xFFFF3B30),
+                                color: _destructiveRed,
                               ),
                             )
                           : const Text(
@@ -186,10 +191,10 @@ class _PrivacyDataScreenState extends State<PrivacyDataScreen> {
                     ),
                   ),
                   const SizedBox(height: 12),
-                  const Text(
+                  Text(
                     'For privacy enquiries: privacy@mathtutor.app',
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Color(0xFF4A6080), fontSize: 12),
+                    style: TextStyle(color: colors.tertiaryText, fontSize: 12),
                   ),
                 ],
               ),
@@ -216,12 +221,13 @@ class _InfoSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF132040),
+        color: colors.cardSurface,
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: const Color(0xFF1F3055)),
+        border: Border.all(color: colors.divider),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -232,8 +238,8 @@ class _InfoSection extends StatelessWidget {
               const SizedBox(width: 6),
               Text(
                 title,
-                style: const TextStyle(
-                  color: Color(0xFF8A9DC0),
+                style: TextStyle(
+                  color: colors.secondaryText,
                   fontSize: 11,
                   fontWeight: FontWeight.w600,
                   letterSpacing: 1.1,
@@ -262,6 +268,7 @@ class _InfoItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Padding(
       padding: EdgeInsets.only(bottom: last ? 0 : 14),
       child: Column(
@@ -269,14 +276,16 @@ class _InfoItem extends StatelessWidget {
         children: [
           Text(
             title,
-            style: const TextStyle(
-                color: Colors.white, fontSize: 14, fontWeight: FontWeight.w600),
+            style: TextStyle(
+                color: colors.primaryText,
+                fontSize: 14,
+                fontWeight: FontWeight.w600),
           ),
           const SizedBox(height: 3),
           Text(
             subtitle,
-            style: const TextStyle(
-                color: Color(0xFF8A9DC0), fontSize: 13, height: 1.4),
+            style: TextStyle(
+                color: colors.secondaryText, fontSize: 13, height: 1.4),
           ),
         ],
       ),

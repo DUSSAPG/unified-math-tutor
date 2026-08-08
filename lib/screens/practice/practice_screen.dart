@@ -778,12 +778,18 @@ class _SetupView extends StatelessWidget {
                 ),
               ),
               child: isLoading
-                  ? const SizedBox(
+                  ? SizedBox(
                       width: 22,
                       height: 22,
                       child: CircularProgressIndicator(
                         strokeWidth: 2,
-                        color: Colors.white,
+                        // The button's own background falls back to
+                        // colors.divider while loading (see backgroundColor
+                        // above), so the spinner uses the same dim tone the
+                        // theme already uses for disabled button content,
+                        // rather than a fixed white that vanishes on a pale
+                        // Light Theme divider.
+                        color: colors.tertiaryText,
                       ),
                     )
                   : Row(

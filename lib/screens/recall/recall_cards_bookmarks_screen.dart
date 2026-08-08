@@ -8,6 +8,7 @@ import '../../services/recall_card_catalog_service.dart';
 import '../../services/recall_cards_progress_service.dart';
 import '../../shared/responsive/app_breakpoints.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../widgets/recall/recall_illustration.dart';
 
 /// Bookmarked cards for the active learner profile. Bookmarks are additive
@@ -34,19 +35,20 @@ class _RecallCardsBookmarksScreenState
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0B1120),
+        backgroundColor: colors.background,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: colors.primaryText),
           onPressed: () => popOrGo(context, '/math-studio/recall-cards'),
         ),
         title: Text(
           l10n.recallCardsBookmarksTitle,
           style:
-              const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+              TextStyle(color: colors.primaryText, fontWeight: FontWeight.w700),
         ),
       ),
       body: SafeArea(
@@ -55,9 +57,9 @@ class _RecallCardsBookmarksScreenState
           builder: (context, snapshot) {
             final cards = snapshot.data;
             if (snapshot.hasError) {
-              return const Center(
+              return Center(
                 child: Icon(Icons.error_outline,
-                    color: Color(0xFF8A9DC0), size: 32),
+                    color: colors.secondaryText, size: 32),
               );
             }
             if (cards == null) {
@@ -83,7 +85,7 @@ class _RecallCardsBookmarksScreenState
                           child: Text(
                             l10n.recallCardsEmptyBookmarks,
                             textAlign: TextAlign.center,
-                            style: const TextStyle(color: Color(0xFF8A9DC0)),
+                            style: TextStyle(color: colors.secondaryText),
                           ),
                         ),
                       );
@@ -97,7 +99,7 @@ class _RecallCardsBookmarksScreenState
                         final text =
                             card.textFor(Localizations.localeOf(context));
                         return Material(
-                          color: const Color(0xFF132040),
+                          color: colors.cardSurface,
                           borderRadius: BorderRadius.circular(14),
                           child: InkWell(
                             borderRadius: BorderRadius.circular(14),
@@ -117,15 +119,15 @@ class _RecallCardsBookmarksScreenState
                                       text.frontPrompt,
                                       maxLines: 2,
                                       overflow: TextOverflow.ellipsis,
-                                      style: const TextStyle(
-                                        color: Colors.white,
+                                      style: TextStyle(
+                                        color: colors.primaryText,
                                         fontSize: 14,
                                         fontWeight: FontWeight.w700,
                                       ),
                                     ),
                                   ),
-                                  const Icon(Icons.chevron_right,
-                                      color: Color(0xFF4A6080)),
+                                  Icon(Icons.chevron_right,
+                                      color: colors.tertiaryText),
                                 ],
                               ),
                             ),

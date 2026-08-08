@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../app/safe_navigation.dart';
+import '../../shared/theme/app_theme.dart';
 import 'visual_maths_placeholder_scaffold.dart';
 
 class _FractionExample {
@@ -55,6 +56,7 @@ class _FractionBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Semantics(
       label: '$numerator out of $denominator segments filled',
       child: ExcludeSemantics(
@@ -66,10 +68,8 @@ class _FractionBar extends StatelessWidget {
                   height: 56,
                   margin: EdgeInsets.only(right: i == denominator - 1 ? 0 : 2),
                   decoration: BoxDecoration(
-                    color: i < numerator
-                        ? const Color(0xFF5B8EFF)
-                        : const Color(0xFF132040),
-                    border: Border.all(color: const Color(0xFF1F3055)),
+                    color: i < numerator ? colors.accent : colors.cardSurface,
+                    border: Border.all(color: colors.divider),
                     borderRadius: BorderRadius.horizontal(
                       left: i == 0 ? const Radius.circular(8) : Radius.zero,
                       right: i == denominator - 1

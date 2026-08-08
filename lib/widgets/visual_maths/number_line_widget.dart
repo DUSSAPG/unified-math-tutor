@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../services/local_preferences_service.dart';
+import '../../shared/theme/app_theme.dart';
 
 /// A real, lightweight interactive number line: drag the point (or use the
 /// accessible slider actions) to move it between [min] and [max] in [step]
@@ -115,12 +116,16 @@ class _NumberLineWidgetState extends State<NumberLineWidget>
                         : 1.0;
                     final animatedValue =
                         _animatedFrom + (_animatedTo - _animatedFrom) * t;
+                    final colors = context.appColors;
                     return CustomPaint(
                       painter: _NumberLinePainter(
                         min: widget.min,
                         max: widget.max,
                         step: widget.step,
                         value: animatedValue,
+                        lineColor: colors.divider,
+                        pointColor: colors.accent,
+                        labelColor: colors.secondaryText,
                       ),
                     );
                   },
@@ -140,6 +145,9 @@ class _NumberLinePainter extends CustomPainter {
     required this.max,
     required this.step,
     required this.value,
+    required this.lineColor,
+    required this.pointColor,
+    required this.labelColor,
   });
 
   final num min;
@@ -147,15 +155,21 @@ class _NumberLinePainter extends CustomPainter {
   final num step;
   final num value;
 
-  static const _lineColor = Color(0xFF1F3055);
-  static const _pointColor = Color(0xFF5B8EFF);
-  static const _labelColor = Color(0xFF8A9DC0);
+  // Resolved once per build from `context.appColors` by the caller — a
+  // `CustomPainter` can't call `Theme.of(context)` itself, so these are
+  // threaded through the constructor rather than hardcoded (the previous
+  // hardcoded dark-theme values made this diagram nearly invisible on the
+  // light background: a dark divider-colour line and dim secondary-text
+  // labels against a pale page).
+  final Color lineColor;
+  final Color pointColor;
+  final Color labelColor;
 
   @override
   void paint(Canvas canvas, Size size) {
     final lineY = size.height / 2;
     final linePaint = Paint()
-      ..color = _lineColor
+      ..color = lineColor
       ..strokeWidth = 3;
     canvas.drawLine(Offset(4, lineY), Offset(size.width - 4, lineY), linePaint);
 
@@ -168,7 +182,7 @@ class _NumberLinePainter extends CustomPainter {
         canvas.drawLine(
           Offset(x, lineY - 6),
           Offset(x, lineY + 6),
-          Paint()..color = _lineColor,
+          Paint()..color = lineColor,
         );
         tick += step;
       }
@@ -178,7 +192,7 @@ class _NumberLinePainter extends CustomPainter {
     _drawLabel(canvas, '$max', Offset(size.width - 24, lineY + 12));
 
     final pointX = 4 + (value - min) / range * (size.width - 8);
-    canvas.drawCircle(Offset(pointX, lineY), 9, Paint()..color = _pointColor);
+    canvas.drawCircle(Offset(pointX, lineY), 9, Paint()..color = pointColor);
     _drawLabel(canvas, _formatValue(value), Offset(pointX - 10, lineY - 30));
   }
 
@@ -190,7 +204,7 @@ class _NumberLinePainter extends CustomPainter {
   void _drawLabel(Canvas canvas, String text, Offset offset) {
     final painter = TextPainter(
       text: TextSpan(
-          text: text, style: const TextStyle(color: _labelColor, fontSize: 12)),
+          text: text, style: TextStyle(color: labelColor, fontSize: 12)),
       textDirection: TextDirection.ltr,
     )..layout();
     painter.paint(canvas, offset);
@@ -200,5 +214,8 @@ class _NumberLinePainter extends CustomPainter {
   bool shouldRepaint(covariant _NumberLinePainter oldDelegate) =>
       oldDelegate.value != value ||
       oldDelegate.min != min ||
-      oldDelegate.max != max;
+      oldDelegate.max != max ||
+      oldDelegate.lineColor != lineColor ||
+      oldDelegate.pointColor != pointColor ||
+      oldDelegate.labelColor != labelColor;
 }

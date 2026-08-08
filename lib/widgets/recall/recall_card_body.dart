@@ -6,6 +6,7 @@ import '../../models/recall_card.dart';
 import '../../services/recall_cards_progress_service.dart';
 import '../../shared/math_notation_formatter.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 import 'recall_illustration.dart';
 
 /// The shared Recognise → Recall → Reveal → Explain → Connect card body,
@@ -62,6 +63,7 @@ class _RecallCardBodyState extends State<RecallCardBody> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     final card = widget.card;
     final text = card.textFor(Localizations.localeOf(context));
 
@@ -81,8 +83,8 @@ class _RecallCardBodyState extends State<RecallCardBody> {
               Expanded(
                 child: Text(
                   MathNotationFormatter.format(text.frontPrompt),
-                  style: const TextStyle(
-                    color: Colors.white,
+                  style: TextStyle(
+                    color: colors.primaryText,
                     fontSize: 17,
                     fontWeight: FontWeight.w700,
                     height: 1.3,
@@ -99,7 +101,7 @@ class _RecallCardBodyState extends State<RecallCardBody> {
                     widget.isBookmarked
                         ? Icons.bookmark
                         : Icons.bookmark_border,
-                    color: const Color(0xFFFFBD00),
+                    color: colors.warning,
                   ),
                   onPressed: widget.onBookmarkToggle,
                 ),
@@ -120,24 +122,24 @@ class _RecallCardBodyState extends State<RecallCardBody> {
             const SizedBox(height: AppSpacing.sm),
             Text(
               MathNotationFormatter.format(text.answer),
-              style: const TextStyle(
-                  color: Colors.white, fontSize: 15, height: 1.4),
+              style: TextStyle(
+                  color: colors.primaryText, fontSize: 15, height: 1.4),
             ),
             const SizedBox(height: AppSpacing.lg),
             _SectionHeading(text: l10n.recallCardsExplainLabel),
             const SizedBox(height: AppSpacing.sm),
             Text(
               MathNotationFormatter.format(text.explanation),
-              style: const TextStyle(
-                  color: Color(0xFF8A9DC0), fontSize: 13, height: 1.4),
+              style: TextStyle(
+                  color: colors.secondaryText, fontSize: 13, height: 1.4),
             ),
             const SizedBox(height: AppSpacing.md),
             _SectionHeading(text: l10n.recallCardsCommonMistakeLabel),
             const SizedBox(height: AppSpacing.sm),
             Text(
               MathNotationFormatter.format(text.commonMistake),
-              style: const TextStyle(
-                  color: Color(0xFF8A9DC0), fontSize: 13, height: 1.4),
+              style: TextStyle(
+                  color: colors.secondaryText, fontSize: 13, height: 1.4),
             ),
             const SizedBox(height: AppSpacing.lg),
             _SectionHeading(text: l10n.recallCardsConnectLabel),
@@ -147,7 +149,7 @@ class _RecallCardBodyState extends State<RecallCardBody> {
                 padding: const EdgeInsets.only(bottom: 4),
                 child: Text(
                   '• $used',
-                  style: const TextStyle(color: Colors.white, fontSize: 13),
+                  style: TextStyle(color: colors.primaryText, fontSize: 13),
                 ),
               ),
             const SizedBox(height: AppSpacing.md),
@@ -192,8 +194,8 @@ class _SectionHeading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: const TextStyle(
-        color: Color(0xFF5B8EFF),
+      style: TextStyle(
+        color: context.appColors.accent,
         fontSize: 12,
         fontWeight: FontWeight.w700,
         letterSpacing: 1.1,
@@ -251,7 +253,14 @@ class _RelatedLinks extends StatelessWidget {
                   onPressed: () {
                     RecallCardsProgressService.instance
                         .recordLinkedPracticeUse(card.id);
-                    context.push('/topics');
+                    // Recall Cards live outside the bottom-nav shell (under
+                    // /math-studio); /topics is a shell-owned branch route,
+                    // so this MUST use go(), never push() — see the
+                    // navigator key ownership model comment in
+                    // lib/app/router.dart. push() here duplicates the
+                    // Topics branch's GlobalKey<NavigatorState> and crashes
+                    // with a Navigator key-reservation assertion.
+                    context.go('/topics');
                   },
                 ),
             ],
@@ -267,7 +276,7 @@ class _RelatedLinks extends StatelessWidget {
               for (final id in card.relatedInteractiveLabIds)
                 Chip(
                   label: Text('$id · ${l10n.recallCardsLabComingSoon}'),
-                  backgroundColor: const Color(0xFF132040),
+                  backgroundColor: context.appColors.cardSurface,
                 ),
             ],
           ),
@@ -287,8 +296,8 @@ class _LinkGroupLabel extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 6),
       child: Text(
         text,
-        style: const TextStyle(
-            color: Color(0xFF8A9DC0),
+        style: TextStyle(
+            color: context.appColors.secondaryText,
             fontSize: 12,
             fontWeight: FontWeight.w600),
       ),

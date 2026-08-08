@@ -6,6 +6,7 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 import '../../app/safe_navigation.dart';
 import '../../shared/responsive/app_breakpoints.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 
 class ExploreMathIntelligenceScreen extends StatelessWidget {
   const ExploreMathIntelligenceScreen({super.key});
@@ -13,22 +14,23 @@ class ExploreMathIntelligenceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0B1120),
+        backgroundColor: colors.background,
         elevation: 0,
         scrolledUnderElevation: 0,
         centerTitle: false,
         titleSpacing: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: colors.primaryText),
           onPressed: () => popOrGo(context, '/home'),
         ),
         title: Text(
           l10n.exploreMathIntelligenceTitle,
-          style: const TextStyle(
-            color: Colors.white,
+          style: TextStyle(
+            color: colors.primaryText,
             fontSize: 20,
             fontWeight: FontWeight.w700,
           ),
@@ -46,8 +48,8 @@ class ExploreMathIntelligenceScreen extends StatelessWidget {
                 children: [
                   Text(
                     l10n.exploreHeaderSubtitle,
-                    style: const TextStyle(
-                      color: Color(0xFF8A9DC0),
+                    style: TextStyle(
+                      color: colors.secondaryText,
                       fontSize: 14,
                       height: 1.4,
                     ),
@@ -55,7 +57,7 @@ class ExploreMathIntelligenceScreen extends StatelessWidget {
                   const SizedBox(height: AppSpacing.lg),
                   _SectionLabel(
                     text: l10n.exploreAvailableTodaySection,
-                    color: const Color(0xFF34C759),
+                    color: colors.success,
                   ),
                   const SizedBox(height: AppSpacing.sm),
                   // This screen is itself pushed above the bottom-nav shell
@@ -239,12 +241,13 @@ class _AvailableFeatureCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     final card = Container(
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
-        color: const Color(0xFF132040),
+        color: colors.cardSurface,
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: const Color(0xFF1F3055)),
+        border: Border.all(color: colors.divider),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -268,22 +271,21 @@ class _AvailableFeatureCard extends StatelessWidget {
                     Expanded(
                       child: Text(
                         title,
-                        style: const TextStyle(
-                          color: Colors.white,
+                        style: TextStyle(
+                          color: colors.primaryText,
                           fontSize: 15,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
                     ),
-                    const Icon(Icons.check_circle,
-                        color: Color(0xFF34C759), size: 18),
+                    Icon(Icons.check_circle, color: colors.success, size: 18),
                   ],
                 ),
                 const SizedBox(height: 3),
                 Text(
                   body,
-                  style: const TextStyle(
-                    color: Color(0xFF8A9DC0),
+                  style: TextStyle(
+                    color: colors.secondaryText,
                     fontSize: 13,
                     height: 1.35,
                   ),
@@ -324,12 +326,13 @@ class _AtelierFeatureCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Container(
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
-        color: const Color(0xFF132040).withValues(alpha: 0.6),
+        color: colors.cardSurface.withValues(alpha: 0.6),
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: const Color(0xFF1F3055)),
+        border: Border.all(color: colors.divider),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -338,10 +341,10 @@ class _AtelierFeatureCard extends StatelessWidget {
             width: 40,
             height: 40,
             decoration: BoxDecoration(
-              color: const Color(0xFF8A9DC0).withValues(alpha: 0.12),
+              color: colors.secondaryText.withValues(alpha: 0.12),
               borderRadius: BorderRadius.circular(10),
             ),
-            child: Icon(icon, color: const Color(0xFF8A9DC0), size: 20),
+            child: Icon(icon, color: colors.secondaryText, size: 20),
           ),
           const SizedBox(width: 12),
           Expanded(
@@ -354,8 +357,8 @@ class _AtelierFeatureCard extends StatelessWidget {
                     Expanded(
                       child: Text(
                         title,
-                        style: const TextStyle(
-                          color: Color(0xFFD5DCEA),
+                        style: TextStyle(
+                          color: colors.secondaryText,
                           fontSize: 15,
                           fontWeight: FontWeight.w700,
                         ),
@@ -367,9 +370,9 @@ class _AtelierFeatureCard extends StatelessWidget {
                         horizontal: 7,
                         vertical: 3,
                       ),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFFF9500),
-                        borderRadius: BorderRadius.circular(20),
+                      decoration: const BoxDecoration(
+                        color: Color(0xFFFF9500),
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
                       ),
                       child: Text(
                         badge,
@@ -386,8 +389,8 @@ class _AtelierFeatureCard extends StatelessWidget {
                 const SizedBox(height: 3),
                 Text(
                   body,
-                  style: const TextStyle(
-                    color: Color(0xFF8A9DC0),
+                  style: TextStyle(
+                    color: colors.secondaryText,
                     fontSize: 13,
                     height: 1.35,
                   ),
@@ -395,8 +398,8 @@ class _AtelierFeatureCard extends StatelessWidget {
                 const SizedBox(height: 4),
                 Text(
                   note,
-                  style: const TextStyle(
-                    color: Color(0xFF5F7099),
+                  style: TextStyle(
+                    color: colors.tertiaryText,
                     fontSize: 11,
                     fontStyle: FontStyle.italic,
                   ),
@@ -418,26 +421,26 @@ class _RoadmapPhilosophyCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF132040),
+        color: colors.cardSurface,
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: const Color(0xFF1F3055)),
+        border: Border.all(color: colors.divider),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
-              const Icon(LucideIcons.compass,
-                  color: Color(0xFF5B8EFF), size: 16),
+              Icon(LucideIcons.compass, color: colors.accent, size: 16),
               const SizedBox(width: 8),
               Expanded(
                 child: Text(
                   title,
-                  style: const TextStyle(
-                    color: Colors.white,
+                  style: TextStyle(
+                    color: colors.primaryText,
                     fontSize: 14,
                     fontWeight: FontWeight.w700,
                   ),
@@ -448,8 +451,8 @@ class _RoadmapPhilosophyCard extends StatelessWidget {
           const SizedBox(height: 10),
           Text(
             body,
-            style: const TextStyle(
-              color: Color(0xFF8A9DC0),
+            style: TextStyle(
+              color: colors.secondaryText,
               fontSize: 13,
               height: 1.5,
             ),

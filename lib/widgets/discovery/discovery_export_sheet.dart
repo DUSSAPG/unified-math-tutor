@@ -4,14 +4,16 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 import '../../models/discovery_card.dart';
 import '../../services/discovery_card_export_service.dart';
 import '../../services/onboarding_profile_service.dart';
+import '../../shared/theme/app_theme.dart';
 
 enum _ExportMode { challenge, solution, combined }
 
 Future<void> showDiscoveryExportSheet(
     BuildContext context, DiscoveryCard card) {
+  final colors = context.appColors;
   return showModalBottomSheet<void>(
     context: context,
-    backgroundColor: const Color(0xFF132040),
+    backgroundColor: colors.elevatedSurface,
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
     ),
@@ -57,6 +59,7 @@ class _DiscoveryExportSheetState extends State<_DiscoveryExportSheet> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return SafeArea(
       top: false,
       child: Padding(
@@ -71,14 +74,14 @@ class _DiscoveryExportSheetState extends State<_DiscoveryExportSheet> {
               margin: const EdgeInsets.only(bottom: 16),
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                color: const Color(0xFF1F3055),
+                color: colors.divider,
                 borderRadius: BorderRadius.circular(2),
               ),
             ),
             Text(
               l10n.mathStudioExportButton,
-              style: const TextStyle(
-                color: Colors.white,
+              style: TextStyle(
+                color: colors.primaryText,
                 fontSize: 16,
                 fontWeight: FontWeight.w700,
               ),
@@ -92,17 +95,17 @@ class _DiscoveryExportSheetState extends State<_DiscoveryExportSheet> {
                   RadioListTile<_ExportMode>(
                     value: _ExportMode.challenge,
                     title: Text(l10n.mathStudioExportChallengeOnly,
-                        style: const TextStyle(color: Colors.white)),
+                        style: TextStyle(color: colors.primaryText)),
                   ),
                   RadioListTile<_ExportMode>(
                     value: _ExportMode.solution,
                     title: Text(l10n.mathStudioExportSolutionOnly,
-                        style: const TextStyle(color: Colors.white)),
+                        style: TextStyle(color: colors.primaryText)),
                   ),
                   RadioListTile<_ExportMode>(
                     value: _ExportMode.combined,
                     title: Text(l10n.mathStudioExportCombined,
-                        style: const TextStyle(color: Colors.white)),
+                        style: TextStyle(color: colors.primaryText)),
                   ),
                 ],
               ),
@@ -113,7 +116,7 @@ class _DiscoveryExportSheetState extends State<_DiscoveryExportSheet> {
                   setState(() => _includeName = value ?? false),
               controlAffinity: ListTileControlAffinity.leading,
               title: Text(l10n.mathStudioExportIncludeNameLabel,
-                  style: const TextStyle(color: Colors.white)),
+                  style: TextStyle(color: colors.primaryText)),
             ),
             const SizedBox(height: 8),
             ElevatedButton.icon(

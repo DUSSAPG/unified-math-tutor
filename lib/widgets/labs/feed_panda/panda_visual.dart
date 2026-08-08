@@ -70,7 +70,14 @@ class _PandaFacePainter extends CustomPainter {
 
   static const _bodyColor = Color(0xFFFFFFFF);
   static const _patchColor = Color(0xFF2B2B33);
-  static const _outlineColor = Color(0xFFB9BEC9);
+  // A mid-tone slate rather than a light warm-grey: the original
+  // 0xFFB9BEC9 read fine on the old fixed dark background but nearly
+  // disappeared against the pale Light Theme page — this value keeps
+  // Panda's silhouette visible against both a near-black and a
+  // pale-blue-grey backdrop. Kept a fixed, theme-independent value
+  // (like Panda's white fur) rather than swapping to `context.appColors`
+  // per state — Panda is a governed character identity, not UI chrome.
+  static const _outlineColor = Color(0xFF6B7280);
   static const _blushColor = Color(0xFFFFB4A8);
 
   @override

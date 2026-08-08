@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 
 class ManimExplanationCard extends StatefulWidget {
   const ManimExplanationCard({
@@ -68,14 +69,15 @@ class _ManimExplanationCardState extends State<ManimExplanationCard>
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Semantics(
       label: '${widget.title}. ${widget.accessibilityDescription}',
       child: Container(
         padding: const EdgeInsets.all(14),
         decoration: BoxDecoration(
-          color: const Color(0xFF132040),
+          color: colors.cardSurface,
           borderRadius: BorderRadius.circular(14),
-          border: Border.all(color: const Color(0xFF1F3055)),
+          border: Border.all(color: colors.divider),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -88,8 +90,8 @@ class _ManimExplanationCardState extends State<ManimExplanationCard>
               children: [
                 Text(
                   widget.title,
-                  style: const TextStyle(
-                    color: Colors.white,
+                  style: TextStyle(
+                    color: colors.primaryText,
                     fontSize: 15,
                     fontWeight: FontWeight.w700,
                   ),
@@ -109,6 +111,10 @@ class _ManimExplanationCardState extends State<ManimExplanationCard>
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: Container(
+                // Fixed dark "screening room" canvas for the SVG diagram,
+                // independent of app theme — matches how a video/media
+                // player canvas stays dark regardless of surrounding chrome,
+                // and the static-fallback SVGs are authored for it.
                 color: const Color(0xFF0B1120),
                 height: 150,
                 width: double.infinity,
@@ -146,8 +152,8 @@ class _ManimExplanationCardState extends State<ManimExplanationCard>
               const SizedBox(height: AppSpacing.sm),
               Text(
                 widget.caption!,
-                style: const TextStyle(
-                  color: Color(0xFF8A9DC0),
+                style: TextStyle(
+                  color: colors.secondaryText,
                   fontSize: 12,
                   height: 1.4,
                 ),

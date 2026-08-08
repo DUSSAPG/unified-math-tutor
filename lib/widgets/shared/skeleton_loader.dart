@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../shared/theme/app_theme.dart';
+
 // ─── Animated base box ────────────────────────────────────────────────────────
 
 /// A single pulsating skeleton box — no external packages required.
@@ -42,6 +44,7 @@ class _SkeletonBoxState extends State<SkeletonBox>
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return AnimatedBuilder(
       animation: _anim,
       builder: (_, __) => Container(
@@ -49,8 +52,8 @@ class _SkeletonBoxState extends State<SkeletonBox>
         height: widget.height,
         decoration: BoxDecoration(
           color: Color.lerp(
-            const Color(0xFF132040),
-            const Color(0xFF1E3060),
+            colors.cardSurface,
+            colors.divider,
             _anim.value,
           ),
           borderRadius: BorderRadius.circular(widget.borderRadius),
@@ -67,12 +70,13 @@ class SkeletonTopicCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
       decoration: BoxDecoration(
-        color: const Color(0xFF132040),
+        color: colors.cardSurface,
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: const Color(0xFF1F3055)),
+        border: Border.all(color: colors.divider),
       ),
       child: Row(
         children: [
@@ -107,13 +111,14 @@ class SkeletonHomeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Container(
       height: 96,
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF132040),
+        color: colors.cardSurface,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: const Color(0xFF1F3055)),
+        border: Border.all(color: colors.divider),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

@@ -401,45 +401,61 @@ class _ThemeOption extends StatelessWidget {
   Widget build(BuildContext context) {
     final colors = context.appColors;
     return Expanded(
-      child: GestureDetector(
-        onTap: onTap,
-        child: Container(
-          decoration: BoxDecoration(
-            color: colors.elevatedSurface,
+      // Semantics(button/selected) + Material/InkWell instead of a bare
+      // GestureDetector: GestureDetector alone exposes no accessible role,
+      // no "selected" state to a screen reader, and can't be reached or
+      // activated from a physical/on-screen keyboard (no FocusNode). InkWell
+      // gets keyboard focus + Enter/Space activation for free; Semantics
+      // adds the button/selected role explicitly since a plain InkWell
+      // wrapping a Text doesn't announce "selected" on its own.
+      child: Semantics(
+        button: true,
+        selected: selected,
+        child: Material(
+          color: Colors.transparent,
+          child: InkWell(
+            onTap: onTap,
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(
-              color: selected ? colors.accent : colors.divider,
-              width: selected ? 2 : 1,
-            ),
-          ),
-          child: Column(
-            children: [
-              ClipRRect(
-                borderRadius:
-                    const BorderRadius.vertical(top: Radius.circular(11)),
-                child: Container(
-                  height: 56,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [topColor, bottomColor],
+            child: Container(
+              decoration: BoxDecoration(
+                color: colors.elevatedSurface,
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                  color: selected ? colors.accent : colors.divider,
+                  width: selected ? 2 : 1,
+                ),
+              ),
+              child: Column(
+                children: [
+                  ClipRRect(
+                    borderRadius:
+                        const BorderRadius.vertical(top: Radius.circular(11)),
+                    child: Container(
+                      height: 56,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [topColor, bottomColor],
+                        ),
+                      ),
                     ),
                   ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8),
-                child: Text(
-                  label,
-                  style: TextStyle(
-                    color: selected ? colors.accent : colors.secondaryText,
-                    fontSize: 12,
-                    fontWeight: selected ? FontWeight.w600 : FontWeight.w400,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8),
+                    child: Text(
+                      label,
+                      style: TextStyle(
+                        color: selected ? colors.accent : colors.secondaryText,
+                        fontSize: 12,
+                        fontWeight:
+                            selected ? FontWeight.w600 : FontWeight.w400,
+                      ),
+                    ),
                   ),
-                ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),

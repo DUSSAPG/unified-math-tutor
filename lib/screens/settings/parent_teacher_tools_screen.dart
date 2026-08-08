@@ -4,6 +4,7 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../app/safe_navigation.dart';
 import '../../services/local_preferences_service.dart';
+import '../../shared/theme/app_theme.dart';
 
 class ParentTeacherToolsScreen extends StatefulWidget {
   const ParentTeacherToolsScreen({super.key});
@@ -90,8 +91,9 @@ class _ParentTeacherToolsScreenState extends State<ParentTeacherToolsScreen> {
   Widget build(BuildContext context) {
     final prefs = LocalPreferencesService.instance;
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
@@ -165,23 +167,26 @@ class _InfoCard extends StatelessWidget {
   final String body;
 
   @override
-  Widget build(BuildContext context) => Container(
-        padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          color: const Color(0xFF132040),
-          borderRadius: BorderRadius.circular(14),
-          border: Border.all(color: const Color(0xFF1F3055)),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(title,
-                style: const TextStyle(
-                    color: Colors.white, fontWeight: FontWeight.w700)),
-            const SizedBox(height: 6),
-            Text(body,
-                style: const TextStyle(color: Color(0xFF8A9DC0), height: 1.4)),
-          ],
-        ),
-      );
+  Widget build(BuildContext context) {
+    final colors = context.appColors;
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: colors.cardSurface,
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(color: colors.divider),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(title,
+              style: TextStyle(
+                  color: colors.primaryText, fontWeight: FontWeight.w700)),
+          const SizedBox(height: 6),
+          Text(body,
+              style: TextStyle(color: colors.secondaryText, height: 1.4)),
+        ],
+      ),
+    );
+  }
 }

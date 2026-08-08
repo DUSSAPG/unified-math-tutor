@@ -8,6 +8,7 @@ import '../../services/audio_cue_service.dart';
 import '../../services/captain_math_service.dart';
 import '../../services/interactive_labs_progress_service.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../widgets/labs/lab_help_sheet.dart';
 import '../../widgets/labs/lab_progress_indicator.dart';
 import '../../widgets/labs/lab_related_links.dart';
@@ -280,6 +281,7 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen>
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     final outlierPresent = _working.contains(_dataset.outlier);
     final mean = _working.isEmpty ? 0.0 : _mean(_working);
     final median = _working.isEmpty ? 0.0 : _median(_working);
@@ -319,8 +321,8 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen>
                 padding: const EdgeInsets.only(bottom: AppSpacing.sm),
                 child: Text(
                   l10n.labsDataDetectiveOutlierExplanation(_dataset.outlier),
-                  style: const TextStyle(
-                      color: Colors.white, fontSize: 14, height: 1.4),
+                  style: TextStyle(
+                      color: colors.primaryText, fontSize: 14, height: 1.4),
                 ),
               ),
             Wrap(
@@ -333,13 +335,13 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen>
                     // addition to any colour, so it never depends on colour
                     // alone to stand out.
                     avatar: _working[i] == _dataset.outlier
-                        ? const Icon(Icons.warning_amber_rounded,
-                            color: Color(0xFFFFBD00), size: 18)
+                        ? Icon(Icons.warning_amber_rounded,
+                            color: colors.warning, size: 18)
                         : null,
                     label: Text('${_working[i]}'),
                     onDeleted: () => _removeAt(i),
-                    backgroundColor: const Color(0xFF132040),
-                    labelStyle: const TextStyle(color: Colors.white),
+                    backgroundColor: colors.cardSurface,
+                    labelStyle: TextStyle(color: colors.primaryText),
                   ),
               ],
             ),
@@ -352,8 +354,8 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen>
             const SizedBox(height: AppSpacing.lg),
             Text(
               l10n.labsDataDetectivePredictionPrompt,
-              style: const TextStyle(
-                  color: Colors.white,
+              style: TextStyle(
+                  color: colors.primaryText,
                   fontSize: 15,
                   fontWeight: FontWeight.w700),
             ),
@@ -426,8 +428,8 @@ class _DataDetectiveScreenState extends State<DataDetectiveScreen>
                       _fmt(_medianBefore!),
                       _fmt(_medianAfter!),
                     ),
-                    style: const TextStyle(
-                        color: Color(0xFF8A9DC0), fontSize: 12, height: 1.4),
+                    style: TextStyle(
+                        color: colors.secondaryText, fontSize: 12, height: 1.4),
                   ),
                 ],
               ),
@@ -482,6 +484,7 @@ class _StatTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Semantics(
       label: '$label $value',
       child: ExcludeSemantics(
@@ -489,21 +492,20 @@ class _StatTile extends StatelessWidget {
           margin: const EdgeInsets.symmetric(horizontal: 4),
           padding: const EdgeInsets.symmetric(vertical: 10),
           decoration: BoxDecoration(
-            color: const Color(0xFF132040),
+            color: colors.cardSurface,
             borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: const Color(0xFF1F3055)),
+            border: Border.all(color: colors.divider),
           ),
           child: Column(
             children: [
               Text(value,
-                  style: const TextStyle(
-                      color: Colors.white,
+                  style: TextStyle(
+                      color: colors.primaryText,
                       fontSize: 18,
                       fontWeight: FontWeight.w700)),
               const SizedBox(height: 2),
               Text(label,
-                  style:
-                      const TextStyle(color: Color(0xFF8A9DC0), fontSize: 11)),
+                  style: TextStyle(color: colors.secondaryText, fontSize: 11)),
             ],
           ),
         ),

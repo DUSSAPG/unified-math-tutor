@@ -6,6 +6,7 @@ import '../../services/local_preferences_service.dart';
 import '../../services/parent_report_service.dart';
 import '../../services/session_history_service.dart';
 import '../../shared/math_notation_formatter.dart';
+import '../../shared/theme/app_theme.dart';
 
 class ParentCheatSheetScreen extends StatefulWidget {
   const ParentCheatSheetScreen({super.key});
@@ -21,9 +22,10 @@ class _ParentCheatSheetScreenState extends State<ParentCheatSheetScreen> {
   @override
   Widget build(BuildContext context) {
     final prefs = LocalPreferencesService.instance;
+    final colors = context.appColors;
     if (!prefs.parentToolsEnabled.value || !prefs.parentAccessGranted) {
       return Scaffold(
-        backgroundColor: const Color(0xFF0B1120),
+        backgroundColor: colors.background,
         appBar: _appBar(context),
         body: Center(
           child: Text(AppLocalizations.of(context).parentToolsPinPrompt),
@@ -31,7 +33,7 @@ class _ParentCheatSheetScreenState extends State<ParentCheatSheetScreen> {
       );
     }
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: _appBar(context),
       body: FutureBuilder<List<PracticeSessionResult>>(
         future: SessionHistoryService.instance.load(),
@@ -89,15 +91,16 @@ class _DrillSuggestions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final suggestions = const ParentReportService().drillSuggestions(sessions);
+    final colors = context.appColors;
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(14),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('Suggested topic drills',
+            Text('Suggested topic drills',
                 style: TextStyle(
-                    color: Colors.white, fontWeight: FontWeight.w700)),
+                    color: colors.primaryText, fontWeight: FontWeight.w700)),
             const SizedBox(height: 8),
             if (suggestions.isEmpty)
               const Text('No weak topics detected yet.')
@@ -131,7 +134,7 @@ class _SessionCard extends StatelessWidget {
     return Card(
       child: ExpansionTile(
         title: Text('${session.stage} session',
-            style: const TextStyle(color: Colors.white)),
+            style: TextStyle(color: context.appColors.primaryText)),
         subtitle:
             Text(session.completedAt.toLocal().toString().split('.').first),
         children: grouped.entries
@@ -164,7 +167,7 @@ class _QuestionResultTileState extends State<_QuestionResultTile> {
     final result = widget.result;
     return ListTile(
       title: Text(MathNotationFormatter.format(result.question),
-          style: const TextStyle(color: Colors.white)),
+          style: TextStyle(color: context.appColors.primaryText)),
       subtitle: _revealed
           ? Text(
               'Correct: ${MathNotationFormatter.format(result.options[result.correctIndex])}\n'

@@ -4,6 +4,7 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../services/captain_math_service.dart';
 import '../services/local_preferences_service.dart';
+import '../shared/theme/app_theme.dart';
 
 /// A lightweight Captain Math moment: introduces a discovery, offers a short
 /// encouragement, points out a connection, or celebrates completion subtly.
@@ -117,8 +118,10 @@ class _CaptainMathCardState extends State<CaptainMathCard>
             Flexible(
               child: Text(
                 message,
-                style: const TextStyle(
-                    color: Color(0xFF8A9DC0), fontSize: 13, height: 1.3),
+                style: TextStyle(
+                    color: context.appColors.secondaryText,
+                    fontSize: 13,
+                    height: 1.3),
               ),
             ),
           ],

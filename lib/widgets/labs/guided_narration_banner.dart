@@ -6,6 +6,7 @@ import '../../models/interactive_lab_id.dart';
 import '../../models/narration_message.dart';
 import '../../services/guided_narration_service.dart';
 import '../../services/local_preferences_service.dart';
+import '../../shared/theme/app_theme.dart';
 import '../captain_math_card.dart';
 
 /// Captain Math's guided-narration presence for a lab: shows the active
@@ -26,6 +27,7 @@ class GuidedNarrationBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return ValueListenableBuilder<NarrationMessage?>(
       valueListenable: GuidedNarrationService.instance.current,
       builder: (context, message, _) {
@@ -54,13 +56,13 @@ class GuidedNarrationBanner extends StatelessWidget {
                 Expanded(
                   child: Text(
                     message.text,
-                    style: const TextStyle(
-                        color: Color(0xFF8A9DC0), fontSize: 13, height: 1.3),
+                    style: TextStyle(
+                        color: colors.secondaryText, fontSize: 13, height: 1.3),
                   ),
                 ),
                 IconButton(
-                  icon: const Icon(Icons.replay,
-                      size: 18, color: Color(0xFF8A9DC0)),
+                  icon:
+                      Icon(Icons.replay, size: 18, color: colors.secondaryText),
                   tooltip: l10n.labsNarrationReplayButton,
                   visualDensity: VisualDensity.compact,
                   onPressed: () => GuidedNarrationService.instance.replayLast(),

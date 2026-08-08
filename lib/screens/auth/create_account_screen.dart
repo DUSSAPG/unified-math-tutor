@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../services/local_account_service.dart';
 import '../../services/onboarding_profile_service.dart';
+import '../../shared/theme/app_theme.dart';
 import 'auth_form_fields.dart';
 
 class CreateAccountScreen extends StatefulWidget {
@@ -51,10 +52,11 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0B1120),
+        backgroundColor: colors.background,
         elevation: 0,
         title: const Text('Create Account'),
       ),
@@ -69,18 +71,19 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    const Text(
+                    Text(
                       'Create your account',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: colors.primaryText,
                         fontSize: 24,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
                     const SizedBox(height: 6),
-                    const Text(
+                    Text(
                       'Save progress, Maths Journey data and achievements on this device.',
-                      style: TextStyle(color: Color(0xFF8A9DC0), fontSize: 14),
+                      style:
+                          TextStyle(color: colors.secondaryText, fontSize: 14),
                     ),
                     const SizedBox(height: 28),
                     AuthTextField(
@@ -117,18 +120,18 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                       child: FilledButton(
                         onPressed: _isSubmitting ? null : _submit,
                         style: FilledButton.styleFrom(
-                          backgroundColor: const Color(0xFF3D7EFF),
+                          backgroundColor: colors.primaryAction,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(14),
                           ),
                         ),
                         child: _isSubmitting
-                            ? const SizedBox(
+                            ? SizedBox(
                                 width: 22,
                                 height: 22,
                                 child: CircularProgressIndicator(
                                   strokeWidth: 2,
-                                  color: Colors.white,
+                                  color: colors.onPrimaryAction,
                                 ),
                               )
                             : const Text(
@@ -145,10 +148,10 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                       alignment: WrapAlignment.center,
                       crossAxisAlignment: WrapCrossAlignment.center,
                       children: [
-                        const Text(
+                        Text(
                           'Already have an account?',
                           style: TextStyle(
-                            color: Color(0xFF8A9DC0),
+                            color: colors.secondaryText,
                             fontSize: 14,
                           ),
                         ),
@@ -159,10 +162,10 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                           ),
                           onPressed: () => context.push('/auth/sign-in'),
-                          child: const Text(
+                          child: Text(
                             'Sign in',
                             style: TextStyle(
-                              color: Color(0xFF5B8EFF),
+                              color: colors.accent,
                               fontWeight: FontWeight.w600,
                             ),
                           ),

@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../../services/learner_profiles_service.dart';
 import '../../../services/onboarding_profile_service.dart';
+import '../../../shared/theme/app_theme.dart';
 import '../../../widgets/onboarding/onboarding_selection_card.dart';
 import '../onboarding_shell.dart';
 
@@ -60,6 +61,7 @@ class _FamilyRoleDetailScreenState extends State<FamilyRoleDetailScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     final relationshipLabels = {
       'parent': l10n.onboardingRelationshipParent,
       'guardian': l10n.onboardingRelationshipGuardian,
@@ -83,8 +85,8 @@ class _FamilyRoleDetailScreenState extends State<FamilyRoleDetailScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(l10n.onboardingRelationshipLabel,
-              style: const TextStyle(
-                  color: Colors.white, fontWeight: FontWeight.w700)),
+              style: TextStyle(
+                  color: colors.primaryText, fontWeight: FontWeight.w700)),
           const SizedBox(height: 12),
           for (final key in _relationships)
             Padding(
@@ -98,11 +100,11 @@ class _FamilyRoleDetailScreenState extends State<FamilyRoleDetailScreen> {
             ),
           const SizedBox(height: 12),
           Text(l10n.onboardingFamilyLearnerNamesLabel,
-              style: const TextStyle(
-                  color: Colors.white, fontWeight: FontWeight.w700)),
+              style: TextStyle(
+                  color: colors.primaryText, fontWeight: FontWeight.w700)),
           const SizedBox(height: 4),
           Text(l10n.onboardingFamilyLearnerNamesSub,
-              style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 12)),
+              style: TextStyle(color: colors.secondaryText, fontSize: 12)),
           const SizedBox(height: 12),
           for (var i = 0; i < _learnerNameControllers.length; i++)
             Padding(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../app/safe_navigation.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../widgets/shared/section_header.dart';
 
 class ReleaseNotesScreen extends StatelessWidget {
@@ -8,33 +9,34 @@ class ReleaseNotesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0B1120),
+        backgroundColor: colors.background,
         elevation: 0,
         scrolledUnderElevation: 0,
         centerTitle: false,
         titleSpacing: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: colors.primaryText),
           onPressed: () => popOrGo(context, '/profile'),
         ),
-        title: const Column(
+        title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               'Release Notes',
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
-                  color: Colors.white,
+                  color: colors.primaryText,
                   fontSize: 20,
                   fontWeight: FontWeight.w700),
             ),
             Text(
               'What\'s new in Math Intelligence',
               overflow: TextOverflow.ellipsis,
-              style: TextStyle(color: Color(0xFF8A9DC0), fontSize: 12),
+              style: TextStyle(color: colors.secondaryText, fontSize: 12),
             ),
           ],
         ),
@@ -128,9 +130,9 @@ class ReleaseNotesScreen extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF132040),
+                      color: colors.cardSurface,
                       borderRadius: BorderRadius.circular(14),
-                      border: Border.all(color: const Color(0xFF1F3055)),
+                      border: Border.all(color: colors.divider),
                     ),
                     child: const Column(
                       children: [
@@ -176,12 +178,13 @@ class _ReleaseSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF132040),
+        color: colors.cardSurface,
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: const Color(0xFF1F3055)),
+        border: Border.all(color: colors.divider),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -190,8 +193,8 @@ class _ReleaseSection extends StatelessWidget {
             children: [
               Text(
                 version,
-                style: const TextStyle(
-                  color: Colors.white,
+                style: TextStyle(
+                  color: colors.primaryText,
                   fontSize: 16,
                   fontWeight: FontWeight.w700,
                 ),
@@ -219,8 +222,8 @@ class _ReleaseSection extends StatelessWidget {
                   date,
                   textAlign: TextAlign.end,
                   overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    color: Color(0xFF4A6080),
+                  style: TextStyle(
+                    color: colors.tertiaryText,
                     fontSize: 12,
                   ),
                 ),
@@ -250,18 +253,19 @@ class _ReleaseItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Padding(
       padding: EdgeInsets.only(bottom: isLast ? 0 : 10),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(icon, color: const Color(0xFF5B8EFF), size: 15),
+          Icon(icon, color: colors.accent, size: 15),
           const SizedBox(width: 10),
           Expanded(
             child: Text(
               text,
-              style: const TextStyle(
-                color: Color(0xFF8A9DC0),
+              style: TextStyle(
+                color: colors.secondaryText,
                 fontSize: 13,
                 height: 1.4,
               ),
@@ -288,6 +292,7 @@ class _InfoRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Padding(
       padding: EdgeInsets.only(bottom: isLast ? 0 : 10),
       child: Row(
@@ -295,12 +300,12 @@ class _InfoRow extends StatelessWidget {
         children: [
           Text(
             label,
-            style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13),
+            style: TextStyle(color: colors.secondaryText, fontSize: 13),
           ),
           Text(
             value,
-            style: const TextStyle(
-              color: Colors.white,
+            style: TextStyle(
+              color: colors.primaryText,
               fontSize: 13,
               fontWeight: FontWeight.w500,
             ),
@@ -316,5 +321,5 @@ class _Divider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) =>
-      const Divider(color: Color(0xFF1F3055), height: 20);
+      Divider(color: context.appColors.divider, height: 20);
 }

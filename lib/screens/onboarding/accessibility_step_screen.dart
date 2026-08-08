@@ -3,12 +3,13 @@ import 'package:go_router/go_router.dart';
 
 import '../../l10n/app_localizations.dart';
 import '../../services/local_preferences_service.dart';
+import '../../shared/theme/app_theme.dart';
 import 'onboarding_shell.dart';
 
 /// Step 3 of 4 for every onboarding role — text size and reduce-motion
 /// preferences, reusing the same [LocalPreferencesService] state that
-/// Settings > Accessibility reads/writes later. Math Intelligence is
-/// dark-theme-only for v1, so no theme-mode choice appears here.
+/// Settings > Accessibility reads/writes later. Theme mode (dark/light) is
+/// chosen separately, in Settings > Appearance.
 class AccessibilityStepScreen extends StatefulWidget {
   const AccessibilityStepScreen({super.key});
 
@@ -46,6 +47,7 @@ class _AccessibilityStepScreenState extends State<AccessibilityStepScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return OnboardingShell(
       step: 3,
       totalSteps: 4,
@@ -61,25 +63,25 @@ class _AccessibilityStepScreenState extends State<AccessibilityStepScreen> {
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: const Color(0xFF132040),
+              color: colors.cardSurface,
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: const Color(0xFF1F3055)),
+              border: Border.all(color: colors.divider),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
+                Text(
                   'Reading Size',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: colors.primaryText,
                     fontSize: 15,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
                 const SizedBox(height: 4),
-                const Text(
+                Text(
                   'Choose a comfortable reading size',
-                  style: TextStyle(color: Color(0xFF8A9DC0), fontSize: 13),
+                  style: TextStyle(color: colors.secondaryText, fontSize: 13),
                 ),
                 const SizedBox(height: 14),
                 Row(
@@ -106,9 +108,9 @@ class _AccessibilityStepScreenState extends State<AccessibilityStepScreen> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
             decoration: BoxDecoration(
-              color: const Color(0xFF132040),
+              color: colors.cardSurface,
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: const Color(0xFF1F3055)),
+              border: Border.all(color: colors.divider),
             ),
             child: Row(
               children: [
@@ -116,30 +118,30 @@ class _AccessibilityStepScreenState extends State<AccessibilityStepScreen> {
                   width: 40,
                   height: 40,
                   decoration: BoxDecoration(
-                    color: const Color(0xFF003040),
+                    color: const Color(0xFF00BCD4).withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: const Icon(Icons.animation,
                       color: Color(0xFF00BCD4), size: 20),
                 ),
                 const SizedBox(width: 14),
-                const Expanded(
+                Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         'Reduce Motion',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: colors.primaryText,
                           fontSize: 15,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      SizedBox(height: 2),
+                      const SizedBox(height: 2),
                       Text(
                         'Minimise animations and transitions',
-                        style:
-                            TextStyle(color: Color(0xFF8A9DC0), fontSize: 13),
+                        style: TextStyle(
+                            color: colors.secondaryText, fontSize: 13),
                       ),
                     ],
                   ),
@@ -150,7 +152,7 @@ class _AccessibilityStepScreenState extends State<AccessibilityStepScreen> {
                     await LocalPreferencesService.instance.setReduceMotion(v);
                     if (mounted) setState(() => _reduceMotion = v);
                   },
-                  activeThumbColor: const Color(0xFF5B8EFF),
+                  activeThumbColor: colors.accent,
                 ),
               ],
             ),
@@ -176,15 +178,16 @@ class _SizeOption extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return GestureDetector(
       onTap: onTap,
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 16),
         decoration: BoxDecoration(
-          color: const Color(0xFF0D1525),
+          color: colors.cardSurface,
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
-            color: selected ? const Color(0xFF5B8EFF) : const Color(0xFF1F3055),
+            color: selected ? colors.accent : colors.divider,
             width: selected ? 2 : 1,
           ),
         ),
@@ -193,9 +196,7 @@ class _SizeOption extends StatelessWidget {
             Text(
               'Aa',
               style: TextStyle(
-                color: selected
-                    ? const Color(0xFF5B8EFF)
-                    : const Color(0xFF8A9DC0),
+                color: selected ? colors.accent : colors.secondaryText,
                 fontSize: fontSize,
                 fontWeight: FontWeight.w600,
               ),
@@ -204,9 +205,7 @@ class _SizeOption extends StatelessWidget {
             Text(
               label,
               style: TextStyle(
-                color: selected
-                    ? const Color(0xFF5B8EFF)
-                    : const Color(0xFF8A9DC0),
+                color: selected ? colors.accent : colors.secondaryText,
                 fontSize: 11,
                 fontWeight: selected ? FontWeight.w600 : FontWeight.w400,
               ),

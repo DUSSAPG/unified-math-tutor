@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../../shared/theme/app_theme.dart';
+
 /// Reusable empty-state widget: icon + title + subtitle + optional CTA.
 class EmptyState extends StatelessWidget {
   final IconData icon;
-  final Color iconColor;
+  final Color? iconColor;
   final String title;
   final String subtitle;
   final String? actionLabel;
@@ -12,7 +14,7 @@ class EmptyState extends StatelessWidget {
   const EmptyState({
     super.key,
     required this.icon,
-    this.iconColor = const Color(0xFF5B8EFF),
+    this.iconColor,
     required this.title,
     required this.subtitle,
     this.actionLabel,
@@ -21,6 +23,8 @@ class EmptyState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
+    final resolvedIconColor = iconColor ?? colors.accent;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
       child: Column(
@@ -30,18 +34,19 @@ class EmptyState extends StatelessWidget {
             width: 64,
             height: 64,
             decoration: BoxDecoration(
-              color: iconColor.withValues(alpha: 0.1),
+              color: resolvedIconColor.withValues(alpha: 0.1),
               shape: BoxShape.circle,
-              border: Border.all(color: iconColor.withValues(alpha: 0.25)),
+              border:
+                  Border.all(color: resolvedIconColor.withValues(alpha: 0.25)),
             ),
-            child: Icon(icon, color: iconColor, size: 30),
+            child: Icon(icon, color: resolvedIconColor, size: 30),
           ),
           const SizedBox(height: 16),
           Text(
             title,
             textAlign: TextAlign.center,
-            style: const TextStyle(
-              color: Colors.white,
+            style: TextStyle(
+              color: colors.primaryText,
               fontSize: 16,
               fontWeight: FontWeight.w600,
             ),
@@ -50,8 +55,8 @@ class EmptyState extends StatelessWidget {
           Text(
             subtitle,
             textAlign: TextAlign.center,
-            style: const TextStyle(
-              color: Color(0xFF8A9DC0),
+            style: TextStyle(
+              color: colors.secondaryText,
               fontSize: 13,
               height: 1.5,
             ),
@@ -61,8 +66,8 @@ class EmptyState extends StatelessWidget {
             OutlinedButton(
               onPressed: onAction,
               style: OutlinedButton.styleFrom(
-                foregroundColor: const Color(0xFF5B8EFF),
-                side: const BorderSide(color: Color(0xFF1F3055)),
+                foregroundColor: colors.accent,
+                side: BorderSide(color: colors.divider),
                 padding:
                     const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                 shape: RoundedRectangleBorder(

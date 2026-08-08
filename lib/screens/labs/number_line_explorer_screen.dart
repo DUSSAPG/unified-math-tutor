@@ -8,6 +8,7 @@ import '../../services/audio_cue_service.dart';
 import '../../services/captain_math_service.dart';
 import '../../services/interactive_labs_progress_service.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../widgets/labs/lab_help_sheet.dart';
 import '../../widgets/labs/lab_progress_indicator.dart';
 import '../../widgets/labs/lab_related_links.dart';
@@ -260,6 +261,7 @@ class _NumberLineExplorerScreenState extends State<NumberLineExplorerScreen>
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     final challenge = _challenge;
     final distanceToTarget = challenge.target - _value;
     final directionHelper = distanceToTarget == 0
@@ -298,7 +300,7 @@ class _NumberLineExplorerScreenState extends State<NumberLineExplorerScreen>
           children: [
             Text(
               l10n.labsNumberLineExplorerStartInstruction('${challenge.min}'),
-              style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 12),
+              style: TextStyle(color: colors.secondaryText, fontSize: 12),
             ),
             const SizedBox(height: AppSpacing.sm),
             NumberLineWidget(
@@ -329,15 +331,15 @@ class _NumberLineExplorerScreenState extends State<NumberLineExplorerScreen>
                 IconButton(
                   tooltip: l10n.labsNumberLineExplorerDecreaseButton,
                   onPressed: () => _step(-challenge.step),
-                  icon: const Icon(Icons.remove_circle_outline,
-                      color: Colors.white),
+                  icon: Icon(Icons.remove_circle_outline,
+                      color: colors.primaryText),
                 ),
                 const SizedBox(width: AppSpacing.md),
                 IconButton(
                   tooltip: l10n.labsNumberLineExplorerIncreaseButton,
                   onPressed: () => _step(challenge.step),
                   icon:
-                      const Icon(Icons.add_circle_outline, color: Colors.white),
+                      Icon(Icons.add_circle_outline, color: colors.primaryText),
                 ),
               ],
             ),
@@ -346,8 +348,7 @@ class _NumberLineExplorerScreenState extends State<NumberLineExplorerScreen>
                 padding: const EdgeInsets.only(top: AppSpacing.sm),
                 child: Text(
                   directionHelper,
-                  style:
-                      const TextStyle(color: Color(0xFF8A9DC0), fontSize: 12),
+                  style: TextStyle(color: colors.secondaryText, fontSize: 12),
                 ),
               ),
             const SizedBox(height: AppSpacing.lg),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../app/safe_navigation.dart';
+import '../../shared/theme/app_theme.dart';
 
 class TermsScreen extends StatelessWidget {
   const TermsScreen({super.key});
@@ -9,16 +10,17 @@ class TermsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0B1120),
+        backgroundColor: colors.background,
         elevation: 0,
         scrolledUnderElevation: 0,
         centerTitle: false,
         titleSpacing: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: colors.primaryText),
           onPressed: () => popOrGo(context, '/profile'),
         ),
         title: Column(
@@ -27,15 +29,15 @@ class TermsScreen extends StatelessWidget {
             Text(
               l10n.termsTitle,
               overflow: TextOverflow.ellipsis,
-              style: const TextStyle(
-                  color: Colors.white,
+              style: TextStyle(
+                  color: colors.primaryText,
                   fontSize: 20,
                   fontWeight: FontWeight.w700),
             ),
             Text(
               l10n.termsSub,
               overflow: TextOverflow.ellipsis,
-              style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 12),
+              style: TextStyle(color: colors.secondaryText, fontSize: 12),
             ),
           ],
         ),
@@ -109,11 +111,11 @@ class TermsScreen extends StatelessWidget {
                         'We may update these Terms at any time. Continued use of the app after changes are posted constitutes acceptance of the revised Terms. We will notify users of material changes through the app.',
                   ),
                   const SizedBox(height: 24),
-                  const Text(
+                  Text(
                     'Last updated: May 2026\nFor questions: legal@mathtutor.app',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        color: Color(0xFF4A6080), fontSize: 12, height: 1.6),
+                        color: colors.tertiaryText, fontSize: 12, height: 1.6),
                   ),
                 ],
               ),
@@ -142,12 +144,13 @@ class _TermsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF132040),
+        color: colors.cardSurface,
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: const Color(0xFF1F3055)),
+        border: Border.all(color: colors.divider),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -160,8 +163,8 @@ class _TermsSection extends StatelessWidget {
                 child: Text(
                   title,
                   overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    color: Color(0xFF8A9DC0),
+                  style: TextStyle(
+                    color: colors.secondaryText,
                     fontSize: 11,
                     fontWeight: FontWeight.w600,
                     letterSpacing: 1.1,
@@ -174,8 +177,8 @@ class _TermsSection extends StatelessWidget {
           if (body != null)
             Text(
               body!,
-              style: const TextStyle(
-                  color: Color(0xFF8A9DC0), fontSize: 13, height: 1.5),
+              style: TextStyle(
+                  color: colors.secondaryText, fontSize: 13, height: 1.5),
             ),
           if (items != null)
             ...items!.map(
@@ -184,10 +187,10 @@ class _TermsSection extends StatelessWidget {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
+                    Text(
                       '• ',
                       style: TextStyle(
-                        color: Color(0xFFFF3B30),
+                        color: colors.error,
                         fontSize: 13,
                         fontWeight: FontWeight.w700,
                       ),
@@ -195,8 +198,8 @@ class _TermsSection extends StatelessWidget {
                     Expanded(
                       child: Text(
                         item,
-                        style: const TextStyle(
-                            color: Color(0xFF8A9DC0),
+                        style: TextStyle(
+                            color: colors.secondaryText,
                             fontSize: 13,
                             height: 1.4),
                       ),

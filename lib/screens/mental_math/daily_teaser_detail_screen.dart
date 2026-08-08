@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../services/mental_math_vault_service.dart';
+import '../../shared/theme/app_theme.dart';
 
 class DailyTeaserDetailScreen extends StatefulWidget {
   const DailyTeaserDetailScreen({super.key});
@@ -51,8 +52,8 @@ class _DailyTeaserDetailScreenState extends State<DailyTeaserDetailScreen> {
                       if (_showAnswer)
                         Text(
                           snapshot.data!.answer,
-                          style: const TextStyle(
-                            color: Color(0xFF34C759),
+                          style: TextStyle(
+                            color: context.appColors.success,
                             fontWeight: FontWeight.w600,
                           ),
                         )

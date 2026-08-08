@@ -4,6 +4,7 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../app/safe_navigation.dart';
 import '../../services/curriculum_service.dart';
+import '../../shared/theme/app_theme.dart';
 
 enum _Badge { included, premium, topup }
 
@@ -134,7 +135,8 @@ class ExamPacksScreen extends StatelessWidget {
               padding: const EdgeInsets.only(bottom: 8),
               child: Text(
                 l10n.examPacksIntro,
-                style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 14),
+                style: TextStyle(
+                    color: context.appColors.secondaryText, fontSize: 14),
               ),
             );
           }
@@ -158,23 +160,13 @@ class _PackCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final (badgeLabel, badgeColor, badgeBackground) = switch (pack.badge) {
-      _Badge.included => (
-          l10n.examPackIncluded,
-          const Color(0xFF34C759),
-          const Color(0xFF0A2015),
-        ),
-      _Badge.premium => (
-          l10n.topicsPremiumLabel,
-          const Color(0xFFFF9500),
-          const Color(0xFF2A1A00),
-        ),
-      _Badge.topup => (
-          l10n.examPackTopUp,
-          const Color(0xFF5B8EFF),
-          const Color(0xFF0D1F40),
-        ),
+    final colors = context.appColors;
+    final (badgeLabel, badgeColor) = switch (pack.badge) {
+      _Badge.included => (l10n.examPackIncluded, colors.success),
+      _Badge.premium => (l10n.topicsPremiumLabel, colors.warning),
+      _Badge.topup => (l10n.examPackTopUp, colors.accent),
     };
+    final badgeBackground = badgeColor.withValues(alpha: 0.12);
 
     return Material(
       color: Colors.transparent,
@@ -184,9 +176,9 @@ class _PackCard extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
           decoration: BoxDecoration(
-            color: const Color(0xFF132040),
+            color: colors.cardSurface,
             borderRadius: BorderRadius.circular(14),
-            border: Border.all(color: const Color(0xFF1F3055)),
+            border: Border.all(color: colors.divider),
           ),
           child: Row(
             children: [
@@ -196,8 +188,8 @@ class _PackCard extends StatelessWidget {
                   children: [
                     Text(
                       pack.title,
-                      style: const TextStyle(
-                        color: Colors.white,
+                      style: TextStyle(
+                        color: colors.primaryText,
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
                       ),
@@ -205,8 +197,8 @@ class _PackCard extends StatelessWidget {
                     const SizedBox(height: 3),
                     Text(
                       pack.subtitle,
-                      style: const TextStyle(
-                        color: Color(0xFF8A9DC0),
+                      style: TextStyle(
+                        color: colors.secondaryText,
                         fontSize: 13,
                       ),
                     ),

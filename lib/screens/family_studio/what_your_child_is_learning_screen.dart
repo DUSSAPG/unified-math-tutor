@@ -61,7 +61,12 @@ class WhatYourChildIsLearningScreen extends StatelessWidget {
                         iconColor: const Color(0xFF34C759),
                         title: topic,
                         subtitle: l10n.familyStudioLearningTopicSubtitle,
-                        onTap: () => context.push('/topics'),
+                        // Family Studio lives outside the bottom-nav shell;
+                        // /topics is a shell-owned branch route, so this
+                        // MUST use go(), never push() — see the navigator
+                        // key ownership model comment in
+                        // lib/app/router.dart.
+                        onTap: () => context.go('/topics'),
                       ),
                     ),
               ],

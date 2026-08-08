@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../l10n/app_localizations.dart';
 import '../../../services/onboarding_profile_service.dart';
+import '../../../shared/theme/app_theme.dart';
 import '../../../widgets/onboarding/onboarding_selection_card.dart';
 import '../onboarding_shell.dart';
 
@@ -42,6 +43,7 @@ class _FamilyGoalScreenState extends State<FamilyGoalScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     final goalLabels = {
       'family_homework': l10n.onboardingFamilyGoalHomework,
       'family_understand_methods': l10n.onboardingFamilyGoalUnderstandMethods,
@@ -82,8 +84,8 @@ class _FamilyGoalScreenState extends State<FamilyGoalScreen> {
             ),
           const SizedBox(height: 12),
           Text(l10n.onboardingFamilyActivityLengthLabel,
-              style: const TextStyle(
-                  color: Colors.white, fontWeight: FontWeight.w700)),
+              style: TextStyle(
+                  color: colors.primaryText, fontWeight: FontWeight.w700)),
           const SizedBox(height: 12),
           Wrap(
             spacing: 8,

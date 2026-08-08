@@ -95,6 +95,8 @@ class _TransformationsScreenState extends State<TransformationsScreen> {
                       showOriginalOutline: true,
                       originalColor: colors.tertiaryText,
                       shapeColor: colors.accent,
+                      gridColor: colors.divider,
+                      axisColor: colors.secondaryText,
                       unitsAcross: _kind == _TransformKind.enlarge ? 6.5 : 4.5,
                     ),
                   ),

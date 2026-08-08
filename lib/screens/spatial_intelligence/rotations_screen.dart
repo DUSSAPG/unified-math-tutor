@@ -49,6 +49,8 @@ class _RotationsScreenState extends State<RotationsScreen> {
                       showOriginalOutline: true,
                       originalColor: colors.tertiaryText,
                       shapeColor: colors.accent,
+                      gridColor: colors.divider,
+                      axisColor: colors.secondaryText,
                     ),
                   ),
                 ),

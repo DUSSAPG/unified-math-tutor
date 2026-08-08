@@ -9,6 +9,7 @@ import '../../models/tutor_usage_model.dart';
 import '../../services/practice_context_service.dart';
 import '../../services/tutor_credit_service.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../widgets/shared/info_card.dart';
 
 enum _ChipType { basicHint, creditAction }
@@ -271,6 +272,7 @@ class _TutorEmptyContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -278,8 +280,8 @@ class _TutorEmptyContent extends StatelessWidget {
         Text(
           l10n.tutorEmptyTitle,
           textAlign: TextAlign.center,
-          style: const TextStyle(
-            color: Colors.white,
+          style: TextStyle(
+            color: colors.primaryText,
             fontSize: 17,
             fontWeight: FontWeight.w600,
           ),
@@ -288,8 +290,8 @@ class _TutorEmptyContent extends StatelessWidget {
         Text(
           l10n.tutorEmptySubtitle,
           textAlign: TextAlign.center,
-          style: const TextStyle(
-            color: Color(0xFF8A9DC0),
+          style: TextStyle(
+            color: colors.secondaryText,
             fontSize: 13,
             height: 1.4,
           ),
@@ -297,8 +299,8 @@ class _TutorEmptyContent extends StatelessWidget {
         const SizedBox(height: 24),
         Text(
           l10n.tutorHowItWorksTitle.toUpperCase(),
-          style: const TextStyle(
-            color: Color(0xFF8A9DC0),
+          style: TextStyle(
+            color: colors.secondaryText,
             fontSize: 11,
             fontWeight: FontWeight.w600,
             letterSpacing: 1.2,
@@ -341,6 +343,7 @@ class _UsagePill extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
 
     final String label;
     final Color color;
@@ -351,22 +354,22 @@ class _UsagePill extends StatelessWidget {
     if (!usage.isPaid) {
       if (usage.tipsExhausted) {
         label = l10n.tutorExhaustedTitle;
-        color = const Color(0xFFFF3B30);
-        bg = const Color(0xFF2A0A08);
-        border = const Color(0xFFFF3B30);
+        color = colors.error;
+        bg = colors.error.withValues(alpha: 0.12);
+        border = colors.error;
         icon = Icons.flash_off;
       } else {
         label = l10n.tutorFreeTipsLeft(usage.tipsLeft);
-        color = const Color(0xFF5B8EFF);
-        bg = const Color(0xFF0D1F40);
-        border = const Color(0xFF5B8EFF);
+        color = colors.accent;
+        bg = colors.accent.withValues(alpha: 0.12);
+        border = colors.accent;
         icon = Icons.flash_on;
       }
     } else {
       label = l10n.tutorCreditBalance(usage.credits);
-      color = const Color(0xFFFFBD00);
-      bg = const Color(0xFF2A1F00);
-      border = const Color(0xFFFFBD00);
+      color = colors.warning;
+      bg = colors.warning.withValues(alpha: 0.12);
+      border = colors.warning;
       icon = LucideIcons.sparkles;
     }
 
@@ -396,13 +399,13 @@ class _UsagePill extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
               decoration: BoxDecoration(
-                color: const Color(0xFFFFBD00).withValues(alpha: 0.15),
+                color: colors.warning.withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(6),
               ),
               child: Text(
                 AppLocalizations.of(context).tutorProLabel,
-                style: const TextStyle(
-                  color: Color(0xFFFFBD00),
+                style: TextStyle(
+                  color: colors.warning,
                   fontSize: 10,
                   fontWeight: FontWeight.w700,
                   letterSpacing: 0.5,
@@ -435,17 +438,18 @@ class _ChatInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     final sendColor = enabled
         ? (pendingType == _ChipType.creditAction
-            ? const Color(0xFFFFBD00)
-            : const Color(0xFF5B8EFF))
-        : const Color(0xFF2A3550);
+            ? colors.warning
+            : colors.accent)
+        : colors.tertiaryText;
 
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF132040),
+        color: colors.cardSurface,
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: const Color(0xFF1F3055)),
+        border: Border.all(color: colors.divider),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.end,
@@ -454,13 +458,12 @@ class _ChatInput extends StatelessWidget {
             child: TextField(
               controller: controller,
               enabled: enabled,
-              style: const TextStyle(color: Colors.white, fontSize: 14),
+              style: TextStyle(color: colors.primaryText, fontSize: 14),
               maxLines: 4,
               minLines: 1,
               decoration: InputDecoration(
                 hintText: hintText,
-                hintStyle:
-                    const TextStyle(color: Color(0xFF4A6080), fontSize: 14),
+                hintStyle: TextStyle(color: colors.tertiaryText, fontSize: 14),
                 contentPadding:
                     const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
                 border: InputBorder.none,
@@ -500,15 +503,18 @@ class _ActionChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return GestureDetector(
       onTap: enabled ? onTap : null,
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
         decoration: BoxDecoration(
-          color: enabled ? const Color(0xFF0D1F40) : const Color(0xFF0D1525),
+          color: enabled
+              ? colors.accent.withValues(alpha: 0.12)
+              : colors.cardSurface,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-            color: enabled ? const Color(0xFF5B8EFF) : const Color(0xFF1F3055),
+            color: enabled ? colors.accent : colors.divider,
           ),
         ),
         child: Row(
@@ -517,15 +523,13 @@ class _ActionChip extends StatelessWidget {
             Icon(
               icon,
               size: 14,
-              color:
-                  enabled ? const Color(0xFF5B8EFF) : const Color(0xFF2A3550),
+              color: enabled ? colors.accent : colors.tertiaryText,
             ),
             const SizedBox(width: 6),
             Text(
               label,
               style: TextStyle(
-                color:
-                    enabled ? const Color(0xFF5B8EFF) : const Color(0xFF2A3550),
+                color: enabled ? colors.accent : colors.tertiaryText,
                 fontSize: 13,
                 fontWeight: FontWeight.w500,
               ),
@@ -558,20 +562,23 @@ class _CreditChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const activeColor = Color(0xFFFFBD00);
-    const dimColor = Color(0xFF4A6080);
+    final colors = context.appColors;
+    final activeColor = colors.warning;
+    final dimColor = colors.tertiaryText;
 
     return GestureDetector(
       onTap: onTap,
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
         decoration: BoxDecoration(
-          color: hasCredits ? const Color(0xFF1A1500) : const Color(0xFF0D1120),
+          color: hasCredits
+              ? activeColor.withValues(alpha: 0.12)
+              : colors.cardSurface,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
             color: hasCredits
                 ? activeColor.withValues(alpha: 0.6)
-                : const Color(0xFF1F3055),
+                : colors.divider,
           ),
         ),
         child: Row(
@@ -597,7 +604,7 @@ class _CreditChip extends StatelessWidget {
               decoration: BoxDecoration(
                 color: hasCredits
                     ? activeColor.withValues(alpha: 0.15)
-                    : const Color(0xFF1F3055),
+                    : colors.divider,
                 borderRadius: BorderRadius.circular(5),
               ),
               child: Text(
@@ -632,12 +639,13 @@ class _LockedChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       decoration: BoxDecoration(
-        color: const Color(0xFF0D1120),
+        color: colors.cardSurface,
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: const Color(0xFF1F3055)),
+        border: Border.all(color: colors.divider),
       ),
       child: Wrap(
         alignment: WrapAlignment.center,
@@ -645,11 +653,11 @@ class _LockedChip extends StatelessWidget {
         spacing: 6,
         runSpacing: 4,
         children: [
-          const Icon(Icons.lock_outline, size: 13, color: Color(0xFF4A6080)),
+          Icon(Icons.lock_outline, size: 13, color: colors.tertiaryText),
           Text(
             label,
-            style: const TextStyle(
-              color: Color(0xFF4A6080),
+            style: TextStyle(
+              color: colors.tertiaryText,
               fontSize: 13,
               fontWeight: FontWeight.w500,
             ),
@@ -657,13 +665,13 @@ class _LockedChip extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
             decoration: BoxDecoration(
-              color: const Color(0xFF2A1F00),
+              color: colors.warning.withValues(alpha: 0.15),
               borderRadius: BorderRadius.circular(5),
             ),
             child: Text(
               proLabel,
-              style: const TextStyle(
-                color: Color(0xFFFFBD00),
+              style: TextStyle(
+                color: colors.warning,
                 fontSize: 9,
                 fontWeight: FontWeight.w700,
                 letterSpacing: 0.3,
@@ -685,13 +693,13 @@ class _ExhaustedCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF1A0808),
+        color: colors.error.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(14),
-        border:
-            Border.all(color: const Color(0xFFFF3B30).withValues(alpha: 0.4)),
+        border: Border.all(color: colors.error.withValues(alpha: 0.4)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -702,17 +710,16 @@ class _ExhaustedCard extends StatelessWidget {
                 width: 36,
                 height: 36,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF2A0A08),
+                  color: colors.error.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: const Icon(Icons.flash_off,
-                    color: Color(0xFFFF3B30), size: 18),
+                child: Icon(Icons.flash_off, color: colors.error, size: 18),
               ),
               const SizedBox(width: 10),
               Text(
                 l10n.tutorExhaustedTitle,
-                style: const TextStyle(
-                  color: Colors.white,
+                style: TextStyle(
+                  color: colors.primaryText,
                   fontSize: 15,
                   fontWeight: FontWeight.w700,
                 ),
@@ -722,8 +729,8 @@ class _ExhaustedCard extends StatelessWidget {
           const SizedBox(height: 10),
           Text(
             l10n.tutorExhaustedBody,
-            style: const TextStyle(
-                color: Color(0xFF8A9DC0), fontSize: 13, height: 1.4),
+            style: TextStyle(
+                color: colors.secondaryText, fontSize: 13, height: 1.4),
           ),
           const SizedBox(height: 14),
           Row(
@@ -740,8 +747,8 @@ class _ExhaustedCard extends StatelessWidget {
                       ));
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF5B8EFF),
-                      foregroundColor: Colors.white,
+                      backgroundColor: colors.primaryAction,
+                      foregroundColor: colors.onPrimaryAction,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       elevation: 0,
@@ -762,8 +769,8 @@ class _ExhaustedCard extends StatelessWidget {
                   child: OutlinedButton(
                     onPressed: () => context.go('/packs'),
                     style: OutlinedButton.styleFrom(
-                      foregroundColor: const Color(0xFF8A9DC0),
-                      side: const BorderSide(color: Color(0xFF1F3055)),
+                      foregroundColor: colors.secondaryText,
+                      side: BorderSide(color: colors.divider),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       padding: EdgeInsets.zero,
@@ -794,12 +801,13 @@ class _UpgradeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF132040),
+        color: colors.cardSurface,
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: const Color(0xFF1F3055)),
+        border: Border.all(color: colors.divider),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -810,18 +818,18 @@ class _UpgradeCard extends StatelessWidget {
                 width: 36,
                 height: 36,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF2A1F00),
+                  color: colors.warning.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: const Icon(LucideIcons.sparkles,
-                    color: Color(0xFFFFBD00), size: 18),
+                child:
+                    Icon(LucideIcons.sparkles, color: colors.warning, size: 18),
               ),
               const SizedBox(width: 10),
               Expanded(
                 child: Text(
                   l10n.tutorNeedMoreHelp,
-                  style: const TextStyle(
-                    color: Colors.white,
+                  style: TextStyle(
+                    color: colors.primaryText,
                     fontSize: 15,
                     fontWeight: FontWeight.w700,
                   ),
@@ -832,8 +840,8 @@ class _UpgradeCard extends StatelessWidget {
           const SizedBox(height: 10),
           Text(
             l10n.tutorUnlockDeeper,
-            style: const TextStyle(
-                color: Color(0xFF8A9DC0), fontSize: 13, height: 1.4),
+            style: TextStyle(
+                color: colors.secondaryText, fontSize: 13, height: 1.4),
           ),
           const SizedBox(height: 14),
           Row(
@@ -844,8 +852,8 @@ class _UpgradeCard extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () => context.go('/upgrade'),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF5B8EFF),
-                      foregroundColor: Colors.white,
+                      backgroundColor: colors.primaryAction,
+                      foregroundColor: colors.onPrimaryAction,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       elevation: 0,
@@ -866,8 +874,8 @@ class _UpgradeCard extends StatelessWidget {
                   child: OutlinedButton(
                     onPressed: () => context.go('/packs'),
                     style: OutlinedButton.styleFrom(
-                      foregroundColor: const Color(0xFF8A9DC0),
-                      side: const BorderSide(color: Color(0xFF1F3055)),
+                      foregroundColor: colors.secondaryText,
+                      side: BorderSide(color: colors.divider),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       padding: EdgeInsets.zero,
@@ -896,6 +904,7 @@ class _MessageBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     final isUser = message.role == TutorMessageRole.user;
     return Align(
       alignment: isUser ? Alignment.centerRight : Alignment.centerLeft,
@@ -906,19 +915,19 @@ class _MessageBubble extends StatelessWidget {
         margin: const EdgeInsets.only(bottom: 10),
         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
         decoration: BoxDecoration(
-          color: isUser ? const Color(0xFF3D7EFF) : const Color(0xFF132040),
+          color: isUser ? colors.primaryAction : colors.cardSurface,
           borderRadius: BorderRadius.only(
             topLeft: const Radius.circular(16),
             topRight: const Radius.circular(16),
             bottomLeft: Radius.circular(isUser ? 16 : 4),
             bottomRight: Radius.circular(isUser ? 4 : 16),
           ),
-          border: isUser ? null : Border.all(color: const Color(0xFF1F3055)),
+          border: isUser ? null : Border.all(color: colors.divider),
         ),
         child: Text(
           message.text,
           style: TextStyle(
-            color: isUser ? Colors.white : const Color(0xFFD0DCF0),
+            color: isUser ? colors.onPrimaryAction : colors.primaryText,
             fontSize: 14,
             height: 1.4,
           ),
@@ -935,25 +944,26 @@ class _TypingIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Align(
       alignment: Alignment.centerLeft,
       child: Container(
         margin: const EdgeInsets.only(bottom: 10),
         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
         decoration: BoxDecoration(
-          color: const Color(0xFF132040),
+          color: colors.cardSurface,
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(16),
             topRight: Radius.circular(16),
             bottomLeft: Radius.circular(4),
             bottomRight: Radius.circular(16),
           ),
-          border: Border.all(color: const Color(0xFF1F3055)),
+          border: Border.all(color: colors.divider),
         ),
-        child: const Text(
+        child: Text(
           '· · ·',
           style: TextStyle(
-            color: Color(0xFF8A9DC0),
+            color: colors.secondaryText,
             fontSize: 16,
             fontWeight: FontWeight.w700,
             letterSpacing: 3,
@@ -991,12 +1001,13 @@ class _PracticeContextBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Container(
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
-        color: const Color(0xFF0D1A30),
+        color: colors.accent.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: const Color(0xFF1F3055)),
+        border: Border.all(color: colors.divider),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -1006,14 +1017,14 @@ class _PracticeContextBanner extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                 decoration: BoxDecoration(
-                  color: const Color(0xFF0D1F40),
+                  color: colors.accent.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(6),
-                  border: Border.all(color: const Color(0xFF5B8EFF)),
+                  border: Border.all(color: colors.accent),
                 ),
                 child: Text(
                   practiceLabel,
-                  style: const TextStyle(
-                    color: Color(0xFF5B8EFF),
+                  style: TextStyle(
+                    color: colors.accent,
                     fontSize: 10,
                     fontWeight: FontWeight.w700,
                     letterSpacing: 0.8,
@@ -1024,13 +1035,13 @@ class _PracticeContextBanner extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                 decoration: BoxDecoration(
-                  color: const Color(0xFF1A2840),
+                  color: colors.divider,
                   borderRadius: BorderRadius.circular(6),
                 ),
                 child: Text(
                   ctx.stage,
-                  style: const TextStyle(
-                    color: Color(0xFF8A9DC0),
+                  style: TextStyle(
+                    color: colors.secondaryText,
                     fontSize: 10,
                     fontWeight: FontWeight.w600,
                   ),
@@ -1042,8 +1053,8 @@ class _PracticeContextBanner extends StatelessWidget {
                   child: Text(
                     ctx.topic,
                     overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                      color: Color(0xFF8A9DC0),
+                    style: TextStyle(
+                      color: colors.secondaryText,
                       fontSize: 12,
                     ),
                   ),
@@ -1056,8 +1067,8 @@ class _PracticeContextBanner extends StatelessWidget {
             ctx.questionText,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
-            style: const TextStyle(
-              color: Color(0xFFD0DCF0),
+            style: TextStyle(
+              color: colors.primaryText,
               fontSize: 13,
               height: 1.4,
             ),
@@ -1110,15 +1121,18 @@ class _ContextChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return GestureDetector(
       onTap: enabled ? onTap : null,
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 7),
         decoration: BoxDecoration(
-          color: enabled ? const Color(0xFF0D1F40) : const Color(0xFF0D1525),
+          color: enabled
+              ? colors.accent.withValues(alpha: 0.12)
+              : colors.cardSurface,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-            color: enabled ? const Color(0xFF3D7EFF) : const Color(0xFF1F3055),
+            color: enabled ? colors.primaryAction : colors.divider,
           ),
         ),
         child: Row(
@@ -1127,15 +1141,13 @@ class _ContextChip extends StatelessWidget {
             Icon(
               icon,
               size: 13,
-              color:
-                  enabled ? const Color(0xFF5B8EFF) : const Color(0xFF2A3550),
+              color: enabled ? colors.accent : colors.tertiaryText,
             ),
             const SizedBox(width: 5),
             Text(
               label,
               style: TextStyle(
-                color:
-                    enabled ? const Color(0xFF5B8EFF) : const Color(0xFF2A3550),
+                color: enabled ? colors.accent : colors.tertiaryText,
                 fontSize: 12,
                 fontWeight: FontWeight.w500,
               ),
@@ -1154,8 +1166,11 @@ class _TutorHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Column(
       children: [
+        // Avatar chip keeps a fixed brand-blue treatment regardless of
+        // theme — same "celebration badge" pattern used elsewhere.
         Container(
           width: 72,
           height: 72,
@@ -1184,8 +1199,8 @@ class _TutorHeader extends StatelessWidget {
         const SizedBox(height: 14),
         Text(
           AppLocalizations.of(context).tutorBotName,
-          style: const TextStyle(
-            color: Colors.white,
+          style: TextStyle(
+            color: colors.primaryText,
             fontSize: 22,
             fontWeight: FontWeight.w700,
           ),
@@ -1194,7 +1209,7 @@ class _TutorHeader extends StatelessWidget {
         Text(
           AppLocalizations.of(context).tutorBotSubtitle,
           textAlign: TextAlign.center,
-          style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 14),
+          style: TextStyle(color: colors.secondaryText, fontSize: 14),
         ),
       ],
     );

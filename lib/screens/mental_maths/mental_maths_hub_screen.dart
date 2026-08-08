@@ -8,6 +8,7 @@ import '../../shared/responsive/app_breakpoints.dart';
 import '../../models/mental_maths_challenge.dart';
 import '../../services/mental_maths_progress_service.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../widgets/shared/route_link_card.dart';
 import '../../widgets/shared/section_label.dart';
 import 'mental_maths_category_labels.dart';
@@ -20,19 +21,20 @@ class MentalMathsHubScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0B1120),
+        backgroundColor: colors.background,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: colors.primaryText),
           onPressed: () => popOrGo(context, '/math-studio'),
         ),
         title: Text(
           l10n.mathStudioMentalMathsTitle,
           style:
-              const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+              TextStyle(color: colors.primaryText, fontWeight: FontWeight.w700),
         ),
       ),
       body: SafeArea(
@@ -45,8 +47,7 @@ class MentalMathsHubScreen extends StatelessWidget {
               children: [
                 Text(
                   l10n.mentalMathsUntimedNote,
-                  style:
-                      const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13),
+                  style: TextStyle(color: colors.secondaryText, fontSize: 13),
                 ),
                 const SizedBox(height: AppSpacing.md),
                 for (final category in MentalMathsCategory.values)
@@ -80,12 +81,12 @@ class _CategoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     final tier = MentalMathsProgressService.instance.tierFor(category);
     return Card(
       child: ListTile(
         contentPadding: const EdgeInsets.all(14),
-        leading: const Icon(Icons.calculate_outlined,
-            color: Color(0xFF5B8EFF), size: 28),
+        leading: Icon(Icons.calculate_outlined, color: colors.accent, size: 28),
         title: Text(
           mentalMathsCategoryLabel(l10n, category),
           style: const TextStyle(fontWeight: FontWeight.w700),

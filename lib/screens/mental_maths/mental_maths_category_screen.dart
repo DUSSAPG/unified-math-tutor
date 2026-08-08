@@ -11,6 +11,7 @@ import '../../services/mental_maths_progress_service.dart';
 import '../../services/nav_visibility_service.dart';
 import '../../shared/math_notation_formatter.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../widgets/captain_math_card.dart';
 import 'mental_maths_category_labels.dart';
 
@@ -90,19 +91,20 @@ class _MentalMathsCategoryScreenState extends State<MentalMathsCategoryScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0B1120),
+        backgroundColor: colors.background,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: colors.primaryText),
           onPressed: () => popOrGo(context, '/math-studio/mental-maths'),
         ),
         title: Text(
           mentalMathsCategoryLabel(l10n, _category),
           style:
-              const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+              TextStyle(color: colors.primaryText, fontWeight: FontWeight.w700),
         ),
       ),
       body: SafeArea(
@@ -110,9 +112,9 @@ class _MentalMathsCategoryScreenState extends State<MentalMathsCategoryScreen> {
           future: _challengeFuture,
           builder: (context, snapshot) {
             if (snapshot.hasError) {
-              return const Center(
+              return Center(
                 child: Icon(Icons.error_outline,
-                    color: Color(0xFF8A9DC0), size: 32),
+                    color: colors.secondaryText, size: 32),
               );
             }
             final challenge = snapshot.data;
@@ -134,8 +136,8 @@ class _MentalMathsCategoryScreenState extends State<MentalMathsCategoryScreen> {
                       const SizedBox(height: AppSpacing.md),
                       Text(
                         l10n.mentalMathsTodaysChallenge,
-                        style: const TextStyle(
-                          color: Color(0xFF5B8EFF),
+                        style: TextStyle(
+                          color: colors.accent,
                           fontSize: 12,
                           fontWeight: FontWeight.w700,
                           letterSpacing: 1.1,
@@ -145,8 +147,8 @@ class _MentalMathsCategoryScreenState extends State<MentalMathsCategoryScreen> {
                       Text(
                         MathNotationFormatter.format(text.prompt),
                         key: const ValueKey('mentalMathsPrompt'),
-                        style: const TextStyle(
-                          color: Colors.white,
+                        style: TextStyle(
+                          color: colors.primaryText,
                           fontSize: 18,
                           fontWeight: FontWeight.w700,
                         ),
@@ -156,12 +158,12 @@ class _MentalMathsCategoryScreenState extends State<MentalMathsCategoryScreen> {
                         controller: _answerController,
                         keyboardType: const TextInputType.numberWithOptions(
                             decimal: true),
-                        style: const TextStyle(color: Colors.white),
+                        style: TextStyle(color: colors.primaryText),
                         decoration: InputDecoration(
                           labelText: l10n.mathStudioFollowUpAnswerLabel,
-                          labelStyle: const TextStyle(color: Color(0xFF8A9DC0)),
-                          enabledBorder: const OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFF1F3055)),
+                          labelStyle: TextStyle(color: colors.secondaryText),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: colors.divider),
                           ),
                         ),
                       ),
@@ -178,8 +180,8 @@ class _MentalMathsCategoryScreenState extends State<MentalMathsCategoryScreen> {
                               : l10n.mathStudioFollowUpTryAgain,
                           style: TextStyle(
                             color: _correct
-                                ? const Color(0xFF34C759)
-                                : const Color(0xFF8A9DC0),
+                                ? colors.success
+                                : colors.secondaryText,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -193,8 +195,8 @@ class _MentalMathsCategoryScreenState extends State<MentalMathsCategoryScreen> {
                       else ...[
                         Text(
                           l10n.mathStudioRevealedLabel,
-                          style: const TextStyle(
-                            color: Color(0xFF5B8EFF),
+                          style: TextStyle(
+                            color: colors.accent,
                             fontSize: 12,
                             fontWeight: FontWeight.w700,
                             letterSpacing: 1.1,
@@ -206,15 +208,15 @@ class _MentalMathsCategoryScreenState extends State<MentalMathsCategoryScreen> {
                             padding: const EdgeInsets.only(bottom: 6),
                             child: Text(
                               '• ${MathNotationFormatter.format(step)}',
-                              style: const TextStyle(
-                                  color: Colors.white, fontSize: 14),
+                              style: TextStyle(
+                                  color: colors.primaryText, fontSize: 14),
                             ),
                           ),
                         const SizedBox(height: 4),
                         Text(
                           '${l10n.mathStudioFollowUpAnswerLabel}: ${text.answerText}',
-                          style: const TextStyle(
-                              color: Color(0xFF8A9DC0), fontSize: 13),
+                          style: TextStyle(
+                              color: colors.secondaryText, fontSize: 13),
                         ),
                       ],
                     ],

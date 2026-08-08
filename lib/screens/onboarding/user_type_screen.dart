@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../l10n/app_localizations.dart';
 import '../../services/locale_service.dart';
 import '../../services/onboarding_profile_service.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../widgets/onboarding/onboarding_option_card.dart';
 
 class UserTypeScreen extends StatefulWidget {
@@ -42,9 +43,10 @@ class _UserTypeScreenState extends State<UserTypeScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
 
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       body: SafeArea(
         child: Center(
           child: ConstrainedBox(
@@ -57,7 +59,9 @@ class _UserTypeScreenState extends State<UserTypeScreen> {
                     child: Column(
                       children: [
                         const SizedBox(height: 48),
-                        // Logo
+                        // Logo — a fixed brand gradient/mark, deliberately
+                        // identical across both themes (same treatment as
+                        // Allie's orange / Captain Math's green badges).
                         Container(
                           width: 72,
                           height: 72,
@@ -85,10 +89,10 @@ class _UserTypeScreenState extends State<UserTypeScreen> {
                         const SizedBox(height: 24),
                         Text(
                           l10n.onboardingProductName,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 30,
                             fontWeight: FontWeight.w800,
-                            color: Colors.white,
+                            color: colors.primaryText,
                           ),
                           textAlign: TextAlign.center,
                         ),
@@ -99,17 +103,16 @@ class _UserTypeScreenState extends State<UserTypeScreen> {
                             vertical: 7,
                           ),
                           decoration: BoxDecoration(
-                            color: const Color(0xFF132040),
+                            color: colors.cardSurface,
                             borderRadius: BorderRadius.circular(999),
                             border: Border.all(
-                              color: const Color(0xFF5B8EFF)
-                                  .withValues(alpha: 0.45),
+                              color: colors.accent.withValues(alpha: 0.45),
                             ),
                           ),
                           child: Text(
                             l10n.onboardingTechBadge,
-                            style: const TextStyle(
-                              color: Color(0xE6FFFFFF),
+                            style: TextStyle(
+                              color: colors.primaryText,
                               fontSize: 12,
                               fontWeight: FontWeight.w700,
                               letterSpacing: 0.2,
@@ -120,8 +123,8 @@ class _UserTypeScreenState extends State<UserTypeScreen> {
                         const SizedBox(height: 20),
                         Text(
                           l10n.onboardingHeroStatement,
-                          style: const TextStyle(
-                            color: Colors.white,
+                          style: TextStyle(
+                            color: colors.primaryText,
                             fontSize: 21,
                             fontWeight: FontWeight.w700,
                             height: 1.25,
@@ -131,8 +134,8 @@ class _UserTypeScreenState extends State<UserTypeScreen> {
                         const SizedBox(height: 12),
                         Text(
                           l10n.onboardingSupportingStatement,
-                          style: const TextStyle(
-                            color: Color(0xE6FFFFFF),
+                          style: TextStyle(
+                            color: colors.secondaryText,
                             fontSize: 16,
                             height: 1.35,
                           ),
@@ -145,8 +148,8 @@ class _UserTypeScreenState extends State<UserTypeScreen> {
                           alignment: Alignment.centerLeft,
                           child: Text(
                             l10n.onboardingWhoLabel,
-                            style: const TextStyle(
-                              color: Color(0xFF8A9DC0),
+                            style: TextStyle(
+                              color: colors.secondaryText,
                               fontSize: 11,
                               fontWeight: FontWeight.w600,
                               letterSpacing: 1.2,
@@ -189,8 +192,8 @@ class _UserTypeScreenState extends State<UserTypeScreen> {
                         const SizedBox(height: 8),
                         Text(
                           l10n.onboardingRoleClarification,
-                          style: const TextStyle(
-                            color: Color(0xCCFFFFFF),
+                          style: TextStyle(
+                            color: colors.secondaryText,
                             fontSize: 12,
                             height: 1.35,
                           ),
@@ -201,8 +204,8 @@ class _UserTypeScreenState extends State<UserTypeScreen> {
                             padding: const EdgeInsets.only(top: 10),
                             child: Text(
                               l10n.onboardingSelectError,
-                              style: const TextStyle(
-                                color: Color(0xFF8A9DC0),
+                              style: TextStyle(
+                                color: colors.error,
                                 fontSize: 13,
                               ),
                               textAlign: TextAlign.center,
@@ -224,7 +227,6 @@ class _UserTypeScreenState extends State<UserTypeScreen> {
                         child: FilledButton(
                           onPressed: _onContinue,
                           style: FilledButton.styleFrom(
-                            backgroundColor: const Color(0xFF3D7EFF),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(16),
                             ),
@@ -245,8 +247,8 @@ class _UserTypeScreenState extends State<UserTypeScreen> {
                         children: [
                           Text(
                             l10n.onboardingSignInPrompt,
-                            style: const TextStyle(
-                              color: Color(0xFF8A9DC0),
+                            style: TextStyle(
+                              color: colors.secondaryText,
                               fontSize: 14,
                             ),
                           ),
@@ -260,17 +262,17 @@ class _UserTypeScreenState extends State<UserTypeScreen> {
                             onPressed: () => context.push('/auth/sign-in'),
                             child: Text(
                               l10n.onboardingSignIn,
-                              style: const TextStyle(
-                                color: Color(0xFF5B8EFF),
+                              style: TextStyle(
+                                color: colors.accent,
                                 fontWeight: FontWeight.w600,
                                 fontSize: 14,
                               ),
                             ),
                           ),
-                          const Text(
+                          Text(
                             '·',
                             style: TextStyle(
-                              color: Color(0xFF4A6080),
+                              color: colors.tertiaryText,
                               fontSize: 14,
                             ),
                           ),
@@ -284,8 +286,8 @@ class _UserTypeScreenState extends State<UserTypeScreen> {
                             onPressed: () => context.push('/auth/create'),
                             child: Text(
                               l10n.onboardingCreateAccount,
-                              style: const TextStyle(
-                                color: Color(0xFF5B8EFF),
+                              style: TextStyle(
+                                color: colors.accent,
                                 fontWeight: FontWeight.w600,
                                 fontSize: 14,
                               ),
@@ -299,16 +301,16 @@ class _UserTypeScreenState extends State<UserTypeScreen> {
                           children: [
                             Text(
                               l10n.onboardingGuestMode,
-                              style: const TextStyle(
-                                color: Colors.white,
+                              style: TextStyle(
+                                color: colors.primaryText,
                                 fontWeight: FontWeight.w600,
                                 fontSize: 14,
                               ),
                             ),
                             Text(
                               l10n.onboardingGuestModeSub,
-                              style: const TextStyle(
-                                color: Color(0xFF8A9DC0),
+                              style: TextStyle(
+                                color: colors.secondaryText,
                                 fontSize: 12,
                               ),
                             ),
@@ -317,8 +319,8 @@ class _UserTypeScreenState extends State<UserTypeScreen> {
                       ),
                       Text(
                         l10n.onboardingFooter,
-                        style: const TextStyle(
-                            color: Color(0xFF4A6080), fontSize: 11),
+                        style:
+                            TextStyle(color: colors.tertiaryText, fontSize: 11),
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(height: 12),
@@ -349,6 +351,7 @@ class _LanguageSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return ValueListenableBuilder<Locale>(
       valueListenable: LocaleService.instance.notifier,
       builder: (context, currentLocale, _) {
@@ -369,14 +372,10 @@ class _LanguageSelector extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                 decoration: BoxDecoration(
-                  color: isSelected
-                      ? const Color(0xFF5B8EFF)
-                      : const Color(0xFF132040),
+                  color: isSelected ? colors.accent : colors.cardSurface,
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(
-                    color: isSelected
-                        ? const Color(0xFF5B8EFF)
-                        : const Color(0xFF1F3055),
+                    color: isSelected ? colors.accent : colors.divider,
                   ),
                 ),
                 child: Text(
@@ -384,7 +383,9 @@ class _LanguageSelector extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 13,
                     fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
-                    color: isSelected ? Colors.white : const Color(0xFF8A9DC0),
+                    color: isSelected
+                        ? colors.onPrimaryAction
+                        : colors.secondaryText,
                   ),
                 ),
               ),

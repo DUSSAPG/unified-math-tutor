@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 import '../../app/safe_navigation.dart';
 import '../../l10n/app_localizations.dart';
@@ -160,8 +159,14 @@ class _HomeworkCompanionScreenState extends State<HomeworkCompanionScreen> {
                         iconColor: const Color(0xFF3D7EFF),
                         title: item.title,
                         subtitle: item.subtitle,
-                        onTap: () =>
-                            context.push(item.route, extra: item.routeExtra),
+                        // item.route is data-driven (built by
+                        // buildHomeworkSession) and can be a shell-branch
+                        // root (e.g. /formulas, /practice) — a bare push()
+                        // from this outside-the-shell screen would
+                        // duplicate that branch's GlobalKey and crash. See
+                        // pushOrGoIfShellBranch's doc comment.
+                        onTap: () => pushOrGoIfShellBranch(context, item.route,
+                            extra: item.routeExtra),
                       ),
                     ),
               ],

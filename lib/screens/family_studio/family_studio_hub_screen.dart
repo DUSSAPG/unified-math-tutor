@@ -199,7 +199,12 @@ class _SectionCard extends StatelessWidget {
   void _open(BuildContext context, FamilyStudioSectionId id) {
     switch (id) {
       case FamilyStudioSectionId.explainThisMethod:
-        context.push('/formulas');
+        // Family Studio lives outside the bottom-nav shell; /formulas is a
+        // shell-owned branch route, so this MUST use go(), never push() —
+        // see the navigator key ownership model comment in
+        // lib/app/router.dart. push() here duplicates the Formula Library
+        // branch's GlobalKey<NavigatorState> and crashes.
+        context.go('/formulas');
       case FamilyStudioSectionId.fractionsAndRatio:
         context.push('/help/parent-teacher-tools/family-maths/library',
             extra: FamilyMathsCategory.fractions);

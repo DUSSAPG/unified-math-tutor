@@ -705,6 +705,7 @@ class _FlightPathLabScreenState extends State<FlightPathLabScreen> {
                           gridColor: lab.radarGrid,
                           targetColor: lab.radarTarget,
                           landingColor: lab.radarLanding,
+                          originColor: colors.primaryText,
                         ),
                         foregroundPainter: _ProjectedPathPainter(
                           projected: projected,
@@ -1013,8 +1014,8 @@ class _FlightTierPill extends StatelessWidget {
       ),
       child: Text(
         label,
-        style: const TextStyle(
-          color: Color(0xFF9FBEFF),
+        style: TextStyle(
+          color: accentColor,
           fontSize: 12,
           fontWeight: FontWeight.w700,
         ),
@@ -1270,6 +1271,7 @@ class _RadarPainter extends CustomPainter {
     required this.gridColor,
     required this.targetColor,
     required this.landingColor,
+    required this.originColor,
   });
 
   final Offset target;
@@ -1277,6 +1279,14 @@ class _RadarPainter extends CustomPainter {
   final Color gridColor;
   final Color targetColor;
   final Color landingColor;
+
+  /// The starting-point marker's color — a `CustomPainter` can't call
+  /// `Theme.of(context)` itself, so the wrapping widget resolves
+  /// `context.appColors` once per build and passes this in. The radar
+  /// canvas sits directly on the page background (it paints no fill of its
+  /// own), so a fixed white dot here would nearly vanish on a pale Light
+  /// Theme surface.
+  final Color originColor;
 
   static const _scale = 0.5; // px per km, clamped to the canvas below
 
@@ -1347,11 +1357,12 @@ class _RadarPainter extends CustomPainter {
       canvas.drawCircle(landingPoint, 7, Paint()..color = landingColor);
     }
 
-    canvas.drawCircle(origin, 5, Paint()..color = Colors.white);
+    canvas.drawCircle(origin, 5, Paint()..color = originColor);
   }
 
   @override
   bool shouldRepaint(covariant _RadarPainter oldDelegate) =>
+      oldDelegate.originColor != originColor ||
       oldDelegate.target != target ||
       oldDelegate.landing != landing ||
       oldDelegate.gridColor != gridColor ||

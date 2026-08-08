@@ -3,6 +3,7 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../services/guided_narration_service.dart';
 import '../../services/interactive_labs_progress_service.dart';
+import '../../shared/theme/app_theme.dart';
 
 /// Captain Math Guided Narration's user controls: on/off, text-only, replay
 /// last instruction, and narration speed. Profile-isolated (see
@@ -24,6 +25,7 @@ class LabNarrationControls extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return ListenableBuilder(
       listenable: InteractiveLabsProgressService.instance.updateSerial,
       builder: (context, _) {
@@ -35,8 +37,8 @@ class LabNarrationControls extends StatelessWidget {
           children: [
             Text(
               l10n.labsNarrationSectionLabel,
-              style: const TextStyle(
-                color: Color(0xFF5B8EFF),
+              style: TextStyle(
+                color: colors.accent,
                 fontSize: 12,
                 fontWeight: FontWeight.w700,
                 letterSpacing: 1.1,
@@ -46,7 +48,7 @@ class LabNarrationControls extends StatelessWidget {
             SwitchListTile(
               contentPadding: EdgeInsets.zero,
               title: Text(l10n.labsNarrationOnOffLabel,
-                  style: const TextStyle(color: Colors.white)),
+                  style: TextStyle(color: colors.primaryText)),
               value: !muted,
               onChanged: (enabled) =>
                   GuidedNarrationService.instance.setMuted(!enabled),
@@ -54,7 +56,7 @@ class LabNarrationControls extends StatelessWidget {
             SwitchListTile(
               contentPadding: EdgeInsets.zero,
               title: Text(l10n.labsNarrationTextOnlyLabel,
-                  style: const TextStyle(color: Colors.white)),
+                  style: TextStyle(color: colors.primaryText)),
               value: textOnly,
               onChanged: muted
                   ? null
@@ -63,7 +65,7 @@ class LabNarrationControls extends StatelessWidget {
             ),
             const SizedBox(height: 4),
             Text(l10n.labsNarrationSpeedLabel,
-                style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 12)),
+                style: TextStyle(color: colors.secondaryText, fontSize: 12)),
             const SizedBox(height: 8),
             Wrap(
               spacing: 8,

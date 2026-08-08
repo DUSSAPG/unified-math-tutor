@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../l10n/app_localizations.dart';
 import '../../services/onboarding_profile_service.dart';
+import '../../shared/theme/app_theme.dart';
 import 'onboarding_shell.dart';
 
 class GoalSelectorScreen extends StatefulWidget {
@@ -158,16 +159,17 @@ class _GoalCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return InkWell(
       borderRadius: BorderRadius.circular(22),
       onTap: onTap,
       child: Container(
         padding: const EdgeInsets.all(18),
         decoration: BoxDecoration(
-          color: const Color(0xFF132040),
+          color: colors.cardSurface,
           borderRadius: BorderRadius.circular(22),
           border: Border.all(
-            color: selected ? const Color(0xFF3D7EFF) : const Color(0xFF1F3055),
+            color: selected ? colors.primaryAction : colors.divider,
             width: selected ? 2 : 1,
           ),
         ),
@@ -185,24 +187,23 @@ class _GoalCard extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 17,
                       fontWeight: FontWeight.w700,
-                      color: Colors.white,
+                      color: colors.primaryText,
                     ),
                   ),
                   const SizedBox(height: 6),
                   Text(
                     subtitle,
-                    style: const TextStyle(color: Color(0xFF8A9DC0)),
+                    style: TextStyle(color: colors.secondaryText),
                   ),
                 ],
               ),
             ),
             Icon(
               selected ? Icons.check_circle : Icons.chevron_right,
-              color:
-                  selected ? const Color(0xFF3D7EFF) : const Color(0xFF4A6080),
+              color: selected ? colors.primaryAction : colors.tertiaryText,
             ),
           ],
         ),

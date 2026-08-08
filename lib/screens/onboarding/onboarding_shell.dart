@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../l10n/app_localizations.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../widgets/onboarding/onboarding_progress_header.dart';
 
 class OnboardingShell extends StatelessWidget {
@@ -35,8 +36,9 @@ class OnboardingShell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       body: SafeArea(
         child: Center(
           child: ConstrainedBox(
@@ -65,13 +67,13 @@ class OnboardingShell extends StatelessWidget {
                               .headlineMedium
                               ?.copyWith(
                                 fontWeight: FontWeight.w700,
-                                color: Colors.white,
+                                color: colors.primaryText,
                               ),
                         ),
                         const SizedBox(height: 8),
                         Text(
                           subtitle,
-                          style: const TextStyle(color: Color(0xFF8A9DC0)),
+                          style: TextStyle(color: colors.secondaryText),
                         ),
                         const SizedBox(height: 24),
                         child,
@@ -88,17 +90,20 @@ class OnboardingShell extends StatelessWidget {
                           onPressed: onSkip,
                           child: Text(
                             skipLabel ?? 'Skip for now',
-                            style: const TextStyle(color: Color(0xFF8A9DC0)),
+                            style: TextStyle(color: colors.secondaryText),
                           ),
                         ),
                       SizedBox(
                         width: double.infinity,
                         height: 56,
+                        // No explicit FilledButton.styleFrom override — the
+                        // app theme's filledButtonTheme already supplies
+                        // primaryAction/disabled colors correctly for both
+                        // themes; this screen used to hardcode the exact
+                        // same dark-theme values redundantly.
                         child: FilledButton(
                           onPressed: onContinue,
                           style: FilledButton.styleFrom(
-                            backgroundColor: const Color(0xFF3D7EFF),
-                            disabledBackgroundColor: const Color(0xFF1F3055),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(16),
                             ),
@@ -125,8 +130,8 @@ class OnboardingShell extends StatelessWidget {
                       const SizedBox(height: 10),
                       Text(
                         AppLocalizations.of(context).onboardingFooter,
-                        style: const TextStyle(
-                            color: Color(0xFF4A6080), fontSize: 11),
+                        style:
+                            TextStyle(color: colors.tertiaryText, fontSize: 11),
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(height: 8),

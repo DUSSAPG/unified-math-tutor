@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../services/formula_library_service.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../widgets/visual_assets/visual_asset_view.dart';
 
 class FormulaLibraryScreen extends StatefulWidget {
@@ -25,6 +26,7 @@ class _FormulaLibraryScreenState extends State<FormulaLibraryScreen> {
   @override
   Widget build(BuildContext context) {
     final bottomPadding = MediaQuery.viewPaddingOf(context).bottom + 16;
+    final colors = context.appColors;
 
     // No own AppBar/Scaffold: this is a bottom-nav tab, so AppShell already
     // provides the outer Scaffold and title bar (matching Topics/Tutor/Help).
@@ -36,10 +38,10 @@ class _FormulaLibraryScreenState extends State<FormulaLibraryScreen> {
             final all = snapshot.data;
             if (all == null) {
               if (snapshot.hasError) {
-                return const Center(
+                return Center(
                   child: Text(
                     'Could not load the formula library.',
-                    style: TextStyle(color: Color(0xFF8A9DC0)),
+                    style: TextStyle(color: colors.secondaryText),
                   ),
                 );
               }
@@ -73,10 +75,10 @@ class _FormulaLibraryScreenState extends State<FormulaLibraryScreen> {
                 const SizedBox(height: 12),
                 Expanded(
                   child: filtered.isEmpty
-                      ? const Center(
+                      ? Center(
                           child: Text(
                             'No formulas match your search.',
-                            style: TextStyle(color: Color(0xFF8A9DC0)),
+                            style: TextStyle(color: colors.secondaryText),
                           ),
                         )
                       : ListView.separated(
@@ -113,23 +115,24 @@ class _SearchField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Container(
       height: 44,
       decoration: BoxDecoration(
-        color: const Color(0xFF132040),
+        color: colors.cardSurface,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: const Color(0xFF1F3055)),
+        border: Border.all(color: colors.divider),
       ),
       child: TextField(
         controller: controller,
         onChanged: onChanged,
-        style: const TextStyle(color: Colors.white, fontSize: 14),
-        decoration: const InputDecoration(
+        style: TextStyle(color: colors.primaryText, fontSize: 14),
+        decoration: InputDecoration(
           border: InputBorder.none,
-          contentPadding: EdgeInsets.symmetric(horizontal: 14),
-          prefixIcon: Icon(Icons.search, color: Color(0xFF8A9DC0), size: 20),
+          contentPadding: const EdgeInsets.symmetric(horizontal: 14),
+          prefixIcon: Icon(Icons.search, color: colors.secondaryText, size: 20),
           hintText: 'Search formulas…',
-          hintStyle: TextStyle(color: Color(0xFF4A6080), fontSize: 14),
+          hintStyle: TextStyle(color: colors.tertiaryText, fontSize: 14),
         ),
       ),
     );
@@ -172,9 +175,10 @@ class _CategoryFilterRowState extends State<_CategoryFilterRow> {
 
   Future<void> _openMoreSheet(
       BuildContext context, List<String> overflow) async {
+    final colors = context.appColors;
     final chosen = await showModalBottomSheet<String>(
       context: context,
-      backgroundColor: const Color(0xFF0D1525),
+      backgroundColor: colors.elevatedSurface,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
@@ -189,12 +193,12 @@ class _CategoryFilterRowState extends State<_CategoryFilterRow> {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Padding(
-                padding: EdgeInsets.fromLTRB(20, 4, 20, 12),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 4, 20, 12),
                 child: Text(
                   'More categories',
                   style: TextStyle(
-                      color: Colors.white,
+                      color: colors.primaryText,
                       fontSize: 16,
                       fontWeight: FontWeight.w700),
                 ),
@@ -211,11 +215,10 @@ class _CategoryFilterRowState extends State<_CategoryFilterRow> {
                         child: ListTile(
                           minVerticalPadding: 16,
                           title: Text(category,
-                              style: const TextStyle(
-                                  color: Colors.white, fontSize: 15)),
+                              style: TextStyle(
+                                  color: colors.primaryText, fontSize: 15)),
                           trailing: selectedCategory == category
-                              ? const Icon(Icons.check,
-                                  color: Color(0xFF5B8EFF))
+                              ? Icon(Icons.check, color: colors.accent)
                               : null,
                           onTap: () => Navigator.of(sheetContext).pop(category),
                         ),
@@ -232,11 +235,13 @@ class _CategoryFilterRowState extends State<_CategoryFilterRow> {
   }
 
   Widget _chip(
+    BuildContext context,
     String label, {
     required bool selected,
     bool isMoreChip = false,
     required VoidCallback onTap,
   }) {
+    final colors = context.appColors;
     return Semantics(
       button: true,
       selected: selected,
@@ -252,14 +257,10 @@ class _CategoryFilterRowState extends State<_CategoryFilterRow> {
               alignment: Alignment.center,
               padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
               decoration: BoxDecoration(
-                color: selected
-                    ? const Color(0xFF3D7EFF)
-                    : const Color(0xFF132040),
+                color: selected ? colors.primaryAction : colors.cardSurface,
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(
-                  color: selected
-                      ? const Color(0xFF3D7EFF)
-                      : const Color(0xFF1F3055),
+                  color: selected ? colors.primaryAction : colors.divider,
                 ),
               ),
               child: Row(
@@ -268,7 +269,9 @@ class _CategoryFilterRowState extends State<_CategoryFilterRow> {
                   Text(
                     label,
                     style: TextStyle(
-                      color: selected ? Colors.white : const Color(0xFF8A9DC0),
+                      color: selected
+                          ? colors.onPrimaryAction
+                          : colors.secondaryText,
                       fontSize: 13,
                       fontWeight: selected ? FontWeight.w600 : FontWeight.w400,
                     ),
@@ -278,7 +281,9 @@ class _CategoryFilterRowState extends State<_CategoryFilterRow> {
                     Icon(
                       Icons.keyboard_arrow_down,
                       size: 14,
-                      color: selected ? Colors.white : const Color(0xFF8A9DC0),
+                      color: selected
+                          ? colors.onPrimaryAction
+                          : colors.secondaryText,
                     ),
                   ],
                 ],
@@ -306,12 +311,13 @@ class _CategoryFilterRowState extends State<_CategoryFilterRow> {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Row(
           children: [
-            _chip('All',
+            _chip(context, 'All',
                 selected: selectedCategory == null,
                 onTap: () => onSelected(null)),
             const SizedBox(width: 8),
             for (final category in inline) ...[
               _chip(
+                context,
                 category,
                 selected: selectedCategory == category,
                 onTap: () => onSelected(category),
@@ -320,6 +326,7 @@ class _CategoryFilterRowState extends State<_CategoryFilterRow> {
             ],
             if (overflow.isNotEmpty)
               _chip(
+                context,
                 isOverflowSelected ? selectedCategory! : 'More',
                 selected: isOverflowSelected,
                 isMoreChip: true,
@@ -345,6 +352,7 @@ class _FormulaCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Material(
       color: Colors.transparent,
       child: InkWell(
@@ -353,9 +361,9 @@ class _FormulaCard extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
-            color: const Color(0xFF132040),
+            color: colors.cardSurface,
             borderRadius: BorderRadius.circular(14),
-            border: Border.all(color: const Color(0xFF1F3055)),
+            border: Border.all(color: colors.divider),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -368,8 +376,8 @@ class _FormulaCard extends StatelessWidget {
                       children: [
                         Text(
                           entry.title,
-                          style: const TextStyle(
-                            color: Colors.white,
+                          style: TextStyle(
+                            color: colors.primaryText,
                             fontSize: 15,
                             fontWeight: FontWeight.w600,
                           ),
@@ -377,8 +385,8 @@ class _FormulaCard extends StatelessWidget {
                         const SizedBox(height: 4),
                         Text(
                           entry.formula,
-                          style: const TextStyle(
-                            color: Color(0xFF5B8EFF),
+                          style: TextStyle(
+                            color: colors.accent,
                             fontSize: 15,
                             fontWeight: FontWeight.w600,
                           ),
@@ -388,13 +396,13 @@ class _FormulaCard extends StatelessWidget {
                   ),
                   Icon(
                     expanded ? Icons.expand_less : Icons.expand_more,
-                    color: const Color(0xFF8A9DC0),
+                    color: colors.secondaryText,
                   ),
                 ],
               ),
               if (expanded) ...[
                 const SizedBox(height: 12),
-                const Divider(color: Color(0xFF1F3055), height: 1),
+                Divider(color: colors.divider, height: 1),
                 const SizedBox(height: 12),
                 if (entry.diagramAssetId != null) ...[
                   VisualAssetView(assetId: entry.diagramAssetId!),
@@ -403,16 +411,15 @@ class _FormulaCard extends StatelessWidget {
                 if (entry.meaning.isNotEmpty) ...[
                   Text(
                     entry.meaning,
-                    style:
-                        const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13),
+                    style: TextStyle(color: colors.secondaryText, fontSize: 13),
                   ),
                   const SizedBox(height: 10),
                 ],
                 if (entry.variables.isNotEmpty) ...[
-                  const Text(
+                  Text(
                     'VARIABLES',
                     style: TextStyle(
-                      color: Color(0xFF8A9DC0),
+                      color: colors.secondaryText,
                       fontSize: 10,
                       fontWeight: FontWeight.w600,
                       letterSpacing: 1.0,
@@ -428,14 +435,14 @@ class _FormulaCard extends StatelessWidget {
                           children: [
                             TextSpan(
                               text: '${v.symbol}  ',
-                              style: const TextStyle(
-                                color: Color(0xFF5B8EFF),
+                              style: TextStyle(
+                                color: colors.accent,
                                 fontWeight: FontWeight.w700,
                               ),
                             ),
                             TextSpan(
                               text: v.meaning,
-                              style: const TextStyle(color: Color(0xFF8A9DC0)),
+                              style: TextStyle(color: colors.secondaryText),
                             ),
                           ],
                         ),
@@ -445,10 +452,10 @@ class _FormulaCard extends StatelessWidget {
                   const SizedBox(height: 10),
                 ],
                 if (entry.explanation.isNotEmpty) ...[
-                  const Text(
+                  Text(
                     'HOW IT WORKS',
                     style: TextStyle(
-                      color: Color(0xFF8A9DC0),
+                      color: colors.secondaryText,
                       fontSize: 10,
                       fontWeight: FontWeight.w600,
                       letterSpacing: 1.0,
@@ -457,8 +464,8 @@ class _FormulaCard extends StatelessWidget {
                   const SizedBox(height: 6),
                   Text(
                     entry.explanation,
-                    style: const TextStyle(
-                      color: Colors.white,
+                    style: TextStyle(
+                      color: colors.primaryText,
                       fontSize: 13,
                       height: 1.4,
                     ),
@@ -469,21 +476,21 @@ class _FormulaCard extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF0A1525),
+                      color: colors.background,
                       borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: const Color(0xFF1F3055)),
+                      border: Border.all(color: colors.divider),
                     ),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Icon(Icons.lightbulb_outline,
-                            color: Color(0xFF34C759), size: 16),
+                        Icon(Icons.lightbulb_outline,
+                            color: colors.success, size: 16),
                         const SizedBox(width: 8),
                         Expanded(
                           child: Text(
                             entry.example,
-                            style: const TextStyle(
-                              color: Color(0xFF8A9DC0),
+                            style: TextStyle(
+                              color: colors.secondaryText,
                               fontSize: 13,
                               height: 1.4,
                             ),

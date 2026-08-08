@@ -96,7 +96,12 @@ class _TutorToolsScreenState extends State<TutorToolsScreen> {
                     runSpacing: 8,
                     children: [
                       OutlinedButton(
-                        onPressed: () => context.push('/topics'),
+                        // Family Studio lives outside the bottom-nav shell;
+                        // /topics is a shell-owned branch route, so this
+                        // MUST use go(), never push() — see the navigator
+                        // key ownership model comment in
+                        // lib/app/router.dart.
+                        onPressed: () => context.go('/topics'),
                         child: Text(l10n.familyStudioTutorAssignPractice),
                       ),
                       OutlinedButton(

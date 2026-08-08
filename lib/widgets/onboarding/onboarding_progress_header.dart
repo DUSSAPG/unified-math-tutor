@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../shared/theme/app_theme.dart';
+
 class OnboardingProgressHeader extends StatelessWidget {
   final int currentStep;
   final int totalSteps;
@@ -16,6 +18,7 @@ class OnboardingProgressHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Column(
       children: [
         Row(
@@ -34,9 +37,7 @@ class OnboardingProgressHeader extends StatelessWidget {
                       height: 4,
                       margin: const EdgeInsets.symmetric(horizontal: 3),
                       decoration: BoxDecoration(
-                        color: active
-                            ? const Color(0xFF3D7EFF)
-                            : const Color(0xFF1F3055),
+                        color: active ? colors.primaryAction : colors.divider,
                         borderRadius: BorderRadius.circular(999),
                       ),
                     ),
@@ -51,12 +52,12 @@ class OnboardingProgressHeader extends StatelessWidget {
           children: [
             Text(
               'Step $currentStep of $totalSteps',
-              style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13),
+              style: TextStyle(color: colors.secondaryText, fontSize: 13),
             ),
             const Spacer(),
             Text(
               timeEstimate,
-              style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13),
+              style: TextStyle(color: colors.secondaryText, fontSize: 13),
             ),
           ],
         ),

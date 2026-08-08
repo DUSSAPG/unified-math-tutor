@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
+import '../../shared/theme/app_theme.dart';
+
 /// A short, dismiss-once walkthrough shown the first time a learner opens a
 /// given lab (per profile — see [InteractiveLabsProgressService.
 /// hasSeenFirstUse]). A plain [AlertDialog] rather than a custom overlay
@@ -10,11 +12,12 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 Future<void> showLabFirstUseWalkthrough(
     BuildContext context, List<String> steps) {
   final l10n = AppLocalizations.of(context);
+  final colors = context.appColors;
   return showDialog<void>(
     context: context,
     barrierDismissible: true,
     builder: (context) => AlertDialog(
-      backgroundColor: const Color(0xFF132040),
+      backgroundColor: colors.cardSurface,
       // Flutter's default 40px horizontal inset leaves only ~240px of
       // usable width on a 320px phone — tight for a numbered-step list.
       // Narrower insets below a small-phone width give the content more
@@ -24,7 +27,7 @@ Future<void> showLabFirstUseWalkthrough(
         vertical: 24,
       ),
       title: Text(l10n.labsFirstUseTitle,
-          style: const TextStyle(color: Colors.white)),
+          style: TextStyle(color: colors.primaryText)),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,14 +42,14 @@ Future<void> showLabFirstUseWalkthrough(
                     width: 22,
                     height: 22,
                     alignment: Alignment.center,
-                    decoration: const BoxDecoration(
-                      color: Color(0xFF5B8EFF),
+                    decoration: BoxDecoration(
+                      color: colors.accent,
                       shape: BoxShape.circle,
                     ),
                     child: Text(
                       '${i + 1}',
-                      style: const TextStyle(
-                        color: Colors.white,
+                      style: TextStyle(
+                        color: colors.onPrimaryAction,
                         fontSize: 12,
                         fontWeight: FontWeight.w700,
                       ),
@@ -56,8 +59,10 @@ Future<void> showLabFirstUseWalkthrough(
                   Expanded(
                     child: Text(
                       steps[i],
-                      style: const TextStyle(
-                          color: Colors.white, fontSize: 14, height: 1.35),
+                      style: TextStyle(
+                          color: colors.primaryText,
+                          fontSize: 14,
+                          height: 1.35),
                     ),
                   ),
                 ],

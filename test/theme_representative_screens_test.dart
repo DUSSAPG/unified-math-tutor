@@ -7,6 +7,7 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 import 'package:unified_math_tutor/models/interactive_lab_id.dart';
 import 'package:unified_math_tutor/services/discovery_card_catalog_service.dart';
 import 'package:unified_math_tutor/services/family_activity_catalog_service.dart';
+import 'package:unified_math_tutor/services/feed_the_hungry_panda_progress_service.dart';
 import 'package:unified_math_tutor/services/interactive_labs_progress_service.dart';
 import 'package:unified_math_tutor/services/learner_profiles_service.dart';
 import 'package:unified_math_tutor/services/local_preferences_service.dart';
@@ -16,6 +17,7 @@ import 'package:unified_math_tutor/services/onboarding_profile_service.dart';
 import 'package:unified_math_tutor/services/recall_card_catalog_service.dart';
 import 'package:unified_math_tutor/services/recall_cards_progress_service.dart';
 import 'package:unified_math_tutor/services/streak_service.dart';
+import 'package:unified_math_tutor/services/tutor_credit_service.dart';
 import 'package:unified_math_tutor/shared/theme/app_theme.dart';
 
 /// Pumps every screen this sprint actually repainted (per the Light Theme
@@ -34,6 +36,11 @@ void main() {
     await FamilyActivityCatalogService.instance.all();
   });
 
+  // TutorCreditService holds a `late final` notifier that throws if
+  // init() runs twice — unlike the other services here, it can't be
+  // re-initialized per-test, so it's set up once for the whole file.
+  var tutorCreditServiceInitialized = false;
+
   setUp(() async {
     SharedPreferences.setMockInitialValues({});
     await LocalPreferencesService.instance.init();
@@ -44,6 +51,11 @@ void main() {
     await LearnerProfilesService.instance.init();
     await RecallCardsProgressService.instance.init();
     await InteractiveLabsProgressService.instance.init();
+    await FeedTheHungryPandaProgressService.instance.init();
+    if (!tutorCreditServiceInitialized) {
+      await TutorCreditService.instance.init();
+      tutorCreditServiceInitialized = true;
+    }
     await InteractiveLabsProgressService.instance
         .markFirstUseSeen(InteractiveLabId.footballPrecision);
     await InteractiveLabsProgressService.instance
@@ -107,16 +119,46 @@ void main() {
 
   // Every route named in the plan's "Converting the 12 in-scope
   // screens/features" list, expanded to one entry per underlying screen
-  // file (the plan's "Settings" bucket alone covers 4 separate files).
+  // file (the plan's "Settings" bucket alone covers 4 separate files),
+  // plus every route this Light Theme sprint additionally converted —
+  // required screens (onboarding, tutor, entrance exam preparation, exam
+  // packs/simulator, upgrade), the remaining Math Studio pillar hubs, the
+  // remaining Interactive Labs, Feed the Hungry Panda, and the Settings
+  // sub-pages that weren't already covered.
   const routes = <String, String>{
     'Home': '/home',
     'Topics': '/topics',
     'Practice': '/practice',
     'Journey': '/journey',
+    'Onboarding — who is learning': '/onboarding',
+    'Onboarding — goal': '/onboarding/goal',
+    'Onboarding — accessibility': '/onboarding/accessibility',
+    'Onboarding — profile': '/onboarding/profile',
+    'Sign In': '/auth/sign-in',
+    'Tutor': '/tutor',
+    'Formula Library': '/formulas',
+    'Exam Packs (simulator entry)': '/packs',
+    'Upgrade': '/upgrade',
+    'Explore Math Intelligence': '/explore',
+    'Entrance Exam Preparation': '/entrance-exam',
     'Math Studio hub': '/math-studio',
+    'Build Confidence': '/math-studio/build-confidence',
+    'Mental Maths hub (timed challenge entry)': '/math-studio/mental-maths',
+    'Visual Maths hub': '/math-studio/visual-maths',
+    'Math & Magic hub': '/math-studio/math-magic',
+    'Spatial Intelligence hub': '/math-studio/spatial-intelligence',
     'Football Precision': '/math-studio/interactive-labs/football-precision',
     'Maze Driver': '/math-studio/interactive-labs/maze-driver',
     'Flight Path Lab': '/math-studio/interactive-labs/flight-path-lab',
+    'Aircraft Landing Lab':
+        '/math-studio/interactive-labs/aircraft-landing-lab',
+    'Spatial Cube Lab': '/math-studio/interactive-labs/spatial-cube-lab',
+    'Algebra Balance': '/math-studio/interactive-labs/algebra-balance',
+    'Data Detective': '/math-studio/interactive-labs/data-detective',
+    'Number Line Explorer':
+        '/math-studio/interactive-labs/number-line-explorer',
+    'Feed the Hungry Panda':
+        '/math-studio/interactive-labs/early-maths-playground/feed-the-hungry-panda',
     'Recall Cards hub': '/math-studio/recall-cards',
     'Discovery Library': '/math-studio/discovery',
     'Family Studio hub': '/family-studio',
@@ -124,6 +166,10 @@ void main() {
     'Settings': '/profile/settings',
     'Appearance': '/profile/appearance',
     'Accessibility': '/profile/accessibility',
+    'Subscription': '/profile/subscription',
+    'Curriculum Settings': '/profile/curriculum',
+    'Privacy & Data': '/profile/privacy',
+    'Terms of Use': '/profile/terms',
   };
 
   group('Dark theme — all in-scope screens render without exceptions', () {
@@ -196,6 +242,43 @@ void main() {
         );
         expect(tester.takeException(), isNull);
       });
+    }
+  });
+
+  // Reading sizes S/M/L: the exact three text-scale steps
+  // AccessibilityStepScreen itself offers (see _textScales in
+  // accessibility_step_screen.dart) — Small/Default/Large — swept across
+  // both themes on a text-dense screen (Home) and a form-heavy one
+  // (Practice's setup screen), rather than the arbitrary 1.0/2.0 pair the
+  // device matrix above already covers for a different purpose (ordinary
+  // vs. large-accessibility scale).
+  const readingSizes = <String, double>{
+    'S': 0.9,
+    'M': 1.0,
+    'L': 1.15,
+  };
+  const readingSizeRoutes = <String, String>{
+    'Home': '/home',
+    'Practice': '/practice',
+  };
+
+  group('Reading sizes S/M/L', () {
+    for (final routeEntry in readingSizeRoutes.entries) {
+      for (final mode in themeModes) {
+        for (final sizeEntry in readingSizes.entries) {
+          final label =
+              '${routeEntry.key} — ${mode.name} @ reading size ${sizeEntry.key} (${sizeEntry.value}x)';
+          testWidgets(label, (tester) async {
+            await pumpRoute(
+              tester,
+              routeEntry.value,
+              themeMode: mode,
+              textScale: sizeEntry.value,
+            );
+            expect(tester.takeException(), isNull);
+          });
+        }
+      }
     }
   });
 }

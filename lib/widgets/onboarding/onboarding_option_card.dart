@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../shared/theme/app_theme.dart';
+
 class OnboardingOptionCard extends StatelessWidget {
   final String title;
   final String subtitle;
@@ -18,10 +20,9 @@ class OnboardingOptionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final borderColor =
-        selected ? const Color(0xFF3D7EFF) : const Color(0xFF1F3055);
-    final iconColor =
-        selected ? const Color(0xFF3D7EFF) : const Color(0xFF8A9DC0);
+    final colors = context.appColors;
+    final borderColor = selected ? colors.primaryAction : colors.divider;
+    final iconColor = selected ? colors.primaryAction : colors.secondaryText;
 
     return InkWell(
       borderRadius: BorderRadius.circular(22),
@@ -29,7 +30,7 @@ class OnboardingOptionCard extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(18),
         decoration: BoxDecoration(
-          color: const Color(0xFF132040),
+          color: colors.cardSurface,
           borderRadius: BorderRadius.circular(22),
           border: Border.all(color: borderColor, width: selected ? 2 : 1),
         ),
@@ -37,7 +38,7 @@ class OnboardingOptionCard extends StatelessWidget {
           children: [
             CircleAvatar(
               radius: 26,
-              backgroundColor: const Color(0xFF0B1120),
+              backgroundColor: colors.background,
               child: Icon(icon, color: iconColor),
             ),
             const SizedBox(width: 16),
@@ -46,20 +47,18 @@ class OnboardingOptionCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(title,
-                      style: const TextStyle(
-                          color: Colors.white,
+                      style: TextStyle(
+                          color: colors.primaryText,
                           fontSize: 17,
                           fontWeight: FontWeight.w700)),
                   const SizedBox(height: 6),
-                  Text(subtitle,
-                      style: const TextStyle(color: Color(0xFF8A9DC0))),
+                  Text(subtitle, style: TextStyle(color: colors.secondaryText)),
                 ],
               ),
             ),
             Icon(
               selected ? Icons.check_circle : Icons.chevron_right,
-              color:
-                  selected ? const Color(0xFF3D7EFF) : const Color(0xFF4A6080),
+              color: selected ? colors.primaryAction : colors.tertiaryText,
             ),
           ],
         ),

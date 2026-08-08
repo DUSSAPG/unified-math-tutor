@@ -7,6 +7,7 @@ import '../../models/number_line_example.dart';
 import '../../services/nav_visibility_service.dart';
 import '../../services/number_line_examples_service.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../widgets/visual_maths/number_line_widget.dart';
 
 String _captionFor(AppLocalizations l10n, String exampleId) =>
@@ -53,19 +54,20 @@ class _NumberLineScreenState extends State<NumberLineScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0B1120),
+        backgroundColor: colors.background,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: colors.primaryText),
           onPressed: () => popOrGo(context, '/math-studio/visual-maths'),
         ),
         title: Text(
           l10n.visualMathsNumberLineTitle,
           style:
-              const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+              TextStyle(color: colors.primaryText, fontWeight: FontWeight.w700),
         ),
       ),
       body: SafeArea(
@@ -73,9 +75,9 @@ class _NumberLineScreenState extends State<NumberLineScreen> {
           future: _examplesFuture,
           builder: (context, snapshot) {
             if (snapshot.hasError) {
-              return const Center(
+              return Center(
                 child: Icon(Icons.error_outline,
-                    color: Color(0xFF8A9DC0), size: 32),
+                    color: colors.secondaryText, size: 32),
               );
             }
             final examples = snapshot.data;
@@ -97,8 +99,10 @@ class _NumberLineScreenState extends State<NumberLineScreen> {
                     children: [
                       Text(
                         _captionFor(l10n, example.id),
-                        style: const TextStyle(
-                            color: Colors.white, fontSize: 16, height: 1.4),
+                        style: TextStyle(
+                            color: colors.primaryText,
+                            fontSize: 16,
+                            height: 1.4),
                       ),
                       const SizedBox(height: AppSpacing.lg),
                       NumberLineWidget(

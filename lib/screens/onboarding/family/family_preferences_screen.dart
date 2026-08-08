@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../../services/local_preferences_service.dart';
 import '../../../services/onboarding_profile_service.dart';
+import '../../../shared/theme/app_theme.dart';
 import '../../../widgets/allie_card.dart';
 import '../onboarding_shell.dart';
 
@@ -59,6 +60,7 @@ class _FamilyPreferencesScreenState extends State<FamilyPreferencesScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
 
     return OnboardingShell(
       step: 4,
@@ -78,19 +80,19 @@ class _FamilyPreferencesScreenState extends State<FamilyPreferencesScreen> {
           SwitchListTile(
             contentPadding: EdgeInsets.zero,
             title: Text(l10n.onboardingFamilyNotificationsLabel,
-                style: const TextStyle(color: Colors.white)),
+                style: TextStyle(color: colors.primaryText)),
             subtitle: Text(l10n.onboardingFamilyNotificationsSub,
-                style: const TextStyle(color: Color(0xFF8A9DC0))),
+                style: TextStyle(color: colors.secondaryText)),
             value: _notificationsOptIn,
             onChanged: (value) => setState(() => _notificationsOptIn = value),
           ),
           const SizedBox(height: 12),
           Text(l10n.onboardingFamilyPinLabel,
-              style: const TextStyle(
-                  color: Colors.white, fontWeight: FontWeight.w700)),
+              style: TextStyle(
+                  color: colors.primaryText, fontWeight: FontWeight.w700)),
           const SizedBox(height: 4),
           Text(l10n.onboardingFamilyPinSub,
-              style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 12)),
+              style: TextStyle(color: colors.secondaryText, fontSize: 12)),
           const SizedBox(height: 12),
           TextField(
             controller: _pinController,

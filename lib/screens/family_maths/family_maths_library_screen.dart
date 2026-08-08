@@ -7,6 +7,7 @@ import '../../models/family_activity.dart';
 import '../../services/family_activity_catalog_service.dart';
 import '../../shared/responsive/app_breakpoints.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../widgets/settings/parent_gate.dart';
 import 'family_maths_category_labels.dart';
 import 'family_maths_reassurance.dart';
@@ -49,20 +50,21 @@ class _FamilyMathsLibraryScreenState extends State<FamilyMathsLibraryScreen> {
     return ParentGate(
       builder: (context) {
         final l10n = AppLocalizations.of(context);
+        final colors = context.appColors;
         return Scaffold(
-          backgroundColor: const Color(0xFF0B1120),
+          backgroundColor: colors.background,
           appBar: AppBar(
-            backgroundColor: const Color(0xFF0B1120),
+            backgroundColor: colors.background,
             elevation: 0,
             leading: IconButton(
-              icon: const Icon(Icons.arrow_back, color: Colors.white),
+              icon: Icon(Icons.arrow_back, color: colors.primaryText),
               onPressed: () =>
                   popOrGo(context, '/help/parent-teacher-tools/family-maths'),
             ),
             title: Text(
               l10n.familyMathsLibraryTitle,
-              style: const TextStyle(
-                  color: Colors.white, fontWeight: FontWeight.w700),
+              style: TextStyle(
+                  color: colors.primaryText, fontWeight: FontWeight.w700),
             ),
           ),
           body: SafeArea(
@@ -70,9 +72,9 @@ class _FamilyMathsLibraryScreenState extends State<FamilyMathsLibraryScreen> {
               future: _activitiesFuture,
               builder: (context, snapshot) {
                 if (snapshot.hasError) {
-                  return const Center(
+                  return Center(
                     child: Icon(Icons.error_outline,
-                        color: Color(0xFF8A9DC0), size: 32),
+                        color: colors.secondaryText, size: 32),
                   );
                 }
                 final activities = snapshot.data;
@@ -103,8 +105,8 @@ class _FamilyMathsLibraryScreenState extends State<FamilyMathsLibraryScreen> {
                             child: Text(
                               familyMathsReassuranceOfTheDay(
                                   l10n, DateTime.now()),
-                              style: const TextStyle(
-                                color: Color(0xFF8A9DC0),
+                              style: TextStyle(
+                                color: colors.secondaryText,
                                 fontSize: 12,
                                 fontStyle: FontStyle.italic,
                                 height: 1.3,
@@ -205,14 +207,15 @@ class _EmptyCategoryState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(AppSpacing.lg),
         child: Text(
           message,
           textAlign: TextAlign.center,
-          style: const TextStyle(
-              color: Color(0xFF8A9DC0), fontSize: 14, height: 1.4),
+          style:
+              TextStyle(color: colors.secondaryText, fontSize: 14, height: 1.4),
         ),
       ),
     );
@@ -229,18 +232,18 @@ class _FilterChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return ChoiceChip(
       label: Text(label),
       selected: selected,
       onSelected: (_) => onTap(),
-      selectedColor: const Color(0xFF5B8EFF),
-      backgroundColor: const Color(0xFF132040),
+      selectedColor: colors.accent,
+      backgroundColor: colors.cardSurface,
       labelStyle: TextStyle(
-        color: selected ? Colors.white : const Color(0xFF8A9DC0),
+        color: selected ? colors.onPrimaryAction : colors.secondaryText,
         fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
       ),
-      side: BorderSide(
-          color: selected ? const Color(0xFF5B8EFF) : const Color(0xFF1F3055)),
+      side: BorderSide(color: selected ? colors.accent : colors.divider),
     );
   }
 }
@@ -262,8 +265,9 @@ class _ActivityTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Material(
-      color: const Color(0xFF132040),
+      color: colors.cardSurface,
       borderRadius: BorderRadius.circular(14),
       child: InkWell(
         borderRadius: BorderRadius.circular(14),
@@ -272,20 +276,22 @@ class _ActivityTile extends StatelessWidget {
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(14),
-            border: Border.all(color: const Color(0xFF1F3055)),
+            border: Border.all(color: colors.divider),
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // Fixed Allie-orange accent — governed character identity
+              // color, not converted to a theme token.
               const Icon(Icons.diversity_3, color: Color(0xFFFF9F5B), size: 32),
               const SizedBox(height: 8),
               Text(
                 title,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
-                style: const TextStyle(
-                  color: Colors.white,
+                style: TextStyle(
+                  color: colors.primaryText,
                   fontSize: 14,
                   fontWeight: FontWeight.w700,
                 ),
@@ -295,9 +301,9 @@ class _ActivityTile extends StatelessWidget {
                 spacing: 6,
                 runSpacing: 4,
                 children: [
-                  _Badge(text: categoryLabel, color: const Color(0xFF5B8EFF)),
-                  _Badge(text: ageLabel, color: const Color(0xFF8A9DC0)),
-                  _Badge(text: timeLabel, color: const Color(0xFF8A9DC0)),
+                  _Badge(text: categoryLabel, color: colors.accent),
+                  _Badge(text: ageLabel, color: colors.secondaryText),
+                  _Badge(text: timeLabel, color: colors.secondaryText),
                 ],
               ),
             ],

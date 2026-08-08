@@ -4,6 +4,7 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 import '../../models/recall_card.dart';
 import '../../services/onboarding_profile_service.dart';
 import '../../services/recall_card_export_service.dart';
+import '../../shared/theme/app_theme.dart';
 
 enum _RecallExportMode { recallSheet, answerSheet }
 
@@ -12,9 +13,10 @@ enum _RecallExportMode { recallSheet, answerSheet }
 /// Review session's printable recall/answer sheets).
 Future<void> showRecallCardExportSheet(
     BuildContext context, List<RecallCard> cards) {
+  final colors = context.appColors;
   return showModalBottomSheet<void>(
     context: context,
-    backgroundColor: const Color(0xFF132040),
+    backgroundColor: colors.elevatedSurface,
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
     ),
@@ -65,6 +67,7 @@ class _RecallExportSheetState extends State<_RecallExportSheet> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return SafeArea(
       top: false,
       child: Padding(
@@ -79,14 +82,14 @@ class _RecallExportSheetState extends State<_RecallExportSheet> {
               margin: const EdgeInsets.only(bottom: 16),
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                color: const Color(0xFF1F3055),
+                color: colors.divider,
                 borderRadius: BorderRadius.circular(2),
               ),
             ),
             Text(
               l10n.recallCardsExportButton,
-              style: const TextStyle(
-                  color: Colors.white,
+              style: TextStyle(
+                  color: colors.primaryText,
                   fontSize: 16,
                   fontWeight: FontWeight.w700),
             ),
@@ -99,12 +102,12 @@ class _RecallExportSheetState extends State<_RecallExportSheet> {
                   RadioListTile<_RecallExportMode>(
                     value: _RecallExportMode.recallSheet,
                     title: Text(l10n.recallCardsExportFiveCardSheet,
-                        style: const TextStyle(color: Colors.white)),
+                        style: TextStyle(color: colors.primaryText)),
                   ),
                   RadioListTile<_RecallExportMode>(
                     value: _RecallExportMode.answerSheet,
                     title: Text(l10n.recallCardsExportAnswerSheet,
-                        style: const TextStyle(color: Colors.white)),
+                        style: TextStyle(color: colors.primaryText)),
                   ),
                 ],
               ),
@@ -115,7 +118,7 @@ class _RecallExportSheetState extends State<_RecallExportSheet> {
                   setState(() => _includeName = value ?? false),
               controlAffinity: ListTileControlAffinity.leading,
               title: Text(l10n.mathStudioExportIncludeNameLabel,
-                  style: const TextStyle(color: Colors.white)),
+                  style: TextStyle(color: colors.primaryText)),
             ),
             const SizedBox(height: 8),
             ElevatedButton.icon(

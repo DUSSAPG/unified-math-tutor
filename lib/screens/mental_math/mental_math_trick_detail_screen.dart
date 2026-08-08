@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../services/mental_math_vault_service.dart';
+import '../../shared/theme/app_theme.dart';
 
 class MentalMathTrickDetailScreen extends StatefulWidget {
   const MentalMathTrickDetailScreen({
@@ -74,8 +75,8 @@ class _MentalMathTrickDetailScreenState
                               if (_showAnswer)
                                 Text(
                                   'Answer: ${trick.practiceAnswer}',
-                                  style: const TextStyle(
-                                    color: Color(0xFF34C759),
+                                  style: TextStyle(
+                                    color: context.appColors.success,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 )

@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../app/safe_navigation.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../widgets/shared/fade_in.dart';
 
 class UpgradeScreen extends StatelessWidget {
@@ -11,16 +12,17 @@ class UpgradeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0B1120),
+        backgroundColor: colors.background,
         elevation: 0,
         scrolledUnderElevation: 0,
         automaticallyImplyLeading: false,
         actions: [
           IconButton(
-            icon: const Icon(Icons.close, color: Colors.white),
+            icon: Icon(Icons.close, color: colors.primaryText),
             onPressed: () => popOrGo(context, '/home'),
           ),
         ],
@@ -55,8 +57,8 @@ class UpgradeScreen extends StatelessWidget {
                           Text(
                             l10n.upgradeTitle,
                             textAlign: TextAlign.center,
-                            style: const TextStyle(
-                              color: Colors.white,
+                            style: TextStyle(
+                              color: colors.primaryText,
                               fontSize: 28,
                               fontWeight: FontWeight.w800,
                               height: 1.2,
@@ -66,8 +68,8 @@ class UpgradeScreen extends StatelessWidget {
                           Text(
                             l10n.upgradeBody,
                             textAlign: TextAlign.center,
-                            style: const TextStyle(
-                              color: Color(0xFF8A9DC0),
+                            style: TextStyle(
+                              color: colors.secondaryText,
                               fontSize: 15,
                               height: 1.5,
                             ),
@@ -108,9 +110,9 @@ class UpgradeScreen extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
-                        color: const Color(0xFF132040),
+                        color: colors.cardSurface,
                         borderRadius: BorderRadius.circular(14),
-                        border: Border.all(color: const Color(0xFF1F3055)),
+                        border: Border.all(color: colors.divider),
                       ),
                       child: Column(
                         children: [
@@ -153,8 +155,11 @@ class UpgradeScreen extends StatelessWidget {
                           );
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFFFFBD00),
-                          foregroundColor: const Color(0xFF0B1120),
+                          backgroundColor: colors.warning,
+                          // Fixed dark text: this button's gold fill is
+                          // bright in both themes, so its label always
+                          // needs a dark (not theme-flipped) foreground.
+                          foregroundColor: const Color(0xFF171B24),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(14),
                           ),
@@ -178,11 +183,11 @@ class UpgradeScreen extends StatelessWidget {
                           context.go('/packs');
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFF132040),
-                          foregroundColor: Colors.white,
+                          backgroundColor: colors.cardSurface,
+                          foregroundColor: colors.primaryText,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(14),
-                            side: const BorderSide(color: Color(0xFF1F3055)),
+                            side: BorderSide(color: colors.divider),
                           ),
                           elevation: 0,
                         ),
@@ -201,8 +206,8 @@ class UpgradeScreen extends StatelessWidget {
                         onPressed: () => popOrGo(context, '/home'),
                         child: Text(
                           l10n.upgradeMaybeLater,
-                          style: const TextStyle(
-                            color: Color(0xFF8A9DC0),
+                          style: TextStyle(
+                            color: colors.secondaryText,
                             fontSize: 15,
                           ),
                         ),
@@ -229,8 +234,8 @@ class _SectionLabel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text.toUpperCase(),
-      style: const TextStyle(
-        color: Color(0xFF8A9DC0),
+      style: TextStyle(
+        color: context.appColors.secondaryText,
         fontSize: 11,
         fontWeight: FontWeight.w600,
         letterSpacing: 1.2,
@@ -256,12 +261,13 @@ class _BenefitCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF132040),
+        color: colors.cardSurface,
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: const Color(0xFF1F3055)),
+        border: Border.all(color: colors.divider),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -282,8 +288,8 @@ class _BenefitCard extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: const TextStyle(
-                    color: Colors.white,
+                  style: TextStyle(
+                    color: colors.primaryText,
                     fontSize: 15,
                     fontWeight: FontWeight.w600,
                   ),
@@ -291,8 +297,8 @@ class _BenefitCard extends StatelessWidget {
                 const SizedBox(height: 4),
                 Text(
                   subtitle,
-                  style: const TextStyle(
-                    color: Color(0xFF8A9DC0),
+                  style: TextStyle(
+                    color: colors.secondaryText,
                     fontSize: 13,
                     height: 1.45,
                   ),
@@ -321,15 +327,16 @@ class _ComingSoonRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Row(
       children: [
-        Icon(icon, color: const Color(0xFF5B8EFF), size: 18),
+        Icon(icon, color: colors.accent, size: 18),
         const SizedBox(width: 12),
         Expanded(
           child: Text(
             text,
-            style: const TextStyle(
-              color: Color(0xFF8A9DC0),
+            style: TextStyle(
+              color: colors.secondaryText,
               fontSize: 13,
               height: 1.4,
             ),
@@ -339,13 +346,13 @@ class _ComingSoonRow extends StatelessWidget {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 3),
           decoration: BoxDecoration(
-            color: const Color(0xFF5B8EFF).withValues(alpha: 0.12),
+            color: colors.accent.withValues(alpha: 0.12),
             borderRadius: BorderRadius.circular(6),
           ),
           child: Text(
             AppLocalizations.of(context).premiumLabel.toUpperCase(),
-            style: const TextStyle(
-              color: Color(0xFF5B8EFF),
+            style: TextStyle(
+              color: colors.accent,
               fontSize: 9,
               fontWeight: FontWeight.w700,
               letterSpacing: 0.6,

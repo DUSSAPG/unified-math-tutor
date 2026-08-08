@@ -7,6 +7,7 @@ import '../../models/recall_card.dart';
 import '../../services/nav_visibility_service.dart';
 import '../../services/recall_cards_progress_service.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../widgets/recall/recall_card_body.dart';
 import '../../widgets/recall/recall_card_export_sheet.dart';
 
@@ -74,15 +75,16 @@ class _RecallReviewSessionScreenState extends State<RecallReviewSessionScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     final complete = _index >= widget.cards.length;
 
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0B1120),
+        backgroundColor: colors.background,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.close, color: Colors.white),
+          icon: Icon(Icons.close, color: colors.primaryText),
           onPressed: () => popOrGo(context, '/math-studio/recall-cards'),
         ),
         title: Text(
@@ -90,12 +92,12 @@ class _RecallReviewSessionScreenState extends State<RecallReviewSessionScreen> {
               ? l10n.recallCardsSessionComplete
               : l10n.recallCardsCardOf(_index + 1, widget.cards.length),
           style:
-              const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+              TextStyle(color: colors.primaryText, fontWeight: FontWeight.w700),
         ),
         actions: [
           if (!complete)
             IconButton(
-              icon: const Icon(Icons.ios_share, color: Colors.white),
+              icon: Icon(Icons.ios_share, color: colors.primaryText),
               tooltip: l10n.recallCardsExportButton,
               onPressed: () => showRecallCardExportSheet(context, widget.cards),
             ),
@@ -117,9 +119,8 @@ class _RecallReviewSessionScreenState extends State<RecallReviewSessionScreen> {
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         child: LinearProgressIndicator(
                           value: (_index) / widget.cards.length,
-                          backgroundColor: const Color(0xFF1F3055),
-                          valueColor:
-                              const AlwaysStoppedAnimation(Color(0xFF34C759)),
+                          backgroundColor: colors.divider,
+                          valueColor: AlwaysStoppedAnimation(colors.success),
                         ),
                       ),
                       Expanded(
@@ -166,24 +167,26 @@ class _SessionCompleteView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return Padding(
       padding: const EdgeInsets.all(AppSpacing.lg),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Icon(Icons.check_circle_outline,
-              color: Color(0xFF34C759), size: 56),
+          Icon(Icons.check_circle_outline, color: colors.success, size: 56),
           const SizedBox(height: AppSpacing.md),
           Text(
             l10n.recallCardsSessionComplete,
-            style: const TextStyle(
-                color: Colors.white, fontSize: 20, fontWeight: FontWeight.w700),
+            style: TextStyle(
+                color: colors.primaryText,
+                fontSize: 20,
+                fontWeight: FontWeight.w700),
           ),
           const SizedBox(height: AppSpacing.sm),
           Text(
             l10n.recallCardsSessionCompleteSubtitle,
             textAlign: TextAlign.center,
-            style: const TextStyle(color: Color(0xFF8A9DC0)),
+            style: TextStyle(color: colors.secondaryText),
           ),
           const SizedBox(height: AppSpacing.lg),
           ElevatedButton(onPressed: onDone, child: const Text('OK')),

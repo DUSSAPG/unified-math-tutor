@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 
 import '../../l10n/app_localizations.dart';
 import '../../services/learner_profiles_service.dart';
+import '../../shared/theme/app_theme.dart';
 
 /// "Who's learning today?" picker — lets a parent/teacher account switch
 /// which learner is active for the current session. Not wired into
 /// Practice/Topics/Exam-sim entry points; reachable from Home and Profile.
 Future<void> showWhoIsLearningSheet(BuildContext context) {
+  final colors = context.appColors;
   return showModalBottomSheet<void>(
     context: context,
-    backgroundColor: const Color(0xFF0F1A2E),
+    backgroundColor: colors.elevatedSurface,
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
     ),
@@ -22,23 +24,24 @@ class _WhoIsLearningSheet extends StatelessWidget {
 
   Future<void> _addLearner(BuildContext context) async {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     final controller = TextEditingController();
     final name = await showDialog<String>(
       context: context,
       builder: (dialogContext) => AlertDialog(
-        backgroundColor: const Color(0xFF132040),
+        backgroundColor: colors.cardSurface,
         title: Text(
           l10n.whoIsLearningAddLearner,
-          style: const TextStyle(color: Colors.white),
+          style: TextStyle(color: colors.primaryText),
         ),
         content: TextField(
           controller: controller,
           autofocus: true,
           textCapitalization: TextCapitalization.words,
-          style: const TextStyle(color: Colors.white),
+          style: TextStyle(color: colors.primaryText),
           decoration: InputDecoration(
             hintText: l10n.whoIsLearningAddLearnerHint,
-            hintStyle: const TextStyle(color: Color(0xFF4A6080)),
+            hintStyle: TextStyle(color: colors.tertiaryText),
           ),
           onSubmitted: (value) => Navigator.of(dialogContext).pop(value),
         ),
@@ -63,6 +66,7 @@ class _WhoIsLearningSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(20, 20, 20, 12),
@@ -72,8 +76,8 @@ class _WhoIsLearningSheet extends StatelessWidget {
           children: [
             Text(
               l10n.whoIsLearningTitle,
-              style: const TextStyle(
-                color: Colors.white,
+              style: TextStyle(
+                color: colors.primaryText,
                 fontSize: 18,
                 fontWeight: FontWeight.w700,
               ),
@@ -105,13 +109,13 @@ class _WhoIsLearningSheet extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(vertical: 14),
                             child: Row(
                               children: [
-                                const Icon(Icons.add_circle_outline,
-                                    color: Color(0xFF5B8EFF)),
+                                Icon(Icons.add_circle_outline,
+                                    color: colors.accent),
                                 const SizedBox(width: 12),
                                 Text(
                                   l10n.whoIsLearningAddLearner,
-                                  style: const TextStyle(
-                                    color: Color(0xFF5B8EFF),
+                                  style: TextStyle(
+                                    color: colors.accent,
                                     fontSize: 15,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -146,6 +150,7 @@ class _LearnerRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return InkWell(
       borderRadius: BorderRadius.circular(14),
       onTap: onTap,
@@ -155,14 +160,13 @@ class _LearnerRow extends StatelessWidget {
           children: [
             Icon(
               selected ? Icons.radio_button_checked : Icons.radio_button_off,
-              color:
-                  selected ? const Color(0xFF3D7EFF) : const Color(0xFF4A6080),
+              color: selected ? colors.primaryAction : colors.tertiaryText,
             ),
             const SizedBox(width: 12),
             Text(
               learner.name,
               style: TextStyle(
-                color: Colors.white,
+                color: colors.primaryText,
                 fontSize: 15,
                 fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
               ),

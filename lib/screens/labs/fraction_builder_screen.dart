@@ -8,6 +8,7 @@ import '../../services/audio_cue_service.dart';
 import '../../services/captain_math_service.dart';
 import '../../services/interactive_labs_progress_service.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../widgets/labs/lab_help_sheet.dart';
 import '../../widgets/labs/lab_progress_indicator.dart';
 import '../../widgets/labs/lab_related_links.dart';
@@ -207,6 +208,7 @@ class _FractionBuilderScreenState extends State<FractionBuilderScreen>
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     final challenge = _challenge;
 
     return ListenableBuilder(
@@ -238,7 +240,7 @@ class _FractionBuilderScreenState extends State<FractionBuilderScreen>
           children: [
             Text(
               l10n.labsFractionBuilderTapGuidance,
-              style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 12),
+              style: TextStyle(color: colors.secondaryText, fontSize: 12),
             ),
             const SizedBox(height: AppSpacing.sm),
             Semantics(
@@ -259,10 +261,9 @@ class _FractionBuilderScreenState extends State<FractionBuilderScreen>
                             ),
                             decoration: BoxDecoration(
                               color: i < _filled
-                                  ? const Color(0xFF34C759)
-                                  : const Color(0xFF132040),
-                              border:
-                                  Border.all(color: const Color(0xFF1F3055)),
+                                  ? colors.success
+                                  : colors.cardSurface,
+                              border: Border.all(color: colors.divider),
                               borderRadius: BorderRadius.horizontal(
                                 left: i == 0
                                     ? const Radius.circular(8)
@@ -283,7 +284,7 @@ class _FractionBuilderScreenState extends State<FractionBuilderScreen>
             Text(
               l10n.labsFractionBuilderFilledCount(
                   _filled, challenge.denominator),
-              style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13),
+              style: TextStyle(color: colors.secondaryText, fontSize: 13),
             ),
             const SizedBox(height: AppSpacing.md),
             Row(

@@ -10,6 +10,7 @@ import '../../services/nav_visibility_service.dart';
 import '../../services/pack_registry_service.dart';
 import '../../shared/math_notation_formatter.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../widgets/captain_math_card.dart';
 
 /// Gentle, untimed-by-default practice session using a dedicated Build
@@ -68,19 +69,20 @@ class _BuildConfidenceScreenState extends State<BuildConfidenceScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0B1120),
+        backgroundColor: colors.background,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: colors.primaryText),
           onPressed: () => popOrGo(context, '/math-studio'),
         ),
         title: Text(
           l10n.mathStudioBuildConfidenceTitle,
           style:
-              const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+              TextStyle(color: colors.primaryText, fontWeight: FontWeight.w700),
         ),
       ),
       body: SafeArea(
@@ -88,9 +90,9 @@ class _BuildConfidenceScreenState extends State<BuildConfidenceScreen> {
           future: _questionsFuture,
           builder: (context, snapshot) {
             if (snapshot.hasError) {
-              return const Center(
+              return Center(
                 child: Icon(Icons.error_outline,
-                    color: Color(0xFF8A9DC0), size: 32),
+                    color: colors.secondaryText, size: 32),
               );
             }
             final questions = snapshot.data;
@@ -116,24 +118,24 @@ class _BuildConfidenceScreenState extends State<BuildConfidenceScreen> {
                         value: (_index + 1) / questions.length,
                         minHeight: 5,
                         borderRadius: BorderRadius.circular(4),
-                        backgroundColor: const Color(0xFF1F3055),
-                        valueColor: const AlwaysStoppedAnimation<Color>(
-                            Color(0xFF34C759)),
+                        backgroundColor: colors.divider,
+                        valueColor:
+                            AlwaysStoppedAnimation<Color>(colors.success),
                       ),
                       const SizedBox(height: 8),
                       Text(
                         l10n.buildConfidenceProgress(
                             _index + 1, questions.length),
-                        style: const TextStyle(
-                            color: Color(0xFF8A9DC0), fontSize: 12),
+                        style: TextStyle(
+                            color: colors.secondaryText, fontSize: 12),
                       ),
                       const SizedBox(height: AppSpacing.md),
                       CaptainMathCard(state: CaptainMathState.calm),
                       const SizedBox(height: AppSpacing.md),
                       Text(
                         MathNotationFormatter.format(question.question),
-                        style: const TextStyle(
-                          color: Colors.white,
+                        style: TextStyle(
+                          color: colors.primaryText,
                           fontSize: 18,
                           fontWeight: FontWeight.w700,
                         ),
@@ -153,14 +155,14 @@ class _BuildConfidenceScreenState extends State<BuildConfidenceScreen> {
                         Container(
                           padding: const EdgeInsets.all(12),
                           decoration: BoxDecoration(
-                            color: const Color(0xFF132040),
+                            color: colors.cardSurface,
                             borderRadius: BorderRadius.circular(12),
-                            border: Border.all(color: const Color(0xFF1F3055)),
+                            border: Border.all(color: colors.divider),
                           ),
                           child: Text(
                             MathNotationFormatter.format(question.explanation),
-                            style: const TextStyle(
-                                color: Color(0xFF8A9DC0),
+                            style: TextStyle(
+                                color: colors.secondaryText,
                                 fontSize: 13,
                                 height: 1.4),
                           ),
@@ -193,9 +195,10 @@ class _OptionTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = selected ? const Color(0xFF5B8EFF) : const Color(0xFF1F3055);
+    final colors = context.appColors;
+    final color = selected ? colors.accent : colors.divider;
     return Material(
-      color: const Color(0xFF132040),
+      color: colors.cardSurface,
       borderRadius: BorderRadius.circular(12),
       child: InkWell(
         borderRadius: BorderRadius.circular(12),
@@ -208,7 +211,7 @@ class _OptionTile extends StatelessWidget {
           ),
           child: Text(
             MathNotationFormatter.format(label),
-            style: const TextStyle(color: Colors.white, fontSize: 15),
+            style: TextStyle(color: colors.primaryText, fontSize: 15),
           ),
         ),
       ),
@@ -222,6 +225,7 @@ class _CompletionView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Center(
       child: ConstrainedBox(
         constraints:
@@ -231,13 +235,12 @@ class _CompletionView extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Icon(Icons.check_circle_outline,
-                  color: Color(0xFF34C759), size: 48),
+              Icon(Icons.check_circle_outline, color: colors.success, size: 48),
               const SizedBox(height: AppSpacing.md),
               Text(
                 l10n.buildConfidenceCompletionTitle,
-                style: const TextStyle(
-                  color: Colors.white,
+                style: TextStyle(
+                  color: colors.primaryText,
                   fontSize: 20,
                   fontWeight: FontWeight.w700,
                 ),
@@ -246,8 +249,8 @@ class _CompletionView extends StatelessWidget {
               Text(
                 l10n.buildConfidenceCompletionBody,
                 textAlign: TextAlign.center,
-                style: const TextStyle(
-                    color: Color(0xFF8A9DC0), fontSize: 14, height: 1.4),
+                style: TextStyle(
+                    color: colors.secondaryText, fontSize: 14, height: 1.4),
               ),
               const SizedBox(height: AppSpacing.lg),
               ElevatedButton(

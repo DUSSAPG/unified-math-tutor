@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -421,6 +423,24 @@ void main() {
       return l10n;
     }
 
+    // Scrolls the target into view before tapping. Several of these hub
+    // screens (Visual Maths in particular — 4 tool cards plus 2 "Featured
+    // Formats" cards) are tall enough that a card near the bottom (e.g.
+    // Interactive Labs) isn't just off the default test viewport, it isn't
+    // *built* yet: a Sliver-backed ListView — including the plain,
+    // non-.builder constructor — only builds children within its viewport
+    // + cache extent, so `find.text()` matches zero widgets for anything
+    // further down, and `ensureVisible` can't scroll to a widget that
+    // doesn't exist in the tree yet. `scrollUntilVisible` instead
+    // incrementally scrolls and re-evaluates the finder after each step,
+    // which is what actually makes the Sliver build further children.
+    Future<void> tapVisible(WidgetTester tester, Finder finder) async {
+      await tester.scrollUntilVisible(finder, 200, maxScrolls: 20);
+      await tester.pumpAndSettle();
+      await tester.tap(finder);
+      await tester.pumpAndSettle();
+    }
+
     testWidgets('Interactive Labs hub entry card opens Early Maths Playground',
         (tester) async {
       final l10n = await pumpRoute(tester, '/math-studio/interactive-labs');
@@ -472,6 +492,143 @@ void main() {
           '/math-studio/interactive-labs/early-maths-playground/feed-the-hungry-panda');
       expect(find.byType(FeedTheHungryPandaScreen), findsOneWidget);
       expect(tester.takeException(), isNull);
+    });
+
+    // The device report "Panda is not visible" was diagnosed as a stale
+    // build, not a source/registration/filtering defect — this group
+    // proves that from the *visible UI*, starting at Math Studio itself
+    // (not the route directly), for every profile and locale the brief
+    // calls out, rather than re-asserting the same conclusion by reading
+    // source code again.
+    //
+    // Note on the path: Math Studio's own doc comment (and
+    // docs/RC1_FEATURE_FREEZE.md) is explicit that "Interactive Labs" is
+    // deliberately NOT a direct top-level card on the Math Studio hub —
+    // it's surfaced as an entry card inside Mental Maths / Visual Maths /
+    // Spatial Intelligence / Discovery Library instead (see
+    // math_studio_hub_screen.dart's own header comment). The brief's
+    // assumed "Math Studio -> Interactive Labs" one-hop path doesn't match
+    // that (intentional, frozen) architecture — this test goes through
+    // Visual Maths, one of the pillars that actually links to Interactive
+    // Labs, which is the real shortest visible path today.
+    testWidgets(
+        'full visible path: Math Studio -> Visual Maths -> Interactive Labs '
+        '-> Early Maths Playground -> Feed the Hungry Panda', (tester) async {
+      final l10n = await pumpRoute(tester, '/math-studio');
+      await tapVisible(tester, find.text(l10n.mathStudioVisualMathsTitle));
+
+      await tapVisible(tester, find.text(l10n.mathStudioInteractiveLabsTitle));
+      expect(find.byType(InteractiveLabsHubScreen), findsOneWidget);
+
+      await tapVisible(tester, find.text(l10n.labsEarlyMathsPlaygroundTitle));
+      expect(find.byType(EarlyMathsPlaygroundHubScreen), findsOneWidget);
+
+      await tapVisible(tester, find.text(l10n.feedTheHungryPandaTitle));
+      expect(find.byType(FeedTheHungryPandaScreen), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('guest profile (no onboarding completed) can reach it',
+        (tester) async {
+      // Default setUp state IS the guest state — no setUserType call, no
+      // markOnboardingComplete — matching a first-run/guest session.
+      final l10n = await pumpRoute(tester, '/math-studio/interactive-labs');
+      await tapVisible(tester, find.text(l10n.labsEarlyMathsPlaygroundTitle));
+      await tapVisible(tester, find.text(l10n.feedTheHungryPandaTitle));
+      expect(find.byType(FeedTheHungryPandaScreen), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    for (final userType in ['student', 'parent', 'teacher']) {
+      testWidgets('signed-in "$userType" profile can reach it', (tester) async {
+        await OnboardingProfileService.instance.setUserType(userType);
+        await OnboardingProfileService.instance.markOnboardingComplete();
+        final l10n = await pumpRoute(tester, '/math-studio/interactive-labs');
+        await tapVisible(tester, find.text(l10n.labsEarlyMathsPlaygroundTitle));
+        await tapVisible(tester, find.text(l10n.feedTheHungryPandaTitle));
+        expect(find.byType(FeedTheHungryPandaScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      });
+    }
+  });
+
+  group('Discoverable in every production locale', () {
+    // The 5 locales LocaleService.productionLocales actually ships (see
+    // lib/services/locale_service.dart) — Korean and the rest of `supported`
+    // are UAT-only, not part of "all five supported locales" in production.
+    const productionLocales = [
+      Locale('en'),
+      Locale('en', 'GB'),
+      Locale('de', 'CH'),
+      Locale('fr', 'CH'),
+      Locale('it', 'CH'),
+    ];
+
+    Widget routerApp(Locale locale) => MaterialApp.router(
+          routerConfig: appRouter,
+          locale: locale,
+          supportedLocales: AppLocalizations.supportedLocales,
+          localizationsDelegates: const [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+        );
+
+    for (final locale in productionLocales) {
+      testWidgets('reachable in locale $locale', (tester) async {
+        addTearDown(tester.view.resetPhysicalSize);
+        addTearDown(tester.view.resetDevicePixelRatio);
+        tester.view.physicalSize = const Size(390, 844);
+        tester.view.devicePixelRatio = 1;
+        final l10n = await AppLocalizations.delegate.load(locale);
+
+        appRouter.go('/math-studio/interactive-labs/early-maths-playground');
+        await tester.pumpWidget(routerApp(locale));
+        await tester.pumpAndSettle();
+
+        final entryFinder = find.text(l10n.feedTheHungryPandaTitle);
+        expect(entryFinder, findsOneWidget,
+            reason: 'Feed the Hungry Panda entry card text missing in '
+                'locale $locale — see l10n keys feedTheHungryPandaTitle/'
+                'Subtitle in lib/l10n/app_${locale.toString().replaceAll('_', '_')}.arb');
+        await tester.tap(entryFinder);
+        await tester.pumpAndSettle();
+        expect(find.byType(FeedTheHungryPandaScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      });
+    }
+  });
+
+  group('Not hidden by environment/build configuration', () {
+    // InteractiveLabsHubScreen and EarlyMathsPlaygroundHubScreen are both
+    // fully static widget trees (verified by direct source read) — neither
+    // references BuildFlags, Env, kReleaseMode, or any entitlement/
+    // subscription/feature-flag service anywhere, so there is no code path
+    // by which "production mode" (ENV=prod) could hide either entry card.
+    // This is a structural guard against that ever silently changing: if
+    // someone adds an Env/BuildFlags reference to either hub screen without
+    // updating this test, it fails loudly instead of the entry quietly
+    // becoming environment-dependent.
+    test('hub screens contain no environment/build-flag gating', () {
+      final hubSource =
+          File('lib/screens/labs/interactive_labs_hub_screen.dart')
+              .readAsStringSync();
+      final playgroundSource =
+          File('lib/screens/labs/early_maths_playground_hub_screen.dart')
+              .readAsStringSync();
+      for (final forbidden in ['BuildFlags', 'Env.', 'kReleaseMode']) {
+        expect(hubSource.contains(forbidden), isFalse,
+            reason:
+                'interactive_labs_hub_screen.dart now references $forbidden — '
+                'confirm the Early Maths Playground entry card is not '
+                'conditionally hidden by it.');
+        expect(playgroundSource.contains(forbidden), isFalse,
+            reason: 'early_maths_playground_hub_screen.dart now references '
+                '$forbidden — confirm the Feed the Hungry Panda entry card '
+                'is not conditionally hidden by it.');
+      }
     });
   });
 }

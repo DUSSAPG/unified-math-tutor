@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../shared/theme/app_theme.dart';
+
 /// Reusable section header: TITLE label + optional subtitle + optional trailing action.
 class SectionHeader extends StatelessWidget {
   final String title;
@@ -17,6 +19,7 @@ class SectionHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -24,8 +27,8 @@ class SectionHeader extends StatelessWidget {
           children: [
             Text(
               title.toUpperCase(),
-              style: const TextStyle(
-                color: Color(0xFF8A9DC0),
+              style: TextStyle(
+                color: colors.secondaryText,
                 fontSize: 11,
                 fontWeight: FontWeight.w600,
                 letterSpacing: 1.2,
@@ -37,8 +40,8 @@ class SectionHeader extends StatelessWidget {
                 onTap: onTrailingTap,
                 child: Text(
                   trailingLabel!,
-                  style: const TextStyle(
-                    color: Color(0xFF5B8EFF),
+                  style: TextStyle(
+                    color: colors.accent,
                     fontSize: 13,
                     fontWeight: FontWeight.w500,
                   ),
@@ -51,8 +54,8 @@ class SectionHeader extends StatelessWidget {
           const SizedBox(height: 2),
           Text(
             subtitle!,
-            style: const TextStyle(
-              color: Color(0xFF4A6080),
+            style: TextStyle(
+              color: colors.tertiaryText,
               fontSize: 12,
             ),
           ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../shared/theme/app_theme.dart';
 import 'auth_form_fields.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
@@ -28,10 +29,11 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0B1120),
+        backgroundColor: colors.background,
         elevation: 0,
         title: const Text('Reset Password'),
       ),
@@ -43,7 +45,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               padding: const EdgeInsets.all(24),
               child: _sent
                   ? _ConfirmationView(email: _emailController.text.trim())
-                  : _buildForm(),
+                  : _buildForm(colors),
             ),
           ),
         ),
@@ -51,24 +53,24 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     );
   }
 
-  Widget _buildForm() {
+  Widget _buildForm(AppSemanticColors colors) {
     return Form(
       key: _formKey,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const Text(
+          Text(
             'Forgot your password?',
             style: TextStyle(
-              color: Colors.white,
+              color: colors.primaryText,
               fontSize: 24,
               fontWeight: FontWeight.w700,
             ),
           ),
           const SizedBox(height: 6),
-          const Text(
+          Text(
             "Enter the email on your account and we'll send reset instructions.",
-            style: TextStyle(color: Color(0xFF8A9DC0), fontSize: 14),
+            style: TextStyle(color: colors.secondaryText, fontSize: 14),
           ),
           const SizedBox(height: 28),
           AuthTextField(
@@ -83,7 +85,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             child: FilledButton(
               onPressed: _submit,
               style: FilledButton.styleFrom(
-                backgroundColor: const Color(0xFF3D7EFF),
+                backgroundColor: colors.primaryAction,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(14),
                 ),
@@ -107,16 +109,17 @@ class _ConfirmationView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        const Icon(Icons.mark_email_read_outlined,
-            color: Color(0xFF3D7EFF), size: 56),
+        Icon(Icons.mark_email_read_outlined,
+            color: colors.primaryAction, size: 56),
         const SizedBox(height: 20),
-        const Text(
+        Text(
           'Check your email',
           style: TextStyle(
-            color: Colors.white,
+            color: colors.primaryText,
             fontSize: 22,
             fontWeight: FontWeight.w700,
           ),
@@ -125,7 +128,7 @@ class _ConfirmationView extends StatelessWidget {
         const SizedBox(height: 10),
         Text(
           'If an account exists for $email, reset instructions are on the way.',
-          style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 14),
+          style: TextStyle(color: colors.secondaryText, fontSize: 14),
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: 24),
@@ -134,7 +137,7 @@ class _ConfirmationView extends StatelessWidget {
           child: FilledButton(
             onPressed: () => context.pop(),
             style: FilledButton.styleFrom(
-              backgroundColor: const Color(0xFF3D7EFF),
+              backgroundColor: colors.primaryAction,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(14),
               ),

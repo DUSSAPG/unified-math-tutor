@@ -1034,7 +1034,7 @@ class _StreakBadge extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               decoration: BoxDecoration(
-                color: const Color(0xFF2A1200),
+                color: const Color(0xFFFF6B35).withValues(alpha: 0.12),
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(
                     color: const Color(0xFFFF6B35).withValues(alpha: 0.4)),
@@ -1133,6 +1133,7 @@ class _ContinueLearningCard extends StatelessWidget {
       valueListenable: CurriculumService.instance.notifier,
       builder: (context, curriculum, _) {
         final (topic, subtopic) = content[curriculum] ?? content['ks2']!;
+        final colors = context.appColors;
         return Material(
           color: Colors.transparent,
           borderRadius: BorderRadius.circular(16),
@@ -1142,11 +1143,11 @@ class _ContinueLearningCard extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(16),
               child: Container(
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
-                    colors: [Color(0xFF1B3A6B), Color(0xFF162236)],
+                    colors: [colors.elevatedSurface, colors.cardSurface],
                   ),
                 ),
                 child: Column(
@@ -1167,14 +1168,14 @@ class _ContinueLearningCard extends StatelessWidget {
                                       .headlineSmall
                                       ?.copyWith(
                                         fontWeight: FontWeight.bold,
-                                        color: Colors.white,
+                                        color: colors.primaryText,
                                       ),
                                 ),
                                 const SizedBox(height: 4),
                                 Text(
                                   subtopic,
-                                  style: const TextStyle(
-                                    color: Color(0xFF8A9BB8),
+                                  style: TextStyle(
+                                    color: colors.secondaryText,
                                     fontSize: 14,
                                   ),
                                 ),
@@ -1185,25 +1186,24 @@ class _ContinueLearningCard extends StatelessWidget {
                           Container(
                             width: 44,
                             height: 44,
-                            decoration: const BoxDecoration(
-                              color: Color(0xFF3D7EFF),
+                            decoration: BoxDecoration(
+                              color: colors.primaryAction,
                               shape: BoxShape.circle,
                             ),
-                            child: const Icon(
+                            child: Icon(
                               Icons.arrow_forward_rounded,
-                              color: Colors.white,
+                              color: colors.onPrimaryAction,
                               size: 22,
                             ),
                           ),
                         ],
                       ),
                     ),
-                    const LinearProgressIndicator(
+                    LinearProgressIndicator(
                       value: 0.35,
                       minHeight: 4,
-                      backgroundColor: Color(0xFF0B1F3D),
-                      valueColor:
-                          AlwaysStoppedAnimation<Color>(Color(0xFF5B8EFF)),
+                      backgroundColor: colors.divider,
+                      valueColor: AlwaysStoppedAnimation<Color>(colors.accent),
                     ),
                   ],
                 ),
@@ -1703,17 +1703,17 @@ class _WhatsNewCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
       decoration: BoxDecoration(
-        gradient: const LinearGradient(
+        gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [Color(0xFF0D2040), Color(0xFF0A1830)],
+          colors: [colors.elevatedSurface, colors.cardSurface],
         ),
         borderRadius: BorderRadius.circular(14),
-        border:
-            Border.all(color: const Color(0xFF5B8EFF).withValues(alpha: 0.4)),
+        border: Border.all(color: colors.accent.withValues(alpha: 0.4)),
       ),
       child: Row(
         children: [
@@ -1721,12 +1721,12 @@ class _WhatsNewCard extends StatelessWidget {
             width: 38,
             height: 38,
             decoration: BoxDecoration(
-              color: const Color(0xFF5B8EFF).withValues(alpha: 0.12),
+              color: colors.accent.withValues(alpha: 0.12),
               borderRadius: BorderRadius.circular(10),
             ),
-            child: const Icon(
+            child: Icon(
               Icons.new_releases_outlined,
-              color: Color(0xFF5B8EFF),
+              color: colors.accent,
               size: 20,
             ),
           ),
@@ -1737,8 +1737,8 @@ class _WhatsNewCard extends StatelessWidget {
               children: [
                 Text(
                   l10n.homeWhatsNewTitle,
-                  style: const TextStyle(
-                    color: Colors.white,
+                  style: TextStyle(
+                    color: colors.primaryText,
                     fontSize: 13,
                     fontWeight: FontWeight.w600,
                   ),
@@ -1746,8 +1746,8 @@ class _WhatsNewCard extends StatelessWidget {
                 const SizedBox(height: 2),
                 Text(
                   l10n.homeWhatsNewBody,
-                  style: const TextStyle(
-                    color: Color(0xFF8A9DC0),
+                  style: TextStyle(
+                    color: colors.secondaryText,
                     fontSize: 12,
                     height: 1.3,
                   ),
@@ -1758,7 +1758,7 @@ class _WhatsNewCard extends StatelessWidget {
           const SizedBox(width: 8),
           GestureDetector(
             onTap: onDismiss,
-            child: const Icon(Icons.close, color: Color(0xFF4A6080), size: 18),
+            child: Icon(Icons.close, color: colors.tertiaryText, size: 18),
           ),
         ],
       ),

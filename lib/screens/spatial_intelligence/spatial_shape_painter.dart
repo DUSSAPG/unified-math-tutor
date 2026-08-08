@@ -9,6 +9,8 @@ class SpatialShapePainter extends CustomPainter {
   const SpatialShapePainter({
     required this.transformed,
     required this.shapeColor,
+    required this.gridColor,
+    required this.axisColor,
     this.original,
     this.showOriginalOutline = false,
     this.originalColor = Colors.grey,
@@ -24,6 +26,14 @@ class SpatialShapePainter extends CustomPainter {
   final Color shapeColor;
   final Color originalColor;
 
+  /// Gridline/axis colors — a `CustomPainter` can't call `Theme.of(context)`
+  /// itself, so the wrapping widget resolves `context.appColors` once per
+  /// build and passes plain [Color]s in here. Without this, a fixed
+  /// `Colors.white`-based grid nearly vanishes against a pale Light Theme
+  /// canvas.
+  final Color gridColor;
+  final Color axisColor;
+
   /// How many grid units fit across the canvas — controls zoom level.
   final double unitsAcross;
 
@@ -35,7 +45,7 @@ class SpatialShapePainter extends CustomPainter {
         center + Offset(unit.dx * scale, -unit.dy * scale);
 
     final gridPaint = Paint()
-      ..color = Colors.white.withValues(alpha: 0.08)
+      ..color = gridColor
       ..strokeWidth = 1;
     final steps = (unitsAcross / 2).ceil() + 1;
     for (var i = -steps; i <= steps; i++) {
@@ -45,7 +55,7 @@ class SpatialShapePainter extends CustomPainter {
           toCanvas(Offset(steps.toDouble(), i.toDouble())), gridPaint);
     }
     final axisPaint = Paint()
-      ..color = Colors.white.withValues(alpha: 0.28)
+      ..color = axisColor
       ..strokeWidth = 1.5;
     canvas.drawLine(toCanvas(Offset(-steps.toDouble(), 0)),
         toCanvas(Offset(steps.toDouble(), 0)), axisPaint);

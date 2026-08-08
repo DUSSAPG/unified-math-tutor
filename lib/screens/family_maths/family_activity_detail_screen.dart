@@ -9,6 +9,7 @@ import '../../services/captain_math_service.dart';
 import '../../services/family_activity_catalog_service.dart';
 import '../../shared/responsive/app_breakpoints.dart';
 import '../../shared/theme/app_spacing.dart';
+import '../../shared/theme/app_theme.dart';
 import '../../widgets/allie_card.dart';
 import '../../widgets/captain_math_card.dart';
 import '../../widgets/settings/parent_gate.dart';
@@ -46,13 +47,14 @@ class _FamilyActivityDetailScreenState
     return ParentGate(
       builder: (context) {
         final l10n = AppLocalizations.of(context);
+        final colors = context.appColors;
         return Scaffold(
-          backgroundColor: const Color(0xFF0B1120),
+          backgroundColor: colors.background,
           appBar: AppBar(
-            backgroundColor: const Color(0xFF0B1120),
+            backgroundColor: colors.background,
             elevation: 0,
             leading: IconButton(
-              icon: const Icon(Icons.arrow_back, color: Colors.white),
+              icon: Icon(Icons.arrow_back, color: colors.primaryText),
               onPressed: () => popOrGo(
                   context, '/help/parent-teacher-tools/family-maths/library'),
             ),
@@ -62,9 +64,9 @@ class _FamilyActivityDetailScreenState
               future: _activityFuture,
               builder: (context, snapshot) {
                 if (snapshot.hasError) {
-                  return const Center(
+                  return Center(
                     child: Icon(Icons.error_outline,
-                        color: Color(0xFF8A9DC0), size: 32),
+                        color: colors.secondaryText, size: 32),
                   );
                 }
                 final activity = snapshot.data;
@@ -84,8 +86,8 @@ class _FamilyActivityDetailScreenState
                         children: [
                           Text(
                             text.title,
-                            style: const TextStyle(
-                              color: Colors.white,
+                            style: TextStyle(
+                              color: colors.primaryText,
                               fontSize: 22,
                               fontWeight: FontWeight.w800,
                             ),
@@ -98,17 +100,17 @@ class _FamilyActivityDetailScreenState
                               _Badge(
                                 text: familyMathsCategoryLabel(
                                     l10n, activity.category),
-                                color: const Color(0xFF5B8EFF),
+                                color: colors.accent,
                               ),
                               _Badge(
                                 text: l10n.familyActivityAgeRange(
                                     activity.minAgeYears, activity.maxAgeYears),
-                                color: const Color(0xFF8A9DC0),
+                                color: colors.secondaryText,
                               ),
                               _Badge(
                                 text: l10n.familyActivityTimeRange(
                                     activity.minMinutes, activity.maxMinutes),
-                                color: const Color(0xFF8A9DC0),
+                                color: colors.secondaryText,
                               ),
                             ],
                           ),
@@ -129,12 +131,13 @@ class _FamilyActivityDetailScreenState
                               text:
                                   l10n.familyActivityWhatYourChildLearnsLabel),
                           const SizedBox(height: AppSpacing.sm),
-                          Text(text.whatYourChildLearns, style: _bodyStyle),
+                          Text(text.whatYourChildLearns,
+                              style: _bodyStyle(colors)),
                           const SizedBox(height: AppSpacing.lg),
                           SectionLabel(
                               text: l10n.familyActivityLetsExploreLabel),
                           const SizedBox(height: AppSpacing.sm),
-                          Text(text.letsExplore, style: _bodyStyle),
+                          Text(text.letsExplore, style: _bodyStyle(colors)),
                           const SizedBox(height: AppSpacing.lg),
                           SectionLabel(
                               text: l10n.familyActivityQuestionsToAskLabel),
@@ -145,12 +148,13 @@ class _FamilyActivityDetailScreenState
                           SectionLabel(
                               text: l10n.familyActivityMisconceptionsLabel),
                           const SizedBox(height: AppSpacing.sm),
-                          Text(text.commonMisconceptions, style: _bodyStyle),
+                          Text(text.commonMisconceptions,
+                              style: _bodyStyle(colors)),
                           const SizedBox(height: AppSpacing.lg),
                           SectionLabel(
                               text: l10n.familyActivityTryTomorrowLabel),
                           const SizedBox(height: AppSpacing.sm),
-                          Text(text.tryTomorrow, style: _bodyStyle),
+                          Text(text.tryTomorrow, style: _bodyStyle(colors)),
                           if (activity.studioConnectionRouteSuffix != null) ...[
                             const SizedBox(height: AppSpacing.lg),
                             SectionLabel(
@@ -158,6 +162,9 @@ class _FamilyActivityDetailScreenState
                             const SizedBox(height: AppSpacing.sm),
                             RouteLinkCard(
                               icon: LucideIcons.link2,
+                              // Fixed Studio-connection amber — matches this
+                              // link type's color across the app, not a
+                              // theme-dependent surface color.
                               iconColor: const Color(0xFFFFBD00),
                               title: l10n.familyActivityStudioConnectionLabel,
                               subtitle: text.studioConnectionNote!,
@@ -179,11 +186,11 @@ class _FamilyActivityDetailScreenState
   }
 }
 
-const _bodyStyle = TextStyle(
-  color: Color(0xFF8A9DC0),
-  fontSize: 14,
-  height: 1.45,
-);
+TextStyle _bodyStyle(AppSemanticColors colors) => TextStyle(
+      color: colors.secondaryText,
+      fontSize: 14,
+      height: 1.45,
+    );
 
 class _BulletLine extends StatelessWidget {
   const _BulletLine({required this.text});
@@ -192,11 +199,12 @@ class _BulletLine extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Padding(
       padding: const EdgeInsets.only(bottom: 6),
       child: Text('•  $text',
           style:
-              const TextStyle(color: Colors.white, fontSize: 14, height: 1.4)),
+              TextStyle(color: colors.primaryText, fontSize: 14, height: 1.4)),
     );
   }
 }

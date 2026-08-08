@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../services/mental_math_vault_service.dart';
+import '../../shared/theme/app_theme.dart';
 
 class MentalMathVaultScreen extends StatelessWidget {
   const MentalMathVaultScreen({super.key});
@@ -16,6 +17,7 @@ class MentalMathVaultScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
     return Scaffold(
       appBar: AppBar(title: Text(l10n.mentalMathVaultTitle)),
       body: FutureBuilder<List<MentalMathTrick>>(
@@ -32,7 +34,7 @@ class MentalMathVaultScreen extends StatelessWidget {
             children: [
               Text(
                 l10n.mentalMathVaultSubtitle,
-                style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 15),
+                style: TextStyle(color: colors.secondaryText, fontSize: 15),
               ),
               const SizedBox(height: 16),
               for (final trick in snapshot.data!)

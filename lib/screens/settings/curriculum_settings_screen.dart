@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../app/safe_navigation.dart';
+import '../../shared/theme/app_theme.dart';
 
 class CurriculumSettingsScreen extends StatefulWidget {
   const CurriculumSettingsScreen({super.key});
@@ -23,31 +24,32 @@ class _CurriculumSettingsScreenState extends State<CurriculumSettingsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.appColors;
     return Scaffold(
-      backgroundColor: const Color(0xFF0B1120),
+      backgroundColor: colors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0B1120),
+        backgroundColor: colors.background,
         elevation: 0,
         scrolledUnderElevation: 0,
         centerTitle: false,
         titleSpacing: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: colors.primaryText),
           onPressed: () => popOrGo(context, '/profile'),
         ),
-        title: const Column(
+        title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               'Curriculum Settings',
               style: TextStyle(
-                  color: Colors.white,
+                  color: colors.primaryText,
                   fontSize: 20,
                   fontWeight: FontWeight.w700),
             ),
             Text(
               'Tailor content to your learning level',
-              style: TextStyle(color: Color(0xFF8A9DC0), fontSize: 12),
+              style: TextStyle(color: colors.secondaryText, fontSize: 12),
             ),
           ],
         ),
@@ -62,6 +64,7 @@ class _CurriculumSettingsScreenState extends State<CurriculumSettingsScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   _sectionCard(
+                    colors: colors,
                     title: 'Key Stage',
                     subtitle: 'Select your current school stage',
                     child: Wrap(
@@ -75,14 +78,11 @@ class _CurriculumSettingsScreenState extends State<CurriculumSettingsScreen> {
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 20, vertical: 10),
                             decoration: BoxDecoration(
-                              color: selected
-                                  ? const Color(0xFF0D1F40)
-                                  : const Color(0xFF0D1525),
+                              color: colors.cardSurface,
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(
-                                color: selected
-                                    ? const Color(0xFF5B8EFF)
-                                    : const Color(0xFF1F3055),
+                                color:
+                                    selected ? colors.accent : colors.divider,
                                 width: selected ? 2 : 1,
                               ),
                             ),
@@ -90,8 +90,8 @@ class _CurriculumSettingsScreenState extends State<CurriculumSettingsScreen> {
                               stage,
                               style: TextStyle(
                                 color: selected
-                                    ? const Color(0xFF5B8EFF)
-                                    : const Color(0xFF8A9DC0),
+                                    ? colors.accent
+                                    : colors.secondaryText,
                                 fontSize: 14,
                                 fontWeight: selected
                                     ? FontWeight.w600
@@ -105,6 +105,7 @@ class _CurriculumSettingsScreenState extends State<CurriculumSettingsScreen> {
                   ),
                   const SizedBox(height: 12),
                   _sectionCard(
+                    colors: colors,
                     title: 'Learning Mode',
                     subtitle: 'How would you like to learn?',
                     child: Column(
@@ -119,14 +120,11 @@ class _CurriculumSettingsScreenState extends State<CurriculumSettingsScreen> {
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 14, vertical: 12),
                               decoration: BoxDecoration(
-                                color: selected
-                                    ? const Color(0xFF0D1F40)
-                                    : const Color(0xFF0D1525),
+                                color: colors.cardSurface,
                                 borderRadius: BorderRadius.circular(12),
                                 border: Border.all(
-                                  color: selected
-                                      ? const Color(0xFF5B8EFF)
-                                      : const Color(0xFF1F3055),
+                                  color:
+                                      selected ? colors.accent : colors.divider,
                                   width: selected ? 2 : 1,
                                 ),
                               ),
@@ -141,8 +139,8 @@ class _CurriculumSettingsScreenState extends State<CurriculumSettingsScreen> {
                                           m.$1,
                                           style: TextStyle(
                                             color: selected
-                                                ? const Color(0xFF5B8EFF)
-                                                : Colors.white,
+                                                ? colors.accent
+                                                : colors.primaryText,
                                             fontSize: 14,
                                             fontWeight: FontWeight.w600,
                                           ),
@@ -150,8 +148,8 @@ class _CurriculumSettingsScreenState extends State<CurriculumSettingsScreen> {
                                         const SizedBox(height: 2),
                                         Text(
                                           m.$2,
-                                          style: const TextStyle(
-                                            color: Color(0xFF8A9DC0),
+                                          style: TextStyle(
+                                            color: colors.secondaryText,
                                             fontSize: 12,
                                           ),
                                         ),
@@ -159,8 +157,8 @@ class _CurriculumSettingsScreenState extends State<CurriculumSettingsScreen> {
                                     ),
                                   ),
                                   if (selected)
-                                    const Icon(Icons.check_circle,
-                                        color: Color(0xFF5B8EFF), size: 18),
+                                    Icon(Icons.check_circle,
+                                        color: colors.accent, size: 18),
                                 ],
                               ),
                             ),
@@ -179,27 +177,28 @@ class _CurriculumSettingsScreenState extends State<CurriculumSettingsScreen> {
   }
 
   Widget _sectionCard(
-      {required String title,
+      {required AppSemanticColors colors,
+      required String title,
       required String subtitle,
       required Widget child}) {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF132040),
+        color: colors.cardSurface,
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: const Color(0xFF1F3055)),
+        border: Border.all(color: colors.divider),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(title,
-              style: const TextStyle(
-                  color: Colors.white,
+              style: TextStyle(
+                  color: colors.primaryText,
                   fontSize: 15,
                   fontWeight: FontWeight.w600)),
           const SizedBox(height: 4),
           Text(subtitle,
-              style: const TextStyle(color: Color(0xFF8A9DC0), fontSize: 13)),
+              style: TextStyle(color: colors.secondaryText, fontSize: 13)),
           const SizedBox(height: 14),
           child,
         ],
