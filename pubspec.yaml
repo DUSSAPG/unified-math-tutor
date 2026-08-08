@@ -39,6 +39,10 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  # Used directly by test/late_prefs_init_hardening_test.dart to simulate a
+  # SharedPreferences storage initialization failure via the same public
+  # test-extension seam SharedPreferences.setMockInitialValues itself uses.
+  shared_preferences_platform_interface: ^2.4.2
   flutter_launcher_icons: ^0.14.3
   flutter_native_splash: ^2.4.4
 

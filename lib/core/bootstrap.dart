@@ -1,6 +1,9 @@
 import 'dart:async';
 
 import 'market/market_smoke.dart';
+import '../services/aircraft_landing_lab_progress_service.dart';
+import '../services/entrance_exam_progress_service.dart';
+import '../services/feed_the_hungry_panda_progress_service.dart';
 import '../services/locale_service.dart';
 import '../services/learner_profiles_service.dart';
 import '../services/local_account_service.dart';
@@ -10,6 +13,7 @@ import '../services/mental_maths_progress_service.dart';
 import '../services/narration_manifest_service.dart';
 import '../services/onboarding_profile_service.dart';
 import '../services/recall_cards_progress_service.dart';
+import '../services/spatial_cube_lab_progress_service.dart';
 import '../services/streak_service.dart';
 import '../services/tutor_credit_service.dart';
 import '../services/tutor_notes_service.dart';
@@ -47,6 +51,10 @@ class AppBootstrap {
       InteractiveLabsProgressService.instance.init(),
       MentalMathsProgressService.instance.init(),
       TutorNotesService.instance.init(),
+      FeedTheHungryPandaProgressService.instance.init(),
+      AircraftLandingLabProgressService.instance.init(),
+      SpatialCubeLabProgressService.instance.init(),
+      EntranceExamProgressService.instance.init(),
     ]);
     await MarketSmoke.printStartupState();
   }

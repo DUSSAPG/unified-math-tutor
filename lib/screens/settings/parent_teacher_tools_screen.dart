@@ -132,9 +132,18 @@ class _ParentTeacherToolsScreenState extends State<ParentTeacherToolsScreen> {
                   ),
                 ),
                 FilledButton(
+                  key: const Key('parentToolsPrimaryActionButton'),
                   onPressed: () => _openDestination(
                       '/help/parent-teacher-tools/cheat-sheet'),
-                  child: Text(l10n.openCheatSheet),
+                  // The first tap when no PIN exists yet actually creates
+                  // and saves it (see _openDestination) before opening the
+                  // Cheat Sheet — "Open Cheat Sheet" would misdescribe
+                  // that action, so the label matches whichever the tap
+                  // is really about to do, same convention the info card
+                  // above already uses.
+                  child: Text(prefs.hasParentPin
+                      ? l10n.openCheatSheet
+                      : l10n.createParentPin),
                 ),
                 const SizedBox(height: 8),
                 OutlinedButton(

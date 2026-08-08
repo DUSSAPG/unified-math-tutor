@@ -4,6 +4,14 @@ import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+/// Also home to the Parent PIN gate ("Learning Analytics"/Parent-Teacher
+/// Tools reads [hasParentPin]/[verifyParentPin] straight from this
+/// service). `_prefs` is nullable rather than `late` — see [init]'s doc —
+/// so that a screen reached before `AppBootstrap`'s awaited [init] call
+/// resolves (e.g. the splash screen's tap-to-skip gesture, or its hard
+/// display-time cap firing before a slow first-launch finishes loading)
+/// gets safe defaults instead of a `LateInitializationError`, rather than
+/// relying solely on bootstrap ordering to prevent it.
 class LocalPreferencesService {
   LocalPreferencesService._();
   static final instance = LocalPreferencesService._();
@@ -19,7 +27,7 @@ class LocalPreferencesService {
   static const _soundEnabledKey = 'sound_enabled';
   static const _themeModeKey = 'theme_mode';
 
-  late SharedPreferences _prefs;
+  SharedPreferences? _prefs;
   bool _parentAccessGranted = false;
 
   /// Session-scoped only — deliberately never persisted to
@@ -49,16 +57,34 @@ class LocalPreferencesService {
   /// preserve for new users.
   final ValueNotifier<ThemeMode> themeMode = ValueNotifier(ThemeMode.system);
 
+  /// [SharedPreferences.getInstance] is already idempotent and safely
+  /// callable concurrently at the plugin level (it caches its own
+  /// in-flight/completed load and retries fresh after a failure), so this
+  /// just calls straight through to it rather than adding a second,
+  /// redundant caching layer — the same convention `market_store.dart`
+  /// already uses elsewhere in this codebase.
   Future<void> init() async {
-    _prefs = await SharedPreferences.getInstance();
-    parentToolsEnabled.value = _prefs.getBool(_parentEnabledKey) ?? false;
-    rewardsEnabled.value = _prefs.getBool(_rewardsEnabledKey) ?? false;
-    reduceMotion.value = _prefs.getBool(_reduceMotionKey) ?? false;
-    textScale.value = _prefs.getDouble(_textScaleKey) ?? 1.0;
-    quietStudyMode.value = _prefs.getBool(_quietStudyModeKey) ?? false;
-    soundEnabled.value = _prefs.getBool(_soundEnabledKey) ?? true;
-    themeMode.value = _themeModeFromString(_prefs.getString(_themeModeKey)) ??
+    final prefs = await SharedPreferences.getInstance();
+    _prefs = prefs;
+    parentToolsEnabled.value = prefs.getBool(_parentEnabledKey) ?? false;
+    rewardsEnabled.value = prefs.getBool(_rewardsEnabledKey) ?? false;
+    reduceMotion.value = prefs.getBool(_reduceMotionKey) ?? false;
+    textScale.value = prefs.getDouble(_textScaleKey) ?? 1.0;
+    quietStudyMode.value = prefs.getBool(_quietStudyModeKey) ?? false;
+    soundEnabled.value = prefs.getBool(_soundEnabledKey) ?? true;
+    themeMode.value = _themeModeFromString(prefs.getString(_themeModeKey)) ??
         ThemeMode.system;
+  }
+
+  /// Starts loading in the background if nothing has requested it yet.
+  /// Only called from the synchronous getters below, as a defence against
+  /// being read before bootstrap's own awaited [init] call has resolved.
+  /// Errors are swallowed here specifically — a write method's own
+  /// `await init()` (or a later getter's own retry) surfaces the same
+  /// failure properly; this fire-and-forget kick must not produce an
+  /// unhandled-Future-error warning.
+  void _ensureLoading() {
+    if (_prefs == null) init().catchError((Object _) {});
   }
 
   ThemeMode? _themeModeFromString(String? value) => switch (value) {
@@ -69,52 +95,72 @@ class LocalPreferencesService {
       };
 
   Future<void> setThemeMode(ThemeMode value) async {
-    await _prefs.setString(_themeModeKey, value.name);
+    if (_prefs == null) await init();
+    await _prefs!.setString(_themeModeKey, value.name);
     themeMode.value = value;
   }
 
   Future<void> setTextScale(double value) async {
-    await _prefs.setDouble(_textScaleKey, value);
+    if (_prefs == null) await init();
+    await _prefs!.setDouble(_textScaleKey, value);
     textScale.value = value;
   }
 
-  bool get hasParentPin => _prefs.getString(_parentPinHashKey) != null;
+  /// `false` (never having created a PIN) if read before loading has
+  /// finished — the safe default, since it never grants access, it only
+  /// means a learner would be asked to create a PIN they may already
+  /// have, self-correcting on the next read once loading completes.
+  bool get hasParentPin {
+    _ensureLoading();
+    return _prefs?.getString(_parentPinHashKey) != null;
+  }
+
   bool get parentAccessGranted => _parentAccessGranted;
 
   Future<void> setParentToolsEnabled(bool value) async {
-    await _prefs.setBool(_parentEnabledKey, value);
+    if (_prefs == null) await init();
+    await _prefs!.setBool(_parentEnabledKey, value);
     parentToolsEnabled.value = value;
     if (!value) _parentAccessGranted = false;
   }
 
   Future<void> setRewardsEnabled(bool value) async {
-    await _prefs.setBool(_rewardsEnabledKey, value);
+    if (_prefs == null) await init();
+    await _prefs!.setBool(_rewardsEnabledKey, value);
     rewardsEnabled.value = value;
   }
 
   Future<void> setReduceMotion(bool value) async {
-    await _prefs.setBool(_reduceMotionKey, value);
+    if (_prefs == null) await init();
+    await _prefs!.setBool(_reduceMotionKey, value);
     reduceMotion.value = value;
   }
 
   Future<void> setQuietStudyMode(bool value) async {
-    await _prefs.setBool(_quietStudyModeKey, value);
+    if (_prefs == null) await init();
+    await _prefs!.setBool(_quietStudyModeKey, value);
     quietStudyMode.value = value;
   }
 
   Future<void> setSoundEnabled(bool value) async {
-    await _prefs.setBool(_soundEnabledKey, value);
+    if (_prefs == null) await init();
+    await _prefs!.setBool(_soundEnabledKey, value);
     soundEnabled.value = value;
   }
 
   Future<bool> setParentPin(String pin) async {
     if (!RegExp(r'^\d{4}$').hasMatch(pin)) return false;
-    await _prefs.setString(_parentPinHashKey, _hash(pin));
+    if (_prefs == null) await init();
+    await _prefs!.setString(_parentPinHashKey, _hash(pin));
     return true;
   }
 
-  bool verifyParentPin(String pin) =>
-      _prefs.getString(_parentPinHashKey) == _hash(pin);
+  /// `false` (PIN rejected) if read before loading has finished — the
+  /// safe default, since it never grants access on unverified data.
+  bool verifyParentPin(String pin) {
+    _ensureLoading();
+    return _prefs?.getString(_parentPinHashKey) == _hash(pin);
+  }
 
   bool unlockParentTools(String pin) {
     _parentAccessGranted = verifyParentPin(pin);
@@ -160,12 +206,14 @@ class LocalPreferencesService {
   static const parentPinReminderInterval = Duration(days: 7);
 
   DateTime? get parentPinReminderLastShownAt {
-    final millis = _prefs.getInt(_parentPinReminderLastShownKey);
+    _ensureLoading();
+    final millis = _prefs?.getInt(_parentPinReminderLastShownKey);
     return millis == null ? null : DateTime.fromMillisecondsSinceEpoch(millis);
   }
 
   Future<void> recordParentPinReminderShown([DateTime? now]) async {
-    await _prefs.setInt(_parentPinReminderLastShownKey,
+    if (_prefs == null) await init();
+    await _prefs!.setInt(_parentPinReminderLastShownKey,
         (now ?? DateTime.now()).millisecondsSinceEpoch);
   }
 

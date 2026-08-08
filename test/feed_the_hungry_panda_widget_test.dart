@@ -266,6 +266,83 @@ void main() {
     });
   });
 
+  group('Progress persistence and repeated interaction', () {
+    testWidgets(
+        'completing a round persists roundsCompleted, and survives leaving '
+        'and reopening the screen', (tester) async {
+      await pumpScreen(tester, seed: 1);
+      final l10n = await AppLocalizations.delegate.load(const Locale('en'));
+      expect(FeedTheHungryPandaProgressService.instance.roundsCompleted(), 0);
+
+      await feedToTarget(tester);
+      for (final key in [
+        for (final w in tester
+            .widgetList<FilledButton>(find.byType(FilledButton))
+            .where((b) => b.key is ValueKey<String>))
+          w.key as ValueKey<String>,
+      ]) {
+        if (find
+            .text(l10n.feedPandaRoundCompleteMessage)
+            .evaluate()
+            .isNotEmpty) {
+          break;
+        }
+        await tester.tap(find.byKey(key));
+        await tester.pump();
+      }
+      expect(find.text(l10n.feedPandaRoundCompleteMessage), findsOneWidget);
+      expect(FeedTheHungryPandaProgressService.instance.roundsCompleted(), 1);
+
+      // Leave the activity (replace the widget tree, matching what
+      // popping the route does to this screen's element) and reopen a
+      // fresh instance — completed-round progress must still be there,
+      // read straight from the persisted store rather than in-memory
+      // widget state.
+      await tester.pumpWidget(const MaterialApp(home: SizedBox.shrink()));
+      await tester.pumpAndSettle();
+      await pumpScreen(tester, seed: 1);
+      expect(tester.takeException(), isNull);
+      expect(FeedTheHungryPandaProgressService.instance.roundsCompleted(), 1);
+    });
+
+    testWidgets(
+        'rapid repeated taps on the drop target produce no uncaught '
+        'exception and no double-accept of the same fruit', (tester) async {
+      await pumpScreen(tester, seed: 101);
+      await tester.tap(find.byType(FruitTile).first);
+      await tester.pump();
+
+      // Five taps in a row with no settle in between — the accepted
+      // fruit's tile disappears after the first successful accept, so a
+      // literal double-accept of the *same* fruit is structurally
+      // impossible once its tile is gone; this is really asserting the
+      // rapid input itself never throws or corrupts the count.
+      for (var i = 0; i < 5; i++) {
+        await tester.tap(find.byKey(const Key('feedPandaDropTarget')));
+        await tester.pump(const Duration(milliseconds: 10));
+      }
+      expect(tester.takeException(), isNull);
+
+      final (accepted, _) = readProgress(tester);
+      expect(accepted, 1,
+          reason:
+              'only the one fruit that was actually selected can be accepted '
+              '— the extra taps on Panda with nothing selected must be '
+              'no-ops (or gentle-reminder taps), never additional accepts');
+      // Drain the chew-transition timer and any gentle-reminder timer.
+      await tester.pump(const Duration(milliseconds: 1500));
+    });
+
+    testWidgets('no frozen loading state at any point in the flow',
+        (tester) async {
+      await pumpScreen(tester, seed: 4);
+      expect(find.byType(CircularProgressIndicator), findsNothing);
+      await feedToTarget(tester);
+      expect(find.byType(CircularProgressIndicator), findsNothing);
+      expect(tester.takeException(), isNull);
+    });
+  });
+
   group('Overfeeding gentle response', () {
     testWidgets(
         'tapping Panda after the target is reached shows the gentle reminder, never a red failure state',

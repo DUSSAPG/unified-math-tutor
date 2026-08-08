@@ -15,16 +15,42 @@ import 'learner_profiles_service.dart';
 /// callback feeds into — the controller has no persistence knowledge of
 /// its own; the owning screen wires `FeedPandaRoundController(onEvent:
 /// FeedTheHungryPandaProgressService.instance.recordEvent)`.
+///
+/// [init] is called from `AppBootstrap` like every sibling progress
+/// service, so `_prefs` is normally ready before any screen can reach
+/// this service. The synchronous getters below defend against the case
+/// where they're read before that resolves anyway (e.g. bootstrap still
+/// in flight): `_prefs` is nullable rather than `late`, so a premature
+/// read returns the "nothing recorded yet" default instead of throwing
+/// a `LateInitializationError`, and quietly kicks off loading itself if
+/// nothing has requested it yet. [SharedPreferences.getInstance] is
+/// already idempotent and safely callable concurrently at the plugin
+/// level (it caches its own in-flight/completed load and retries fresh
+/// after a failure), so `init()` here just calls straight through to it
+/// rather than adding a second, redundant caching layer — the same
+/// convention `market_store.dart` already uses elsewhere in this
+/// codebase.
 class FeedTheHungryPandaProgressService {
   FeedTheHungryPandaProgressService._();
   static final instance = FeedTheHungryPandaProgressService._();
 
-  late SharedPreferences _prefs;
+  SharedPreferences? _prefs;
 
   final ValueNotifier<int> updateSerial = ValueNotifier(0);
 
   Future<void> init() async {
     _prefs = await SharedPreferences.getInstance();
+  }
+
+  /// Starts loading in the background if nothing has requested it yet.
+  /// Only called from the synchronous getters below, as a defence
+  /// against being read before bootstrap's own awaited [init] call has
+  /// resolved. Errors are swallowed here specifically — a write method's
+  /// own `await init()` (or a later getter's own retry) surfaces the
+  /// same failure properly; this fire-and-forget kick must not produce
+  /// an unhandled-Future-error warning.
+  void _ensureLoading() {
+    if (_prefs == null) init().catchError((Object _) {});
   }
 
   String _learnerKey() =>
@@ -44,27 +70,51 @@ class FeedTheHungryPandaProgressService {
 
   /// How many rounds this learner has completed (correct remaining-answer
   /// reached).
-  int roundsCompleted() => _prefs.getInt(_roundsCompletedKey) ?? 0;
+  int roundsCompleted() {
+    _ensureLoading();
+    return _prefs?.getInt(_roundsCompletedKey) ?? 0;
+  }
 
   /// The generator seed the learner last played, so a future "resume"
-  /// affordance could reopen the same round. Null until a round has run.
-  int? lastSeed() => _prefs.getInt(_lastSeedKey);
+  /// affordance could reopen the same round. Null until a round has run
+  /// (or until loading finishes, whichever is later).
+  int? lastSeed() {
+    _ensureLoading();
+    return _prefs?.getInt(_lastSeedKey);
+  }
 
   Future<void> setLastSeed(int seed) async {
-    await _prefs.setInt(_lastSeedKey, seed);
+    if (_prefs == null) await init();
+    await _prefs!.setInt(_lastSeedKey, seed);
     updateSerial.value++;
   }
 
   /// How many times an event of [type] has been recorded, across all
   /// rounds, for this learner.
-  int eventCount(FeedPandaEventType type) =>
-      _prefs.getInt(_eventCountKey(type)) ?? 0;
+  int eventCount(FeedPandaEventType type) {
+    _ensureLoading();
+    return _prefs?.getInt(_eventCountKey(type)) ?? 0;
+  }
 
-  int? lastTargetAmount() => _prefs.getInt(_lastTargetAmountKey);
-  int? lastAcceptedCount() => _prefs.getInt(_lastAcceptedCountKey);
-  int? lastAttempts() => _prefs.getInt(_lastAttemptsKey);
-  int? lastRemainingAnswerAttempts() =>
-      _prefs.getInt(_lastRemainingAnswerAttemptsKey);
+  int? lastTargetAmount() {
+    _ensureLoading();
+    return _prefs?.getInt(_lastTargetAmountKey);
+  }
+
+  int? lastAcceptedCount() {
+    _ensureLoading();
+    return _prefs?.getInt(_lastAcceptedCountKey);
+  }
+
+  int? lastAttempts() {
+    _ensureLoading();
+    return _prefs?.getInt(_lastAttemptsKey);
+  }
+
+  int? lastRemainingAnswerAttempts() {
+    _ensureLoading();
+    return _prefs?.getInt(_lastRemainingAnswerAttemptsKey);
+  }
 
   /// Records one [FeedPandaEvent]: always bumps that event type's count,
   /// and for [FeedPandaEventType.roundCompleted] also snapshots the
@@ -72,25 +122,27 @@ class FeedTheHungryPandaProgressService {
   /// count, attempts, remaining-answer attempts) and increments the
   /// completed-rounds counter.
   Future<void> recordEvent(FeedPandaEvent event) async {
-    await _prefs.setInt(_eventCountKey(event.type), eventCount(event.type) + 1);
+    if (_prefs == null) await init();
+    final prefs = _prefs!;
+    await prefs.setInt(_eventCountKey(event.type), eventCount(event.type) + 1);
     if (event.seed != null) {
-      await _prefs.setInt(_lastSeedKey, event.seed!);
+      await prefs.setInt(_lastSeedKey, event.seed!);
     }
 
     if (event.type == FeedPandaEventType.roundCompleted &&
         event.completionStatus == true) {
-      await _prefs.setInt(_roundsCompletedKey, roundsCompleted() + 1);
+      await prefs.setInt(_roundsCompletedKey, roundsCompleted() + 1);
       if (event.targetAmount != null) {
-        await _prefs.setInt(_lastTargetAmountKey, event.targetAmount!);
+        await prefs.setInt(_lastTargetAmountKey, event.targetAmount!);
       }
       if (event.acceptedCount != null) {
-        await _prefs.setInt(_lastAcceptedCountKey, event.acceptedCount!);
+        await prefs.setInt(_lastAcceptedCountKey, event.acceptedCount!);
       }
       if (event.attempts != null) {
-        await _prefs.setInt(_lastAttemptsKey, event.attempts!);
+        await prefs.setInt(_lastAttemptsKey, event.attempts!);
       }
       if (event.remainingAnswerAttempts != null) {
-        await _prefs.setInt(
+        await prefs.setInt(
             _lastRemainingAnswerAttemptsKey, event.remainingAnswerAttempts!);
       }
     }
