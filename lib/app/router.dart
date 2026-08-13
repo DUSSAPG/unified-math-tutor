@@ -740,7 +740,18 @@ final GoRouter appRouter = GoRouter(
                   path: 'parent-teacher-tools',
                   builder: (context, state) => const ParentTeacherToolsScreen(),
                   routes: [
+                    // Nested GoRoutes do not inherit a parent's
+                    // parentNavigatorKey — each must redeclare it, exactly
+                    // like the family-maths sibling below. This one was
+                    // previously missing it: pushing here defaulted to the
+                    // Help branch's own (not currently visible, since
+                    // parent-teacher-tools itself already lives on the
+                    // root navigator) Navigator, so the push silently
+                    // produced no visible change — no exception, nothing
+                    // wrong in the console, just a tap that appeared to do
+                    // nothing.
                     GoRoute(
+                      parentNavigatorKey: _rootNavigatorKey,
                       path: 'cheat-sheet',
                       builder: (context, state) =>
                           const ParentCheatSheetScreen(),

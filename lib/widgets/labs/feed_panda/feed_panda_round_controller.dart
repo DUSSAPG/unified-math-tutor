@@ -135,11 +135,26 @@ class FeedPandaRoundController extends ChangeNotifier {
     ));
   }
 
-  void _loadChallenge({bool initial = false}) {
+  /// [enterFeeding] controls which phase the freshly-loaded challenge
+  /// starts in. The very first round (constructor, `initial: true`) stays
+  /// in [FeedPandaPhase.instruction] — the owning screen deliberately
+  /// transitions it to feeding itself via a separate [beginFeeding] call
+  /// made before the listener is attached (see the screen's `initState`
+  /// doc comment), so that its `notifyListeners()` can't fire a
+  /// `setState()` before the element's first build. Every *subsequent*
+  /// load (`newRound`/`restartSameChallenge`, mid-session) has no such
+  /// build-timing constraint and must reach the interactive phase in the
+  /// same synchronous call, in a single `notifyListeners()` — this is
+  /// what `enterFeeding: true` is for. Splitting it into two calls
+  /// instead (`_loadChallenge()` then a separate `beginFeeding()`) would
+  /// still be correct but fires two rebuilds back-to-back, which
+  /// visibly flashes Panda's `waiting` visual state for one frame before
+  /// `ready`.
+  void _loadChallenge({bool initial = false, bool enterFeeding = false}) {
     _challenge = FeedPandaChallenge.forSeed(_seed);
     _acceptedFruitIds.clear();
     _selectedFruitId = null;
-    _phase = FeedPandaPhase.instruction;
+    _phase = enterFeeding ? FeedPandaPhase.feeding : FeedPandaPhase.instruction;
     _dropAttempts = 0;
     _remainingAnswerAttempts = 0;
     _gentleReminderActive = false;
@@ -148,7 +163,11 @@ class FeedPandaRoundController extends ChangeNotifier {
   }
 
   /// Moves from the instruction phase into active feeding. Idempotent —
-  /// safe to call more than once (e.g. after "Replay instruction").
+  /// calling it again once already feeding (or later) is a no-op, so it's
+  /// safe for a caller to invoke unconditionally. Only the owning screen's
+  /// one-time `initState` path calls this in production now — every
+  /// mid-session reload (`newRound`/`restartSameChallenge`) reaches
+  /// feeding on its own via `_loadChallenge(enterFeeding: true)` instead.
   void beginFeeding() {
     if (_phase != FeedPandaPhase.instruction) return;
     _phase = FeedPandaPhase.feeding;
@@ -256,17 +275,48 @@ class FeedPandaRoundController extends ChangeNotifier {
 
   /// Rebuilds the exact same challenge from the current seed — used by
   /// "Replay instruction" style restarts where the round itself should
-  /// stay identical.
+  /// stay identical. Root-cause fix (same defect class as [newRound],
+  /// below): re-enters the feeding phase immediately, so fruit can be
+  /// accepted right away rather than requiring a screen reopen to reach
+  /// [beginFeeding] again.
   void restartSameChallenge() {
     _emit(FeedPandaEventType.roundRestarted, completionStatus: false);
-    _loadChallenge();
+    _loadChallenge(enterFeeding: true);
   }
 
   /// Advances to a new, deterministic next seed and loads that challenge —
   /// used by "New Round".
+  ///
+  /// Root-cause fix: previously called the bare, no-argument
+  /// `_loadChallenge()`, which always leaves the controller in
+  /// [FeedPandaPhase.instruction]. Nothing after that point ever called
+  /// [beginFeeding] for a mid-session round — only the screen's one-time
+  /// `initState` path did — so [canAccept] (which requires
+  /// `_phase == FeedPandaPhase.feeding`) permanently returned `false` for
+  /// every drag or tap after the first "New Round" tap, for the rest of
+  /// that screen instance's lifetime. Reopening the screen "fixed" it
+  /// only because that re-ran `initState` → `beginFeeding` from scratch.
+  /// Passing `enterFeeding: true` puts every new round straight into the
+  /// interactive phase, in the same synchronous call that resets the
+  /// round's own state (accepted/selected fruit, attempt counters,
+  /// gentle reminder) — nothing from a previous round survives, and
+  /// nothing beyond phase/challenge is touched, so progress persistence,
+  /// the seed sequence, and the learning-evidence event stream are all
+  /// unaffected.
+  ///
+  /// Synchronous and side-effect-free beyond the single `notifyListeners`
+  /// inside `_loadChallenge` — there is no `await`/`Future.delayed` gap
+  /// here for a rapid second tap to land inside, so repeated taps just
+  /// run this method's body again in full, in order; the last call always
+  /// wins outright rather than corrupting or partially-applying state.
+  /// A stale chew-transition timer from whatever round was active before
+  /// this call remains safe too: [_beginChewTransition]'s callback
+  /// already re-checks `_phase == FeedPandaPhase.chewTransition` before
+  /// doing anything, and by the time that timer fires, this call has
+  /// already moved [_phase] to `feeding` (or further), so it no-ops.
   void newRound() {
     _seed = nextSeed(_seed);
-    _loadChallenge();
+    _loadChallenge(enterFeeding: true);
   }
 
   /// The deterministic seed sequence "New Round" advances through. A pure

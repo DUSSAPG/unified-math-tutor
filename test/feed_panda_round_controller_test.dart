@@ -11,10 +11,11 @@ void main() {
   FeedPandaRoundController buildController({
     int seed = 1,
     List<FeedPandaEvent>? capturedEvents,
+    Duration chewTransitionDelay = Duration.zero,
   }) {
     return FeedPandaRoundController(
       initialSeed: seed,
-      chewTransitionDelay: Duration.zero,
+      chewTransitionDelay: chewTransitionDelay,
       onEvent: capturedEvents?.add,
     );
   }
@@ -160,7 +161,15 @@ void main() {
           original.remainingAnswerChoices);
       expect(controller.acceptedCount, 0,
           reason: 'a restart clears in-progress feeding');
-      expect(controller.phase, FeedPandaPhase.instruction);
+      expect(controller.phase, FeedPandaPhase.feeding,
+          reason: 'a restart must re-enter the interactive phase immediately '
+              '— regression coverage for the reported defect where only '
+              'the screen\'s one-time initState path ever called '
+              'beginFeeding(), leaving every mid-session reload stuck in '
+              'the (non-interactive) instruction phase forever');
+      expect(controller.canAccept(controller.challenge.fruitIds.first), isTrue,
+          reason: 'fruit must be acceptable immediately after a restart, '
+              'with no further beginFeeding() call needed');
     });
 
     test('newRound advances to a new governed (deterministic) seed', () {
@@ -173,12 +182,98 @@ void main() {
       expect(controller.challenge.fruitIds, expectedChallenge.fruitIds);
     });
 
-    test('newRound resets feeding progress and phase', () async {
+    test('newRound resets feeding progress and re-enters the feeding phase',
+        () async {
       final controller = await feedToTargetHelper(buildController(seed: 30));
       controller.newRound();
       expect(controller.acceptedCount, 0);
-      expect(controller.phase, FeedPandaPhase.instruction);
+      expect(controller.phase, FeedPandaPhase.feeding,
+          reason: 'this is the exact reported defect: newRound() used to '
+              'leave the controller in FeedPandaPhase.instruction forever, '
+              'so canAccept() (which requires phase == feeding) permanently '
+              'returned false for every subsequent drag/tap — reopening the '
+              'screen was the only way to recover, because that alone '
+              're-ran initState\'s one-time beginFeeding() call');
       expect(controller.selectedFruitId, isNull);
+      expect(controller.canAccept(controller.challenge.fruitIds.first), isTrue,
+          reason: 'a fresh round must accept input immediately, with no '
+              'further beginFeeding() call needed');
+    });
+
+    test(
+        'three consecutive newRound()s each land the controller back in the '
+        'feeding phase, fully interactive, every time', () {
+      final controller = buildController(seed: 40);
+      for (var i = 0; i < 3; i++) {
+        controller.newRound();
+        expect(controller.phase, FeedPandaPhase.feeding,
+            reason: 'round ${i + 1} after newRound() must be interactive');
+        final fruitId = controller.challenge.fruitIds.first;
+        expect(controller.canAccept(fruitId), isTrue);
+        controller.acceptFruit(fruitId, usedDrag: true);
+        expect(controller.acceptedCount, 1,
+            reason: 'the accept from round ${i + 1} must actually register '
+                '— proves the phase fix, not just the phase getter, since '
+                'acceptFruit() itself is gated by canAccept()');
+      }
+    });
+
+    test(
+        'rapid repeated newRound() taps leave the controller in a single, '
+        'consistent, interactive state — never corrupted or half-applied', () {
+      final controller = buildController(seed: 50);
+      // No async gap inside newRound() for a "rapid tap" to land inside —
+      // simulates the worst case (many taps arriving before any frame
+      // renders) by simply calling it several times in a row with nothing
+      // awaited in between.
+      for (var i = 0; i < 5; i++) {
+        controller.newRound();
+      }
+      expect(controller.seed, 55);
+      expect(controller.phase, FeedPandaPhase.feeding);
+      expect(controller.acceptedCount, 0);
+      expect(controller.selectedFruitId, isNull);
+      final fruitId = controller.challenge.fruitIds.first;
+      expect(controller.canAccept(fruitId), isTrue);
+      controller.acceptFruit(fruitId, usedDrag: false);
+      expect(controller.acceptedCount, 1);
+    });
+
+    test(
+        'newRound() called mid chew-transition does not let the stale '
+        'transition timer corrupt the new round', () async {
+      final events = <FeedPandaEvent>[];
+      final controller = buildController(
+        seed: 60,
+        capturedEvents: events,
+        chewTransitionDelay: const Duration(milliseconds: 20),
+      );
+      controller.beginFeeding();
+      for (final id in controller.challenge.fruitIds) {
+        if (!controller.canAccept(id)) break;
+        controller.acceptFruit(id, usedDrag: true);
+      }
+      expect(controller.phase, FeedPandaPhase.chewTransition,
+          reason: 'the round must be mid-transition for this test to be '
+              'meaningful');
+
+      // "New Round" is tapped while the old round's chew-transition timer
+      // is still pending — the button is not phase-gated in the UI.
+      controller.newRound();
+      expect(controller.phase, FeedPandaPhase.feeding);
+      final freshFruitId = controller.challenge.fruitIds.first;
+      expect(controller.canAccept(freshFruitId), isTrue);
+
+      // Let the stale timer from the *old* round fire. Its own guard
+      // (`_phase == FeedPandaPhase.chewTransition`) must see the new
+      // round's phase and no-op, rather than forcing this fresh round
+      // into askRemaining.
+      await Future<void>.delayed(const Duration(milliseconds: 40));
+      expect(controller.phase, FeedPandaPhase.feeding,
+          reason: 'a stale chew-transition timer from the previous round '
+              'must not affect the new round\'s phase');
+      controller.acceptFruit(freshFruitId, usedDrag: true);
+      expect(controller.acceptedCount, 1);
     });
   });
 

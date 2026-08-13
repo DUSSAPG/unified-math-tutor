@@ -6,6 +6,7 @@ import 'package:unified_math_tutor/app/router.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 import 'package:unified_math_tutor/screens/family_maths/family_maths_welcome_screen.dart';
 import 'package:unified_math_tutor/screens/family_studio/family_studio_hub_screen.dart';
+import 'package:unified_math_tutor/screens/settings/parent_cheat_sheet_screen.dart';
 import 'package:unified_math_tutor/screens/settings/parent_teacher_tools_screen.dart';
 import 'package:unified_math_tutor/services/family_activity_catalog_service.dart';
 import 'package:unified_math_tutor/services/learner_profiles_service.dart';
@@ -36,6 +37,19 @@ import 'package:unified_math_tutor/shared/theme/app_theme.dart';
 /// action. It's real, existing localized copy (`l10n.createParentPin`),
 /// not new text, conditionally selected to match what the tap is about to
 /// do — see `parent_teacher_tools_screen.dart`.
+///
+/// Cheat Sheet navigation fix (separate follow-up defect, same file): the
+/// `cheat-sheet` GoRoute in lib/app/router.dart didn't redeclare
+/// `parentNavigatorKey: _rootNavigatorKey` the way its `family-maths` and
+/// `family-studio` sibling routes do — nested GoRoutes don't inherit a
+/// parent's parentNavigatorKey, each must restate it. A push there landed
+/// on the (not currently visible) Help branch's own shell Navigator
+/// instead of the root navigator this whole screen already lives on, so
+/// tapping through with a valid PIN produced no visible change and no
+/// exception. Fixed by adding the missing key. The "Family Maths and
+/// Family Studio gating" group below covers both the PIN flow and this
+/// route-navigator fix together, including Back/system-back/Home and
+/// confirming the sibling routes are unaffected.
 void main() {
   const locale = Locale('en');
 
@@ -187,11 +201,12 @@ void main() {
         'produce no crash and create the PIN exactly once', (tester) async {
       // Taps in quick succession with no settle in between — the realistic
       // "nervous parent double/triple-taps while creating a brand-new PIN"
-      // shape. Uses .first defensively: once the PIN exists (as soon as
-      // the first tap's async work resolves), a later tap's push() may
-      // land a second copy of this screen on a background navigator (see
-      // the Cheat Sheet note above — same pre-existing, out-of-scope
-      // routing quirk), which is not itself what this test is guarding.
+      // shape. Uses .first/an emptiness guard defensively: as soon as the
+      // first tap's async work resolves and successfully navigates to the
+      // Cheat Sheet, this button no longer exists in the tree at all, so
+      // later loop iterations must no-op rather than fail on a missing
+      // widget — that's what's being guarded here, not any navigation
+      // defect.
       await pumpRouter(tester);
       await tester.enterText(find.byType(TextField), '1234');
       for (var i = 0; i < 5; i++) {
@@ -232,25 +247,112 @@ void main() {
     });
 
     testWidgets(
-        'tapping the primary action to reach the Cheat Sheet produces no '
-        'uncaught exception', (tester) async {
-      // NOTE (out of this sprint's scope, reported as a device finding
-      // rather than fixed here): unlike its `family-maths` and
-      // `family-studio` sibling routes, the `cheat-sheet` GoRoute doesn't
-      // redeclare `parentNavigatorKey: _rootNavigatorKey` in
-      // lib/app/router.dart, so — per the same go_router nested-navigator
-      // rule documented on the other routes in this file — it silently
-      // fails to actually display ParentCheatSheetScreen when reached via
-      // push() from this screen (no exception, just nothing visibly
-      // changes). This is a pre-existing route-configuration gap unrelated
-      // to the `_prefs` crash this sprint fixes, so left unmodified here;
-      // this test only asserts what this sprint is responsible for — no
-      // uncaught exception — not the destination screen itself.
+        'a valid PIN visibly opens the Cheat Sheet route, on the intended '
+        '(root) navigator', (tester) async {
+      // Regression coverage for the previously-reported defect: unlike its
+      // `family-maths` and `family-studio` sibling routes, the
+      // `cheat-sheet` GoRoute in lib/app/router.dart didn't redeclare
+      // `parentNavigatorKey: _rootNavigatorKey` — nested GoRoutes don't
+      // inherit a parent's parentNavigatorKey, each must restate it — so a
+      // push here landed on the Help branch's own (not currently visible)
+      // shell Navigator instead of the root one ParentTeacherToolsScreen
+      // itself is already showing on. No exception, just nothing visibly
+      // changed. Fixed by adding the missing parentNavigatorKey, matching
+      // the sibling routes exactly. Before that fix, this exact assertion
+      // (`find.byType(ParentCheatSheetScreen)`) found zero widgets.
       await pumpRouter(tester);
       await tester.enterText(find.byType(TextField), '1234');
       await tester.tap(find.byKey(const Key('parentToolsPrimaryActionButton')));
       await tester.pumpAndSettle();
       expect(tester.takeException(), isNull);
+      expect(find.byType(ParentCheatSheetScreen), findsOneWidget);
+      // The persistent bottom navigation bar belongs to the shell, not the
+      // root navigator — its absence here confirms Cheat Sheet landed on
+      // the same navigator tier as Parent-Teacher-Tools and its siblings,
+      // not a second, separately-stacked shell instance.
+      expect(find.byType(BottomNavigationBar), findsNothing);
+    });
+
+    testWidgets('an incomplete PIN does not navigate to the Cheat Sheet route',
+        (tester) async {
+      await pumpRouter(tester);
+      await tester.enterText(find.byType(TextField), '12');
+      await tester.tap(find.byKey(const Key('parentToolsPrimaryActionButton')));
+      await tester.pumpAndSettle();
+      expect(tester.takeException(), isNull);
+      expect(find.byType(ParentCheatSheetScreen), findsNothing);
+      expect(find.byType(ParentTeacherToolsScreen), findsOneWidget);
+    });
+
+    testWidgets('a wrong PIN does not navigate to the Cheat Sheet route',
+        (tester) async {
+      await LocalPreferencesService.instance.setParentPin('1234');
+      await pumpRouter(tester);
+      await tester.enterText(find.byType(TextField), '0000');
+      await tester.tap(find.byKey(const Key('parentToolsPrimaryActionButton')));
+      await tester.pumpAndSettle();
+      expect(tester.takeException(), isNull);
+      expect(find.byType(ParentCheatSheetScreen), findsNothing);
+      expect(find.byType(ParentTeacherToolsScreen), findsOneWidget);
+    });
+
+    testWidgets('Back from the Cheat Sheet returns to Learning Analytics',
+        (tester) async {
+      await pumpRouter(tester);
+      await tester.enterText(find.byType(TextField), '1234');
+      await tester.tap(find.byKey(const Key('parentToolsPrimaryActionButton')));
+      await tester.pumpAndSettle();
+      expect(find.byType(ParentCheatSheetScreen), findsOneWidget);
+
+      await tester.tap(find.byIcon(Icons.arrow_back));
+      await tester.pumpAndSettle();
+      expect(tester.takeException(), isNull);
+      expect(find.byType(ParentTeacherToolsScreen), findsOneWidget);
+      expect(find.byType(ParentCheatSheetScreen), findsNothing);
+    });
+
+    testWidgets(
+        'the Android system back gesture from the Cheat Sheet behaves the '
+        'same as the in-app Back button', (tester) async {
+      await pumpRouter(tester);
+      await tester.enterText(find.byType(TextField), '1234');
+      await tester.tap(find.byKey(const Key('parentToolsPrimaryActionButton')));
+      await tester.pumpAndSettle();
+      expect(find.byType(ParentCheatSheetScreen), findsOneWidget);
+
+      // ParentCheatSheetScreen has no PopScope/WillPopScope of its own, so
+      // the system back gesture falls through to Flutter's default
+      // handling — Navigator.maybePop() on the enclosing Navigator — the
+      // exact same call the in-app Back IconButton's popOrGo() makes.
+      // Invoked directly here rather than via WidgetTester.pageBack()
+      // (which only recognises the Material/Cupertino BackButton widget
+      // types, not this screen's plain IconButton) or the deprecated
+      // handlePopRoute() API.
+      final navigator =
+          Navigator.of(tester.element(find.byType(ParentCheatSheetScreen)));
+      final popped = await navigator.maybePop();
+      await tester.pumpAndSettle();
+      expect(popped, isTrue);
+      expect(tester.takeException(), isNull);
+      expect(find.byType(ParentTeacherToolsScreen), findsOneWidget);
+    });
+
+    testWidgets(
+        'navigating Home from the Cheat Sheet restores the persistent '
+        'bottom navigation with no exception', (tester) async {
+      await pumpRouter(tester);
+      await tester.enterText(find.byType(TextField), '1234');
+      await tester.tap(find.byKey(const Key('parentToolsPrimaryActionButton')));
+      await tester.pumpAndSettle();
+      expect(find.byType(ParentCheatSheetScreen), findsOneWidget);
+
+      appRouter.go('/home');
+      await tester.pumpAndSettle();
+      expect(tester.takeException(), isNull);
+      expect(find.byType(BottomNavigationBar), findsOneWidget,
+          reason: 'the persistent bottom nav must come back intact — proves '
+              'the router-key fix did not disturb the shell/root navigator '
+              'relationship elsewhere in the app');
     });
   });
 

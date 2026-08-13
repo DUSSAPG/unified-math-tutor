@@ -105,6 +105,50 @@ void main() {
     await tester.pump(const Duration(milliseconds: 800));
   }
 
+  /// Drags the first available fruit tile onto Panda — one accept per call,
+  /// matching [feedToTarget]'s tap-path shape but via a real drag gesture.
+  Future<void> dragOneFruitOntoTarget(WidgetTester tester) async {
+    final gesture = await tester
+        .startGesture(tester.getCenter(find.byType(FruitTile).first));
+    await tester.pump(const Duration(milliseconds: 50));
+    await gesture
+        .moveTo(tester.getCenter(find.byKey(const Key('feedPandaDropTarget'))));
+    await tester.pump(const Duration(milliseconds: 50));
+    await gesture.up();
+    await tester.pump();
+  }
+
+  /// The drag-path equivalent of [feedToTarget].
+  Future<void> feedToTargetViaDrag(WidgetTester tester) async {
+    for (var i = 0; i < 5; i++) {
+      final (accepted, target) = readProgress(tester);
+      if (accepted >= target) break;
+      final tiles = find.byType(FruitTile);
+      if (tiles.evaluate().isEmpty) break;
+      await dragOneFruitOntoTarget(tester);
+    }
+    await tester.pump(const Duration(milliseconds: 800));
+  }
+
+  /// Taps "how many are left?" answer choices until the round completes.
+  /// Assumes [feedToTarget]/[feedToTargetViaDrag] has already been run and
+  /// the screen is showing the question.
+  Future<void> answerRemainingCorrectly(
+      WidgetTester tester, AppLocalizations l10n) async {
+    for (final key in [
+      for (final w in tester
+          .widgetList<FilledButton>(find.byType(FilledButton))
+          .where((b) => b.key is ValueKey<String>))
+        w.key as ValueKey<String>,
+    ]) {
+      if (find.text(l10n.feedPandaRoundCompleteMessage).evaluate().isNotEmpty) {
+        break;
+      }
+      await tester.tap(find.byKey(key));
+      await tester.pump();
+    }
+  }
+
   group('Basic flow (no blank states)', () {
     testWidgets('renders the instruction immediately, no loading spinner',
         (tester) async {
@@ -339,6 +383,174 @@ void main() {
       expect(find.byType(CircularProgressIndicator), findsNothing);
       await feedToTarget(tester);
       expect(find.byType(CircularProgressIndicator), findsNothing);
+      expect(tester.takeException(), isNull);
+    });
+  });
+
+  group(
+      'New Round / multi-round interaction '
+      '(regression: newRound() phase defect)', () {
+    testWidgets(
+        'three consecutive rounds (drag, tap, drag) all accept input '
+        'without leaving the screen', (tester) async {
+      await pumpScreen(tester, seed: 1);
+      final l10n = await AppLocalizations.delegate.load(const Locale('en'));
+
+      // Round 1 — drag.
+      await feedToTargetViaDrag(tester);
+      expect(find.text(l10n.feedPandaHowManyLeft), findsOneWidget);
+      await answerRemainingCorrectly(tester, l10n);
+      expect(find.text(l10n.feedPandaRoundCompleteMessage), findsOneWidget);
+      expect(tester.takeException(), isNull);
+
+      // New Round -> round 2 — tap. This is the exact reported defect:
+      // before the fix, canAccept() stayed false for the rest of the
+      // screen's lifetime after this tap, because newRound() never
+      // returned the controller to FeedPandaPhase.feeding.
+      await tester.tap(find.byKey(const Key('feedPandaNewRoundButton')));
+      await tester.pump();
+      expect(tester.takeException(), isNull);
+      final (acceptedAfterRound2Start, _) = readProgress(tester);
+      expect(acceptedAfterRound2Start, 0,
+          reason: 'a fresh round starts at 0 accepted');
+      await feedToTarget(tester);
+      expect(find.text(l10n.feedPandaHowManyLeft), findsOneWidget,
+          reason: 'round 2 must reach askRemaining — this fails without '
+              'the newRound() fix, because none of the tap-accepts in '
+              'feedToTarget() would register');
+      await answerRemainingCorrectly(tester, l10n);
+      expect(find.text(l10n.feedPandaRoundCompleteMessage), findsOneWidget);
+      expect(tester.takeException(), isNull);
+
+      // New Round -> round 3 — drag again.
+      await tester.tap(find.byKey(const Key('feedPandaNewRoundButton')));
+      await tester.pump();
+      final (acceptedAfterRound3Start, _) = readProgress(tester);
+      expect(acceptedAfterRound3Start, 0);
+      await feedToTargetViaDrag(tester);
+      expect(find.text(l10n.feedPandaHowManyLeft), findsOneWidget);
+      await answerRemainingCorrectly(tester, l10n);
+      expect(find.text(l10n.feedPandaRoundCompleteMessage), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets(
+        'roundsCompleted persists and increments once per completed round '
+        'across New Round cycles, and each round\'s target/counters reset',
+        (tester) async {
+      await pumpScreen(tester, seed: 9);
+      final l10n = await AppLocalizations.delegate.load(const Locale('en'));
+      expect(FeedTheHungryPandaProgressService.instance.roundsCompleted(), 0);
+
+      for (var round = 1; round <= 3; round++) {
+        final (accepted, _) = readProgress(tester);
+        expect(accepted, 0,
+            reason: 'round $round must start with a clean accepted count');
+        await feedToTarget(tester);
+        await answerRemainingCorrectly(tester, l10n);
+        expect(find.text(l10n.feedPandaRoundCompleteMessage), findsOneWidget);
+        expect(FeedTheHungryPandaProgressService.instance.roundsCompleted(),
+            round);
+        if (round < 3) {
+          await tester.tap(find.byKey(const Key('feedPandaNewRoundButton')));
+          await tester.pump();
+        }
+      }
+    });
+
+    testWidgets(
+        'rapid repeated New Round taps produce no uncaught exception and '
+        'leave the screen in one consistent, interactive round',
+        (tester) async {
+      await pumpScreen(tester, seed: 5);
+      final l10n = await AppLocalizations.delegate.load(const Locale('en'));
+      await feedToTarget(tester);
+      await answerRemainingCorrectly(tester, l10n);
+      expect(find.text(l10n.feedPandaRoundCompleteMessage), findsOneWidget);
+
+      for (var i = 0; i < 5; i++) {
+        await tester.tap(find.byKey(const Key('feedPandaNewRoundButton')));
+        await tester.pump(const Duration(milliseconds: 10));
+      }
+      await tester.pumpAndSettle();
+      expect(tester.takeException(), isNull);
+
+      final (accepted, _) = readProgress(tester);
+      expect(accepted, 0);
+      // The screen must actually be interactive afterwards, not stuck —
+      // this is the assertion that would fail without the fix.
+      await feedToTarget(tester);
+      expect(find.text(l10n.feedPandaHowManyLeft), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets(
+        'tapping New Round during the chew-transition animation does not '
+        'corrupt the following round', (tester) async {
+      await pumpScreen(tester, seed: 13);
+      final l10n = await AppLocalizations.delegate.load(const Locale('en'));
+      // Feed to target but deliberately do NOT wait out the ~700ms
+      // chew-transition timer before tapping New Round — the button is
+      // not phase-gated in the UI, so a real user could do this too.
+      for (var i = 0; i < 5; i++) {
+        final (accepted, target) = readProgress(tester);
+        if (accepted >= target) break;
+        final tiles = find.byType(FruitTile);
+        if (tiles.evaluate().isEmpty) break;
+        await tester.tap(tiles.first);
+        await tester.pump();
+        await tester.tap(find.byKey(const Key('feedPandaDropTarget')));
+        await tester.pump();
+      }
+      await tester.tap(find.byKey(const Key('feedPandaNewRoundButton')));
+      await tester.pump();
+      expect(tester.takeException(), isNull);
+
+      // Let the stale chew-transition timer from the old round fire.
+      await tester.pump(const Duration(milliseconds: 900));
+      expect(tester.takeException(), isNull);
+
+      final (accepted, _) = readProgress(tester);
+      expect(accepted, 0);
+      await feedToTarget(tester);
+      expect(find.text(l10n.feedPandaHowManyLeft), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets(
+        'New Round remains interactive under Reduce Motion and in Dark '
+        'theme', (tester) async {
+      await LocalPreferencesService.instance.setReduceMotion(true);
+      await pumpScreen(tester, seed: 7, themeMode: ThemeMode.dark);
+      final l10n = await AppLocalizations.delegate.load(const Locale('en'));
+      await feedToTarget(tester);
+      await answerRemainingCorrectly(tester, l10n);
+      expect(find.text(l10n.feedPandaRoundCompleteMessage), findsOneWidget);
+
+      await tester.tap(find.byKey(const Key('feedPandaNewRoundButton')));
+      await tester.pump();
+      expect(tester.takeException(), isNull);
+      final (accepted, _) = readProgress(tester);
+      expect(accepted, 0);
+      await feedToTarget(tester);
+      expect(find.text(l10n.feedPandaHowManyLeft), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('New Round remains interactive in Light theme', (tester) async {
+      await pumpScreen(tester, seed: 8, themeMode: ThemeMode.light);
+      final l10n = await AppLocalizations.delegate.load(const Locale('en'));
+      await feedToTarget(tester);
+      await answerRemainingCorrectly(tester, l10n);
+      expect(find.text(l10n.feedPandaRoundCompleteMessage), findsOneWidget);
+
+      await tester.tap(find.byKey(const Key('feedPandaNewRoundButton')));
+      await tester.pump();
+      expect(tester.takeException(), isNull);
+      final (accepted, _) = readProgress(tester);
+      expect(accepted, 0);
+      await feedToTarget(tester);
+      expect(find.text(l10n.feedPandaHowManyLeft), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
   });
