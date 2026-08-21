@@ -16,6 +16,7 @@ import 'package:unified_math_tutor/services/local_preferences_service.dart';
 import 'package:unified_math_tutor/services/onboarding_profile_service.dart';
 import 'package:unified_math_tutor/shared/theme/app_theme.dart';
 import 'package:unified_math_tutor/widgets/labs/feed_panda/fruit_tile.dart';
+import 'package:unified_math_tutor/widgets/labs/feed_panda/panda_habitat_backdrop.dart';
 
 /// Early Maths Playground / Feed the Hungry Panda — screen/widget coverage.
 void main() {
@@ -144,7 +145,10 @@ void main() {
       if (find.text(l10n.feedPandaRoundCompleteMessage).evaluate().isNotEmpty) {
         break;
       }
-      await tester.tap(find.byKey(key));
+      final choice = find.byKey(key);
+      await tester.ensureVisible(choice);
+      await tester.pump();
+      await tester.tap(choice);
       await tester.pump();
     }
   }
@@ -588,6 +592,96 @@ void main() {
     });
   });
 
+  group('Habitat visual depth layer', () {
+    test('parallax offsets are clamped to decorative bounds', () {
+      expect(
+        PandaHabitatBackdrop.parallaxOffset(
+          const Offset(20, -20),
+          PandaHabitatBackdrop.foregroundMaxOffset,
+        ),
+        const Offset(
+          PandaHabitatBackdrop.foregroundMaxOffset,
+          -PandaHabitatBackdrop.foregroundMaxOffset,
+        ),
+      );
+      expect(
+        PandaHabitatBackdrop.parallaxOffset(
+          const Offset(0.5, -0.25),
+          PandaHabitatBackdrop.middleMaxOffset,
+        ),
+        const Offset(4, -2),
+      );
+    });
+
+    testWidgets(
+        'decorative parallax does not move the Panda drop target or break tap feeding',
+        (tester) async {
+      await pumpScreen(tester, seed: 102);
+      expect(find.byKey(const Key('feedPandaHabitatBackdrop')), findsOneWidget);
+
+      final dropTarget = find.byKey(const Key('feedPandaDropTarget'));
+      final before = tester.getCenter(dropTarget);
+      await tester.sendEventToBinding(PointerHoverEvent(
+        position: tester.getCenter(find.byKey(
+          const Key('feedPandaHabitatBackdrop'),
+        )),
+      ));
+      await tester.pump();
+      final after = tester.getCenter(dropTarget);
+      expect(after, before,
+          reason:
+              'parallax must be decorative only, never a hit-test transform');
+
+      await tester.tap(find.byType(FruitTile).first);
+      await tester.pump();
+      await tester.tap(dropTarget);
+      await tester.pump();
+      final (accepted, _) = readProgress(tester);
+      expect(accepted, 1);
+      expect(tester.takeException(), isNull);
+      await tester.pump(const Duration(milliseconds: 800));
+    });
+
+    testWidgets('Reduce Motion keeps habitat static and gameplay interactive',
+        (tester) async {
+      await LocalPreferencesService.instance.setReduceMotion(true);
+      await pumpScreen(tester, seed: 103);
+      final habitat = tester.widget<PandaHabitatBackdrop>(
+        find.byType(PandaHabitatBackdrop),
+      );
+      expect(habitat.reduceMotion, isTrue);
+
+      final dropTarget = find.byKey(const Key('feedPandaDropTarget'));
+      final before = tester.getCenter(dropTarget);
+      await tester.sendEventToBinding(PointerHoverEvent(
+        position: tester.getTopRight(find.byKey(
+          const Key('feedPandaHabitatBackdrop'),
+        )),
+      ));
+      await tester.pump();
+      expect(tester.getCenter(dropTarget), before);
+
+      await tester.tap(find.byType(FruitTile).first);
+      await tester.pump();
+      await tester.tap(dropTarget);
+      await tester.pump();
+      final (accepted, _) = readProgress(tester);
+      expect(accepted, 1);
+      expect(tester.takeException(), isNull);
+      await tester.pump(const Duration(milliseconds: 800));
+    });
+
+    testWidgets('renders without overflow on a 2000x1200 tablet viewport',
+        (tester) async {
+      await pumpScreen(tester, size: const Size(2000, 1200));
+      expect(
+          find.byKey(const Key('feedPandaHabitatBackground')), findsOneWidget);
+      expect(
+          find.byKey(const Key('feedPandaHabitatForeground')), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+  });
+
   group('Semantics', () {
     testWidgets('fruit tiles expose the specified semantic label format',
         (tester) async {
@@ -650,6 +744,76 @@ void main() {
     testWidgets('no overflow on a compact phone (320x568)', (tester) async {
       await pumpScreen(tester, size: const Size(320, 568));
       expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('instruction state is stable in compact landscape (844x390)',
+        (tester) async {
+      await pumpScreen(tester, size: const Size(844, 390), seed: 101);
+
+      expect(
+          find.byKey(const Key('feedPandaInstructionBanner')), findsOneWidget);
+      expect(find.textContaining('Feed Panda'), findsOneWidget);
+      expect(find.byKey(const Key('feedPandaReplayInstructionButton')),
+          findsOneWidget);
+      expect(find.byKey(const Key('feedPandaNewRoundButton')), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('tap feeding and completion are stable in compact landscape',
+        (tester) async {
+      final l10n = await AppLocalizations.delegate.load(const Locale('en'));
+      await pumpScreen(tester, size: const Size(844, 390), seed: 1);
+
+      await feedToTarget(tester);
+
+      expect(find.text(l10n.feedPandaHowManyLeft), findsOneWidget);
+      expect(find.byKey(const Key('feedPandaRemainingAnswerChoices')),
+          findsOneWidget);
+
+      await answerRemainingCorrectly(tester, l10n);
+      expect(find.text(l10n.feedPandaRoundCompleteMessage), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('drag feeding is stable in compact landscape', (tester) async {
+      await pumpScreen(tester, size: const Size(844, 390), seed: 102);
+
+      final before = readProgress(tester);
+      await dragOneFruitOntoTarget(tester);
+      final after = readProgress(tester);
+
+      expect(after.$1, before.$1 + 1);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets(
+        'compact landscape remains stable in light, dark, reduced motion and large reading',
+        (tester) async {
+      for (final config in [
+        (theme: ThemeMode.light, textScale: 1.0, reduceMotion: false),
+        (theme: ThemeMode.dark, textScale: 1.0, reduceMotion: false),
+        (theme: ThemeMode.light, textScale: 1.0, reduceMotion: true),
+        (theme: ThemeMode.light, textScale: 1.6, reduceMotion: false),
+      ]) {
+        await LocalPreferencesService.instance
+            .setReduceMotion(config.reduceMotion);
+        await pumpScreen(
+          tester,
+          size: const Size(844, 390),
+          themeMode: config.theme,
+          textScale: config.textScale,
+          seed: 103,
+        );
+
+        expect(
+            find.byKey(const Key('feedPandaHabitatBackdrop')), findsOneWidget);
+        final habitat = tester.widget<PandaHabitatBackdrop>(
+          find.byType(PandaHabitatBackdrop),
+        );
+        expect(habitat.reduceMotion, config.reduceMotion);
+        expect(tester.takeException(), isNull);
+        await tester.pumpWidget(const SizedBox.shrink());
+      }
     });
 
     testWidgets('no overflow on a tablet-sized viewport (768x1024)',

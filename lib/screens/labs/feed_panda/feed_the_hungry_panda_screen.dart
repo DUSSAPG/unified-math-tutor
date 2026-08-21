@@ -11,6 +11,7 @@ import '../../../shared/theme/app_spacing.dart';
 import '../../../shared/theme/app_theme.dart';
 import '../../../widgets/labs/feed_panda/feed_panda_round_controller.dart';
 import '../../../widgets/labs/feed_panda/fruit_matrix.dart';
+import '../../../widgets/labs/feed_panda/panda_habitat_backdrop.dart';
 import '../../../widgets/labs/feed_panda/panda_visual.dart';
 import '../../../widgets/labs/feed_panda/remaining_answer_choices.dart';
 
@@ -133,138 +134,147 @@ class _FeedTheHungryPandaScreenState extends State<FeedTheHungryPandaScreen> {
         ),
       ),
       body: SafeArea(
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            final isWide = constraints.maxWidth >= 700;
-            final pandaSection = _PandaSection(
-              controller: _controller,
-              reduceMotion: reduceMotion,
-              semanticLabel: _pandaSemanticLabel(l10n),
-              onAccept: (fruitId) => _handleAccept(fruitId, usedDrag: true),
-            );
-            final fruitSection =
-                _controller.phase != FeedPandaPhase.askRemaining &&
-                        _controller.phase != FeedPandaPhase.roundComplete
-                    ? FruitMatrix(
-                        allFruitIds: _controller.challenge.fruitIds,
-                        acceptedFruitIds: _controller.acceptedFruitIds,
-                        selectedFruitId: _controller.selectedFruitId,
-                        locked: _controller.inputLocked,
-                        onSelect: _controller.selectFruit,
-                        onDragReturned: (_) => _controller.rejectDrop(),
-                        semanticLabelFor: (id, pos, total) =>
-                            _fruitSemanticLabel(l10n, id, pos, total),
-                      )
-                    : const SizedBox.shrink();
+        child: PandaHabitatBackdrop(
+          reduceMotion: reduceMotion,
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              final isWide = constraints.maxWidth >= 700;
+              final pandaSection = _PandaSection(
+                controller: _controller,
+                reduceMotion: reduceMotion,
+                semanticLabel: _pandaSemanticLabel(l10n),
+                onAccept: (fruitId) => _handleAccept(fruitId, usedDrag: true),
+              );
+              final fruitSection =
+                  _controller.phase != FeedPandaPhase.askRemaining &&
+                          _controller.phase != FeedPandaPhase.roundComplete
+                      ? FruitMatrix(
+                          allFruitIds: _controller.challenge.fruitIds,
+                          acceptedFruitIds: _controller.acceptedFruitIds,
+                          selectedFruitId: _controller.selectedFruitId,
+                          locked: _controller.inputLocked,
+                          onSelect: _controller.selectFruit,
+                          onDragReturned: (_) => _controller.rejectDrop(),
+                          semanticLabelFor: (id, pos, total) =>
+                              _fruitSemanticLabel(l10n, id, pos, total),
+                        )
+                      : const SizedBox.shrink();
 
-            return Center(
-              child: ConstrainedBox(
-                constraints: BoxConstraints(
-                    maxWidth: AppResponsive.contentMaxWidth(context)),
-                child: SingleChildScrollView(
-                  key: const Key('feedPandaScrollView'),
-                  padding: const EdgeInsets.fromLTRB(16, 8, 16, 32),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      _InstructionBanner(controller: _controller, l10n: l10n),
-                      const SizedBox(height: AppSpacing.md),
-                      if (_controller.gentleReminderActive)
-                        _GentleReminderBanner(text: l10n.feedPandaHasEnough),
-                      if (isWide &&
-                          _controller.phase != FeedPandaPhase.askRemaining &&
-                          _controller.phase != FeedPandaPhase.roundComplete)
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Expanded(child: fruitSection),
-                            const SizedBox(width: AppSpacing.lg),
+              return Center(
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                      maxWidth: AppResponsive.contentMaxWidth(context)),
+                  child: SingleChildScrollView(
+                    key: const Key('feedPandaScrollView'),
+                    padding: const EdgeInsets.fromLTRB(16, 8, 16, 32),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        _InstructionBanner(controller: _controller, l10n: l10n),
+                        const SizedBox(height: AppSpacing.md),
+                        if (_controller.gentleReminderActive)
+                          _GentleReminderBanner(text: l10n.feedPandaHasEnough),
+                        if (isWide &&
+                            _controller.phase != FeedPandaPhase.askRemaining &&
+                            _controller.phase != FeedPandaPhase.roundComplete)
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Expanded(child: fruitSection),
+                              const SizedBox(width: AppSpacing.lg),
+                              pandaSection,
+                            ],
+                          )
+                        else ...[
+                          fruitSection,
+                          if (_controller.phase !=
+                                  FeedPandaPhase.askRemaining &&
+                              _controller.phase !=
+                                  FeedPandaPhase.roundComplete) ...[
+                            const SizedBox(height: AppSpacing.lg),
                             pandaSection,
                           ],
-                        )
-                      else ...[
-                        fruitSection,
-                        if (_controller.phase != FeedPandaPhase.askRemaining &&
-                            _controller.phase !=
-                                FeedPandaPhase.roundComplete) ...[
+                        ],
+                        if (_controller.phase ==
+                            FeedPandaPhase.askRemaining) ...[
                           const SizedBox(height: AppSpacing.lg),
                           pandaSection,
-                        ],
-                      ],
-                      if (_controller.phase == FeedPandaPhase.askRemaining) ...[
-                        const SizedBox(height: AppSpacing.lg),
-                        pandaSection,
-                        const SizedBox(height: AppSpacing.lg),
-                        Text(
-                          l10n.feedPandaHowManyLeft,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: colors.primaryText,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        const SizedBox(height: AppSpacing.md),
-                        RemainingAnswerChoices(
-                          choices: _controller.challenge.remainingAnswerChoices,
-                          enabled: true,
-                          onChosen: _controller.answerRemaining,
-                          semanticLabelFor: (v) =>
-                              l10n.feedPandaAnswerChoiceSemanticLabel(v),
-                        ),
-                        if (_controller.remainingAnswerAttempts > 0)
-                          Padding(
-                            padding: const EdgeInsets.only(top: AppSpacing.sm),
-                            child: Text(
-                              l10n.feedPandaTryAgainMessage,
-                              key: const Key('feedPandaTryAgainMessage'),
-                              textAlign: TextAlign.center,
-                              style: TextStyle(color: colors.secondaryText),
+                          const SizedBox(height: AppSpacing.lg),
+                          Text(
+                            l10n.feedPandaHowManyLeft,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: colors.primaryText,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w700,
                             ),
                           ),
-                      ],
-                      if (_controller.phase ==
-                          FeedPandaPhase.roundComplete) ...[
-                        const SizedBox(height: AppSpacing.lg),
-                        pandaSection,
-                        const SizedBox(height: AppSpacing.lg),
-                        Text(
-                          l10n.feedPandaRoundCompleteMessage,
-                          key: const Key('feedPandaRoundCompleteMessage'),
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: colors.primaryText,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w700,
+                          const SizedBox(height: AppSpacing.md),
+                          RemainingAnswerChoices(
+                            choices:
+                                _controller.challenge.remainingAnswerChoices,
+                            enabled: true,
+                            onChosen: _controller.answerRemaining,
+                            semanticLabelFor: (v) =>
+                                l10n.feedPandaAnswerChoiceSemanticLabel(v),
                           ),
-                        ),
-                      ],
-                      const SizedBox(height: AppSpacing.lg),
-                      Wrap(
-                        alignment: WrapAlignment.center,
-                        spacing: AppSpacing.sm,
-                        runSpacing: AppSpacing.sm,
-                        children: [
-                          OutlinedButton.icon(
-                            key: const Key('feedPandaReplayInstructionButton'),
-                            onPressed: _controller.restartSameChallenge,
-                            icon: const Icon(Icons.replay),
-                            label: Text(l10n.feedPandaReplayInstructionButton),
-                          ),
-                          FilledButton.icon(
-                            key: const Key('feedPandaNewRoundButton'),
-                            onPressed: _controller.newRound,
-                            icon: const Icon(Icons.forward),
-                            label: Text(l10n.feedPandaNewRoundButton),
+                          if (_controller.remainingAnswerAttempts > 0)
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(top: AppSpacing.sm),
+                              child: Text(
+                                l10n.feedPandaTryAgainMessage,
+                                key: const Key('feedPandaTryAgainMessage'),
+                                textAlign: TextAlign.center,
+                                style: TextStyle(color: colors.secondaryText),
+                              ),
+                            ),
+                        ],
+                        if (_controller.phase ==
+                            FeedPandaPhase.roundComplete) ...[
+                          const SizedBox(height: AppSpacing.lg),
+                          pandaSection,
+                          const SizedBox(height: AppSpacing.lg),
+                          Text(
+                            l10n.feedPandaRoundCompleteMessage,
+                            key: const Key('feedPandaRoundCompleteMessage'),
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: colors.primaryText,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w700,
+                            ),
                           ),
                         ],
-                      ),
-                    ],
+                        const SizedBox(height: AppSpacing.lg),
+                        Wrap(
+                          alignment: WrapAlignment.center,
+                          spacing: AppSpacing.sm,
+                          runSpacing: AppSpacing.sm,
+                          children: [
+                            OutlinedButton.icon(
+                              key:
+                                  const Key('feedPandaReplayInstructionButton'),
+                              onPressed: _controller.restartSameChallenge,
+                              icon: const Icon(Icons.replay),
+                              label:
+                                  Text(l10n.feedPandaReplayInstructionButton),
+                            ),
+                            FilledButton.icon(
+                              key: const Key('feedPandaNewRoundButton'),
+                              onPressed: _controller.newRound,
+                              icon: const Icon(Icons.forward),
+                              label: Text(l10n.feedPandaNewRoundButton),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            );
-          },
+              );
+            },
+          ),
         ),
       ),
     );

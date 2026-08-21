@@ -49,6 +49,16 @@ const _mobileMoreSlot = 4;
 // semantics) so no information is lost, just its always-visible rendering.
 const _navLabelHideTextScaleThreshold = 1.3;
 
+enum _MoreSheetAction {
+  explore,
+  formulas,
+  tutor,
+  profile,
+  help,
+  learningAnalytics,
+  settings,
+}
+
 class AppShell extends StatelessWidget {
   final StatefulNavigationShell shell;
 
@@ -58,32 +68,46 @@ class AppShell extends StatelessWidget {
     shell.goBranch(index, initialLocation: index == shell.currentIndex);
   }
 
-  Future<void> _openMoreSheet(BuildContext context) {
-    return showModalBottomSheet<void>(
+  Future<void> _openMoreSheet(BuildContext context) async {
+    final router = GoRouter.of(context);
+    final action = await showModalBottomSheet<_MoreSheetAction>(
       context: context,
+      isScrollControlled: true,
+      useRootNavigator: true,
       backgroundColor: context.appColors.cardSurface,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
       builder: (sheetContext) => _MoreSheet(
-        onBranchSelected: (index) {
-          Navigator.of(sheetContext).pop();
-          _goBranch(index);
-        },
-        onLearningAnalyticsSelected: () {
-          Navigator.of(sheetContext).pop();
-          context.push('/help/parent-teacher-tools');
-        },
-        onSettingsSelected: () {
-          Navigator.of(sheetContext).pop();
-          context.push('/profile/settings');
-        },
-        onExploreSelected: () {
-          Navigator.of(sheetContext).pop();
-          context.push('/explore');
-        },
+        onSelected: (action) =>
+            Navigator.of(sheetContext, rootNavigator: true).pop(action),
       ),
     );
+    if (action == null) return;
+
+    switch (action) {
+      case _MoreSheetAction.explore:
+        router.push('/explore');
+        break;
+      case _MoreSheetAction.formulas:
+        _goBranch(_branchFormulas);
+        break;
+      case _MoreSheetAction.tutor:
+        _goBranch(_branchTutor);
+        break;
+      case _MoreSheetAction.profile:
+        _goBranch(_branchProfile);
+        break;
+      case _MoreSheetAction.help:
+        _goBranch(_branchHelp);
+        break;
+      case _MoreSheetAction.learningAnalytics:
+        router.push('/help/parent-teacher-tools');
+        break;
+      case _MoreSheetAction.settings:
+        router.push('/profile/settings');
+        break;
+    }
   }
 
   @override
@@ -363,91 +387,107 @@ class _RailExploreButton extends StatelessWidget {
 // ─── "More" sheet (mobile only) ───────────────────────────────────────────────
 
 class _MoreSheet extends StatelessWidget {
-  final ValueChanged<int> onBranchSelected;
-  final VoidCallback onLearningAnalyticsSelected;
-  final VoidCallback onSettingsSelected;
-  final VoidCallback onExploreSelected;
+  final ValueChanged<_MoreSheetAction> onSelected;
 
   const _MoreSheet({
-    required this.onBranchSelected,
-    required this.onLearningAnalyticsSelected,
-    required this.onSettingsSelected,
-    required this.onExploreSelected,
+    required this.onSelected,
   });
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final colors = context.appColors;
-    return SafeArea(
-      top: false,
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Container(
-              width: 36,
-              height: 4,
-              margin: const EdgeInsets.only(bottom: 12),
-              decoration: BoxDecoration(
-                color: colors.divider,
-                borderRadius: BorderRadius.circular(2),
-              ),
-            ),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                child: Text(
-                  l10n.navMore,
-                  style: TextStyle(
-                    color: colors.secondaryText,
-                    fontSize: 11,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 1.2,
-                  ),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final media = MediaQuery.of(context);
+        final maxHeight = constraints.maxHeight.isFinite
+            ? constraints.maxHeight
+            : media.size.height;
+        final sheetMaxHeight =
+            (maxHeight - media.padding.top - 8).clamp(160.0, maxHeight);
+
+        return AnimatedPadding(
+          duration: const Duration(milliseconds: 180),
+          curve: Curves.easeOutCubic,
+          padding: EdgeInsets.only(bottom: media.viewInsets.bottom),
+          child: SafeArea(
+            top: false,
+            child: ConstrainedBox(
+              constraints: BoxConstraints(maxHeight: sheetMaxHeight),
+              child: SingleChildScrollView(
+                key: const Key('homeMoreSheetScrollView'),
+                padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(
+                      width: 36,
+                      height: 4,
+                      margin: const EdgeInsets.only(bottom: 12),
+                      decoration: BoxDecoration(
+                        color: colors.divider,
+                        borderRadius: BorderRadius.circular(2),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 8, vertical: 4),
+                        child: Text(
+                          l10n.navMore,
+                          style: TextStyle(
+                            color: colors.secondaryText,
+                            fontSize: 11,
+                            fontWeight: FontWeight.w600,
+                            letterSpacing: 1.2,
+                          ),
+                        ),
+                      ),
+                    ),
+                    _MoreSheetTile(
+                      icon: LucideIcons.compass,
+                      label: l10n.exploreMathIntelligenceTitle,
+                      onTap: () => onSelected(_MoreSheetAction.explore),
+                    ),
+                    _MoreSheetTile(
+                      icon: LucideIcons.functionSquare,
+                      label: l10n.homeFormulaLibraryTitle,
+                      onTap: () => onSelected(_MoreSheetAction.formulas),
+                    ),
+                    _MoreSheetTile(
+                      icon: LucideIcons.brain,
+                      label: l10n.navTutor,
+                      onTap: () => onSelected(_MoreSheetAction.tutor),
+                    ),
+                    _MoreSheetTile(
+                      icon: LucideIcons.settings,
+                      label: l10n.navProfile,
+                      onTap: () => onSelected(_MoreSheetAction.profile),
+                    ),
+                    _MoreSheetTile(
+                      icon: LucideIcons.helpCircle,
+                      label: l10n.navHelp,
+                      onTap: () => onSelected(_MoreSheetAction.help),
+                    ),
+                    _MoreSheetTile(
+                      icon: Icons.insights_outlined,
+                      label: l10n.parentTeacherTools,
+                      onTap: () =>
+                          onSelected(_MoreSheetAction.learningAnalytics),
+                    ),
+                    _MoreSheetTile(
+                      icon: LucideIcons.settings,
+                      label: l10n.settingsTitle,
+                      onTap: () => onSelected(_MoreSheetAction.settings),
+                    ),
+                  ],
                 ),
               ),
             ),
-            _MoreSheetTile(
-              icon: LucideIcons.compass,
-              label: l10n.exploreMathIntelligenceTitle,
-              onTap: onExploreSelected,
-            ),
-            _MoreSheetTile(
-              icon: LucideIcons.functionSquare,
-              label: l10n.homeFormulaLibraryTitle,
-              onTap: () => onBranchSelected(_branchFormulas),
-            ),
-            _MoreSheetTile(
-              icon: LucideIcons.brain,
-              label: l10n.navTutor,
-              onTap: () => onBranchSelected(_branchTutor),
-            ),
-            _MoreSheetTile(
-              icon: LucideIcons.settings,
-              label: l10n.navProfile,
-              onTap: () => onBranchSelected(_branchProfile),
-            ),
-            _MoreSheetTile(
-              icon: LucideIcons.helpCircle,
-              label: l10n.navHelp,
-              onTap: () => onBranchSelected(_branchHelp),
-            ),
-            _MoreSheetTile(
-              icon: Icons.insights_outlined,
-              label: l10n.parentTeacherTools,
-              onTap: onLearningAnalyticsSelected,
-            ),
-            _MoreSheetTile(
-              icon: LucideIcons.settings,
-              label: l10n.settingsTitle,
-              onTap: onSettingsSelected,
-            ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }
