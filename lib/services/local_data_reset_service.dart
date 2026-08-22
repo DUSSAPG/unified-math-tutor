@@ -1,5 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'canonical_learner_state_service.dart';
 import 'learner_profiles_service.dart';
 import 'local_account_service.dart';
 import 'local_preferences_service.dart';
@@ -37,5 +38,18 @@ class LocalDataResetService {
     await StreakService.instance.init();
     await MascotFuelService.instance.init();
     await TutorCreditService.instance.init();
+
+    // The re-init()s above already fire every ValueNotifier
+    // CanonicalLearnerStateService listens to, so its identity/streak/
+    // curriculum/account fields self-correct automatically. Its session-
+    // and recall-derived evidence has no such notifier (see that service's
+    // doc comment) and would otherwise keep showing pre-reset counts —
+    // pull it explicitly so a full reset can't leave stale evidence behind
+    // — but only when something has actually opted into that cache
+    // existing (see CanonicalLearnerStateService.isInitialized's doc
+    // comment).
+    if (CanonicalLearnerStateService.instance.isInitialized) {
+      await CanonicalLearnerStateService.instance.refreshEvidence();
+    }
   }
 }

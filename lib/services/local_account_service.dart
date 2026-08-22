@@ -5,6 +5,15 @@ import 'package:shared_preferences/shared_preferences.dart';
 /// this app (see [SignOutService]) — signing in or creating an account here
 /// just persists a display name/email on-device so Profile can show a real
 /// "signed in as" state and so Sign Out has something concrete to clear.
+///
+/// [AccountState.displayName] is account sign-in metadata only — it can be
+/// derived from an email prefix (see [LocalAccountService.signIn]) and must
+/// never become the learner-facing preferred name shown in greetings. The
+/// canonical learner identity (see canonical_identity_resolver.dart and
+/// [CanonicalLearnerState]) never reads this class at all; it reads
+/// `OnboardingProfileService.preferredDisplayName` /
+/// `LearnerProfilesService.activeLearner` instead. Keep it that way — this
+/// separation is deliberate, not an oversight.
 class AccountState {
   const AccountState._(this.isSignedIn, this.displayName, this.email);
 

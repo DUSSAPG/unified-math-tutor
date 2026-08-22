@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 import '../../shared/responsive/app_breakpoints.dart';
 import '../../shared/theme/app_spacing.dart';
 import '../../shared/theme/app_theme.dart';
+import '../../services/canonical_identity_resolver.dart';
 import '../../services/curriculum_service.dart';
 import '../../services/greeting_service.dart';
 import '../../services/learner_profiles_service.dart';
@@ -968,13 +969,20 @@ class _HeroGreeting extends StatelessWidget {
         onboarding.preferredDisplayName,
         onboarding.childName,
         LearnerProfilesService.instance.profiles,
+        LearnerProfilesService.instance.activeLearnerId,
       ]),
       builder: (context, _) {
-        final isLearnerRole = onboarding.userType.value == 'parent' ||
-            onboarding.userType.value == 'teacher';
-        final name = isLearnerRole
-            ? onboarding.childName.value
-            : onboarding.preferredDisplayName.value;
+        // Canonical identity precedence — see canonical_identity_resolver.dart.
+        // Never reads LocalAccountService (account sign-in metadata is a
+        // separate concept from this learner-facing name).
+        final isLearnerRole = isLearnerFacingRole(onboarding.userType.value);
+        final name = resolveLearnerFacingName(
+          userType: onboarding.userType.value,
+          preferredDisplayName: onboarding.preferredDisplayName.value,
+          activeLearnerName:
+              LearnerProfilesService.instance.activeLearner?.name,
+          legacyChildName: onboarding.childName.value,
+        );
         final greeting = greetingFor(
           l10n,
           greetingPeriodFor(DateTime.now()),

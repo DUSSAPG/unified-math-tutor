@@ -1,5 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'canonical_learner_state_service.dart';
 import 'guest_tip_counter.dart';
 import 'local_account_service.dart';
 import 'local_preferences_service.dart';
@@ -19,5 +20,15 @@ class SignOutService {
     LocalPreferencesService.instance.clearFamilyStudioGraceAccess();
     await SessionHistoryService.instance.clear();
     await GuestTipCounter.reset(await SharedPreferences.getInstance());
+    // LocalAccountService.signOut() above already fires its own notifier,
+    // so CanonicalLearnerStateService's account-state field self-corrects.
+    // Session history has no such notifier (see that service's doc
+    // comment), so its cached session-derived evidence needs an explicit
+    // pull or it would keep showing the just-cleared history — but only
+    // when something has actually opted into that cache existing (see
+    // CanonicalLearnerStateService.isInitialized's doc comment).
+    if (CanonicalLearnerStateService.instance.isInitialized) {
+      await CanonicalLearnerStateService.instance.refreshEvidence();
+    }
   }
 }
