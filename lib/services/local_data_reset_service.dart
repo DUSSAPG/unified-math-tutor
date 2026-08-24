@@ -1,6 +1,7 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'canonical_learner_state_service.dart';
+import 'continue_learning_service.dart';
 import 'learner_profiles_service.dart';
 import 'local_account_service.dart';
 import 'local_preferences_service.dart';
@@ -50,6 +51,18 @@ class LocalDataResetService {
     // comment).
     if (CanonicalLearnerStateService.instance.isInitialized) {
       await CanonicalLearnerStateService.instance.refreshEvidence();
+    }
+
+    // ContinueLearningService's stored checkpoint (for every learner scope)
+    // was wiped by prefs.clear() above, but its in-memory cache has no
+    // notifier-driven way to learn that on its own — a re-init() above
+    // only fires a listener when a value actually *changes*, which won't
+    // happen if e.g. the account was already signed out before the reset.
+    // Pull it explicitly so a full reset can never leave a stale checkpoint
+    // visible, mirroring CanonicalLearnerStateService's identical reasoning
+    // just above.
+    if (ContinueLearningService.instance.isInitialized) {
+      await ContinueLearningService.instance.refreshForScopeChange();
     }
   }
 }

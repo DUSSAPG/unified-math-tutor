@@ -7,14 +7,19 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:flutter_shared_models/question_item.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
+import '../../models/continue_learning_checkpoint.dart';
 import '../../models/practice_context.dart';
+import '../../models/practice_session_restoration_payload.dart';
 import '../../models/graph_question.dart';
+import '../../services/continue_learning_destination_resolver.dart';
+import '../../services/continue_learning_service.dart';
 import '../../services/curriculum_service.dart';
 import '../../services/jsonl_pack_loader.dart';
 import '../../services/mascot_fuel_service.dart';
 import '../../services/nav_visibility_service.dart';
 import '../../services/pack_registry_service.dart';
 import '../../services/practice_context_service.dart';
+import '../../services/practice_pack_question_mapper.dart';
 import '../../services/session_history_service.dart';
 import '../../services/streak_service.dart';
 import '../../services/topic_catalog_service.dart';
@@ -80,11 +85,32 @@ class PracticeScreen extends StatefulWidget {
   final String? selectedTopic;
   final String? selectedTopicId;
   final bool autoStart;
+
+  /// Reopens directly into an in-progress session, bypassing setup —
+  /// produced only by `ContinueLearningDestinationResolver
+  /// .resolvePracticeSession`, never by hand-constructing a route or
+  /// passing arbitrary IDs. `null` (the default) is the normal entry path
+  /// every existing call site already uses; this is additive and does not
+  /// change their behaviour. Not yet wired to any live navigation — see the
+  /// Continue Learning Contract report's Home-honesty boundary.
+  ///
+  /// IMPORTANT for any future integrator: restoration only runs from
+  /// `initState()`. If a `PracticeScreen(resumeFrom: ...)` is built at the
+  /// same widget-tree position as an existing unkeyed `PracticeScreen`
+  /// (e.g. the same route rebuilding with new `extra`), Flutter's element
+  /// reconciliation will reuse the existing `State` and call
+  /// `didUpdateWidget` instead of `initState` — silently skipping
+  /// restoration. Give it a distinguishing `key` (e.g.
+  /// `ValueKey(resumeFrom.checkpointId)`) whenever it might replace a
+  /// differently-configured `PracticeScreen` already on screen.
+  final ResolvedPracticeResume? resumeFrom;
+
   const PracticeScreen({
     super.key,
     this.selectedTopic,
     this.selectedTopicId,
     this.autoStart = false,
+    this.resumeFrom,
   });
 
   @override
@@ -115,18 +141,114 @@ class _PracticeScreenState extends State<PracticeScreen>
   Timer? _sessionTimer;
   int? _secondsRemaining;
 
+  // Continue Learning: only tracked for the two modes a checkpoint can
+  // exist for (quickStart, topicDrill — see _isResumableMode). null means
+  // "no checkpoint owned by this session instance yet."
+  String? _continueLearningCheckpointId;
+  DateTime? _continueLearningStartedAtUtc;
+
+  bool get _isResumableMode =>
+      _selectedMode == _PracticeMode.quickStart ||
+      _selectedMode == _PracticeMode.topicDrill;
+
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
     MascotFuelService.instance.init();
-    if (widget.autoStart) {
+    final resume = widget.resumeFrom;
+    if (resume != null) {
+      _restoreFromResolvedResume(resume);
+    } else if (widget.autoStart) {
       _selectedMode = _PracticeMode.quickStart;
       WidgetsBinding.instance.addPostFrameCallback((_) => _startSession());
     } else if (widget.selectedTopicId != null || widget.selectedTopic != null) {
       // Arrived from the Topics selector with a topic already chosen.
       _selectedMode = _PracticeMode.topicDrill;
     }
+  }
+
+  /// Jumps directly into session state from a validated
+  /// [ResolvedPracticeResume] — the governed-resolver hand-off point. Never
+  /// re-derives the question set itself; every id/answer already came
+  /// through `ContinueLearningDestinationResolver`, which is the only place
+  /// content is looked up and validated.
+  void _restoreFromResolvedResume(ResolvedPracticeResume resume) {
+    _selectedMode = resume.topicId != null
+        ? _PracticeMode.topicDrill
+        : _PracticeMode.quickStart;
+    _selectedStage = resume.stage;
+    _questions = resume.questions;
+    _graphsByQuestionId
+      ..clear()
+      ..addAll(resume.graphsByQuestionId);
+    _currentIndex = resume.currentStep;
+    _selectedOption = null;
+    _checked = false;
+    _correctCount = 0;
+    _attempts
+      ..clear()
+      ..addAll(_reconstructAttempts(resume));
+    for (final attempt in _attempts) {
+      if (attempt.selectedIndex == attempt.correctIndex) _correctCount++;
+    }
+    _screenState = _ScreenState.session;
+    _secondsRemaining = null; // Timed Challenge is never resumable — see
+    // _isResumableMode and the Continue Learning Contract report's scoping
+    // decision on truthful timer restoration.
+
+    _continueLearningCheckpointId = resume.checkpointId;
+    _continueLearningStartedAtUtc = resume.startedAtUtc;
+    final service = ContinueLearningService.instance;
+    if (service.isInitialized) {
+      final payload = PracticeSessionRestorationPayload(
+        questionIds: [for (final q in resume.questions) q.id],
+        selectedIndices: resume.selectedIndices,
+      );
+      unawaited(service.saveCheckpoint(ContinueLearningCheckpoint(
+        schemaVersion: ContinueLearningCheckpoint.currentSchemaVersion,
+        checkpointId: resume.checkpointId,
+        learnerScopeId: service.currentLearnerScopeId,
+        activityType: ContinueLearningActivityType.practiceSession,
+        contentVersion: resume.stage.toLowerCase(),
+        curriculumLevel: resume.stage,
+        topicId: resume.topicId,
+        currentStep: resume.currentStep,
+        totalSteps: resume.questions.length,
+        startedAtUtc: resume.startedAtUtc,
+        updatedAtUtc: DateTime.now().toUtc(),
+        resumeCount: resume.resumeCount + 1,
+        restorationPayload: payload.toJson(),
+      )));
+    }
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      NavVisibilityService.instance.hide();
+      if (_questions.isNotEmpty) {
+        PracticeContextService.instance.set(PracticeContext(
+          stage: _selectedStage,
+          questionText: _questions[_currentIndex].question,
+          topic: _questions[_currentIndex].topic,
+        ));
+      }
+    });
+  }
+
+  List<SessionQuestionResult> _reconstructAttempts(
+      ResolvedPracticeResume resume) {
+    final attempts = <SessionQuestionResult>[];
+    for (var i = 0; i < resume.selectedIndices.length; i++) {
+      final question = resume.questions[i];
+      attempts.add(SessionQuestionResult(
+        question: question.question,
+        options: question.options,
+        correctIndex: question.correctIndex,
+        selectedIndex: resume.selectedIndices[i],
+        topic: question.topic,
+        explanation: question.explanation,
+      ));
+    }
+    return attempts;
   }
 
   @override
@@ -202,6 +324,11 @@ class _PracticeScreenState extends State<PracticeScreen>
     if (stages.isEmpty) return;
     final stage =
         stages.contains(_selectedStage) ? _selectedStage : stages.first;
+    // A genuinely new session never inherits a previous session's Continue
+    // Learning identity — see saveCheckpoint's "one checkpoint per learner
+    // scope" model: a fresh id here simply replaces whatever was stored.
+    _continueLearningCheckpointId = null;
+    _continueLearningStartedAtUtc = null;
     setState(() => _isLoading = true);
     try {
       final questions = await _loadSession(stage, _selectedCount);
@@ -270,25 +397,20 @@ class _PracticeScreenState extends State<PracticeScreen>
               : MapEntry(json['id'] as String? ?? '', graph);
         }).whereType<MapEntry<String, GraphQuestion>>(),
       );
-    return selected.map(_questionFromPackJson).toList();
-  }
-
-  QuestionItem _questionFromPackJson(Map<String, dynamic> json) {
-    return QuestionItem(
-      id: json['id'] as String? ?? '',
-      question: (json['question'] ?? json['stem'] ?? '') as String,
-      options: List<String>.from(json['options'] as List<dynamic>? ?? []),
-      correctIndex: (json['correct_index'] ?? json['answer_index'] ?? 0) as int,
-      explanation: (json['explanation'] ?? json['rationale'] ?? '') as String,
-      topic: (json['topic'] ?? json['skill'] ?? json['strand'] ?? '') as String,
-      difficulty: (json['difficulty'] ?? '').toString(),
-    );
+    return selected.map(questionFromPackJson).toList();
   }
 
   void _goBack() {
     _sessionTimer?.cancel();
     PracticeContextService.instance.clear();
     NavVisibilityService.instance.show();
+    // Leaving normally is not abandonment — any saved checkpoint stays in
+    // storage, resumable later. Only this widget instance's own tracking of
+    // "which checkpoint am I updating" is forgotten, so a subsequent fresh
+    // _startSession() can never mistake itself for a continuation of the
+    // session just left.
+    _continueLearningCheckpointId = null;
+    _continueLearningStartedAtUtc = null;
     setState(() {
       _screenState = _ScreenState.setup;
       _questions = [];
@@ -337,9 +459,52 @@ class _PracticeScreenState extends State<PracticeScreen>
         questionText: _questions[_currentIndex].question,
         topic: _questions[_currentIndex].topic,
       ));
+      await _saveOrUpdateContinueLearningCheckpoint();
     } else {
       await _finishSession();
     }
+  }
+
+  /// Saves or updates this session's Continue Learning checkpoint after a
+  /// stable learner action (advancing past an answered question) — never
+  /// while an option is merely selected-but-not-checked, and never for
+  /// Timed Challenge/Exam Simulator (see `_isResumableMode`'s doc comment
+  /// on the Continue Learning Contract report's scoping decision). A no-op
+  /// if the service isn't ready; never throws into the UI.
+  Future<void> _saveOrUpdateContinueLearningCheckpoint() async {
+    if (!_isResumableMode) return;
+    if (_attempts.isEmpty) return; // no meaningful progress yet
+    final service = ContinueLearningService.instance;
+    if (!service.isInitialized) return;
+
+    final now = DateTime.now().toUtc();
+    _continueLearningCheckpointId ??= service.generateCheckpointId();
+    _continueLearningStartedAtUtc ??= now;
+
+    final payload = PracticeSessionRestorationPayload(
+      questionIds: [for (final q in _questions) q.id],
+      selectedIndices: [for (final a in _attempts) a.selectedIndex],
+    );
+    final checkpoint = ContinueLearningCheckpoint(
+      schemaVersion: ContinueLearningCheckpoint.currentSchemaVersion,
+      checkpointId: _continueLearningCheckpointId!,
+      learnerScopeId: service.currentLearnerScopeId,
+      activityType: ContinueLearningActivityType.practiceSession,
+      contentVersion: _selectedStage.toLowerCase(),
+      curriculumLevel: _selectedStage,
+      topicId: widget.selectedTopicId,
+      currentStep: _currentIndex,
+      totalSteps: _questions.length,
+      startedAtUtc: _continueLearningStartedAtUtc!,
+      updatedAtUtc: now,
+      resumeCount:
+          ContinueLearningService.instance.currentCheckpoint?.checkpointId ==
+                  _continueLearningCheckpointId
+              ? ContinueLearningService.instance.currentCheckpoint!.resumeCount
+              : 0,
+      restorationPayload: payload.toJson(),
+    );
+    await service.saveCheckpoint(checkpoint);
   }
 
   Future<void> _finishSession() async {
@@ -353,6 +518,14 @@ class _PracticeScreenState extends State<PracticeScreen>
     ));
     await StreakService.instance.recordSessionCompletion();
     await MascotFuelService.instance.addFuel(5);
+    final completedCheckpointId = _continueLearningCheckpointId;
+    if (completedCheckpointId != null) {
+      await ContinueLearningService.instance.markCompleted(
+        completedCheckpointId,
+      );
+      _continueLearningCheckpointId = null;
+      _continueLearningStartedAtUtc = null;
+    }
     if (!mounted) return;
     setState(() => _screenState = _ScreenState.summary);
   }
@@ -1136,6 +1309,7 @@ class _SessionView extends StatelessWidget {
                       return Padding(
                         padding: const EdgeInsets.only(bottom: 10),
                         child: GestureDetector(
+                          key: Key('practiceOption$i'),
                           onTap: checked ? null : () => onOptionSelected(i),
                           child: Container(
                             padding: const EdgeInsets.symmetric(

@@ -1,5 +1,7 @@
 import 'package:flutter/foundation.dart';
 
+import 'continue_learning_summary.dart';
+
 /// Account state this app can actually establish today.
 ///
 /// There is no cloud/Firebase auth (`LocalAccountService`'s own doc comment
@@ -27,14 +29,20 @@ enum CanonicalAccountState {
 /// exactly one place it's stored. See [CanonicalLearnerStateService] for the
 /// aggregation/refresh logic that produces instances of this class.
 ///
-/// Deliberately absent fields: this snapshot has no Continue Learning
-/// progress, no per-topic mastery/confidence/weakness score, no Oxford
-/// Track state, no ALI/Allie recommendation, and no premium entitlement
-/// field. None of those have an authoritative source in the app today (see
-/// the Home/Learner-State/Entitlements/Theme audit) — adding a field for
-/// any of them here would let a future consumer read a fabricated value out
-/// of what looks like a canonical, trustworthy contract. Add such a field
-/// only once its own real contract exists, not before.
+/// Deliberately absent fields: this snapshot has no per-topic mastery/
+/// confidence/weakness score, no Oxford Track state, no ALI/Allie
+/// recommendation, and no premium entitlement field. None of those have an
+/// authoritative source in the app today (see the Home/Learner-State/
+/// Entitlements/Theme audit) — adding a field for any of them here would
+/// let a future consumer read a fabricated value out of what looks like a
+/// canonical, trustworthy contract. Add such a field only once its own real
+/// contract exists, not before.
+///
+/// Continue Learning is the one exception, added once its own real
+/// contract ([ContinueLearningService]) existed: [continueLearningStatus]
+/// and [resumableActivity] observe that service — this class still owns no
+/// persistence of its own, it only mirrors what [ContinueLearningService]
+/// has already validated and saved.
 @immutable
 class CanonicalLearnerState {
   const CanonicalLearnerState({
@@ -53,6 +61,8 @@ class CanonicalLearnerState {
     required this.recallMasteredCount,
     required this.dailyMissionProgress,
     required this.dailyMissionTarget,
+    required this.continueLearningStatus,
+    required this.resumableActivity,
   });
 
   /// Bump when a field's meaning changes, so a future consumer that has
@@ -134,6 +144,20 @@ class CanonicalLearnerState {
   /// per-learner configurable — mirrored here rather than hard-coded again).
   final int dailyMissionTarget;
 
+  /// Source: `ContinueLearningService.status`, for the currently-resolved
+  /// learner scope. `notLoaded` until that service's `init()` has run;
+  /// `noCheckpoint` once loaded with nothing to resume; `checkpointAvailable`
+  /// exactly when [resumableActivity] is non-null.
+  final ContinueLearningEvidenceStatus continueLearningStatus;
+
+  /// Source: `ContinueLearningService.currentSummary`. Non-null if and only
+  /// if [continueLearningStatus] is `checkpointAvailable` — never a
+  /// recommendation, never a recently-viewed destination, never a
+  /// fabricated progress percentage. `null` in every other status,
+  /// including `notLoaded` (never guess "no checkpoint" before evidence has
+  /// actually loaded).
+  final ContinueLearningSummary? resumableActivity;
+
   /// `true` once [completedSessionCount]/[answeredQuestionCount]/
   /// [correctQuestionCount] reflect a real `refreshEvidence()` pull rather
   /// than the not-yet-loaded default.
@@ -163,5 +187,18 @@ class CanonicalLearnerState {
         'recallMasteredCount': recallMasteredCount,
         'dailyMissionProgress': dailyMissionProgress,
         'dailyMissionTarget': dailyMissionTarget,
+        'continueLearningStatus': continueLearningStatus.name,
+        'resumableActivity': resumableActivity == null
+            ? null
+            : {
+                'checkpointId': resumableActivity!.checkpointId,
+                'activityType': resumableActivity!.activityType.id,
+                'curriculumLevel': resumableActivity!.curriculumLevel,
+                'topicId': resumableActivity!.topicId,
+                'currentStep': resumableActivity!.currentStep,
+                'totalSteps': resumableActivity!.totalSteps,
+                'updatedAtUtc':
+                    resumableActivity!.updatedAtUtc.toUtc().toIso8601String(),
+              },
       };
 }

@@ -3,8 +3,10 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 
 import '../models/canonical_learner_state.dart';
+import '../models/continue_learning_summary.dart';
 import '../models/recall_card_state.dart';
 import 'canonical_identity_resolver.dart';
+import 'continue_learning_service.dart';
 import 'curriculum_service.dart';
 import 'learner_profiles_service.dart';
 import 'local_account_service.dart';
@@ -64,6 +66,8 @@ class CanonicalLearnerStateService {
     recallMasteredCount: null,
     dailyMissionProgress: 0,
     dailyMissionTarget: MascotFuelService.missionTarget,
+    continueLearningStatus: ContinueLearningEvidenceStatus.notLoaded,
+    resumableActivity: null,
   );
 
   final ValueNotifier<CanonicalLearnerState> snapshot =
@@ -97,6 +101,7 @@ class CanonicalLearnerStateService {
       CurriculumService.instance.notifier,
       StreakService.instance.days,
       MascotFuelService.instance.dailyMissionProgress,
+      ContinueLearningService.instance.updateSerial,
     ]);
     _syncSources!.addListener(_recomputeSync);
     RecallCardsProgressService.instance.updateSerial
@@ -148,6 +153,8 @@ class CanonicalLearnerStateService {
       dailyMissionProgress:
           MascotFuelService.instance.dailyMissionProgress.value,
       dailyMissionTarget: MascotFuelService.missionTarget,
+      continueLearningStatus: ContinueLearningService.instance.status,
+      resumableActivity: ContinueLearningService.instance.currentSummary,
     );
   }
 
@@ -225,6 +232,8 @@ class CanonicalLearnerStateService {
       recallMasteredCount: mastered,
       dailyMissionProgress: previous.dailyMissionProgress,
       dailyMissionTarget: previous.dailyMissionTarget,
+      continueLearningStatus: previous.continueLearningStatus,
+      resumableActivity: previous.resumableActivity,
     );
   }
 

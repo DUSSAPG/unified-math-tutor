@@ -296,8 +296,10 @@ void main() {
       'product-honesty boundary — the canonical snapshot cannot leak '
       'decorative Home values', () {
     test(
-        'exposes exactly the audited-safe field set: no Continue Learning, '
-        'topic-mastery, Oxford Track, ALI, or premium data', () async {
+        'exposes exactly the audited-safe field set: real Continue Learning '
+        'evidence (from ContinueLearningService, see the Continue Learning '
+        'Contract report) but no topic-mastery, Oxford Track, ALI, or '
+        'premium data', () async {
       await CanonicalLearnerStateService.instance.init();
       final json =
           CanonicalLearnerStateService.instance.snapshot.value.toJson();
@@ -320,6 +322,8 @@ void main() {
           'recallMasteredCount',
           'dailyMissionProgress',
           'dailyMissionTarget',
+          'continueLearningStatus',
+          'resumableActivity',
         ]),
       );
     });

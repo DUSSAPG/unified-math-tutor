@@ -3,6 +3,7 @@ import 'dart:async';
 import 'market/market_smoke.dart';
 import '../services/aircraft_landing_lab_progress_service.dart';
 import '../services/canonical_learner_state_service.dart';
+import '../services/continue_learning_service.dart';
 import '../services/entrance_exam_progress_service.dart';
 import '../services/feed_the_hungry_panda_progress_service.dart';
 import '../services/locale_service.dart';
@@ -57,18 +58,27 @@ class AppBootstrap {
       SpatialCubeLabProgressService.instance.init(),
       EntranceExamProgressService.instance.init(),
     ]);
-    // Depends on every service above already being initialised (it reads
-    // their current .value synchronously) — start it after the Future.wait
-    // above completes, not inside it. Deliberately unawaited, same
-    // reasoning as NarrationManifestService above: init() runs its
-    // synchronous snapshot recompute immediately (everything before its
-    // first `await` executes before this line returns, even unawaited),
-    // but its evidence refresh involves an async recall-card asset load
-    // that must never be able to delay app boot — or a test's simulated
-    // boot — while it loads. A consumer that needs evidence loaded before
-    // reading it awaits CanonicalLearnerStateService.refreshEvidence()
-    // itself; see CanonicalLearnerState.sessionEvidenceLoaded/
-    // recallEvidenceLoaded for checking readiness first.
+    // ContinueLearningService needs OnboardingProfileService/
+    // LearnerProfilesService/LocalAccountService already initialised (it
+    // resolves the current learner scope synchronously from their .value),
+    // so it runs after the Future.wait above, not inside it. Unlike
+    // CanonicalLearnerStateService below, its init() does no asset loading
+    // — just a couple of SharedPreferences reads — so it's safe to await
+    // directly rather than needing to be unawaited.
+    await ContinueLearningService.instance.init();
+    // Depends on every service above (including ContinueLearningService)
+    // already being initialised (it reads their current .value
+    // synchronously) — start it after that, not inside it. Deliberately
+    // unawaited, same reasoning as NarrationManifestService above: init()
+    // runs its synchronous snapshot recompute immediately (everything
+    // before its first `await` executes before this line returns, even
+    // unawaited), but its evidence refresh involves an async recall-card
+    // asset load that must never be able to delay app boot — or a test's
+    // simulated boot — while it loads. A consumer that needs evidence
+    // loaded before reading it awaits
+    // CanonicalLearnerStateService.refreshEvidence() itself; see
+    // CanonicalLearnerState.sessionEvidenceLoaded/recallEvidenceLoaded for
+    // checking readiness first.
     unawaited(CanonicalLearnerStateService.instance.init());
     await MarketSmoke.printStartupState();
   }
