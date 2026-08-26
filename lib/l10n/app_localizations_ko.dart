@@ -1155,6 +1155,17 @@ class AppLocalizationsKo extends AppLocalizations {
       'No questions found for this topic at this stage yet. Try a different topic or stage.';
 
   @override
+  String get practiceUnavailableTitle =>
+      'This practice area is not available yet.';
+
+  @override
+  String get practiceUnavailableAction => 'Choose a different topic';
+
+  @override
+  String get practiceEnglishContentNotice =>
+      'Practice questions are currently only available in English.';
+
+  @override
   String get mascotGreeting => 'Ready to power up your maths?';
 
   @override

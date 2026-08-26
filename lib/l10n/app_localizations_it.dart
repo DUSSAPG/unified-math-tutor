@@ -1169,6 +1169,17 @@ class AppLocalizationsIt extends AppLocalizations {
       'No questions found for this topic at this stage yet. Try a different topic or stage.';
 
   @override
+  String get practiceUnavailableTitle =>
+      'This practice area is not available yet.';
+
+  @override
+  String get practiceUnavailableAction => 'Choose a different topic';
+
+  @override
+  String get practiceEnglishContentNotice =>
+      'Practice questions are currently only available in English.';
+
+  @override
   String get mascotGreeting => 'Ready to power up your maths?';
 
   @override
@@ -5322,6 +5333,17 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
   @override
   String get practiceNoQuestions =>
       'Non sono disponibili domande di esercizio.';
+
+  @override
+  String get practiceUnavailableTitle =>
+      'Quest\'area di esercizio non è ancora disponibile.';
+
+  @override
+  String get practiceUnavailableAction => 'Scegli un altro argomento';
+
+  @override
+  String get practiceEnglishContentNotice =>
+      'Le domande di esercizio sono attualmente disponibili solo in inglese.';
 
   @override
   String get mascotGreeting => 'Pronto a fare il pieno di energia matematica?';

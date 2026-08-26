@@ -14,10 +14,10 @@ import '../../models/graph_question.dart';
 import '../../services/continue_learning_destination_resolver.dart';
 import '../../services/continue_learning_service.dart';
 import '../../services/curriculum_service.dart';
-import '../../services/jsonl_pack_loader.dart';
 import '../../services/mascot_fuel_service.dart';
 import '../../services/nav_visibility_service.dart';
 import '../../services/pack_registry_service.dart';
+import '../../services/practice_availability_resolver.dart';
 import '../../services/practice_context_service.dart';
 import '../../services/practice_pack_question_mapper.dart';
 import '../../services/session_history_service.dart';
@@ -34,7 +34,33 @@ import '../../widgets/graphs/simple_graph_card.dart';
 
 enum _PracticeMode { quickStart, topicDrill, timedChallenge, examSimulator }
 
-enum _ScreenState { setup, session, summary }
+enum _ScreenState { setup, session, summary, unavailable }
+
+/// D2 — why [_ScreenState.unavailable] is showing, so the view can show the
+/// right truthful message. Never a generic technical error either way.
+enum _UnavailableReason { stage, topic }
+
+/// `_loadSession`'s own outcome — mirrors [PracticeLoadOutcome] but carries
+/// screen-ready [QuestionItem]s/graphs on success instead of raw pack
+/// records, since mapping raw JSON into those is this screen's concern, not
+/// the resolver's.
+sealed class _ResolvedSessionOutcome {
+  const _ResolvedSessionOutcome();
+}
+
+class _ResolvedSessionReady extends _ResolvedSessionOutcome {
+  const _ResolvedSessionReady({required this.questions, required this.graphs});
+  final List<QuestionItem> questions;
+  final Map<String, GraphQuestion> graphs;
+}
+
+class _ResolvedSessionStageUnavailable extends _ResolvedSessionOutcome {
+  const _ResolvedSessionStageUnavailable();
+}
+
+class _ResolvedSessionTopicUnavailable extends _ResolvedSessionOutcome {
+  const _ResolvedSessionTopicUnavailable();
+}
 
 enum _ExamChoice {
   gcseFoundation,
@@ -123,6 +149,7 @@ class _PracticeScreenState extends State<PracticeScreen>
   static const int _secondsPerQuestion = 45;
 
   _ScreenState _screenState = _ScreenState.setup;
+  _UnavailableReason? _unavailableReason;
   _PracticeMode? _selectedMode;
   int _selectedCount = 10;
   String _selectedStage = CurriculumService.instance.stage;
@@ -331,39 +358,43 @@ class _PracticeScreenState extends State<PracticeScreen>
     _continueLearningStartedAtUtc = null;
     setState(() => _isLoading = true);
     try {
-      final questions = await _loadSession(stage, _selectedCount);
-      if (mounted) {
-        if (questions.isEmpty) {
-          setState(() => _selectedStage = stage);
-          if (_selectedMode == _PracticeMode.topicDrill) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content:
-                    Text(AppLocalizations.of(context).practiceTopicDrillEmpty),
-                behavior: SnackBarBehavior.floating,
-              ),
-            );
-          }
-          return;
-        }
-        setState(() {
-          _selectedStage = stage;
-          _questions = questions;
-          _currentIndex = 0;
-          _selectedOption = null;
-          _checked = false;
-          _correctCount = 0;
-          _answerCelebrationSerial = 0;
-          _attempts.clear();
-          _screenState = _ScreenState.session;
-        });
-        NavVisibilityService.instance.hide();
-        PracticeContextService.instance.set(PracticeContext(
-          stage: stage,
-          questionText: questions[0].question,
-          topic: questions[0].topic,
-        ));
-        _startTimerIfNeeded();
+      final outcome = await _loadSession(stage);
+      if (!mounted) return;
+      switch (outcome) {
+        case _ResolvedSessionStageUnavailable():
+          setState(() {
+            _selectedStage = stage;
+            _unavailableReason = _UnavailableReason.stage;
+            _screenState = _ScreenState.unavailable;
+          });
+        case _ResolvedSessionTopicUnavailable():
+          setState(() {
+            _selectedStage = stage;
+            _unavailableReason = _UnavailableReason.topic;
+            _screenState = _ScreenState.unavailable;
+          });
+        case _ResolvedSessionReady(:final questions, :final graphs):
+          setState(() {
+            _selectedStage = stage;
+            _questions = questions;
+            _graphsByQuestionId
+              ..clear()
+              ..addAll(graphs);
+            _currentIndex = 0;
+            _selectedOption = null;
+            _checked = false;
+            _correctCount = 0;
+            _answerCelebrationSerial = 0;
+            _attempts.clear();
+            _screenState = _ScreenState.session;
+          });
+          NavVisibilityService.instance.hide();
+          PracticeContextService.instance.set(PracticeContext(
+            stage: stage,
+            questionText: questions[0].question,
+            topic: questions[0].topic,
+          ));
+          _startTimerIfNeeded();
       }
     } catch (_) {
       // Pack failed to load — stay on setup screen; spinner clears via finally.
@@ -372,32 +403,41 @@ class _PracticeScreenState extends State<PracticeScreen>
     }
   }
 
-  Future<List<QuestionItem>> _loadSession(String stage, int count) async {
-    final pack = await PackRegistryService.instance.forStage(stage);
-    var questions = await JsonlPackLoader.instance.load(pack);
+  /// Routes to the D2 resolver by mode — Quick Start never applies a topic
+  /// filter (see `PracticeAvailabilityResolver.resolveQuickStart`); Topic
+  /// Drill (and any other topic-scoped mode reusing this same setup screen)
+  /// honours the chosen topic strictly, via the explicit mapping in
+  /// `practice_topic_mapping.dart` — never a fuzzy/fallback match. Maps the
+  /// resolver's raw records into ready-to-render [QuestionItem]s/graphs only
+  /// on a real, non-empty result.
+  Future<_ResolvedSessionOutcome> _loadSession(String stage) async {
     final topicId = widget.selectedTopicId;
-    if (_selectedMode == _PracticeMode.topicDrill && topicId != null) {
-      await TopicCatalogService.instance.load();
-      questions = questions.where((json) {
-        final rawTopic =
-            (json['topic'] ?? json['skill'] ?? json['strand'] ?? '') as String;
-        if (rawTopic.isEmpty) return false;
-        return TopicCatalogService.instance.idForRawLabel(rawTopic) == topicId;
-      }).toList();
+    final PracticeLoadOutcome outcome = _selectedMode ==
+                _PracticeMode.topicDrill &&
+            topicId != null
+        ? await PracticeAvailabilityResolver.resolveTopicDrill(stage, topicId)
+        : await PracticeAvailabilityResolver.resolveQuickStart(stage);
+
+    switch (outcome) {
+      case PracticeLoadStageUnavailable():
+        return const _ResolvedSessionStageUnavailable();
+      case PracticeLoadTopicUnavailable():
+        return const _ResolvedSessionTopicUnavailable();
+      case PracticeLoadReady(:final records):
+        final shuffled = List<Map<String, dynamic>>.of(records)..shuffle();
+        final selected = shuffled.take(_selectedCount).toList();
+        final graphs = <String, GraphQuestion>{
+          for (final json in selected)
+            if (GraphQuestion.fromQuestionJson(json) != null)
+              (json['id'] as String? ?? ''): GraphQuestion.fromQuestionJson(
+                json,
+              )!,
+        };
+        return _ResolvedSessionReady(
+          questions: selected.map(questionFromPackJson).toList(),
+          graphs: graphs,
+        );
     }
-    questions.shuffle();
-    final selected = questions.take(count).toList();
-    _graphsByQuestionId
-      ..clear()
-      ..addEntries(
-        selected.map((json) {
-          final graph = GraphQuestion.fromQuestionJson(json);
-          return graph == null
-              ? null
-              : MapEntry(json['id'] as String? ?? '', graph);
-        }).whereType<MapEntry<String, GraphQuestion>>(),
-      );
-    return selected.map(questionFromPackJson).toList();
   }
 
   void _goBack() {
@@ -413,6 +453,7 @@ class _PracticeScreenState extends State<PracticeScreen>
     _continueLearningStartedAtUtc = null;
     setState(() {
       _screenState = _ScreenState.setup;
+      _unavailableReason = null;
       _questions = [];
       _graphsByQuestionId.clear();
       _currentIndex = 0;
@@ -585,6 +626,13 @@ class _PracticeScreenState extends State<PracticeScreen>
       );
     }
 
+    if (_screenState == _ScreenState.unavailable) {
+      return _UnavailableView(
+        reason: _unavailableReason ?? _UnavailableReason.topic,
+        onBack: _goBack,
+      );
+    }
+
     if (_screenState == _ScreenState.session) {
       return PopScope(
         canPop: false,
@@ -719,6 +767,41 @@ class _SetupView extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // D2 locale truthfulness: while ENABLE_CH_PACKS stays disabled,
+          // every locale (including fr-CH/de-CH/it-CH) actually loads
+          // English pack content — this makes that explicit before either
+          // Quick Start or Topic Drill begins, rather than letting the
+          // learner's own interface language imply the questions match it.
+          // en-GB (and any other English variant) shows nothing here.
+          if (locale.languageCode != 'en')
+            Padding(
+              key: const Key('practiceEnglishContentNotice'),
+              padding: const EdgeInsets.only(bottom: 12),
+              child: Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: colors.cardSurface,
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: colors.divider),
+                ),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Icon(Icons.info_outline,
+                        size: 18, color: colors.secondaryText),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: Text(
+                        l10n.practiceEnglishContentNotice,
+                        style: TextStyle(
+                            color: colors.secondaryText, fontSize: 13),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           FutureBuilder<TopicDisplay>(
             future: selectedTopicId != null
                 ? TopicCatalogService.instance.byId(selectedTopicId!, locale)
@@ -1446,6 +1529,73 @@ class _SessionView extends StatelessWidget {
 }
 
 // ─── Summary View ─────────────────────────────────────────────────────────────
+
+/// D2 — the truthful, non-blank, non-dead-end outcome for
+/// [_ScreenState.unavailable]. Deliberately minimal: one plain-language
+/// statement of the truth, no fabricated "coming soon" promise, one
+/// existing-pattern recovery action (back to setup, where a different mode
+/// or topic can be chosen) — reuses the same visual language as
+/// [_SummaryView] rather than introducing a new app-wide error framework.
+class _UnavailableView extends StatelessWidget {
+  final _UnavailableReason reason;
+  final VoidCallback onBack;
+
+  const _UnavailableView({required this.reason, required this.onBack});
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
+    final detail = reason == _UnavailableReason.topic
+        ? l10n.practiceTopicDrillEmpty
+        : l10n.practiceNoQuestions;
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              width: 72,
+              height: 72,
+              decoration: BoxDecoration(
+                color: colors.cardSurface,
+                borderRadius: BorderRadius.circular(36),
+                border: Border.all(color: colors.divider),
+              ),
+              child: Icon(
+                Icons.search_off,
+                color: colors.secondaryText,
+                size: 36,
+              ),
+            ),
+            const SizedBox(height: 20),
+            Text(
+              l10n.practiceUnavailableTitle,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: colors.primaryText,
+                fontSize: 18,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              detail,
+              textAlign: TextAlign.center,
+              style: TextStyle(color: colors.secondaryText, fontSize: 14),
+            ),
+            const SizedBox(height: 24),
+            FilledButton(
+              onPressed: onBack,
+              child: Text(l10n.practiceUnavailableAction),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
 
 class _SummaryView extends StatelessWidget {
   final int correctCount;

@@ -2226,6 +2226,24 @@ abstract class AppLocalizations {
   /// **'No questions found for this topic at this stage yet. Try a different topic or stage.'**
   String get practiceTopicDrillEmpty;
 
+  /// No description provided for @practiceUnavailableTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'This practice area is not available yet.'**
+  String get practiceUnavailableTitle;
+
+  /// No description provided for @practiceUnavailableAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a different topic'**
+  String get practiceUnavailableAction;
+
+  /// No description provided for @practiceEnglishContentNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice questions are currently only available in English.'**
+  String get practiceEnglishContentNotice;
+
   /// No description provided for @mascotGreeting.
   ///
   /// In en, this message translates to:
