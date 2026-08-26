@@ -16,7 +16,13 @@ class _PackBundle extends CachingAssetBundle {
 }
 
 void main() {
-  const pack = PackEntry(id: 'ks5', path: 'assets/packs/en-GB/KS5.jsonl');
+  // Deliberately NOT a practice-stage id (ks2/ks3/ks4/ks5): these tests
+  // exercise pure JSONL line-parsing with minimal `{"id": ...}` fixtures
+  // that have no `options`/`answer_index` — the D1 quarantine policy (see
+  // jsonl_pack_loader_quarantine_test.dart) only applies to practice-stage
+  // packs, so using e.g. the Tutor corpus id here keeps this file testing
+  // parsing, not answer-shape validation.
+  const pack = PackEntry(id: 'all', path: 'assets/packs/en-GB/KS5.jsonl');
 
   test('parses JSONL line by line and skips blanks', () async {
     final rows = await JsonlPackLoader(

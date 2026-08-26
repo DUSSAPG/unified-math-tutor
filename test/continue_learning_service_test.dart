@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:unified_math_tutor/models/continue_learning_checkpoint.dart';
+import 'package:unified_math_tutor/models/continue_learning_resume_outcome.dart';
 import 'package:unified_math_tutor/models/continue_learning_summary.dart';
 import 'package:unified_math_tutor/services/continue_learning_service.dart';
 import 'package:unified_math_tutor/services/learner_profiles_service.dart';
@@ -395,6 +396,61 @@ void main() {
       final prefs = await SharedPreferences.getInstance();
       expect(prefs.getString('continue_learning_checkpoint_v1_device-guest'),
           isNull);
+    });
+  });
+
+  group('attemptResumePracticeSession — fail-closed restoration (D1)', () {
+    test('no checkpoint at all returns None, not a crash or an error',
+        () async {
+      await ContinueLearningService.instance.init();
+      final outcome =
+          await ContinueLearningService.instance.attemptResumePracticeSession();
+      expect(outcome, isA<ContinueLearningResumeNone>());
+    });
+
+    test(
+        'a checkpoint referencing question ids that do not exist in the '
+        'real bundled pack (a historical/unrecognised id) resolves to '
+        'Unavailable — never crashes, never resumes into substituted '
+        'content', () async {
+      await ContinueLearningService.instance.init();
+      final scope = ContinueLearningService.instance.currentLearnerScopeId;
+      // 'q1'..'q5' are not real KS2 question ids in the bundled pack — this
+      // is exactly the "historical/unrecognised id" case the fallback must
+      // handle safely.
+      await ContinueLearningService.instance
+          .saveCheckpoint(_checkpointFor(scope));
+
+      final outcome =
+          await ContinueLearningService.instance.attemptResumePracticeSession();
+
+      expect(outcome, isA<ContinueLearningResumeUnavailable>());
+    });
+
+    test(
+        'after an Unavailable outcome, the stale checkpoint has been '
+        'invalidated — a broken "Continue" affordance never lingers', () async {
+      await ContinueLearningService.instance.init();
+      final scope = ContinueLearningService.instance.currentLearnerScopeId;
+      await ContinueLearningService.instance
+          .saveCheckpoint(_checkpointFor(scope));
+      expect(ContinueLearningService.instance.status,
+          ContinueLearningEvidenceStatus.checkpointAvailable);
+
+      await ContinueLearningService.instance.attemptResumePracticeSession();
+
+      expect(ContinueLearningService.instance.status,
+          ContinueLearningEvidenceStatus.noCheckpoint);
+      expect(ContinueLearningService.instance.currentCheckpoint, isNull);
+    });
+
+    test('calling attemptResumePracticeSession before init() never throws',
+        () async {
+      // Service is deliberately left uninitialised for this one test.
+      await expectLater(
+        ContinueLearningService.instance.attemptResumePracticeSession(),
+        completion(isA<ContinueLearningResumeNone>()),
+      );
     });
   });
 }

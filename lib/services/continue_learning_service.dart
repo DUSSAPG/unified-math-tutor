@@ -5,7 +5,9 @@ import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models/continue_learning_checkpoint.dart';
+import '../models/continue_learning_resume_outcome.dart';
 import '../models/continue_learning_summary.dart';
+import 'continue_learning_destination_resolver.dart';
 import 'learner_profiles_service.dart';
 import 'learner_scope_resolver.dart';
 import 'local_account_service.dart';
@@ -194,6 +196,34 @@ class ContinueLearningService {
     await _prefs!.remove(_currentKey);
     _currentCheckpoint = null;
     updateSerial.value++;
+  }
+
+  /// Safe, all-in-one entry point for a future UI to attempt resuming the
+  /// current scope's practice-session checkpoint. Never throws — any
+  /// failure inside resolution or invalidation is caught and reported as
+  /// [ContinueLearningResumeUnavailable], the same controlled outcome as an
+  /// ordinary "content no longer exists" result, so a caller never needs
+  /// its own try/catch around this. On an unresolvable checkpoint, the
+  /// stale entry is invalidated (removed) before returning, so a broken
+  /// "Continue" affordance never lingers indefinitely — see
+  /// [ContinueLearningResumeOutcome] for why this returns a closed, typed
+  /// result rather than a nullable value or a caught exception.
+  Future<ContinueLearningResumeOutcome> attemptResumePracticeSession() async {
+    try {
+      final checkpoint = currentCheckpoint;
+      if (checkpoint == null) return const ContinueLearningResumeNone();
+      final resolved =
+          await ContinueLearningDestinationResolver.resolvePracticeSession(
+        checkpoint,
+      );
+      if (resolved != null) {
+        return ContinueLearningResumeAvailable(resolved);
+      }
+      await invalidate(checkpoint.checkpointId);
+      return const ContinueLearningResumeUnavailable();
+    } catch (_) {
+      return const ContinueLearningResumeUnavailable();
+    }
   }
 
   /// Re-reads the current scope's checkpoint from storage. Callers that
