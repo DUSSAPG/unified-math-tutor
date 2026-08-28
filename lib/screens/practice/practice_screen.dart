@@ -24,6 +24,7 @@ import '../../services/session_history_service.dart';
 import '../../services/streak_service.dart';
 import '../../services/topic_catalog_service.dart';
 import '../../shared/math_notation_formatter.dart';
+import '../../shared/responsive/app_breakpoints.dart';
 import '../../shared/theme/app_spacing.dart';
 import '../../shared/theme/app_theme.dart';
 import '../../widgets/shared/reward_confetti.dart';
@@ -162,7 +163,6 @@ class _PracticeScreenState extends State<PracticeScreen>
   int? _selectedOption;
   bool _checked = false;
   int _correctCount = 0;
-  int _answerCelebrationSerial = 0;
   final List<SessionQuestionResult> _attempts = [];
 
   Timer? _sessionTimer;
@@ -384,7 +384,6 @@ class _PracticeScreenState extends State<PracticeScreen>
             _selectedOption = null;
             _checked = false;
             _correctCount = 0;
-            _answerCelebrationSerial = 0;
             _attempts.clear();
             _screenState = _ScreenState.session;
           });
@@ -460,7 +459,6 @@ class _PracticeScreenState extends State<PracticeScreen>
       _selectedOption = null;
       _checked = false;
       _correctCount = 0;
-      _answerCelebrationSerial = 0;
       _attempts.clear();
       _secondsRemaining = null;
     });
@@ -646,7 +644,6 @@ class _PracticeScreenState extends State<PracticeScreen>
           currentIndex: _currentIndex,
           selectedOption: _selectedOption,
           checked: _checked,
-          celebrationSerial: _answerCelebrationSerial,
           onOptionSelected: (i) => setState(() => _selectedOption = i),
           onCheck: () async {
             final correct =
@@ -655,7 +652,6 @@ class _PracticeScreenState extends State<PracticeScreen>
               _checked = true;
               if (correct) {
                 _correctCount++;
-                _answerCelebrationSerial++;
               }
               _attempts.add(SessionQuestionResult(
                 question: _questions[_currentIndex].question,
@@ -1166,7 +1162,6 @@ class _SessionView extends StatelessWidget {
   final int currentIndex;
   final int? selectedOption;
   final bool checked;
-  final int celebrationSerial;
   final ValueChanged<int> onOptionSelected;
   final Future<void> Function() onCheck;
   final VoidCallback onNext;
@@ -1179,7 +1174,6 @@ class _SessionView extends StatelessWidget {
     required this.currentIndex,
     required this.selectedOption,
     required this.checked,
-    required this.celebrationSerial,
     required this.onOptionSelected,
     required this.onCheck,
     required this.onNext,
@@ -1315,8 +1309,22 @@ class _SessionView extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 12),
-            const MascotCard(compact: true),
-            const SizedBox(height: 12),
+            // D2.1 corrective pass: at Pixel 6a-class compact landscape
+            // (412px tall), the fixed-height mascot/progress card plus the
+            // top bar and topic pill left too little room for the question
+            // and answer options — real content was clipped or scrolled
+            // fully out of the initial view. The mascot card is decorative
+            // (progress/encouragement), not required to answer a question,
+            // so it's the one thing dropped here specifically to give that
+            // space back; portrait/tablet/desktop are unaffected. The
+            // learner still gets correct/incorrect signal from the
+            // per-option highlight below and, for a genuine milestone, the
+            // confetti overlay (which paints over everything, not in this
+            // fixed column, so it's unaffected by this).
+            if (!AppResponsive.isCompactLandscapePhone(context)) ...[
+              const MascotCard(compact: true),
+              const SizedBox(height: 12),
+            ],
             // Scrollable question + options
             Expanded(
               child: SingleChildScrollView(
@@ -1515,11 +1523,23 @@ class _SessionView extends StatelessWidget {
             const SizedBox(height: 8),
           ],
         ),
+        // D2.1 rewards-integrity fix: this used to fire on every correct
+        // answer via a local per-question counter — confetti belongs to a
+        // genuine milestone, not routine progress. It's now driven by
+        // MascotFuelService's own celebrationSerial, which only advances
+        // when the daily mission target is actually reached (see
+        // MascotFuelService.incrementDailyMission) — the same signal
+        // Home's daily-mission card already celebrates on. RewardConfetti
+        // itself already gates on the Rewards preference, Reduce Motion,
+        // and the platform's reduced-animations setting.
         Positioned.fill(
           child: IgnorePointer(
-            child: RewardConfetti(
-              key: ValueKey('answer-$celebrationSerial'),
-              play: celebrationSerial > 0,
+            child: ValueListenableBuilder<int>(
+              valueListenable: MascotFuelService.instance.celebrationSerial,
+              builder: (context, serial, _) => RewardConfetti(
+                key: ValueKey('mission-$serial'),
+                play: serial > 0,
+              ),
             ),
           ),
         ),

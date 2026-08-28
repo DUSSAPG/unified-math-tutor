@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
+import '../services/local_preferences_service.dart';
 import '../services/mascot_fuel_service.dart';
 import '../shared/theme/app_theme.dart';
 
@@ -35,12 +36,30 @@ class _MascotCardState extends State<MascotCard>
     MascotFuelService.instance.mascotState.addListener(_onStateChanged);
   }
 
+  // D2.1 rewards-integrity: Reduce Motion means a calm, static success/
+  // encouragement state — the message and mascot pose still update, the
+  // bounce/shake animation just doesn't play. Jumping straight to the
+  // controller's end value (rather than skipping forward() entirely)
+  // keeps the same end-of-animation visual the reduced-motion learner
+  // sees, without the motion itself.
+  bool get _reduceMotion =>
+      LocalPreferencesService.instance.reduceMotion.value ||
+      (mounted && MediaQuery.disableAnimationsOf(context));
+
+  void _playOrSettle() {
+    if (_reduceMotion) {
+      _controller.value = 1;
+    } else {
+      _controller.forward(from: 0);
+    }
+  }
+
   void _onStateChanged() {
     if (widget.state != null) return;
     final next = MascotFuelService.instance.mascotState.value;
     if (next == _lastState) return;
     _lastState = next;
-    _controller.forward(from: 0);
+    _playOrSettle();
     if (mounted) setState(() {});
   }
 
@@ -49,7 +68,7 @@ class _MascotCardState extends State<MascotCard>
     super.didUpdateWidget(oldWidget);
     if (widget.state != oldWidget.state && widget.state != null) {
       _lastState = widget.state!;
-      _controller.forward(from: 0);
+      _playOrSettle();
     }
   }
 
