@@ -2730,6 +2730,18 @@ abstract class AppLocalizations {
   /// **'More'**
   String get navMore;
 
+  /// No description provided for @navHideAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide navigation'**
+  String get navHideAction;
+
+  /// No description provided for @navShowAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Show navigation'**
+  String get navShowAction;
+
   /// No description provided for @commonCancel.
   ///
   /// In en, this message translates to:

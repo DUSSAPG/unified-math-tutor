@@ -7,6 +7,7 @@ import '../../shared/responsive/app_breakpoints.dart';
 import '../../shared/theme/app_spacing.dart';
 import '../../shared/theme/app_theme.dart';
 import '../../services/canonical_identity_resolver.dart';
+import '../../services/compact_landscape_nav_preference_service.dart';
 import '../../services/curriculum_service.dart';
 import '../../services/greeting_service.dart';
 import '../../services/learner_profiles_service.dart';
@@ -17,6 +18,7 @@ import '../../services/nav_visibility_service.dart';
 import '../../services/onboarding_profile_service.dart';
 import '../../services/streak_service.dart';
 import '../../widgets/mascot_card.dart';
+import '../../widgets/navigation/compact_landscape_nav_bar.dart';
 import '../../widgets/onboarding/who_is_learning_sheet.dart';
 import '../../widgets/shared/fade_in.dart';
 import '../../widgets/shared/reward_confetti.dart';
@@ -114,6 +116,7 @@ class AppShell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final useRail = AppResponsive.isDesktop(context);
+    final isCompactLandscape = AppResponsive.isCompactLandscapePhone(context);
     final isPhone = AppResponsive.isPhone(context);
     final contentPadding = isPhone ? AppSpacing.md : AppSpacing.lg;
     final l10n = AppLocalizations.of(context);
@@ -266,85 +269,113 @@ class AppShell extends StatelessWidget {
           ),
           bottomNavigationBar: (useRail || !showChrome)
               ? null
-              : Builder(
-                  builder: (context) {
-                    final hideLabels =
-                        MediaQuery.textScalerOf(context).scale(1.0) >
-                            _navLabelHideTextScaleThreshold;
-                    Widget navIcon(IconData icon, String label,
-                        {required bool active}) {
-                      final child = active
-                          ? _NavGlowIcon(icon: icon)
-                          : Icon(icon, size: 24);
-                      // Tooltip carries the name via long-press + screen-reader
-                      // semantics even when the visual label is hidden at large
-                      // text scale, so no information is lost — only its
-                      // always-visible rendering is.
-                      return hideLabels
-                          ? Tooltip(message: label, child: child)
-                          : child;
-                    }
-
-                    return BottomNavigationBar(
-                      type: BottomNavigationBarType.fixed,
-                      showSelectedLabels: !hideLabels,
-                      showUnselectedLabels: !hideLabels,
-                      currentIndex: currentIndex <= _branchJourney
-                          ? currentIndex
-                          : _mobileMoreSlot,
-                      onTap: (index) {
-                        if (index == _mobileMoreSlot) {
-                          _openMoreSheet(context);
-                          return;
+              : isCompactLandscape
+                  ? ValueListenableBuilder<bool>(
+                      valueListenable: CompactLandscapeNavPreferenceService
+                          .instance.collapsed,
+                      builder: (context, navCollapsed, _) => navCollapsed
+                          ? CompactLandscapeNavHandle(
+                              onShow: () => CompactLandscapeNavPreferenceService
+                                  .instance
+                                  .setCollapsed(false),
+                            )
+                          : CompactLandscapeNavBar(
+                              currentIndex: currentIndex <= _branchJourney
+                                  ? currentIndex
+                                  : _mobileMoreSlot,
+                              onDestinationSelected: (index) {
+                                if (index == _mobileMoreSlot) {
+                                  _openMoreSheet(context);
+                                  return;
+                                }
+                                _goBranch(index);
+                              },
+                              onHide: () => CompactLandscapeNavPreferenceService
+                                  .instance
+                                  .setCollapsed(true),
+                            ),
+                    )
+                  : Builder(
+                      builder: (context) {
+                        final hideLabels =
+                            MediaQuery.textScalerOf(context).scale(1.0) >
+                                _navLabelHideTextScaleThreshold;
+                        Widget navIcon(IconData icon, String label,
+                            {required bool active}) {
+                          final child = active
+                              ? _NavGlowIcon(icon: icon)
+                              : Icon(icon, size: 24);
+                          // Tooltip carries the name via long-press + screen-reader
+                          // semantics even when the visual label is hidden at large
+                          // text scale, so no information is lost — only its
+                          // always-visible rendering is.
+                          return hideLabels
+                              ? Tooltip(message: label, child: child)
+                              : child;
                         }
-                        _goBranch(index);
+
+                        return BottomNavigationBar(
+                          type: BottomNavigationBarType.fixed,
+                          showSelectedLabels: !hideLabels,
+                          showUnselectedLabels: !hideLabels,
+                          currentIndex: currentIndex <= _branchJourney
+                              ? currentIndex
+                              : _mobileMoreSlot,
+                          onTap: (index) {
+                            if (index == _mobileMoreSlot) {
+                              _openMoreSheet(context);
+                              return;
+                            }
+                            _goBranch(index);
+                          },
+                          items: [
+                            BottomNavigationBarItem(
+                              icon: navIcon(LucideIcons.home, l10n.navHome,
+                                  active: false),
+                              activeIcon: navIcon(
+                                  LucideIcons.home, l10n.navHome,
+                                  active: true),
+                              label: l10n.navHome,
+                            ),
+                            BottomNavigationBarItem(
+                              icon: navIcon(
+                                  LucideIcons.bookOpen, l10n.navTopics,
+                                  active: false),
+                              activeIcon: navIcon(
+                                  LucideIcons.bookOpen, l10n.navTopics,
+                                  active: true),
+                              label: l10n.navTopics,
+                            ),
+                            BottomNavigationBarItem(
+                              icon: navIcon(
+                                  LucideIcons.calculator, l10n.navPractice,
+                                  active: false),
+                              activeIcon: navIcon(
+                                  LucideIcons.calculator, l10n.navPractice,
+                                  active: true),
+                              label: l10n.navPractice,
+                            ),
+                            BottomNavigationBarItem(
+                              icon: navIcon(LucideIcons.flame, l10n.navJourney,
+                                  active: false),
+                              activeIcon: navIcon(
+                                  LucideIcons.flame, l10n.navJourney,
+                                  active: true),
+                              label: l10n.navJourney,
+                            ),
+                            BottomNavigationBarItem(
+                              icon: navIcon(
+                                  LucideIcons.moreHorizontal, l10n.navMore,
+                                  active: false),
+                              activeIcon: navIcon(
+                                  LucideIcons.moreHorizontal, l10n.navMore,
+                                  active: true),
+                              label: l10n.navMore,
+                            ),
+                          ],
+                        );
                       },
-                      items: [
-                        BottomNavigationBarItem(
-                          icon: navIcon(LucideIcons.home, l10n.navHome,
-                              active: false),
-                          activeIcon: navIcon(LucideIcons.home, l10n.navHome,
-                              active: true),
-                          label: l10n.navHome,
-                        ),
-                        BottomNavigationBarItem(
-                          icon: navIcon(LucideIcons.bookOpen, l10n.navTopics,
-                              active: false),
-                          activeIcon: navIcon(
-                              LucideIcons.bookOpen, l10n.navTopics,
-                              active: true),
-                          label: l10n.navTopics,
-                        ),
-                        BottomNavigationBarItem(
-                          icon: navIcon(
-                              LucideIcons.calculator, l10n.navPractice,
-                              active: false),
-                          activeIcon: navIcon(
-                              LucideIcons.calculator, l10n.navPractice,
-                              active: true),
-                          label: l10n.navPractice,
-                        ),
-                        BottomNavigationBarItem(
-                          icon: navIcon(LucideIcons.flame, l10n.navJourney,
-                              active: false),
-                          activeIcon: navIcon(
-                              LucideIcons.flame, l10n.navJourney,
-                              active: true),
-                          label: l10n.navJourney,
-                        ),
-                        BottomNavigationBarItem(
-                          icon: navIcon(
-                              LucideIcons.moreHorizontal, l10n.navMore,
-                              active: false),
-                          activeIcon: navIcon(
-                              LucideIcons.moreHorizontal, l10n.navMore,
-                              active: true),
-                          label: l10n.navMore,
-                        ),
-                      ],
-                    );
-                  },
-                ),
+                    ),
         );
       },
     );

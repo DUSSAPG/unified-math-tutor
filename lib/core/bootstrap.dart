@@ -3,6 +3,7 @@ import 'dart:async';
 import 'market/market_smoke.dart';
 import '../services/aircraft_landing_lab_progress_service.dart';
 import '../services/canonical_learner_state_service.dart';
+import '../services/compact_landscape_nav_preference_service.dart';
 import '../services/continue_learning_service.dart';
 import '../services/entrance_exam_progress_service.dart';
 import '../services/feed_the_hungry_panda_progress_service.dart';
@@ -57,6 +58,7 @@ class AppBootstrap {
       AircraftLandingLabProgressService.instance.init(),
       SpatialCubeLabProgressService.instance.init(),
       EntranceExamProgressService.instance.init(),
+      CompactLandscapeNavPreferenceService.instance.init(),
     ]);
     // ContinueLearningService needs OnboardingProfileService/
     // LearnerProfilesService/LocalAccountService already initialised (it

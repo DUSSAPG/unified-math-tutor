@@ -1436,6 +1436,12 @@ class AppLocalizationsEs extends AppLocalizations {
   String get navMore => 'More';
 
   @override
+  String get navHideAction => 'Hide navigation';
+
+  @override
+  String get navShowAction => 'Show navigation';
+
+  @override
   String get commonCancel => 'Cancel';
 
   @override

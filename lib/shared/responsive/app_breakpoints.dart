@@ -23,6 +23,18 @@ class AppResponsive {
     return MediaQuery.sizeOf(context).width >= 1024;
   }
 
+  /// D2.1 — a phone-class viewport, in landscape orientation, short enough
+  /// that the ordinary portrait BottomNavigationBar plus an AppBar leaves
+  /// too little height for real content (confirmed on a Pixel 6a-class
+  /// 915x412 landscape viewport). Tablets in landscape (e.g. 1024x768) stay
+  /// well above this height and are unaffected — they already get
+  /// [isDesktop]'s NavigationRail treatment or, below that width, simply
+  /// keep the standard bar since they have the height to spare.
+  static bool isCompactLandscapePhone(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
+    return !isDesktop(context) && size.width > size.height && size.height < 500;
+  }
+
   /// Phones get the screen's full width (no cap). Tablets and desktop get a
   /// comfortable capped reading width instead of stretching cards edge to
   /// edge or floating a phone-narrow column in the middle of a large screen.

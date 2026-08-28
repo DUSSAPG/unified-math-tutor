@@ -10,6 +10,7 @@ import 'package:unified_math_tutor/services/local_preferences_service.dart';
 import 'package:unified_math_tutor/services/mascot_fuel_service.dart';
 import 'package:unified_math_tutor/services/streak_service.dart';
 import 'package:unified_math_tutor/services/tutor_credit_service.dart';
+import 'package:unified_math_tutor/widgets/navigation/compact_landscape_nav_bar.dart';
 
 void main() {
   const locales = [
@@ -64,15 +65,32 @@ void main() {
     return l10n;
   }
 
+  // D2.1: a compact-landscape viewport (see compact_landscape_nav_test.dart)
+  // presents CompactLandscapeNavBar instead of the portrait
+  // BottomNavigationBar — this helper triggers "More" through whichever one
+  // is actually on screen, matching each presentation's own affordance
+  // (a labelled tab in the bar vs. an icon reached by its Tooltip).
   Future<void> openMobileMoreSheet(
       WidgetTester tester, AppLocalizations l10n) async {
-    expect(find.byType(BottomNavigationBar), findsOneWidget);
-    await tester.tap(
-      find.descendant(
-        of: find.byType(BottomNavigationBar),
-        matching: find.text(l10n.navMore),
-      ),
-    );
+    final compactBar = find.byType(CompactLandscapeNavBar);
+    if (compactBar.evaluate().isNotEmpty) {
+      await tester.tap(
+        find.descendant(
+          of: compactBar,
+          matching: find.byWidgetPredicate(
+            (w) => w is Tooltip && w.message == l10n.navMore,
+          ),
+        ),
+      );
+    } else {
+      expect(find.byType(BottomNavigationBar), findsOneWidget);
+      await tester.tap(
+        find.descendant(
+          of: find.byType(BottomNavigationBar),
+          matching: find.text(l10n.navMore),
+        ),
+      );
+    }
     await tester.pumpAndSettle();
     expect(find.byKey(const Key('homeMoreSheetScrollView')), findsOneWidget);
   }
