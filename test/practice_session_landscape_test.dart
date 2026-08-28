@@ -189,4 +189,127 @@ void main() {
     expect(tester.takeException(), isNull);
     expect(find.text(l10n.practiceNextQuestion), findsOneWidget);
   });
+
+  group('compact-landscape inline correct-answer badge', () {
+    const badgeKey = Key('compactCorrectBadge');
+
+    testWidgets(
+        'appears after a correct answer at Pixel 6a landscape, and does '
+        'not cover the question, options, or Next Question', (tester) async {
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+      tester.view.physicalSize = _pixel6aLandscape;
+      tester.view.devicePixelRatio = 1;
+
+      final resume = await _realResumeFor(tester, 'KS2');
+      final l10n = lookupAppLocalizations(const Locale('en'));
+      await tester.pumpWidget(_wrap(PracticeScreen(
+          key: const ValueKey('KS2-badge-landscape'), resumeFrom: resume)));
+      await tester.pumpAndSettle();
+
+      expect(find.byKey(badgeKey), findsNothing,
+          reason: 'no badge before an answer is checked');
+
+      final correctIndex = resume.questions.first.correctIndex;
+      final correctOption = find.byKey(Key('practiceOption$correctIndex'));
+      await tester.ensureVisible(correctOption);
+      await tester.tap(correctOption);
+      await tester.pump();
+      await tester.tap(find.text(l10n.practiceCheckAnswer));
+      await tester.pumpAndSettle();
+
+      final badge = find.byKey(badgeKey);
+      expect(badge, findsOneWidget);
+      expect(find.text(l10n.mascotSuccess), findsOneWidget);
+
+      // Not an overlay: it must not overlap the Next Question button or
+      // push it outside the viewport.
+      final badgeRect = tester.getRect(badge);
+      final nextRect = tester.getRect(find.text(l10n.practiceNextQuestion));
+      expect(badgeRect.overlaps(nextRect), isFalse);
+      expect(nextRect.bottom, lessThanOrEqualTo(_pixel6aLandscape.height));
+      expect(nextRect.top, greaterThanOrEqualTo(0));
+      // And never the fixed-height card this replaces.
+      expect(find.byType(MascotCard), findsNothing);
+    });
+
+    testWidgets('does not appear for an incorrect answer', (tester) async {
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+      tester.view.physicalSize = _pixel6aLandscape;
+      tester.view.devicePixelRatio = 1;
+
+      final resume = await _realResumeFor(tester, 'KS3');
+      final l10n = lookupAppLocalizations(const Locale('en'));
+      await tester.pumpWidget(_wrap(PracticeScreen(
+          key: const ValueKey('KS3-badge-wrong'), resumeFrom: resume)));
+      await tester.pumpAndSettle();
+
+      final wrongIndex = (resume.questions.first.correctIndex + 1) %
+          resume.questions.first.options.length;
+      final wrongOption = find.byKey(Key('practiceOption$wrongIndex'));
+      await tester.ensureVisible(wrongOption);
+      await tester.tap(wrongOption);
+      await tester.pump();
+      await tester.tap(find.text(l10n.practiceCheckAnswer));
+      await tester.pumpAndSettle();
+
+      expect(find.byKey(badgeKey), findsNothing);
+    });
+
+    testWidgets(
+        'Reduce Motion still shows the badge (calm recognition, no '
+        'animated transition needed to be visible)', (tester) async {
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+      tester.view.physicalSize = _pixel6aLandscape;
+      tester.view.devicePixelRatio = 1;
+      await LocalPreferencesService.instance.setReduceMotion(true);
+
+      final resume = await _realResumeFor(tester, 'KS2');
+      final l10n = lookupAppLocalizations(const Locale('en'));
+      await tester.pumpWidget(_wrap(PracticeScreen(
+          key: const ValueKey('KS2-badge-reduced'), resumeFrom: resume)));
+      await tester.pumpAndSettle();
+
+      final correctIndex = resume.questions.first.correctIndex;
+      final correctOption = find.byKey(Key('practiceOption$correctIndex'));
+      await tester.ensureVisible(correctOption);
+      await tester.tap(correctOption);
+      await tester.pump();
+      await tester.tap(find.text(l10n.practiceCheckAnswer));
+      // A single pump (not pumpAndSettle) is enough with Reduce Motion,
+      // since the transition duration is zero — proves it isn't waiting
+      // on an animation to become visible.
+      await tester.pump();
+
+      expect(find.byKey(badgeKey), findsOneWidget);
+    });
+
+    testWidgets(
+        'portrait Pixel 6a shows the full MascotCard instead — the badge '
+        'is landscape-only, matching the fix it replaces', (tester) async {
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+      tester.view.physicalSize = _pixel6aPortrait;
+      tester.view.devicePixelRatio = 1;
+
+      final resume = await _realResumeFor(tester, 'KS2');
+      final l10n = lookupAppLocalizations(const Locale('en'));
+      await tester.pumpWidget(_wrap(PracticeScreen(
+          key: const ValueKey('KS2-badge-portrait'), resumeFrom: resume)));
+      await tester.pumpAndSettle();
+
+      final correctIndex = resume.questions.first.correctIndex;
+      final correctOption = find.byKey(Key('practiceOption$correctIndex'));
+      await tester.ensureVisible(correctOption);
+      await tester.tap(correctOption);
+      await tester.pump();
+      await tester.tap(find.text(l10n.practiceCheckAnswer));
+      await tester.pumpAndSettle();
+
+      expect(find.byType(MascotCard), findsOneWidget);
+      expect(find.byKey(badgeKey), findsNothing);
+    });
+  });
 }

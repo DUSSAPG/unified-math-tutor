@@ -14,6 +14,7 @@ import '../../models/graph_question.dart';
 import '../../services/continue_learning_destination_resolver.dart';
 import '../../services/continue_learning_service.dart';
 import '../../services/curriculum_service.dart';
+import '../../services/local_preferences_service.dart';
 import '../../services/mascot_fuel_service.dart';
 import '../../services/nav_visibility_service.dart';
 import '../../services/pack_registry_service.dart';
@@ -1196,6 +1197,7 @@ class _SessionView extends StatelessWidget {
     final question = questions[currentIndex];
     final graph = graphsByQuestionId[question.id];
     final isLast = currentIndex == questions.length - 1;
+    final isCorrectAnswer = checked && selectedOption == question.correctIndex;
 
     return Stack(
       children: [
@@ -1324,6 +1326,16 @@ class _SessionView extends StatelessWidget {
             if (!AppResponsive.isCompactLandscapePhone(context)) ...[
               const MascotCard(compact: true),
               const SizedBox(height: 12),
+            ] else if (isCorrectAnswer) ...[
+              // The full mascot card is gone at this viewport (see above),
+              // but a correct answer still deserves visible recognition —
+              // a small inline badge, not the fixed-height card, and never
+              // confetti (confetti stays reserved for genuine milestones,
+              // via MascotFuelService.celebrationSerial below). Inline in
+              // this Column, not an overlay, so it can never cover the
+              // question, options, or the Check/Next/Finish button.
+              const _CompactCorrectBadge(),
+              const SizedBox(height: 10),
             ],
             // Scrollable question + options
             Expanded(
@@ -1544,6 +1556,60 @@ class _SessionView extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+/// D2.1 — the compact-landscape replacement for MascotCard's correct-
+/// answer recognition: a small, inline, non-blocking badge (icon + the
+/// same `mascotSuccess` message the full card already shows), never an
+/// overlay, so it can never sit over the question, options, or the
+/// Check/Next/Finish button — it just takes its own modest row height in
+/// the same Column those controls are in. Deliberately separate from
+/// [RewardConfetti]: this shows on every correct answer (routine positive
+/// feedback), confetti stays reserved for a genuine milestone.
+class _CompactCorrectBadge extends StatelessWidget {
+  const _CompactCorrectBadge();
+
+  bool get _reduceMotion => LocalPreferencesService.instance.reduceMotion.value;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
+    return AnimatedSwitcher(
+      duration: _reduceMotion || MediaQuery.disableAnimationsOf(context)
+          ? Duration.zero
+          : const Duration(milliseconds: 200),
+      child: Container(
+        key: const Key('compactCorrectBadge'),
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+        decoration: BoxDecoration(
+          color: colors.success.withValues(alpha: 0.14),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: colors.success.withValues(alpha: 0.4)),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(Icons.sentiment_satisfied_alt,
+                color: colors.success, size: 20),
+            const SizedBox(width: 8),
+            Flexible(
+              child: Text(
+                l10n.mascotSuccess,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  color: colors.success,
+                  fontSize: 13,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
