@@ -28,17 +28,27 @@ void main() {
           widget.painter.runtimeType.toString() == '_ConfettiPainter',
     );
 
+    // Each call mounts a brand-new RewardConfetti (fresh key), standing in
+    // for a widget created specifically for an event that just happened —
+    // hence autoplayOnMount: true (see reward_confetti.dart class doc).
+    // This is deliberately NOT the default (serial-delta) contract: this
+    // test is purely about preference gating, not trigger detection.
     Future<void> pumpConfetti(String state) => tester.pumpWidget(
           MaterialApp(
             home: Scaffold(
               body: SizedBox.expand(
-                child: RewardConfetti(key: ValueKey('celebration-$state')),
+                child: RewardConfetti(
+                  key: ValueKey('celebration-$state'),
+                  serial: 1,
+                  autoplayOnMount: true,
+                ),
               ),
             ),
           ),
         );
 
     await pumpConfetti('off-1');
+    await tester.pump();
     expect(
       confettiPaint,
       findsNothing,
@@ -46,6 +56,7 @@ void main() {
 
     await prefs.setRewardsEnabled(true);
     await pumpConfetti('on');
+    await tester.pump();
     expect(
       confettiPaint,
       findsOneWidget,
@@ -53,6 +64,7 @@ void main() {
 
     await prefs.setRewardsEnabled(false);
     await pumpConfetti('off-2');
+    await tester.pump();
     expect(
       confettiPaint,
       findsNothing,

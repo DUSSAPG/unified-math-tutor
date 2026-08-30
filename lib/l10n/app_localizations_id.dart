@@ -1178,6 +1178,17 @@ class AppLocalizationsId extends AppLocalizations {
       'Practice questions are currently only available in English.';
 
   @override
+  String practiceTopicUnavailableForStage(
+      String topic, String stage, String stages) {
+    return '$topic isn\'t available for $stage yet — try $stages.';
+  }
+
+  @override
+  String practiceTopicUnavailableEverywhere(String topic) {
+    return '$topic isn\'t available for practice yet in any stage.';
+  }
+
+  @override
   String get mascotGreeting => 'Ready to power up your maths?';
 
   @override
@@ -1297,6 +1308,11 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get homeRewardsOff => 'Rewards off';
+
+  @override
+  String homeThemeToggleSemanticLabel(String mode) {
+    return 'Theme: $mode. Change theme';
+  }
 
   @override
   String get homeBadgeFirstSession => 'First session';

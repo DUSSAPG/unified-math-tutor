@@ -272,6 +272,28 @@
   "practiceUnavailableTitle": "Quest'area di esercizio non è ancora disponibile.",
   "practiceUnavailableAction": "Scegli un altro argomento",
   "practiceEnglishContentNotice": "Le domande di esercizio sono attualmente disponibili solo in inglese.",
+  "practiceTopicUnavailableForStage": "{topic} non è ancora disponibile per {stage} — prova {stages}.",
+  "@practiceTopicUnavailableForStage": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      },
+      "stage": {
+        "type": "String"
+      },
+      "stages": {
+        "type": "String"
+      }
+    }
+  },
+  "practiceTopicUnavailableEverywhere": "{topic} non è ancora disponibile per nessun livello.",
+  "@practiceTopicUnavailableEverywhere": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
   "mascotGreeting": "Pronto a fare il pieno di energia matematica?",
   "mascotThinking": "Prenditi il tuo tempo e rifletti bene!",
   "mascotSuccess": "Ottimo calcolo! Energia aggiunta.",
@@ -309,6 +331,14 @@
   "homeMilestone": "Traguardo di {days} giorni",
   "homeRewardsOn": "Ricompense attive",
   "homeRewardsOff": "Ricompense disattivate",
+  "homeThemeToggleSemanticLabel": "Tema: {mode}. Cambia tema",
+  "@homeThemeToggleSemanticLabel": {
+    "placeholders": {
+      "mode": {
+        "type": "String"
+      }
+    }
+  },
   "homeBadgeFirstSession": "Prima sessione",
   "homeBadgeTenQuestions": "10 domande",
   "homeBadgeAlgebraStarter": "Inizio algebra",

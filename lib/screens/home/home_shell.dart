@@ -590,6 +590,7 @@ class _HomeContentState extends State<_HomeContent> {
               children: [
                 _StreakBadge(),
                 _RewardsChip(),
+                _ThemeQuickToggle(),
               ],
             ),
             const SizedBox(height: AppSpacing.sm),
@@ -903,9 +904,13 @@ class _DailyMissionCard extends StatelessWidget {
             child: IgnorePointer(
               child: ValueListenableBuilder<int>(
                 valueListenable: service.celebrationSerial,
+                // No per-value Key here: the same RewardConfetti State
+                // must stay mounted across serial changes so its
+                // didUpdateWidget can tell "a new milestone just fired"
+                // apart from "this widget just mounted" — see
+                // reward_confetti.dart's class doc.
                 builder: (context, serial, _) => RewardConfetti(
-                  key: ValueKey('mission-$serial'),
-                  play: serial > 0,
+                  serial: serial,
                 ),
               ),
             ),
@@ -1144,8 +1149,11 @@ class _StreakBadge extends StatelessWidget {
               child: IgnorePointer(
                 child: ValueListenableBuilder<int>(
                   valueListenable: StreakService.instance.celebrationSerial,
+                  // No per-value Key — see the note on the daily-mission
+                  // confetti above; a stable State is required for
+                  // didUpdateWidget to detect genuine new triggers.
                   builder: (context, serial, _) =>
-                      RewardConfetti(key: ValueKey(serial), play: serial > 0),
+                      RewardConfetti(serial: serial),
                 ),
               ),
             ),
@@ -1190,6 +1198,104 @@ class _RewardsChip extends StatelessWidget {
         ),
         onSelected: prefs.setRewardsEnabled,
       ),
+    );
+  }
+}
+
+/// Home-screen quick toggle for the app's single theme authority
+/// (LocalPreferencesService.instance.themeMode — the same ValueNotifier
+/// AppearanceScreen reads and writes, so the two are always in sync with
+/// no extra plumbing). Cycles Light → Dark → System on tap, applies and
+/// persists immediately via setThemeMode.
+class _ThemeQuickToggle extends StatelessWidget {
+  const _ThemeQuickToggle();
+
+  static const List<ThemeMode> _cycle = [
+    ThemeMode.light,
+    ThemeMode.dark,
+    ThemeMode.system,
+  ];
+
+  static IconData _iconFor(ThemeMode mode) => switch (mode) {
+        ThemeMode.light => Icons.light_mode,
+        ThemeMode.dark => Icons.dark_mode,
+        ThemeMode.system => Icons.brightness_auto,
+      };
+
+  static String _labelFor(AppLocalizations l10n, ThemeMode mode) =>
+      switch (mode) {
+        ThemeMode.light => l10n.appearanceThemeLight,
+        ThemeMode.dark => l10n.appearanceThemeDark,
+        ThemeMode.system => l10n.appearanceThemeSystem,
+      };
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = context.appColors;
+    final l10n = AppLocalizations.of(context);
+    return ValueListenableBuilder<ThemeMode>(
+      valueListenable: LocalPreferencesService.instance.themeMode,
+      builder: (context, mode, _) {
+        final label = _labelFor(l10n, mode);
+        void cycle() {
+          final next = _cycle[(_cycle.indexOf(mode) + 1) % _cycle.length];
+          LocalPreferencesService.instance.setThemeMode(next);
+        }
+
+        // A precise, stateful announcement ("Theme: Dark. Change theme")
+        // rather than just the visible word. Built by hand instead of
+        // ActionChip: an ActionChip is its own semantics container, so an
+        // ancestor Semantics(label:) sits beside it as a second node
+        // instead of describing it — MergeSemantics only folds the two
+        // together correctly when the descendant's own label is silenced
+        // (ExcludeSemantics) first, which needs a Material/InkWell of our
+        // own to still expose the real tap + keyboard-focus actions.
+        return MergeSemantics(
+          child: Semantics(
+            button: true,
+            label: l10n.homeThemeToggleSemanticLabel(label),
+            child: Material(
+              color: colors.elevatedSurface,
+              borderRadius: BorderRadius.circular(20),
+              child: InkWell(
+                borderRadius: BorderRadius.circular(20),
+                onTap: cycle,
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 8,
+                  ),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(color: colors.divider),
+                  ),
+                  child: ExcludeSemantics(
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          _iconFor(mode),
+                          size: 15,
+                          color: colors.secondaryText,
+                        ),
+                        const SizedBox(width: 6),
+                        Text(
+                          label,
+                          style: TextStyle(
+                            color: colors.primaryText,
+                            fontSize: 13,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }

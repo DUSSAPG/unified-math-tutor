@@ -2244,6 +2244,19 @@ abstract class AppLocalizations {
   /// **'Practice questions are currently only available in English.'**
   String get practiceEnglishContentNotice;
 
+  /// Shown in Topic Drill setup when the chosen topic has no real questions for the currently selected stage but does for at least one other stage
+  ///
+  /// In en, this message translates to:
+  /// **'{topic} isn\'t available for {stage} yet — try {stages}.'**
+  String practiceTopicUnavailableForStage(
+      String topic, String stage, String stages);
+
+  /// Shown in Topic Drill setup when the chosen topic has no real questions in any stage
+  ///
+  /// In en, this message translates to:
+  /// **'{topic} isn\'t available for practice yet in any stage.'**
+  String practiceTopicUnavailableEverywhere(String topic);
+
   /// No description provided for @mascotGreeting.
   ///
   /// In en, this message translates to:
@@ -2465,6 +2478,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Rewards off'**
   String get homeRewardsOff;
+
+  /// Accessible label for the Home screen's theme quick-toggle, announcing the current mode and that activating it changes the theme
+  ///
+  /// In en, this message translates to:
+  /// **'Theme: {mode}. Change theme'**
+  String homeThemeToggleSemanticLabel(String mode);
 
   /// No description provided for @homeBadgeFirstSession.
   ///

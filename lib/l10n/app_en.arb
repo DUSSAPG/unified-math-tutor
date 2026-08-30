@@ -846,6 +846,30 @@
   "@practiceUnavailableAction": {},
   "practiceEnglishContentNotice": "Practice questions are currently only available in English.",
   "@practiceEnglishContentNotice": {},
+  "practiceTopicUnavailableForStage": "{topic} isn't available for {stage} yet — try {stages}.",
+  "@practiceTopicUnavailableForStage": {
+    "description": "Shown in Topic Drill setup when the chosen topic has no real questions for the currently selected stage but does for at least one other stage",
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      },
+      "stage": {
+        "type": "String"
+      },
+      "stages": {
+        "type": "String"
+      }
+    }
+  },
+  "practiceTopicUnavailableEverywhere": "{topic} isn't available for practice yet in any stage.",
+  "@practiceTopicUnavailableEverywhere": {
+    "description": "Shown in Topic Drill setup when the chosen topic has no real questions in any stage",
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
   "mascotGreeting": "Ready to power up your maths?",
   "mascotThinking": "Take your time. Think it through!",
   "mascotSuccess": "Great calculation! Fuel added.",
@@ -904,6 +928,15 @@
   },
   "homeRewardsOn": "Rewards on",
   "homeRewardsOff": "Rewards off",
+  "homeThemeToggleSemanticLabel": "Theme: {mode}. Change theme",
+  "@homeThemeToggleSemanticLabel": {
+    "description": "Accessible label for the Home screen's theme quick-toggle, announcing the current mode and that activating it changes the theme",
+    "placeholders": {
+      "mode": {
+        "type": "String"
+      }
+    }
+  },
   "homeBadgeFirstSession": "First session",
   "homeBadgeTenQuestions": "10 questions",
   "homeBadgeAlgebraStarter": "Algebra starter",

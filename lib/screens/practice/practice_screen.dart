@@ -158,6 +158,16 @@ class _PracticeScreenState extends State<PracticeScreen>
   _ExamChoice? _selectedExam;
   bool _isLoading = false;
 
+  // Topic Drill truthfulness: which stages actually have real, non-
+  // quarantined questions for widget.selectedTopicId, per the same D2
+  // resolver _startSession itself uses — computed once up front so setup
+  // can refuse to let Start be pressed (and greys out any stage chip that
+  // isn't real) for a combination that would only ever land on the
+  // Unavailable screen. null means "not computed yet" (still loading, or
+  // this isn't a topic-scoped entry at all).
+  Map<String, bool>? _topicDrillAvailabilityByStage;
+  bool _topicDrillAvailabilityLoading = false;
+
   List<QuestionItem> _questions = [];
   final Map<String, GraphQuestion> _graphsByQuestionId = {};
   int _currentIndex = 0;
@@ -193,7 +203,40 @@ class _PracticeScreenState extends State<PracticeScreen>
     } else if (widget.selectedTopicId != null || widget.selectedTopic != null) {
       // Arrived from the Topics selector with a topic already chosen.
       _selectedMode = _PracticeMode.topicDrill;
+      if (widget.selectedTopicId != null) {
+        WidgetsBinding.instance
+            .addPostFrameCallback((_) => _loadTopicDrillAvailability());
+      }
     }
+  }
+
+  /// Topic Drill truthfulness: resolves, once, whether
+  /// [PracticeScreen.selectedTopicId] actually has real questions in each
+  /// of the app's stages, via the exact same resolver `_startSession` uses
+  /// to build a session — never a separate guess. Populates
+  /// [_topicDrillAvailabilityByStage] so `build()` can keep Start disabled
+  /// (and the stage picker from offering a stage that would only ever
+  /// fail) for a stage/topic pairing with zero matching questions, instead
+  /// of letting the learner discover that only after pressing Start.
+  Future<void> _loadTopicDrillAvailability() async {
+    final topicId = widget.selectedTopicId;
+    if (topicId == null) return;
+    setState(() => _topicDrillAvailabilityLoading = true);
+    final stages = PackRegistryService.practiceStages;
+    final outcomes = await Future.wait(
+      stages.map((s) => PracticeAvailabilityResolver.resolveTopicDrill(
+            s,
+            topicId,
+          )),
+    );
+    if (!mounted) return;
+    setState(() {
+      _topicDrillAvailabilityByStage = {
+        for (var i = 0; i < stages.length; i++)
+          stages[i]: outcomes[i] is PracticeLoadReady,
+      };
+      _topicDrillAvailabilityLoading = false;
+    });
   }
 
   /// Jumps directly into session state from a validated
@@ -614,8 +657,17 @@ class _PracticeScreenState extends State<PracticeScreen>
 
     final examSelectionValid = _selectedExam != null &&
         _examChoiceAvailable(_selectedExam!, effectiveStage);
+    // Topic Drill truthfulness: only gates when a topic was actually chosen
+    // (widget.selectedTopicId != null) — Quick Start/Timed Challenge/Exam
+    // Simulator never filter by topic, so they're unaffected.
+    final isTopicDrillWithTopic = _selectedMode == _PracticeMode.topicDrill &&
+        widget.selectedTopicId != null;
+    final topicDrillStageReady = !isTopicDrillWithTopic ||
+        (_topicDrillAvailabilityByStage?[effectiveStage] ?? false);
     final canStart = _selectedMode != null &&
-        (_selectedMode != _PracticeMode.examSimulator || examSelectionValid);
+        (_selectedMode != _PracticeMode.examSimulator || examSelectionValid) &&
+        (!isTopicDrillWithTopic ||
+            (!_topicDrillAvailabilityLoading && topicDrillStageReady));
 
     if (_screenState == _ScreenState.summary) {
       return _SummaryView(
@@ -701,6 +753,8 @@ class _PracticeScreenState extends State<PracticeScreen>
       counts: _counts,
       stages: PackRegistryService.practiceStages,
       modes: modes,
+      topicDrillAvailabilityByStage: _topicDrillAvailabilityByStage,
+      topicDrillAvailabilityLoading: _topicDrillAvailabilityLoading,
     );
   }
 }
@@ -725,6 +779,11 @@ class _SetupView extends StatelessWidget {
   final List<int> counts;
   final List<String> stages;
   final List<(_PracticeMode, String, String, IconData)> modes;
+  // Topic Drill truthfulness: stage -> "has real questions for
+  // selectedTopicId", from the same D2 resolver a real session load uses.
+  // null while not yet computed (or not a topic-scoped entry at all).
+  final Map<String, bool>? topicDrillAvailabilityByStage;
+  final bool topicDrillAvailabilityLoading;
 
   const _SetupView({
     required this.selectedTopic,
@@ -744,6 +803,8 @@ class _SetupView extends StatelessWidget {
     required this.counts,
     required this.stages,
     required this.modes,
+    required this.topicDrillAvailabilityByStage,
+    required this.topicDrillAvailabilityLoading,
   });
 
   @override
@@ -812,13 +873,28 @@ class _SetupView extends StatelessWidget {
               final title = snapshot.data?.title ??
                   selectedTopic ??
                   l10n.practiceMixedReview;
-              return Text(
-                title,
-                style: TextStyle(
-                  color: colors.accent,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                ),
+              final notice = _topicAvailabilityNotice(
+                l10n: l10n,
+                colors: colors,
+                topicTitle: title,
+                effectiveStage: effectiveStage,
+              );
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(
+                      color: colors.accent,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  if (notice != null) ...[
+                    const SizedBox(height: 8),
+                    notice,
+                  ],
+                ],
               );
             },
           ),
@@ -840,27 +916,42 @@ class _SetupView extends StatelessWidget {
               runSpacing: 8,
               children: stages.map((stage) {
                 final sel = stage == effectiveStage;
-                return GestureDetector(
-                  onTap: () => onStageSelected(stage),
-                  child: Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
-                    decoration: BoxDecoration(
-                      color: sel
-                          ? colors.primaryAction.withValues(alpha: 0.14)
-                          : colors.cardSurface,
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(
-                        color: sel ? colors.accent : colors.divider,
-                        width: sel ? 2 : 1,
+                // Topic Drill truthfulness: once availability is known, a
+                // stage with zero real questions for this topic is shown
+                // dimmed and made non-tappable — never silently jumped
+                // past, never selectable into a dead end. While still
+                // loading (topicDrillAvailabilityByStage == null), every
+                // stage stays fully interactive rather than flashing a
+                // wrong disabled state.
+                final gated = selectedTopicId != null &&
+                    selectedMode == _PracticeMode.topicDrill;
+                final available = !gated ||
+                    topicDrillAvailabilityByStage == null ||
+                    (topicDrillAvailabilityByStage![stage] ?? true);
+                return Opacity(
+                  opacity: available ? 1 : 0.4,
+                  child: GestureDetector(
+                    onTap: available ? () => onStageSelected(stage) : null,
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 14, vertical: 6),
+                      decoration: BoxDecoration(
+                        color: sel
+                            ? colors.primaryAction.withValues(alpha: 0.14)
+                            : colors.cardSurface,
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(
+                          color: sel ? colors.accent : colors.divider,
+                          width: sel ? 2 : 1,
+                        ),
                       ),
-                    ),
-                    child: Text(
-                      stage,
-                      style: TextStyle(
-                        color: sel ? colors.accent : colors.secondaryText,
-                        fontSize: 13,
-                        fontWeight: FontWeight.w500,
+                      child: Text(
+                        stage,
+                        style: TextStyle(
+                          color: sel ? colors.accent : colors.secondaryText,
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
                   ),
@@ -1063,6 +1154,57 @@ class _SetupView extends StatelessWidget {
                         const Icon(Icons.arrow_forward, size: 18),
                       ],
                     ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  /// Topic Drill truthfulness: a small, honest inline explanation for why
+  /// Start is currently disabled — never a silent dead end. Returns null
+  /// whenever there's nothing to say: not a topic-scoped entry, the
+  /// resolver hasn't finished yet, or the currently selected stage
+  /// genuinely does have real content for this topic.
+  Widget? _topicAvailabilityNotice({
+    required AppLocalizations l10n,
+    required AppSemanticColors colors,
+    required String topicTitle,
+    required String? effectiveStage,
+  }) {
+    final gated =
+        selectedTopicId != null && selectedMode == _PracticeMode.topicDrill;
+    final availability = topicDrillAvailabilityByStage;
+    if (!gated || availability == null || effectiveStage == null) return null;
+    if (availability[effectiveStage] ?? false) return null;
+
+    final otherStages =
+        availability.entries.where((e) => e.value).map((e) => e.key).toList();
+    final message = otherStages.isEmpty
+        ? l10n.practiceTopicUnavailableEverywhere(topicTitle)
+        : l10n.practiceTopicUnavailableForStage(
+            topicTitle,
+            effectiveStage,
+            otherStages.join(', '),
+          );
+    return Container(
+      key: const Key('practiceTopicUnavailableNotice'),
+      width: double.infinity,
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: colors.cardSurface,
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: colors.divider),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(Icons.info_outline, size: 18, color: colors.warning),
+          const SizedBox(width: 8),
+          Expanded(
+            child: Text(
+              message,
+              style: TextStyle(color: colors.secondaryText, fontSize: 13),
             ),
           ),
         ],
@@ -1548,9 +1690,17 @@ class _SessionView extends StatelessWidget {
           child: IgnorePointer(
             child: ValueListenableBuilder<int>(
               valueListenable: MascotFuelService.instance.celebrationSerial,
+              // No per-value Key: RewardConfetti's State must stay mounted
+              // across serial changes so it can tell a genuine new
+              // milestone (didUpdateWidget) apart from a fresh mount —
+              // see reward_confetti.dart. resetSignal: currentIndex means
+              // Next Question immediately clears any in-progress
+              // celebration rather than waiting out its auto-hide timer;
+              // Finish/Exit replace _SessionView entirely (summary/setup/
+              // unavailable view), which disposes this widget outright.
               builder: (context, serial, _) => RewardConfetti(
-                key: ValueKey('mission-$serial'),
-                play: serial > 0,
+                serial: serial,
+                resetSignal: currentIndex,
               ),
             ),
           ),
@@ -1799,7 +1949,17 @@ class _SummaryView extends StatelessWidget {
         ),
         Positioned.fill(
           child: IgnorePointer(
-            child: RewardConfetti(play: correctCount > 0),
+            // Session-complete is itself the milestone this celebrates —
+            // this screen is built fresh, once, exactly when a session
+            // finishes, so it opts into autoplayOnMount rather than
+            // waiting to observe a serial change (see reward_confetti.dart
+            // class doc). serial is a fixed one-shot value here; the
+            // widget's own bounded timer clears it shortly after, and
+            // disposing this whole screen (Close) tears it down outright.
+            child: RewardConfetti(
+              serial: 1,
+              autoplayOnMount: correctCount > 0,
+            ),
           ),
         ),
       ],

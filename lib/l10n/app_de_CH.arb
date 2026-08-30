@@ -272,6 +272,28 @@
   "practiceUnavailableTitle": "Dieser Übungsbereich ist noch nicht verfügbar.",
   "practiceUnavailableAction": "Ein anderes Thema wählen",
   "practiceEnglishContentNotice": "Übungsfragen sind derzeit nur auf Englisch verfügbar.",
+  "practiceTopicUnavailableForStage": "{topic} ist für {stage} noch nicht verfügbar – versuche {stages}.",
+  "@practiceTopicUnavailableForStage": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      },
+      "stage": {
+        "type": "String"
+      },
+      "stages": {
+        "type": "String"
+      }
+    }
+  },
+  "practiceTopicUnavailableEverywhere": "{topic} ist noch in keiner Stufe zum Üben verfügbar.",
+  "@practiceTopicUnavailableEverywhere": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
   "mascotGreeting": "Bereit für neue Mathe-Energie?",
   "mascotThinking": "Nimm dir Zeit und denk gut nach!",
   "mascotSuccess": "Stark gerechnet! Energie hinzugefügt.",
@@ -309,6 +331,14 @@
   "homeMilestone": "{days}-Tage-Meilenstein",
   "homeRewardsOn": "Belohnungen an",
   "homeRewardsOff": "Belohnungen aus",
+  "homeThemeToggleSemanticLabel": "Theme: {mode}. Theme wechseln",
+  "@homeThemeToggleSemanticLabel": {
+    "placeholders": {
+      "mode": {
+        "type": "String"
+      }
+    }
+  },
   "homeBadgeFirstSession": "Erste Übung",
   "homeBadgeTenQuestions": "10 Aufgaben",
   "homeBadgeAlgebraStarter": "Algebra-Einstieg",

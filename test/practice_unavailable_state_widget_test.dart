@@ -6,12 +6,27 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 import 'package:unified_math_tutor/screens/practice/practice_screen.dart';
 import 'package:unified_math_tutor/services/curriculum_service.dart';
 
-/// D2 truthful-unavailable-state widget test. One real Topic Drill attempt
-/// against genuinely-unmapped content (KS2 "decimals" — a real canonical
-/// topic id with zero KS2 pack rows mapped to it), matching the "one real
-/// pack-load per file" discipline already established by
-/// `practice_screen_continue_learning_test.dart` for reliability in this
-/// environment.
+/// D2.2 Topic Drill truthfulness corrective pass. Reaching the full-page
+/// "not available yet" screen through a normal Start-button press is no
+/// longer acceptable (see the item-3 sprint report) — Start is now
+/// disabled up front for any topic/stage pairing with zero real questions,
+/// with a truthful inline reason instead. This file tests that contract.
+///
+/// Deliberately one real Topic Drill availability load (four real stage
+/// pack loads via `_loadTopicDrillAvailability`) per file/process, matching
+/// the "one real pack-load per file" discipline established by
+/// `practice_screen_continue_learning_test.dart` — stacking a second
+/// pack-loading `testWidgets` in this file was tried and reproducibly hung
+/// for ~60s waiting on the second load, exactly the kind of unreliability
+/// that discipline exists to avoid.
+///
+/// The `_UnavailableView`/`_ScreenState.unavailable` machinery itself is
+/// deliberately NOT deleted — it stays in place as safe recovery for a
+/// stale/malformed deep link that could still reach `_startSession` with
+/// an invalid topic outside today's known navigation graph — but nothing
+/// in the current UI can drive it any more, so it has no widget-level test
+/// here; the resolver-level mechanism it depends on is covered by
+/// topic_drill_truthfulness_test.dart's "KS2 / decimals" case.
 Widget _wrap(Widget child) => MaterialApp(
       localizationsDelegates: const [
         AppLocalizations.delegate,
@@ -46,43 +61,60 @@ void main() {
   });
 
   testWidgets(
-      'a genuinely unmapped Topic Drill selection shows the truthful '
-      'unavailable state — no crash, no blank screen, no falsely '
-      'optimistic content — and the recovery action returns to setup',
-      (tester) async {
+      'a genuinely unmapped Topic Drill selection (decimals — unavailable '
+      'in every stage) keeps Start disabled, explains why truthfully, '
+      'dims every stage chip, and never reaches the full-page unavailable '
+      'screen through this normal flow', (tester) async {
     await tester.pumpWidget(_wrap(const PracticeScreen(
       selectedTopicId: 'decimals',
       selectedTopic: 'Decimals',
     )));
-    await tester.pumpAndSettle();
 
     // Arriving with a topic already chosen auto-selects Topic Drill mode
-    // (see PracticeScreen.initState) — Start is reachable immediately.
-    final start = find.text(l10n.practiceStartButton);
-    await tester.ensureVisible(start);
-    await tester.tap(start);
-
+    // (see PracticeScreen.initState); the availability check runs on the
+    // following frame.
     await _pumpUntil(
       tester,
-      () => find.text(l10n.practiceUnavailableTitle).evaluate().isNotEmpty,
+      () => find
+          .byKey(const Key('practiceTopicUnavailableNotice'))
+          .evaluate()
+          .isNotEmpty,
     );
 
-    expect(find.text(l10n.practiceUnavailableTitle), findsOneWidget,
-        reason: 'must show the plain truthful statement, not a blank '
-            'screen or a generic technical error');
-    expect(find.text(l10n.practiceTopicDrillEmpty), findsOneWidget,
-        reason: 'detail text must name the actual situation');
-    expect(find.text(l10n.practiceUnavailableAction), findsOneWidget,
-        reason: 'must offer an existing recovery action, not a dead end');
-    // Never a falsely optimistic "Start" CTA while nothing can start.
-    expect(find.text(l10n.practiceStartButton), findsNothing);
+    expect(
+      find.text(l10n.practiceTopicUnavailableEverywhere('Decimals')),
+      findsOneWidget,
+      reason: 'must name the real topic and be honest that no stage has it '
+          '— never a generic error, never silence',
+    );
 
-    // Recovery: tapping the action returns to setup, where Start (and a
-    // path to a different mode/topic) is available again.
-    await tester.tap(find.text(l10n.practiceUnavailableAction));
+    final startButton = tester.widget<FilledButton>(
+      find.widgetWithText(FilledButton, l10n.practiceStartButton),
+    );
+    expect(startButton.onPressed, isNull,
+        reason: 'Start must be disabled before the learner can ever press '
+            'it into a dead end');
+
+    for (final stage in const ['KS2', 'KS3', 'KS4', 'KS5']) {
+      final opacity = tester.widget<Opacity>(
+        find.ancestor(of: find.text(stage), matching: find.byType(Opacity)),
+      );
+      expect(opacity.opacity, lessThan(1.0),
+          reason: '$stage must read as disabled — decimals has zero real '
+              'questions in every stage');
+    }
+
+    // Tapping a disabled button is a no-op — confirms this isn't merely
+    // visually dimmed while still secretly wired to start a session.
+    await tester.tap(
+      find.text(l10n.practiceStartButton),
+      warnIfMissed: false,
+    );
     await tester.pumpAndSettle();
-
+    expect(find.text(l10n.practiceUnavailableTitle), findsNothing,
+        reason: 'the full-page unavailable screen must never be reached '
+            'through this normal flow any more');
     expect(find.text(l10n.practiceStartButton), findsOneWidget,
-        reason: 'recovery must land back on a real, usable screen');
+        reason: 'stays on setup — a real, usable screen, not a dead end');
   });
 }

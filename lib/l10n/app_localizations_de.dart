@@ -1178,6 +1178,17 @@ class AppLocalizationsDe extends AppLocalizations {
       'Practice questions are currently only available in English.';
 
   @override
+  String practiceTopicUnavailableForStage(
+      String topic, String stage, String stages) {
+    return '$topic isn\'t available for $stage yet — try $stages.';
+  }
+
+  @override
+  String practiceTopicUnavailableEverywhere(String topic) {
+    return '$topic isn\'t available for practice yet in any stage.';
+  }
+
+  @override
   String get mascotGreeting => 'Ready to power up your maths?';
 
   @override
@@ -1297,6 +1308,11 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get homeRewardsOff => 'Rewards off';
+
+  @override
+  String homeThemeToggleSemanticLabel(String mode) {
+    return 'Theme: $mode. Change theme';
+  }
 
   @override
   String get homeBadgeFirstSession => 'First session';
@@ -5345,6 +5361,17 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
       'Übungsfragen sind derzeit nur auf Englisch verfügbar.';
 
   @override
+  String practiceTopicUnavailableForStage(
+      String topic, String stage, String stages) {
+    return '$topic ist für $stage noch nicht verfügbar – versuche $stages.';
+  }
+
+  @override
+  String practiceTopicUnavailableEverywhere(String topic) {
+    return '$topic ist noch in keiner Stufe zum Üben verfügbar.';
+  }
+
+  @override
   String get mascotGreeting => 'Bereit für neue Mathe-Energie?';
 
   @override
@@ -5464,6 +5491,11 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
 
   @override
   String get homeRewardsOff => 'Belohnungen aus';
+
+  @override
+  String homeThemeToggleSemanticLabel(String mode) {
+    return 'Theme: $mode. Theme wechseln';
+  }
 
   @override
   String get homeBadgeFirstSession => 'Erste Übung';
