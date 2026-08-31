@@ -294,6 +294,19 @@
       }
     }
   },
+  "topicHubSubtitle": "Scopri cosa puoi davvero fare con questo argomento",
+  "topicHubStageLabel": "Livello",
+  "topicHubSectionPractise": "Esercitati",
+  "topicHubSectionLearn": "Impara",
+  "topicHubSectionExplore": "Esplora",
+  "topicHubNoActivities": "Nessuna attività disponibile per questo argomento a {stage} per ora.",
+  "@topicHubNoActivities": {
+    "placeholders": {
+      "stage": {
+        "type": "String"
+      }
+    }
+  },
   "mascotGreeting": "Pronto a fare il pieno di energia matematica?",
   "mascotThinking": "Prenditi il tuo tempo e rifletti bene!",
   "mascotSuccess": "Ottimo calcolo! Energia aggiunta.",

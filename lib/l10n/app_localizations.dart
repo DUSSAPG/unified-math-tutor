@@ -2257,6 +2257,42 @@ abstract class AppLocalizations {
   /// **'{topic} isn\'t available for practice yet in any stage.'**
   String practiceTopicUnavailableEverywhere(String topic);
 
+  /// No description provided for @topicHubSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'See what you can genuinely do with this topic'**
+  String get topicHubSubtitle;
+
+  /// No description provided for @topicHubStageLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Stage'**
+  String get topicHubStageLabel;
+
+  /// No description provided for @topicHubSectionPractise.
+  ///
+  /// In en, this message translates to:
+  /// **'Practise'**
+  String get topicHubSectionPractise;
+
+  /// No description provided for @topicHubSectionLearn.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn'**
+  String get topicHubSectionLearn;
+
+  /// No description provided for @topicHubSectionExplore.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore'**
+  String get topicHubSectionExplore;
+
+  /// Shown on the Topic Learning Hub when nothing is available for the selected topic/stage combination
+  ///
+  /// In en, this message translates to:
+  /// **'No activities are available for this topic at {stage} yet.'**
+  String topicHubNoActivities(String stage);
+
   /// No description provided for @mascotGreeting.
   ///
   /// In en, this message translates to:

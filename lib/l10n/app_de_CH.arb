@@ -294,6 +294,19 @@
       }
     }
   },
+  "topicHubSubtitle": "Sieh, was du mit diesem Thema wirklich tun kannst",
+  "topicHubStageLabel": "Stufe",
+  "topicHubSectionPractise": "Üben",
+  "topicHubSectionLearn": "Lernen",
+  "topicHubSectionExplore": "Entdecken",
+  "topicHubNoActivities": "Für dieses Thema gibt es bei {stage} noch keine Aktivitäten.",
+  "@topicHubNoActivities": {
+    "placeholders": {
+      "stage": {
+        "type": "String"
+      }
+    }
+  },
   "mascotGreeting": "Bereit für neue Mathe-Energie?",
   "mascotThinking": "Nimm dir Zeit und denk gut nach!",
   "mascotSuccess": "Stark gerechnet! Energie hinzugefügt.",

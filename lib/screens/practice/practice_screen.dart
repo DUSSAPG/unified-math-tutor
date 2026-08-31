@@ -114,6 +114,22 @@ class PracticeScreen extends StatefulWidget {
   final String? selectedTopicId;
   final bool autoStart;
 
+  /// Pre-selects this stage instead of defaulting to
+  /// `CurriculumService.instance.stage` (the learner's general current
+  /// stage). Set by the Topic Learning Hub when the learner explicitly
+  /// chose a different stage there — honouring it here is what prevents a
+  /// silent stage substitution: without it, a Hub selection of "KS4" would
+  /// quietly reopen Practice on the learner's unrelated global stage.
+  /// `null` (the default) preserves every existing call site's behaviour.
+  final String? initialStage;
+
+  /// Pre-selects Quick Start mode on the setup screen (still requires an
+  /// explicit Start press — never auto-starts). Set by the Topic Learning
+  /// Hub's Quick Start card. Ignored when [selectedTopicId] or
+  /// [selectedTopic] is also set (Topic Drill takes priority, matching
+  /// existing behaviour).
+  final bool preselectQuickStart;
+
   /// Reopens directly into an in-progress session, bypassing setup —
   /// produced only by `ContinueLearningDestinationResolver
   /// .resolvePracticeSession`, never by hand-constructing a route or
@@ -139,6 +155,8 @@ class PracticeScreen extends StatefulWidget {
     this.selectedTopicId,
     this.autoStart = false,
     this.resumeFrom,
+    this.initialStage,
+    this.preselectQuickStart = false,
   });
 
   @override
@@ -154,7 +172,8 @@ class _PracticeScreenState extends State<PracticeScreen>
   _UnavailableReason? _unavailableReason;
   _PracticeMode? _selectedMode;
   int _selectedCount = 10;
-  String _selectedStage = CurriculumService.instance.stage;
+  late String _selectedStage =
+      widget.initialStage ?? CurriculumService.instance.stage;
   _ExamChoice? _selectedExam;
   bool _isLoading = false;
 
@@ -201,12 +220,18 @@ class _PracticeScreenState extends State<PracticeScreen>
       _selectedMode = _PracticeMode.quickStart;
       WidgetsBinding.instance.addPostFrameCallback((_) => _startSession());
     } else if (widget.selectedTopicId != null || widget.selectedTopic != null) {
-      // Arrived from the Topics selector with a topic already chosen.
+      // Arrived from the Topics selector (or the Topic Learning Hub) with
+      // a topic already chosen.
       _selectedMode = _PracticeMode.topicDrill;
       if (widget.selectedTopicId != null) {
         WidgetsBinding.instance
             .addPostFrameCallback((_) => _loadTopicDrillAvailability());
       }
+    } else if (widget.preselectQuickStart) {
+      // Arrived from the Topic Learning Hub's Quick Start card — still
+      // lands on setup with Start requiring an explicit press (see
+      // PracticeScreen.preselectQuickStart doc), never auto-starts.
+      _selectedMode = _PracticeMode.quickStart;
     }
   }
 

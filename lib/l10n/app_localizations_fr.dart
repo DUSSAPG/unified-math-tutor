@@ -1189,6 +1189,27 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
+  String get topicHubSubtitle =>
+      'See what you can genuinely do with this topic';
+
+  @override
+  String get topicHubStageLabel => 'Stage';
+
+  @override
+  String get topicHubSectionPractise => 'Practise';
+
+  @override
+  String get topicHubSectionLearn => 'Learn';
+
+  @override
+  String get topicHubSectionExplore => 'Explore';
+
+  @override
+  String topicHubNoActivities(String stage) {
+    return 'No activities are available for this topic at $stage yet.';
+  }
+
+  @override
   String get mascotGreeting => 'Ready to power up your maths?';
 
   @override
@@ -5379,6 +5400,27 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
   @override
   String practiceTopicUnavailableEverywhere(String topic) {
     return '$topic n\'est encore disponible pour aucun niveau.';
+  }
+
+  @override
+  String get topicHubSubtitle =>
+      'Découvrez ce que vous pouvez vraiment faire avec ce sujet';
+
+  @override
+  String get topicHubStageLabel => 'Niveau';
+
+  @override
+  String get topicHubSectionPractise => 'S\'entraîner';
+
+  @override
+  String get topicHubSectionLearn => 'Apprendre';
+
+  @override
+  String get topicHubSectionExplore => 'Explorer';
+
+  @override
+  String topicHubNoActivities(String stage) {
+    return 'Aucune activité n\'est disponible pour ce sujet en $stage pour l\'instant.';
   }
 
   @override

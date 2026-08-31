@@ -5,7 +5,18 @@ import '../../shared/theme/app_theme.dart';
 import '../../widgets/visual_assets/visual_asset_view.dart';
 
 class FormulaLibraryScreen extends StatefulWidget {
-  const FormulaLibraryScreen({super.key});
+  const FormulaLibraryScreen({super.key, this.initialCategories});
+
+  /// Entry from the Topic Learning Hub: pre-filters to these formula
+  /// categories (a topic can map to several, e.g. geometry_measures ->
+  /// Area/Circle/Coordinate Geometry/Pythagoras/Volume) — the Hub only
+  /// ever links here when its own TopicCapabilityResolver already
+  /// confirmed at least one formula in one of these categories exists, so
+  /// this never lands the learner on an empty list. Picking any single
+  /// category chip afterwards clears this and returns to normal one-at-a-
+  /// time filtering — a Hub-supplied pre-filter never blocks the
+  /// learner's own manual choice.
+  final Set<String>? initialCategories;
 
   @override
   State<FormulaLibraryScreen> createState() => _FormulaLibraryScreenState();
@@ -15,6 +26,7 @@ class _FormulaLibraryScreenState extends State<FormulaLibraryScreen> {
   final _searchController = TextEditingController();
   String _query = '';
   String? _selectedCategory;
+  late Set<String>? _hubCategoryFilter = widget.initialCategories;
   String? _expandedId;
 
   @override
@@ -49,10 +61,13 @@ class _FormulaLibraryScreenState extends State<FormulaLibraryScreen> {
             }
 
             final categories = all.map((e) => e.category).toSet().toList();
+            final hubFilter = _hubCategoryFilter;
             final filtered = all
                 .where((e) =>
-                    (_selectedCategory == null ||
-                        e.category == _selectedCategory) &&
+                    (hubFilter != null
+                        ? hubFilter.contains(e.category)
+                        : (_selectedCategory == null ||
+                            e.category == _selectedCategory)) &&
                     e.matches(_query))
                 .toList();
 
@@ -68,9 +83,15 @@ class _FormulaLibraryScreenState extends State<FormulaLibraryScreen> {
                 const SizedBox(height: 12),
                 _CategoryFilterRow(
                   categories: categories,
-                  selectedCategory: _selectedCategory,
-                  onSelected: (category) =>
-                      setState(() => _selectedCategory = category),
+                  selectedCategory:
+                      hubFilter == null ? _selectedCategory : null,
+                  onSelected: (category) => setState(() {
+                    // A manual chip pick always wins over the Hub's
+                    // pre-filter — a deterministic suggestion may never
+                    // block the learner's own choice.
+                    _hubCategoryFilter = null;
+                    _selectedCategory = category;
+                  }),
                 ),
                 const SizedBox(height: 12),
                 Expanded(

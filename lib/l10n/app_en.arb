@@ -870,6 +870,25 @@
       }
     }
   },
+  "topicHubSubtitle": "See what you can genuinely do with this topic",
+  "@topicHubSubtitle": {},
+  "topicHubStageLabel": "Stage",
+  "@topicHubStageLabel": {},
+  "topicHubSectionPractise": "Practise",
+  "@topicHubSectionPractise": {},
+  "topicHubSectionLearn": "Learn",
+  "@topicHubSectionLearn": {},
+  "topicHubSectionExplore": "Explore",
+  "@topicHubSectionExplore": {},
+  "topicHubNoActivities": "No activities are available for this topic at {stage} yet.",
+  "@topicHubNoActivities": {
+    "description": "Shown on the Topic Learning Hub when nothing is available for the selected topic/stage combination",
+    "placeholders": {
+      "stage": {
+        "type": "String"
+      }
+    }
+  },
   "mascotGreeting": "Ready to power up your maths?",
   "mascotThinking": "Take your time. Think it through!",
   "mascotSuccess": "Great calculation! Fuel added.",

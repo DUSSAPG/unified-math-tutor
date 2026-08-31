@@ -20,10 +20,22 @@ import 'recall_card_labels.dart';
 /// point opens the same screen with both unset and the search field focused.
 class RecallCardsBrowseScreen extends StatefulWidget {
   const RecallCardsBrowseScreen(
-      {super.key, this.initialTopic, this.initialType});
+      {super.key,
+      this.initialTopic,
+      this.initialType,
+      this.initialPracticeTopicId});
 
   final RecallTopic? initialTopic;
   final RecallCardType? initialType;
+
+  /// Entry from the Topic Learning Hub: filters by [RecallCard
+  /// .relatedPracticeTopicIds] — the fine-grained, evidence-based link to a
+  /// canonical Practice topic id — rather than the coarser [RecallTopic]
+  /// domain enum [initialTopic] filters by. Deliberately a separate,
+  /// non-chip-visible filter: the Hub only ever links here when its own
+  /// TopicCapabilityResolver already confirmed at least one matching card
+  /// exists, so this never lands the learner on an empty grid.
+  final String? initialPracticeTopicId;
 
   @override
   State<RecallCardsBrowseScreen> createState() =>
@@ -34,6 +46,7 @@ class _RecallCardsBrowseScreenState extends State<RecallCardsBrowseScreen> {
   late final Future<List<RecallCard>> _cardsFuture;
   late RecallTopic? _topicFilter = widget.initialTopic;
   late RecallCardType? _typeFilter = widget.initialType;
+  late String? _practiceTopicFilter = widget.initialPracticeTopicId;
   final _searchController = TextEditingController();
   String _query = '';
 
@@ -55,6 +68,8 @@ class _RecallCardsBrowseScreenState extends State<RecallCardsBrowseScreen> {
       for (final card in cards)
         if ((_topicFilter == null || card.topicId == _topicFilter) &&
             (_typeFilter == null || card.cardType == _typeFilter) &&
+            (_practiceTopicFilter == null ||
+                card.relatedPracticeTopicIds.contains(_practiceTopicFilter)) &&
             (query.isEmpty ||
                 card.locales['en']!.frontPrompt.toLowerCase().contains(query) ||
                 card.locales['en']!.answer.toLowerCase().contains(query)))
@@ -66,6 +81,7 @@ class _RecallCardsBrowseScreenState extends State<RecallCardsBrowseScreen> {
     setState(() {
       _topicFilter = null;
       _typeFilter = null;
+      _practiceTopicFilter = null;
     });
   }
 
@@ -103,8 +119,9 @@ class _RecallCardsBrowseScreenState extends State<RecallCardsBrowseScreen> {
               return const Center(child: CircularProgressIndicator());
             }
             final visible = _filtered(cards);
-            final hasActiveFilters =
-                _topicFilter != null || _typeFilter != null;
+            final hasActiveFilters = _topicFilter != null ||
+                _typeFilter != null ||
+                _practiceTopicFilter != null;
             // Bounded growth with text scale — mirrors
             // discovery_library_screen.dart's identical fix for the same
             // fixed-height grid-tile clipping risk.

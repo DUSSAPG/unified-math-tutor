@@ -211,10 +211,10 @@ class _TopicsContentState extends State<_TopicsContent> {
 
   void _onTopicTap(_Topic topic, TopicDisplay display) {
     debugPrint('Topic tapped: ${topic.id}');
-    context.push('/practice', extra: {
-      'topicId': topic.id,
-      'topic': display.title,
-    }).then((_) {
+    // D3: the Topic Learning Hub, not a direct jump into one Practice
+    // configuration — the learner sees what's genuinely available for
+    // this topic (Practise/Learn/Explore) before choosing.
+    context.push('/topics/hub', extra: {'topicId': topic.id}).then((_) {
       if (mounted) setState(() => _selectedFilter = _Filter.all);
     });
   }

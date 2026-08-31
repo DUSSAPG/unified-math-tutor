@@ -9,6 +9,7 @@ import '../screens/splash/app_splash_screen.dart';
 import '../screens/practice/practice_screen.dart';
 import '../screens/tutor/tutor_screen.dart';
 import '../screens/topics/topics_screen.dart';
+import '../screens/topics/topic_learning_hub_screen.dart';
 import '../screens/settings/help_screen.dart';
 import '../screens/settings/parent_teacher_tools_screen.dart';
 import '../screens/settings/parent_cheat_sheet_screen.dart';
@@ -431,11 +432,16 @@ final GoRouter appRouter = GoRouter(
                 final filters = extra is Map ? extra : const <String, String>{};
                 final topicId = filters['topic'] as String?;
                 final typeId = filters['type'] as String?;
+                // Set by the Topic Learning Hub — a fine-grained canonical
+                // Practice topic id, distinct from the coarser RecallTopic
+                // domain enum `topic`/`initialTopic` above.
+                final practiceTopicId = filters['practiceTopicId'] as String?;
                 return RecallCardsBrowseScreen(
                   initialTopic:
                       topicId == null ? null : RecallTopic.fromId(topicId),
                   initialType:
                       typeId == null ? null : RecallCardType.fromId(typeId),
+                  initialPracticeTopicId: practiceTopicId,
                 );
               },
             ),
@@ -614,6 +620,26 @@ final GoRouter appRouter = GoRouter(
             GoRoute(
               path: '/topics',
               builder: (context, state) => const TopicsScreen(),
+              routes: [
+                // Topic Learning Hub — breaks out full-screen above the
+                // shell, matching every other drill-down detail page in
+                // this app (Profile's settings sub-pages, Help's parent-
+                // teacher-tools tree): a real Back button, no bottom nav
+                // clutter, same convention throughout.
+                GoRoute(
+                  parentNavigatorKey: _rootNavigatorKey,
+                  path: 'hub',
+                  builder: (context, state) {
+                    final extra = state.extra;
+                    final topicId = extra is Map<String, dynamic>
+                        ? extra['topicId'] as String?
+                        : null;
+                    return TopicLearningHubScreen(
+                      topicId: topicId ?? 'mixed_review',
+                    );
+                  },
+                ),
+              ],
             ),
           ],
         ),
@@ -635,10 +661,21 @@ final GoRouter appRouter = GoRouter(
                 final autoStart = extra is Map<String, dynamic>
                     ? extra['autoStart'] as bool? ?? false
                     : false;
+                // Set by the Topic Learning Hub, honouring whichever stage
+                // the learner explicitly chose there instead of silently
+                // falling back to their unrelated global current stage.
+                final stage = extra is Map<String, dynamic>
+                    ? extra['stage'] as String?
+                    : null;
+                final preselectQuickStart = extra is Map<String, dynamic>
+                    ? extra['preselectQuickStart'] as bool? ?? false
+                    : false;
                 return PracticeScreen(
                   selectedTopic: topic,
                   selectedTopicId: topicId,
                   autoStart: autoStart,
+                  initialStage: stage,
+                  preselectQuickStart: preselectQuickStart,
                 );
               },
             ),
@@ -662,7 +699,13 @@ final GoRouter appRouter = GoRouter(
           routes: [
             GoRoute(
               path: '/formulas',
-              builder: (context, state) => const FormulaLibraryScreen(),
+              builder: (context, state) {
+                final extra = state.extra;
+                final categories = extra is Map<String, dynamic>
+                    ? (extra['categories'] as List?)?.cast<String>().toSet()
+                    : null;
+                return FormulaLibraryScreen(initialCategories: categories);
+              },
             ),
           ],
         ),
