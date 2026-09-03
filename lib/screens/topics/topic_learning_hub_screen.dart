@@ -347,12 +347,31 @@ class _ActivityCard extends StatelessWidget {
     switch (capability.activityType) {
       case TopicActivityType.topicDrill:
       case TopicActivityType.quickStart:
-        context.push(capability.route, extra: capability.routeExtra);
+        // P0 fix: '/practice' is a StatefulShellBranch-owned root route
+        // (see safe_navigation.dart's _shellBranchRoots) and this Hub
+        // screen itself lives OUTSIDE the shell (parentNavigatorKey:
+        // _rootNavigatorKey in router.dart, same as every other
+        // drill-down detail page). push()-ing a shell-branch-root route
+        // from a root-navigator-hosted screen duplicates that branch's
+        // GlobalKey<NavigatorState> — exactly the crash this app's own
+        // navigator-key ownership model warns about (see the identical
+        // reasoning already documented on LabRelatedLinks' '/topics'
+        // push, and route_navigator_key_regression_test.dart's covered
+        // cases). Every other caller of '/practice' in this codebase
+        // (home_shell.dart, explore_math_intelligence_screen.dart,
+        // user_type_screen.dart, entrance_exam_hub_screen.dart's
+        // popOrGo) already uses go() — this was the one place that
+        // didn't.
+        context.go(capability.route, extra: capability.routeExtra);
       case TopicActivityType.formulaLibrary:
         final categories =
             (capability.routeExtra['categories'] as List).cast<String>();
         context.go(capability.route, extra: {'categories': categories});
       case TopicActivityType.recallCards:
+        // '/math-studio/recall-cards/browse' is a plain top-level route
+        // outside the shell entirely (not a branch root) — push() here
+        // is the same safe, already-proven pattern LabRelatedLinks and
+        // mental_maths_hub_screen.dart use for the same destination.
         context.push(capability.route, extra: capability.routeExtra);
       case TopicActivityType.interactiveLab:
         context.push(capability.route);
