@@ -199,7 +199,17 @@ class TopicCapabilityResolver {
         section: TopicActivitySection.practise,
         activityType: TopicActivityType.topicDrill,
         route: '/practice',
-        routeExtra: {'topicId': topicId, 'stage': stage},
+        // returnToHubTopicId: distinct from the topicId key above (which
+        // filters the drill itself) — it tells PracticeScreen which Hub to
+        // return to on Back, deterministically, regardless of Navigator
+        // stack ambiguity across shell branches. Same topicId value here,
+        // but kept as its own key since quickStart below has no filtering
+        // topicId at all yet still needs a Hub to return to.
+        routeExtra: {
+          'topicId': topicId,
+          'stage': stage,
+          'returnToHubTopicId': topicId,
+        },
         available: topicDrillReady,
         reason: topicDrillReady
             ? '$topicDrillCount real question${topicDrillCount == 1 ? '' : 's'} available for $stage.'
@@ -211,7 +221,15 @@ class TopicCapabilityResolver {
         section: TopicActivitySection.practise,
         activityType: TopicActivityType.quickStart,
         route: '/practice',
-        routeExtra: {'stage': stage, 'preselectQuickStart': true},
+        // No 'topicId' here deliberately — resolveQuickStart draws from the
+        // whole stage's mixed pool, never filtered by topic (see the resolve
+        // call above). 'returnToHubTopicId' is unrelated to that filtering:
+        // it's only which Hub Back should return to.
+        routeExtra: {
+          'stage': stage,
+          'preselectQuickStart': true,
+          'returnToHubTopicId': topicId,
+        },
         available: quickStartReady,
         reason: quickStartReady
             ? '$quickStartCount real question${quickStartCount == 1 ? '' : 's'} in the $stage pool.'

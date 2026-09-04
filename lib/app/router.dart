@@ -621,13 +621,21 @@ final GoRouter appRouter = GoRouter(
               path: '/topics',
               builder: (context, state) => const TopicsScreen(),
               routes: [
-                // Topic Learning Hub — breaks out full-screen above the
-                // shell, matching every other drill-down detail page in
-                // this app (Profile's settings sub-pages, Help's parent-
-                // teacher-tools tree): a real Back button, no bottom nav
-                // clutter, same convention throughout.
+                // Topic Learning Hub — a normal Topics-branch screen (no
+                // parentNavigatorKey override), NOT a root-navigator
+                // break-out like Profile's settings sub-pages or Help's
+                // parent-teacher-tools tree. It keeps the bottom nav and
+                // the branch's own back stack (topics_screen.dart's
+                // context.push('/topics/hub', ...) lands here, on the
+                // Topics branch's own Navigator). Deliberately reverted
+                // from the earlier root-navigator hosting: that hosting
+                // was never the cause of the P0 navigator-key crash (the
+                // crash was push() from outside the shell into a
+                // shell-branch root, fixed at the call site instead — see
+                // topic_learning_hub_screen.dart), but living outside the
+                // shell did make the Hub lose normal branch lifecycle
+                // (bottom nav, predictable Back) for no benefit.
                 GoRoute(
-                  parentNavigatorKey: _rootNavigatorKey,
                   path: 'hub',
                   builder: (context, state) {
                     final extra = state.extra;
@@ -670,12 +678,36 @@ final GoRouter appRouter = GoRouter(
                 final preselectQuickStart = extra is Map<String, dynamic>
                     ? extra['preselectQuickStart'] as bool? ?? false
                     : false;
+                // Which Hub to return to on Back — see PracticeScreen's own
+                // doc comment and its PopScope in build(). null for every
+                // non-Hub caller (Home, onboarding, Explore, Homework
+                // Companion), so their Back behaviour is unchanged.
+                final returnToHubTopicId = extra is Map<String, dynamic>
+                    ? extra['returnToHubTopicId'] as String?
+                    : null;
+                // Set only by the Hub (see topic_learning_hub_screen.dart),
+                // fresh on every single tap. Folding it into this key
+                // forces Flutter to build a brand-new PracticeScreen State
+                // (initState runs) instead of reusing whatever State/
+                // _screenState an EARLIER navigation to this same route
+                // left behind — see the long comment at that call site for
+                // the exact reuse mechanism this prevents. Every other
+                // caller omits it, so repeat identical entries from them
+                // (e.g. Home's Practice tile tapped twice) keep today's
+                // behaviour: same key, State reused, nothing reset.
+                final hubNavNonce =
+                    extra is Map<String, dynamic> ? extra['hubNavNonce'] : null;
                 return PracticeScreen(
+                  key: ValueKey(
+                    'practice::${topicId ?? topic ?? ''}::${stage ?? ''}::'
+                    '$autoStart::$preselectQuickStart::${hubNavNonce ?? ''}',
+                  ),
                   selectedTopic: topic,
                   selectedTopicId: topicId,
                   autoStart: autoStart,
                   initialStage: stage,
                   preselectQuickStart: preselectQuickStart,
+                  returnToHubTopicId: returnToHubTopicId,
                 );
               },
             ),

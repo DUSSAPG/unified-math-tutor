@@ -149,6 +149,16 @@ class PracticeScreen extends StatefulWidget {
   /// differently-configured `PracticeScreen` already on screen.
   final ResolvedPracticeResume? resumeFrom;
 
+  /// Set by the Topic Learning Hub (both Topic Drill and Quick Start cards)
+  /// to the topicId of the Hub that was open when the learner tapped. While
+  /// non-null and the screen is showing setup (not an in-progress session,
+  /// which already has its own exit-confirmation PopScope), system/gesture
+  /// Back deterministically re-opens that same Hub instead of falling
+  /// through to whatever default shell-branch back behaviour would
+  /// otherwise apply — see the PopScope in build(). `null` (the default)
+  /// preserves every non-Hub call site's existing Back behaviour untouched.
+  final String? returnToHubTopicId;
+
   const PracticeScreen({
     super.key,
     this.selectedTopic,
@@ -157,6 +167,7 @@ class PracticeScreen extends StatefulWidget {
     this.resumeFrom,
     this.initialStage,
     this.preselectQuickStart = false,
+    this.returnToHubTopicId,
   });
 
   @override
@@ -754,7 +765,7 @@ class _PracticeScreenState extends State<PracticeScreen>
       );
     }
 
-    return _SetupView(
+    final setupView = _SetupView(
       selectedTopic: widget.selectedTopic,
       selectedTopicId: widget.selectedTopicId,
       selectedMode: _selectedMode,
@@ -780,6 +791,24 @@ class _PracticeScreenState extends State<PracticeScreen>
       modes: modes,
       topicDrillAvailabilityByStage: _topicDrillAvailabilityByStage,
       topicDrillAvailabilityLoading: _topicDrillAvailabilityLoading,
+    );
+
+    final hubTopicId = widget.returnToHubTopicId;
+    if (hubTopicId == null) return setupView;
+
+    // Deliberate, not a stack-based pop: Practice is a shell-branch tab
+    // root with no AppBar back arrow of its own, and how a cross-branch
+    // push/go's Navigator stack resolves system Back is not something to
+    // depend on here. Explicitly re-opening the exact Hub the learner came
+    // from is the only way "Back returns predictably to the prior Hub"
+    // holds regardless of how this screen was reached.
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, result) {
+        if (didPop) return;
+        context.go('/topics/hub', extra: {'topicId': hubTopicId});
+      },
+      child: setupView,
     );
   }
 }

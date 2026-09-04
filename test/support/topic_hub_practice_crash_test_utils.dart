@@ -72,6 +72,18 @@ Future<void> pumpRealRoute(WidgetTester tester, String route) async {
   await tester.pumpAndSettle();
 }
 
+/// Pixel 6a compact landscape — matches compact_landscape_nav_test.dart's
+/// own `_pixel6aLandscape` constant/pattern.
+const pixel6aLandscape = Size(915, 412);
+const pixel6aPortrait = Size(412, 915);
+
+void setTestViewportSize(WidgetTester tester, Size size) {
+  addTearDown(tester.view.resetPhysicalSize);
+  addTearDown(tester.view.resetDevicePixelRatio);
+  tester.view.physicalSize = size;
+  tester.view.devicePixelRatio = 1;
+}
+
 /// Tap without pumpAndSettle — the Hub shows a CircularProgressIndicator
 /// while its capability rows resolve (real asset I/O), and an
 /// indeterminate spinner never lets pumpAndSettle detect "settled".

@@ -347,22 +347,29 @@ class _ActivityCard extends StatelessWidget {
     switch (capability.activityType) {
       case TopicActivityType.topicDrill:
       case TopicActivityType.quickStart:
-        // P0 fix: '/practice' is a StatefulShellBranch-owned root route
-        // (see safe_navigation.dart's _shellBranchRoots) and this Hub
-        // screen itself lives OUTSIDE the shell (parentNavigatorKey:
-        // _rootNavigatorKey in router.dart, same as every other
-        // drill-down detail page). push()-ing a shell-branch-root route
-        // from a root-navigator-hosted screen duplicates that branch's
-        // GlobalKey<NavigatorState> — exactly the crash this app's own
-        // navigator-key ownership model warns about (see the identical
-        // reasoning already documented on LabRelatedLinks' '/topics'
-        // push, and route_navigator_key_regression_test.dart's covered
-        // cases). Every other caller of '/practice' in this codebase
-        // (home_shell.dart, explore_math_intelligence_screen.dart,
-        // user_type_screen.dart, entrance_exam_hub_screen.dart's
-        // popOrGo) already uses go() — this was the one place that
-        // didn't.
-        context.go(capability.route, extra: capability.routeExtra);
+        // This Hub screen is a normal Topics-branch screen (nested under
+        // /topics inside the shell, no parentNavigatorKey override — see
+        // router.dart) so go() to another shell-branch root like
+        // '/practice' is safe here exactly as it is from every other
+        // in-shell caller (home_shell.dart, entrance_exam_hub_screen.dart's
+        // popOrGo, ...); see the navigator-key ownership model comment atop
+        // router.dart for why push() would still be the wrong call from a
+        // root-navigator-hosted screen.
+        //
+        // 'hubNavNonce' forces a brand-new PracticeScreen State on every
+        // single tap, including two taps of the identical card in a row —
+        // without it, an unkeyed PracticeScreen at the same widget-tree
+        // position skips initState() on the second navigation (Flutter
+        // reuses the State and calls didUpdateWidget instead — the same
+        // mechanism PracticeScreen.resumeFrom's doc comment already warns
+        // about) and silently shows whatever _screenState (setup, an
+        // abandoned session, ...) the PREVIOUS visit left behind instead of
+        // a clean setup screen. See router.dart's '/practice' builder for
+        // where this folds into the widget's key.
+        context.go(capability.route, extra: {
+          ...capability.routeExtra,
+          'hubNavNonce': DateTime.now().microsecondsSinceEpoch,
+        });
       case TopicActivityType.formulaLibrary:
         final categories =
             (capability.routeExtra['categories'] as List).cast<String>();
