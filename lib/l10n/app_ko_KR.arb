@@ -37,7 +37,7 @@
   "practiceModeExamSimulator": "시험 시뮬레이터",
   "practiceModeExamSimulatorSub": "실전 시험 형식 모의 연습",
   "practiceExit": "종료",
-  "practiceQuestionOf": "{current}/{total} 문제",
+  "practiceQuestionOf": "{current}번 문제",
   "practiceMixedReview": "혼합 복습",
   "practiceExplanation": "설명",
   "practiceCheckAnswer": "정답 확인",

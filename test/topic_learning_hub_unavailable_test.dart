@@ -12,28 +12,30 @@ void main() {
   final l10n = lookupAppLocalizations(const Locale('en'));
 
   testWidgets(
-      'decimals @ KS2 (unavailable in every stage): Topic Drill, Formula '
-      'Library, Recall Cards and Interactive Lab are absent — not '
-      'disabled, not present at all. Only Quick Start remains, since it '
-      'is never topic-filtered', (tester) async {
+      'decimals @ KS2 (unavailable in every stage): Topic Drill, Quick '
+      'Start, Formula Library, Recall Cards and Interactive Lab are all '
+      'absent — not disabled, not present at all — and the Hub shows its '
+      'honest "no activities" message instead of any section. P0 content-'
+      'integrity repair: Quick Start from a Topic Hub is exact-topic now, '
+      'so it can no longer paper over a genuinely empty topic by falling '
+      'back to the stage-wide pool.', (tester) async {
     SharedPreferences.setMockInitialValues({});
     await CurriculumService.instance.select('ks2');
 
     await tester.pumpWidget(wrapHubWithRouter('decimals'));
-    await pumpUntil(
-      tester,
-      () => activityCard('quickStart').evaluate().isNotEmpty,
-    );
+    await pumpUntilLoaded(tester);
 
-    expect(activityCard('quickStart'), findsOneWidget);
+    expect(activityCard('quickStart'), findsNothing);
     expect(activityCard('topicDrill'), findsNothing);
     expect(activityCard('formulaLibrary'), findsNothing);
     expect(activityCard('recallCards'), findsNothing);
     expect(find.textContaining('Workbook'), findsNothing);
-    // "Learn"/"Explore" section headers must not appear either — an empty
-    // section is an absent section, never a heading over nothing.
+    // No section headers at all — every card is unavailable, so the Hub's
+    // own "available.isEmpty" branch shows one honest message instead.
+    expect(find.text(l10n.topicHubSectionPractise), findsNothing);
     expect(find.text(l10n.topicHubSectionLearn), findsNothing);
     expect(find.text(l10n.topicHubSectionExplore), findsNothing);
+    expect(find.text(l10n.topicHubNoActivities('KS2')), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 }

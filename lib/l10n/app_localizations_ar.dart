@@ -297,8 +297,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get practiceExit => 'خروج';
 
   @override
-  String practiceQuestionOf(int current, int total) {
-    return 'السؤال $current من $total';
+  String practiceQuestionOf(int current) {
+    return 'السؤال $current';
   }
 
   @override

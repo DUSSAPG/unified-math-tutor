@@ -297,8 +297,8 @@ class AppLocalizationsId extends AppLocalizations {
   String get practiceExit => 'Exit';
 
   @override
-  String practiceQuestionOf(int current, int total) {
-    return 'Question $current of $total';
+  String practiceQuestionOf(int current) {
+    return 'Question $current';
   }
 
   @override

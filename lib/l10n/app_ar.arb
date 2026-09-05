@@ -14,13 +14,10 @@
   "practiceModeTimedChallenge": "تحدٍ زمني",
   "practiceModeExamSimulator": "محاكاة الاختبار",
   "practiceExit": "خروج",
-  "practiceQuestionOf": "السؤال {current} من {total}",
+  "practiceQuestionOf": "السؤال {current}",
   "@practiceQuestionOf": {
     "placeholders": {
       "current": {
-        "type": "int"
-      },
-      "total": {
         "type": "int"
       }
     }

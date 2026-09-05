@@ -297,8 +297,8 @@ class AppLocalizationsDe extends AppLocalizations {
   String get practiceExit => 'Exit';
 
   @override
-  String practiceQuestionOf(int current, int total) {
-    return 'Question $current of $total';
+  String practiceQuestionOf(int current) {
+    return 'Question $current';
   }
 
   @override
@@ -4527,8 +4527,8 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
   String get practiceExit => 'Beenden';
 
   @override
-  String practiceQuestionOf(int current, int total) {
-    return 'Frage $current von $total';
+  String practiceQuestionOf(int current) {
+    return 'Frage $current';
   }
 
   @override

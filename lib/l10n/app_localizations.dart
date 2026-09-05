@@ -648,11 +648,11 @@ abstract class AppLocalizations {
   /// **'Exit'**
   String get practiceExit;
 
-  /// Question counter shown during a practice session
+  /// Question counter shown during a practice session. P0 content-integrity repair: deliberately no total (no 'of {total}') — a session's real length varies with how much exact-topic content actually exists, and showing a total invites exactly the kind of aggregate-count impression this repair removes elsewhere.
   ///
   /// In en, this message translates to:
-  /// **'Question {current} of {total}'**
-  String practiceQuestionOf(int current, int total);
+  /// **'Question {current}'**
+  String practiceQuestionOf(int current);
 
   /// Topic pill label when topic is empty
   ///

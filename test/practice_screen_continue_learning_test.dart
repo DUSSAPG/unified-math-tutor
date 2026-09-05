@@ -156,7 +156,7 @@ void main() {
     expect(payload, isNotNull);
     expect(payload!.questionIds, hasLength(10));
     expect(payload.selectedIndices, hasLength(1));
-    expect(find.text(l10n.practiceQuestionOf(2, 10)), findsOneWidget);
+    expect(find.text(l10n.practiceQuestionOf(2)), findsOneWidget);
 
     // 3. Leaving via the existing Exit affordance/dialog (not a new one
     // added for this task) retains the checkpoint — leaving normally is

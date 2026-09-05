@@ -297,8 +297,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get practiceExit => 'Exit';
 
   @override
-  String practiceQuestionOf(int current, int total) {
-    return 'Question $current of $total';
+  String practiceQuestionOf(int current) {
+    return 'Question $current';
   }
 
   @override
@@ -4346,8 +4346,8 @@ class AppLocalizationsKoKr extends AppLocalizationsKo {
   String get practiceExit => '종료';
 
   @override
-  String practiceQuestionOf(int current, int total) {
-    return '$current/$total 문제';
+  String practiceQuestionOf(int current) {
+    return '$current번 문제';
   }
 
   @override

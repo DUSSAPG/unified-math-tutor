@@ -36,7 +36,7 @@
   "practiceModeExamSimulator": "Simulatore d'esame",
   "practiceModeExamSimulatorSub": "Simula le condizioni di un esame",
   "practiceExit": "Esci",
-  "practiceQuestionOf": "Domanda {current} di {total}",
+  "practiceQuestionOf": "Domanda {current}",
   "practiceMixedReview": "Ripasso misto",
   "practiceExplanation": "Spiegazione",
   "practiceCheckAnswer": "Controlla la risposta",

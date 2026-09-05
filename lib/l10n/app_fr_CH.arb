@@ -171,7 +171,7 @@
   "practiceQuestionsLabel": "Questions",
   "practiceStartButton": "Démarrer l'entraînement",
   "practiceExit": "Quitter",
-  "practiceQuestionOf": "Question {current} sur {total}",
+  "practiceQuestionOf": "Question {current}",
   "practiceMixedReview": "Révision mixte",
   "practiceExplanation": "Explication",
   "practiceCheckAnswer": "Vérifier la réponse",

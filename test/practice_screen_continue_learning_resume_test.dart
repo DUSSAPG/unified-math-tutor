@@ -146,7 +146,7 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    expect(find.text(l10n.practiceQuestionOf(2, 10)), findsOneWidget,
+    expect(find.text(l10n.practiceQuestionOf(2)), findsOneWidget,
         reason: 'must resume at the next unanswered question, not restart');
     // _restoreFromResolvedResume saves the resumeCount bump unawaited (it's
     // called from the synchronous initState) — wait for that real
@@ -171,7 +171,7 @@ void main() {
     await tester.tap(find.text(l10n.practiceNextQuestion));
     await _pumpUntil(
       tester,
-      () => find.text(l10n.practiceQuestionOf(3, 10)).evaluate().isNotEmpty,
+      () => find.text(l10n.practiceQuestionOf(3)).evaluate().isNotEmpty,
     );
 
     final updated = ContinueLearningService.instance.currentCheckpoint!;
@@ -243,7 +243,7 @@ void main() {
     await tester.pumpWidget(_wrap(PracticeScreen(
         key: ValueKey(resolved.checkpointId), resumeFrom: resolved)));
     await tester.pumpAndSettle();
-    expect(find.text(l10n.practiceQuestionOf(3, 3)), findsOneWidget);
+    expect(find.text(l10n.practiceQuestionOf(3)), findsOneWidget);
 
     await _tapFirstOption(tester);
     await tester.pump();

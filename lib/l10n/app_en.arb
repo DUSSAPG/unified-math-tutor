@@ -242,14 +242,11 @@
   "@entranceExamNoHandwritingNote": {},
   "practiceExit": "Exit",
   "@practiceExit": {},
-  "practiceQuestionOf": "Question {current} of {total}",
+  "practiceQuestionOf": "Question {current}",
   "@practiceQuestionOf": {
-    "description": "Question counter shown during a practice session",
+    "description": "Question counter shown during a practice session. P0 content-integrity repair: deliberately no total (no 'of {total}') — a session's real length varies with how much exact-topic content actually exists, and showing a total invites exactly the kind of aggregate-count impression this repair removes elsewhere.",
     "placeholders": {
       "current": {
-        "type": "int"
-      },
-      "total": {
         "type": "int"
       }
     }

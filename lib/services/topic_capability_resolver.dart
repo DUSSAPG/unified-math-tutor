@@ -181,16 +181,15 @@ class TopicCapabilityResolver {
     final topicDrillOutcome =
         await PracticeAvailabilityResolver.resolveTopicDrill(stage, topicId);
     final topicDrillReady = topicDrillOutcome is PracticeLoadReady;
-    final topicDrillCount = topicDrillOutcome is PracticeLoadReady
-        ? topicDrillOutcome.records.length
-        : 0;
 
+    // P0 content-integrity repair: Quick Start launched from a Topic Hub is
+    // now exact-topic, same invariant as Topic Drill — never the stage-wide
+    // pool. Passing topicId here is what makes resolveQuickStart apply that
+    // filter instead of its global (Home/Practice, no Hub context) fallback.
     final quickStartOutcome =
-        await PracticeAvailabilityResolver.resolveQuickStart(stage);
+        await PracticeAvailabilityResolver.resolveQuickStart(stage,
+            topicId: topicId);
     final quickStartReady = quickStartOutcome is PracticeLoadReady;
-    final quickStartCount = quickStartOutcome is PracticeLoadReady
-        ? quickStartOutcome.records.length
-        : 0;
 
     final rows = <TopicActivityCapability>[
       TopicActivityCapability(
@@ -202,17 +201,19 @@ class TopicCapabilityResolver {
         // returnToHubTopicId: distinct from the topicId key above (which
         // filters the drill itself) — it tells PracticeScreen which Hub to
         // return to on Back, deterministically, regardless of Navigator
-        // stack ambiguity across shell branches. Same topicId value here,
-        // but kept as its own key since quickStart below has no filtering
-        // topicId at all yet still needs a Hub to return to.
+        // stack ambiguity across shell branches.
         routeExtra: {
           'topicId': topicId,
           'stage': stage,
           'returnToHubTopicId': topicId,
         },
         available: topicDrillReady,
+        // No pool/aggregate counts here (P0 content-integrity repair,
+        // part D) — a count invites exactly the misleading "N real
+        // questions" impression that caused the reported defect. Truthful
+        // presence/absence only.
         reason: topicDrillReady
-            ? '$topicDrillCount real question${topicDrillCount == 1 ? '' : 's'} available for $stage.'
+            ? 'Real questions are available for this topic at $stage.'
             : 'No real questions exist for this topic at $stage yet.',
       ),
       TopicActivityCapability(
@@ -221,19 +222,23 @@ class TopicCapabilityResolver {
         section: TopicActivitySection.practise,
         activityType: TopicActivityType.quickStart,
         route: '/practice',
-        // No 'topicId' here deliberately — resolveQuickStart draws from the
-        // whole stage's mixed pool, never filtered by topic (see the resolve
-        // call above). 'returnToHubTopicId' is unrelated to that filtering:
-        // it's only which Hub Back should return to.
+        // 'topicId' is now set deliberately — see resolveQuickStart's call
+        // above and PracticeScreen._loadSession's dispatch, which honours
+        // it for quickStart mode too. 'preselectQuickStart' still chooses
+        // the MODE shown on setup; 'topicId' is what the actual session
+        // content gets filtered by. 'returnToHubTopicId' is which Hub Back
+        // returns to — same value here, kept separate since they answer
+        // different questions.
         routeExtra: {
+          'topicId': topicId,
           'stage': stage,
           'preselectQuickStart': true,
           'returnToHubTopicId': topicId,
         },
         available: quickStartReady,
         reason: quickStartReady
-            ? '$quickStartCount real question${quickStartCount == 1 ? '' : 's'} in the $stage pool.'
-            : 'No real questions exist for $stage yet.',
+            ? 'Real questions are available for this topic at $stage.'
+            : 'No real questions exist for this topic at $stage yet.',
       ),
       await _formulaLibraryRow(topicId, stage, topicDrillReady),
       await _recallCardsRow(topicId, stage, topicDrillReady),

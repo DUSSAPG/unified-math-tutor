@@ -230,19 +230,32 @@ class _PracticeScreenState extends State<PracticeScreen>
     } else if (widget.autoStart) {
       _selectedMode = _PracticeMode.quickStart;
       WidgetsBinding.instance.addPostFrameCallback((_) => _startSession());
+    } else if (widget.preselectQuickStart) {
+      // Arrived from the Topic Learning Hub's Quick Start card — still
+      // lands on setup with Start requiring an explicit press (see
+      // PracticeScreen.preselectQuickStart doc), never auto-starts. Checked
+      // BEFORE the plain selectedTopicId branch below: P0 content-integrity
+      // repair means a Hub-launched Quick Start now ALSO carries a topicId
+      // (for exact-topic filtering, see _loadSession), so this must win the
+      // MODE even though a topicId is present — only Topic Drill's own card
+      // should ever select topicDrill mode.
+      _selectedMode = _PracticeMode.quickStart;
+      if (widget.selectedTopicId != null) {
+        // Same truthfulness signal Topic Drill uses — after the P0 repair
+        // both modes share the identical exact-topic availability per
+        // stage, so greying out a stage chip that has no real content is
+        // just as correct here.
+        WidgetsBinding.instance
+            .addPostFrameCallback((_) => _loadTopicDrillAvailability());
+      }
     } else if (widget.selectedTopicId != null || widget.selectedTopic != null) {
-      // Arrived from the Topics selector (or the Topic Learning Hub) with
-      // a topic already chosen.
+      // Arrived from the Topics selector (or the Topic Learning Hub's Topic
+      // Drill card) with a topic already chosen.
       _selectedMode = _PracticeMode.topicDrill;
       if (widget.selectedTopicId != null) {
         WidgetsBinding.instance
             .addPostFrameCallback((_) => _loadTopicDrillAvailability());
       }
-    } else if (widget.preselectQuickStart) {
-      // Arrived from the Topic Learning Hub's Quick Start card — still
-      // lands on setup with Start requiring an explicit press (see
-      // PracticeScreen.preselectQuickStart doc), never auto-starts.
-      _selectedMode = _PracticeMode.quickStart;
     }
   }
 
@@ -482,20 +495,26 @@ class _PracticeScreenState extends State<PracticeScreen>
     }
   }
 
-  /// Routes to the D2 resolver by mode — Quick Start never applies a topic
-  /// filter (see `PracticeAvailabilityResolver.resolveQuickStart`); Topic
-  /// Drill (and any other topic-scoped mode reusing this same setup screen)
-  /// honours the chosen topic strictly, via the explicit mapping in
-  /// `practice_topic_mapping.dart` — never a fuzzy/fallback match. Maps the
-  /// resolver's raw records into ready-to-render [QuestionItem]s/graphs only
-  /// on a real, non-empty result.
+  /// Routes to the D2/P0 resolver by mode. P0 content-integrity repair: a
+  /// [topicId] is honoured for BOTH modes now — Topic Drill and a Topic-
+  /// Hub-launched Quick Start alike get the exact same tag-equality filter,
+  /// never a fuzzy/fallback match and never a substitution into the
+  /// stage-wide pool. Only a genuinely topic-less Quick Start (Home/
+  /// Practice, no Topic Hub context — `topicId == null`) still draws from
+  /// the whole stage. Maps the resolver's raw records into ready-to-render
+  /// [QuestionItem]s/graphs only on a real, non-empty result.
   Future<_ResolvedSessionOutcome> _loadSession(String stage) async {
     final topicId = widget.selectedTopicId;
-    final PracticeLoadOutcome outcome = _selectedMode ==
-                _PracticeMode.topicDrill &&
-            topicId != null
+    final isTopicDrill = _selectedMode == _PracticeMode.topicDrill;
+    final PracticeLoadOutcome outcome = isTopicDrill && topicId != null
         ? await PracticeAvailabilityResolver.resolveTopicDrill(stage, topicId)
-        : await PracticeAvailabilityResolver.resolveQuickStart(stage);
+        : await PracticeAvailabilityResolver.resolveQuickStart(
+            stage,
+            // null for a genuinely topic-less Quick Start (Home/Practice,
+            // no Topic Hub context) — resolveQuickStart itself only applies
+            // the exact-topic filter when this is non-null.
+            topicId: isTopicDrill ? null : topicId,
+          );
 
     switch (outcome) {
       case PracticeLoadStageUnavailable():
@@ -693,16 +712,20 @@ class _PracticeScreenState extends State<PracticeScreen>
 
     final examSelectionValid = _selectedExam != null &&
         _examChoiceAvailable(_selectedExam!, effectiveStage);
-    // Topic Drill truthfulness: only gates when a topic was actually chosen
-    // (widget.selectedTopicId != null) — Quick Start/Timed Challenge/Exam
-    // Simulator never filter by topic, so they're unaffected.
-    final isTopicDrillWithTopic = _selectedMode == _PracticeMode.topicDrill &&
+    // Topic Drill truthfulness: gates whenever a topic was actually chosen
+    // (widget.selectedTopicId != null), for EITHER topicDrill or quickStart
+    // mode — P0 content-integrity repair made a Topic-Hub-launched Quick
+    // Start exact-topic too, so it shares the identical per-stage
+    // availability signal. Timed Challenge/Exam Simulator/a topic-less
+    // Quick Start never filter by topic, so they're unaffected.
+    final isTopicScoped = (_selectedMode == _PracticeMode.topicDrill ||
+            _selectedMode == _PracticeMode.quickStart) &&
         widget.selectedTopicId != null;
-    final topicDrillStageReady = !isTopicDrillWithTopic ||
+    final topicDrillStageReady = !isTopicScoped ||
         (_topicDrillAvailabilityByStage?[effectiveStage] ?? false);
     final canStart = _selectedMode != null &&
         (_selectedMode != _PracticeMode.examSimulator || examSelectionValid) &&
-        (!isTopicDrillWithTopic ||
+        (!isTopicScoped ||
             (!_topicDrillAvailabilityLoading && topicDrillStageReady));
 
     if (_screenState == _ScreenState.summary) {
@@ -1463,7 +1486,7 @@ class _SessionView extends StatelessWidget {
                   const SizedBox(width: 10),
                 ],
                 Text(
-                  l10n.practiceQuestionOf(currentIndex + 1, questions.length),
+                  l10n.practiceQuestionOf(currentIndex + 1),
                   style: TextStyle(color: colors.secondaryText, fontSize: 14),
                 ),
               ],

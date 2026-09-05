@@ -1,13 +1,25 @@
-import '../core/practice_topic_mapping.dart';
+import '../models/curriculum_manifest.dart';
+import 'curriculum_manifest_service.dart';
 import 'jsonl_pack_loader.dart';
 import 'pack_registry_service.dart';
 
-/// D2 — the one place that decides what a Practice session actually has to
-/// work with, for either Quick Start or Topic Drill. Separated out from
+/// D2/P0 — the one place that decides what a Practice session actually has
+/// to work with, for either Quick Start or Topic Drill. Separated out from
 /// `PracticeScreen` so the resolution logic (which stage pool, which topic
 /// filter, what counts as "nothing usable") is testable without pumping a
 /// widget tree, and so Quick Start and Topic Drill can never accidentally
 /// share behaviour by both routing through one under-specified code path.
+///
+/// P0 content-integrity repair (2026-09-05): every pack row now carries an
+/// explicit `topicId` tag (see tool/retag_practice_packs.dart) and every
+/// (topicId, stage) combination has a declared availability in
+/// [CurriculumManifestService]'s canonical manifest. Topic filtering is
+/// therefore a plain field-equality check against that tag — never a
+/// runtime re-derivation from raw skill/strand values, never a fuzzy or
+/// partial match, and never a fallback to a broader pool when the exact
+/// match is empty. This is a hard invariant: neither `resolveTopicDrill`
+/// nor a topic-scoped `resolveQuickStart` call may return a question whose
+/// tagged `topicId` differs from what was asked for.
 sealed class PracticeLoadOutcome {
   const PracticeLoadOutcome();
 }
@@ -21,19 +33,22 @@ class PracticeLoadReady extends PracticeLoadOutcome {
   final List<Map<String, dynamic>> records;
 }
 
-/// Quick Start only: the stage's entire practice pool is empty (every row
-/// quarantined, or the pack itself has none) — distinct from a normal
-/// "picked a smaller-than-requested session" result, which is not this.
+/// Quick Start only (global, no Topic Hub context): the stage's entire
+/// practice pool is empty (every row quarantined, or the pack itself has
+/// none) — distinct from a normal "picked a smaller-than-requested
+/// session" result, which is not this.
 class PracticeLoadStageUnavailable extends PracticeLoadOutcome {
   const PracticeLoadStageUnavailable();
 }
 
-/// Topic Drill only: either the chosen topic has no evidence-backed mapping
-/// for this stage at all (see `practice_topic_mapping.dart`'s
-/// `intentionallyUnmappedRawValues`), or it does map but zero usable
-/// records exist after quarantine. Both collapse to the same learner-facing
-/// truth — "not available for this topic right now" — never a silent
-/// substitution into a different topic's content.
+/// Topic Drill, or a Topic-Hub-launched Quick Start: either the manifest
+/// declares this (topicId, stage) combination unavailable, or it declares
+/// it available but zero tagged records actually exist after quarantine
+/// (a manifest/pack drift that should never happen — caught here as
+/// defence in depth, never surfaced as a silent substitution). Both
+/// collapse to the same learner-facing truth — "not available for this
+/// topic right now" — never a substitution into a different topic's or a
+/// stage-wide pool's content.
 class PracticeLoadTopicUnavailable extends PracticeLoadOutcome {
   const PracticeLoadTopicUnavailable();
 }
@@ -41,33 +56,50 @@ class PracticeLoadTopicUnavailable extends PracticeLoadOutcome {
 class PracticeAvailabilityResolver {
   PracticeAvailabilityResolver._();
 
-  /// Quick Start: the stage's whole usable pool, no topic filter — matches
-  /// the product's existing "mixed review" contract exactly.
-  static Future<PracticeLoadOutcome> resolveQuickStart(String stage) async {
-    final records = await _loadStagePool(stage);
-    if (records.isEmpty) return const PracticeLoadStageUnavailable();
-    return PracticeLoadReady(records);
+  /// Quick Start. [topicId] is `null` for the *global* Quick Start entry
+  /// (Home/Practice with no Topic Hub context) — the one place a stage-wide,
+  /// no-topic-filter pool is still the honest, intended contract. When
+  /// [topicId] is non-null (a Topic Hub launch, Topic Drill or Quick
+  /// Start card alike), this applies the exact same manifest-gated,
+  /// tag-equality filter [resolveTopicDrill] does — never a stage-wide
+  /// fallback for a Hub-scoped launch.
+  static Future<PracticeLoadOutcome> resolveQuickStart(
+    String stage, {
+    String? topicId,
+  }) async {
+    if (topicId == null) {
+      final records = await _loadStagePool(stage);
+      if (records.isEmpty) return const PracticeLoadStageUnavailable();
+      return PracticeLoadReady(records);
+    }
+    return _resolveExactTopic(
+        stage, topicId, (record) => record.quickStartReady);
   }
 
-  /// Topic Drill: only records whose raw pack value maps to [topicId] under
-  /// the explicit, stage-scoped mapping — never a fuzzy match, never a
-  /// fallback to a different topic.
+  /// Topic Drill: only records whose baked-in `topicId` tag exactly equals
+  /// [topicId] — never a fuzzy match, never a fallback to a different
+  /// topic or the stage-wide pool.
   static Future<PracticeLoadOutcome> resolveTopicDrill(
     String stage,
     String topicId,
   ) async {
+    return _resolveExactTopic(
+        stage, topicId, (record) => record.topicDrillReady);
+  }
+
+  static Future<PracticeLoadOutcome> _resolveExactTopic(
+    String stage,
+    String topicId,
+    bool Function(TopicStageRecord) isReady,
+  ) async {
+    final record =
+        await CurriculumManifestService.instance.recordFor(topicId, stage);
+    if (record == null || !isReady(record)) {
+      return const PracticeLoadTopicUnavailable();
+    }
     final records = await _loadStagePool(stage);
-    final groupingField = groupingFieldFor(stage);
-    final matched = records.where((record) {
-      final group = record[groupingField] as String?;
-      final fineSkill = record['skill'] as String?;
-      final canonical = canonicalTopicForRawValue(
-        stage: stage,
-        rawStrandOrSkillGroup: group,
-        rawFineSkill: fineSkill,
-      );
-      return canonical == topicId;
-    }).toList();
+    final matched =
+        records.where((record) => record['topicId'] == topicId).toList();
     if (matched.isEmpty) return const PracticeLoadTopicUnavailable();
     return PracticeLoadReady(matched);
   }

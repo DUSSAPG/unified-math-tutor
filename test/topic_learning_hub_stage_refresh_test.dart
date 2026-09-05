@@ -24,9 +24,12 @@ void main() {
     await pumpUntilLoaded(tester);
 
     expect(activityCard('topicDrill'), findsNothing);
-    expect(activityCard('quickStart'), findsOneWidget,
-        reason: 'Quick Start stays available — it is stage-wide, not '
-            'topic-filtered');
+    // P0 content-integrity repair: Quick Start launched from a Topic Hub is
+    // now exact-topic too — it must disappear right alongside Topic Drill,
+    // never stay available by falling back to the stage-wide pool.
+    expect(activityCard('quickStart'), findsNothing,
+        reason: 'Quick Start must also disappear — it is exact-topic from '
+            'a Topic Hub now, not stage-wide');
 
     await tester.tap(find.byKey(const Key('topicHubStage-KS2')));
     await tester.pump();

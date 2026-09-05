@@ -12,6 +12,21 @@
 /// *display* (topic id -> localized title), which was never the broken
 /// part.
 ///
+/// P0 content-integrity repair (2026-09-05): [PracticeAvailabilityResolver]
+/// no longer calls [canonicalTopicForRawValue] at query time — every pack
+/// row now carries a `topicId` tag baked in once by
+/// `tool/retag_practice_packs.dart`, using this exact same evidence, and
+/// the resolver filters on that tag directly (a plain equality check,
+/// nothing left to re-derive or drift). This file's role is now: (1) the
+/// human-readable evidence record for that migration, (2) still directly
+/// exercised by test/practice_topic_mapping_test.dart, and (3) the
+/// comparison target for
+/// test/practice_topic_mapping_pack_tag_drift_test.dart, which proves every
+/// tagged row's `topicId` agrees with what this mapping would produce for
+/// its raw `skill`/`strand` value — so this file and the shipped packs can
+/// never silently disagree. `canonicalTopicIds` (below) is still live,
+/// directly imported by `topic_capability_resolver.dart`.
+///
 /// # Rules
 /// * Every entry here is explicit data, verified against the actual raw
 ///   `skill`/`strand` distribution in the shipped packs — never a

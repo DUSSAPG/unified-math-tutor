@@ -108,18 +108,43 @@ void main() {
     }
 
     test(
-        'quickStart is available for every real stage regardless of topic '
-        '(it is never topic-filtered)', () async {
+        'P0 content-integrity repair: quickStart from the Hub is exact-'
+        'topic too, never available for a topic with zero real content '
+        '(reversal of the old "quickStart is always stage-wide" policy — '
+        'that was the confirmed defect: a Hub Quick Start card silently '
+        'drawing from the whole stage pool)', () async {
       for (final stage in const ['KS2', 'KS3', 'KS4', 'KS5']) {
         final rows = await TopicCapabilityResolver.resolve(
-          topicId: 'decimals', // a topic with zero real topicDrill content
+          topicId: 'decimals', // a topic with zero real content at any stage
           stage: stage,
         );
         final row = rows
             .singleWhere((r) => r.activityType == TopicActivityType.quickStart);
-        expect(row.available, isTrue,
-            reason: 'Quick Start is stage-wide, not topic-filtered — it '
-                'must stay available even for a topic with no real content');
+        expect(row.available, isFalse,
+            reason: 'Quick Start launched from a Topic Hub must mirror '
+                'Topic Drill\'s exact-topic availability — never available '
+                'for a topic with no real content just because the stage '
+                'pool as a whole is non-empty');
+      }
+    });
+
+    test(
+        'quickStart from the Hub matches topicDrill availability exactly, '
+        'topic by topic and stage by stage (same manifest signal after the '
+        'P0 repair)', () async {
+      for (final stage in const ['KS2', 'KS3', 'KS4', 'KS5']) {
+        for (final topicId in TopicCapabilityResolver.supportedTopicIds) {
+          final rows = await TopicCapabilityResolver.resolve(
+              topicId: topicId, stage: stage);
+          final topicDrill = rows.singleWhere(
+              (r) => r.activityType == TopicActivityType.topicDrill);
+          final quickStart = rows.singleWhere(
+              (r) => r.activityType == TopicActivityType.quickStart);
+          expect(quickStart.available, topicDrill.available,
+              reason: '$topicId @ $stage: quickStart.available '
+                  '(${quickStart.available}) must equal topicDrill.available '
+                  '(${topicDrill.available})');
+        }
       }
     });
   });
