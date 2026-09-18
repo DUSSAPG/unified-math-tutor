@@ -13,6 +13,17 @@ import '../../shared/theme/app_spacing.dart';
 import '../../shared/theme/app_theme.dart';
 import '../../widgets/shared/section_label.dart';
 
+/// Gate for the Year 8 Ratio & Proportion "Ratio scaling foundations"
+/// vertical slice's Hub card — true only for the exact topic/stage this
+/// narrow slice was built for. Deliberately a plain function (not woven
+/// into [TopicCapabilityResolver], which stays topic-agnostic) so this
+/// one-off slice can never accidentally affect any other topic's
+/// availability. See router.dart's nested 'ratio-foundations' route and
+/// RatioFoundationsScreen's own doc comment.
+bool showRatioFoundationsCard(
+        {required String topicId, required String stage}) =>
+    topicId == 'ratio_proportion' && stage == 'KS3';
+
 /// Same title strings interactive_labs_hub_screen.dart's own catalog list
 /// uses (footballPrecision/mazeDriver are hardcoded English there too — an
 /// existing gap this pass doesn't touch, matched here rather than
@@ -162,6 +173,13 @@ class _TopicLearningHubScreenState extends State<TopicLearningHubScreen> {
                       );
                     },
                   ),
+                  if (showRatioFoundationsCard(
+                    topicId: widget.topicId,
+                    stage: _stage,
+                  )) ...[
+                    const SizedBox(height: AppSpacing.md),
+                    const _RatioFoundationsCard(),
+                  ],
                 ],
               ),
             ),
@@ -442,6 +460,81 @@ class _ActivityCard extends StatelessWidget {
               ),
               Icon(Icons.chevron_right, color: colors.tertiaryText),
             ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// The Year 8 Ratio & Proportion "Ratio scaling foundations" vertical
+/// slice's Hub card. Deliberately separate from [_ActivityCard] and
+/// [TopicCapabilityResolver] — this is a single, fixed, non-topic-
+/// parameterised destination (see [showRatioFoundationsCard]), not a row
+/// derived from the generic capability matrix. Its own title/subtitle
+/// state plainly what it contains — never "full Year 8 Ratio" — and never
+/// a question-pool total.
+class _RatioFoundationsCard extends StatelessWidget {
+  const _RatioFoundationsCard();
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final colors = context.appColors;
+    return Semantics(
+      button: true,
+      label: l10n.ratioFoundationsHubCardTitle,
+      hint: l10n.ratioFoundationsHubCardReason,
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          key: const ValueKey('topicHubRatioFoundationsCard'),
+          borderRadius: BorderRadius.circular(14),
+          onTap: () => context.push('/topics/hub/ratio-foundations'),
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+            decoration: BoxDecoration(
+              color: colors.cardSurface,
+              borderRadius: BorderRadius.circular(14),
+              border: Border.all(color: colors.divider),
+            ),
+            child: Row(
+              children: [
+                Container(
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    color: colors.accent.withValues(alpha: 0.14),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child:
+                      Icon(Icons.trending_up, color: colors.accent, size: 20),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        l10n.ratioFoundationsHubCardTitle,
+                        style: TextStyle(
+                          color: colors.primaryText,
+                          fontSize: 15,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      Text(
+                        l10n.ratioFoundationsHubCardReason,
+                        style: TextStyle(
+                            color: colors.secondaryText, fontSize: 12),
+                      ),
+                    ],
+                  ),
+                ),
+                Icon(Icons.chevron_right, color: colors.tertiaryText),
+              ],
+            ),
           ),
         ),
       ),

@@ -1208,6 +1208,56 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
+  String get ratioFoundationsHubCardTitle => 'Ratio scaling foundations';
+
+  @override
+  String get ratioFoundationsHubCardReason =>
+      'Recognise equivalent ratios, then guided and independent practice scaling both parts consistently.';
+
+  @override
+  String get ratioFoundationsScreenTitle => 'Ratio Scaling Foundations';
+
+  @override
+  String get ratioFoundationsRungRecognise => 'Recognise';
+
+  @override
+  String get ratioFoundationsRungGuided => 'Guided practice';
+
+  @override
+  String get ratioFoundationsRungFluency => 'Fluency practice';
+
+  @override
+  String get ratioFoundationsShowHint => 'Show hint';
+
+  @override
+  String get ratioFoundationsHideHint => 'Hide hint';
+
+  @override
+  String get ratioFoundationsCorrect => 'Correct!';
+
+  @override
+  String get ratioFoundationsIncorrect => 'Not quite';
+
+  @override
+  String get ratioFoundationsContinue => 'Continue';
+
+  @override
+  String get ratioFoundationsNextItem => 'Next item';
+
+  @override
+  String ratioFoundationsFluencyProgress(int correct, int target) {
+    return '$correct of $target fluency items correct so far';
+  }
+
+  @override
+  String get ratioFoundationsCompletionTitle =>
+      'Ratio scaling foundations completed.';
+
+  @override
+  String get ratioFoundationsCompletionBody =>
+      'More Ratio learning is coming soon.';
+
+  @override
   String get mascotGreeting => 'Ready to power up your maths?';
 
   @override

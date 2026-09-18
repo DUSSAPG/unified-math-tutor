@@ -886,6 +886,50 @@
       }
     }
   },
+  "ratioFoundationsHubCardTitle": "Ratio scaling foundations",
+  "@ratioFoundationsHubCardTitle": {
+    "description": "Topic Learning Hub card title for the KS3 Ratio & Proportion vertical slice — must never be worded as if it were the full Year 8 Ratio curriculum"
+  },
+  "ratioFoundationsHubCardReason": "Recognise equivalent ratios, then guided and independent practice scaling both parts consistently.",
+  "@ratioFoundationsHubCardReason": {
+    "description": "Truthful description of what this card contains — no pool/question-bank totals"
+  },
+  "ratioFoundationsScreenTitle": "Ratio Scaling Foundations",
+  "@ratioFoundationsScreenTitle": {},
+  "ratioFoundationsRungRecognise": "Recognise",
+  "@ratioFoundationsRungRecognise": {},
+  "ratioFoundationsRungGuided": "Guided practice",
+  "@ratioFoundationsRungGuided": {},
+  "ratioFoundationsRungFluency": "Fluency practice",
+  "@ratioFoundationsRungFluency": {},
+  "ratioFoundationsShowHint": "Show hint",
+  "@ratioFoundationsShowHint": {},
+  "ratioFoundationsHideHint": "Hide hint",
+  "@ratioFoundationsHideHint": {},
+  "ratioFoundationsCorrect": "Correct!",
+  "@ratioFoundationsCorrect": {},
+  "ratioFoundationsIncorrect": "Not quite",
+  "@ratioFoundationsIncorrect": {},
+  "ratioFoundationsContinue": "Continue",
+  "@ratioFoundationsContinue": {},
+  "ratioFoundationsNextItem": "Next item",
+  "@ratioFoundationsNextItem": {},
+  "ratioFoundationsFluencyProgress": "{correct} of {target} fluency items correct so far",
+  "@ratioFoundationsFluencyProgress": {
+    "description": "Truthful progress toward completing Rung 3 of this one slice — never a broader mastery percentage",
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "ratioFoundationsCompletionTitle": "Ratio scaling foundations completed.",
+  "@ratioFoundationsCompletionTitle": {},
+  "ratioFoundationsCompletionBody": "More Ratio learning is coming soon.",
+  "@ratioFoundationsCompletionBody": {},
   "mascotGreeting": "Ready to power up your maths?",
   "mascotThinking": "Take your time. Think it through!",
   "mascotSuccess": "Great calculation! Fuel added.",

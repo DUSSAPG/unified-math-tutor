@@ -1,0 +1,52 @@
+{
+  "taskFamilyId": "ratio_scaling_foundations",
+  "version": 1,
+  "curriculumNodeId": "ratio_proportion::KS3",
+  "objective": "Recognise equivalent ratios and their common multiplicative scale factor, and scale both parts of a two-term ratio consistently to find a missing value.",
+  "scopeNote": "One narrow, original task family for Year 8 Ratio & Proportion (Calculate layer only, Rungs 1-3) — not the entire Year 8 ratio curriculum. See docs/learning_architecture/YEAR8_RATIO_AND_KS4_QUADRATICS_BLUEPRINTS_V1.md for the full planned blueprint this is one slice of.",
+  "rungs": [
+    {
+      "rung": 1,
+      "name": "Recognise",
+      "description": "Identify whether two ratios are equivalent, and identify the common multiplicative scale factor between equivalent ratios. Clean small positive integers only, no ambiguous phrasing.",
+      "advanceOnCorrectCount": 1
+    },
+    {
+      "rung": 2,
+      "name": "Guided practice",
+      "description": "Solve a one-step missing-value ratio scaling task. A concise, original worked hint is available after an incorrect answer or on explicit request, explaining that both linked quantities must use the same scale factor.",
+      "advanceOnCorrectCount": 1
+    },
+    {
+      "rung": 3,
+      "name": "Fluency variation",
+      "description": "Solve independent one-step ratio scaling tasks, varying the numbers, the phrasing, and the direction of scaling (multiplying up or dividing down). No hint is shown automatically. No multi-step ratio, algebra, percentage, fractions, worded exam contexts, or visual/lab interaction.",
+      "advanceOnCorrectCount": 3
+    }
+  ],
+  "diagnosticSignatures": [
+    {
+      "code": "ERR_MAGNITUDE_SCALE",
+      "family": "magnitude_scale",
+      "appliesFromRung": 3,
+      "description": "The learner's selected answer equals the unscaled original value of the term they were asked to find — consistent with scaling one side of the ratio and leaving the other unchanged, rather than applying the same scale factor to both. Authored for this exact task family; never inferred from a numeric coincidence."
+    }
+  ],
+  "generation": {
+    "termRange": [1, 9],
+    "scaleFactorRange": [2, 5],
+    "deterministic": true,
+    "seedRequired": true,
+    "note": "Every item is constructed backward from its intended whole-number answer, then re-validated before display. See lib/services/ratio_foundations_task_generator.dart."
+  },
+  "outOfScope": [
+    "multi-step ratio",
+    "algebra",
+    "percentage",
+    "fractions",
+    "worded exam-style contexts",
+    "visual or lab interaction",
+    "three-term ratios",
+    "reverse/missing-original-input reasoning"
+  ]
+}

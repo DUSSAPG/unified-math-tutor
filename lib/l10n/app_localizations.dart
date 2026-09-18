@@ -2293,6 +2293,96 @@ abstract class AppLocalizations {
   /// **'No activities are available for this topic at {stage} yet.'**
   String topicHubNoActivities(String stage);
 
+  /// Topic Learning Hub card title for the KS3 Ratio & Proportion vertical slice — must never be worded as if it were the full Year 8 Ratio curriculum
+  ///
+  /// In en, this message translates to:
+  /// **'Ratio scaling foundations'**
+  String get ratioFoundationsHubCardTitle;
+
+  /// Truthful description of what this card contains — no pool/question-bank totals
+  ///
+  /// In en, this message translates to:
+  /// **'Recognise equivalent ratios, then guided and independent practice scaling both parts consistently.'**
+  String get ratioFoundationsHubCardReason;
+
+  /// No description provided for @ratioFoundationsScreenTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Ratio Scaling Foundations'**
+  String get ratioFoundationsScreenTitle;
+
+  /// No description provided for @ratioFoundationsRungRecognise.
+  ///
+  /// In en, this message translates to:
+  /// **'Recognise'**
+  String get ratioFoundationsRungRecognise;
+
+  /// No description provided for @ratioFoundationsRungGuided.
+  ///
+  /// In en, this message translates to:
+  /// **'Guided practice'**
+  String get ratioFoundationsRungGuided;
+
+  /// No description provided for @ratioFoundationsRungFluency.
+  ///
+  /// In en, this message translates to:
+  /// **'Fluency practice'**
+  String get ratioFoundationsRungFluency;
+
+  /// No description provided for @ratioFoundationsShowHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Show hint'**
+  String get ratioFoundationsShowHint;
+
+  /// No description provided for @ratioFoundationsHideHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide hint'**
+  String get ratioFoundationsHideHint;
+
+  /// No description provided for @ratioFoundationsCorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct!'**
+  String get ratioFoundationsCorrect;
+
+  /// No description provided for @ratioFoundationsIncorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'Not quite'**
+  String get ratioFoundationsIncorrect;
+
+  /// No description provided for @ratioFoundationsContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get ratioFoundationsContinue;
+
+  /// No description provided for @ratioFoundationsNextItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Next item'**
+  String get ratioFoundationsNextItem;
+
+  /// Truthful progress toward completing Rung 3 of this one slice — never a broader mastery percentage
+  ///
+  /// In en, this message translates to:
+  /// **'{correct} of {target} fluency items correct so far'**
+  String ratioFoundationsFluencyProgress(int correct, int target);
+
+  /// No description provided for @ratioFoundationsCompletionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Ratio scaling foundations completed.'**
+  String get ratioFoundationsCompletionTitle;
+
+  /// No description provided for @ratioFoundationsCompletionBody.
+  ///
+  /// In en, this message translates to:
+  /// **'More Ratio learning is coming soon.'**
+  String get ratioFoundationsCompletionBody;
+
   /// No description provided for @mascotGreeting.
   ///
   /// In en, this message translates to:

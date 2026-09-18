@@ -10,6 +10,7 @@ import '../screens/practice/practice_screen.dart';
 import '../screens/tutor/tutor_screen.dart';
 import '../screens/topics/topics_screen.dart';
 import '../screens/topics/topic_learning_hub_screen.dart';
+import '../screens/topics/ratio_foundations_screen.dart';
 import '../screens/settings/help_screen.dart';
 import '../screens/settings/parent_teacher_tools_screen.dart';
 import '../screens/settings/parent_cheat_sheet_screen.dart';
@@ -646,6 +647,21 @@ final GoRouter appRouter = GoRouter(
                       topicId: topicId ?? 'mixed_review',
                     );
                   },
+                  routes: [
+                    // Year 8 Ratio & Proportion "Ratio scaling foundations"
+                    // vertical slice — reachable only via the Hub's own
+                    // conditional card (topic_learning_hub_screen.dart),
+                    // itself only rendered for topicId == 'ratio_proportion'
+                    // && stage == 'KS3'. No other entry point exists; a
+                    // stray deep link here is still safe (the screen has no
+                    // topic/stage parameter to get wrong — it is a fixed,
+                    // single-objective slice, not topic-parameterised).
+                    GoRoute(
+                      path: 'ratio-foundations',
+                      builder: (context, state) =>
+                          const RatioFoundationsScreen(),
+                    ),
+                  ],
                 ),
               ],
             ),
