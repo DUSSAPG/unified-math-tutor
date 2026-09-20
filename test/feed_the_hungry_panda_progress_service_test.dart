@@ -111,6 +111,12 @@ void main() {
 
   test('progress is namespaced per learner profile', () async {
     final service = FeedTheHungryPandaProgressService.instance;
+    // Canonical scoping only treats an active learner as the owner of the
+    // work for a learner-facing (parent/teacher) role — see
+    // resolveLearnerScope. Without a role the same taps resolve to the guest
+    // scope, which is covered separately in
+    // feed_the_hungry_panda_scope_isolation_test.dart.
+    await OnboardingProfileService.instance.setUserType('parent');
     final learnerA = await LearnerProfilesService.instance.addLearner('A');
     await LearnerProfilesService.instance.setActiveLearner(learnerA);
     await service.recordEvent(event(
