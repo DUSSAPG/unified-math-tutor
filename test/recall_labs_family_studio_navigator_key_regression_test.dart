@@ -6,6 +6,7 @@ import 'package:unified_math_tutor/app/router.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 import 'package:unified_math_tutor/models/interactive_lab_id.dart';
 import 'package:unified_math_tutor/screens/formulas/formula_library_screen.dart';
+import 'package:unified_math_tutor/screens/topics/topic_learning_hub_screen.dart';
 import 'package:unified_math_tutor/screens/topics/topics_screen.dart';
 import 'package:unified_math_tutor/services/discovery_card_catalog_service.dart';
 import 'package:unified_math_tutor/services/family_activity_catalog_service.dart';
@@ -36,14 +37,22 @@ import 'package:unified_math_tutor/services/streak_service.dart';
 ///
 /// Verified this suite actually catches the regression (not just a
 /// vacuously-passing test) by reverting the recall_card_body.dart fix and
-/// re-running: the single-tap "opens Topics with no exception" test does
-/// NOT reproduce it — a widget test's very first `pumpWidget` never visits
-/// a shell route first, so the shell branch isn't mounted yet and the
-/// first push() has nothing to collide with. The "rapid repeat" test does
-/// fail with the bug reverted (a `find.text('Reveal the answer')` finder
-/// fails on the second cycle, because the first cycle's bad push() left
-/// the router/shell in a broken state) — that's the test that actually
-/// guards this regression; the others guard the fixed behaviour generally.
+/// re-running: the single-tap "opens the exact topic's Hub with no
+/// exception" test does NOT reproduce it — a widget test's very first
+/// `pumpWidget` never visits a shell route first, so the shell branch isn't
+/// mounted yet and the first push() has nothing to collide with. The
+/// "rapid repeat" test does fail with the bug reverted (a
+/// `find.text('Reveal the answer')` finder fails on the second cycle,
+/// because the first cycle's bad push() left the router/shell in a broken
+/// state) — that's the test that actually guards this regression; the
+/// others guard the fixed behaviour generally.
+///
+/// The Recall Card "Related Practice" destination itself changed since this
+/// suite was first written: it used to land on the bare Topics list
+/// (`context.go('/topics')`); the P0 route repair now sends it to the exact
+/// named topic's Topic Learning Hub (`context.go('/topics/hub', extra:
+/// {'topicId': id})`) — still a `go()`, so the navigator-key fix this suite
+/// guards is unaffected, only the destination screen is more specific now.
 void main() {
   const locale = Locale('en');
 
@@ -99,16 +108,47 @@ void main() {
     await tester.pumpAndSettle();
   }
 
+  /// Same as [tapText], for a Recall Card's Related Practice chip
+  /// specifically: its destination (the Topic Learning Hub, since the P0
+  /// route repair) shows an indeterminate `CircularProgressIndicator`
+  /// while its capability rows resolve, which plain `pumpAndSettle` never
+  /// detects as settled — mirrors `pumpUntilLoaded` in
+  /// test/support/topic_hub_practice_crash_test_utils.dart.
+  Future<void> tapRecallPracticeChip(
+      WidgetTester tester, String topicId) async {
+    final finder = find.text(topicId);
+    await tester.ensureVisible(finder);
+    await tester.pumpAndSettle();
+    await tester.tap(finder);
+    await tester.pump();
+    for (var i = 0;
+        i < 600 && find.byType(CircularProgressIndicator).evaluate().isNotEmpty;
+        i++) {
+      await Future<void>.delayed(const Duration(milliseconds: 50));
+      await tester.pump();
+    }
+    // Not pumpAndSettle(): the Topic Learning Hub route lives on the main
+    // shell for the first time here, and under this file's tester.runAsync
+    // wrapper an indeterminate animation elsewhere in the now-mounted shell
+    // (unrelated to this fix) keeps pumpAndSettle from ever reporting
+    // settled. A bounded number of plain frames is enough to flush the
+    // page-entry transition once the Hub's own spinner is already gone.
+    for (var i = 0; i < 10; i++) {
+      await tester.pump(const Duration(milliseconds: 100));
+    }
+  }
+
   group('Recall Card detail -> Related Practice (the reported crash path)', () {
-    testWidgets('opens Topics with no exception', (tester) async {
+    testWidgets("opens the exact topic's Hub, with no exception",
+        (tester) async {
       await tester.runAsync(() async {
         await pumpRoute(tester,
             '/math-studio/recall-cards/card/speed-distance-time-formula');
         await tester.tap(find.text('Reveal the answer'));
         await tester.pumpAndSettle();
 
-        await tapText(tester, 'ratio_proportion');
-        expect(find.byType(TopicsScreen), findsOneWidget);
+        await tapRecallPracticeChip(tester, 'ratio_proportion');
+        expect(find.byType(TopicLearningHubScreen), findsOneWidget);
         expect(tester.takeException(), isNull);
       });
     });
@@ -122,21 +162,21 @@ void main() {
             '/math-studio/recall-cards/card/speed-distance-time-formula');
         await tester.tap(find.text('Reveal the answer'));
         await tester.pumpAndSettle();
-        await tapText(tester, 'ratio_proportion');
+        await tapRecallPracticeChip(tester, 'ratio_proportion');
         expect(tester.takeException(), isNull);
 
         await pumpRoute(
             tester, '/math-studio/recall-cards/card/num-order-of-operations');
         await tester.tap(find.text('Reveal the answer'));
         await tester.pumpAndSettle();
-        await tapText(tester, 'number_place_value');
+        await tapRecallPracticeChip(tester, 'number_place_value');
         expect(tester.takeException(), isNull);
 
         await pumpRoute(tester,
             '/math-studio/recall-cards/card/speed-distance-time-formula');
         await tester.tap(find.text('Reveal the answer'));
         await tester.pumpAndSettle();
-        await tapText(tester, 'ratio_proportion');
+        await tapRecallPracticeChip(tester, 'ratio_proportion');
         expect(tester.takeException(), isNull);
       });
     });
@@ -187,8 +227,8 @@ void main() {
 
       await LocalPreferencesService.instance.setThemeMode(ThemeMode.system);
       await tester.pumpAndSettle();
-      await tapText(tester, 'ratio_proportion');
-      expect(find.byType(TopicsScreen), findsOneWidget);
+      await tapRecallPracticeChip(tester, 'ratio_proportion');
+      expect(find.byType(TopicLearningHubScreen), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
   });

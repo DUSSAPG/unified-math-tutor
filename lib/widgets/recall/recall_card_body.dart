@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
+import '../../models/interactive_lab_id.dart';
 import '../../models/recall_card.dart';
+import '../../services/recall_card_lab_link_resolver.dart';
 import '../../services/recall_cards_progress_service.dart';
+import '../../services/topic_capability_resolver.dart';
 import '../../shared/math_notation_formatter.dart';
 import '../../shared/theme/app_spacing.dart';
 import '../../shared/theme/app_theme.dart';
@@ -204,10 +207,15 @@ class _SectionHeading extends StatelessWidget {
   }
 }
 
-/// Connect-stage cross-links. Discovery Cards and practice topics navigate
-/// directly; Interactive Labs are a forward-declared data contract only
-/// (Labs are not shipped yet — see the Interactive Labs foundation work item)
-/// so they render as inert, non-navigating text rather than a dead link.
+/// Connect-stage cross-links. Discovery Cards, practice topics and
+/// Interactive Labs all navigate directly to a real destination — Interactive
+/// Labs shipped a while ago (see [InteractiveLabId], [TopicCapabilityResolver
+/// .labRoutes]); an id this catalog authored before that (`flight-lab`,
+/// `data-lab`) is translated by [RecallCardLabLinkResolver], not shown as
+/// "coming soon". An id [RecallCardLabLinkResolver.resolve] cannot place is
+/// dropped from this list entirely — never rendered as a dead or misleading
+/// chip, per the same "planned → absent, not a fake tile" rule the rest of
+/// this app already follows.
 class _RelatedLinks extends StatelessWidget {
   const _RelatedLinks({required this.card});
 
@@ -217,7 +225,12 @@ class _RelatedLinks extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final hasDiscovery = card.relatedDiscoveryCardIds.isNotEmpty;
-    final hasLabs = card.relatedInteractiveLabIds.isNotEmpty;
+    final resolvedLabs = [
+      for (final rawId in card.relatedInteractiveLabIds)
+        if (RecallCardLabLinkResolver.resolve(rawId) case final lab?)
+          (rawId: rawId, lab: lab),
+    ];
+    final hasLabs = resolvedLabs.isNotEmpty;
     final hasPractice = card.relatedPracticeTopicIds.isNotEmpty;
     if (!hasDiscovery && !hasLabs && !hasPractice) {
       return const SizedBox.shrink();
@@ -254,13 +267,20 @@ class _RelatedLinks extends StatelessWidget {
                     RecallCardsProgressService.instance
                         .recordLinkedPracticeUse(card.id);
                     // Recall Cards live outside the bottom-nav shell (under
-                    // /math-studio); /topics is a shell-owned branch route,
-                    // so this MUST use go(), never push() — see the
+                    // /math-studio); /topics/hub is a shell-owned branch
+                    // route, so this MUST use go(), never push() — see the
                     // navigator key ownership model comment in
                     // lib/app/router.dart. push() here duplicates the
                     // Topics branch's GlobalKey<NavigatorState> and crashes
-                    // with a Navigator key-reservation assertion.
-                    context.go('/topics');
+                    // with a Navigator key-reservation assertion. Passing
+                    // 'topicId' is the same real call
+                    // practice_screen.dart's own Hub-return navigation
+                    // already makes — the Hub reads the learner's current
+                    // stage itself (same as tapping this topic from the
+                    // Topics list directly), so an unavailable topic lands
+                    // on that exact topic's own honest unavailable state,
+                    // never a substituted topic or a blank page.
+                    context.go('/topics/hub', extra: {'topicId': id});
                   },
                 ),
             ],
@@ -273,10 +293,19 @@ class _RelatedLinks extends StatelessWidget {
             spacing: 8,
             runSpacing: 8,
             children: [
-              for (final id in card.relatedInteractiveLabIds)
-                Chip(
-                  label: Text('$id · ${l10n.recallCardsLabComingSoon}'),
-                  backgroundColor: context.appColors.cardSurface,
+              for (final entry in resolvedLabs)
+                ActionChip(
+                  label: Text(entry.rawId),
+                  onPressed: () {
+                    RecallCardsProgressService.instance
+                        .recordLinkedInteractiveLabUse(card.id);
+                    // Interactive Labs live under the same root-navigator
+                    // /math-studio subtree Recall Cards itself is already
+                    // reached from (see lib/app/router.dart) — a plain
+                    // push(), exactly like the Discovery chip above, is
+                    // safe here; it never touches a shell branch.
+                    context.push(TopicCapabilityResolver.labRoutes[entry.lab]!);
+                  },
                 ),
             ],
           ),
