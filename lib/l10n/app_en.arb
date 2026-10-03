@@ -1845,6 +1845,142 @@
   "@feedTheHungryPandaTitle": {},
   "feedTheHungryPandaSubtitle": "Count out apples one at a time to feed Panda",
   "@feedTheHungryPandaSubtitle": {},
+  "abacusPlayModeGuided": "Guided",
+  "@abacusPlayModeGuided": {},
+  "abacusPlayModeFree": "Free explore",
+  "@abacusPlayModeFree": {},
+  "abacusPlayFreeTitle": "Free explore",
+  "@abacusPlayFreeTitle": {},
+  "abacusPlayFreeIntro": "Slide beads across the bar to make any number up to 999. There is no goal here. Just explore.",
+  "@abacusPlayFreeIntro": {},
+  "abacusPlayHowTo": "Tap a bead, or drag it across the bar, to count it. Tap a counted bead to send it back.",
+  "@abacusPlayHowTo": {},
+  "abacusPlayReset": "Reset",
+  "@abacusPlayReset": {},
+  "abacusPlayBuildTitle": "Build a number",
+  "@abacusPlayBuildTitle": {},
+  "abacusPlayBuildTask": "Build 34. Slide 3 tens and 4 ones across the bar.",
+  "@abacusPlayBuildTask": {},
+  "abacusPlayBuildDone": "You built 34: 3 tens and 4 ones.",
+  "@abacusPlayBuildDone": {},
+  "abacusPlayBreakTitle": "Break a number apart",
+  "@abacusPlayBreakTitle": {},
+  "abacusPlayBreakTask": "This is 47. Slide the 7 ones back so only the tens are left.",
+  "@abacusPlayBreakTask": {},
+  "abacusPlayBreakDone": "47 breaks apart into 40 and 7.",
+  "@abacusPlayBreakDone": {},
+  "abacusPlayExchangeTitle": "Swap ten ones for one ten",
+  "@abacusPlayExchangeTitle": {},
+  "abacusPlayExchangeTask": "This is 29. Press +1 to add one more, and watch what happens to the ones.",
+  "@abacusPlayExchangeTask": {},
+  "abacusPlayExchangeDone": "10 ones swapped for 1 ten, so 29 + 1 = 30.",
+  "@abacusPlayExchangeDone": {},
+  "abacusPlayNoteTenOnes": "10 ones swapped for 1 ten.",
+  "@abacusPlayNoteTenOnes": {},
+  "abacusPlayNoteTenTens": "10 tens swapped for 1 hundred.",
+  "@abacusPlayNoteTenTens": {},
+  "abacusPlayNoteTenOnesAndTens": "10 ones swapped for 1 ten, and 10 tens for 1 hundred.",
+  "@abacusPlayNoteTenOnesAndTens": {},
+  "abacusPlayNoteTenToOnes": "1 ten swapped for 10 ones.",
+  "@abacusPlayNoteTenToOnes": {},
+  "abacusPlayNoteHundredToTens": "1 hundred swapped for 10 tens.",
+  "@abacusPlayNoteHundredToTens": {},
+  "abacusPlayNoteHundredCascade": "1 hundred swapped for 10 tens, and 1 ten for 10 ones.",
+  "@abacusPlayNoteHundredCascade": {},
+  "abacusPlayParentNote": "For grown-ups: each rod holds up to nine beads. The Number Board shows the same number in digits, and the two always match. Ten beads on one rod swap for one bead on the rod to its left. Ask your child to say what changed. This is a hands-on picture of place value, not a test.",
+  "@abacusPlayParentNote": {},
+  "abacusBoardTitle": "Number Board",
+  "@abacusBoardTitle": {},
+  "abacusBoardZero": "0: no beads counted yet",
+  "@abacusBoardZero": {},
+  "abacusBoardAddOne": "Add 1",
+  "@abacusBoardAddOne": {},
+  "abacusBoardSubtractOne": "Take away 1",
+  "@abacusBoardSubtractOne": {},
+  "abacusBoardAddTen": "Add 10",
+  "@abacusBoardAddTen": {},
+  "abacusBoardSubtractTen": "Take away 10",
+  "@abacusBoardSubtractTen": {},
+  "abacusSpokenZero": "0. No beads are counted yet.",
+  "@abacusSpokenZero": {},
+  "abacusPlayRodLabel": "{name} rod",
+  "@abacusPlayRodLabel": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "abacusPlayRodValue": "{count, plural, =0{No beads counted} =1{1 bead counted} other{{count} beads counted}}",
+  "@abacusPlayRodValue": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "abacusPlayPartHundreds": "{count, plural, =1{1 hundred} other{{count} hundreds}}",
+  "@abacusPlayPartHundreds": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "abacusPlayPartTens": "{count, plural, =1{1 ten} other{{count} tens}}",
+  "@abacusPlayPartTens": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "abacusPlayPartOnes": "{count, plural, =1{1 one} other{{count} ones}}",
+  "@abacusPlayPartOnes": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "abacusBoardEquationOne": "{value} = {a}",
+  "@abacusBoardEquationOne": {
+    "placeholders": {
+      "value": { "type": "int" },
+      "a": { "type": "String" }
+    }
+  },
+  "abacusBoardEquationTwo": "{value} = {a} + {b}",
+  "@abacusBoardEquationTwo": {
+    "placeholders": {
+      "value": { "type": "int" },
+      "a": { "type": "String" },
+      "b": { "type": "String" }
+    }
+  },
+  "abacusBoardEquationThree": "{value} = {a} + {b} + {c}",
+  "@abacusBoardEquationThree": {
+    "placeholders": {
+      "value": { "type": "int" },
+      "a": { "type": "String" },
+      "b": { "type": "String" },
+      "c": { "type": "String" }
+    }
+  },
+  "abacusSpokenOne": "{value} is {a}",
+  "@abacusSpokenOne": {
+    "placeholders": {
+      "value": { "type": "int" },
+      "a": { "type": "String" }
+    }
+  },
+  "abacusSpokenTwo": "{value} is {a} and {b}",
+  "@abacusSpokenTwo": {
+    "placeholders": {
+      "value": { "type": "int" },
+      "a": { "type": "String" },
+      "b": { "type": "String" }
+    }
+  },
+  "abacusSpokenThree": "{value} is {a}, {b} and {c}",
+  "@abacusSpokenThree": {
+    "placeholders": {
+      "value": { "type": "int" },
+      "a": { "type": "String" },
+      "b": { "type": "String" },
+      "c": { "type": "String" }
+    }
+  },
   "feedPandaInstruction": "Feed Panda {count, plural, =1{1 apple} other{{count} apples}}.",
   "@feedPandaInstruction": {
     "description": "The quantity instruction at the top of a Feed the Hungry Panda round",

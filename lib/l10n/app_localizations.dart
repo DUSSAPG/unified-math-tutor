@@ -4843,6 +4843,246 @@ abstract class AppLocalizations {
   /// **'Count out apples one at a time to feed Panda'**
   String get feedTheHungryPandaSubtitle;
 
+  /// No description provided for @abacusPlayModeGuided.
+  ///
+  /// In en, this message translates to:
+  /// **'Guided'**
+  String get abacusPlayModeGuided;
+
+  /// No description provided for @abacusPlayModeFree.
+  ///
+  /// In en, this message translates to:
+  /// **'Free explore'**
+  String get abacusPlayModeFree;
+
+  /// No description provided for @abacusPlayFreeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Free explore'**
+  String get abacusPlayFreeTitle;
+
+  /// No description provided for @abacusPlayFreeIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Slide beads across the bar to make any number up to 999. There is no goal here. Just explore.'**
+  String get abacusPlayFreeIntro;
+
+  /// No description provided for @abacusPlayHowTo.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap a bead, or drag it across the bar, to count it. Tap a counted bead to send it back.'**
+  String get abacusPlayHowTo;
+
+  /// No description provided for @abacusPlayReset.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset'**
+  String get abacusPlayReset;
+
+  /// No description provided for @abacusPlayBuildTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Build a number'**
+  String get abacusPlayBuildTitle;
+
+  /// No description provided for @abacusPlayBuildTask.
+  ///
+  /// In en, this message translates to:
+  /// **'Build 34. Slide 3 tens and 4 ones across the bar.'**
+  String get abacusPlayBuildTask;
+
+  /// No description provided for @abacusPlayBuildDone.
+  ///
+  /// In en, this message translates to:
+  /// **'You built 34: 3 tens and 4 ones.'**
+  String get abacusPlayBuildDone;
+
+  /// No description provided for @abacusPlayBreakTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Break a number apart'**
+  String get abacusPlayBreakTitle;
+
+  /// No description provided for @abacusPlayBreakTask.
+  ///
+  /// In en, this message translates to:
+  /// **'This is 47. Slide the 7 ones back so only the tens are left.'**
+  String get abacusPlayBreakTask;
+
+  /// No description provided for @abacusPlayBreakDone.
+  ///
+  /// In en, this message translates to:
+  /// **'47 breaks apart into 40 and 7.'**
+  String get abacusPlayBreakDone;
+
+  /// No description provided for @abacusPlayExchangeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Swap ten ones for one ten'**
+  String get abacusPlayExchangeTitle;
+
+  /// No description provided for @abacusPlayExchangeTask.
+  ///
+  /// In en, this message translates to:
+  /// **'This is 29. Press +1 to add one more, and watch what happens to the ones.'**
+  String get abacusPlayExchangeTask;
+
+  /// No description provided for @abacusPlayExchangeDone.
+  ///
+  /// In en, this message translates to:
+  /// **'10 ones swapped for 1 ten, so 29 + 1 = 30.'**
+  String get abacusPlayExchangeDone;
+
+  /// No description provided for @abacusPlayNoteTenOnes.
+  ///
+  /// In en, this message translates to:
+  /// **'10 ones swapped for 1 ten.'**
+  String get abacusPlayNoteTenOnes;
+
+  /// No description provided for @abacusPlayNoteTenTens.
+  ///
+  /// In en, this message translates to:
+  /// **'10 tens swapped for 1 hundred.'**
+  String get abacusPlayNoteTenTens;
+
+  /// No description provided for @abacusPlayNoteTenOnesAndTens.
+  ///
+  /// In en, this message translates to:
+  /// **'10 ones swapped for 1 ten, and 10 tens for 1 hundred.'**
+  String get abacusPlayNoteTenOnesAndTens;
+
+  /// No description provided for @abacusPlayNoteTenToOnes.
+  ///
+  /// In en, this message translates to:
+  /// **'1 ten swapped for 10 ones.'**
+  String get abacusPlayNoteTenToOnes;
+
+  /// No description provided for @abacusPlayNoteHundredToTens.
+  ///
+  /// In en, this message translates to:
+  /// **'1 hundred swapped for 10 tens.'**
+  String get abacusPlayNoteHundredToTens;
+
+  /// No description provided for @abacusPlayNoteHundredCascade.
+  ///
+  /// In en, this message translates to:
+  /// **'1 hundred swapped for 10 tens, and 1 ten for 10 ones.'**
+  String get abacusPlayNoteHundredCascade;
+
+  /// No description provided for @abacusPlayParentNote.
+  ///
+  /// In en, this message translates to:
+  /// **'For grown-ups: each rod holds up to nine beads. The Number Board shows the same number in digits, and the two always match. Ten beads on one rod swap for one bead on the rod to its left. Ask your child to say what changed. This is a hands-on picture of place value, not a test.'**
+  String get abacusPlayParentNote;
+
+  /// No description provided for @abacusBoardTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Number Board'**
+  String get abacusBoardTitle;
+
+  /// No description provided for @abacusBoardZero.
+  ///
+  /// In en, this message translates to:
+  /// **'0: no beads counted yet'**
+  String get abacusBoardZero;
+
+  /// No description provided for @abacusBoardAddOne.
+  ///
+  /// In en, this message translates to:
+  /// **'Add 1'**
+  String get abacusBoardAddOne;
+
+  /// No description provided for @abacusBoardSubtractOne.
+  ///
+  /// In en, this message translates to:
+  /// **'Take away 1'**
+  String get abacusBoardSubtractOne;
+
+  /// No description provided for @abacusBoardAddTen.
+  ///
+  /// In en, this message translates to:
+  /// **'Add 10'**
+  String get abacusBoardAddTen;
+
+  /// No description provided for @abacusBoardSubtractTen.
+  ///
+  /// In en, this message translates to:
+  /// **'Take away 10'**
+  String get abacusBoardSubtractTen;
+
+  /// No description provided for @abacusSpokenZero.
+  ///
+  /// In en, this message translates to:
+  /// **'0. No beads are counted yet.'**
+  String get abacusSpokenZero;
+
+  /// No description provided for @abacusPlayRodLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} rod'**
+  String abacusPlayRodLabel(String name);
+
+  /// No description provided for @abacusPlayRodValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No beads counted} =1{1 bead counted} other{{count} beads counted}}'**
+  String abacusPlayRodValue(int count);
+
+  /// No description provided for @abacusPlayPartHundreds.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 hundred} other{{count} hundreds}}'**
+  String abacusPlayPartHundreds(int count);
+
+  /// No description provided for @abacusPlayPartTens.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 ten} other{{count} tens}}'**
+  String abacusPlayPartTens(int count);
+
+  /// No description provided for @abacusPlayPartOnes.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 one} other{{count} ones}}'**
+  String abacusPlayPartOnes(int count);
+
+  /// No description provided for @abacusBoardEquationOne.
+  ///
+  /// In en, this message translates to:
+  /// **'{value} = {a}'**
+  String abacusBoardEquationOne(int value, String a);
+
+  /// No description provided for @abacusBoardEquationTwo.
+  ///
+  /// In en, this message translates to:
+  /// **'{value} = {a} + {b}'**
+  String abacusBoardEquationTwo(int value, String a, String b);
+
+  /// No description provided for @abacusBoardEquationThree.
+  ///
+  /// In en, this message translates to:
+  /// **'{value} = {a} + {b} + {c}'**
+  String abacusBoardEquationThree(int value, String a, String b, String c);
+
+  /// No description provided for @abacusSpokenOne.
+  ///
+  /// In en, this message translates to:
+  /// **'{value} is {a}'**
+  String abacusSpokenOne(int value, String a);
+
+  /// No description provided for @abacusSpokenTwo.
+  ///
+  /// In en, this message translates to:
+  /// **'{value} is {a} and {b}'**
+  String abacusSpokenTwo(int value, String a, String b);
+
+  /// No description provided for @abacusSpokenThree.
+  ///
+  /// In en, this message translates to:
+  /// **'{value} is {a}, {b} and {c}'**
+  String abacusSpokenThree(int value, String a, String b, String c);
+
   /// The quantity instruction at the top of a Feed the Hungry Panda round
   ///
   /// In en, this message translates to:

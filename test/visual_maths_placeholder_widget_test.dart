@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
-import 'package:unified_math_tutor/screens/visual_maths/abacus_screen.dart';
 import 'package:unified_math_tutor/screens/visual_maths/fraction_bars_screen.dart';
 import 'package:unified_math_tutor/screens/visual_maths/place_value_explorer_screen.dart';
 
@@ -34,25 +33,6 @@ void main() {
 
     expect(
       find.text('2/4 covers the same length as 1/2 — equivalent fractions.'),
-      findsOneWidget,
-    );
-    expect(tester.takeException(), isNull);
-  });
-
-  testWidgets('Abacus shows the Preview badge and cycles captions on tap',
-      (tester) async {
-    await tester.pumpWidget(wrap(const AbacusScreen()));
-    await tester.pumpAndSettle();
-
-    expect(find.text('Preview'), findsOneWidget);
-    expect(find.text('One bead moved in the ones column represents 1.'),
-        findsOneWidget);
-
-    await tester.tap(find.text('Try another example'));
-    await tester.pumpAndSettle();
-
-    expect(
-      find.text('Ten ones regroup into a single bead in the tens column.'),
       findsOneWidget,
     );
     expect(tester.takeException(), isNull);

@@ -2644,6 +2644,182 @@ class AppLocalizationsPt extends AppLocalizations {
       'Count out apples one at a time to feed Panda';
 
   @override
+  String get abacusPlayModeGuided => 'Guided';
+
+  @override
+  String get abacusPlayModeFree => 'Free explore';
+
+  @override
+  String get abacusPlayFreeTitle => 'Free explore';
+
+  @override
+  String get abacusPlayFreeIntro =>
+      'Slide beads across the bar to make any number up to 999. There is no goal here. Just explore.';
+
+  @override
+  String get abacusPlayHowTo =>
+      'Tap a bead, or drag it across the bar, to count it. Tap a counted bead to send it back.';
+
+  @override
+  String get abacusPlayReset => 'Reset';
+
+  @override
+  String get abacusPlayBuildTitle => 'Build a number';
+
+  @override
+  String get abacusPlayBuildTask =>
+      'Build 34. Slide 3 tens and 4 ones across the bar.';
+
+  @override
+  String get abacusPlayBuildDone => 'You built 34: 3 tens and 4 ones.';
+
+  @override
+  String get abacusPlayBreakTitle => 'Break a number apart';
+
+  @override
+  String get abacusPlayBreakTask =>
+      'This is 47. Slide the 7 ones back so only the tens are left.';
+
+  @override
+  String get abacusPlayBreakDone => '47 breaks apart into 40 and 7.';
+
+  @override
+  String get abacusPlayExchangeTitle => 'Swap ten ones for one ten';
+
+  @override
+  String get abacusPlayExchangeTask =>
+      'This is 29. Press +1 to add one more, and watch what happens to the ones.';
+
+  @override
+  String get abacusPlayExchangeDone =>
+      '10 ones swapped for 1 ten, so 29 + 1 = 30.';
+
+  @override
+  String get abacusPlayNoteTenOnes => '10 ones swapped for 1 ten.';
+
+  @override
+  String get abacusPlayNoteTenTens => '10 tens swapped for 1 hundred.';
+
+  @override
+  String get abacusPlayNoteTenOnesAndTens =>
+      '10 ones swapped for 1 ten, and 10 tens for 1 hundred.';
+
+  @override
+  String get abacusPlayNoteTenToOnes => '1 ten swapped for 10 ones.';
+
+  @override
+  String get abacusPlayNoteHundredToTens => '1 hundred swapped for 10 tens.';
+
+  @override
+  String get abacusPlayNoteHundredCascade =>
+      '1 hundred swapped for 10 tens, and 1 ten for 10 ones.';
+
+  @override
+  String get abacusPlayParentNote =>
+      'For grown-ups: each rod holds up to nine beads. The Number Board shows the same number in digits, and the two always match. Ten beads on one rod swap for one bead on the rod to its left. Ask your child to say what changed. This is a hands-on picture of place value, not a test.';
+
+  @override
+  String get abacusBoardTitle => 'Number Board';
+
+  @override
+  String get abacusBoardZero => '0: no beads counted yet';
+
+  @override
+  String get abacusBoardAddOne => 'Add 1';
+
+  @override
+  String get abacusBoardSubtractOne => 'Take away 1';
+
+  @override
+  String get abacusBoardAddTen => 'Add 10';
+
+  @override
+  String get abacusBoardSubtractTen => 'Take away 10';
+
+  @override
+  String get abacusSpokenZero => '0. No beads are counted yet.';
+
+  @override
+  String abacusPlayRodLabel(String name) {
+    return '$name rod';
+  }
+
+  @override
+  String abacusPlayRodValue(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count beads counted',
+      one: '1 bead counted',
+      zero: 'No beads counted',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String abacusPlayPartHundreds(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count hundreds',
+      one: '1 hundred',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String abacusPlayPartTens(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count tens',
+      one: '1 ten',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String abacusPlayPartOnes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ones',
+      one: '1 one',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String abacusBoardEquationOne(int value, String a) {
+    return '$value = $a';
+  }
+
+  @override
+  String abacusBoardEquationTwo(int value, String a, String b) {
+    return '$value = $a + $b';
+  }
+
+  @override
+  String abacusBoardEquationThree(int value, String a, String b, String c) {
+    return '$value = $a + $b + $c';
+  }
+
+  @override
+  String abacusSpokenOne(int value, String a) {
+    return '$value is $a';
+  }
+
+  @override
+  String abacusSpokenTwo(int value, String a, String b) {
+    return '$value is $a and $b';
+  }
+
+  @override
+  String abacusSpokenThree(int value, String a, String b, String c) {
+    return '$value is $a, $b and $c';
+  }
+
+  @override
   String feedPandaInstruction(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,

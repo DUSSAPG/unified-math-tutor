@@ -39,7 +39,7 @@ class VisualMathsToolMeta {
     ),
     VisualMathsToolId.abacus: VisualMathsToolMeta(
       id: VisualMathsToolId.abacus,
-      hasInteractiveImplementation: false,
+      hasInteractiveImplementation: true,
       icon: Icons.grid_view,
       routeSuffix: 'abacus',
     ),
