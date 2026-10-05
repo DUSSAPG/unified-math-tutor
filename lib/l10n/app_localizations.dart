@@ -7727,6 +7727,102 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Reset Onboarding'**
   String get appearanceResetOnboardingButton;
+
+  /// No description provided for @numberSenseLabTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Number Sense Lab'**
+  String get numberSenseLabTitle;
+
+  /// No description provided for @numberSenseModeGuided.
+  ///
+  /// In en, this message translates to:
+  /// **'Guided'**
+  String get numberSenseModeGuided;
+
+  /// No description provided for @numberSenseModeFreeExplore.
+  ///
+  /// In en, this message translates to:
+  /// **'Free explore'**
+  String get numberSenseModeFreeExplore;
+
+  /// No description provided for @numberSenseExampleEquivalenceTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Make an equivalent fraction'**
+  String get numberSenseExampleEquivalenceTitle;
+
+  /// No description provided for @numberSenseExampleEquivalenceTask.
+  ///
+  /// In en, this message translates to:
+  /// **'Show one half using equal parts.'**
+  String get numberSenseExampleEquivalenceTask;
+
+  /// No description provided for @numberSenseExamplePlacementTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Place a fraction'**
+  String get numberSenseExamplePlacementTitle;
+
+  /// No description provided for @numberSenseExamplePlacementTask.
+  ///
+  /// In en, this message translates to:
+  /// **'Place three eighths on the number line.'**
+  String get numberSenseExamplePlacementTask;
+
+  /// No description provided for @numberSenseExampleComparisonTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Compare fractions'**
+  String get numberSenseExampleComparisonTitle;
+
+  /// No description provided for @numberSenseExampleComparisonTask.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose how these fractions compare.'**
+  String get numberSenseExampleComparisonTask;
+
+  /// No description provided for @numberSenseTarget.
+  ///
+  /// In en, this message translates to:
+  /// **'Target: {fraction}'**
+  String numberSenseTarget(String fraction);
+
+  /// No description provided for @numberSenseCompareLessThan.
+  ///
+  /// In en, this message translates to:
+  /// **'Less than'**
+  String get numberSenseCompareLessThan;
+
+  /// No description provided for @numberSenseCompareEqualTo.
+  ///
+  /// In en, this message translates to:
+  /// **'Equal to'**
+  String get numberSenseCompareEqualTo;
+
+  /// No description provided for @numberSenseCompareGreaterThan.
+  ///
+  /// In en, this message translates to:
+  /// **'Greater than'**
+  String get numberSenseCompareGreaterThan;
+
+  /// No description provided for @numberSenseComplete.
+  ///
+  /// In en, this message translates to:
+  /// **'You found it.'**
+  String get numberSenseComplete;
+
+  /// No description provided for @numberSenseReset.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset'**
+  String get numberSenseReset;
+
+  /// No description provided for @numberSenseTryAnotherExample.
+  ///
+  /// In en, this message translates to:
+  /// **'Try another example'**
+  String get numberSenseTryAnotherExample;
 }
 
 class _AppLocalizationsDelegate

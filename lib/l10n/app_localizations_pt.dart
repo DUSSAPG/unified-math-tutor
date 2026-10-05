@@ -4468,4 +4468,57 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get appearanceResetOnboardingButton => 'Reset Onboarding';
+  @override
+  String get numberSenseLabTitle => 'Number Sense Lab';
+
+  @override
+  String get numberSenseModeGuided => 'Guided';
+
+  @override
+  String get numberSenseModeFreeExplore => 'Free explore';
+
+  @override
+  String get numberSenseExampleEquivalenceTitle =>
+      'Make an equivalent fraction';
+
+  @override
+  String get numberSenseExampleEquivalenceTask =>
+      'Show one half using equal parts.';
+
+  @override
+  String get numberSenseExamplePlacementTitle => 'Place a fraction';
+
+  @override
+  String get numberSenseExamplePlacementTask =>
+      'Place three eighths on the number line.';
+
+  @override
+  String get numberSenseExampleComparisonTitle => 'Compare fractions';
+
+  @override
+  String get numberSenseExampleComparisonTask =>
+      'Choose how these fractions compare.';
+
+  @override
+  String numberSenseTarget(String fraction) {
+    return 'Target: $fraction';
+  }
+
+  @override
+  String get numberSenseCompareLessThan => 'Less than';
+
+  @override
+  String get numberSenseCompareEqualTo => 'Equal to';
+
+  @override
+  String get numberSenseCompareGreaterThan => 'Greater than';
+
+  @override
+  String get numberSenseComplete => 'You found it.';
+
+  @override
+  String get numberSenseReset => 'Reset';
+
+  @override
+  String get numberSenseTryAnotherExample => 'Try another example';
 }

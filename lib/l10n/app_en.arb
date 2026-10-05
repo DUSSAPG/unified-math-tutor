@@ -3095,6 +3095,44 @@
   "@appearanceResetOnboardingHeading": {},
   "appearanceResetOnboardingSub": "Reset the app introduction to go through the initial setup again.",
   "@appearanceResetOnboardingSub": {},
+  "numberSenseLabTitle": "Number Sense Lab",
+  "@numberSenseLabTitle": {},
+  "numberSenseModeGuided": "Guided",
+  "@numberSenseModeGuided": {},
+  "numberSenseModeFreeExplore": "Free explore",
+  "@numberSenseModeFreeExplore": {},
+  "numberSenseExampleEquivalenceTitle": "Make an equivalent fraction",
+  "@numberSenseExampleEquivalenceTitle": {},
+  "numberSenseExampleEquivalenceTask": "Show one half using equal parts.",
+  "@numberSenseExampleEquivalenceTask": {},
+  "numberSenseExamplePlacementTitle": "Place a fraction",
+  "@numberSenseExamplePlacementTitle": {},
+  "numberSenseExamplePlacementTask": "Place three eighths on the number line.",
+  "@numberSenseExamplePlacementTask": {},
+  "numberSenseExampleComparisonTitle": "Compare fractions",
+  "@numberSenseExampleComparisonTitle": {},
+  "numberSenseExampleComparisonTask": "Choose how these fractions compare.",
+  "@numberSenseExampleComparisonTask": {},
+  "numberSenseTarget": "Target: {fraction}",
+  "@numberSenseTarget": {
+    "placeholders": {
+      "fraction": {
+        "type": "String"
+      }
+    }
+  },
+  "numberSenseCompareLessThan": "Less than",
+  "@numberSenseCompareLessThan": {},
+  "numberSenseCompareEqualTo": "Equal to",
+  "@numberSenseCompareEqualTo": {},
+  "numberSenseCompareGreaterThan": "Greater than",
+  "@numberSenseCompareGreaterThan": {},
+  "numberSenseComplete": "You found it.",
+  "@numberSenseComplete": {},
+  "numberSenseReset": "Reset",
+  "@numberSenseReset": {},
+  "numberSenseTryAnotherExample": "Try another example",
+  "@numberSenseTryAnotherExample": {},
   "appearanceResetOnboardingButton": "Reset Onboarding",
   "@appearanceResetOnboardingButton": {}
 }
