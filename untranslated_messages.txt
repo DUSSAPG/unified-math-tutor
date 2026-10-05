@@ -1042,6 +1042,7 @@
     "numberSenseComplete",
     "numberSenseReset",
     "numberSenseTryAnotherExample",
+    "numberSenseLabDescription",
     "familyMathsReassurance6"
   ],
 
@@ -2118,6 +2119,7 @@
     "numberSenseComplete",
     "numberSenseReset",
     "numberSenseTryAnotherExample",
+    "numberSenseLabDescription",
     "familyMathsReassurance6"
   ],
 
@@ -3217,6 +3219,7 @@
     "numberSenseComplete",
     "numberSenseReset",
     "numberSenseTryAnotherExample",
+    "numberSenseLabDescription",
     "familyMathsReassurance6"
   ],
 
@@ -4316,6 +4319,7 @@
     "numberSenseComplete",
     "numberSenseReset",
     "numberSenseTryAnotherExample",
+    "numberSenseLabDescription",
     "familyMathsReassurance6"
   ],
 
@@ -4415,6 +4419,7 @@
     "numberSenseComplete",
     "numberSenseReset",
     "numberSenseTryAnotherExample",
+    "numberSenseLabDescription",
     "abacusSpokenThree"
   ],
 
@@ -4915,6 +4920,7 @@
     "numberSenseComplete",
     "numberSenseReset",
     "numberSenseTryAnotherExample",
+    "numberSenseLabDescription",
     "abacusSpokenThree"
   ],
 
@@ -5989,6 +5995,7 @@
     "numberSenseComplete",
     "numberSenseReset",
     "numberSenseTryAnotherExample",
+    "numberSenseLabDescription",
     "familyMathsReassurance6"
   ],
 
@@ -7088,6 +7095,7 @@
     "numberSenseComplete",
     "numberSenseReset",
     "numberSenseTryAnotherExample",
+    "numberSenseLabDescription",
     "familyMathsReassurance6"
   ],
 
@@ -7187,6 +7195,7 @@
     "numberSenseComplete",
     "numberSenseReset",
     "numberSenseTryAnotherExample",
+    "numberSenseLabDescription",
     "abacusSpokenThree"
   ],
 
@@ -8261,6 +8270,7 @@
     "numberSenseComplete",
     "numberSenseReset",
     "numberSenseTryAnotherExample",
+    "numberSenseLabDescription",
     "familyMathsReassurance6"
   ],
 
@@ -9358,6 +9368,7 @@
     "numberSenseComplete",
     "numberSenseReset",
     "numberSenseTryAnotherExample",
+    "numberSenseLabDescription",
     "familyMathsReassurance6"
   ],
 
@@ -9457,6 +9468,7 @@
     "numberSenseComplete",
     "numberSenseReset",
     "numberSenseTryAnotherExample",
+    "numberSenseLabDescription",
     "abacusSpokenThree"
   ],
 
@@ -10556,6 +10568,7 @@
     "numberSenseComplete",
     "numberSenseReset",
     "numberSenseTryAnotherExample",
+    "numberSenseLabDescription",
     "familyMathsReassurance6"
   ],
 
@@ -11436,6 +11449,7 @@
     "numberSenseComplete",
     "numberSenseReset",
     "numberSenseTryAnotherExample",
+    "numberSenseLabDescription",
     "familyMathsReassurance6"
   ],
 
@@ -12512,6 +12526,7 @@
     "numberSenseComplete",
     "numberSenseReset",
     "numberSenseTryAnotherExample",
+    "numberSenseLabDescription",
     "familyMathsReassurance6"
   ],
 
@@ -13611,6 +13626,7 @@
     "numberSenseComplete",
     "numberSenseReset",
     "numberSenseTryAnotherExample",
+    "numberSenseLabDescription",
     "familyMathsReassurance6"
   ],
 
@@ -14685,6 +14701,7 @@
     "numberSenseComplete",
     "numberSenseReset",
     "numberSenseTryAnotherExample",
+    "numberSenseLabDescription",
     "familyMathsReassurance6"
   ],
 
@@ -15761,6 +15778,7 @@
     "numberSenseComplete",
     "numberSenseReset",
     "numberSenseTryAnotherExample",
+    "numberSenseLabDescription",
     "familyMathsReassurance6"
   ],
 
@@ -16860,6 +16878,7 @@
     "numberSenseComplete",
     "numberSenseReset",
     "numberSenseTryAnotherExample",
+    "numberSenseLabDescription",
     "familyMathsReassurance6"
   ]
 }

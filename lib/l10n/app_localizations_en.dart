@@ -4517,6 +4517,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get numberSenseTryAnotherExample => 'Try another example';
+
+  @override
+  String get numberSenseLabDescription =>
+      'Build, place and compare unit fractions.';
 }
 
 /// The translations for English, as used in the United Kingdom (`en_GB`).

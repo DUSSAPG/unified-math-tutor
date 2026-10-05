@@ -3133,6 +3133,8 @@
   "@numberSenseReset": {},
   "numberSenseTryAnotherExample": "Try another example",
   "@numberSenseTryAnotherExample": {},
+  "numberSenseLabDescription": "Build, place and compare unit fractions.",
+  "@numberSenseLabDescription": {},
   "appearanceResetOnboardingButton": "Reset Onboarding",
   "@appearanceResetOnboardingButton": {}
 }

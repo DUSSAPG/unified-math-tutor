@@ -7823,6 +7823,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Try another example'**
   String get numberSenseTryAnotherExample;
+
+  /// No description provided for @numberSenseLabDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Build, place and compare unit fractions.'**
+  String get numberSenseLabDescription;
 }
 
 class _AppLocalizationsDelegate

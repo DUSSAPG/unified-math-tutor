@@ -11,10 +11,8 @@ import '../../shared/theme/app_theme.dart';
 import '../../widgets/shared/route_link_card.dart';
 import '../../widgets/shared/section_label.dart';
 
-/// Lists the 4 Visual Maths tools. Number Line is the RC1 polished
-/// interactive; the other 3 are bounded static-example placeholders — the
-/// hub reads only [VisualMathsToolMeta.hasInteractiveImplementation] to pick
-/// the Interactive/Preview badge, so that distinction lives in one place.
+/// Lists the available Visual Maths tools. The registry owns each tool's
+/// Interactive/Preview status and route identity.
 class VisualMathsHubScreen extends StatelessWidget {
   const VisualMathsHubScreen({super.key});
 
@@ -85,13 +83,12 @@ class _ToolCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final (title, subtitle) = switch (meta.id) {
-      VisualMathsToolId.numberLine => (
-          l10n.visualMathsNumberLineTitle,
-          l10n.visualMathsNumberLineSubtitle,
-        ),
-      VisualMathsToolId.fractionBars => (
-          l10n.visualMathsFractionBarsTitle,
-          l10n.visualMathsFractionBarsSubtitle,
+      VisualMathsToolId.numberSenseLab ||
+      VisualMathsToolId.numberLine ||
+      VisualMathsToolId.fractionBars =>
+        (
+          l10n.numberSenseLabTitle,
+          l10n.numberSenseLabDescription,
         ),
       VisualMathsToolId.abacus => (
           l10n.visualMathsAbacusTitle,

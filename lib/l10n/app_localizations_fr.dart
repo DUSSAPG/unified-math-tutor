@@ -4524,6 +4524,10 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get numberSenseTryAnotherExample => 'Try another example';
+
+  @override
+  String get numberSenseLabDescription =>
+      'Build, place and compare unit fractions.';
 }
 
 /// The translations for French, as used in Switzerland (`fr_CH`).

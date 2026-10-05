@@ -4521,6 +4521,10 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get numberSenseTryAnotherExample => 'Try another example';
+
+  @override
+  String get numberSenseLabDescription =>
+      'Build, place and compare unit fractions.';
 }
 
 /// The translations for German, as used in Switzerland (`de_CH`).

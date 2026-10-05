@@ -57,8 +57,7 @@ import '../screens/build_confidence/build_confidence_screen.dart';
 import '../screens/mental_maths/mental_maths_hub_screen.dart';
 import '../screens/mental_maths/mental_maths_category_screen.dart';
 import '../screens/visual_maths/visual_maths_hub_screen.dart';
-import '../screens/visual_maths/number_line_screen.dart';
-import '../screens/visual_maths/fraction_bars_screen.dart';
+import '../screens/visual_maths/number_sense_lab_screen.dart';
 import '../screens/visual_maths/abacus_screen.dart';
 import '../screens/visual_maths/place_value_explorer_screen.dart';
 import '../screens/math_magic/math_magic_screen.dart';
@@ -349,12 +348,16 @@ final GoRouter appRouter = GoRouter(
           builder: (context, state) => const VisualMathsHubScreen(),
           routes: [
             GoRoute(
+              path: 'number-sense-lab',
+              builder: (context, state) => const NumberSenseLabScreen(),
+            ),
+            GoRoute(
               path: 'number-line',
-              builder: (context, state) => const NumberLineScreen(),
+              builder: (context, state) => const NumberSenseLabScreen(),
             ),
             GoRoute(
               path: 'fraction-bars',
-              builder: (context, state) => const FractionBarsScreen(),
+              builder: (context, state) => const NumberSenseLabScreen(),
             ),
             GoRoute(
               path: 'abacus',

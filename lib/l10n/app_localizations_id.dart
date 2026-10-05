@@ -4522,4 +4522,8 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get numberSenseTryAnotherExample => 'Try another example';
+
+  @override
+  String get numberSenseLabDescription =>
+      'Build, place and compare unit fractions.';
 }

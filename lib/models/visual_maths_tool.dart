@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 enum VisualMathsToolId {
+  numberSenseLab,
   numberLine,
   fractionBars,
   abacus,
@@ -25,17 +26,11 @@ class VisualMathsToolMeta {
   final String routeSuffix;
 
   static const registry = <VisualMathsToolId, VisualMathsToolMeta>{
-    VisualMathsToolId.numberLine: VisualMathsToolMeta(
-      id: VisualMathsToolId.numberLine,
+    VisualMathsToolId.numberSenseLab: VisualMathsToolMeta(
+      id: VisualMathsToolId.numberSenseLab,
       hasInteractiveImplementation: true,
-      icon: Icons.timeline,
-      routeSuffix: 'number-line',
-    ),
-    VisualMathsToolId.fractionBars: VisualMathsToolMeta(
-      id: VisualMathsToolId.fractionBars,
-      hasInteractiveImplementation: false,
-      icon: Icons.view_column,
-      routeSuffix: 'fraction-bars',
+      icon: Icons.grid_view_rounded,
+      routeSuffix: 'number-sense-lab',
     ),
     VisualMathsToolId.abacus: VisualMathsToolMeta(
       id: VisualMathsToolId.abacus,

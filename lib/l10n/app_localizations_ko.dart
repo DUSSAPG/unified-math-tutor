@@ -4507,6 +4507,10 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get numberSenseTryAnotherExample => 'Try another example';
+
+  @override
+  String get numberSenseLabDescription =>
+      'Build, place and compare unit fractions.';
 }
 
 /// The translations for Korean, as used in Republic of Korea (`ko_KR`).
