@@ -64,6 +64,12 @@ void main() {
     }
   }
 
+  Future<void> showHundredthsActivity(WidgetTester tester) async {
+    for (var step = 0; step < NumberSenseExample.all.length - 1; step++) {
+      await nextExample(tester);
+    }
+  }
+
   testWidgets('starts Guided on the first committed example', (tester) async {
     final semantics = tester.ensureSemantics();
     await pumpScreen(tester);
@@ -421,7 +427,7 @@ void main() {
         '2 × 4 = 8; 3 × 3 = 9; since 8 < 9, 2/3 < 3/4.',
       ),
     ];
-
+    await pumpScreen(tester);
     await pumpScreen(tester);
     await nextExample(tester);
     await nextExample(tester);
@@ -445,7 +451,8 @@ void main() {
     expect(
       find.text(
         'This starter whole-part model supports 2, 3, 4, 6 or 8 equal parts only. '
-        'Fractions such as 1/100 need a precision or zoomed number line.',
+        'Hundredths are supported on the precision line; other unsupported '
+        'denominators need a precision or zoomed line.',
       ),
       findsOneWidget,
     );
@@ -551,18 +558,398 @@ void main() {
       '3/6  ?  1/2',
       '5/8  ?  1/2',
       '2/3  ?  3/4',
+      'Find one hundredth',
     ];
     for (final comparison in expectedFractions) {
       await nextExample(tester);
       expect(find.text('Guided'), findsOneWidget);
       if (comparison == null) {
         expect(find.text('Place a fraction'), findsOneWidget);
+      } else if (comparison == 'Find one hundredth') {
+        expect(find.text(comparison), findsOneWidget);
+        expect(find.text('Target: 1/100'), findsOneWidget);
       } else {
         expect(find.text(comparison), findsOneWidget);
       }
     }
     await nextExample(tester);
     expect(find.text('Make an equivalent fraction'), findsOneWidget);
+  });
+
+  testWidgets('Guided hundredths activity shows exact target and feedback',
+      (tester) async {
+    await pumpScreen(tester);
+    await showHundredthsActivity(tester);
+
+    expect(find.text('Find one hundredth'), findsOneWidget);
+    expect(find.text('Target: 1/100'), findsOneWidget);
+    expect(find.text('1/100 = 0.01'), findsOneWidget);
+    expect(find.text('0 = 0.00'), findsOneWidget);
+    expect(find.text('0/100'), findsNothing);
+    for (var hundredths = 0; hundredths <= 10; hundredths++) {
+      final tick = find.byKey(
+        ValueKey('hundredthsPrecisionLine.tick.$hundredths'),
+      );
+      expect(
+        tick,
+        findsOneWidget,
+      );
+      expect(tester.getSize(tick).width, greaterThanOrEqualTo(48));
+      expect(tester.getSize(tick).height, greaterThanOrEqualTo(48));
+    }
+
+    await tapAndPump(
+      tester,
+      find.byKey(const ValueKey('hundredthsPrecisionLine.tick.4')),
+    );
+    expect(find.text('4/100 = 0.04'), findsOneWidget);
+    expect(
+      find.text(
+        'You selected 0.04. One hundredth is the next tick after 0.00: '
+        'choose 0.01.',
+      ),
+      findsOneWidget,
+    );
+    expect(find.text('You found it.'), findsNothing);
+
+    await tapAndPump(
+      tester,
+      find.byKey(const ValueKey('hundredthsPrecisionLine.tick.1')),
+    );
+    expect(find.text('1/100 = 0.01'), findsNWidgets(2));
+    expect(
+        find.text('1/100 means 0.01: 1 of 100 equal parts.'), findsOneWidget);
+    expect(find.text('You found it.'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('Guided hundredths explains selecting zero immediately',
+      (tester) async {
+    await pumpScreen(tester);
+    await showHundredthsActivity(tester);
+    await tapAndPump(
+      tester,
+      find.byKey(const ValueKey('hundredthsPrecisionLine.tick.0')),
+    );
+
+    expect(find.text('0 = 0.00'), findsOneWidget);
+    expect(find.text('0/100'), findsNothing);
+    expect(
+      find.text(
+        '0.00 is zero. One hundredth is the first tick to the right: 0.01.',
+      ),
+      findsOneWidget,
+    );
+    expect(find.text('You found it.'), findsNothing);
+  });
+
+  testWidgets('Free Explore precision line taps, drags and clears exactly',
+      (tester) async {
+    await pumpScreen(tester);
+    await tapAndPump(
+      tester,
+      find.byKey(const ValueKey('numberSense.modeFreeExplore')),
+    );
+    await tapAndPump(
+      tester,
+      find.byKey(const ValueKey('numberSense.explore.precisionLine')),
+    );
+
+    expect(find.text('Precision line'), findsOneWidget);
+    expect(find.text('0 = 0.00'), findsOneWidget);
+    expect(find.text('0/100'), findsNothing);
+    expect(find.text('Zero is at the start of the line.'), findsOneWidget);
+    await tapAndPump(
+      tester,
+      find.byKey(const ValueKey('hundredthsPrecisionLine.tick.7')),
+    );
+    expect(find.text('7/100 = 0.07'), findsOneWidget);
+    expect(
+        find.text('7/100 means 0.07: 7 of 100 equal parts.'), findsOneWidget);
+
+    final track = find.byKey(
+      const ValueKey('hundredthsPrecisionLine.track'),
+    );
+    await tester.ensureVisible(track);
+    final topLeft = tester.getTopLeft(track);
+    final targetX = 28 + (tester.getSize(track).width - 56) * 0.4;
+    await tester.dragFrom(
+        topLeft + const Offset(28, 28), Offset(targetX - 28, 0));
+    await tester.pumpAndSettle();
+    expect(find.text('4/100 = 0.04'), findsOneWidget);
+
+    await tapAndPump(
+      tester,
+      find.byKey(const ValueKey('numberSense.clearExplore')),
+    );
+    expect(find.text('0 = 0.00'), findsOneWidget);
+    expect(find.text('0/100'), findsNothing);
+    expect(find.text('Zero is at the start of the line.'), findsOneWidget);
+    expect(find.text('4/100 = 0.04'), findsNothing);
+    expect(find.text('Find one hundredth'), findsNothing);
+    expect(find.text('Target: 1/100'), findsNothing);
+    expect(find.text('You found it.'), findsNothing);
+    expect(
+      find.byKey(const ValueKey('numberSense.tryAnotherExample')),
+      findsNothing,
+    );
+  });
+
+  testWidgets('Free Explore retains the selected precision model on Clear',
+      (tester) async {
+    await pumpScreen(tester);
+    await tapAndPump(
+      tester,
+      find.byKey(const ValueKey('numberSense.modeFreeExplore')),
+    );
+    await tapAndPump(
+      tester,
+      find.byKey(const ValueKey('numberSense.explore.precisionLine')),
+    );
+    await tapAndPump(
+      tester,
+      find.byKey(const ValueKey('hundredthsPrecisionLine.tick.10')),
+    );
+    await tapAndPump(
+      tester,
+      find.byKey(const ValueKey('numberSense.clearExplore')),
+    );
+
+    expect(
+      tester
+          .widget<ChoiceChip>(
+            find.byKey(const ValueKey('numberSense.explore.precisionLine')),
+          )
+          .selected,
+      isTrue,
+    );
+    expect(find.text('0 = 0.00'), findsOneWidget);
+    expect(find.text('0/100'), findsNothing);
+    expect(find.text('Zero is at the start of the line.'), findsOneWidget);
+  });
+
+  testWidgets('entering Free Explore from the hundredths activity keeps value',
+      (tester) async {
+    await pumpScreen(tester);
+    await showHundredthsActivity(tester);
+    await tapAndPump(
+      tester,
+      find.byKey(const ValueKey('hundredthsPrecisionLine.tick.7')),
+    );
+    await tapAndPump(
+      tester,
+      find.byKey(const ValueKey('numberSense.modeFreeExplore')),
+    );
+
+    expect(find.text('7/100 = 0.07'), findsOneWidget);
+    expect(find.text('Find one hundredth'), findsNothing);
+    expect(find.text('Target: 1/100'), findsNothing);
+    expect(find.text('You found it.'), findsNothing);
+    expect(
+      find.text('You selected 0.07. One hundredth is the next tick after 0.00: '
+          'choose 0.01.'),
+      findsNothing,
+    );
+  });
+
+  testWidgets('placement and equivalence give exact immediate feedback',
+      (tester) async {
+    await pumpScreen(tester);
+    await nextExample(tester);
+    await tapAndPump(
+      tester,
+      find.byKey(const ValueKey('fractionPartitionBar.segment-1')),
+    );
+    expect(find.text('2/8'), findsOneWidget);
+    expect(
+      find.text('Not quite. You chose 2/8. Move one tick right to reach 3/8.'),
+      findsOneWidget,
+    );
+    expect(find.byKey(const ValueKey('numberSense.guidedPlacementFeedback')),
+        findsOneWidget);
+
+    await tapAndPump(
+      tester,
+      find.byKey(const ValueKey('fractionPartitionBar.segment-2')),
+    );
+    expect(find.text('3/8'), findsOneWidget);
+    expect(find.text('You found it.'), findsOneWidget);
+    expect(
+      find.byKey(const ValueKey('numberSense.guidedPlacementFeedback')),
+      findsNothing,
+    );
+
+    await tapAndPump(tester, find.byKey(const ValueKey('numberSense.reset')));
+    expect(
+      find.byKey(const ValueKey('numberSense.guidedPlacementFeedback')),
+      findsNothing,
+    );
+    await tapAndPump(
+      tester,
+      find.byKey(const ValueKey('fractionPartitionBar.segment-1')),
+    );
+    expect(
+      find.byKey(const ValueKey('numberSense.guidedPlacementFeedback')),
+      findsOneWidget,
+    );
+    await nextExample(tester);
+    expect(
+      find.byKey(const ValueKey('numberSense.guidedPlacementFeedback')),
+      findsNothing,
+    );
+
+    for (var step = 0; step < 6; step++) {
+      await nextExample(tester);
+    }
+    await tapAndPump(
+      tester,
+      find.byKey(const ValueKey('numberSenseWorkspace.denominator-6')),
+    );
+    await tapAndPump(
+      tester,
+      find.byKey(const ValueKey('fractionPartitionBar.segment-5')),
+    );
+    expect(find.text('6/6'), findsOneWidget);
+    expect(
+      find.text('6/6 is one whole, not 1/2. Shade half of the equal parts.'),
+      findsOneWidget,
+    );
+    expect(find.text('You found it.'), findsNothing);
+
+    await tapAndPump(
+      tester,
+      find.byKey(const ValueKey('fractionPartitionBar.segment-2')),
+    );
+    expect(find.text('3/6'), findsOneWidget);
+    expect(find.text('You found it.'), findsOneWidget);
+    expect(
+      find.byKey(const ValueKey('numberSense.guidedPlacementFeedback')),
+      findsNothing,
+    );
+  });
+
+  testWidgets('number-line and denominator changes also trigger feedback',
+      (tester) async {
+    await pumpScreen(tester);
+    await nextExample(tester);
+
+    final line = find.byKey(
+      const ValueKey('unitFractionNumberLine.interaction'),
+    );
+    await tester.ensureVisible(line);
+    final lineBox = tester.renderObject<RenderBox>(line);
+    const inset = 20.0;
+    final xForQuarter = inset + (lineBox.size.width - inset * 2) * 0.25;
+    await tester.tapAt(
+      tester.getTopLeft(line) + Offset(xForQuarter, 44),
+    );
+    await tester.pumpAndSettle();
+    expect(find.text('2/8'), findsOneWidget);
+    expect(
+      find.text('Not quite. You chose 2/8. Move one tick right to reach 3/8.'),
+      findsOneWidget,
+    );
+
+    await tapAndPump(
+      tester,
+      find.byKey(const ValueKey('numberSenseWorkspace.denominator-4')),
+    );
+    expect(find.text('1/4'), findsOneWidget);
+    expect(
+      find.text(
+        'Not quite. You chose 1/4. The target is 3/8. '
+        'Choose equal parts that can show the target fraction.',
+      ),
+      findsOneWidget,
+    );
+
+    final dragLine = find.byKey(
+      const ValueKey('unitFractionNumberLine.interaction'),
+    );
+    await tester.ensureVisible(dragLine);
+    final dragBox = tester.renderObject<RenderBox>(dragLine);
+    final dragStart = tester.getTopLeft(dragLine) +
+        Offset(inset + (dragBox.size.width - inset * 2) * 0.25, 44);
+    final dragEnd = tester.getTopLeft(dragLine) +
+        Offset(inset + (dragBox.size.width - inset * 2) * 0.75, 44);
+    await tester.dragFrom(dragStart, dragEnd - dragStart);
+    await tester.pumpAndSettle();
+    expect(find.text('3/4'), findsOneWidget);
+    expect(
+      find.text(
+        'Not quite. You chose 3/4. The target is 3/8. '
+        'Choose equal parts that can show the target fraction.',
+      ),
+      findsOneWidget,
+    );
+  });
+
+  testWidgets('wrong Guided whole-part feedback is live in light and dark',
+      (tester) async {
+    final semantics = tester.ensureSemantics();
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    final sizes = [const Size(390, 844), const Size(915, 412)];
+    for (final theme in [AppTheme.light(), AppTheme.dark()]) {
+      for (final size in sizes) {
+        tester.view.physicalSize = size;
+        for (final scale in [1.0, 2.0]) {
+          await tester.pumpWidget(const SizedBox.shrink());
+          await tester.pumpWidget(app(theme: theme, textScale: scale));
+          await tester.pumpAndSettle();
+          await nextExample(tester);
+          await tapAndPump(
+            tester,
+            find.byKey(const ValueKey('fractionPartitionBar.segment-1')),
+          );
+          expect(
+            find.text(
+              'Not quite. You chose 2/8. Move one tick right to reach 3/8.',
+            ),
+            findsOneWidget,
+          );
+          final feedback = tester.getSemantics(
+            find.byKey(const ValueKey('numberSense.guidedPlacementFeedback')),
+          );
+          expect(
+              feedback.getSemanticsData().flagsCollection.isLiveRegion, isTrue);
+          expect(tester.takeException(), isNull);
+        }
+      }
+    }
+    semantics.dispose();
+  });
+
+  testWidgets('precision completion keeps the shared success treatment',
+      (tester) async {
+    for (final theme in [AppTheme.light(), AppTheme.dark()]) {
+      await tester.pumpWidget(const SizedBox.shrink());
+      await tester.pumpWidget(app(theme: theme));
+      await tester.pumpAndSettle();
+      await showHundredthsActivity(tester);
+      await tapAndPump(
+        tester,
+        find.byKey(const ValueKey('hundredthsPrecisionLine.tick.1')),
+      );
+
+      final completion = tester.getSemantics(
+        find.byKey(const ValueKey('numberSense.guidedCompletion')),
+      );
+      expect(completion.getSemanticsData().label, 'You found it.');
+      expect(
+        completion.getSemanticsData().hasAction(SemanticsAction.tap),
+        isFalse,
+      );
+      final icon = tester.widget<Icon>(
+        find.byKey(const ValueKey('numberSense.guidedCompletion.icon')),
+      );
+      final text = tester.widget<Text>(
+        find.byKey(const ValueKey('numberSense.guidedCompletion.text')),
+      );
+      expect(icon.icon, Icons.check_circle);
+      expect(icon.color, text.style!.color);
+    }
   });
 
   testWidgets('Free explore retains value and Guided restarts active example',
@@ -585,7 +972,7 @@ void main() {
     expect(find.text('2/4'), findsOneWidget);
     expect(
         find.text(
-            'Choose equal parts, then tap parts or tap/drag the point to explore fractions.'),
+            'Choose a model, then tap equal parts or tap/drag a point to explore fractions.'),
         findsOneWidget);
     expect(find.text('Target: 1/2'), findsNothing);
     expect(find.text('You found it.'), findsNothing);
@@ -682,13 +1069,21 @@ void main() {
       tester,
       find.byKey(const ValueKey('numberSense.clearExplore')),
     );
-    expect(find.text('0/8'), findsOneWidget);
+    expect(
+      tester
+          .widget<Text>(
+            find.byKey(const ValueKey('numberSenseWorkspace.fraction')),
+          )
+          .data,
+      '0',
+    );
+    expect(find.text('0/8'), findsNothing);
     expect(find.text('2/8'), findsNothing);
     expect(find.byKey(const ValueKey('numberSenseWorkspace.denominator-8')),
         findsOneWidget);
     expect(
         find.text(
-            'Choose equal parts, then tap parts or tap/drag the point to explore fractions.'),
+            'Choose a model, then tap equal parts or tap/drag a point to explore fractions.'),
         findsOneWidget);
   });
 
@@ -885,6 +1280,40 @@ void main() {
         await tester.tap(lessThan);
         await tester.pumpAndSettle();
         expect(find.text('Correct: 2/8 < 5/8.'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+        for (var step = 0; step < 5; step++) {
+          await tester.ensureVisible(next);
+          await tester.tap(next);
+          await tester.pumpAndSettle();
+        }
+        expect(find.text('Find one hundredth'), findsOneWidget);
+        expect(find.text('Target: 1/100'), findsOneWidget);
+        await tester.ensureVisible(
+          find.byKey(const ValueKey('hundredthsPrecisionLine.tick.1')),
+        );
+        await tester.tap(
+          find.byKey(const ValueKey('hundredthsPrecisionLine.tick.1')),
+        );
+        await tester.pumpAndSettle();
+        expect(find.text('You found it.'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+
+        await tester.ensureVisible(
+          find.byKey(const ValueKey('numberSense.modeFreeExplore')),
+        );
+        await tester.tap(
+          find.byKey(const ValueKey('numberSense.modeFreeExplore')),
+        );
+        await tester.pumpAndSettle();
+        await tester.ensureVisible(
+          find.byKey(const ValueKey('numberSense.explore.precisionLine')),
+        );
+        await tester.tap(
+          find.byKey(const ValueKey('numberSense.explore.precisionLine')),
+        );
+        await tester.pumpAndSettle();
+        expect(find.text('You found it.'), findsNothing);
+        expect(find.text('Find one hundredth'), findsNothing);
         expect(tester.takeException(), isNull);
       });
     }

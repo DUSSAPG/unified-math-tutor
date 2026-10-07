@@ -11,6 +11,7 @@ enum NumberSenseExampleId {
   compareThreeSixthsAndOneHalf,
   compareFiveEighthsAndOneHalf,
   compareTwoThirdsAndThreeQuarters,
+  findOneHundredth,
 }
 
 /// The outcome of comparing two exact fractions.
@@ -174,6 +175,14 @@ class NumberSenseExample {
     expectedComparison: NumberSenseComparison.lessThan,
   );
 
+  /// Precision placement: find one hundredth on the zoomed 0.00–0.10 line.
+  static final NumberSenseExample findOneHundredth = NumberSenseExample(
+    id: NumberSenseExampleId.findOneHundredth,
+    startDenominator: 2,
+    startShadedParts: 0,
+    primary: ExactFraction(1, 100),
+  );
+
   /// Every guided example, in the fixed cycling order.
   static final List<NumberSenseExample> all = [
     equivalenceHalf,
@@ -183,6 +192,7 @@ class NumberSenseExample {
     compareThreeSixthsAndOneHalf,
     compareFiveEighthsAndOneHalf,
     compareTwoThirdsAndThreeQuarters,
+    findOneHundredth,
   ];
 
   /// The example with the given [id].

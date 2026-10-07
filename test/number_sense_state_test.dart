@@ -36,7 +36,7 @@ void main() {
       );
     });
 
-    test('all seven guided examples have stable, distinct ids in order', () {
+    test('all eight guided examples have stable, distinct ids in order', () {
       expect(NumberSenseExample.all.map((e) => e.id).toList(), [
         NumberSenseExampleId.equivalenceHalf,
         NumberSenseExampleId.placeThreeEighths,
@@ -45,7 +45,17 @@ void main() {
         NumberSenseExampleId.compareThreeSixthsAndOneHalf,
         NumberSenseExampleId.compareFiveEighthsAndOneHalf,
         NumberSenseExampleId.compareTwoThirdsAndThreeQuarters,
+        NumberSenseExampleId.findOneHundredth,
       ]);
+    });
+
+    test('hundredths placement is the final guided example', () {
+      final example = NumberSenseExample.findOneHundredth;
+      expect(example.primary, ExactFraction(1, 100));
+      expect(
+        NumberSenseState.guided(example.id).usesPrecisionLine,
+        isTrue,
+      );
     });
 
     test('five comparison examples have the requested exact values and order',
@@ -245,6 +255,36 @@ void main() {
       expect(guided.shadedParts, 0);
     });
 
+    test('Free Explore can switch to the precision line and retain its value',
+        () {
+      final free = NumberSenseState.freeExplore()
+          .selectPrecisionLine(true)
+          .setPrecisionHundredths(7);
+      expect(free.value, ExactFraction(7, 100));
+      expect(free.precisionHundredths, 7);
+      expect(free.switchMode(NumberSenseMode.guided).activeExample,
+          NumberSenseExampleId.equivalenceHalf);
+    });
+
+    test('entering Free Explore from Guided precision keeps the exact value',
+        () {
+      final guided =
+          NumberSenseState.guided(NumberSenseExampleId.findOneHundredth)
+              .setPrecisionHundredths(7);
+      final free = guided.switchMode(NumberSenseMode.freeExplore);
+      expect(free.usesPrecisionLine, isTrue);
+      expect(free.precisionHundredths, 7);
+      expect(free.value, ExactFraction(7, 100));
+      expect(free.precisionLineTouched, isTrue);
+    });
+
+    test('selecting precision line is only valid in Free Explore', () {
+      expect(
+        () => NumberSenseState.guided().selectPrecisionLine(true),
+        throwsStateError,
+      );
+    });
+
     test('switching to the mode already active changes nothing', () {
       final state = NumberSenseState.guided();
       expect(
@@ -278,6 +318,17 @@ void main() {
       expect(reset.mode, NumberSenseMode.freeExplore);
     });
 
+    test('precision Clear returns to 0/100 and keeps precision-line mode', () {
+      final free = NumberSenseState.freeExplore()
+          .selectPrecisionLine(true)
+          .setPrecisionHundredths(7);
+      final cleared = free.resetFreeExplore();
+      expect(cleared.usesPrecisionLine, isTrue);
+      expect(cleared.precisionHundredths, 0);
+      expect(cleared.value, ExactFraction(0, 100));
+      expect(cleared.precisionLineTouched, isFalse);
+    });
+
     test('Free Explore reset is invalid in Guided mode', () {
       expect(
           () => NumberSenseState.guided().resetFreeExplore(), throwsStateError);
@@ -303,6 +354,16 @@ void main() {
       final compare = place.cycleExample();
       expect(compare.denominator, 8);
       expect(compare.shadedParts, 2);
+    });
+
+    test('the final guided transition starts the precision activity', () {
+      var state = NumberSenseState.guided();
+      for (var step = 0; step < NumberSenseExample.all.length - 1; step++) {
+        state = state.cycleExample();
+      }
+      expect(state.activeExample, NumberSenseExampleId.findOneHundredth);
+      expect(state.usesPrecisionLine, isTrue);
+      expect(state.value, ExactFraction(0, 100));
     });
 
     test('cycling from Free Explore enters Guided at the first example', () {
@@ -349,6 +410,25 @@ void main() {
           isFalse);
     });
 
+    test('whole-part feedback eligibility tracks learner changes only', () {
+      expect(NumberSenseState.guided().wholePartModelTouched, isFalse);
+      expect(
+        NumberSenseState.guided().setShadedParts(0).wholePartModelTouched,
+        isTrue,
+      );
+      expect(
+        NumberSenseState.guided().selectDenominator(4).wholePartModelTouched,
+        isTrue,
+      );
+      expect(
+        NumberSenseState.guided()
+            .setShadedParts(1)
+            .resetGuided()
+            .wholePartModelTouched,
+        isFalse,
+      );
+    });
+
     test('placement completes at 3/8 by tapping three parts', () {
       final state =
           NumberSenseState.guided(NumberSenseExampleId.placeThreeEighths)
@@ -376,6 +456,25 @@ void main() {
               .selectDenominator(4);
       expect(onQuarters.value, ExactFraction(1, 2));
       expect(onQuarters.isGuidedComplete, isFalse);
+    });
+
+    test('hundredths activity completes only at exactly 1/100', () {
+      final start =
+          NumberSenseState.guided(NumberSenseExampleId.findOneHundredth);
+      expect(start.isGuidedComplete, isFalse);
+      expect(start.setPrecisionHundredths(2).isGuidedComplete, isFalse);
+      expect(start.setPrecisionHundredths(1).isGuidedComplete, isTrue);
+    });
+
+    test('precision tick selection rejects values outside 0 through 10', () {
+      final line =
+          NumberSenseState.guided(NumberSenseExampleId.findOneHundredth);
+      expect(() => line.setPrecisionHundredths(-1), throwsArgumentError);
+      expect(() => line.setPrecisionHundredths(11), throwsArgumentError);
+      expect(
+        () => NumberSenseState.guided().setPrecisionHundredths(1),
+        throwsStateError,
+      );
     });
 
     test('comparison completes only with the exact correct answer', () {

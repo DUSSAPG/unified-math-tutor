@@ -4543,14 +4543,93 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get numberSenseFreeExploreInstruction =>
-      'Choose equal parts, then tap parts or tap/drag the point to explore fractions.';
+      'Choose a model, then tap equal parts or tap/drag a point to explore fractions.';
 
   @override
   String get numberSenseClearExplore => 'Clear';
 
   @override
   String get numberSenseScopeStatement =>
-      'This starter whole-part model supports 2, 3, 4, 6 or 8 equal parts only. Fractions such as 1/100 need a precision or zoomed number line.';
+      'This starter whole-part model supports 2, 3, 4, 6 or 8 equal parts only. Hundredths are supported on the precision line; other unsupported denominators need a precision or zoomed line.';
+
+  @override
+  String get numberSenseWholePartModel => 'Whole-part bar';
+
+  @override
+  String get numberSensePrecisionLine => 'Precision line';
+
+  @override
+  String get numberSenseExampleHundredthsTitle => 'Find one hundredth';
+
+  @override
+  String get numberSenseExampleHundredthsTask =>
+      'Use the zoomed number line to find one hundredth. Each step is one hundredth.';
+
+  @override
+  String get numberSenseHundredthsExploreInstruction =>
+      'Choose a hundredth from 0.00 to 0.10. Tap a labelled point or drag along the line.';
+
+  @override
+  String get numberSenseHundredthsTargetEquation => '1/100 = 0.01';
+
+  @override
+  String get numberSenseHundredthsLineLabel =>
+      'Zoomed number line from 0.00 to 0.10, marked in hundredths';
+
+  @override
+  String numberSenseHundredthsSelectionExplanation(
+    String fraction,
+    String decimal,
+    int count,
+  ) {
+    return '$fraction means $decimal: $count of 100 equal parts.';
+  }
+
+  @override
+  String numberSenseHundredthsIncorrectFeedback(String decimal) {
+    return 'You selected $decimal. One hundredth is the next tick after 0.00: choose 0.01.';
+  }
+
+  @override
+  String get numberSenseHundredthsZeroExplanation =>
+      'Zero is at the start of the line.';
+
+  @override
+  String get numberSenseHundredthsZeroGuidedFeedback =>
+      '0.00 is zero. One hundredth is the first tick to the right: 0.01.';
+
+  @override
+  String numberSenseGuidedWrongAdjacent(
+    String selected,
+    String direction,
+    String target,
+  ) {
+    return 'Not quite. You chose $selected. Move one tick $direction to reach $target.';
+  }
+
+  @override
+  String numberSenseGuidedWrongGeneral(String selected, String target) {
+    return 'Not quite. You chose $selected. The target is $target. Change the shaded equal parts to show the target amount.';
+  }
+
+  @override
+  String numberSenseGuidedWrongPartition(String selected, String target) {
+    return 'Not quite. You chose $selected. The target is $target. Choose equal parts that can show the target fraction.';
+  }
+
+  @override
+  String numberSenseGuidedWrongEquivalenceWhole(
+    String selected,
+    String target,
+  ) {
+    return '$selected is one whole, not $target. Shade half of the equal parts.';
+  }
+
+  @override
+  String get numberSenseGuidedDirectionLeft => 'left';
+
+  @override
+  String get numberSenseGuidedDirectionRight => 'right';
 
   @override
   String get numberSenseEqualPartsLabel => 'Equal parts';

@@ -34,6 +34,10 @@ class NumberSenseLabWorkspace extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final fractionLabel =
+        state.mode == NumberSenseMode.freeExplore && state.shadedParts == 0
+            ? '0'
+            : '${state.shadedParts}/${state.denominator}';
     return LayoutBuilder(
       builder: (context, constraints) {
         final gap = constraints.maxWidth < 360 ? 12.0 : 20.0;
@@ -42,7 +46,7 @@ class NumberSenseLabWorkspace extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              '${state.shadedParts}/${state.denominator}',
+              fractionLabel,
               key: const ValueKey('numberSenseWorkspace.fraction'),
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.headlineSmall,

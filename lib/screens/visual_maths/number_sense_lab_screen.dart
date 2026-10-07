@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
+import '../../models/exact_fraction.dart';
 import '../../models/number_sense_example.dart';
 import '../../models/number_sense_state.dart';
+import '../../services/hundredths_precision_geometry.dart';
 import '../../services/local_preferences_service.dart';
 import '../../shared/theme/app_spacing.dart';
 import '../../shared/theme/app_theme.dart';
 import '../../widgets/labs/lab_help_sheet.dart';
 import '../../widgets/number_sense/fraction_comparison_visual.dart';
+import '../../widgets/number_sense/hundredths_precision_line.dart';
 import '../../widgets/number_sense/number_sense_lab_workspace.dart';
 
 /// Local, non-persistent guided and free-explore Number Sense Lab.
@@ -92,16 +95,29 @@ class _NumberSenseLabScreenState extends State<NumberSenseLabScreen> {
                             'numberSense.freeExploreInstruction'),
                         textAlign: TextAlign.center,
                       ),
+                      const SizedBox(height: AppSpacing.sm),
+                      _exploreModelControls(l10n),
                     ],
                     const SizedBox(height: AppSpacing.md),
-                    if (_state.mode == NumberSenseMode.freeExplore ||
-                        _example.expectedComparison == null)
+                    if (_state.mode == NumberSenseMode.freeExplore &&
+                        _state.usesPrecisionLine)
+                      _precisionLineContent(l10n, guided: false)
+                    else if (_state.mode == NumberSenseMode.freeExplore ||
+                        (_example.expectedComparison == null &&
+                            _example.id !=
+                                NumberSenseExampleId.findOneHundredth))
                       NumberSenseLabWorkspace(
                         state: _state,
                         reduceMotion:
                             preferenceReduceMotion || systemReduceMotion,
                         onChanged: (next) => setState(() => _state = next),
                       ),
+                    if (_state.mode == NumberSenseMode.guided &&
+                        !_state.usesPrecisionLine &&
+                        _example.expectedComparison == null &&
+                        _state.wholePartModelTouched &&
+                        !_state.isGuidedComplete)
+                      _wholePartFeedback(l10n),
                     const SizedBox(height: AppSpacing.sm),
                     _fractionHelpButtons(l10n),
                     const SizedBox(height: AppSpacing.md),
@@ -203,6 +219,9 @@ class _NumberSenseLabScreenState extends State<NumberSenseLabScreen> {
       case NumberSenseExampleId.compareTwoThirdsAndThreeQuarters:
         title = l10n.numberSenseExampleComparisonTitle;
         task = l10n.numberSenseExampleComparisonTask;
+      case NumberSenseExampleId.findOneHundredth:
+        title = l10n.numberSenseExampleHundredthsTitle;
+        task = l10n.numberSenseExampleHundredthsTask;
     }
 
     return Semantics(
@@ -220,7 +239,9 @@ class _NumberSenseLabScreenState extends State<NumberSenseLabScreen> {
           const SizedBox(height: AppSpacing.xs),
           Text(task, textAlign: TextAlign.center),
           const SizedBox(height: AppSpacing.sm),
-          if (example.expectedComparison == null)
+          if (example.id == NumberSenseExampleId.findOneHundredth)
+            _precisionLineContent(l10n, guided: true)
+          else if (example.expectedComparison == null)
             Text(
               l10n.numberSenseTarget(
                 '${example.primary.numerator}/${example.primary.denominator}',
@@ -311,6 +332,169 @@ class _NumberSenseLabScreenState extends State<NumberSenseLabScreen> {
             ),
           ],
         ],
+      ),
+    );
+  }
+
+  Widget _exploreModelControls(AppLocalizations l10n) => Wrap(
+        alignment: WrapAlignment.center,
+        spacing: AppSpacing.sm,
+        runSpacing: AppSpacing.xs,
+        children: [
+          ChoiceChip(
+            key: const ValueKey('numberSense.explore.wholePartModel'),
+            label: Text(l10n.numberSenseWholePartModel),
+            selected: !_state.usesPrecisionLine,
+            onSelected: (_) => setState(
+              () => _state = _state.selectPrecisionLine(false),
+            ),
+            materialTapTargetSize: MaterialTapTargetSize.padded,
+          ),
+          ChoiceChip(
+            key: const ValueKey('numberSense.explore.precisionLine'),
+            label: Text(l10n.numberSensePrecisionLine),
+            selected: _state.usesPrecisionLine,
+            onSelected: (_) => setState(
+              () => _state = _state.selectPrecisionLine(true),
+            ),
+            materialTapTargetSize: MaterialTapTargetSize.padded,
+          ),
+        ],
+      );
+
+  Widget _precisionLineContent(
+    AppLocalizations l10n, {
+    required bool guided,
+  }) {
+    final hundredths = _state.precisionHundredths;
+    final decimal = HundredthsPrecisionGeometry.decimalAt(hundredths);
+    final isZero = hundredths == 0;
+    final fractionText = isZero ? '0' : '$hundredths/100';
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        if (guided) ...[
+          Text(
+            l10n.numberSenseTarget('1/100'),
+            key: const ValueKey('numberSense.precisionTarget'),
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: context.appColors.primaryText,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          const SizedBox(height: AppSpacing.xs),
+          Text(
+            l10n.numberSenseHundredthsTargetEquation,
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+        ] else
+          Text(
+            l10n.numberSenseHundredthsExploreInstruction,
+            textAlign: TextAlign.center,
+          ),
+        const SizedBox(height: AppSpacing.sm),
+        HundredthsPrecisionLine(
+          selectedHundredths: hundredths,
+          semanticLabel: l10n.numberSenseHundredthsLineLabel,
+          onChanged: (next) => setState(
+            () => _state = _state.setPrecisionHundredths(next),
+          ),
+        ),
+        const SizedBox(height: AppSpacing.xs),
+        Text(
+          '$fractionText = $decimal',
+          key: const ValueKey('numberSense.precisionReadout'),
+          textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.titleLarge,
+        ),
+        const SizedBox(height: AppSpacing.xs),
+        Text(
+          isZero
+              ? l10n.numberSenseHundredthsZeroExplanation
+              : l10n.numberSenseHundredthsSelectionExplanation(
+                  fractionText,
+                  decimal,
+                  hundredths,
+                ),
+          key: const ValueKey('numberSense.precisionExplanation'),
+          textAlign: TextAlign.center,
+        ),
+        if (guided &&
+            _state.precisionLineTouched &&
+            !_state.isGuidedComplete) ...[
+          const SizedBox(height: AppSpacing.sm),
+          Semantics(
+            key: const ValueKey('numberSense.precisionFeedback'),
+            container: true,
+            liveRegion: true,
+            child: Text(
+              hundredths == 0
+                  ? l10n.numberSenseHundredthsZeroGuidedFeedback
+                  : l10n.numberSenseHundredthsIncorrectFeedback(decimal),
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ],
+      ],
+    );
+  }
+
+  Widget _wholePartFeedback(AppLocalizations l10n) {
+    final example = _example;
+    final selected = '${_state.shadedParts}/${_state.denominator}';
+    final target = example.primary.toString();
+    final colors = context.appColors;
+    final String message;
+
+    if (example.primary == ExactFraction(1, 2) &&
+        _state.value == ExactFraction(1, 1)) {
+      message = l10n.numberSenseGuidedWrongEquivalenceWhole(
+        selected,
+        target,
+      );
+    } else if (_state.denominator == example.primary.denominator &&
+        (_state.shadedParts - example.primary.numerator).abs() == 1) {
+      final direction = _state.shadedParts < example.primary.numerator
+          ? l10n.numberSenseGuidedDirectionRight
+          : l10n.numberSenseGuidedDirectionLeft;
+      message = l10n.numberSenseGuidedWrongAdjacent(
+        selected,
+        direction,
+        target,
+      );
+    } else if (_state.denominator % example.primary.denominator != 0) {
+      message = l10n.numberSenseGuidedWrongPartition(
+        selected,
+        target,
+      );
+    } else {
+      message = l10n.numberSenseGuidedWrongGeneral(
+        selected,
+        target,
+      );
+    }
+
+    return Semantics(
+      key: const ValueKey('numberSense.guidedPlacementFeedback'),
+      container: true,
+      liveRegion: true,
+      child: Container(
+        padding: const EdgeInsets.all(AppSpacing.sm),
+        decoration: BoxDecoration(
+          border: Border.all(color: colors.divider),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Icon(Icons.info_outline, color: colors.primaryText),
+            const SizedBox(width: AppSpacing.xs),
+            Expanded(child: Text(message)),
+          ],
+        ),
       ),
     );
   }

@@ -86,6 +86,67 @@ void main() {
     );
   });
 
+  testWidgets('Free Explore zero displays as zero for each supported partition',
+      (tester) async {
+    for (final denominator in [2, 3, 4, 6, 8]) {
+      await tester.pumpWidget(
+        appFor(NumberSenseState.freeExplore(denominator: denominator), (_) {}),
+      );
+
+      expect(
+        tester
+            .widget<Text>(
+              find.byKey(
+                const ValueKey('numberSenseWorkspace.fraction'),
+              ),
+            )
+            .data,
+        '0',
+        reason: 'denominator $denominator',
+      );
+      expect(
+        find.text('0/$denominator'),
+        findsNothing,
+        reason: 'denominator $denominator',
+      );
+      expect(
+        find.byKey(
+          ValueKey('numberSenseWorkspace.denominator-$denominator'),
+        ),
+        findsOneWidget,
+        reason: 'denominator $denominator remains available',
+      );
+      expect(
+        find.byKey(
+          ValueKey('fractionPartitionBar.segment-${denominator - 1}'),
+        ),
+        findsOneWidget,
+        reason: 'the $denominator-part bar remains partitioned',
+      );
+    }
+  });
+
+  testWidgets('Free Explore keeps the fraction label after selecting a part',
+      (tester) async {
+    await pumpControlled(
+      tester,
+      initialState: NumberSenseState.freeExplore(denominator: 8),
+      onLatest: (_) {},
+    );
+
+    await tester.tap(
+      find.byKey(const ValueKey('fractionPartitionBar.segment-0')),
+    );
+    await tester.pump();
+    expect(find.text('1/8'), findsOneWidget);
+
+    await tester.tap(
+      find.byKey(const ValueKey('fractionPartitionBar.segment-4')),
+    );
+    await tester.pump();
+    expect(find.text('5/8'), findsOneWidget);
+  });
+
   testWidgets('bar changes update the parent state and both manipulatives',
       (tester) async {
     NumberSenseState? latest;

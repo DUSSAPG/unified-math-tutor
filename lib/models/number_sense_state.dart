@@ -21,6 +21,10 @@ class NumberSenseState {
     required this.shadedParts,
     required this.activeExample,
     required this.comparisonAnswer,
+    required this.usesPrecisionLine,
+    required this.precisionHundredths,
+    required this.precisionLineTouched,
+    required this.wholePartModelTouched,
   });
 
   /// Guided mode at the starting state of [id] (the first example by default).
@@ -38,6 +42,10 @@ class NumberSenseState {
       shadedParts: 0,
       activeExample: null,
       comparisonAnswer: null,
+      usesPrecisionLine: false,
+      precisionHundredths: 0,
+      precisionLineTouched: false,
+      wholePartModelTouched: false,
     );
   }
 
@@ -55,8 +63,22 @@ class NumberSenseState {
   /// The learner's stated comparison, for a comparison example.
   final NumberSenseComparison? comparisonAnswer;
 
-  /// The canonical value, derived exactly from the partition.
-  ExactFraction get value => ExactFraction(shadedParts, denominator);
+  /// Whether the precision line is selected instead of the whole-part model.
+  final bool usesPrecisionLine;
+
+  /// Selected tick on the zoomed line, in hundredths from 0 through 10.
+  final int precisionHundredths;
+
+  /// Whether a learner has interacted with the precision line in this state.
+  final bool precisionLineTouched;
+
+  /// Whether a learner has changed the guided whole-part model.
+  final bool wholePartModelTouched;
+
+  /// The canonical exact value from the selected model.
+  ExactFraction get value => usesPrecisionLine
+      ? ExactFraction(precisionHundredths, 100)
+      : ExactFraction(shadedParts, denominator);
 
   bool get canIncrement => shadedParts < denominator;
 
@@ -82,6 +104,10 @@ class NumberSenseState {
   /// 2/3 moved to fourths becomes 3/4 (rounding the midpoint upward). The
   /// shaded count is then expressed in the new partition.
   NumberSenseState selectDenominator(int newDenominator) {
+    if (usesPrecisionLine) {
+      throw StateError(
+          'selectDenominator is unavailable on the precision line.');
+    }
     _requireV1Denominator(newDenominator);
     final snapped = NumberSenseGeometry.snapUnitPosition(
       NumberSenseGeometry.unitPositionOf(value),
@@ -89,16 +115,23 @@ class NumberSenseState {
     );
     // The reduced denominator always divides the new partition exactly.
     final count = snapped.numerator * (newDenominator ~/ snapped.denominator);
-    return _copy(denominator: newDenominator, shadedParts: count);
+    return _copy(
+      denominator: newDenominator,
+      shadedParts: count,
+      wholePartModelTouched: true,
+    );
   }
 
   /// Sets the shaded count to [count], from `0` through [denominator].
   NumberSenseState setShadedParts(int count) {
+    if (usesPrecisionLine) {
+      throw StateError('setShadedParts is unavailable on the precision line.');
+    }
     if (count < 0 || count > denominator) {
       throw ArgumentError.value(
           count, 'count', 'must be between 0 and $denominator');
     }
-    return _copy(shadedParts: count);
+    return _copy(shadedParts: count, wholePartModelTouched: true);
   }
 
   /// Shades one more part. Throws [StateError] at the maximum, so a control
@@ -107,7 +140,10 @@ class NumberSenseState {
     if (!canIncrement) {
       throw StateError('Cannot shade more than $denominator of $denominator.');
     }
-    return _copy(shadedParts: shadedParts + 1);
+    return _copy(
+      shadedParts: shadedParts + 1,
+      wholePartModelTouched: true,
+    );
   }
 
   /// Unshades one part. Throws [StateError] at zero.
@@ -115,7 +151,36 @@ class NumberSenseState {
     if (!canDecrement) {
       throw StateError('Cannot shade fewer than zero parts.');
     }
-    return _copy(shadedParts: shadedParts - 1);
+    return _copy(
+      shadedParts: shadedParts - 1,
+      wholePartModelTouched: true,
+    );
+  }
+
+  /// Selects a hundredth tick from `0/100` through `10/100`.
+  NumberSenseState setPrecisionHundredths(int hundredths) {
+    if (!usesPrecisionLine) {
+      throw StateError('The precision line is not selected.');
+    }
+    if (hundredths < 0 || hundredths > 10) {
+      throw ArgumentError.value(
+        hundredths,
+        'hundredths',
+        'must be between 0 and 10',
+      );
+    }
+    return _copy(
+      precisionHundredths: hundredths,
+      precisionLineTouched: true,
+    );
+  }
+
+  /// Switches the Free Explore display between the starter bar and precision
+  /// line without changing either model's current selection.
+  NumberSenseState selectPrecisionLine(bool selected) {
+    _requireMode(NumberSenseMode.freeExplore, 'selectPrecisionLine');
+    if (selected == usesPrecisionLine) return this;
+    return _copy(usesPrecisionLine: selected);
   }
 
   /// Switches mode. Guided starts the active example, or the first example
@@ -133,6 +198,10 @@ class NumberSenseState {
       shadedParts: shadedParts,
       activeExample: null,
       comparisonAnswer: null,
+      usesPrecisionLine: usesPrecisionLine,
+      precisionHundredths: precisionHundredths,
+      precisionLineTouched: precisionLineTouched,
+      wholePartModelTouched: wholePartModelTouched,
     );
   }
 
@@ -147,7 +216,9 @@ class NumberSenseState {
   /// valid in Free Explore mode.
   NumberSenseState resetFreeExplore() {
     _requireMode(NumberSenseMode.freeExplore, 'resetFreeExplore');
-    return _copy(shadedParts: 0);
+    return usesPrecisionLine
+        ? _copy(precisionHundredths: 0, precisionLineTouched: false)
+        : _copy(shadedParts: 0);
   }
 
   /// Moves to the next guided example in the fixed cycling order (wrapping
@@ -178,12 +249,20 @@ class NumberSenseState {
         shadedParts: example.startShadedParts,
         activeExample: example.id,
         comparisonAnswer: null,
+        usesPrecisionLine: example.id == NumberSenseExampleId.findOneHundredth,
+        precisionHundredths: 0,
+        precisionLineTouched: false,
+        wholePartModelTouched: false,
       );
 
   NumberSenseState _copy({
     int? denominator,
     int? shadedParts,
     NumberSenseComparison? comparisonAnswer,
+    bool? usesPrecisionLine,
+    int? precisionHundredths,
+    bool? precisionLineTouched,
+    bool? wholePartModelTouched,
   }) =>
       NumberSenseState._(
         mode: mode,
@@ -191,6 +270,11 @@ class NumberSenseState {
         shadedParts: shadedParts ?? this.shadedParts,
         activeExample: activeExample,
         comparisonAnswer: comparisonAnswer ?? this.comparisonAnswer,
+        usesPrecisionLine: usesPrecisionLine ?? this.usesPrecisionLine,
+        precisionHundredths: precisionHundredths ?? this.precisionHundredths,
+        precisionLineTouched: precisionLineTouched ?? this.precisionLineTouched,
+        wholePartModelTouched:
+            wholePartModelTouched ?? this.wholePartModelTouched,
       );
 
   void _requireMode(NumberSenseMode required, String operation) {

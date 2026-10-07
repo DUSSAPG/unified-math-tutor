@@ -7844,7 +7844,7 @@ abstract class AppLocalizations {
   /// No description provided for @numberSenseFreeExploreInstruction.
   ///
   /// In en, this message translates to:
-  /// **'Choose equal parts, then tap parts or tap/drag the point to explore fractions.'**
+  /// **'Choose a model, then tap equal parts or tap/drag a point to explore fractions.'**
   String get numberSenseFreeExploreInstruction;
 
   /// No description provided for @numberSenseClearExplore.
@@ -7856,8 +7856,118 @@ abstract class AppLocalizations {
   /// No description provided for @numberSenseScopeStatement.
   ///
   /// In en, this message translates to:
-  /// **'This starter whole-part model supports 2, 3, 4, 6 or 8 equal parts only. Fractions such as 1/100 need a precision or zoomed number line.'**
+  /// **'This starter whole-part model supports 2, 3, 4, 6 or 8 equal parts only. Hundredths are supported on the precision line; other unsupported denominators need a precision or zoomed line.'**
   String get numberSenseScopeStatement;
+
+  /// No description provided for @numberSenseWholePartModel.
+  ///
+  /// In en, this message translates to:
+  /// **'Whole-part bar'**
+  String get numberSenseWholePartModel;
+
+  /// No description provided for @numberSensePrecisionLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Precision line'**
+  String get numberSensePrecisionLine;
+
+  /// No description provided for @numberSenseExampleHundredthsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Find one hundredth'**
+  String get numberSenseExampleHundredthsTitle;
+
+  /// No description provided for @numberSenseExampleHundredthsTask.
+  ///
+  /// In en, this message translates to:
+  /// **'Use the zoomed number line to find one hundredth. Each step is one hundredth.'**
+  String get numberSenseExampleHundredthsTask;
+
+  /// No description provided for @numberSenseHundredthsExploreInstruction.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a hundredth from 0.00 to 0.10. Tap a labelled point or drag along the line.'**
+  String get numberSenseHundredthsExploreInstruction;
+
+  /// No description provided for @numberSenseHundredthsTargetEquation.
+  ///
+  /// In en, this message translates to:
+  /// **'1/100 = 0.01'**
+  String get numberSenseHundredthsTargetEquation;
+
+  /// No description provided for @numberSenseHundredthsLineLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Zoomed number line from 0.00 to 0.10, marked in hundredths'**
+  String get numberSenseHundredthsLineLabel;
+
+  /// No description provided for @numberSenseHundredthsSelectionExplanation.
+  ///
+  /// In en, this message translates to:
+  /// **'{fraction} means {decimal}: {count} of 100 equal parts.'**
+  String numberSenseHundredthsSelectionExplanation(
+    String fraction,
+    String decimal,
+    int count,
+  );
+
+  /// No description provided for @numberSenseHundredthsIncorrectFeedback.
+  ///
+  /// In en, this message translates to:
+  /// **'You selected {decimal}. One hundredth is the next tick after 0.00: choose 0.01.'**
+  String numberSenseHundredthsIncorrectFeedback(String decimal);
+
+  /// No description provided for @numberSenseHundredthsZeroExplanation.
+  ///
+  /// In en, this message translates to:
+  /// **'Zero is at the start of the line.'**
+  String get numberSenseHundredthsZeroExplanation;
+
+  /// No description provided for @numberSenseHundredthsZeroGuidedFeedback.
+  ///
+  /// In en, this message translates to:
+  /// **'0.00 is zero. One hundredth is the first tick to the right: 0.01.'**
+  String get numberSenseHundredthsZeroGuidedFeedback;
+
+  /// No description provided for @numberSenseGuidedWrongAdjacent.
+  ///
+  /// In en, this message translates to:
+  /// **'Not quite. You chose {selected}. Move one tick {direction} to reach {target}.'**
+  String numberSenseGuidedWrongAdjacent(
+    String selected,
+    String direction,
+    String target,
+  );
+
+  /// No description provided for @numberSenseGuidedWrongGeneral.
+  ///
+  /// In en, this message translates to:
+  /// **'Not quite. You chose {selected}. The target is {target}. Change the shaded equal parts to show the target amount.'**
+  String numberSenseGuidedWrongGeneral(String selected, String target);
+
+  /// No description provided for @numberSenseGuidedWrongPartition.
+  ///
+  /// In en, this message translates to:
+  /// **'Not quite. You chose {selected}. The target is {target}. Choose equal parts that can show the target fraction.'**
+  String numberSenseGuidedWrongPartition(String selected, String target);
+
+  /// No description provided for @numberSenseGuidedWrongEquivalenceWhole.
+  ///
+  /// In en, this message translates to:
+  /// **'{selected} is one whole, not {target}. Shade half of the equal parts.'**
+  String numberSenseGuidedWrongEquivalenceWhole(String selected, String target);
+
+  /// No description provided for @numberSenseGuidedDirectionLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'left'**
+  String get numberSenseGuidedDirectionLeft;
+
+  /// No description provided for @numberSenseGuidedDirectionRight.
+  ///
+  /// In en, this message translates to:
+  /// **'right'**
+  String get numberSenseGuidedDirectionRight;
 
   /// No description provided for @numberSenseEqualPartsLabel.
   ///

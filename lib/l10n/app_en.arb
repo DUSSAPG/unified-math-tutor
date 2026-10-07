@@ -3137,12 +3137,77 @@
   "@numberSenseLabDescription": {},
   "appearanceResetOnboardingButton": "Reset Onboarding",
   "@appearanceResetOnboardingButton": {},
-  "numberSenseFreeExploreInstruction": "Choose equal parts, then tap parts or tap/drag the point to explore fractions.",
+  "numberSenseFreeExploreInstruction": "Choose a model, then tap equal parts or tap/drag a point to explore fractions.",
   "@numberSenseFreeExploreInstruction": {},
   "numberSenseClearExplore": "Clear",
   "@numberSenseClearExplore": {},
-  "numberSenseScopeStatement": "This starter whole-part model supports 2, 3, 4, 6 or 8 equal parts only. Fractions such as 1/100 need a precision or zoomed number line.",
+  "numberSenseScopeStatement": "This starter whole-part model supports 2, 3, 4, 6 or 8 equal parts only. Hundredths are supported on the precision line; other unsupported denominators need a precision or zoomed line.",
   "@numberSenseScopeStatement": {},
+  "numberSenseWholePartModel": "Whole-part bar",
+  "@numberSenseWholePartModel": {},
+  "numberSensePrecisionLine": "Precision line",
+  "@numberSensePrecisionLine": {},
+  "numberSenseExampleHundredthsTitle": "Find one hundredth",
+  "@numberSenseExampleHundredthsTitle": {},
+  "numberSenseExampleHundredthsTask": "Use the zoomed number line to find one hundredth. Each step is one hundredth.",
+  "@numberSenseExampleHundredthsTask": {},
+  "numberSenseHundredthsExploreInstruction": "Choose a hundredth from 0.00 to 0.10. Tap a labelled point or drag along the line.",
+  "@numberSenseHundredthsExploreInstruction": {},
+  "numberSenseHundredthsTargetEquation": "1/100 = 0.01",
+  "@numberSenseHundredthsTargetEquation": {},
+  "numberSenseHundredthsLineLabel": "Zoomed number line from 0.00 to 0.10, marked in hundredths",
+  "@numberSenseHundredthsLineLabel": {},
+  "numberSenseHundredthsSelectionExplanation": "{fraction} means {decimal}: {count} of 100 equal parts.",
+  "@numberSenseHundredthsSelectionExplanation": {
+    "placeholders": {
+      "fraction": { "type": "String" },
+      "decimal": { "type": "String" },
+      "count": { "type": "int" }
+    }
+  },
+  "numberSenseHundredthsIncorrectFeedback": "You selected {decimal}. One hundredth is the next tick after 0.00: choose 0.01.",
+  "@numberSenseHundredthsIncorrectFeedback": {
+    "placeholders": {
+      "decimal": { "type": "String" }
+    }
+  },
+  "numberSenseHundredthsZeroExplanation": "Zero is at the start of the line.",
+  "@numberSenseHundredthsZeroExplanation": {},
+  "numberSenseHundredthsZeroGuidedFeedback": "0.00 is zero. One hundredth is the first tick to the right: 0.01.",
+  "@numberSenseHundredthsZeroGuidedFeedback": {},
+  "numberSenseGuidedWrongAdjacent": "Not quite. You chose {selected}. Move one tick {direction} to reach {target}.",
+  "@numberSenseGuidedWrongAdjacent": {
+    "placeholders": {
+      "selected": { "type": "String" },
+      "direction": { "type": "String" },
+      "target": { "type": "String" }
+    }
+  },
+  "numberSenseGuidedWrongGeneral": "Not quite. You chose {selected}. The target is {target}. Change the shaded equal parts to show the target amount.",
+  "@numberSenseGuidedWrongGeneral": {
+    "placeholders": {
+      "selected": { "type": "String" },
+      "target": { "type": "String" }
+    }
+  },
+  "numberSenseGuidedWrongPartition": "Not quite. You chose {selected}. The target is {target}. Choose equal parts that can show the target fraction.",
+  "@numberSenseGuidedWrongPartition": {
+    "placeholders": {
+      "selected": { "type": "String" },
+      "target": { "type": "String" }
+    }
+  },
+  "numberSenseGuidedWrongEquivalenceWhole": "{selected} is one whole, not {target}. Shade half of the equal parts.",
+  "@numberSenseGuidedWrongEquivalenceWhole": {
+    "placeholders": {
+      "selected": { "type": "String" },
+      "target": { "type": "String" }
+    }
+  },
+  "numberSenseGuidedDirectionLeft": "left",
+  "@numberSenseGuidedDirectionLeft": {},
+  "numberSenseGuidedDirectionRight": "right",
+  "@numberSenseGuidedDirectionRight": {},
   "numberSenseEqualPartsLabel": "Equal parts",
   "@numberSenseEqualPartsLabel": {},
   "numberSenseCompareLeftLabel": "Left: {fraction}",
