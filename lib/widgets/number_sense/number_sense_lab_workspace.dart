@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../models/exact_fraction.dart';
 import '../../models/number_sense_state.dart';
@@ -32,6 +33,7 @@ class NumberSenseLabWorkspace extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return LayoutBuilder(
       builder: (context, constraints) {
         final gap = constraints.maxWidth < 360 ? 12.0 : 20.0;
@@ -58,6 +60,17 @@ class NumberSenseLabWorkspace extends StatelessWidget {
               selected: state.value,
               reduceMotion: reduceMotion,
               onChanged: _setFromNumberLine,
+            ),
+            SizedBox(height: gap),
+            Text(
+              l10n.numberSenseEqualPartsLabel,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.titleSmall,
+            ),
+            const SizedBox(height: 4),
+            Text(
+              l10n.numberSenseScopeStatement,
+              textAlign: TextAlign.center,
             ),
             SizedBox(height: gap),
             Wrap(

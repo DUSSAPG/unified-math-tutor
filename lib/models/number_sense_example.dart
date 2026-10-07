@@ -1,11 +1,15 @@
 import 'exact_fraction.dart';
 
-/// Stable identifiers for the three Number Sense guided examples. These are
+/// Stable identifiers for the Number Sense guided examples. These are
 /// data keys, not learner-facing text: any copy is looked up elsewhere by
 /// these identifiers.
 enum NumberSenseExampleId {
   equivalenceHalf,
   placeThreeEighths,
+  compareTwoEighthsAndFiveEighths,
+  compareThreeQuartersAndThreeEighths,
+  compareThreeSixthsAndOneHalf,
+  compareFiveEighthsAndOneHalf,
   compareTwoThirdsAndThreeQuarters,
 }
 
@@ -44,6 +48,10 @@ class NumberSenseExample {
     this.targetDenominator,
     this.lowerAnchor,
     this.upperAnchor,
+    this.primaryDisplayNumerator,
+    this.primaryDisplayDenominator,
+    this.secondaryDisplayNumerator,
+    this.secondaryDisplayDenominator,
     this.revealDenominators = const [],
     this.expectedComparison,
   });
@@ -56,8 +64,20 @@ class NumberSenseExample {
   final int? targetDenominator;
   final ExactFraction? lowerAnchor;
   final ExactFraction? upperAnchor;
+  final int? primaryDisplayNumerator;
+  final int? primaryDisplayDenominator;
+  final int? secondaryDisplayNumerator;
+  final int? secondaryDisplayDenominator;
   final List<int> revealDenominators;
   final NumberSenseComparison? expectedComparison;
+
+  int get shownPrimaryNumerator => primaryDisplayNumerator ?? primary.numerator;
+  int get shownPrimaryDenominator =>
+      primaryDisplayDenominator ?? primary.denominator;
+  int get shownSecondaryNumerator =>
+      secondaryDisplayNumerator ?? secondary!.numerator;
+  int get shownSecondaryDenominator =>
+      secondaryDisplayDenominator ?? secondary!.denominator;
 
   /// Equivalence: make 1/2, and reveal it as 2/4 and 3/6.
   static final NumberSenseExample equivalenceHalf = NumberSenseExample(
@@ -79,6 +99,66 @@ class NumberSenseExample {
     upperAnchor: ExactFraction(1, 2),
   );
 
+  /// Comparison: 2/8 is less than 5/8.
+  static final NumberSenseExample compareTwoEighthsAndFiveEighths =
+      NumberSenseExample(
+    id: NumberSenseExampleId.compareTwoEighthsAndFiveEighths,
+    startDenominator: 8,
+    startShadedParts: 2,
+    primary: ExactFraction(2, 8),
+    secondary: ExactFraction(5, 8),
+    primaryDisplayNumerator: 2,
+    primaryDisplayDenominator: 8,
+    secondaryDisplayNumerator: 5,
+    secondaryDisplayDenominator: 8,
+    expectedComparison: NumberSenseComparison.lessThan,
+  );
+
+  /// Comparison: 3/4 is greater than 3/8.
+  static final NumberSenseExample compareThreeQuartersAndThreeEighths =
+      NumberSenseExample(
+    id: NumberSenseExampleId.compareThreeQuartersAndThreeEighths,
+    startDenominator: 4,
+    startShadedParts: 3,
+    primary: ExactFraction(3, 4),
+    secondary: ExactFraction(3, 8),
+    primaryDisplayNumerator: 3,
+    primaryDisplayDenominator: 4,
+    secondaryDisplayNumerator: 3,
+    secondaryDisplayDenominator: 8,
+    expectedComparison: NumberSenseComparison.greaterThan,
+  );
+
+  /// Comparison: 3/6 is equal to 1/2.
+  static final NumberSenseExample compareThreeSixthsAndOneHalf =
+      NumberSenseExample(
+    id: NumberSenseExampleId.compareThreeSixthsAndOneHalf,
+    startDenominator: 6,
+    startShadedParts: 3,
+    primary: ExactFraction(3, 6),
+    secondary: ExactFraction(1, 2),
+    primaryDisplayNumerator: 3,
+    primaryDisplayDenominator: 6,
+    secondaryDisplayNumerator: 1,
+    secondaryDisplayDenominator: 2,
+    expectedComparison: NumberSenseComparison.equal,
+  );
+
+  /// Comparison: 5/8 is greater than 1/2.
+  static final NumberSenseExample compareFiveEighthsAndOneHalf =
+      NumberSenseExample(
+    id: NumberSenseExampleId.compareFiveEighthsAndOneHalf,
+    startDenominator: 8,
+    startShadedParts: 5,
+    primary: ExactFraction(5, 8),
+    secondary: ExactFraction(1, 2),
+    primaryDisplayNumerator: 5,
+    primaryDisplayDenominator: 8,
+    secondaryDisplayNumerator: 1,
+    secondaryDisplayDenominator: 2,
+    expectedComparison: NumberSenseComparison.greaterThan,
+  );
+
   /// Comparison: 2/3 is less than 3/4. Starts showing 2 of 3.
   static final NumberSenseExample compareTwoThirdsAndThreeQuarters =
       NumberSenseExample(
@@ -87,6 +167,10 @@ class NumberSenseExample {
     startShadedParts: 2,
     primary: ExactFraction(2, 3),
     secondary: ExactFraction(3, 4),
+    primaryDisplayNumerator: 2,
+    primaryDisplayDenominator: 3,
+    secondaryDisplayNumerator: 3,
+    secondaryDisplayDenominator: 4,
     expectedComparison: NumberSenseComparison.lessThan,
   );
 
@@ -94,6 +178,10 @@ class NumberSenseExample {
   static final List<NumberSenseExample> all = [
     equivalenceHalf,
     placeThreeEighths,
+    compareTwoEighthsAndFiveEighths,
+    compareThreeQuartersAndThreeEighths,
+    compareThreeSixthsAndOneHalf,
+    compareFiveEighthsAndOneHalf,
     compareTwoThirdsAndThreeQuarters,
   ];
 

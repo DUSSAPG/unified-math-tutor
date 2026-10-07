@@ -3136,5 +3136,178 @@
   "numberSenseLabDescription": "Build, place and compare unit fractions.",
   "@numberSenseLabDescription": {},
   "appearanceResetOnboardingButton": "Reset Onboarding",
-  "@appearanceResetOnboardingButton": {}
+  "@appearanceResetOnboardingButton": {},
+  "numberSenseFreeExploreInstruction": "Choose equal parts, then tap parts or tap/drag the point to explore fractions.",
+  "@numberSenseFreeExploreInstruction": {},
+  "numberSenseClearExplore": "Clear",
+  "@numberSenseClearExplore": {},
+  "numberSenseScopeStatement": "This starter whole-part model supports 2, 3, 4, 6 or 8 equal parts only. Fractions such as 1/100 need a precision or zoomed number line.",
+  "@numberSenseScopeStatement": {},
+  "numberSenseEqualPartsLabel": "Equal parts",
+  "@numberSenseEqualPartsLabel": {},
+  "numberSenseCompareLeftLabel": "Left: {fraction}",
+  "@numberSenseCompareLeftLabel": {
+    "placeholders": {
+      "fraction": {
+        "type": "String"
+      }
+    }
+  },
+  "numberSenseCompareRightLabel": "Right: {fraction}",
+  "@numberSenseCompareRightLabel": {
+    "placeholders": {
+      "fraction": {
+        "type": "String"
+      }
+    }
+  },
+  "numberSenseCompareSharedLineLabel": "Shared number line from zero to one. The circle marks the left fraction and the diamond marks the right fraction.",
+  "@numberSenseCompareSharedLineLabel": {},
+  "numberSenseCompareLeftMarkerSemantics": "Number line marker for two thirds, 2/3",
+  "@numberSenseCompareLeftMarkerSemantics": {},
+  "numberSenseCompareRightMarkerSemantics": "Number line marker for three fourths, 3/4",
+  "@numberSenseCompareRightMarkerSemantics": {},
+  "numberSenseCompareLeftMarkerExplanation": "2/3 = 0.666… — two of three equal parts",
+  "@numberSenseCompareLeftMarkerExplanation": {},
+  "numberSenseCompareRightMarkerExplanation": "3/4 = 0.75 — three of four equal parts",
+  "@numberSenseCompareRightMarkerExplanation": {},
+  "numberSenseComparisonProof": "2 × 4 = 8; 3 × 3 = 9; since 8 < 9, 2/3 < 3/4.",
+  "@numberSenseComparisonProof": {},
+  "numberSenseComparisonIncorrectResult": "Not quite. 2/3 is less than 3/4.",
+  "@numberSenseComparisonIncorrectResult": {},
+  "numberSenseComparisonCorrectResult": "Correct: 2/3 < 3/4.",
+  "@numberSenseComparisonCorrectResult": {},
+  "numberSenseComparisonCorrectResultDynamic": "Correct: {leftFraction} {relation} {rightFraction}.",
+  "@numberSenseComparisonCorrectResultDynamic": {
+    "placeholders": {
+      "leftFraction": {
+        "type": "String"
+      },
+      "relation": {
+        "type": "String"
+      },
+      "rightFraction": {
+        "type": "String"
+      }
+    }
+  },
+  "numberSenseComparisonIncorrectResultDynamic": "Not quite. {leftFraction} is {relationWords} {rightFraction}.",
+  "@numberSenseComparisonIncorrectResultDynamic": {
+    "placeholders": {
+      "leftFraction": {
+        "type": "String"
+      },
+      "relationWords": {
+        "type": "String"
+      },
+      "rightFraction": {
+        "type": "String"
+      }
+    }
+  },
+  "numberSenseComparisonProofDynamic": "{leftNumerator} × {rightDenominator} = {leftProduct}; {rightNumerator} × {leftDenominator} = {rightProduct}; since {leftProduct} {relation} {rightProduct}, {leftFraction} {relation} {rightFraction}.",
+  "@numberSenseComparisonProofDynamic": {
+    "placeholders": {
+      "leftNumerator": {
+        "type": "int"
+      },
+      "rightDenominator": {
+        "type": "int"
+      },
+      "leftProduct": {
+        "type": "int"
+      },
+      "rightNumerator": {
+        "type": "int"
+      },
+      "leftDenominator": {
+        "type": "int"
+      },
+      "rightProduct": {
+        "type": "int"
+      },
+      "relation": {
+        "type": "String"
+      },
+      "leftFraction": {
+        "type": "String"
+      },
+      "rightFraction": {
+        "type": "String"
+      }
+    }
+  },
+  "numberSenseCompareLessThanWords": "less than",
+  "@numberSenseCompareLessThanWords": {},
+  "numberSenseCompareEqualWords": "equal to",
+  "@numberSenseCompareEqualWords": {},
+  "numberSenseCompareGreaterThanWords": "greater than",
+  "@numberSenseCompareGreaterThanWords": {},
+  "numberSenseCompareMarkerExplanation": "{fraction} = {decimal} — {numerator} of {denominator} equal parts",
+  "@numberSenseCompareMarkerExplanation": {
+    "placeholders": {
+      "fraction": {
+        "type": "String"
+      },
+      "decimal": {
+        "type": "String"
+      },
+      "numerator": {
+        "type": "int"
+      },
+      "denominator": {
+        "type": "int"
+      }
+    }
+  },
+  "numberSenseComparisonCorrectFeedback": "Correct. {proof}",
+  "@numberSenseComparisonCorrectFeedback": {
+    "placeholders": {
+      "proof": {
+        "type": "String"
+      }
+    }
+  },
+  "numberSenseComparisonIncorrectFeedback": "Not quite. The correct relation is 2/3 < 3/4. {proof}",
+  "@numberSenseComparisonIncorrectFeedback": {
+    "placeholders": {
+      "proof": {
+        "type": "String"
+      }
+    }
+  },
+  "numberSenseComparisonCorrectLabel": "Correct",
+  "@numberSenseComparisonCorrectLabel": {},
+  "numberSenseComparisonReviewLabel": "Review the comparison",
+  "@numberSenseComparisonReviewLabel": {},
+  "numberSenseHelpNumeratorLabel": "Numerator",
+  "@numberSenseHelpNumeratorLabel": {},
+  "numberSenseHelpDenominatorLabel": "Denominator",
+  "@numberSenseHelpDenominatorLabel": {},
+  "numberSenseHelpEquivalentLabel": "Equivalent",
+  "@numberSenseHelpEquivalentLabel": {},
+  "numberSenseHelpNumeratorDescription": "The numerator is the top number. It counts how many equal parts are selected.",
+  "@numberSenseHelpNumeratorDescription": {},
+  "numberSenseHelpDenominatorDescription": "The denominator is the bottom number. It tells how many equal parts make one whole.",
+  "@numberSenseHelpDenominatorDescription": {},
+  "numberSenseHelpEquivalentDescription": "Equivalent fractions name the same amount, even when they use different-sized equal parts.",
+  "@numberSenseHelpEquivalentDescription": {},
+  "numberSenseHelpLessThanLabel": "Explain the less-than symbol",
+  "@numberSenseHelpLessThanLabel": {},
+  "numberSenseHelpEqualLabel": "Explain the equal-to symbol",
+  "@numberSenseHelpEqualLabel": {},
+  "numberSenseHelpGreaterThanLabel": "Explain the greater-than symbol",
+  "@numberSenseHelpGreaterThanLabel": {},
+  "numberSenseHelpLessThanDescription": "The less-than symbol means the value on its left is smaller than the value on its right.",
+  "@numberSenseHelpLessThanDescription": {},
+  "numberSenseHelpEqualDescription": "The equal-to symbol means both values are the same amount.",
+  "@numberSenseHelpEqualDescription": {},
+  "numberSenseHelpGreaterThanDescription": "The greater-than symbol means the value on its left is larger than the value on its right.",
+  "@numberSenseHelpGreaterThanDescription": {},
+  "numberSenseHelpWhatToDo": "Read the fraction or symbol, then connect it to the amount shown.",
+  "@numberSenseHelpWhatToDo": {},
+  "numberSenseHelpWhatItMeans": "Use this idea to read, describe and compare fractions.",
+  "@numberSenseHelpWhatItMeans": {},
+  "numberSenseHelpWhereUsed": "These words and symbols help explain fractions in maths and everyday sharing.",
+  "@numberSenseHelpWhereUsed": {}
 }

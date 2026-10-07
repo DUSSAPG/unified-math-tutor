@@ -36,12 +36,50 @@ void main() {
       );
     });
 
-    test('the three examples have stable, distinct ids in cycling order', () {
+    test('all seven guided examples have stable, distinct ids in order', () {
       expect(NumberSenseExample.all.map((e) => e.id).toList(), [
         NumberSenseExampleId.equivalenceHalf,
         NumberSenseExampleId.placeThreeEighths,
+        NumberSenseExampleId.compareTwoEighthsAndFiveEighths,
+        NumberSenseExampleId.compareThreeQuartersAndThreeEighths,
+        NumberSenseExampleId.compareThreeSixthsAndOneHalf,
+        NumberSenseExampleId.compareFiveEighthsAndOneHalf,
         NumberSenseExampleId.compareTwoThirdsAndThreeQuarters,
       ]);
+    });
+
+    test('five comparison examples have the requested exact values and order',
+        () {
+      final comparisons = NumberSenseExample.all
+          .where((example) => example.expectedComparison != null)
+          .toList();
+      expect(comparisons, hasLength(5));
+      expect(
+        comparisons
+            .map(
+              (example) => [
+                example.shownPrimaryNumerator,
+                example.shownPrimaryDenominator,
+                example.shownSecondaryNumerator,
+                example.shownSecondaryDenominator,
+                example.expectedComparison,
+              ],
+            )
+            .toList(),
+        [
+          [2, 8, 5, 8, NumberSenseComparison.lessThan],
+          [3, 4, 3, 8, NumberSenseComparison.greaterThan],
+          [3, 6, 1, 2, NumberSenseComparison.equal],
+          [5, 8, 1, 2, NumberSenseComparison.greaterThan],
+          [2, 3, 3, 4, NumberSenseComparison.lessThan],
+        ],
+      );
+      for (final example in comparisons) {
+        expect(
+          compareExactFractions(example.primary, example.secondary!),
+          example.expectedComparison,
+        );
+      }
     });
 
     test('each starting partition is valid and its shading is in range', () {
@@ -247,14 +285,13 @@ void main() {
   });
 
   group('example cycling', () {
-    test('cycling visits the three examples in order and then wraps', () {
+    test('cycling visits every example in order and then wraps', () {
       var state = NumberSenseState.guided();
       expect(state.activeExample, NumberSenseExampleId.equivalenceHalf);
-      state = state.cycleExample();
-      expect(state.activeExample, NumberSenseExampleId.placeThreeEighths);
-      state = state.cycleExample();
-      expect(state.activeExample,
-          NumberSenseExampleId.compareTwoThirdsAndThreeQuarters);
+      for (final example in NumberSenseExample.all.skip(1)) {
+        state = state.cycleExample();
+        expect(state.activeExample, example.id);
+      }
       state = state.cycleExample();
       expect(state.activeExample, NumberSenseExampleId.equivalenceHalf);
     });
@@ -264,7 +301,7 @@ void main() {
       expect(place.denominator, 8);
       expect(place.shadedParts, 0);
       final compare = place.cycleExample();
-      expect(compare.denominator, 3);
+      expect(compare.denominator, 8);
       expect(compare.shadedParts, 2);
     });
 

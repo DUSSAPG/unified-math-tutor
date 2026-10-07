@@ -73,7 +73,7 @@ import 'app_localizations_sv.dart';
 /// property.
 abstract class AppLocalizations {
   AppLocalizations(String locale)
-      : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+    : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -96,11 +96,11 @@ abstract class AppLocalizations {
   /// of delegates is preferred or required.
   static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
       <LocalizationsDelegate<dynamic>>[
-    delegate,
-    GlobalMaterialLocalizations.delegate,
-    GlobalCupertinoLocalizations.delegate,
-    GlobalWidgetsLocalizations.delegate,
-  ];
+        delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ];
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
@@ -123,7 +123,7 @@ abstract class AppLocalizations {
     Locale('nb', 'NO'),
     Locale('pt'),
     Locale('sv'),
-    Locale('sv', 'SE')
+    Locale('sv', 'SE'),
   ];
 
   /// Bottom nav label for Home tab
@@ -2249,7 +2249,10 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{topic} isn\'t available for {stage} yet — try {stages}.'**
   String practiceTopicUnavailableForStage(
-      String topic, String stage, String stages);
+    String topic,
+    String stage,
+    String stages,
+  );
 
   /// Shown in Topic Drill setup when the chosen topic has no real questions in any stage
   ///
@@ -5226,7 +5229,9 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{correctLabel} is opposite {askedLabel}.'**
   String labsSpatialCubeWhichFaceOppositeReveal(
-      String correctLabel, String askedLabel);
+    String correctLabel,
+    String askedLabel,
+  );
 
   /// No description provided for @labsSpatialCubeRotateToMatchMission.
   ///
@@ -5509,7 +5514,9 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'An aircraft {distanceM} metres from the runway, flying at {speedMps} metres per second.'**
   String labsAircraftLandingFindTheTimeDiagramLabel(
-      int distanceM, int speedMps);
+    int distanceM,
+    int speedMps,
+  );
 
   /// Find the Time speed readout
   ///
@@ -6007,8 +6014,12 @@ abstract class AppLocalizations {
   ///
   /// In en, this message translates to:
   /// **'Mean: {meanBefore} → {meanAfter}. Median: {medianBefore} → {medianAfter}.'**
-  String labsDataDetectiveBeforeAfter(String meanBefore, String meanAfter,
-      String medianBefore, String medianAfter);
+  String labsDataDetectiveBeforeAfter(
+    String meanBefore,
+    String meanAfter,
+    String medianBefore,
+    String medianAfter,
+  );
 
   /// No description provided for @labsDataDetectiveHelpWhatToDo.
   ///
@@ -6423,7 +6434,7 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The distance is right, but the plane is pointing the wrong way. Turn it toward the yellow target.'**
   String
-      get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceExplorer;
+  get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceExplorer;
 
   /// No description provided for @labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceBuilder.
   ///
@@ -6436,7 +6447,7 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The magnitude is correct but the bearing is off — rotate the heading toward the target bearing without changing speed.'**
   String
-      get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceNavigator;
+  get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceNavigator;
 
   /// No description provided for @labsFlightPathLabNarrationResultWrongHeadingAndDistanceExplorer.
   ///
@@ -7722,12 +7733,6 @@ abstract class AppLocalizations {
   /// **'Reset the app introduction to go through the initial setup again.'**
   String get appearanceResetOnboardingSub;
 
-  /// No description provided for @appearanceResetOnboardingButton.
-  ///
-  /// In en, this message translates to:
-  /// **'Reset Onboarding'**
-  String get appearanceResetOnboardingButton;
-
   /// No description provided for @numberSenseLabTitle.
   ///
   /// In en, this message translates to:
@@ -7829,6 +7834,275 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Build, place and compare unit fractions.'**
   String get numberSenseLabDescription;
+
+  /// No description provided for @appearanceResetOnboardingButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset Onboarding'**
+  String get appearanceResetOnboardingButton;
+
+  /// No description provided for @numberSenseFreeExploreInstruction.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose equal parts, then tap parts or tap/drag the point to explore fractions.'**
+  String get numberSenseFreeExploreInstruction;
+
+  /// No description provided for @numberSenseClearExplore.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear'**
+  String get numberSenseClearExplore;
+
+  /// No description provided for @numberSenseScopeStatement.
+  ///
+  /// In en, this message translates to:
+  /// **'This starter whole-part model supports 2, 3, 4, 6 or 8 equal parts only. Fractions such as 1/100 need a precision or zoomed number line.'**
+  String get numberSenseScopeStatement;
+
+  /// No description provided for @numberSenseEqualPartsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Equal parts'**
+  String get numberSenseEqualPartsLabel;
+
+  /// No description provided for @numberSenseCompareLeftLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Left: {fraction}'**
+  String numberSenseCompareLeftLabel(String fraction);
+
+  /// No description provided for @numberSenseCompareRightLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Right: {fraction}'**
+  String numberSenseCompareRightLabel(String fraction);
+
+  /// No description provided for @numberSenseCompareSharedLineLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Shared number line from zero to one. The circle marks the left fraction and the diamond marks the right fraction.'**
+  String get numberSenseCompareSharedLineLabel;
+
+  /// No description provided for @numberSenseCompareLeftMarkerSemantics.
+  ///
+  /// In en, this message translates to:
+  /// **'Number line marker for two thirds, 2/3'**
+  String get numberSenseCompareLeftMarkerSemantics;
+
+  /// No description provided for @numberSenseCompareRightMarkerSemantics.
+  ///
+  /// In en, this message translates to:
+  /// **'Number line marker for three fourths, 3/4'**
+  String get numberSenseCompareRightMarkerSemantics;
+
+  /// No description provided for @numberSenseCompareLeftMarkerExplanation.
+  ///
+  /// In en, this message translates to:
+  /// **'2/3 = 0.666… — two of three equal parts'**
+  String get numberSenseCompareLeftMarkerExplanation;
+
+  /// No description provided for @numberSenseCompareRightMarkerExplanation.
+  ///
+  /// In en, this message translates to:
+  /// **'3/4 = 0.75 — three of four equal parts'**
+  String get numberSenseCompareRightMarkerExplanation;
+
+  /// No description provided for @numberSenseComparisonProof.
+  ///
+  /// In en, this message translates to:
+  /// **'2 × 4 = 8; 3 × 3 = 9; since 8 < 9, 2/3 < 3/4.'**
+  String get numberSenseComparisonProof;
+
+  /// No description provided for @numberSenseComparisonIncorrectResult.
+  ///
+  /// In en, this message translates to:
+  /// **'Not quite. 2/3 is less than 3/4.'**
+  String get numberSenseComparisonIncorrectResult;
+
+  /// No description provided for @numberSenseComparisonCorrectResult.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct: 2/3 < 3/4.'**
+  String get numberSenseComparisonCorrectResult;
+
+  /// No description provided for @numberSenseComparisonCorrectResultDynamic.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct: {leftFraction} {relation} {rightFraction}.'**
+  String numberSenseComparisonCorrectResultDynamic(
+    String leftFraction,
+    String relation,
+    String rightFraction,
+  );
+
+  /// No description provided for @numberSenseComparisonIncorrectResultDynamic.
+  ///
+  /// In en, this message translates to:
+  /// **'Not quite. {leftFraction} is {relationWords} {rightFraction}.'**
+  String numberSenseComparisonIncorrectResultDynamic(
+    String leftFraction,
+    String relationWords,
+    String rightFraction,
+  );
+
+  /// No description provided for @numberSenseComparisonProofDynamic.
+  ///
+  /// In en, this message translates to:
+  /// **'{leftNumerator} × {rightDenominator} = {leftProduct}; {rightNumerator} × {leftDenominator} = {rightProduct}; since {leftProduct} {relation} {rightProduct}, {leftFraction} {relation} {rightFraction}.'**
+  String numberSenseComparisonProofDynamic(
+    int leftNumerator,
+    int rightDenominator,
+    int leftProduct,
+    int rightNumerator,
+    int leftDenominator,
+    int rightProduct,
+    String relation,
+    String leftFraction,
+    String rightFraction,
+  );
+
+  /// No description provided for @numberSenseCompareLessThanWords.
+  ///
+  /// In en, this message translates to:
+  /// **'less than'**
+  String get numberSenseCompareLessThanWords;
+
+  /// No description provided for @numberSenseCompareEqualWords.
+  ///
+  /// In en, this message translates to:
+  /// **'equal to'**
+  String get numberSenseCompareEqualWords;
+
+  /// No description provided for @numberSenseCompareGreaterThanWords.
+  ///
+  /// In en, this message translates to:
+  /// **'greater than'**
+  String get numberSenseCompareGreaterThanWords;
+
+  /// No description provided for @numberSenseCompareMarkerExplanation.
+  ///
+  /// In en, this message translates to:
+  /// **'{fraction} = {decimal} — {numerator} of {denominator} equal parts'**
+  String numberSenseCompareMarkerExplanation(
+    String fraction,
+    String decimal,
+    int numerator,
+    int denominator,
+  );
+
+  /// No description provided for @numberSenseComparisonCorrectFeedback.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct. {proof}'**
+  String numberSenseComparisonCorrectFeedback(String proof);
+
+  /// No description provided for @numberSenseComparisonIncorrectFeedback.
+  ///
+  /// In en, this message translates to:
+  /// **'Not quite. The correct relation is 2/3 < 3/4. {proof}'**
+  String numberSenseComparisonIncorrectFeedback(String proof);
+
+  /// No description provided for @numberSenseComparisonCorrectLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct'**
+  String get numberSenseComparisonCorrectLabel;
+
+  /// No description provided for @numberSenseComparisonReviewLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Review the comparison'**
+  String get numberSenseComparisonReviewLabel;
+
+  /// No description provided for @numberSenseHelpNumeratorLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Numerator'**
+  String get numberSenseHelpNumeratorLabel;
+
+  /// No description provided for @numberSenseHelpDenominatorLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Denominator'**
+  String get numberSenseHelpDenominatorLabel;
+
+  /// No description provided for @numberSenseHelpEquivalentLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Equivalent'**
+  String get numberSenseHelpEquivalentLabel;
+
+  /// No description provided for @numberSenseHelpNumeratorDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'The numerator is the top number. It counts how many equal parts are selected.'**
+  String get numberSenseHelpNumeratorDescription;
+
+  /// No description provided for @numberSenseHelpDenominatorDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'The denominator is the bottom number. It tells how many equal parts make one whole.'**
+  String get numberSenseHelpDenominatorDescription;
+
+  /// No description provided for @numberSenseHelpEquivalentDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Equivalent fractions name the same amount, even when they use different-sized equal parts.'**
+  String get numberSenseHelpEquivalentDescription;
+
+  /// No description provided for @numberSenseHelpLessThanLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Explain the less-than symbol'**
+  String get numberSenseHelpLessThanLabel;
+
+  /// No description provided for @numberSenseHelpEqualLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Explain the equal-to symbol'**
+  String get numberSenseHelpEqualLabel;
+
+  /// No description provided for @numberSenseHelpGreaterThanLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Explain the greater-than symbol'**
+  String get numberSenseHelpGreaterThanLabel;
+
+  /// No description provided for @numberSenseHelpLessThanDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'The less-than symbol means the value on its left is smaller than the value on its right.'**
+  String get numberSenseHelpLessThanDescription;
+
+  /// No description provided for @numberSenseHelpEqualDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'The equal-to symbol means both values are the same amount.'**
+  String get numberSenseHelpEqualDescription;
+
+  /// No description provided for @numberSenseHelpGreaterThanDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'The greater-than symbol means the value on its left is larger than the value on its right.'**
+  String get numberSenseHelpGreaterThanDescription;
+
+  /// No description provided for @numberSenseHelpWhatToDo.
+  ///
+  /// In en, this message translates to:
+  /// **'Read the fraction or symbol, then connect it to the amount shown.'**
+  String get numberSenseHelpWhatToDo;
+
+  /// No description provided for @numberSenseHelpWhatItMeans.
+  ///
+  /// In en, this message translates to:
+  /// **'Use this idea to read, describe and compare fractions.'**
+  String get numberSenseHelpWhatItMeans;
+
+  /// No description provided for @numberSenseHelpWhereUsed.
+  ///
+  /// In en, this message translates to:
+  /// **'These words and symbols help explain fractions in maths and everyday sharing.'**
+  String get numberSenseHelpWhereUsed;
 }
 
 class _AppLocalizationsDelegate
@@ -7842,19 +8116,19 @@ class _AppLocalizationsDelegate
 
   @override
   bool isSupported(Locale locale) => <String>[
-        'ar',
-        'da',
-        'de',
-        'en',
-        'es',
-        'fr',
-        'id',
-        'it',
-        'ko',
-        'nb',
-        'pt',
-        'sv'
-      ].contains(locale.languageCode);
+    'ar',
+    'da',
+    'de',
+    'en',
+    'es',
+    'fr',
+    'id',
+    'it',
+    'ko',
+    'nb',
+    'pt',
+    'sv',
+  ].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
@@ -7958,8 +8232,9 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
   }
 
   throw FlutterError(
-      'AppLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
-      'an issue with the localizations generation tool. Please file an issue '
-      'on GitHub with a reproducible sample app and the gen-l10n configuration '
-      'that was used.');
+    'AppLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
+    'an issue with the localizations generation tool. Please file an issue '
+    'on GitHub with a reproducible sample app and the gen-l10n configuration '
+    'that was used.',
+  );
 }

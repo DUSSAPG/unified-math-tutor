@@ -1181,7 +1181,10 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String practiceTopicUnavailableForStage(
-      String topic, String stage, String stages) {
+    String topic,
+    String stage,
+    String stages,
+  ) {
     return '$topic isn\'t available for $stage yet — try $stages.';
   }
 
@@ -2931,7 +2934,9 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String labsSpatialCubeWhichFaceOppositeReveal(
-      String correctLabel, String askedLabel) {
+    String correctLabel,
+    String askedLabel,
+  ) {
     return '$correctLabel is opposite $askedLabel.';
   }
 
@@ -3109,7 +3114,9 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String labsAircraftLandingFindTheTimeDiagramLabel(
-      int distanceM, int speedMps) {
+    int distanceM,
+    int speedMps,
+  ) {
     return 'An aircraft $distanceM metres from the runway, flying at $speedMps metres per second.';
   }
 
@@ -3422,8 +3429,12 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
-  String labsDataDetectiveBeforeAfter(String meanBefore, String meanAfter,
-      String medianBefore, String medianAfter) {
+  String labsDataDetectiveBeforeAfter(
+    String meanBefore,
+    String meanAfter,
+    String medianBefore,
+    String medianAfter,
+  ) {
     return 'Mean: $meanBefore → $meanAfter. Median: $medianBefore → $medianAfter.';
   }
 
@@ -3695,15 +3706,18 @@ class AppLocalizationsIt extends AppLocalizations {
       'Bearing matches the target vector; the magnitude falls short — increase speed to extend the displacement.';
 
   @override
-  String get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceExplorer =>
+  String
+  get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceExplorer =>
       'The distance is right, but the plane is pointing the wrong way. Turn it toward the yellow target.';
 
   @override
-  String get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceBuilder =>
+  String
+  get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceBuilder =>
       'You flew the right distance, but the wrong direction. Adjust the heading toward the target bearing and keep the speed.';
 
   @override
-  String get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceNavigator =>
+  String
+  get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceNavigator =>
       'The magnitude is correct but the bearing is off — rotate the heading toward the target bearing without changing speed.';
 
   @override
@@ -4470,8 +4484,6 @@ class AppLocalizationsIt extends AppLocalizations {
       'Reset the app introduction to go through the initial setup again.';
 
   @override
-  String get appearanceResetOnboardingButton => 'Reset Onboarding';
-  @override
   String get numberSenseLabTitle => 'Number Sense Lab';
 
   @override
@@ -4528,6 +4540,187 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get numberSenseLabDescription =>
       'Build, place and compare unit fractions.';
+
+  @override
+  String get appearanceResetOnboardingButton => 'Reset Onboarding';
+
+  @override
+  String get numberSenseFreeExploreInstruction =>
+      'Choose equal parts, then tap parts or tap/drag the point to explore fractions.';
+
+  @override
+  String get numberSenseClearExplore => 'Clear';
+
+  @override
+  String get numberSenseScopeStatement =>
+      'This starter whole-part model supports 2, 3, 4, 6 or 8 equal parts only. Fractions such as 1/100 need a precision or zoomed number line.';
+
+  @override
+  String get numberSenseEqualPartsLabel => 'Equal parts';
+
+  @override
+  String numberSenseCompareLeftLabel(String fraction) {
+    return 'Left: $fraction';
+  }
+
+  @override
+  String numberSenseCompareRightLabel(String fraction) {
+    return 'Right: $fraction';
+  }
+
+  @override
+  String get numberSenseCompareSharedLineLabel =>
+      'Shared number line from zero to one. The circle marks the left fraction and the diamond marks the right fraction.';
+
+  @override
+  String get numberSenseCompareLeftMarkerSemantics =>
+      'Number line marker for two thirds, 2/3';
+
+  @override
+  String get numberSenseCompareRightMarkerSemantics =>
+      'Number line marker for three fourths, 3/4';
+
+  @override
+  String get numberSenseCompareLeftMarkerExplanation =>
+      '2/3 = 0.666… — two of three equal parts';
+
+  @override
+  String get numberSenseCompareRightMarkerExplanation =>
+      '3/4 = 0.75 — three of four equal parts';
+
+  @override
+  String get numberSenseComparisonProof =>
+      '2 × 4 = 8; 3 × 3 = 9; since 8 < 9, 2/3 < 3/4.';
+
+  @override
+  String get numberSenseComparisonIncorrectResult =>
+      'Not quite. 2/3 is less than 3/4.';
+
+  @override
+  String get numberSenseComparisonCorrectResult => 'Correct: 2/3 < 3/4.';
+
+  @override
+  String numberSenseComparisonCorrectResultDynamic(
+    String leftFraction,
+    String relation,
+    String rightFraction,
+  ) {
+    return 'Correct: $leftFraction $relation $rightFraction.';
+  }
+
+  @override
+  String numberSenseComparisonIncorrectResultDynamic(
+    String leftFraction,
+    String relationWords,
+    String rightFraction,
+  ) {
+    return 'Not quite. $leftFraction is $relationWords $rightFraction.';
+  }
+
+  @override
+  String numberSenseComparisonProofDynamic(
+    int leftNumerator,
+    int rightDenominator,
+    int leftProduct,
+    int rightNumerator,
+    int leftDenominator,
+    int rightProduct,
+    String relation,
+    String leftFraction,
+    String rightFraction,
+  ) {
+    return '$leftNumerator × $rightDenominator = $leftProduct; $rightNumerator × $leftDenominator = $rightProduct; since $leftProduct $relation $rightProduct, $leftFraction $relation $rightFraction.';
+  }
+
+  @override
+  String get numberSenseCompareLessThanWords => 'less than';
+
+  @override
+  String get numberSenseCompareEqualWords => 'equal to';
+
+  @override
+  String get numberSenseCompareGreaterThanWords => 'greater than';
+
+  @override
+  String numberSenseCompareMarkerExplanation(
+    String fraction,
+    String decimal,
+    int numerator,
+    int denominator,
+  ) {
+    return '$fraction = $decimal — $numerator of $denominator equal parts';
+  }
+
+  @override
+  String numberSenseComparisonCorrectFeedback(String proof) {
+    return 'Correct. $proof';
+  }
+
+  @override
+  String numberSenseComparisonIncorrectFeedback(String proof) {
+    return 'Not quite. The correct relation is 2/3 < 3/4. $proof';
+  }
+
+  @override
+  String get numberSenseComparisonCorrectLabel => 'Correct';
+
+  @override
+  String get numberSenseComparisonReviewLabel => 'Review the comparison';
+
+  @override
+  String get numberSenseHelpNumeratorLabel => 'Numerator';
+
+  @override
+  String get numberSenseHelpDenominatorLabel => 'Denominator';
+
+  @override
+  String get numberSenseHelpEquivalentLabel => 'Equivalent';
+
+  @override
+  String get numberSenseHelpNumeratorDescription =>
+      'The numerator is the top number. It counts how many equal parts are selected.';
+
+  @override
+  String get numberSenseHelpDenominatorDescription =>
+      'The denominator is the bottom number. It tells how many equal parts make one whole.';
+
+  @override
+  String get numberSenseHelpEquivalentDescription =>
+      'Equivalent fractions name the same amount, even when they use different-sized equal parts.';
+
+  @override
+  String get numberSenseHelpLessThanLabel => 'Explain the less-than symbol';
+
+  @override
+  String get numberSenseHelpEqualLabel => 'Explain the equal-to symbol';
+
+  @override
+  String get numberSenseHelpGreaterThanLabel =>
+      'Explain the greater-than symbol';
+
+  @override
+  String get numberSenseHelpLessThanDescription =>
+      'The less-than symbol means the value on its left is smaller than the value on its right.';
+
+  @override
+  String get numberSenseHelpEqualDescription =>
+      'The equal-to symbol means both values are the same amount.';
+
+  @override
+  String get numberSenseHelpGreaterThanDescription =>
+      'The greater-than symbol means the value on its left is larger than the value on its right.';
+
+  @override
+  String get numberSenseHelpWhatToDo =>
+      'Read the fraction or symbol, then connect it to the amount shown.';
+
+  @override
+  String get numberSenseHelpWhatItMeans =>
+      'Use this idea to read, describe and compare fractions.';
+
+  @override
+  String get numberSenseHelpWhereUsed =>
+      'These words and symbols help explain fractions in maths and everyday sharing.';
 }
 
 /// The translations for Italian, as used in Switzerland (`it_CH`).
@@ -5673,7 +5866,10 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
 
   @override
   String practiceTopicUnavailableForStage(
-      String topic, String stage, String stages) {
+    String topic,
+    String stage,
+    String stages,
+  ) {
     return '$topic non è ancora disponibile per $stage — prova $stages.';
   }
 
@@ -7170,7 +7366,9 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
 
   @override
   String labsSpatialCubeWhichFaceOppositeReveal(
-      String correctLabel, String askedLabel) {
+    String correctLabel,
+    String askedLabel,
+  ) {
     return '$correctLabel e opposta a $askedLabel.';
   }
 
@@ -7351,7 +7549,9 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
 
   @override
   String labsAircraftLandingFindTheTimeDiagramLabel(
-      int distanceM, int speedMps) {
+    int distanceM,
+    int speedMps,
+  ) {
     return 'Un aereo a $distanceM metri dalla pista, che vola a $speedMps metri al secondo.';
   }
 
@@ -7665,8 +7865,12 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
   }
 
   @override
-  String labsDataDetectiveBeforeAfter(String meanBefore, String meanAfter,
-      String medianBefore, String medianAfter) {
+  String labsDataDetectiveBeforeAfter(
+    String meanBefore,
+    String meanAfter,
+    String medianBefore,
+    String medianAfter,
+  ) {
     return 'Media: $meanBefore → $meanAfter. Mediana: $medianBefore → $medianAfter.';
   }
 
@@ -7938,15 +8142,18 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
       'La rotta corrisponde al vettore bersaglio; il modulo è insufficiente — aumenta la velocità per allungare lo spostamento.';
 
   @override
-  String get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceExplorer =>
+  String
+  get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceExplorer =>
       'La distanza è giusta, ma l\'aereo punta nella direzione sbagliata. Giralo verso il bersaglio giallo.';
 
   @override
-  String get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceBuilder =>
+  String
+  get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceBuilder =>
       'Hai percorso la distanza giusta, ma nella direzione sbagliata. Regola la rotta verso il rilevamento bersaglio e mantieni la velocità.';
 
   @override
-  String get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceNavigator =>
+  String
+  get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceNavigator =>
       'Il modulo è corretto ma il rilevamento è sbagliato — ruota la rotta verso il rilevamento bersaglio senza cambiare la velocità.';
 
   @override

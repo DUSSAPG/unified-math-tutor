@@ -2,6 +2,7 @@ import 'dart:ui' show Tristate;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:unified_math_tutor/l10n/app_localizations.dart';
 import 'package:unified_math_tutor/models/exact_fraction.dart';
 import 'package:unified_math_tutor/models/number_sense_example.dart';
 import 'package:unified_math_tutor/models/number_sense_state.dart';
@@ -17,6 +18,8 @@ void main() {
   ) =>
       MaterialApp(
         theme: AppTheme.light(),
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
         home: Scaffold(
           body: Center(
             child: SingleChildScrollView(
@@ -39,6 +42,8 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         theme: AppTheme.light(),
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
         home: Scaffold(
           body: Center(
             child: SingleChildScrollView(
