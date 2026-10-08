@@ -3,12 +3,13 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../models/exact_fraction.dart';
 import '../../models/number_sense_example.dart';
+import '../../models/number_sense_comparison_explanation.dart';
+import '../../models/number_sense_guided_practice.dart';
 import '../../models/number_sense_state.dart';
 import '../../services/hundredths_precision_geometry.dart';
 import '../../services/local_preferences_service.dart';
 import '../../shared/theme/app_spacing.dart';
 import '../../shared/theme/app_theme.dart';
-import '../../widgets/labs/lab_help_sheet.dart';
 import '../../widgets/number_sense/fraction_comparison_visual.dart';
 import '../../widgets/number_sense/hundredths_precision_line.dart';
 import '../../widgets/number_sense/number_sense_lab_workspace.dart';
@@ -22,10 +23,122 @@ class NumberSenseLabScreen extends StatefulWidget {
 }
 
 class _NumberSenseLabScreenState extends State<NumberSenseLabScreen> {
-  NumberSenseState _state = NumberSenseState.guided();
-  NumberSenseExampleId _activeExample = NumberSenseExampleId.equivalenceHalf;
+  NumberSenseExampleId _activeExample = NumberSenseExampleId.placeThreeEighths;
+  late NumberSenseState _state = NumberSenseState.guided(_activeExample);
+
+  final NumberSenseGuidedPractice _practice = NumberSenseGuidedPractice();
 
   NumberSenseExample get _example => NumberSenseExample.of(_activeExample);
+
+  void _loadGuided(NumberSenseExampleId id) {
+    setState(() {
+      _activeExample = id;
+      _state = NumberSenseState.guided(id);
+    });
+  }
+
+  void _practiseCurrent() => _loadGuided(_practice.practise(_activeExample));
+
+  String _skillName(AppLocalizations l10n, NumberSenseGuidedSkill skill) =>
+      switch (skill) {
+        NumberSenseGuidedSkill.placeFraction =>
+          l10n.numberSenseSkillPlaceFraction,
+        NumberSenseGuidedSkill.makeEquivalent =>
+          l10n.numberSenseSkillMakeEquivalent,
+        NumberSenseGuidedSkill.compareFractions =>
+          l10n.numberSenseSkillCompareFractions,
+        NumberSenseGuidedSkill.findOneHundredth =>
+          l10n.numberSenseSkillFindOneHundredth,
+      };
+
+  String _focusName(AppLocalizations l10n, NumberSenseComparisonFocus focus) =>
+      switch (focus) {
+        NumberSenseComparisonFocus.sameDenominator =>
+          l10n.numberSenseFocusSameDenominator,
+        NumberSenseComparisonFocus.sameNumerator =>
+          l10n.numberSenseFocusSameNumerator,
+        NumberSenseComparisonFocus.equivalentFractions =>
+          l10n.numberSenseFocusEquivalent,
+        NumberSenseComparisonFocus.compareToHalf =>
+          l10n.numberSenseFocusCompareToHalf,
+        NumberSenseComparisonFocus.mixed => l10n.numberSenseFocusMixed,
+      };
+
+  Widget _practicePanel(AppLocalizations l10n) {
+    Widget button(String key, String label, VoidCallback onPressed) =>
+        ConstrainedBox(
+          constraints: const BoxConstraints(minHeight: 48, minWidth: 48),
+          child: OutlinedButton(
+            key: ValueKey(key),
+            onPressed: onPressed,
+            child: Text(label),
+          ),
+        );
+    final progress = l10n.numberSenseSkillProgress(
+      _practice.skillNumber,
+      _practice.skillCount,
+      _skillName(l10n, _practice.skill),
+    );
+    return Column(
+      key: const ValueKey('numberSense.practicePanel'),
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Semantics(
+          container: true,
+          header: true,
+          label: progress,
+          child: ExcludeSemantics(
+            child: Text(
+              progress,
+              key: const ValueKey('numberSense.skillProgress'),
+              textAlign: TextAlign.center,
+              style: const TextStyle(fontWeight: FontWeight.w700),
+            ),
+          ),
+        ),
+        const SizedBox(height: AppSpacing.xs),
+        Wrap(
+          alignment: WrapAlignment.center,
+          spacing: AppSpacing.sm,
+          runSpacing: AppSpacing.xs,
+          children: [
+            button(
+              'numberSense.practiseThis',
+              l10n.numberSensePractiseThis,
+              _practiseCurrent,
+            ),
+            button(
+              'numberSense.nextSkill',
+              l10n.numberSenseNextSkill,
+              () => _loadGuided(_practice.nextSkill()),
+            ),
+            button(
+              'numberSense.chooseSkill',
+              l10n.numberSenseChooseSkill,
+              _chooseSkill,
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Future<void> _chooseSkill() => showModalBottomSheet<void>(
+        context: context,
+        isScrollControlled: true,
+        showDragHandle: true,
+        builder: (sheetContext) => _SkillChooserSheet(
+          selectedSkill: _practice.skill,
+          selectedFocus: _practice.comparisonFocus,
+          skillName: (skill) =>
+              _skillName(AppLocalizations.of(sheetContext), skill),
+          focusName: (focus) =>
+              _focusName(AppLocalizations.of(sheetContext), focus),
+          onSkill: (skill) => _loadGuided(_practice.selectSkill(skill)),
+          onFocus: (focus) =>
+              _loadGuided(_practice.selectComparisonFocus(focus)),
+        ),
+      );
 
   void _setMode(NumberSenseMode mode) {
     if (mode == _state.mode) return;
@@ -44,16 +157,6 @@ class _NumberSenseLabScreenState extends State<NumberSenseLabScreen> {
       _state = _state.mode == NumberSenseMode.freeExplore
           ? _state.resetFreeExplore()
           : _state.resetGuided();
-    });
-  }
-
-  void _tryAnotherExample() {
-    setState(() {
-      final guided = _state.mode == NumberSenseMode.guided
-          ? _state
-          : NumberSenseState.guided(_activeExample);
-      _state = guided.cycleExample();
-      _activeExample = _state.activeExample!;
     });
   }
 
@@ -85,6 +188,8 @@ class _NumberSenseLabScreenState extends State<NumberSenseLabScreen> {
                   children: [
                     _modeControls(l10n),
                     if (_state.mode == NumberSenseMode.guided) ...[
+                      const SizedBox(height: AppSpacing.md),
+                      _practicePanel(l10n),
                       const SizedBox(height: AppSpacing.md),
                       _guidedContext(l10n, colors),
                     ] else ...[
@@ -118,8 +223,6 @@ class _NumberSenseLabScreenState extends State<NumberSenseLabScreen> {
                         _state.wholePartModelTouched &&
                         !_state.isGuidedComplete)
                       _wholePartFeedback(l10n),
-                    const SizedBox(height: AppSpacing.sm),
-                    _fractionHelpButtons(l10n),
                     const SizedBox(height: AppSpacing.md),
                     if (_state.isGuidedComplete)
                       Semantics(
@@ -302,34 +405,6 @@ class _NumberSenseLabScreenState extends State<NumberSenseLabScreen> {
               const SizedBox(height: AppSpacing.sm),
               _comparisonFeedback(l10n, answer),
             ],
-            const SizedBox(height: AppSpacing.xs),
-            Wrap(
-              alignment: WrapAlignment.center,
-              spacing: AppSpacing.xs,
-              children: [
-                _helpButton(
-                  key: const ValueKey('numberSense.help.symbol.lessThan'),
-                  label: '<',
-                  semanticLabel: l10n.numberSenseHelpLessThanLabel,
-                  definition: l10n.numberSenseHelpLessThanDescription,
-                  l10n: l10n,
-                ),
-                _helpButton(
-                  key: const ValueKey('numberSense.help.symbol.equal'),
-                  label: '=',
-                  semanticLabel: l10n.numberSenseHelpEqualLabel,
-                  definition: l10n.numberSenseHelpEqualDescription,
-                  l10n: l10n,
-                ),
-                _helpButton(
-                  key: const ValueKey('numberSense.help.symbol.greaterThan'),
-                  label: '>',
-                  semanticLabel: l10n.numberSenseHelpGreaterThanLabel,
-                  definition: l10n.numberSenseHelpGreaterThanDescription,
-                  l10n: l10n,
-                ),
-              ],
-            ),
           ],
         ],
       ),
@@ -538,74 +613,6 @@ class _NumberSenseLabScreenState extends State<NumberSenseLabScreen> {
     );
   }
 
-  Widget _fractionHelpButtons(AppLocalizations l10n) => Wrap(
-        alignment: WrapAlignment.center,
-        spacing: AppSpacing.xs,
-        runSpacing: AppSpacing.xs,
-        children: [
-          _helpButton(
-            key: const ValueKey('numberSense.help.numerator'),
-            label: l10n.numberSenseHelpNumeratorLabel,
-            semanticLabel: l10n.numberSenseHelpNumeratorLabel,
-            definition: l10n.numberSenseHelpNumeratorDescription,
-            l10n: l10n,
-          ),
-          _helpButton(
-            key: const ValueKey('numberSense.help.denominator'),
-            label: l10n.numberSenseHelpDenominatorLabel,
-            semanticLabel: l10n.numberSenseHelpDenominatorLabel,
-            definition: l10n.numberSenseHelpDenominatorDescription,
-            l10n: l10n,
-          ),
-          _helpButton(
-            key: const ValueKey('numberSense.help.equivalent'),
-            label: l10n.numberSenseHelpEquivalentLabel,
-            semanticLabel: l10n.numberSenseHelpEquivalentLabel,
-            definition: l10n.numberSenseHelpEquivalentDescription,
-            l10n: l10n,
-          ),
-        ],
-      );
-
-  Widget _helpButton({
-    required Key key,
-    required String label,
-    required String semanticLabel,
-    required String definition,
-    required AppLocalizations l10n,
-  }) =>
-      ConstrainedBox(
-        constraints: const BoxConstraints(minWidth: 48, minHeight: 48),
-        child: Semantics(
-          key: key,
-          button: true,
-          label: semanticLabel,
-          onTap: () => showLabHelpSheet(
-            context,
-            LabHelpContent(
-              whatToDo: l10n.numberSenseHelpWhatToDo,
-              whatToNotice: definition,
-              whatItMeans: l10n.numberSenseHelpWhatItMeans,
-              whereUsed: l10n.numberSenseHelpWhereUsed,
-            ),
-          ),
-          child: ExcludeSemantics(
-            child: TextButton(
-              onPressed: () => showLabHelpSheet(
-                context,
-                LabHelpContent(
-                  whatToDo: l10n.numberSenseHelpWhatToDo,
-                  whatToNotice: definition,
-                  whatItMeans: l10n.numberSenseHelpWhatItMeans,
-                  whereUsed: l10n.numberSenseHelpWhereUsed,
-                ),
-              ),
-              child: Text(label),
-            ),
-          ),
-        ),
-      );
-
   Widget _comparisonFeedback(
     AppLocalizations l10n,
     NumberSenseComparison answer,
@@ -637,20 +644,12 @@ class _NumberSenseLabScreenState extends State<NumberSenseLabScreen> {
             relationWords,
             rightText,
           );
-    final leftProduct =
-        example.shownPrimaryNumerator * example.shownSecondaryDenominator;
-    final rightProduct =
-        example.shownSecondaryNumerator * example.shownPrimaryDenominator;
-    final proof = l10n.numberSenseComparisonProofDynamic(
-      example.shownPrimaryNumerator,
-      example.shownSecondaryDenominator,
-      leftProduct,
-      example.shownSecondaryNumerator,
-      example.shownPrimaryDenominator,
-      rightProduct,
-      relation,
-      leftText,
-      rightText,
+    final explanation = _comparisonExplanation(
+      l10n,
+      example: example,
+      leftText: leftText,
+      rightText: rightText,
+      relation: relation,
     );
     final colors = context.appColors;
     return Semantics(
@@ -683,7 +682,7 @@ class _NumberSenseLabScreenState extends State<NumberSenseLabScreen> {
                     style: const TextStyle(fontWeight: FontWeight.w700),
                   ),
                   const SizedBox(height: 6),
-                  Text(proof),
+                  Text(explanation),
                 ],
               ),
             ),
@@ -692,6 +691,121 @@ class _NumberSenseLabScreenState extends State<NumberSenseLabScreen> {
       ),
     );
   }
+
+  String _comparisonExplanation(
+    AppLocalizations l10n, {
+    required NumberSenseExample example,
+    required String leftText,
+    required String rightText,
+    required String relation,
+  }) {
+    final strategy = NumberSenseComparisonExplanation.select(
+      example.primary,
+      example.secondary!,
+      leftNumerator: example.shownPrimaryNumerator,
+      leftDenominator: example.shownPrimaryDenominator,
+      rightNumerator: example.shownSecondaryNumerator,
+      rightDenominator: example.shownSecondaryDenominator,
+    ).strategy;
+    final leftNumerator = example.shownPrimaryNumerator;
+    final leftDenominator = example.shownPrimaryDenominator;
+    final rightNumerator = example.shownSecondaryNumerator;
+    final rightDenominator = example.shownSecondaryDenominator;
+
+    switch (strategy) {
+      case NumberSenseComparisonStrategy.equivalentFractions:
+        return l10n.numberSenseComparisonExplanationEquivalent(
+          leftText,
+          rightText,
+        );
+      case NumberSenseComparisonStrategy.sameDenominator:
+        final leftIsLarger = example.primary.compareTo(example.secondary!) > 0;
+        return l10n.numberSenseComparisonExplanationSameDenominator(
+          _fractionUnit(l10n, leftDenominator),
+          leftIsLarger ? leftNumerator : rightNumerator,
+          leftIsLarger ? rightNumerator : leftNumerator,
+          leftText,
+          relation,
+          rightText,
+        );
+      case NumberSenseComparisonStrategy.sameNumerator:
+        final leftIsLarger = example.primary.compareTo(example.secondary!) > 0;
+        return l10n.numberSenseComparisonExplanationSameNumerator(
+          leftNumerator,
+          _fractionUnit(
+            l10n,
+            leftIsLarger ? leftDenominator : rightDenominator,
+            capitalize: true,
+          ),
+          _fractionUnit(
+              l10n, leftIsLarger ? rightDenominator : leftDenominator),
+          leftIsLarger ? leftText : rightText,
+          leftIsLarger ? '>' : '<',
+          leftIsLarger ? rightText : leftText,
+        );
+      case NumberSenseComparisonStrategy.benchmarkHalf:
+        final halfIsLeft =
+            example.primary.numerator == 1 && example.primary.denominator == 2;
+        final halfDenominator = halfIsLeft ? rightDenominator : leftDenominator;
+        final otherNumerator = halfIsLeft ? rightNumerator : leftNumerator;
+        final halfNumerator = halfDenominator ~/ 2;
+        final isOneStepMore = otherNumerator > halfNumerator;
+        return l10n.numberSenseComparisonExplanationBenchmarkHalf(
+          '$halfNumerator/$halfDenominator',
+          halfIsLeft ? rightText : leftText,
+          _fractionUnit(l10n, halfDenominator, singular: true),
+          isOneStepMore
+              ? l10n.numberSenseComparisonMore
+              : l10n.numberSenseComparisonLess,
+          leftText,
+          relation,
+          rightText,
+        );
+      case NumberSenseComparisonStrategy.crossMultiplication:
+        final leftProduct = leftNumerator * rightDenominator;
+        final rightProduct = rightNumerator * leftDenominator;
+        return l10n.numberSenseComparisonProofDynamic(
+          leftNumerator,
+          rightDenominator,
+          leftProduct,
+          rightNumerator,
+          leftDenominator,
+          rightProduct,
+          relation,
+          leftText,
+          rightText,
+        );
+    }
+  }
+
+  String _fractionUnit(
+    AppLocalizations l10n,
+    int denominator, {
+    bool singular = false,
+    bool capitalize = false,
+  }) =>
+      switch ((denominator, singular, capitalize)) {
+        (2, false, false) => l10n.numberSenseComparisonHalves,
+        (2, false, true) => l10n.numberSenseComparisonCapHalves,
+        (2, true, _) => l10n.numberSenseComparisonHalf,
+        (3, false, false) => l10n.numberSenseComparisonThirds,
+        (3, false, true) => l10n.numberSenseComparisonCapThirds,
+        (3, true, _) => l10n.numberSenseComparisonThird,
+        (4, false, false) => l10n.numberSenseComparisonFourths,
+        (4, false, true) => l10n.numberSenseComparisonCapFourths,
+        (4, true, _) => l10n.numberSenseComparisonFourth,
+        (6, false, false) => l10n.numberSenseComparisonSixths,
+        (6, false, true) => l10n.numberSenseComparisonCapSixths,
+        (6, true, _) => l10n.numberSenseComparisonSixth,
+        (8, false, false) => l10n.numberSenseComparisonEighths,
+        (8, false, true) => l10n.numberSenseComparisonCapEighths,
+        (8, true, _) => l10n.numberSenseComparisonEighth,
+        _ => throw ArgumentError.value(
+            denominator,
+            'denominator',
+            'No localized fraction unit for this denominator.',
+          ),
+      };
 
   String _comparisonSymbol(NumberSenseComparison comparison) =>
       switch (comparison) {
@@ -722,16 +836,7 @@ class _NumberSenseLabScreenState extends State<NumberSenseLabScreen> {
                 child: Text(l10n.numberSenseReset),
               ),
             ),
-          if (_state.mode == NumberSenseMode.guided)
-            ConstrainedBox(
-              constraints: const BoxConstraints(minHeight: 48),
-              child: OutlinedButton(
-                key: const ValueKey('numberSense.tryAnotherExample'),
-                onPressed: _tryAnotherExample,
-                child: Text(l10n.numberSenseTryAnotherExample),
-              ),
-            )
-          else
+          if (_state.mode == NumberSenseMode.freeExplore)
             ConstrainedBox(
               constraints: const BoxConstraints(minHeight: 48),
               child: OutlinedButton(
@@ -742,4 +847,133 @@ class _NumberSenseLabScreenState extends State<NumberSenseLabScreen> {
             ),
         ],
       );
+}
+
+/// Modal chooser for a Guided skill, with an optional comparison-type step.
+class _SkillChooserSheet extends StatefulWidget {
+  const _SkillChooserSheet({
+    required this.selectedSkill,
+    required this.selectedFocus,
+    required this.skillName,
+    required this.focusName,
+    required this.onSkill,
+    required this.onFocus,
+  });
+
+  final NumberSenseGuidedSkill selectedSkill;
+  final NumberSenseComparisonFocus selectedFocus;
+  final String Function(NumberSenseGuidedSkill) skillName;
+  final String Function(NumberSenseComparisonFocus) focusName;
+  final ValueChanged<NumberSenseGuidedSkill> onSkill;
+  final ValueChanged<NumberSenseComparisonFocus> onFocus;
+
+  @override
+  State<_SkillChooserSheet> createState() => _SkillChooserSheetState();
+}
+
+class _SkillChooserSheetState extends State<_SkillChooserSheet> {
+  late NumberSenseGuidedSkill _skill = widget.selectedSkill;
+  late NumberSenseComparisonFocus _focus = widget.selectedFocus;
+  bool _choosingFocus = false;
+
+  Widget _option({
+    required String key,
+    required String label,
+    required bool selected,
+    required VoidCallback onTap,
+  }) =>
+      Semantics(
+        container: true,
+        button: true,
+        selected: selected,
+        label: label,
+        child: ExcludeSemantics(
+          child: ListTile(
+            key: ValueKey(key),
+            minTileHeight: 48,
+            title: Text(label),
+            trailing: selected ? const Icon(Icons.check) : null,
+            selected: selected,
+            onTap: onTap,
+          ),
+        ),
+      );
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final List<Widget> options;
+    if (_choosingFocus) {
+      options = [
+        for (final focus in NumberSenseComparisonFocus.values)
+          _option(
+            key: 'numberSense.focus.${focus.name}',
+            label: widget.focusName(focus),
+            selected: focus == _focus,
+            onTap: () {
+              widget.onFocus(focus);
+              Navigator.of(context).pop();
+            },
+          ),
+      ];
+    } else {
+      options = [
+        for (final skill in NumberSenseGuidedSkill.values)
+          _option(
+            key: 'numberSense.skill.${skill.name}',
+            label: widget.skillName(skill),
+            selected: skill == _skill,
+            onTap: () {
+              widget.onSkill(skill);
+              if (skill == NumberSenseGuidedSkill.compareFractions) {
+                setState(() {
+                  _skill = skill;
+                  _focus = NumberSenseComparisonFocus.mixed;
+                  _choosingFocus = true;
+                });
+              } else {
+                Navigator.of(context).pop();
+              }
+            },
+          ),
+      ];
+    }
+    return SafeArea(
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.fromLTRB(
+          AppSpacing.md,
+          0,
+          AppSpacing.md,
+          AppSpacing.md,
+        ),
+        child: Column(
+          key: const ValueKey('numberSense.skillSheet'),
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Semantics(
+              header: true,
+              child: Text(
+                _choosingFocus
+                    ? l10n.numberSenseChooseComparisonType
+                    : l10n.numberSenseChooseSkill,
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            ),
+            const SizedBox(height: AppSpacing.xs),
+            ...options,
+            Align(
+              alignment: Alignment.centerRight,
+              child: TextButton(
+                key: const ValueKey('numberSense.skillSheetClose'),
+                style: TextButton.styleFrom(minimumSize: const Size(48, 48)),
+                onPressed: () => Navigator.of(context).pop(),
+                child: Text(l10n.numberSenseSkillSheetClose),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }

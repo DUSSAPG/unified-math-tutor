@@ -4794,6 +4794,149 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get numberSenseHelpWhereUsed =>
       'These words and symbols help explain fractions in maths and everyday sharing.';
+
+  @override
+  String numberSenseSkillProgress(int current, int total, String name) {
+    return 'Skill $current of $total: $name';
+  }
+
+  @override
+  String get numberSenseSkillPlaceFraction => 'Place a fraction';
+
+  @override
+  String get numberSenseSkillMakeEquivalent => 'Make an equivalent fraction';
+
+  @override
+  String get numberSenseSkillCompareFractions => 'Compare fractions';
+
+  @override
+  String get numberSenseSkillFindOneHundredth => 'Find one hundredth';
+
+  @override
+  String get numberSensePractiseThis => 'Practise this';
+
+  @override
+  String get numberSenseNextSkill => 'Next skill';
+
+  @override
+  String get numberSenseChooseSkill => 'Choose a skill';
+
+  @override
+  String get numberSenseChooseComparisonType => 'Choose a comparison type';
+
+  @override
+  String get numberSenseSkillSheetClose => 'Close';
+
+  @override
+  String get numberSenseFocusSameDenominator => 'Same denominator';
+
+  @override
+  String get numberSenseFocusSameNumerator => 'Same numerator';
+
+  @override
+  String get numberSenseFocusEquivalent => 'Equivalent fractions';
+
+  @override
+  String get numberSenseFocusCompareToHalf => 'Compare to one half';
+
+  @override
+  String get numberSenseFocusMixed => 'Mixed practice';
+
+  @override
+  String numberSenseComparisonExplanationEquivalent(
+    String leftFraction,
+    String rightFraction,
+  ) {
+    return '$leftFraction is the same value as $rightFraction. Both are at the same point on the number line.';
+  }
+
+  @override
+  String numberSenseComparisonExplanationSameDenominator(
+    String unit,
+    int largerCount,
+    int smallerCount,
+    String leftFraction,
+    String relation,
+    String rightFraction,
+  ) {
+    return 'Both fractions are in $unit. $largerCount $unit is more than $smallerCount $unit, so $leftFraction $relation $rightFraction.';
+  }
+
+  @override
+  String numberSenseComparisonExplanationSameNumerator(
+    int numerator,
+    String largerUnit,
+    String smallerUnit,
+    String largerFraction,
+    String relation,
+    String smallerFraction,
+  ) {
+    return 'Both fractions show $numerator parts. $largerUnit are larger pieces than $smallerUnit, so $largerFraction $relation $smallerFraction.';
+  }
+
+  @override
+  String numberSenseComparisonExplanationBenchmarkHalf(
+    String halfEquivalent,
+    String otherFraction,
+    String unit,
+    String direction,
+    String leftFraction,
+    String relation,
+    String rightFraction,
+  ) {
+    return 'One half is $halfEquivalent. Since $otherFraction is one $unit $direction than $halfEquivalent, $leftFraction $relation $rightFraction.';
+  }
+
+  @override
+  String get numberSenseComparisonHalf => 'half';
+
+  @override
+  String get numberSenseComparisonThird => 'third';
+
+  @override
+  String get numberSenseComparisonFourth => 'fourth';
+
+  @override
+  String get numberSenseComparisonSixth => 'sixth';
+
+  @override
+  String get numberSenseComparisonEighth => 'eighth';
+
+  @override
+  String get numberSenseComparisonHalves => 'halves';
+
+  @override
+  String get numberSenseComparisonThirds => 'thirds';
+
+  @override
+  String get numberSenseComparisonFourths => 'fourths';
+
+  @override
+  String get numberSenseComparisonSixths => 'sixths';
+
+  @override
+  String get numberSenseComparisonEighths => 'eighths';
+
+  @override
+  String get numberSenseComparisonCapHalves => 'Halves';
+
+  @override
+  String get numberSenseComparisonCapThirds => 'Thirds';
+
+  @override
+  String get numberSenseComparisonCapFourths => 'Fourths';
+
+  @override
+  String get numberSenseComparisonCapSixths => 'Sixths';
+
+  @override
+  String get numberSenseComparisonCapEighths => 'Eighths';
+
+  @override
+  String get numberSenseComparisonMore => 'more';
+
+  @override
+  String get numberSenseComparisonLess => 'less';
 }
 
 /// The translations for Swedish, as used in Sweden (`sv_SE`).

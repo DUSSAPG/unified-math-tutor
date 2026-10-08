@@ -8213,6 +8213,247 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'These words and symbols help explain fractions in maths and everyday sharing.'**
   String get numberSenseHelpWhereUsed;
+
+  /// No description provided for @numberSenseSkillProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Skill {current} of {total}: {name}'**
+  String numberSenseSkillProgress(int current, int total, String name);
+
+  /// No description provided for @numberSenseSkillPlaceFraction.
+  ///
+  /// In en, this message translates to:
+  /// **'Place a fraction'**
+  String get numberSenseSkillPlaceFraction;
+
+  /// No description provided for @numberSenseSkillMakeEquivalent.
+  ///
+  /// In en, this message translates to:
+  /// **'Make an equivalent fraction'**
+  String get numberSenseSkillMakeEquivalent;
+
+  /// No description provided for @numberSenseSkillCompareFractions.
+  ///
+  /// In en, this message translates to:
+  /// **'Compare fractions'**
+  String get numberSenseSkillCompareFractions;
+
+  /// No description provided for @numberSenseSkillFindOneHundredth.
+  ///
+  /// In en, this message translates to:
+  /// **'Find one hundredth'**
+  String get numberSenseSkillFindOneHundredth;
+
+  /// No description provided for @numberSensePractiseThis.
+  ///
+  /// In en, this message translates to:
+  /// **'Practise this'**
+  String get numberSensePractiseThis;
+
+  /// No description provided for @numberSenseNextSkill.
+  ///
+  /// In en, this message translates to:
+  /// **'Next skill'**
+  String get numberSenseNextSkill;
+
+  /// No description provided for @numberSenseChooseSkill.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a skill'**
+  String get numberSenseChooseSkill;
+
+  /// No description provided for @numberSenseChooseComparisonType.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a comparison type'**
+  String get numberSenseChooseComparisonType;
+
+  /// No description provided for @numberSenseSkillSheetClose.
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get numberSenseSkillSheetClose;
+
+  /// No description provided for @numberSenseFocusSameDenominator.
+  ///
+  /// In en, this message translates to:
+  /// **'Same denominator'**
+  String get numberSenseFocusSameDenominator;
+
+  /// No description provided for @numberSenseFocusSameNumerator.
+  ///
+  /// In en, this message translates to:
+  /// **'Same numerator'**
+  String get numberSenseFocusSameNumerator;
+
+  /// No description provided for @numberSenseFocusEquivalent.
+  ///
+  /// In en, this message translates to:
+  /// **'Equivalent fractions'**
+  String get numberSenseFocusEquivalent;
+
+  /// No description provided for @numberSenseFocusCompareToHalf.
+  ///
+  /// In en, this message translates to:
+  /// **'Compare to one half'**
+  String get numberSenseFocusCompareToHalf;
+
+  /// No description provided for @numberSenseFocusMixed.
+  ///
+  /// In en, this message translates to:
+  /// **'Mixed practice'**
+  String get numberSenseFocusMixed;
+
+  /// No description provided for @numberSenseComparisonExplanationEquivalent.
+  ///
+  /// In en, this message translates to:
+  /// **'{leftFraction} is the same value as {rightFraction}. Both are at the same point on the number line.'**
+  String numberSenseComparisonExplanationEquivalent(
+    String leftFraction,
+    String rightFraction,
+  );
+
+  /// No description provided for @numberSenseComparisonExplanationSameDenominator.
+  ///
+  /// In en, this message translates to:
+  /// **'Both fractions are in {unit}. {largerCount} {unit} is more than {smallerCount} {unit}, so {leftFraction} {relation} {rightFraction}.'**
+  String numberSenseComparisonExplanationSameDenominator(
+    String unit,
+    int largerCount,
+    int smallerCount,
+    String leftFraction,
+    String relation,
+    String rightFraction,
+  );
+
+  /// No description provided for @numberSenseComparisonExplanationSameNumerator.
+  ///
+  /// In en, this message translates to:
+  /// **'Both fractions show {numerator} parts. {largerUnit} are larger pieces than {smallerUnit}, so {largerFraction} {relation} {smallerFraction}.'**
+  String numberSenseComparisonExplanationSameNumerator(
+    int numerator,
+    String largerUnit,
+    String smallerUnit,
+    String largerFraction,
+    String relation,
+    String smallerFraction,
+  );
+
+  /// No description provided for @numberSenseComparisonExplanationBenchmarkHalf.
+  ///
+  /// In en, this message translates to:
+  /// **'One half is {halfEquivalent}. Since {otherFraction} is one {unit} {direction} than {halfEquivalent}, {leftFraction} {relation} {rightFraction}.'**
+  String numberSenseComparisonExplanationBenchmarkHalf(
+    String halfEquivalent,
+    String otherFraction,
+    String unit,
+    String direction,
+    String leftFraction,
+    String relation,
+    String rightFraction,
+  );
+
+  /// No description provided for @numberSenseComparisonHalf.
+  ///
+  /// In en, this message translates to:
+  /// **'half'**
+  String get numberSenseComparisonHalf;
+
+  /// No description provided for @numberSenseComparisonThird.
+  ///
+  /// In en, this message translates to:
+  /// **'third'**
+  String get numberSenseComparisonThird;
+
+  /// No description provided for @numberSenseComparisonFourth.
+  ///
+  /// In en, this message translates to:
+  /// **'fourth'**
+  String get numberSenseComparisonFourth;
+
+  /// No description provided for @numberSenseComparisonSixth.
+  ///
+  /// In en, this message translates to:
+  /// **'sixth'**
+  String get numberSenseComparisonSixth;
+
+  /// No description provided for @numberSenseComparisonEighth.
+  ///
+  /// In en, this message translates to:
+  /// **'eighth'**
+  String get numberSenseComparisonEighth;
+
+  /// No description provided for @numberSenseComparisonHalves.
+  ///
+  /// In en, this message translates to:
+  /// **'halves'**
+  String get numberSenseComparisonHalves;
+
+  /// No description provided for @numberSenseComparisonThirds.
+  ///
+  /// In en, this message translates to:
+  /// **'thirds'**
+  String get numberSenseComparisonThirds;
+
+  /// No description provided for @numberSenseComparisonFourths.
+  ///
+  /// In en, this message translates to:
+  /// **'fourths'**
+  String get numberSenseComparisonFourths;
+
+  /// No description provided for @numberSenseComparisonSixths.
+  ///
+  /// In en, this message translates to:
+  /// **'sixths'**
+  String get numberSenseComparisonSixths;
+
+  /// No description provided for @numberSenseComparisonEighths.
+  ///
+  /// In en, this message translates to:
+  /// **'eighths'**
+  String get numberSenseComparisonEighths;
+
+  /// No description provided for @numberSenseComparisonCapHalves.
+  ///
+  /// In en, this message translates to:
+  /// **'Halves'**
+  String get numberSenseComparisonCapHalves;
+
+  /// No description provided for @numberSenseComparisonCapThirds.
+  ///
+  /// In en, this message translates to:
+  /// **'Thirds'**
+  String get numberSenseComparisonCapThirds;
+
+  /// No description provided for @numberSenseComparisonCapFourths.
+  ///
+  /// In en, this message translates to:
+  /// **'Fourths'**
+  String get numberSenseComparisonCapFourths;
+
+  /// No description provided for @numberSenseComparisonCapSixths.
+  ///
+  /// In en, this message translates to:
+  /// **'Sixths'**
+  String get numberSenseComparisonCapSixths;
+
+  /// No description provided for @numberSenseComparisonCapEighths.
+  ///
+  /// In en, this message translates to:
+  /// **'Eighths'**
+  String get numberSenseComparisonCapEighths;
+
+  /// No description provided for @numberSenseComparisonMore.
+  ///
+  /// In en, this message translates to:
+  /// **'more'**
+  String get numberSenseComparisonMore;
+
+  /// No description provided for @numberSenseComparisonLess.
+  ///
+  /// In en, this message translates to:
+  /// **'less'**
+  String get numberSenseComparisonLess;
 }
 
 class _AppLocalizationsDelegate

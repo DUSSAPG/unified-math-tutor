@@ -3374,5 +3374,116 @@
   "numberSenseHelpWhatItMeans": "Use this idea to read, describe and compare fractions.",
   "@numberSenseHelpWhatItMeans": {},
   "numberSenseHelpWhereUsed": "These words and symbols help explain fractions in maths and everyday sharing.",
-  "@numberSenseHelpWhereUsed": {}
+  "@numberSenseHelpWhereUsed": {},
+  "numberSenseSkillProgress": "Skill {current} of {total}: {name}",
+  "@numberSenseSkillProgress": {
+    "placeholders": {
+      "current": { "type": "int" },
+      "total": { "type": "int" },
+      "name": { "type": "String" }
+    }
+  },
+  "numberSenseSkillPlaceFraction": "Place a fraction",
+  "@numberSenseSkillPlaceFraction": {},
+  "numberSenseSkillMakeEquivalent": "Make an equivalent fraction",
+  "@numberSenseSkillMakeEquivalent": {},
+  "numberSenseSkillCompareFractions": "Compare fractions",
+  "@numberSenseSkillCompareFractions": {},
+  "numberSenseSkillFindOneHundredth": "Find one hundredth",
+  "@numberSenseSkillFindOneHundredth": {},
+  "numberSensePractiseThis": "Practise this",
+  "@numberSensePractiseThis": {},
+  "numberSenseNextSkill": "Next skill",
+  "@numberSenseNextSkill": {},
+  "numberSenseChooseSkill": "Choose a skill",
+  "@numberSenseChooseSkill": {},
+  "numberSenseChooseComparisonType": "Choose a comparison type",
+  "@numberSenseChooseComparisonType": {},
+  "numberSenseSkillSheetClose": "Close",
+  "@numberSenseSkillSheetClose": {},
+  "numberSenseFocusSameDenominator": "Same denominator",
+  "@numberSenseFocusSameDenominator": {},
+  "numberSenseFocusSameNumerator": "Same numerator",
+  "@numberSenseFocusSameNumerator": {},
+  "numberSenseFocusEquivalent": "Equivalent fractions",
+  "@numberSenseFocusEquivalent": {},
+  "numberSenseFocusCompareToHalf": "Compare to one half",
+  "@numberSenseFocusCompareToHalf": {},
+  "numberSenseFocusMixed": "Mixed practice",
+  "@numberSenseFocusMixed": {},
+  "numberSenseComparisonExplanationEquivalent": "{leftFraction} is the same value as {rightFraction}. Both are at the same point on the number line.",
+  "@numberSenseComparisonExplanationEquivalent": {
+    "placeholders": {
+      "leftFraction": { "type": "String" },
+      "rightFraction": { "type": "String" }
+    }
+  },
+  "numberSenseComparisonExplanationSameDenominator": "Both fractions are in {unit}. {largerCount} {unit} is more than {smallerCount} {unit}, so {leftFraction} {relation} {rightFraction}.",
+  "@numberSenseComparisonExplanationSameDenominator": {
+    "placeholders": {
+      "unit": { "type": "String" },
+      "largerCount": { "type": "int" },
+      "smallerCount": { "type": "int" },
+      "leftFraction": { "type": "String" },
+      "relation": { "type": "String" },
+      "rightFraction": { "type": "String" }
+    }
+  },
+  "numberSenseComparisonExplanationSameNumerator": "Both fractions show {numerator} parts. {largerUnit} are larger pieces than {smallerUnit}, so {largerFraction} {relation} {smallerFraction}.",
+  "@numberSenseComparisonExplanationSameNumerator": {
+    "placeholders": {
+      "numerator": { "type": "int" },
+      "largerUnit": { "type": "String" },
+      "smallerUnit": { "type": "String" },
+      "largerFraction": { "type": "String" },
+      "relation": { "type": "String" },
+      "smallerFraction": { "type": "String" }
+    }
+  },
+  "numberSenseComparisonExplanationBenchmarkHalf": "One half is {halfEquivalent}. Since {otherFraction} is one {unit} {direction} than {halfEquivalent}, {leftFraction} {relation} {rightFraction}.",
+  "@numberSenseComparisonExplanationBenchmarkHalf": {
+    "placeholders": {
+      "halfEquivalent": { "type": "String" },
+      "otherFraction": { "type": "String" },
+      "unit": { "type": "String" },
+      "direction": { "type": "String" },
+      "leftFraction": { "type": "String" },
+      "relation": { "type": "String" },
+      "rightFraction": { "type": "String" }
+    }
+  },
+  "numberSenseComparisonHalf": "half",
+  "@numberSenseComparisonHalf": {},
+  "numberSenseComparisonThird": "third",
+  "@numberSenseComparisonThird": {},
+  "numberSenseComparisonFourth": "fourth",
+  "@numberSenseComparisonFourth": {},
+  "numberSenseComparisonSixth": "sixth",
+  "@numberSenseComparisonSixth": {},
+  "numberSenseComparisonEighth": "eighth",
+  "@numberSenseComparisonEighth": {},
+  "numberSenseComparisonHalves": "halves",
+  "@numberSenseComparisonHalves": {},
+  "numberSenseComparisonThirds": "thirds",
+  "@numberSenseComparisonThirds": {},
+  "numberSenseComparisonFourths": "fourths",
+  "@numberSenseComparisonFourths": {},
+  "numberSenseComparisonSixths": "sixths",
+  "@numberSenseComparisonSixths": {},
+  "numberSenseComparisonEighths": "eighths",
+  "@numberSenseComparisonEighths": {},
+  "numberSenseComparisonCapHalves": "Halves",
+  "@numberSenseComparisonCapHalves": {},
+  "numberSenseComparisonCapThirds": "Thirds",
+  "@numberSenseComparisonCapThirds": {},
+  "numberSenseComparisonCapFourths": "Fourths",
+  "@numberSenseComparisonCapFourths": {},
+  "numberSenseComparisonCapSixths": "Sixths",
+  "@numberSenseComparisonCapSixths": {},
+  "numberSenseComparisonCapEighths": "Eighths",
+  "@numberSenseComparisonCapEighths": {},
+  "numberSenseComparisonMore": "more",
+  "@numberSenseComparisonMore": {},
+  "numberSenseComparisonLess": "less",
+  "@numberSenseComparisonLess": {}
 }

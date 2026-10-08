@@ -6,6 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 import 'package:unified_math_tutor/models/number_sense_example.dart';
+import 'package:unified_math_tutor/models/number_sense_guided_practice.dart';
 import 'package:unified_math_tutor/services/local_preferences_service.dart';
 import 'package:unified_math_tutor/services/interactive_labs_progress_service.dart';
 import 'package:unified_math_tutor/shared/theme/app_theme.dart';
@@ -37,7 +38,7 @@ void main() {
         home: const NumberSenseLabScreen(),
       );
 
-  Future<void> pumpScreen(WidgetTester tester) async {
+  Future<void> pumpDefault(WidgetTester tester) async {
     await tester.pumpWidget(app());
     await tester.pumpAndSettle();
   }
@@ -48,37 +49,81 @@ void main() {
     await tester.pumpAndSettle();
   }
 
-  Future<void> nextExample(WidgetTester tester) async {
+  // Most tests exercise the equivalence example, which is one skill after the
+  // default Place a fraction entry.
+  Future<void> pumpScreen(WidgetTester tester) async {
+    await pumpDefault(tester);
     await tapAndPump(
-      tester,
-      find.byKey(const ValueKey('numberSense.tryAnotherExample')),
-    );
+        tester, find.byKey(const ValueKey('numberSense.nextSkill')));
+  }
+
+  NumberSenseExampleId currentExample(WidgetTester tester) {
+    final key = find
+        .byWidgetPredicate(
+          (widget) =>
+              widget.key is ValueKey<String> &&
+              (widget.key! as ValueKey<String>)
+                  .value
+                  .startsWith('numberSense.example.'),
+        )
+        .evaluate()
+        .first
+        .widget
+        .key! as ValueKey<String>;
+    return NumberSenseExampleId.values.byName(key.value.split('.').last);
+  }
+
+  Future<void> goToExample(
+    WidgetTester tester,
+    NumberSenseExampleId id,
+  ) async {
+    final skill = NumberSenseGuidedPractice.skillOf(id);
+    await tapAndPump(
+        tester, find.byKey(const ValueKey('numberSense.chooseSkill')));
+    await tapAndPump(
+        tester, find.byKey(ValueKey('numberSense.skill.${skill.name}')));
+    if (skill == NumberSenseGuidedSkill.compareFractions) {
+      await tapAndPump(
+        tester,
+        find.byKey(const ValueKey('numberSense.focus.mixed')),
+      );
+      final order = NumberSenseExample.all
+          .map((example) => example.id)
+          .where((e) => NumberSenseGuidedPractice.skillOf(e) == skill)
+          .toList();
+      for (var i = 0; i < order.indexOf(id); i++) {
+        await tapAndPump(
+          tester,
+          find.byKey(const ValueKey('numberSense.practiseThis')),
+        );
+      }
+    }
+    await tester.pumpAndSettle();
+  }
+
+  // Steps through every guided example in NumberSenseExample.all order.
+  Future<void> nextExample(WidgetTester tester) async {
+    final all = NumberSenseExample.all.map((example) => example.id).toList();
+    final next = all[(all.indexOf(currentExample(tester)) + 1) % all.length];
+    await goToExample(tester, next);
   }
 
   Future<void> showComparison(
     WidgetTester tester, {
     int comparisonIndex = 0,
-  }) async {
-    for (var step = 0; step < comparisonIndex + 2; step++) {
-      await nextExample(tester);
-    }
-  }
+  }) =>
+      goToExample(tester, NumberSenseExample.all[2 + comparisonIndex].id);
 
-  Future<void> showHundredthsActivity(WidgetTester tester) async {
-    for (var step = 0; step < NumberSenseExample.all.length - 1; step++) {
-      await nextExample(tester);
-    }
-  }
-
-  testWidgets('starts Guided on the first committed example', (tester) async {
+  Future<void> showHundredthsActivity(WidgetTester tester) =>
+      goToExample(tester, NumberSenseExampleId.findOneHundredth);
+  testWidgets('starts Guided on Place a fraction as skill 1', (tester) async {
     final semantics = tester.ensureSemantics();
-    await pumpScreen(tester);
+    await pumpDefault(tester);
 
     expect(find.text('Number Sense Lab'), findsOneWidget);
-    expect(find.text('Make an equivalent fraction'), findsOneWidget);
-    expect(find.text('Show one half using equal parts.'), findsOneWidget);
-    expect(find.text('Target: 1/2'), findsOneWidget);
-    expect(find.text('0/2'), findsOneWidget);
+    expect(find.text('Skill 1 of 4: Place a fraction'), findsOneWidget);
+    expect(find.text('Place a fraction'), findsOneWidget);
+    expect(find.text('Target: 3/8'), findsOneWidget);
     expect(
       tester
           .getSemantics(
@@ -365,6 +410,10 @@ void main() {
     );
 
     expect(find.text('Correct: 2/3 < 3/4.'), findsOneWidget);
+    expect(
+      find.text('2 × 4 = 8; 3 × 3 = 9; since 8 < 9, 2/3 < 3/4.'),
+      findsOneWidget,
+    );
     expect(find.text('You found it.'), findsOneWidget);
     expect(
       tester
@@ -393,32 +442,36 @@ void main() {
     );
   });
 
-  testWidgets('all five comparison examples show exact answers and proofs',
+  testWidgets('all five comparison examples show exact strategy explanations',
       (tester) async {
     const examples = [
       (
         '2/8  ?  5/8',
         NumberSenseComparison.lessThan,
         'Correct: 2/8 < 5/8.',
-        '2 × 8 = 16; 5 × 8 = 40; since 16 < 40, 2/8 < 5/8.',
+        'Both fractions are in eighths. 5 eighths is more than 2 eighths, '
+            'so 2/8 < 5/8.',
       ),
       (
         '3/4  ?  3/8',
         NumberSenseComparison.greaterThan,
         'Correct: 3/4 > 3/8.',
-        '3 × 8 = 24; 3 × 4 = 12; since 24 > 12, 3/4 > 3/8.',
+        'Both fractions show 3 parts. Fourths are larger pieces than eighths, '
+            'so 3/4 > 3/8.',
       ),
       (
         '3/6  ?  1/2',
         NumberSenseComparison.equal,
         'Correct: 3/6 = 1/2.',
-        '3 × 2 = 6; 1 × 6 = 6; since 6 = 6, 3/6 = 1/2.',
+        '3/6 is the same value as 1/2. Both are at the same point on the '
+            'number line.',
       ),
       (
         '5/8  ?  1/2',
         NumberSenseComparison.greaterThan,
         'Correct: 5/8 > 1/2.',
-        '5 × 2 = 10; 1 × 8 = 8; since 10 > 8, 5/8 > 1/2.',
+        'One half is 4/8. Since 5/8 is one eighth more than 4/8, '
+            '5/8 > 1/2.',
       ),
       (
         '2/3  ?  3/4',
@@ -428,18 +481,17 @@ void main() {
       ),
     ];
     await pumpScreen(tester);
-    await pumpScreen(tester);
     await nextExample(tester);
     await nextExample(tester);
     for (var index = 0; index < examples.length; index++) {
-      final (question, answer, result, proof) = examples[index];
+      final (question, answer, result, explanation) = examples[index];
       expect(find.text(question), findsOneWidget);
       await tapAndPump(
         tester,
         find.byKey(ValueKey('numberSense.answer.${answer.name}')),
       );
       expect(find.text(result), findsOneWidget);
-      expect(find.text(proof), findsOneWidget);
+      expect(find.text(explanation), findsOneWidget);
       if (index < examples.length - 1) await nextExample(tester);
     }
   });
@@ -467,71 +519,81 @@ void main() {
     }
   });
 
-  testWidgets('fraction terms open tap-accessible help sheets', (tester) async {
-    await pumpScreen(tester);
-    const entries = [
-      (
-        'numberSense.help.numerator',
-        'Numerator',
-        'The numerator is the top number. It counts how many equal parts are selected.',
-      ),
-      (
-        'numberSense.help.denominator',
-        'Denominator',
-        'The denominator is the bottom number. It tells how many equal parts make one whole.',
-      ),
-      (
-        'numberSense.help.equivalent',
-        'Equivalent',
-        'Equivalent fractions name the same amount, even when they use different-sized equal parts.',
-      ),
-    ];
-
-    for (final (key, label, description) in entries) {
-      final button = find.byKey(ValueKey(key));
-      expect(tester.getSize(button).height, greaterThanOrEqualTo(48));
-      expect(tester.getSemantics(button).label, label);
-      await tapAndPump(tester, button);
-      expect(find.text(description), findsOneWidget);
-      await tester.tapAt(const Offset(10, 10));
-      await tester.pumpAndSettle();
-    }
-  });
-
-  testWidgets('comparison symbols open tap-accessible help sheets',
+  testWidgets('no standalone term or symbol help remnants are rendered',
       (tester) async {
-    await pumpScreen(tester);
-    await nextExample(tester);
-    await nextExample(tester);
-    const entries = [
-      (
-        'numberSense.help.symbol.lessThan',
-        'Explain the less-than symbol',
-        'The less-than symbol means the value on its left is smaller than the value on its right.',
-      ),
-      (
-        'numberSense.help.symbol.equal',
-        'Explain the equal-to symbol',
-        'The equal-to symbol means both values are the same amount.',
-      ),
-      (
-        'numberSense.help.symbol.greaterThan',
-        'Explain the greater-than symbol',
-        'The greater-than symbol means the value on its left is larger than the value on its right.',
-      ),
-    ];
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
 
-    for (final (key, semanticLabel, description) in entries) {
-      final button = find.byKey(ValueKey(key));
-      expect(tester.getSize(button).height, greaterThanOrEqualTo(48));
-      expect(tester.getSemantics(button).label, semanticLabel);
-      await tapAndPump(tester, button);
-      expect(find.text(description), findsOneWidget);
-      await tester.tapAt(const Offset(10, 10));
-      await tester.pumpAndSettle();
+    void expectNoRemnants() {
+      for (final label in ['Numerator', 'Denominator', 'Equivalent']) {
+        expect(find.text(label), findsNothing);
+      }
+      // Symbols may only appear inside the labelled answer buttons.
+      for (final symbol in ['<', '=', '>']) {
+        expect(
+          find.descendant(
+            of: find.byType(Scaffold),
+            matching: find.text(symbol),
+          ),
+          findsNWidgets(
+            find
+                .descendant(
+                  of: find.byWidgetPredicate(
+                    (widget) =>
+                        widget.key is ValueKey<String> &&
+                        (widget.key! as ValueKey<String>)
+                            .value
+                            .startsWith('numberSense.answer.'),
+                  ),
+                  matching: find.text(symbol),
+                )
+                .evaluate()
+                .length,
+          ),
+        );
+      }
+      expect(
+        find.byWidgetPredicate(
+          (widget) =>
+              widget.key is ValueKey<String> &&
+              (widget.key! as ValueKey<String>)
+                  .value
+                  .startsWith('numberSense.help.'),
+        ),
+        findsNothing,
+      );
+    }
+
+    for (final size in [const Size(390, 844), const Size(915, 412)]) {
+      tester.view.physicalSize = size;
+      await pumpScreen(tester);
+      expectNoRemnants();
+
+      await showComparison(tester);
+      expectNoRemnants();
+      for (final answer in NumberSenseComparison.values) {
+        final button =
+            find.byKey(ValueKey('numberSense.answer.${answer.name}'));
+        expect(button, findsOneWidget);
+      }
+      expect(find.text('Less than'), findsOneWidget);
+      expect(find.text('Equal to'), findsOneWidget);
+      expect(find.text('Greater than'), findsOneWidget);
+      await tapAndPump(
+        tester,
+        find.byKey(const ValueKey('numberSense.answer.lessThan')),
+      );
+      expectNoRemnants();
+
+      await tapAndPump(
+        tester,
+        find.byKey(const ValueKey('numberSense.modeFreeExplore')),
+      );
+      expectNoRemnants();
+      await tester.pumpWidget(const SizedBox.shrink());
     }
   });
-
   testWidgets('Reset restores the active guided example start', (tester) async {
     await pumpScreen(tester);
     await nextExample(tester);
@@ -548,34 +610,52 @@ void main() {
     expect(find.text('You found it.'), findsNothing);
   });
 
-  testWidgets('Try another cycles every guided example in order and wraps',
+  testWidgets('Guided has one repeat action, Practise this, and no Try another',
       (tester) async {
-    await pumpScreen(tester);
-    final expectedFractions = [
-      null,
-      '2/8  ?  5/8',
-      '3/4  ?  3/8',
-      '3/6  ?  1/2',
-      '5/8  ?  1/2',
-      '2/3  ?  3/4',
-      'Find one hundredth',
-    ];
-    for (final comparison in expectedFractions) {
-      await nextExample(tester);
-      expect(find.text('Guided'), findsOneWidget);
-      if (comparison == null) {
-        expect(find.text('Place a fraction'), findsOneWidget);
-      } else if (comparison == 'Find one hundredth') {
-        expect(find.text(comparison), findsOneWidget);
-        expect(find.text('Target: 1/100'), findsOneWidget);
-      } else {
-        expect(find.text(comparison), findsOneWidget);
-      }
-    }
-    await nextExample(tester);
-    expect(find.text('Make an equivalent fraction'), findsOneWidget);
-  });
+    await pumpDefault(tester);
+    final tryAnother = find.byKey(const ValueKey('numberSense.practiseThis'));
+    expect(find.text('Try another example'), findsNothing);
+    expect(find.text('Practise this'), findsOneWidget);
+    expect(
+      find.byKey(const ValueKey('numberSense.tryAnotherExample')),
+      findsNothing,
+    );
+    // Top-level skills restart in place and never move to another skill.
+    await tapAndPump(tester, tryAnother);
+    expect(find.text('Skill 1 of 4: Place a fraction'), findsOneWidget);
+    expect(find.text('Target: 3/8'), findsOneWidget);
 
+    // A chosen comparison focus is retained.
+    await goToExample(
+      tester,
+      NumberSenseExampleId.compareThreeQuartersAndThreeEighths,
+    );
+    await tapAndPump(
+      tester,
+      find.byKey(const ValueKey('numberSense.chooseSkill')),
+    );
+    await tapAndPump(
+      tester,
+      find.byKey(const ValueKey('numberSense.skill.compareFractions')),
+    );
+    await tapAndPump(
+      tester,
+      find.byKey(const ValueKey('numberSense.focus.sameNumerator')),
+    );
+    for (var i = 0; i < 3; i++) {
+      await tapAndPump(tester, tryAnother);
+      expect(find.text('3/4  ?  3/8'), findsOneWidget);
+      expect(
+        find.text('Skill 3 of 4: Compare fractions'),
+        findsOneWidget,
+      );
+    }
+
+    await showHundredthsActivity(tester);
+    await tapAndPump(tester, tryAnother);
+    expect(find.text('Skill 4 of 4: Find one hundredth'), findsOneWidget);
+    expect(find.text('Target: 1/100'), findsOneWidget);
+  });
   testWidgets('Guided hundredths activity shows exact target and feedback',
       (tester) async {
     await pumpScreen(tester);
@@ -898,7 +978,6 @@ void main() {
           await tester.pumpWidget(const SizedBox.shrink());
           await tester.pumpWidget(app(theme: theme, textScale: scale));
           await tester.pumpAndSettle();
-          await nextExample(tester);
           await tapAndPump(
             tester,
             find.byKey(const ValueKey('fractionPartitionBar.segment-1')),
@@ -1188,6 +1267,8 @@ void main() {
     await tester.pumpWidget(app(theme: AppTheme.dark()));
     await tester.pumpAndSettle();
     await tapAndPump(
+        tester, find.byKey(const ValueKey('numberSense.nextSkill')));
+    await tapAndPump(
       tester,
       find.byKey(const ValueKey('fractionPartitionBar.segment-0')),
     );
@@ -1225,7 +1306,7 @@ void main() {
       'numberSense.modeGuided',
       'numberSense.modeFreeExplore',
       'numberSense.reset',
-      'numberSense.tryAnotherExample',
+      'numberSense.practiseThis',
     ]) {
       expect(tester.getSemantics(find.byKey(ValueKey(key))).label, isNotEmpty);
       expect(tester.getSize(find.byKey(ValueKey(key))).height,
@@ -1250,14 +1331,13 @@ void main() {
         await tester.pumpAndSettle();
 
         expect(tester.takeException(), isNull);
-        final next = find.byKey(
-          const ValueKey('numberSense.tryAnotherExample'),
-        );
+        final next = find.byKey(const ValueKey('numberSense.nextSkill'));
+        expect(find.text('Place a fraction'), findsOneWidget);
         await tester.ensureVisible(next);
         expect(next, findsOneWidget);
         await tester.tap(next);
         await tester.pumpAndSettle();
-        expect(find.text('Place a fraction'), findsOneWidget);
+        expect(find.text('Make an equivalent fraction'), findsOneWidget);
         await tester.ensureVisible(next);
         await tester.tap(next);
         await tester.pumpAndSettle();
