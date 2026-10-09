@@ -8454,6 +8454,70 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'less'**
   String get numberSenseComparisonLess;
+
+  /// No description provided for @numberSenseAnotherExample.
+  ///
+  /// In en, this message translates to:
+  /// **'Another example'**
+  String get numberSenseAnotherExample;
+
+  /// No description provided for @numberSenseExamplePlacementTaskHalf.
+  ///
+  /// In en, this message translates to:
+  /// **'Place one half on the number line.'**
+  String get numberSenseExamplePlacementTaskHalf;
+
+  /// No description provided for @numberSenseExamplePlacementTaskTwoThirds.
+  ///
+  /// In en, this message translates to:
+  /// **'Place two thirds on the number line.'**
+  String get numberSenseExamplePlacementTaskTwoThirds;
+
+  /// No description provided for @numberSenseExampleEquivalenceTaskParts.
+  ///
+  /// In en, this message translates to:
+  /// **'Show one half using {count} equal parts.'**
+  String numberSenseExampleEquivalenceTaskParts(int count);
+
+  /// No description provided for @numberSenseExampleHundredthsTitleCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Find {count} hundredths'**
+  String numberSenseExampleHundredthsTitleCount(int count);
+
+  /// No description provided for @numberSenseExampleHundredthsTaskCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Use the zoomed number line to find {count} hundredths. Each step is one hundredth.'**
+  String numberSenseExampleHundredthsTaskCount(int count);
+
+  /// No description provided for @numberSenseHundredthsTargetEquationDynamic.
+  ///
+  /// In en, this message translates to:
+  /// **'{fraction} = {decimal}'**
+  String numberSenseHundredthsTargetEquationDynamic(
+    String fraction,
+    String decimal,
+  );
+
+  /// No description provided for @numberSenseHundredthsIncorrectFeedbackTarget.
+  ///
+  /// In en, this message translates to:
+  /// **'You selected {decimal}. Count {count} ticks to the right of 0.00 to reach {target}.'**
+  String numberSenseHundredthsIncorrectFeedbackTarget(
+    String decimal,
+    int count,
+    String target,
+  );
+
+  /// No description provided for @numberSenseHundredthsZeroGuidedFeedbackTarget.
+  ///
+  /// In en, this message translates to:
+  /// **'0.00 is zero. Count {count} ticks to the right to reach {target}.'**
+  String numberSenseHundredthsZeroGuidedFeedbackTarget(
+    int count,
+    String target,
+  );
 }
 
 class _AppLocalizationsDelegate

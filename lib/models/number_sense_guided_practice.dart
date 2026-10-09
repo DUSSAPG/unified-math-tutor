@@ -18,19 +18,40 @@ enum NumberSenseComparisonFocus {
 }
 
 /// In-memory, deterministic Guided practice path. It only chooses which
-/// existing example is loaded; it holds no learner data and never persists.
+/// curated example is loaded; it holds no learner data and never persists.
 class NumberSenseGuidedPractice {
   NumberSenseGuidedPractice([
     NumberSenseExampleId start = NumberSenseExampleId.placeThreeEighths,
-  ]) : _skill = skillOf(start);
+  ])  : _skill = skillOf(start),
+        _current = start;
 
-  static const _comparisonOrder = [
-    NumberSenseExampleId.compareTwoEighthsAndFiveEighths,
-    NumberSenseExampleId.compareThreeQuartersAndThreeEighths,
-    NumberSenseExampleId.compareThreeSixthsAndOneHalf,
-    NumberSenseExampleId.compareFiveEighthsAndOneHalf,
-    NumberSenseExampleId.compareTwoThirdsAndThreeQuarters,
-  ];
+  /// The curated, ordered example bank for each skill. The comparison bank is
+  /// the mixed-practice order.
+  static const bank = <NumberSenseGuidedSkill, List<NumberSenseExampleId>>{
+    NumberSenseGuidedSkill.placeFraction: [
+      NumberSenseExampleId.placeThreeEighths,
+      NumberSenseExampleId.placeOneHalf,
+      NumberSenseExampleId.placeTwoThirds,
+    ],
+    NumberSenseGuidedSkill.makeEquivalent: [
+      NumberSenseExampleId.equivalenceHalf,
+      NumberSenseExampleId.equivalenceHalfFourths,
+      NumberSenseExampleId.equivalenceHalfSixths,
+      NumberSenseExampleId.equivalenceHalfEighths,
+    ],
+    NumberSenseGuidedSkill.compareFractions: [
+      NumberSenseExampleId.compareTwoEighthsAndFiveEighths,
+      NumberSenseExampleId.compareThreeQuartersAndThreeEighths,
+      NumberSenseExampleId.compareThreeSixthsAndOneHalf,
+      NumberSenseExampleId.compareFiveEighthsAndOneHalf,
+      NumberSenseExampleId.compareTwoThirdsAndThreeQuarters,
+    ],
+    NumberSenseGuidedSkill.findOneHundredth: [
+      NumberSenseExampleId.findOneHundredth,
+      NumberSenseExampleId.findThreeHundredths,
+      NumberSenseExampleId.findSixHundredths,
+    ],
+  };
 
   static const _focusExample = {
     NumberSenseComparisonFocus.sameDenominator:
@@ -45,37 +66,34 @@ class NumberSenseGuidedPractice {
 
   NumberSenseGuidedSkill _skill;
   NumberSenseComparisonFocus _focus = NumberSenseComparisonFocus.mixed;
+  NumberSenseExampleId _current;
 
   NumberSenseGuidedSkill get skill => _skill;
   NumberSenseComparisonFocus get comparisonFocus => _focus;
+
+  /// The example the learner is currently on.
+  NumberSenseExampleId get current => _current;
 
   /// One-based position of the current skill, for progress labels.
   int get skillNumber => _skill.index + 1;
   int get skillCount => NumberSenseGuidedSkill.values.length;
 
   /// The top-level skill that a guided example belongs to.
-  static NumberSenseGuidedSkill skillOf(NumberSenseExampleId id) =>
-      switch (id) {
-        NumberSenseExampleId.placeThreeEighths =>
-          NumberSenseGuidedSkill.placeFraction,
-        NumberSenseExampleId.equivalenceHalf =>
-          NumberSenseGuidedSkill.makeEquivalent,
-        NumberSenseExampleId.findOneHundredth =>
-          NumberSenseGuidedSkill.findOneHundredth,
-        _ => NumberSenseGuidedSkill.compareFractions,
-      };
-
-  /// Keeps the path in step when the example changed elsewhere, such as
-  /// through a direct example load.
-  void syncTo(NumberSenseExampleId id) {
-    final skill = skillOf(id);
-    if (skill != _skill) _focus = NumberSenseComparisonFocus.mixed;
-    _skill = skill;
-    if (skill == NumberSenseGuidedSkill.compareFractions &&
-        _focus != NumberSenseComparisonFocus.mixed &&
-        _focusExample[_focus] != id) {
-      _focus = NumberSenseComparisonFocus.mixed;
+  static NumberSenseGuidedSkill skillOf(NumberSenseExampleId id) {
+    for (final entry in bank.entries) {
+      if (entry.value.contains(id)) return entry.key;
     }
+    throw ArgumentError.value(id, 'id', 'is not in any guided bank');
+  }
+
+  /// The examples that "Another example" cycles through for the current
+  /// path: the skill's bank, or the single chosen comparison focus.
+  List<NumberSenseExampleId> get activeBank {
+    if (_skill == NumberSenseGuidedSkill.compareFractions) {
+      final focused = _focusExample[_focus];
+      if (focused != null) return [focused];
+    }
+    return bank[_skill]!;
   }
 
   /// Selects [skill] and returns its first example. Comparison starts in
@@ -83,43 +101,32 @@ class NumberSenseGuidedPractice {
   NumberSenseExampleId selectSkill(NumberSenseGuidedSkill skill) {
     _skill = skill;
     _focus = NumberSenseComparisonFocus.mixed;
-    return _firstExample(skill);
+    return _current = bank[skill]!.first;
   }
 
-  /// Advances to the next skill, wrapping after the last.
+  /// Advances to the next skill, wrapping after the last, at its first
+  /// example.
   NumberSenseExampleId nextSkill() => selectSkill(
         NumberSenseGuidedSkill
             .values[(_skill.index + 1) % NumberSenseGuidedSkill.values.length],
       );
 
-  /// Selects a comparison focus and returns its example.
+  /// Selects a comparison focus and returns its example. Mixed practice
+  /// starts the comparison bank from its first example.
   NumberSenseExampleId selectComparisonFocus(NumberSenseComparisonFocus focus) {
     _skill = NumberSenseGuidedSkill.compareFractions;
     _focus = focus;
-    return _focusExample[focus] ?? _comparisonOrder.first;
+    return _current = activeBank.first;
   }
 
-  /// A fresh deterministic example within the current skill. Single-example
-  /// skills and focused comparisons restart; mixed comparison practice moves
-  /// to the next comparison in order.
-  NumberSenseExampleId practise(NumberSenseExampleId current) {
-    if (_skill == NumberSenseGuidedSkill.compareFractions) {
-      final focused = _focusExample[_focus];
-      if (focused != null) return focused;
-      final index = _comparisonOrder.indexOf(current);
-      return _comparisonOrder[(index + 1) % _comparisonOrder.length];
-    }
-    return _firstExample(_skill);
-  }
+  /// Restarts the exact current example.
+  NumberSenseExampleId practise() => _current;
 
-  static NumberSenseExampleId _firstExample(NumberSenseGuidedSkill skill) =>
-      switch (skill) {
-        NumberSenseGuidedSkill.placeFraction =>
-          NumberSenseExampleId.placeThreeEighths,
-        NumberSenseGuidedSkill.makeEquivalent =>
-          NumberSenseExampleId.equivalenceHalf,
-        NumberSenseGuidedSkill.compareFractions => _comparisonOrder.first,
-        NumberSenseGuidedSkill.findOneHundredth =>
-          NumberSenseExampleId.findOneHundredth,
-      };
+  /// The next example in the current path's bank, wrapping to its first.
+  /// It never changes skill or comparison focus.
+  NumberSenseExampleId anotherExample() {
+    final examples = activeBank;
+    final index = examples.indexOf(_current);
+    return _current = examples[(index + 1) % examples.length];
+  }
 }

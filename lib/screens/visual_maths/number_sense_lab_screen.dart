@@ -37,7 +37,9 @@ class _NumberSenseLabScreenState extends State<NumberSenseLabScreen> {
     });
   }
 
-  void _practiseCurrent() => _loadGuided(_practice.practise(_activeExample));
+  void _practiseCurrent() => _loadGuided(_practice.practise());
+
+  void _anotherExample() => _loadGuided(_practice.anotherExample());
 
   String _skillName(AppLocalizations l10n, NumberSenseGuidedSkill skill) =>
       switch (skill) {
@@ -106,6 +108,11 @@ class _NumberSenseLabScreenState extends State<NumberSenseLabScreen> {
               'numberSense.practiseThis',
               l10n.numberSensePractiseThis,
               _practiseCurrent,
+            ),
+            button(
+              'numberSense.anotherExample',
+              l10n.numberSenseAnotherExample,
+              _anotherExample,
             ),
             button(
               'numberSense.nextSkill',
@@ -209,8 +216,7 @@ class _NumberSenseLabScreenState extends State<NumberSenseLabScreen> {
                       _precisionLineContent(l10n, guided: false)
                     else if (_state.mode == NumberSenseMode.freeExplore ||
                         (_example.expectedComparison == null &&
-                            _example.id !=
-                                NumberSenseExampleId.findOneHundredth))
+                            !_example.isPrecisionLine))
                       NumberSenseLabWorkspace(
                         state: _state,
                         reduceMotion:
@@ -312,9 +318,22 @@ class _NumberSenseLabScreenState extends State<NumberSenseLabScreen> {
       case NumberSenseExampleId.equivalenceHalf:
         title = l10n.numberSenseExampleEquivalenceTitle;
         task = l10n.numberSenseExampleEquivalenceTask;
+      case NumberSenseExampleId.equivalenceHalfFourths:
+      case NumberSenseExampleId.equivalenceHalfSixths:
+      case NumberSenseExampleId.equivalenceHalfEighths:
+        title = l10n.numberSenseExampleEquivalenceTitle;
+        task = l10n.numberSenseExampleEquivalenceTaskParts(
+          example.startDenominator,
+        );
       case NumberSenseExampleId.placeThreeEighths:
         title = l10n.numberSenseExamplePlacementTitle;
         task = l10n.numberSenseExamplePlacementTask;
+      case NumberSenseExampleId.placeOneHalf:
+        title = l10n.numberSenseExamplePlacementTitle;
+        task = l10n.numberSenseExamplePlacementTaskHalf;
+      case NumberSenseExampleId.placeTwoThirds:
+        title = l10n.numberSenseExamplePlacementTitle;
+        task = l10n.numberSenseExamplePlacementTaskTwoThirds;
       case NumberSenseExampleId.compareTwoEighthsAndFiveEighths:
       case NumberSenseExampleId.compareThreeQuartersAndThreeEighths:
       case NumberSenseExampleId.compareThreeSixthsAndOneHalf:
@@ -325,6 +344,14 @@ class _NumberSenseLabScreenState extends State<NumberSenseLabScreen> {
       case NumberSenseExampleId.findOneHundredth:
         title = l10n.numberSenseExampleHundredthsTitle;
         task = l10n.numberSenseExampleHundredthsTask;
+      case NumberSenseExampleId.findThreeHundredths:
+      case NumberSenseExampleId.findSixHundredths:
+        title = l10n.numberSenseExampleHundredthsTitleCount(
+          example.shownPrimaryNumerator,
+        );
+        task = l10n.numberSenseExampleHundredthsTaskCount(
+          example.shownPrimaryNumerator,
+        );
     }
 
     return Semantics(
@@ -342,7 +369,7 @@ class _NumberSenseLabScreenState extends State<NumberSenseLabScreen> {
           const SizedBox(height: AppSpacing.xs),
           Text(task, textAlign: TextAlign.center),
           const SizedBox(height: AppSpacing.sm),
-          if (example.id == NumberSenseExampleId.findOneHundredth)
+          if (example.isPrecisionLine)
             _precisionLineContent(l10n, guided: true)
           else if (example.expectedComparison == null)
             Text(
@@ -445,13 +472,17 @@ class _NumberSenseLabScreenState extends State<NumberSenseLabScreen> {
     final decimal = HundredthsPrecisionGeometry.decimalAt(hundredths);
     final isZero = hundredths == 0;
     final fractionText = isZero ? '0' : '$hundredths/100';
+    final target = _example.shownPrimaryNumerator;
+    final targetFraction = '$target/100';
+    final targetDecimal = HundredthsPrecisionGeometry.decimalAt(target);
+    final isOneHundredth = target == 1;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         if (guided) ...[
           Text(
-            l10n.numberSenseTarget('1/100'),
+            l10n.numberSenseTarget(targetFraction),
             key: const ValueKey('numberSense.precisionTarget'),
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -461,7 +492,10 @@ class _NumberSenseLabScreenState extends State<NumberSenseLabScreen> {
           ),
           const SizedBox(height: AppSpacing.xs),
           Text(
-            l10n.numberSenseHundredthsTargetEquation,
+            l10n.numberSenseHundredthsTargetEquationDynamic(
+              targetFraction,
+              targetDecimal,
+            ),
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.titleMedium,
           ),
@@ -507,8 +541,19 @@ class _NumberSenseLabScreenState extends State<NumberSenseLabScreen> {
             liveRegion: true,
             child: Text(
               hundredths == 0
-                  ? l10n.numberSenseHundredthsZeroGuidedFeedback
-                  : l10n.numberSenseHundredthsIncorrectFeedback(decimal),
+                  ? (isOneHundredth
+                      ? l10n.numberSenseHundredthsZeroGuidedFeedback
+                      : l10n.numberSenseHundredthsZeroGuidedFeedbackTarget(
+                          target,
+                          targetDecimal,
+                        ))
+                  : (isOneHundredth
+                      ? l10n.numberSenseHundredthsIncorrectFeedback(decimal)
+                      : l10n.numberSenseHundredthsIncorrectFeedbackTarget(
+                          decimal,
+                          target,
+                          targetDecimal,
+                        )),
               textAlign: TextAlign.center,
             ),
           ),

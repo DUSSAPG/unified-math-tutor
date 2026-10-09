@@ -4940,6 +4940,57 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get numberSenseComparisonLess => 'less';
+
+  @override
+  String get numberSenseAnotherExample => 'Another example';
+
+  @override
+  String get numberSenseExamplePlacementTaskHalf =>
+      'Place one half on the number line.';
+
+  @override
+  String get numberSenseExamplePlacementTaskTwoThirds =>
+      'Place two thirds on the number line.';
+
+  @override
+  String numberSenseExampleEquivalenceTaskParts(int count) {
+    return 'Show one half using $count equal parts.';
+  }
+
+  @override
+  String numberSenseExampleHundredthsTitleCount(int count) {
+    return 'Find $count hundredths';
+  }
+
+  @override
+  String numberSenseExampleHundredthsTaskCount(int count) {
+    return 'Use the zoomed number line to find $count hundredths. Each step is one hundredth.';
+  }
+
+  @override
+  String numberSenseHundredthsTargetEquationDynamic(
+    String fraction,
+    String decimal,
+  ) {
+    return '$fraction = $decimal';
+  }
+
+  @override
+  String numberSenseHundredthsIncorrectFeedbackTarget(
+    String decimal,
+    int count,
+    String target,
+  ) {
+    return 'You selected $decimal. Count $count ticks to the right of 0.00 to reach $target.';
+  }
+
+  @override
+  String numberSenseHundredthsZeroGuidedFeedbackTarget(
+    int count,
+    String target,
+  ) {
+    return '0.00 is zero. Count $count ticks to the right to reach $target.';
+  }
 }
 
 /// The translations for German, as used in Switzerland (`de_CH`).

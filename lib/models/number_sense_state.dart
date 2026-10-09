@@ -249,7 +249,7 @@ class NumberSenseState {
         shadedParts: example.startShadedParts,
         activeExample: example.id,
         comparisonAnswer: null,
-        usesPrecisionLine: example.id == NumberSenseExampleId.findOneHundredth,
+        usesPrecisionLine: example.isPrecisionLine,
         precisionHundredths: 0,
         precisionLineTouched: false,
         wholePartModelTouched: false,

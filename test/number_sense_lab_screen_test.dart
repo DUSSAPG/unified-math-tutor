@@ -87,16 +87,13 @@ void main() {
         tester,
         find.byKey(const ValueKey('numberSense.focus.mixed')),
       );
-      final order = NumberSenseExample.all
-          .map((example) => example.id)
-          .where((e) => NumberSenseGuidedPractice.skillOf(e) == skill)
-          .toList();
-      for (var i = 0; i < order.indexOf(id); i++) {
-        await tapAndPump(
-          tester,
-          find.byKey(const ValueKey('numberSense.practiseThis')),
-        );
-      }
+    }
+    final order = NumberSenseGuidedPractice.bank[skill]!;
+    for (var i = 0; i < order.indexOf(id); i++) {
+      await tapAndPump(
+        tester,
+        find.byKey(const ValueKey('numberSense.anotherExample')),
+      );
     }
     await tester.pumpAndSettle();
   }
@@ -610,7 +607,8 @@ void main() {
     expect(find.text('You found it.'), findsNothing);
   });
 
-  testWidgets('Guided has one repeat action, Practise this, and no Try another',
+  testWidgets(
+      'Guided shows Practise this and Another example, and no Try another',
       (tester) async {
     await pumpDefault(tester);
     final tryAnother = find.byKey(const ValueKey('numberSense.practiseThis'));

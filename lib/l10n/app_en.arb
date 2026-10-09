@@ -3486,4 +3486,23 @@
   "@numberSenseComparisonMore": {},
   "numberSenseComparisonLess": "less",
   "@numberSenseComparisonLess": {}
+,
+  "numberSenseAnotherExample": "Another example",
+  "@numberSenseAnotherExample": {},
+  "numberSenseExamplePlacementTaskHalf": "Place one half on the number line.",
+  "@numberSenseExamplePlacementTaskHalf": {},
+  "numberSenseExamplePlacementTaskTwoThirds": "Place two thirds on the number line.",
+  "@numberSenseExamplePlacementTaskTwoThirds": {},
+  "numberSenseExampleEquivalenceTaskParts": "Show one half using {count} equal parts.",
+  "@numberSenseExampleEquivalenceTaskParts": { "placeholders": { "count": { "type": "int" } } },
+  "numberSenseExampleHundredthsTitleCount": "Find {count} hundredths",
+  "@numberSenseExampleHundredthsTitleCount": { "placeholders": { "count": { "type": "int" } } },
+  "numberSenseExampleHundredthsTaskCount": "Use the zoomed number line to find {count} hundredths. Each step is one hundredth.",
+  "@numberSenseExampleHundredthsTaskCount": { "placeholders": { "count": { "type": "int" } } },
+  "numberSenseHundredthsTargetEquationDynamic": "{fraction} = {decimal}",
+  "@numberSenseHundredthsTargetEquationDynamic": { "placeholders": { "fraction": { "type": "String" }, "decimal": { "type": "String" } } },
+  "numberSenseHundredthsIncorrectFeedbackTarget": "You selected {decimal}. Count {count} ticks to the right of 0.00 to reach {target}.",
+  "@numberSenseHundredthsIncorrectFeedbackTarget": { "placeholders": { "decimal": { "type": "String" }, "count": { "type": "int" }, "target": { "type": "String" } } },
+  "numberSenseHundredthsZeroGuidedFeedbackTarget": "0.00 is zero. Count {count} ticks to the right to reach {target}.",
+  "@numberSenseHundredthsZeroGuidedFeedbackTarget": { "placeholders": { "count": { "type": "int" }, "target": { "type": "String" } } }
 }

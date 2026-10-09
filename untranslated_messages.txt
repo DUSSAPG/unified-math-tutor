@@ -1136,7 +1136,16 @@
     "numberSenseComparisonCapSixths",
     "numberSenseComparisonCapEighths",
     "numberSenseComparisonMore",
-    "numberSenseComparisonLess"
+    "numberSenseComparisonLess",
+    "numberSenseAnotherExample",
+    "numberSenseExamplePlacementTaskHalf",
+    "numberSenseExamplePlacementTaskTwoThirds",
+    "numberSenseExampleEquivalenceTaskParts",
+    "numberSenseExampleHundredthsTitleCount",
+    "numberSenseExampleHundredthsTaskCount",
+    "numberSenseHundredthsTargetEquationDynamic",
+    "numberSenseHundredthsIncorrectFeedbackTarget",
+    "numberSenseHundredthsZeroGuidedFeedbackTarget"
   ],
 
   "da": [
@@ -2306,7 +2315,16 @@
     "numberSenseComparisonCapSixths",
     "numberSenseComparisonCapEighths",
     "numberSenseComparisonMore",
-    "numberSenseComparisonLess"
+    "numberSenseComparisonLess",
+    "numberSenseAnotherExample",
+    "numberSenseExamplePlacementTaskHalf",
+    "numberSenseExamplePlacementTaskTwoThirds",
+    "numberSenseExampleEquivalenceTaskParts",
+    "numberSenseExampleHundredthsTitleCount",
+    "numberSenseExampleHundredthsTaskCount",
+    "numberSenseHundredthsTargetEquationDynamic",
+    "numberSenseHundredthsIncorrectFeedbackTarget",
+    "numberSenseHundredthsZeroGuidedFeedbackTarget"
   ],
 
   "da_DK": [
@@ -3499,7 +3517,16 @@
     "numberSenseComparisonCapSixths",
     "numberSenseComparisonCapEighths",
     "numberSenseComparisonMore",
-    "numberSenseComparisonLess"
+    "numberSenseComparisonLess",
+    "numberSenseAnotherExample",
+    "numberSenseExamplePlacementTaskHalf",
+    "numberSenseExamplePlacementTaskTwoThirds",
+    "numberSenseExampleEquivalenceTaskParts",
+    "numberSenseExampleHundredthsTitleCount",
+    "numberSenseExampleHundredthsTaskCount",
+    "numberSenseHundredthsTargetEquationDynamic",
+    "numberSenseHundredthsIncorrectFeedbackTarget",
+    "numberSenseHundredthsZeroGuidedFeedbackTarget"
   ],
 
   "de": [
@@ -4692,7 +4719,16 @@
     "numberSenseComparisonCapSixths",
     "numberSenseComparisonCapEighths",
     "numberSenseComparisonMore",
-    "numberSenseComparisonLess"
+    "numberSenseComparisonLess",
+    "numberSenseAnotherExample",
+    "numberSenseExamplePlacementTaskHalf",
+    "numberSenseExamplePlacementTaskTwoThirds",
+    "numberSenseExampleEquivalenceTaskParts",
+    "numberSenseExampleHundredthsTitleCount",
+    "numberSenseExampleHundredthsTaskCount",
+    "numberSenseHundredthsTargetEquationDynamic",
+    "numberSenseHundredthsIncorrectFeedbackTarget",
+    "numberSenseHundredthsZeroGuidedFeedbackTarget"
   ],
 
   "de_CH": [
@@ -4885,7 +4921,16 @@
     "numberSenseComparisonCapSixths",
     "numberSenseComparisonCapEighths",
     "numberSenseComparisonMore",
-    "numberSenseComparisonLess"
+    "numberSenseComparisonLess",
+    "numberSenseAnotherExample",
+    "numberSenseExamplePlacementTaskHalf",
+    "numberSenseExamplePlacementTaskTwoThirds",
+    "numberSenseExampleEquivalenceTaskParts",
+    "numberSenseExampleHundredthsTitleCount",
+    "numberSenseExampleHundredthsTaskCount",
+    "numberSenseHundredthsTargetEquationDynamic",
+    "numberSenseHundredthsIncorrectFeedbackTarget",
+    "numberSenseHundredthsZeroGuidedFeedbackTarget"
   ],
 
   "en_GB": [
@@ -5479,7 +5524,16 @@
     "numberSenseComparisonCapSixths",
     "numberSenseComparisonCapEighths",
     "numberSenseComparisonMore",
-    "numberSenseComparisonLess"
+    "numberSenseComparisonLess",
+    "numberSenseAnotherExample",
+    "numberSenseExamplePlacementTaskHalf",
+    "numberSenseExamplePlacementTaskTwoThirds",
+    "numberSenseExampleEquivalenceTaskParts",
+    "numberSenseExampleHundredthsTitleCount",
+    "numberSenseExampleHundredthsTaskCount",
+    "numberSenseHundredthsTargetEquationDynamic",
+    "numberSenseHundredthsIncorrectFeedbackTarget",
+    "numberSenseHundredthsZeroGuidedFeedbackTarget"
   ],
 
   "es": [
@@ -6647,7 +6701,16 @@
     "numberSenseComparisonCapSixths",
     "numberSenseComparisonCapEighths",
     "numberSenseComparisonMore",
-    "numberSenseComparisonLess"
+    "numberSenseComparisonLess",
+    "numberSenseAnotherExample",
+    "numberSenseExamplePlacementTaskHalf",
+    "numberSenseExamplePlacementTaskTwoThirds",
+    "numberSenseExampleEquivalenceTaskParts",
+    "numberSenseExampleHundredthsTitleCount",
+    "numberSenseExampleHundredthsTaskCount",
+    "numberSenseHundredthsTargetEquationDynamic",
+    "numberSenseHundredthsIncorrectFeedbackTarget",
+    "numberSenseHundredthsZeroGuidedFeedbackTarget"
   ],
 
   "fr": [
@@ -7840,7 +7903,16 @@
     "numberSenseComparisonCapSixths",
     "numberSenseComparisonCapEighths",
     "numberSenseComparisonMore",
-    "numberSenseComparisonLess"
+    "numberSenseComparisonLess",
+    "numberSenseAnotherExample",
+    "numberSenseExamplePlacementTaskHalf",
+    "numberSenseExamplePlacementTaskTwoThirds",
+    "numberSenseExampleEquivalenceTaskParts",
+    "numberSenseExampleHundredthsTitleCount",
+    "numberSenseExampleHundredthsTaskCount",
+    "numberSenseHundredthsTargetEquationDynamic",
+    "numberSenseHundredthsIncorrectFeedbackTarget",
+    "numberSenseHundredthsZeroGuidedFeedbackTarget"
   ],
 
   "fr_CH": [
@@ -8033,7 +8105,16 @@
     "numberSenseComparisonCapSixths",
     "numberSenseComparisonCapEighths",
     "numberSenseComparisonMore",
-    "numberSenseComparisonLess"
+    "numberSenseComparisonLess",
+    "numberSenseAnotherExample",
+    "numberSenseExamplePlacementTaskHalf",
+    "numberSenseExamplePlacementTaskTwoThirds",
+    "numberSenseExampleEquivalenceTaskParts",
+    "numberSenseExampleHundredthsTitleCount",
+    "numberSenseExampleHundredthsTaskCount",
+    "numberSenseHundredthsTargetEquationDynamic",
+    "numberSenseHundredthsIncorrectFeedbackTarget",
+    "numberSenseHundredthsZeroGuidedFeedbackTarget"
   ],
 
   "id": [
@@ -9201,7 +9282,16 @@
     "numberSenseComparisonCapSixths",
     "numberSenseComparisonCapEighths",
     "numberSenseComparisonMore",
-    "numberSenseComparisonLess"
+    "numberSenseComparisonLess",
+    "numberSenseAnotherExample",
+    "numberSenseExamplePlacementTaskHalf",
+    "numberSenseExamplePlacementTaskTwoThirds",
+    "numberSenseExampleEquivalenceTaskParts",
+    "numberSenseExampleHundredthsTitleCount",
+    "numberSenseExampleHundredthsTaskCount",
+    "numberSenseHundredthsTargetEquationDynamic",
+    "numberSenseHundredthsIncorrectFeedbackTarget",
+    "numberSenseHundredthsZeroGuidedFeedbackTarget"
   ],
 
   "it": [
@@ -10392,7 +10482,16 @@
     "numberSenseComparisonCapSixths",
     "numberSenseComparisonCapEighths",
     "numberSenseComparisonMore",
-    "numberSenseComparisonLess"
+    "numberSenseComparisonLess",
+    "numberSenseAnotherExample",
+    "numberSenseExamplePlacementTaskHalf",
+    "numberSenseExamplePlacementTaskTwoThirds",
+    "numberSenseExampleEquivalenceTaskParts",
+    "numberSenseExampleHundredthsTitleCount",
+    "numberSenseExampleHundredthsTaskCount",
+    "numberSenseHundredthsTargetEquationDynamic",
+    "numberSenseHundredthsIncorrectFeedbackTarget",
+    "numberSenseHundredthsZeroGuidedFeedbackTarget"
   ],
 
   "it_CH": [
@@ -10585,7 +10684,16 @@
     "numberSenseComparisonCapSixths",
     "numberSenseComparisonCapEighths",
     "numberSenseComparisonMore",
-    "numberSenseComparisonLess"
+    "numberSenseComparisonLess",
+    "numberSenseAnotherExample",
+    "numberSenseExamplePlacementTaskHalf",
+    "numberSenseExamplePlacementTaskTwoThirds",
+    "numberSenseExampleEquivalenceTaskParts",
+    "numberSenseExampleHundredthsTitleCount",
+    "numberSenseExampleHundredthsTaskCount",
+    "numberSenseHundredthsTargetEquationDynamic",
+    "numberSenseHundredthsIncorrectFeedbackTarget",
+    "numberSenseHundredthsZeroGuidedFeedbackTarget"
   ],
 
   "ko": [
@@ -11778,7 +11886,16 @@
     "numberSenseComparisonCapSixths",
     "numberSenseComparisonCapEighths",
     "numberSenseComparisonMore",
-    "numberSenseComparisonLess"
+    "numberSenseComparisonLess",
+    "numberSenseAnotherExample",
+    "numberSenseExamplePlacementTaskHalf",
+    "numberSenseExamplePlacementTaskTwoThirds",
+    "numberSenseExampleEquivalenceTaskParts",
+    "numberSenseExampleHundredthsTitleCount",
+    "numberSenseExampleHundredthsTaskCount",
+    "numberSenseHundredthsTargetEquationDynamic",
+    "numberSenseHundredthsIncorrectFeedbackTarget",
+    "numberSenseHundredthsZeroGuidedFeedbackTarget"
   ],
 
   "ko_KR": [
@@ -12752,7 +12869,16 @@
     "numberSenseComparisonCapSixths",
     "numberSenseComparisonCapEighths",
     "numberSenseComparisonMore",
-    "numberSenseComparisonLess"
+    "numberSenseComparisonLess",
+    "numberSenseAnotherExample",
+    "numberSenseExamplePlacementTaskHalf",
+    "numberSenseExamplePlacementTaskTwoThirds",
+    "numberSenseExampleEquivalenceTaskParts",
+    "numberSenseExampleHundredthsTitleCount",
+    "numberSenseExampleHundredthsTaskCount",
+    "numberSenseHundredthsTargetEquationDynamic",
+    "numberSenseHundredthsIncorrectFeedbackTarget",
+    "numberSenseHundredthsZeroGuidedFeedbackTarget"
   ],
 
   "nb": [
@@ -13922,7 +14048,16 @@
     "numberSenseComparisonCapSixths",
     "numberSenseComparisonCapEighths",
     "numberSenseComparisonMore",
-    "numberSenseComparisonLess"
+    "numberSenseComparisonLess",
+    "numberSenseAnotherExample",
+    "numberSenseExamplePlacementTaskHalf",
+    "numberSenseExamplePlacementTaskTwoThirds",
+    "numberSenseExampleEquivalenceTaskParts",
+    "numberSenseExampleHundredthsTitleCount",
+    "numberSenseExampleHundredthsTaskCount",
+    "numberSenseHundredthsTargetEquationDynamic",
+    "numberSenseHundredthsIncorrectFeedbackTarget",
+    "numberSenseHundredthsZeroGuidedFeedbackTarget"
   ],
 
   "nb_NO": [
@@ -15115,7 +15250,16 @@
     "numberSenseComparisonCapSixths",
     "numberSenseComparisonCapEighths",
     "numberSenseComparisonMore",
-    "numberSenseComparisonLess"
+    "numberSenseComparisonLess",
+    "numberSenseAnotherExample",
+    "numberSenseExamplePlacementTaskHalf",
+    "numberSenseExamplePlacementTaskTwoThirds",
+    "numberSenseExampleEquivalenceTaskParts",
+    "numberSenseExampleHundredthsTitleCount",
+    "numberSenseExampleHundredthsTaskCount",
+    "numberSenseHundredthsTargetEquationDynamic",
+    "numberSenseHundredthsIncorrectFeedbackTarget",
+    "numberSenseHundredthsZeroGuidedFeedbackTarget"
   ],
 
   "pt": [
@@ -16283,7 +16427,16 @@
     "numberSenseComparisonCapSixths",
     "numberSenseComparisonCapEighths",
     "numberSenseComparisonMore",
-    "numberSenseComparisonLess"
+    "numberSenseComparisonLess",
+    "numberSenseAnotherExample",
+    "numberSenseExamplePlacementTaskHalf",
+    "numberSenseExamplePlacementTaskTwoThirds",
+    "numberSenseExampleEquivalenceTaskParts",
+    "numberSenseExampleHundredthsTitleCount",
+    "numberSenseExampleHundredthsTaskCount",
+    "numberSenseHundredthsTargetEquationDynamic",
+    "numberSenseHundredthsIncorrectFeedbackTarget",
+    "numberSenseHundredthsZeroGuidedFeedbackTarget"
   ],
 
   "sv": [
@@ -17453,7 +17606,16 @@
     "numberSenseComparisonCapSixths",
     "numberSenseComparisonCapEighths",
     "numberSenseComparisonMore",
-    "numberSenseComparisonLess"
+    "numberSenseComparisonLess",
+    "numberSenseAnotherExample",
+    "numberSenseExamplePlacementTaskHalf",
+    "numberSenseExamplePlacementTaskTwoThirds",
+    "numberSenseExampleEquivalenceTaskParts",
+    "numberSenseExampleHundredthsTitleCount",
+    "numberSenseExampleHundredthsTaskCount",
+    "numberSenseHundredthsTargetEquationDynamic",
+    "numberSenseHundredthsIncorrectFeedbackTarget",
+    "numberSenseHundredthsZeroGuidedFeedbackTarget"
   ],
 
   "sv_SE": [
@@ -18646,6 +18808,15 @@
     "numberSenseComparisonCapSixths",
     "numberSenseComparisonCapEighths",
     "numberSenseComparisonMore",
-    "numberSenseComparisonLess"
+    "numberSenseComparisonLess",
+    "numberSenseAnotherExample",
+    "numberSenseExamplePlacementTaskHalf",
+    "numberSenseExamplePlacementTaskTwoThirds",
+    "numberSenseExampleEquivalenceTaskParts",
+    "numberSenseExampleHundredthsTitleCount",
+    "numberSenseExampleHundredthsTaskCount",
+    "numberSenseHundredthsTargetEquationDynamic",
+    "numberSenseHundredthsIncorrectFeedbackTarget",
+    "numberSenseHundredthsZeroGuidedFeedbackTarget"
   ]
 }

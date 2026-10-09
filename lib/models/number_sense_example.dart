@@ -12,6 +12,13 @@ enum NumberSenseExampleId {
   compareFiveEighthsAndOneHalf,
   compareTwoThirdsAndThreeQuarters,
   findOneHundredth,
+  placeOneHalf,
+  placeTwoThirds,
+  equivalenceHalfFourths,
+  equivalenceHalfSixths,
+  equivalenceHalfEighths,
+  findThreeHundredths,
+  findSixHundredths,
 }
 
 /// The outcome of comparing two exact fractions.
@@ -37,6 +44,8 @@ NumberSenseComparison compareExactFractions(ExactFraction a, ExactFraction b) {
 ///   lies between.
 /// - [revealDenominators] lists the partitions shown as equivalents of
 ///   [primary].
+/// - [isPrecisionLine] marks a hundredths target on the zoomed line, where
+///   the display numerator/denominator carry the unreduced hundredths.
 /// - [expectedComparison] is the exact result of `primary` compared with
 ///   `secondary`, where a comparison applies.
 class NumberSenseExample {
@@ -55,6 +64,7 @@ class NumberSenseExample {
     this.secondaryDisplayDenominator,
     this.revealDenominators = const [],
     this.expectedComparison,
+    this.isPrecisionLine = false,
   });
 
   final NumberSenseExampleId id;
@@ -71,6 +81,9 @@ class NumberSenseExample {
   final int? secondaryDisplayDenominator;
   final List<int> revealDenominators;
   final NumberSenseComparison? expectedComparison;
+
+  /// Whether the example is placed on the zoomed hundredths precision line.
+  final bool isPrecisionLine;
 
   int get shownPrimaryNumerator => primaryDisplayNumerator ?? primary.numerator;
   int get shownPrimaryDenominator =>
@@ -181,9 +194,83 @@ class NumberSenseExample {
     startDenominator: 2,
     startShadedParts: 0,
     primary: ExactFraction(1, 100),
+    primaryDisplayNumerator: 1,
+    primaryDisplayDenominator: 100,
+    isPrecisionLine: true,
   );
 
-  /// Every guided example, in the fixed cycling order.
+  /// Placement: place 1/2 on the halves partition.
+  static final NumberSenseExample placeOneHalf = NumberSenseExample(
+    id: NumberSenseExampleId.placeOneHalf,
+    startDenominator: 2,
+    startShadedParts: 0,
+    primary: ExactFraction(1, 2),
+    targetDenominator: 2,
+    lowerAnchor: ExactFraction(0, 1),
+    upperAnchor: ExactFraction(1, 1),
+  );
+
+  /// Placement: place 2/3 on the thirds partition, between 1/3 and 1.
+  static final NumberSenseExample placeTwoThirds = NumberSenseExample(
+    id: NumberSenseExampleId.placeTwoThirds,
+    startDenominator: 3,
+    startShadedParts: 0,
+    primary: ExactFraction(2, 3),
+    targetDenominator: 3,
+    lowerAnchor: ExactFraction(1, 3),
+    upperAnchor: ExactFraction(1, 1),
+  );
+
+  /// Equivalence: make 1/2 starting from fourths (2/4).
+  static final NumberSenseExample equivalenceHalfFourths = NumberSenseExample(
+    id: NumberSenseExampleId.equivalenceHalfFourths,
+    startDenominator: 4,
+    startShadedParts: 0,
+    primary: ExactFraction(1, 2),
+    revealDenominators: const [2, 6, 8],
+  );
+
+  /// Equivalence: make 1/2 starting from sixths (3/6).
+  static final NumberSenseExample equivalenceHalfSixths = NumberSenseExample(
+    id: NumberSenseExampleId.equivalenceHalfSixths,
+    startDenominator: 6,
+    startShadedParts: 0,
+    primary: ExactFraction(1, 2),
+    revealDenominators: const [2, 4, 8],
+  );
+
+  /// Equivalence: make 1/2 starting from eighths (4/8).
+  static final NumberSenseExample equivalenceHalfEighths = NumberSenseExample(
+    id: NumberSenseExampleId.equivalenceHalfEighths,
+    startDenominator: 8,
+    startShadedParts: 0,
+    primary: ExactFraction(1, 2),
+    revealDenominators: const [2, 4, 6],
+  );
+
+  /// Precision placement: find 3/100 on the zoomed 0.00–0.10 line.
+  static final NumberSenseExample findThreeHundredths = NumberSenseExample(
+    id: NumberSenseExampleId.findThreeHundredths,
+    startDenominator: 2,
+    startShadedParts: 0,
+    primary: ExactFraction(3, 100),
+    primaryDisplayNumerator: 3,
+    primaryDisplayDenominator: 100,
+    isPrecisionLine: true,
+  );
+
+  /// Precision placement: find 6/100 on the zoomed 0.00–0.10 line.
+  static final NumberSenseExample findSixHundredths = NumberSenseExample(
+    id: NumberSenseExampleId.findSixHundredths,
+    startDenominator: 2,
+    startShadedParts: 0,
+    primary: ExactFraction(6, 100),
+    primaryDisplayNumerator: 6,
+    primaryDisplayDenominator: 100,
+    isPrecisionLine: true,
+  );
+
+  /// The original eight-step sequence, kept for whole-sequence cycling.
   static final List<NumberSenseExample> all = [
     equivalenceHalf,
     placeThreeEighths,
@@ -195,7 +282,19 @@ class NumberSenseExample {
     findOneHundredth,
   ];
 
+  /// Every curated example, including the skill banks' extra examples.
+  static final List<NumberSenseExample> catalogue = [
+    ...all,
+    placeOneHalf,
+    placeTwoThirds,
+    equivalenceHalfFourths,
+    equivalenceHalfSixths,
+    equivalenceHalfEighths,
+    findThreeHundredths,
+    findSixHundredths,
+  ];
+
   /// The example with the given [id].
   static NumberSenseExample of(NumberSenseExampleId id) =>
-      all.firstWhere((example) => example.id == id);
+      catalogue.firstWhere((example) => example.id == id);
 }
