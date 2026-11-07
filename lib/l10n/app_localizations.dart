@@ -8562,6 +8562,120 @@ abstract class AppLocalizations {
   /// **'0.00 is zero. Count {count} ticks to the right to reach {target}.'**
   String numberSenseHundredthsZeroGuidedFeedbackTarget(
       int count, String target);
+
+  /// No description provided for @earlyMathsEntryIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick a friendly place to start. Age is only a suggestion, not a level. There is no test, and you can switch at any time.'**
+  String get earlyMathsEntryIntro;
+
+  /// No description provided for @earlyMathsLaneChooserLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a starting point'**
+  String get earlyMathsLaneChooserLabel;
+
+  /// No description provided for @earlyMathsLanePlayTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Early Maths Play'**
+  String get earlyMathsLanePlayTitle;
+
+  /// No description provided for @earlyMathsLanePlayAges.
+  ///
+  /// In en, this message translates to:
+  /// **'Typical ages 4–5 · Reception'**
+  String get earlyMathsLanePlayAges;
+
+  /// No description provided for @earlyMathsLaneKs1Title.
+  ///
+  /// In en, this message translates to:
+  /// **'KS1 Maths Foundations'**
+  String get earlyMathsLaneKs1Title;
+
+  /// No description provided for @earlyMathsLaneKs1Ages.
+  ///
+  /// In en, this message translates to:
+  /// **'Typical ages 5–7 · Years 1–2'**
+  String get earlyMathsLaneKs1Ages;
+
+  /// No description provided for @earlyMathsLaneNotSureTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'m not sure'**
+  String get earlyMathsLaneNotSureTitle;
+
+  /// No description provided for @earlyMathsLaneNotSureSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No test needed. We\'ll suggest one gentle first step.'**
+  String get earlyMathsLaneNotSureSubtitle;
+
+  /// No description provided for @earlyMathsLaneSwitchNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Switching never removes anything your child has already done.'**
+  String get earlyMathsLaneSwitchNote;
+
+  /// No description provided for @earlyMathsActivitiesHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'Activities to try'**
+  String get earlyMathsActivitiesHeading;
+
+  /// No description provided for @earlyMathsNotSureHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'A gentle first step'**
+  String get earlyMathsNotSureHeading;
+
+  /// No description provided for @earlyMathsNotSureBody.
+  ///
+  /// In en, this message translates to:
+  /// **'There is no right or wrong choice. Try this one small activity and see how it feels. You can choose a different starting point above whenever you like.'**
+  String get earlyMathsNotSureBody;
+
+  /// No description provided for @earlyMathsPandaScope.
+  ///
+  /// In en, this message translates to:
+  /// **'Count out 1 to 3 apples from 5, then say how many are left.'**
+  String get earlyMathsPandaScope;
+
+  /// No description provided for @earlyMathsAbacusTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Abacus'**
+  String get earlyMathsAbacusTitle;
+
+  /// No description provided for @earlyMathsAbacusScope.
+  ///
+  /// In en, this message translates to:
+  /// **'An interactive place-value tool: tap or drag beads to explore hundreds, tens and ones.'**
+  String get earlyMathsAbacusScope;
+
+  /// No description provided for @earlyMathsParentHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'For grown-ups'**
+  String get earlyMathsParentHeading;
+
+  /// No description provided for @earlyMathsParentCardTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Parent-led activities'**
+  String get earlyMathsParentCardTitle;
+
+  /// No description provided for @earlyMathsParentCardSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Short activities to do together. Opens with your parent PIN.'**
+  String get earlyMathsParentCardSubtitle;
+
+  /// No description provided for @earlyMathsParentTitlesLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Includes: {titles}'**
+  String earlyMathsParentTitlesLine(String titles);
 }
 
 class _AppLocalizationsDelegate
