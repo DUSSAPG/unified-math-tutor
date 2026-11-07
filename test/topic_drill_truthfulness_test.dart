@@ -36,9 +36,9 @@ void main() {
         'KS4': true,
         'KS5': false,
       },
-      'fractions': {'KS2': true, 'KS3': false, 'KS4': true, 'KS5': false},
-      'decimals': {'KS2': false, 'KS3': false, 'KS4': false, 'KS5': false},
-      'percentages': {'KS2': false, 'KS3': false, 'KS4': true, 'KS5': false},
+      'fractions': {'KS2': true, 'KS3': true, 'KS4': true, 'KS5': false},
+      'decimals': {'KS2': true, 'KS3': true, 'KS4': true, 'KS5': false},
+      'percentages': {'KS2': true, 'KS3': true, 'KS4': true, 'KS5': false},
       'ratio_proportion': {
         'KS2': false,
         'KS3': true,
@@ -73,11 +73,8 @@ void main() {
       }
     }
 
-    test(
-        'every non-premium topic except "decimals" has at least one stage '
-        'that works', () {
+    test('every non-premium topic has at least one stage that works', () {
       for (final entry in expected.entries) {
-        if (entry.key == 'decimals') continue;
         expect(
           entry.value.values.any((ready) => ready),
           isTrue,
@@ -88,10 +85,11 @@ void main() {
       }
     });
 
-    test(
-        '"decimals" is the one topic with zero launchable stages — this is '
-        'the exact combination the Start-gating fix must always disable', () {
-      expect(expected['decimals']!.values.every((ready) => !ready), isTrue);
+    test('Decimals is available in KS2-KS4 while KS5 stays unavailable', () {
+      expect(expected['decimals']!['KS2'], isTrue);
+      expect(expected['decimals']!['KS3'], isTrue);
+      expect(expected['decimals']!['KS4'], isTrue);
+      expect(expected['decimals']!['KS5'], isFalse);
     });
   });
 

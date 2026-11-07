@@ -83,11 +83,10 @@ void main() {
 
   test(
       'the confirmed defect combinations are honestly unavailable: '
-      'statistics_probability @ KS2/KS3, fractions @ KS3/KS5', () {
+      'statistics_probability @ KS2/KS3, fractions @ KS5', () {
     for (final key in [
       ('statistics_probability', 'KS2'),
       ('statistics_probability', 'KS3'),
-      ('fractions', 'KS3'),
       ('fractions', 'KS5'),
     ]) {
       final record = manifest.recordFor(key.$1, key.$2)!;

@@ -13,6 +13,16 @@ void main() {
       );
     });
 
+    test('KS2: the new Decimal skill maps to decimals', () {
+      expect(
+        canonicalTopicForRawValue(
+          stage: 'KS2',
+          rawStrandOrSkillGroup: 'decimals',
+        ),
+        'decimals',
+      );
+    });
+
     test(
         'KS2: addition_subtraction/multiplication_division are '
         'intentionally unmapped, not guessed onto a nearby topic', () {
@@ -70,13 +80,39 @@ void main() {
       );
     });
 
+    test('KS3: the new Decimal skill maps to decimals', () {
+      expect(
+        canonicalTopicForRawValue(
+          stage: 'KS3',
+          rawStrandOrSkillGroup: 'decimals',
+        ),
+        'decimals',
+      );
+    });
+
     test(
-        'KS3: the fused fractions_decimals_percent bucket is '
-        'intentionally unmapped (no finer structured field to split it)', () {
+        'KS3: the fused bucket stays unmapped except for individually '
+        'verified fraction-to-decimal questions', () {
       expect(
         canonicalTopicForRawValue(
           stage: 'KS3',
           rawStrandOrSkillGroup: 'fractions_decimals_percent',
+        ),
+        isNull,
+      );
+      expect(
+        canonicalTopicForRawValue(
+          stage: 'KS3',
+          rawStrandOrSkillGroup: 'fractions_decimals_percent',
+          questionId: 'ks3_fractions_decimals_percent_abc79a992d',
+        ),
+        'decimals',
+      );
+      expect(
+        canonicalTopicForRawValue(
+          stage: 'KS3',
+          rawStrandOrSkillGroup: 'fractions_decimals_percent',
+          questionId: 'ks3_fractions_decimals_percent_not_reviewed',
         ),
         isNull,
       );
@@ -120,6 +156,14 @@ void main() {
           rawFineSkill: 'Fractions of a quantity',
         ),
         'fractions',
+      );
+      expect(
+        canonicalTopicForRawValue(
+          stage: 'KS4',
+          rawStrandOrSkillGroup: 'Number',
+          rawFineSkill: 'Decimals',
+        ),
+        'decimals',
       );
       expect(
         canonicalTopicForRawValue(

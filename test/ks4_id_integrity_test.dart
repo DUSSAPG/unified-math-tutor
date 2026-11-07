@@ -35,16 +35,22 @@ void main() {
   });
 
   test(
-      'KS4: the loader quarantines only the 3 known malformed generator-'
-      'template rows (insufficient options) — nothing is quarantined for '
-      'id reasons any more', () async {
+      'KS4: the loader quarantines the 3 known malformed generator-template '
+      'rows (insufficient options) and the 538 audited inexact Percentage '
+      'rows — nothing is quarantined for id reasons', () async {
     final pack = await PackRegistryService.instance.forStage('KS4');
     await JsonlPackLoader.instance.load(pack);
     final diagnostics = JsonlPackLoader.instance.quarantineFor(pack.path);
-    expect(diagnostics, hasLength(3));
-    for (final d in diagnostics) {
-      expect(d.reason, QuarantineReason.insufficientOptions);
-    }
+    expect(diagnostics, hasLength(541));
+    expect(
+      diagnostics
+          .where((d) => d.reason == QuarantineReason.insufficientOptions),
+      hasLength(3),
+    );
+    expect(
+      diagnostics.where((d) => d.reason == QuarantineReason.knownInexactAnswer),
+      hasLength(538),
+    );
     expect(
       diagnostics.any((d) =>
           d.reason == QuarantineReason.missingOrInvalidId ||
@@ -79,6 +85,8 @@ void main() {
     final records = await JsonlPackLoader.instance.load(pack);
     final generated =
         records.where((r) => (r['id'] as String).startsWith('ks4_gen_'));
-    expect(generated.length, 3983);
+    // 3,983 generated ids, minus the 538 audited inexact Percentage rows the
+    // loader now refuses to serve.
+    expect(generated.length, 3445);
   });
 }

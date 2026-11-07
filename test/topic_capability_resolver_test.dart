@@ -80,8 +80,8 @@ void main() {
     // topicDrill availability here must always agree with it, since both
     // ultimately call the same PracticeAvailabilityResolver.
     const expectedTopicDrill = {
-      'fractions': {'KS2': true, 'KS3': false, 'KS4': true, 'KS5': false},
-      'decimals': {'KS2': false, 'KS3': false, 'KS4': false, 'KS5': false},
+      'fractions': {'KS2': true, 'KS3': true, 'KS4': true, 'KS5': false},
+      'decimals': {'KS2': true, 'KS3': true, 'KS4': true, 'KS5': false},
       'algebra': {'KS2': false, 'KS3': true, 'KS4': true, 'KS5': false},
       'geometry_measures': {
         'KS2': false,
@@ -108,23 +108,19 @@ void main() {
     }
 
     test(
-        'P0 content-integrity repair: quickStart from the Hub is exact-'
-        'topic too, never available for a topic with zero real content '
-        '(reversal of the old "quickStart is always stage-wide" policy — '
-        'that was the confirmed defect: a Hub Quick Start card silently '
-        'drawing from the whole stage pool)', () async {
+        'Decimal Quick Start from the Hub is exact-topic: available only '
+        'in the three stages with verified Decimal content', () async {
       for (final stage in const ['KS2', 'KS3', 'KS4', 'KS5']) {
         final rows = await TopicCapabilityResolver.resolve(
-          topicId: 'decimals', // a topic with zero real content at any stage
+          topicId: 'decimals',
           stage: stage,
         );
         final row = rows
             .singleWhere((r) => r.activityType == TopicActivityType.quickStart);
-        expect(row.available, isFalse,
+        expect(row.available, stage != 'KS5',
             reason: 'Quick Start launched from a Topic Hub must mirror '
-                'Topic Drill\'s exact-topic availability — never available '
-                'for a topic with no real content just because the stage '
-                'pool as a whole is non-empty');
+                'Topic Drill\'s exact-topic availability — it must never '
+                'fall back to unrelated stage-pool content');
       }
     });
 
@@ -173,8 +169,8 @@ void main() {
         'material either, even where the catalog has entries for the topic '
         'at another stage', () async {
       final rows = await TopicCapabilityResolver.resolve(
-        topicId: 'fractions',
-        stage: 'KS3', // real KS3 fractions content does not exist
+        topicId: 'geometry_measures',
+        stage: 'KS3', // real KS3 geometry content does not exist
       );
       final formula = rows.singleWhere(
           (r) => r.activityType == TopicActivityType.formulaLibrary);

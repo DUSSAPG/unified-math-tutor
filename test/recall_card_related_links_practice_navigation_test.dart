@@ -73,16 +73,17 @@ void main() {
         reason: 'ratio_proportion has real content at KS3');
 
     // --- Same stage, a card naming two different topics: "decimals" --------
-    // num-fraction-to-decimal names both fractions and decimals; at KS3
-    // neither is available, so the exact topic tapped must show its own
-    // honest state, not a shared/substituted one.
+    // num-fraction-to-decimal names both fractions and decimals. Decimal
+    // conversion is now genuinely available at KS3, while KS3 fractions
+    // remains available too; each chip must still open its exact topic.
     await openCardAndTapPractice(tester, 'num-fraction-to-decimal', 'decimals');
     expect(find.byType(TopicLearningHubScreen), findsOneWidget);
     expect(find.text('Decimals'), findsWidgets,
         reason: 'the Hub header must name the exact topic tapped');
     expect(
-      find.textContaining('No activities are available for this topic at KS3'),
+      find.textContaining('Real questions are available'),
       findsWidgets,
+      reason: 'decimals now has exact-tagged KS3 questions',
     );
 
     // --- ...and "fractions" from the very same card -------------------------
@@ -92,10 +93,9 @@ void main() {
         reason: 'a different chip on the same card must open a different '
             "topic's Hub, not the previous one");
     expect(
-      find.textContaining('No activities are available for this topic at KS3'),
+      find.textContaining('Real questions are available'),
       findsWidgets,
-      reason: 'fractions has no real content at KS3 either — same card, '
-          'different topic, same honest pattern for THAT topic',
+      reason: 'fractions now has verified exact-tagged KS3 questions',
     );
 
     // --- Switch stage: fractions becomes genuinely available at KS2 --------

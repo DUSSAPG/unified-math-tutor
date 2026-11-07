@@ -9,17 +9,17 @@ import 'support/topic_learning_hub_test_utils.dart';
 /// support/topic_learning_hub_test_utils.dart's doc comment for why).
 void main() {
   testWidgets(
-      'changing stage refreshes availability truthfully — Fractions has '
-      'real content at KS2 but not KS3, and the Hub reflects that '
+      'changing stage refreshes availability truthfully — Number and Place '
+      'Value has real content at KS3 but not KS2, and the Hub reflects that '
       'immediately on stage change, in both directions', (tester) async {
     SharedPreferences.setMockInitialValues({});
-    await CurriculumService.instance.select('ks2');
+    await CurriculumService.instance.select('ks3');
 
-    await tester.pumpWidget(wrapHubWithRouter('fractions'));
+    await tester.pumpWidget(wrapHubWithRouter('number_place_value'));
     await pumpUntilLoaded(tester);
     expect(activityCard('topicDrill'), findsOneWidget);
 
-    await tester.tap(find.byKey(const Key('topicHubStage-KS3')));
+    await tester.tap(find.byKey(const Key('topicHubStage-KS2')));
     await tester.pump(); // let the reload spinner actually mount first
     await pumpUntilLoaded(tester);
 
@@ -31,7 +31,7 @@ void main() {
         reason: 'Quick Start must also disappear — it is exact-topic from '
             'a Topic Hub now, not stage-wide');
 
-    await tester.tap(find.byKey(const Key('topicHubStage-KS2')));
+    await tester.tap(find.byKey(const Key('topicHubStage-KS3')));
     await tester.pump();
     await pumpUntilLoaded(tester);
 

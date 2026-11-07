@@ -26,7 +26,7 @@ import 'package:unified_math_tutor/services/curriculum_service.dart';
 /// an invalid topic outside today's known navigation graph — but nothing
 /// in the current UI can drive it any more, so it has no widget-level test
 /// here; the resolver-level mechanism it depends on is covered by
-/// topic_drill_truthfulness_test.dart's "KS2 / decimals" case.
+/// topic_drill_truthfulness_test.dart's "KS5 / decimals" case.
 Widget _wrap(Widget child) => MaterialApp(
       localizationsDelegates: const [
         AppLocalizations.delegate,
@@ -57,14 +57,13 @@ void main() {
 
   setUp(() async {
     SharedPreferences.setMockInitialValues({});
-    await CurriculumService.instance.select('ks2');
+    await CurriculumService.instance.select('ks5');
   });
 
   testWidgets(
-      'a genuinely unmapped Topic Drill selection (decimals — unavailable '
-      'in every stage) keeps Start disabled, explains why truthfully, '
-      'dims every stage chip, and never reaches the full-page unavailable '
-      'screen through this normal flow', (tester) async {
+      'a Decimal selection unavailable at KS5 keeps Start disabled, '
+      'explains the available alternatives, and never reaches the full-page '
+      'unavailable screen through this normal flow', (tester) async {
     await tester.pumpWidget(_wrap(const PracticeScreen(
       selectedTopicId: 'decimals',
       selectedTopic: 'Decimals',
@@ -82,10 +81,16 @@ void main() {
     );
 
     expect(
-      find.text(l10n.practiceTopicUnavailableEverywhere('Decimals')),
+      find.textContaining(
+        l10n.practiceTopicUnavailableForStage(
+          'Decimals',
+          'KS5',
+          'KS2, KS3, KS4',
+        ),
+      ),
       findsOneWidget,
-      reason: 'must name the real topic and be honest that no stage has it '
-          '— never a generic error, never silence',
+      reason: 'must name the selected topic/stage and offer only available '
+          'Decimal stages',
     );
 
     final startButton = tester.widget<FilledButton>(
@@ -99,9 +104,11 @@ void main() {
       final opacity = tester.widget<Opacity>(
         find.ancestor(of: find.text(stage), matching: find.byType(Opacity)),
       );
-      expect(opacity.opacity, lessThan(1.0),
-          reason: '$stage must read as disabled — decimals has zero real '
-              'questions in every stage');
+      expect(
+        opacity.opacity,
+        stage == 'KS5' ? lessThan(1.0) : equals(1.0),
+        reason: '$stage availability must match the verified Decimal stages',
+      );
     }
 
     // Tapping a disabled button is a no-op — confirms this isn't merely
