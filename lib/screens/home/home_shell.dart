@@ -54,6 +54,7 @@ const _navLabelHideTextScaleThreshold = 1.3;
 
 enum _MoreSheetAction {
   explore,
+  interactiveStudios,
   formulas,
   tutor,
   profile,
@@ -91,6 +92,9 @@ class AppShell extends StatelessWidget {
     switch (action) {
       case _MoreSheetAction.explore:
         router.push('/explore');
+        break;
+      case _MoreSheetAction.interactiveStudios:
+        router.push('/interactive-studios');
         break;
       case _MoreSheetAction.formulas:
         _goBranch(_branchFormulas);
@@ -481,6 +485,12 @@ class _MoreSheet extends StatelessWidget {
                       icon: LucideIcons.compass,
                       label: l10n.exploreMathIntelligenceTitle,
                       onTap: () => onSelected(_MoreSheetAction.explore),
+                    ),
+                    _MoreSheetTile(
+                      icon: Icons.sports_soccer_outlined,
+                      label: l10n.interactiveStudiosTitle,
+                      onTap: () =>
+                          onSelected(_MoreSheetAction.interactiveStudios),
                     ),
                     _MoreSheetTile(
                       icon: LucideIcons.functionSquare,

@@ -1181,10 +1181,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String practiceTopicUnavailableForStage(
-    String topic,
-    String stage,
-    String stages,
-  ) {
+      String topic, String stage, String stages) {
     return '$topic isn\'t available for $stage yet — try $stages.';
   }
 
@@ -1528,6 +1525,57 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get navMore => 'More';
+
+  @override
+  String get interactiveStudiosTitle => 'Interactive Studios';
+
+  @override
+  String get footballStudioDescription =>
+      'Football Studio includes applied-learning activities in Coordinates, Ratio & Scale, Angles, Distance-Time-Speed, Area, and Algebra.';
+
+  @override
+  String get footballStudioChecking =>
+      'Checking whether Football Studio is installed…';
+
+  @override
+  String get footballStudioInstalled =>
+      'Football Studio is installed and ready to open.';
+
+  @override
+  String get footballStudioUnavailable =>
+      'Football Studio is not installed on this device.';
+
+  @override
+  String get footballStudioInstallNeeded =>
+      'Install Football Studio separately to open these activities.';
+
+  @override
+  String get footballStudioOpen => 'Open Football Studio';
+
+  @override
+  String get footballStudioOpening => 'Opening Football Studio…';
+
+  @override
+  String get footballStudioCheckFailed =>
+      'Could not check whether Football Studio is installed.';
+
+  @override
+  String get footballStudioLaunchFailed =>
+      'Football Studio is installed, but Android could not open it.';
+
+  @override
+  String get footballStudioTryAgain => 'Try opening again';
+
+  @override
+  String get footballStudioCheckAgain => 'Check again';
+
+  @override
+  String get footballStudioAndroidOnly =>
+      'Football Studio is available as a separate Android app.';
+
+  @override
+  String get footballStudioProgressOwnership =>
+      'Achievements and progress stay on this device in Football Studio for V1. Unified Math Tutor does not read or share them.';
 
   @override
   String get navHideAction => 'Hide navigation';
@@ -2934,9 +2982,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String labsSpatialCubeWhichFaceOppositeReveal(
-    String correctLabel,
-    String askedLabel,
-  ) {
+      String correctLabel, String askedLabel) {
     return '$correctLabel is opposite $askedLabel.';
   }
 
@@ -3114,9 +3160,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String labsAircraftLandingFindTheTimeDiagramLabel(
-    int distanceM,
-    int speedMps,
-  ) {
+      int distanceM, int speedMps) {
     return 'An aircraft $distanceM metres from the runway, flying at $speedMps metres per second.';
   }
 
@@ -3429,12 +3473,8 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
-  String labsDataDetectiveBeforeAfter(
-    String meanBefore,
-    String meanAfter,
-    String medianBefore,
-    String medianAfter,
-  ) {
+  String labsDataDetectiveBeforeAfter(String meanBefore, String meanAfter,
+      String medianBefore, String medianAfter) {
     return 'Mean: $meanBefore → $meanAfter. Median: $medianBefore → $medianAfter.';
   }
 
@@ -3706,18 +3746,15 @@ class AppLocalizationsIt extends AppLocalizations {
       'Bearing matches the target vector; the magnitude falls short — increase speed to extend the displacement.';
 
   @override
-  String
-  get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceExplorer =>
+  String get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceExplorer =>
       'The distance is right, but the plane is pointing the wrong way. Turn it toward the yellow target.';
 
   @override
-  String
-  get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceBuilder =>
+  String get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceBuilder =>
       'You flew the right distance, but the wrong direction. Adjust the heading toward the target bearing and keep the speed.';
 
   @override
-  String
-  get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceNavigator =>
+  String get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceNavigator =>
       'The magnitude is correct but the bearing is off — rotate the heading toward the target bearing without changing speed.';
 
   @override
@@ -4581,10 +4618,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String numberSenseHundredthsSelectionExplanation(
-    String fraction,
-    String decimal,
-    int count,
-  ) {
+      String fraction, String decimal, int count) {
     return '$fraction means $decimal: $count of 100 equal parts.';
   }
 
@@ -4603,10 +4637,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String numberSenseGuidedWrongAdjacent(
-    String selected,
-    String direction,
-    String target,
-  ) {
+      String selected, String direction, String target) {
     return 'Not quite. You chose $selected. Move one tick $direction to reach $target.';
   }
 
@@ -4622,9 +4653,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String numberSenseGuidedWrongEquivalenceWhole(
-    String selected,
-    String target,
-  ) {
+      String selected, String target) {
     return '$selected is one whole, not $target. Shade half of the equal parts.';
   }
 
@@ -4680,34 +4709,27 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String numberSenseComparisonCorrectResultDynamic(
-    String leftFraction,
-    String relation,
-    String rightFraction,
-  ) {
+      String leftFraction, String relation, String rightFraction) {
     return 'Correct: $leftFraction $relation $rightFraction.';
   }
 
   @override
   String numberSenseComparisonIncorrectResultDynamic(
-    String leftFraction,
-    String relationWords,
-    String rightFraction,
-  ) {
+      String leftFraction, String relationWords, String rightFraction) {
     return 'Not quite. $leftFraction is $relationWords $rightFraction.';
   }
 
   @override
   String numberSenseComparisonProofDynamic(
-    int leftNumerator,
-    int rightDenominator,
-    int leftProduct,
-    int rightNumerator,
-    int leftDenominator,
-    int rightProduct,
-    String relation,
-    String leftFraction,
-    String rightFraction,
-  ) {
+      int leftNumerator,
+      int rightDenominator,
+      int leftProduct,
+      int rightNumerator,
+      int leftDenominator,
+      int rightProduct,
+      String relation,
+      String leftFraction,
+      String rightFraction) {
     return '$leftNumerator × $rightDenominator = $leftProduct; $rightNumerator × $leftDenominator = $rightProduct; since $leftProduct $relation $rightProduct, $leftFraction $relation $rightFraction.';
   }
 
@@ -4722,11 +4744,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String numberSenseCompareMarkerExplanation(
-    String fraction,
-    String decimal,
-    int numerator,
-    int denominator,
-  ) {
+      String fraction, String decimal, int numerator, int denominator) {
     return '$fraction = $decimal — $numerator of $denominator equal parts';
   }
 
@@ -4850,46 +4868,41 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String numberSenseComparisonExplanationEquivalent(
-    String leftFraction,
-    String rightFraction,
-  ) {
+      String leftFraction, String rightFraction) {
     return '$leftFraction is the same value as $rightFraction. Both are at the same point on the number line.';
   }
 
   @override
   String numberSenseComparisonExplanationSameDenominator(
-    String unit,
-    int largerCount,
-    int smallerCount,
-    String leftFraction,
-    String relation,
-    String rightFraction,
-  ) {
+      String unit,
+      int largerCount,
+      int smallerCount,
+      String leftFraction,
+      String relation,
+      String rightFraction) {
     return 'Both fractions are in $unit. $largerCount $unit is more than $smallerCount $unit, so $leftFraction $relation $rightFraction.';
   }
 
   @override
   String numberSenseComparisonExplanationSameNumerator(
-    int numerator,
-    String largerUnit,
-    String smallerUnit,
-    String largerFraction,
-    String relation,
-    String smallerFraction,
-  ) {
+      int numerator,
+      String largerUnit,
+      String smallerUnit,
+      String largerFraction,
+      String relation,
+      String smallerFraction) {
     return 'Both fractions show $numerator parts. $largerUnit are larger pieces than $smallerUnit, so $largerFraction $relation $smallerFraction.';
   }
 
   @override
   String numberSenseComparisonExplanationBenchmarkHalf(
-    String halfEquivalent,
-    String otherFraction,
-    String unit,
-    String direction,
-    String leftFraction,
-    String relation,
-    String rightFraction,
-  ) {
+      String halfEquivalent,
+      String otherFraction,
+      String unit,
+      String direction,
+      String leftFraction,
+      String relation,
+      String rightFraction) {
     return 'One half is $halfEquivalent. Since $otherFraction is one $unit $direction than $halfEquivalent, $leftFraction $relation $rightFraction.';
   }
 
@@ -4972,26 +4985,19 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String numberSenseHundredthsTargetEquationDynamic(
-    String fraction,
-    String decimal,
-  ) {
+      String fraction, String decimal) {
     return '$fraction = $decimal';
   }
 
   @override
   String numberSenseHundredthsIncorrectFeedbackTarget(
-    String decimal,
-    int count,
-    String target,
-  ) {
+      String decimal, int count, String target) {
     return 'You selected $decimal. Count $count ticks to the right of 0.00 to reach $target.';
   }
 
   @override
   String numberSenseHundredthsZeroGuidedFeedbackTarget(
-    int count,
-    String target,
-  ) {
+      int count, String target) {
     return '0.00 is zero. Count $count ticks to the right to reach $target.';
   }
 }
@@ -6139,10 +6145,7 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
 
   @override
   String practiceTopicUnavailableForStage(
-    String topic,
-    String stage,
-    String stages,
-  ) {
+      String topic, String stage, String stages) {
     return '$topic non è ancora disponibile per $stage — prova $stages.';
   }
 
@@ -7639,9 +7642,7 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
 
   @override
   String labsSpatialCubeWhichFaceOppositeReveal(
-    String correctLabel,
-    String askedLabel,
-  ) {
+      String correctLabel, String askedLabel) {
     return '$correctLabel e opposta a $askedLabel.';
   }
 
@@ -7822,9 +7823,7 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
 
   @override
   String labsAircraftLandingFindTheTimeDiagramLabel(
-    int distanceM,
-    int speedMps,
-  ) {
+      int distanceM, int speedMps) {
     return 'Un aereo a $distanceM metri dalla pista, che vola a $speedMps metri al secondo.';
   }
 
@@ -8138,12 +8137,8 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
   }
 
   @override
-  String labsDataDetectiveBeforeAfter(
-    String meanBefore,
-    String meanAfter,
-    String medianBefore,
-    String medianAfter,
-  ) {
+  String labsDataDetectiveBeforeAfter(String meanBefore, String meanAfter,
+      String medianBefore, String medianAfter) {
     return 'Media: $meanBefore → $meanAfter. Mediana: $medianBefore → $medianAfter.';
   }
 
@@ -8415,18 +8410,15 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
       'La rotta corrisponde al vettore bersaglio; il modulo è insufficiente — aumenta la velocità per allungare lo spostamento.';
 
   @override
-  String
-  get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceExplorer =>
+  String get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceExplorer =>
       'La distanza è giusta, ma l\'aereo punta nella direzione sbagliata. Giralo verso il bersaglio giallo.';
 
   @override
-  String
-  get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceBuilder =>
+  String get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceBuilder =>
       'Hai percorso la distanza giusta, ma nella direzione sbagliata. Regola la rotta verso il rilevamento bersaglio e mantieni la velocità.';
 
   @override
-  String
-  get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceNavigator =>
+  String get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceNavigator =>
       'Il modulo è corretto ma il rilevamento è sbagliato — ruota la rotta verso il rilevamento bersaglio senza cambiare la velocità.';
 
   @override

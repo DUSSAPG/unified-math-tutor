@@ -73,7 +73,7 @@ import 'app_localizations_sv.dart';
 /// property.
 abstract class AppLocalizations {
   AppLocalizations(String locale)
-    : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+      : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -96,11 +96,11 @@ abstract class AppLocalizations {
   /// of delegates is preferred or required.
   static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
       <LocalizationsDelegate<dynamic>>[
-        delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ];
+    delegate,
+    GlobalMaterialLocalizations.delegate,
+    GlobalCupertinoLocalizations.delegate,
+    GlobalWidgetsLocalizations.delegate,
+  ];
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
@@ -123,7 +123,7 @@ abstract class AppLocalizations {
     Locale('nb', 'NO'),
     Locale('pt'),
     Locale('sv'),
-    Locale('sv', 'SE'),
+    Locale('sv', 'SE')
   ];
 
   /// Bottom nav label for Home tab
@@ -2249,10 +2249,7 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{topic} isn\'t available for {stage} yet — try {stages}.'**
   String practiceTopicUnavailableForStage(
-    String topic,
-    String stage,
-    String stages,
-  );
+      String topic, String stage, String stages);
 
   /// Shown in Topic Drill setup when the chosen topic has no real questions in any stage
   ///
@@ -2877,6 +2874,90 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'More'**
   String get navMore;
+
+  /// Entry and page title for optional installed interactive learning companion apps
+  ///
+  /// In en, this message translates to:
+  /// **'Interactive Studios'**
+  String get interactiveStudiosTitle;
+
+  /// Honest summary of Football Studio's available learning activities
+  ///
+  /// In en, this message translates to:
+  /// **'Football Studio includes applied-learning activities in Coordinates, Ratio & Scale, Angles, Distance-Time-Speed, Area, and Algebra.'**
+  String get footballStudioDescription;
+
+  /// No description provided for @footballStudioChecking.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking whether Football Studio is installed…'**
+  String get footballStudioChecking;
+
+  /// No description provided for @footballStudioInstalled.
+  ///
+  /// In en, this message translates to:
+  /// **'Football Studio is installed and ready to open.'**
+  String get footballStudioInstalled;
+
+  /// No description provided for @footballStudioUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Football Studio is not installed on this device.'**
+  String get footballStudioUnavailable;
+
+  /// No description provided for @footballStudioInstallNeeded.
+  ///
+  /// In en, this message translates to:
+  /// **'Install Football Studio separately to open these activities.'**
+  String get footballStudioInstallNeeded;
+
+  /// No description provided for @footballStudioOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Football Studio'**
+  String get footballStudioOpen;
+
+  /// No description provided for @footballStudioOpening.
+  ///
+  /// In en, this message translates to:
+  /// **'Opening Football Studio…'**
+  String get footballStudioOpening;
+
+  /// No description provided for @footballStudioCheckFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not check whether Football Studio is installed.'**
+  String get footballStudioCheckFailed;
+
+  /// No description provided for @footballStudioLaunchFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Football Studio is installed, but Android could not open it.'**
+  String get footballStudioLaunchFailed;
+
+  /// No description provided for @footballStudioTryAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Try opening again'**
+  String get footballStudioTryAgain;
+
+  /// No description provided for @footballStudioCheckAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Check again'**
+  String get footballStudioCheckAgain;
+
+  /// No description provided for @footballStudioAndroidOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Football Studio is available as a separate Android app.'**
+  String get footballStudioAndroidOnly;
+
+  /// Clarifies that companion progress is not synchronized or owned by Unified Math Tutor
+  ///
+  /// In en, this message translates to:
+  /// **'Achievements and progress stay on this device in Football Studio for V1. Unified Math Tutor does not read or share them.'**
+  String get footballStudioProgressOwnership;
 
   /// No description provided for @navHideAction.
   ///
@@ -5229,9 +5310,7 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{correctLabel} is opposite {askedLabel}.'**
   String labsSpatialCubeWhichFaceOppositeReveal(
-    String correctLabel,
-    String askedLabel,
-  );
+      String correctLabel, String askedLabel);
 
   /// No description provided for @labsSpatialCubeRotateToMatchMission.
   ///
@@ -5514,9 +5593,7 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'An aircraft {distanceM} metres from the runway, flying at {speedMps} metres per second.'**
   String labsAircraftLandingFindTheTimeDiagramLabel(
-    int distanceM,
-    int speedMps,
-  );
+      int distanceM, int speedMps);
 
   /// Find the Time speed readout
   ///
@@ -6014,12 +6091,8 @@ abstract class AppLocalizations {
   ///
   /// In en, this message translates to:
   /// **'Mean: {meanBefore} → {meanAfter}. Median: {medianBefore} → {medianAfter}.'**
-  String labsDataDetectiveBeforeAfter(
-    String meanBefore,
-    String meanAfter,
-    String medianBefore,
-    String medianAfter,
-  );
+  String labsDataDetectiveBeforeAfter(String meanBefore, String meanAfter,
+      String medianBefore, String medianAfter);
 
   /// No description provided for @labsDataDetectiveHelpWhatToDo.
   ///
@@ -6434,7 +6507,7 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The distance is right, but the plane is pointing the wrong way. Turn it toward the yellow target.'**
   String
-  get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceExplorer;
+      get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceExplorer;
 
   /// No description provided for @labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceBuilder.
   ///
@@ -6447,7 +6520,7 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The magnitude is correct but the bearing is off — rotate the heading toward the target bearing without changing speed.'**
   String
-  get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceNavigator;
+      get labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceNavigator;
 
   /// No description provided for @labsFlightPathLabNarrationResultWrongHeadingAndDistanceExplorer.
   ///
@@ -7906,10 +7979,7 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{fraction} means {decimal}: {count} of 100 equal parts.'**
   String numberSenseHundredthsSelectionExplanation(
-    String fraction,
-    String decimal,
-    int count,
-  );
+      String fraction, String decimal, int count);
 
   /// No description provided for @numberSenseHundredthsIncorrectFeedback.
   ///
@@ -7934,10 +8004,7 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Not quite. You chose {selected}. Move one tick {direction} to reach {target}.'**
   String numberSenseGuidedWrongAdjacent(
-    String selected,
-    String direction,
-    String target,
-  );
+      String selected, String direction, String target);
 
   /// No description provided for @numberSenseGuidedWrongGeneral.
   ///
@@ -8040,36 +8107,29 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Correct: {leftFraction} {relation} {rightFraction}.'**
   String numberSenseComparisonCorrectResultDynamic(
-    String leftFraction,
-    String relation,
-    String rightFraction,
-  );
+      String leftFraction, String relation, String rightFraction);
 
   /// No description provided for @numberSenseComparisonIncorrectResultDynamic.
   ///
   /// In en, this message translates to:
   /// **'Not quite. {leftFraction} is {relationWords} {rightFraction}.'**
   String numberSenseComparisonIncorrectResultDynamic(
-    String leftFraction,
-    String relationWords,
-    String rightFraction,
-  );
+      String leftFraction, String relationWords, String rightFraction);
 
   /// No description provided for @numberSenseComparisonProofDynamic.
   ///
   /// In en, this message translates to:
   /// **'{leftNumerator} × {rightDenominator} = {leftProduct}; {rightNumerator} × {leftDenominator} = {rightProduct}; since {leftProduct} {relation} {rightProduct}, {leftFraction} {relation} {rightFraction}.'**
   String numberSenseComparisonProofDynamic(
-    int leftNumerator,
-    int rightDenominator,
-    int leftProduct,
-    int rightNumerator,
-    int leftDenominator,
-    int rightProduct,
-    String relation,
-    String leftFraction,
-    String rightFraction,
-  );
+      int leftNumerator,
+      int rightDenominator,
+      int leftProduct,
+      int rightNumerator,
+      int leftDenominator,
+      int rightProduct,
+      String relation,
+      String leftFraction,
+      String rightFraction);
 
   /// No description provided for @numberSenseCompareLessThanWords.
   ///
@@ -8094,11 +8154,7 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{fraction} = {decimal} — {numerator} of {denominator} equal parts'**
   String numberSenseCompareMarkerExplanation(
-    String fraction,
-    String decimal,
-    int numerator,
-    int denominator,
-  );
+      String fraction, String decimal, int numerator, int denominator);
 
   /// No description provided for @numberSenseComparisonCorrectFeedback.
   ///
@@ -8309,49 +8365,44 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{leftFraction} is the same value as {rightFraction}. Both are at the same point on the number line.'**
   String numberSenseComparisonExplanationEquivalent(
-    String leftFraction,
-    String rightFraction,
-  );
+      String leftFraction, String rightFraction);
 
   /// No description provided for @numberSenseComparisonExplanationSameDenominator.
   ///
   /// In en, this message translates to:
   /// **'Both fractions are in {unit}. {largerCount} {unit} is more than {smallerCount} {unit}, so {leftFraction} {relation} {rightFraction}.'**
   String numberSenseComparisonExplanationSameDenominator(
-    String unit,
-    int largerCount,
-    int smallerCount,
-    String leftFraction,
-    String relation,
-    String rightFraction,
-  );
+      String unit,
+      int largerCount,
+      int smallerCount,
+      String leftFraction,
+      String relation,
+      String rightFraction);
 
   /// No description provided for @numberSenseComparisonExplanationSameNumerator.
   ///
   /// In en, this message translates to:
   /// **'Both fractions show {numerator} parts. {largerUnit} are larger pieces than {smallerUnit}, so {largerFraction} {relation} {smallerFraction}.'**
   String numberSenseComparisonExplanationSameNumerator(
-    int numerator,
-    String largerUnit,
-    String smallerUnit,
-    String largerFraction,
-    String relation,
-    String smallerFraction,
-  );
+      int numerator,
+      String largerUnit,
+      String smallerUnit,
+      String largerFraction,
+      String relation,
+      String smallerFraction);
 
   /// No description provided for @numberSenseComparisonExplanationBenchmarkHalf.
   ///
   /// In en, this message translates to:
   /// **'One half is {halfEquivalent}. Since {otherFraction} is one {unit} {direction} than {halfEquivalent}, {leftFraction} {relation} {rightFraction}.'**
   String numberSenseComparisonExplanationBenchmarkHalf(
-    String halfEquivalent,
-    String otherFraction,
-    String unit,
-    String direction,
-    String leftFraction,
-    String relation,
-    String rightFraction,
-  );
+      String halfEquivalent,
+      String otherFraction,
+      String unit,
+      String direction,
+      String leftFraction,
+      String relation,
+      String rightFraction);
 
   /// No description provided for @numberSenseComparisonHalf.
   ///
@@ -8496,28 +8547,21 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{fraction} = {decimal}'**
   String numberSenseHundredthsTargetEquationDynamic(
-    String fraction,
-    String decimal,
-  );
+      String fraction, String decimal);
 
   /// No description provided for @numberSenseHundredthsIncorrectFeedbackTarget.
   ///
   /// In en, this message translates to:
   /// **'You selected {decimal}. Count {count} ticks to the right of 0.00 to reach {target}.'**
   String numberSenseHundredthsIncorrectFeedbackTarget(
-    String decimal,
-    int count,
-    String target,
-  );
+      String decimal, int count, String target);
 
   /// No description provided for @numberSenseHundredthsZeroGuidedFeedbackTarget.
   ///
   /// In en, this message translates to:
   /// **'0.00 is zero. Count {count} ticks to the right to reach {target}.'**
   String numberSenseHundredthsZeroGuidedFeedbackTarget(
-    int count,
-    String target,
-  );
+      int count, String target);
 }
 
 class _AppLocalizationsDelegate
@@ -8531,19 +8575,19 @@ class _AppLocalizationsDelegate
 
   @override
   bool isSupported(Locale locale) => <String>[
-    'ar',
-    'da',
-    'de',
-    'en',
-    'es',
-    'fr',
-    'id',
-    'it',
-    'ko',
-    'nb',
-    'pt',
-    'sv',
-  ].contains(locale.languageCode);
+        'ar',
+        'da',
+        'de',
+        'en',
+        'es',
+        'fr',
+        'id',
+        'it',
+        'ko',
+        'nb',
+        'pt',
+        'sv'
+      ].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
@@ -8647,9 +8691,8 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
   }
 
   throw FlutterError(
-    'AppLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
-    'an issue with the localizations generation tool. Please file an issue '
-    'on GitHub with a reproducible sample app and the gen-l10n configuration '
-    'that was used.',
-  );
+      'AppLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
+      'an issue with the localizations generation tool. Please file an issue '
+      'on GitHub with a reproducible sample app and the gen-l10n configuration '
+      'that was used.');
 }
