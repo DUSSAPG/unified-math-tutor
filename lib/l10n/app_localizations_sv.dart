@@ -4994,6 +4994,72 @@ class AppLocalizationsSv extends AppLocalizations {
       int count, String target) {
     return '0.00 is zero. Count $count ticks to the right to reach $target.';
   }
+
+  @override
+  String get earlyMathsEntryIntro =>
+      'Pick a friendly place to start. Age is only a suggestion, not a level. There is no test, and you can switch at any time.';
+
+  @override
+  String get earlyMathsLaneChooserLabel => 'Choose a starting point';
+
+  @override
+  String get earlyMathsLanePlayTitle => 'Early Maths Play';
+
+  @override
+  String get earlyMathsLanePlayAges => 'Typical ages 4–5 · Reception';
+
+  @override
+  String get earlyMathsLaneKs1Title => 'KS1 Maths Foundations';
+
+  @override
+  String get earlyMathsLaneKs1Ages => 'Typical ages 5–7 · Years 1–2';
+
+  @override
+  String get earlyMathsLaneNotSureTitle => 'I\'m not sure';
+
+  @override
+  String get earlyMathsLaneNotSureSubtitle =>
+      'No test needed. We\'ll suggest one gentle first step.';
+
+  @override
+  String get earlyMathsLaneSwitchNote =>
+      'Switching never removes anything your child has already done.';
+
+  @override
+  String get earlyMathsActivitiesHeading => 'Activities to try';
+
+  @override
+  String get earlyMathsNotSureHeading => 'A gentle first step';
+
+  @override
+  String get earlyMathsNotSureBody =>
+      'There is no right or wrong choice. Try this one small activity and see how it feels. You can choose a different starting point above whenever you like.';
+
+  @override
+  String get earlyMathsPandaScope =>
+      'Count out 1 to 3 apples from 5, then say how many are left.';
+
+  @override
+  String get earlyMathsAbacusTitle => 'Abacus';
+
+  @override
+  String get earlyMathsAbacusScope =>
+      'An interactive place-value tool: tap or drag beads to explore hundreds, tens and ones.';
+
+  @override
+  String get earlyMathsParentHeading => 'For grown-ups';
+
+  @override
+  String get earlyMathsParentCardTitle => 'Parent-led activities';
+
+  @override
+  String get earlyMathsParentCardSubtitle =>
+      'Short activities to do together. Opens with your parent PIN.';
+
+  @override
+  String earlyMathsParentTitlesLine(String titles) {
+    return 'Includes: $titles';
+  }
 }
 
 /// The translations for Swedish, as used in Sweden (`sv_SE`).
