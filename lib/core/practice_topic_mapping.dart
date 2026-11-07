@@ -34,13 +34,15 @@
 /// * A stage never inherits another stage's mapping, even where a raw
 ///   label string happens to look the same.
 /// * A raw value with no entry is an intentional "unavailable" outcome for
-///   Topic Drill, not a fallback to a similar-looking topic. Two raw
-///   values are deliberately left unmapped despite being real, sizeable
+///   topic-scoped practice, not a fallback to a similar-looking topic. Two
+///   raw values are deliberately left unmapped despite being real, sizeable
 ///   content — [intentionallyUnmappedRawValues] documents exactly why.
 /// * KS4/KS5 additionally use a finer `skill`-level override, but only
 ///   where the skill name is itself unambiguous, enumerated evidence (not
 ///   a keyword/fuzzy rule) — see [_ks4SkillOverrides] / [_ks5SkillOverrides].
 library;
+
+import 'ks4_inexact_percentage_question_ids.dart';
 
 /// The canonical topic ids a learner can select from — identical to
 /// `assets/config/topic_catalog.json`'s existing 11 entries. D2 does not
@@ -69,6 +71,8 @@ const Set<String> canonicalTopicIds = {
 const Map<String, Map<String, String>> _stageStrandOrSkillMap = {
   'KS2': {
     'fractions_of_amount': 'fractions',
+    'decimals': 'decimals',
+    'percentages': 'percentages',
     // 'addition_subtraction' / 'multiplication_division' intentionally
     // absent — see [intentionallyUnmappedRawValues].
   },
@@ -78,8 +82,17 @@ const Map<String, Map<String, String>> _stageStrandOrSkillMap = {
     'algebra_simplify_substitute': 'algebra',
     'ratio_proportion': 'ratio_proportion',
     'sequences_linear': 'algebra',
-    // 'fractions_decimals_percent' intentionally absent — fused bucket,
-    // see [intentionallyUnmappedRawValues].
+    'decimals': 'decimals',
+    'percentages': 'percentages',
+    'fractions_equivalence': 'fractions',
+    'fractions_compare_order': 'fractions',
+    'fractions_add_subtract': 'fractions',
+    'fractions_multiply_divide': 'fractions',
+    'fractions_of_amount': 'fractions',
+    'fractions_mixed_numbers': 'fractions',
+    // 'fractions_decimals_percent' remains unmapped except for individually
+    // reviewed question IDs below (fraction-to-decimal and
+    // fraction-to-percentage conversions).
   },
   'KS4': {
     'Number': 'number_place_value',
@@ -110,6 +123,10 @@ const Map<String, String> _ks4SkillOverrides = {
   'Fractions multiply/divide': 'fractions',
   'Percentage change': 'percentages',
   'Percent of an amount': 'percentages',
+  'Reverse percentages': 'percentages',
+  'Express as a percentage': 'percentages',
+  'Compound percentage change': 'percentages',
+  'Decimals': 'decimals',
 };
 
 /// `Pure_Algebra_Trig` is a fused KS5 strand name, but every one of its 494
@@ -130,8 +147,8 @@ const Map<String, String> _ks5SkillOverrides = {
 /// single existing UI topic without either forcing an unrelated label onto
 /// it or inferring a split from question wording, which this deterministic,
 /// evidence-first mapping does not do. This content remains reachable via
-/// Quick Start (which never applies a topic filter) — it is not lost, only
-/// not selectable by topic today.
+/// global Quick Start (without a selected topic) — it is not lost, only not
+/// selectable by topic today.
 const Map<String, String> intentionallyUnmappedRawValues = {
   'KS2:addition_subtraction':
       'Real Number-strand content, but no raw KS2 skill value maps to a '
@@ -141,13 +158,33 @@ const Map<String, String> intentionallyUnmappedRawValues = {
   'KS2:multiplication_division': 'Same reasoning as addition_subtraction.',
   'KS3:fractions_decimals_percent':
       'A fused bucket spanning fractions/decimals/percentages with no '
-          'finer structured field to disambiguate (unlike KS5\'s '
-          'Pure_Algebra_Trig, this stage\'s skill field IS the fused bucket '
-          'name itself) — splitting it would require inferring from '
-          'question wording, which this mapping deliberately does not do.',
+          'finer structured field to disambiguate. Only the exact, '
+          'individually audited fraction-to-decimal and fraction-to-'
+          'percentage IDs listed in _questionTopicOverrides are routed to '
+          'decimals or percentages; all other rows remain unavailable '
+          'rather than being split by wording.',
   'KS5:Mechanics': 'Real, substantial content (863 questions) with no matching '
       'canonical topic in the current 11-topic UI — adding a Mechanics '
       'topic card is a Topics-screen change, out of D2\'s scope.',
+};
+
+/// Individually audited conversion items from KS3's fused
+/// fractions/decimals/percentages bank: seven fraction-to-decimal items and
+/// five fraction-to-percentage items (one per distinct conversion). No other
+/// row in that bucket is tagged by inference from its wording.
+const Map<String, String> _questionTopicOverrides = {
+  'ks3_fractions_decimals_percent_abc79a992d': 'decimals',
+  'ks3_fractions_decimals_percent_a736c3cf7b': 'decimals',
+  'ks3_fractions_decimals_percent_abb1038062': 'decimals',
+  'ks3_fractions_decimals_percent_1071492c1d': 'decimals',
+  'ks3_fractions_decimals_percent_7340b421e0': 'decimals',
+  'ks3_fractions_decimals_percent_019f3dd25e': 'decimals',
+  'ks3_fractions_decimals_percent_ddb860a3c3': 'decimals',
+  'ks3_fractions_decimals_percent_0eab859de8': 'percentages', // 1/2 -> 50%
+  'ks3_fractions_decimals_percent_9bdaa6bb76': 'percentages', // 1/4 -> 25%
+  'ks3_fractions_decimals_percent_1b72bb0bba': 'percentages', // 1/5 -> 20%
+  'ks3_fractions_decimals_percent_245e1a5fe6': 'percentages', // 2/5 -> 40%
+  'ks3_fractions_decimals_percent_05c3a3e2de': 'percentages', // 3/4 -> 75%
 };
 
 /// Resolves one raw pack value to a canonical topic id for Topic Drill
@@ -157,11 +194,19 @@ String? canonicalTopicForRawValue({
   required String stage,
   required String? rawStrandOrSkillGroup,
   String? rawFineSkill,
+  String? questionId,
 }) {
+  final questionTopic =
+      stage == 'KS3' ? _questionTopicOverrides[questionId] : null;
+  if (questionTopic != null) return questionTopic;
+  if (stage == 'KS4' && ks4InexactPercentageQuestionIds.contains(questionId)) {
+    return null;
+  }
   if (stage == 'KS4' && rawFineSkill != null) {
     final override = _ks4SkillOverrides[rawFineSkill];
     if (override != null) return override;
   }
+
   if (stage == 'KS5' && rawFineSkill != null) {
     final override = _ks5SkillOverrides[rawFineSkill];
     if (override != null) return override;

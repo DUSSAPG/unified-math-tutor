@@ -5,11 +5,11 @@
 // raw skill/strand values at query time. Run once with:
 //   dart run tool/retag_practice_packs.dart
 //
-// The topicId assignment below is the exact same evidence previously
-// encoded in lib/core/practice_topic_mapping.dart (KS2/KS3 raw-value ->
-// topic map, KS4/KS5 strand map + skill overrides) — copied here, not
-// re-derived, so the migration and that file's own drift-guard test
-// (practice_topic_mapping_pack_drift_test.dart) can never silently
+// The topicId assignment below mirrors the evidence encoded in
+// lib/core/practice_topic_mapping.dart (KS2/KS3 raw-value -> topic map,
+// KS4/KS5 strand map + skill overrides, and exact-ID exceptions for the
+// seven audited KS3 decimal conversions) — copied here, not re-derived, so
+// the migration and that file's drift-guard test can never silently
 // disagree without a test failing. A raw skill/strand value with no
 // entry below gets topicId: null deliberately (real content, honestly
 // left un-categorised) — never a guess, never a fallback assignment.
@@ -22,12 +22,16 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:unified_math_tutor/core/ks4_inexact_percentage_question_ids.dart';
+
 const curriculumVersion = 1;
 
 /// KS2/KS3 group by the row's own `skill` field directly.
 const Map<String, Map<String, String?>> _skillTopicByStage = {
   'ks2': {
     'fractions_of_amount': 'fractions',
+    'decimals': 'decimals',
+    'percentages': 'percentages',
     'addition_subtraction': null,
     'multiplication_division': null,
   },
@@ -37,6 +41,14 @@ const Map<String, Map<String, String?>> _skillTopicByStage = {
     'algebra_simplify_substitute': 'algebra',
     'ratio_proportion': 'ratio_proportion',
     'sequences_linear': 'algebra',
+    'decimals': 'decimals',
+    'percentages': 'percentages',
+    'fractions_equivalence': 'fractions',
+    'fractions_compare_order': 'fractions',
+    'fractions_add_subtract': 'fractions',
+    'fractions_multiply_divide': 'fractions',
+    'fractions_of_amount': 'fractions',
+    'fractions_mixed_numbers': 'fractions',
     'fractions_decimals_percent': null,
   },
 };
@@ -68,6 +80,10 @@ const Map<String, Map<String, String>> _skillOverrideByStage = {
     'Fractions multiply/divide': 'fractions',
     'Percentage change': 'percentages',
     'Percent of an amount': 'percentages',
+    'Reverse percentages': 'percentages',
+    'Express as a percentage': 'percentages',
+    'Compound percentage change': 'percentages',
+    'Decimals': 'decimals',
   },
   'ks5': {
     'Trig identities & rearranging': 'trigonometry',
@@ -76,12 +92,58 @@ const Map<String, Map<String, String>> _skillOverrideByStage = {
   },
 };
 
+/// These are the only rows in the fused KS3 bank that have been reviewed as
+/// Decimal-focused: each asks for a fraction-to-decimal conversion. Keep the
+/// exception list explicit so the fused skill is never mapped wholesale.
+const Map<String, String> _questionTopicOverrideById = {
+  'ks3_fractions_decimals_percent_abc79a992d': 'decimals',
+  'ks3_fractions_decimals_percent_a736c3cf7b': 'decimals',
+  'ks3_fractions_decimals_percent_abb1038062': 'decimals',
+  'ks3_fractions_decimals_percent_1071492c1d': 'decimals',
+  'ks3_fractions_decimals_percent_7340b421e0': 'decimals',
+  'ks3_fractions_decimals_percent_019f3dd25e': 'decimals',
+  'ks3_fractions_decimals_percent_ddb860a3c3': 'decimals',
+  'ks3_fractions_decimals_percent_0eab859de8': 'percentages',
+  'ks3_fractions_decimals_percent_9bdaa6bb76': 'percentages',
+  'ks3_fractions_decimals_percent_1b72bb0bba': 'percentages',
+  'ks3_fractions_decimals_percent_245e1a5fe6': 'percentages',
+  'ks3_fractions_decimals_percent_05c3a3e2de': 'percentages',
+};
+
+const Map<String, String> _questionSubtopicOverrideById = {
+  'ks3_fractions_decimals_percent_abc79a992d': 'fraction_decimal_equivalence',
+  'ks3_fractions_decimals_percent_a736c3cf7b': 'fraction_decimal_equivalence',
+  'ks3_fractions_decimals_percent_abb1038062': 'fraction_decimal_equivalence',
+  'ks3_fractions_decimals_percent_1071492c1d': 'fraction_decimal_equivalence',
+  'ks3_fractions_decimals_percent_7340b421e0': 'fraction_decimal_equivalence',
+  'ks3_fractions_decimals_percent_019f3dd25e': 'fraction_decimal_equivalence',
+  'ks3_fractions_decimals_percent_ddb860a3c3': 'fraction_decimal_equivalence',
+  'ks3_fractions_decimals_percent_0eab859de8':
+      'fraction_percentage_equivalence',
+  'ks3_fractions_decimals_percent_9bdaa6bb76':
+      'fraction_percentage_equivalence',
+  'ks3_fractions_decimals_percent_1b72bb0bba':
+      'fraction_percentage_equivalence',
+  'ks3_fractions_decimals_percent_245e1a5fe6':
+      'fraction_percentage_equivalence',
+  'ks3_fractions_decimals_percent_05c3a3e2de':
+      'fraction_percentage_equivalence',
+};
+
 String _slugify(String raw) => raw
     .toLowerCase()
     .replaceAll(RegExp(r"[^a-z0-9]+"), '_')
     .replaceAll(RegExp(r'^_+|_+$'), '');
 
 String? _topicIdFor(String packId, Map<String, dynamic> row) {
+  final id = row['id'] as String?;
+  final questionOverride =
+      packId != 'ks3' || id == null ? null : _questionTopicOverrideById[id];
+  if (questionOverride != null) return questionOverride;
+  if (packId == 'ks4' && ks4InexactPercentageQuestionIds.contains(id)) {
+    return null;
+  }
+
   final skillGroup = _skillTopicByStage[packId];
   if (skillGroup != null) {
     final skill = row['skill'] as String?;
@@ -107,6 +169,11 @@ String? _topicIdFor(String packId, Map<String, dynamic> row) {
 }
 
 String _subtopicIdFor(Map<String, dynamic> row) {
+  final id = row['id'] as String?;
+  final questionOverride =
+      id == null ? null : _questionSubtopicOverrideById[id];
+  if (questionOverride != null) return questionOverride;
+
   final skill = row['skill'] as String?;
   if (skill == null || skill.isEmpty) {
     throw StateError('Row ${row['id']} has no skill value to derive a '

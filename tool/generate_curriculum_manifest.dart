@@ -10,6 +10,80 @@ import 'dart:io';
 const manifestVersion = 1;
 const curriculumMapping = 'england_national_curriculum';
 
+const decimalProvenanceByStage = {
+  'KS2': 'Original questions informed by learning objectives in Math - No '
+      'Problem! Fractions and Decimals, Grade 4 Ages 9-10, sections '
+      '"Tenths," "Hundredths," "Tenths and Hundredths as Decimals," '
+      '"Decimals," and "Rounding Decimals" (PDF pp. 26-36; local metadata '
+      'does not identify an individual author). No source question wording '
+      'was copied. Decimal content is en-GB only; opt-in de-CH, fr-CH, and '
+      'it-CH packs remain without Decimal-tagged rows and unavailable under '
+      'exact-topic selection.',
+  'KS3': 'Nine original questions informed by Scott Meltzer, Middle School '
+      'Math for Parents, Chapter 3, "Understanding Decimals by Unlocking the '
+      'Secrets of the Base-Ten System" (place value, fraction conversion, '
+      'and decimal operations). Seven existing licensed-bank fused-bucket '
+      'fraction-to-decimal conversion questions were individually checked '
+      'and retagged; other fused-bucket questions remain untagged. No source '
+      'question wording was copied. Decimal content is en-GB only; opt-in '
+      'de-CH, fr-CH, and it-CH packs remain without Decimal-tagged rows and '
+      'unavailable under exact-topic selection.',
+  'KS4': 'Original questions informed by CGP, GCSE Maths Edexcel Revision '
+      'Guide Higher, "Rounding Numbers" (p. 14) and "Bounds" (p. 16), with '
+      'decimal precision and rounding objectives. No source question wording '
+      'was copied. Decimal content is en-GB only; opt-in de-CH, fr-CH, and '
+      'it-CH packs remain without Decimal-tagged rows and unavailable under '
+      'exact-topic selection.',
+};
+
+const fractionProvenanceByStage = {
+  'KS3': 'Eighteen original questions (equivalence and simplifying, comparing '
+      'and ordering, adding and subtracting, multiplying and dividing, '
+      'fractions of an amount, and mixed numbers) informed by Scott Meltzer, '
+      'Middle School Math for Parents, Chapter 2, "Fractionphobia" (EPUB, no '
+      'stable page numbers; unit fractions, non-unit fractions, mixed '
+      'numbers and improper fractions). Consulted for concept verification '
+      'only; no source wording or numbers were copied. No legacy KS3 row '
+      'was retagged as Fractions: the fused-bucket conversion rows belong '
+      'to Decimals and Percentages. Fractions content for KS3 is en-GB '
+      'only; opt-in de-CH, fr-CH, and it-CH packs remain without '
+      'KS3 Fractions-tagged rows.',
+};
+
+const percentageProvenanceByStage = {
+  'KS2': 'Fifteen original questions informed by learning objectives in Math '
+      '- No Problem! Fractions, Decimals and Percentage, Ages 9-10 (KS2), '
+      'Lesson 16 "Percentages" (printed pp. 36-39), and Math - No Problem! '
+      'Fractions, Decimals, Percentage and Ratio, Ages 10-11 (KS2), '
+      '"Percentages of numbers" (p. 28), "Percentages of quantities" '
+      '(p. 30), "Percentages as increases or decreases" (p. 32) and '
+      '"Percentages as a comparison" (p. 36). Consulted for concept '
+      'verification only; no source wording or numbers were copied. '
+      'Percentage content is en-GB only; opt-in de-CH, fr-CH, and it-CH '
+      'packs remain without Percentage-tagged rows.',
+  'KS3': 'Fifteen original questions informed by Scott Meltzer, Middle '
+      'School Math for Parents, Chapter 4, "Percentages: A Special and Very '
+      'Common Use of Proportions" (EPUB, no stable page numbers). Five '
+      'existing licensed-bank fused-bucket fraction-to-percentage '
+      'conversion questions (1/2, 1/4, 1/5, 2/5, 3/4) were individually '
+      'checked and retagged unchanged; other fused-bucket questions remain '
+      'untagged. Consulted for concept verification only; no source wording '
+      'was copied. Percentage content is en-GB only; opt-in de-CH, fr-CH, '
+      'and it-CH packs remain without Percentage-tagged rows.',
+  'KS4': 'Fifteen original gap-filling questions (reverse percentages, '
+      'expressing as a percentage, percentage change and compound '
+      'percentage change) informed by CGP, GCSE Maths Edexcel Revision '
+      'Guide Higher, Section Four "Percentages" (pp. 64-66) and "Compound '
+      'Growth and Decay" (p. 67). Of the 649 pre-existing generated Percentage '
+      'rows, 111 were recomputed exactly and retained unchanged; 538 whose '
+      'keyed answer is a rounded-down whole number rather than the exact '
+      'result were left in the pack unmodified but untagged, so exact-topic '
+      'selection never serves them. Consulted for concept '
+      'verification only; no source wording was copied. Percentage content '
+      'is en-GB only; opt-in de-CH, fr-CH, and it-CH packs remain without '
+      'Percentage-tagged rows.',
+};
+
 /// The continuous concept graph this sprint's brief requires — EY through
 /// Advanced/Enrichment — even though only KS2-KS5 have any shipped pack
 /// today. `hasContent: false` stages are declared, not fabricated: no
@@ -209,6 +283,18 @@ void main() async {
       final rows =
           packs[packId]!.where((row) => row['topicId'] == topicId).toList();
       final available = rows.isNotEmpty;
+      final decimalProvenance = topicId == 'decimals' && available
+          ? decimalProvenanceByStage[stageId]
+          : topicId == 'percentages' && available
+              ? percentageProvenanceByStage[stageId]
+              : topicId == 'fractions' && available
+                  ? fractionProvenanceByStage[stageId]
+                  : null;
+      final decimalProvenanceStatus = topicId == 'fractions'
+          ? 'original_content_with_research_attribution'
+          : (stageId == 'KS3' || (stageId == 'KS4' && topicId == 'percentages'))
+              ? 'mixed_original_and_existing_licensed_bank'
+              : 'original_content_with_research_attribution';
       final subtopicIds =
           rows.map((r) => r['subtopicId'] as String).toSet().toList()..sort();
 
@@ -234,16 +320,19 @@ void main() async {
         'selectionPolicy':
             available ? 'exact_topic_and_stage_tag_match' : 'no_content',
         'provenance': {
-          'status': available
-              ? 'existing_licensed_bank'
-              : 'real_content_intentionally_uncategorised',
-          'note': available
-              ? '${rows.length} tagged rows in the $packId pack carry '
-                  'topicId "$topicId".'
-              : 'No row in the $packId pack maps to "$topicId" under the '
-                  'evidence-backed raw skill/strand mapping — see '
-                  'tool/retag_practice_packs.dart. Real, differently-'
-                  'categorised content may still exist in this pack.',
+          'status': decimalProvenance != null
+              ? decimalProvenanceStatus
+              : available
+                  ? 'existing_licensed_bank'
+                  : 'real_content_intentionally_uncategorised',
+          'note': decimalProvenance ??
+              (available
+                  ? '${rows.length} tagged rows in the $packId pack carry '
+                      'topicId "$topicId".'
+                  : 'No row in the $packId pack maps to "$topicId" under the '
+                      'evidence-backed raw skill/strand mapping — see '
+                      'tool/retag_practice_packs.dart. Real, differently-'
+                      'categorised content may still exist in this pack.'),
         },
         'unavailableMessage': available
             ? null

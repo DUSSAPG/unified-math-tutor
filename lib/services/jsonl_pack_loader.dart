@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
+import '../core/ks4_inexact_percentage_question_ids.dart';
 import '../core/question_id_rule.dart';
 import '../models/pack_quarantine_diagnostic.dart';
 import 'pack_registry_service.dart';
@@ -96,6 +97,15 @@ class JsonlPackLoader {
           path: path,
           lineNumber: lineNumber,
           reason: QuarantineReason.missingOrInvalidId,
+          rawId: idString,
+        ));
+        continue;
+      }
+      if (ks4InexactPercentageQuestionIds.contains(idString)) {
+        diagnostics.add(PackQuarantineDiagnostic(
+          path: path,
+          lineNumber: lineNumber,
+          reason: QuarantineReason.knownInexactAnswer,
           rawId: idString,
         ));
         continue;

@@ -8,9 +8,9 @@ import 'package:unified_math_tutor/core/practice_topic_mapping.dart';
 /// baked-in `topicId` tags can never silently drift from
 /// practice_topic_mapping.dart's own evidence-backed mapping. For every row
 /// in every stage pack, the tagged `topicId` must equal exactly what
-/// [canonicalTopicForRawValue] would produce from that row's own raw
-/// `skill`/`strand` value — a plain, exhaustive, per-row equality check,
-/// not a spot sample.
+/// [canonicalTopicForRawValue] produces from that row's raw `skill`/`strand`
+/// value and, only for individually reviewed fused KS3 items, its exact ID —
+/// a plain, exhaustive, per-row equality check, not a spot sample.
 void main() {
   const packs = {
     'KS2': 'assets/packs/en-GB/KS2_bank_ok_10000.jsonl',
@@ -34,6 +34,7 @@ void main() {
           stage: stage,
           rawStrandOrSkillGroup: row[groupingField] as String?,
           rawFineSkill: row['skill'] as String?,
+          questionId: row['id'] as String?,
         );
         expect(row['topicId'], expected,
             reason: 'Row ${row['id']} ($stage): tagged topicId '

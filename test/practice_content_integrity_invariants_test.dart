@@ -69,13 +69,11 @@ void main() {
           'KS2', 'fractions');
       expectAllTagged(outcome, 'fractions');
     });
-    test(
-        'KS3 Fractions is honestly unavailable (fused '
-        'fractions_decimals_percent bucket, never guessed onto "fractions")',
-        () async {
+    test('KS3 Fractions is real and exact-tagged (18 original rows)', () async {
       final outcome = await PracticeAvailabilityResolver.resolveTopicDrill(
           'KS3', 'fractions');
-      expect(outcome, isA<PracticeLoadTopicUnavailable>());
+      expectAllTagged(outcome, 'fractions');
+      expect((outcome as PracticeLoadReady).records, hasLength(18));
     });
   });
 

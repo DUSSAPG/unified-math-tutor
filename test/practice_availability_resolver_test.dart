@@ -18,19 +18,19 @@ void main() {
         'KS2',
       );
       expect(outcome, isA<PracticeLoadReady>());
-      expect((outcome as PracticeLoadReady).records, hasLength(10000));
+      expect((outcome as PracticeLoadReady).records, hasLength(10030));
     });
 
     test(
-        'KS4 Quick Start excludes the 3 known quarantined malformed rows '
-        '— never returns quarantined/invalid content', () async {
+        'KS4 Quick Start excludes the 3 malformed rows and the 538 audited '
+        'inexact rows — never returns quarantined/invalid content', () async {
       final outcome = await PracticeAvailabilityResolver.resolveQuickStart(
         'KS4',
       );
       expect(outcome, isA<PracticeLoadReady>());
-      // 18,432 physical rows minus the 3 insufficient-options rows the D1
-      // loader quarantines.
-      expect((outcome as PracticeLoadReady).records, hasLength(18429));
+      // 18,462 physical rows minus 3 insufficient-options rows and 538
+      // known-inexact Percentage rows.
+      expect((outcome as PracticeLoadReady).records, hasLength(17921));
     });
 
     test(
@@ -83,7 +83,7 @@ void main() {
         'percentages',
       );
       expect(outcome, isA<PracticeLoadReady>());
-      expect((outcome as PracticeLoadReady).records, hasLength(649));
+      expect((outcome as PracticeLoadReady).records, hasLength(126));
     });
 
     test(
@@ -112,25 +112,26 @@ void main() {
 
   group('resolveTopicDrill — unavailable, never a silent substitution', () {
     test(
-        'a canonical topic id with no mapped content at this stage (KS2 '
-        '"decimals" — real topic, zero KS2 content) is Unavailable, not a '
+        'a canonical topic id with no mapped content at this stage (KS5 '
+        '"decimals" — real topic, no KS5 content) is Unavailable, not a '
         'fallback to a different topic\'s questions', () async {
       final outcome = await PracticeAvailabilityResolver.resolveTopicDrill(
-        'KS2',
+        'KS5',
         'decimals',
       );
       expect(outcome, isA<PracticeLoadTopicUnavailable>());
     });
 
     test(
-        'KS3 "fractions" is Unavailable — its fraction content is inside '
-        'the intentionally-unmapped fused bucket, not silently exposed '
-        'under the fractions topic anyway', () async {
+        'KS3 "fractions" resolves to exactly its 18 exact-tagged rows — the '
+        'fused fractions_decimals_percent bucket is never guessed onto it',
+        () async {
       final outcome = await PracticeAvailabilityResolver.resolveTopicDrill(
         'KS3',
         'fractions',
       );
-      expect(outcome, isA<PracticeLoadTopicUnavailable>());
+      expect(outcome, isA<PracticeLoadReady>());
+      expect((outcome as PracticeLoadReady).records, hasLength(18));
     });
 
     test(

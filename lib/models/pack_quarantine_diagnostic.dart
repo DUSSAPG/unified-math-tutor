@@ -17,6 +17,11 @@ enum QuarantineReason {
   /// `answer_index`/`correct_index` is missing, non-numeric, or outside the
   /// bounds of `options`.
   invalidAnswerIndex,
+
+  /// The row is on the audited list of questions whose keyed answer is
+  /// mathematically inexact (see `ks4InexactPercentageQuestionIds`). It stays
+  /// in the pack file for audit but is never served to a learner.
+  knownInexactAnswer,
 }
 
 /// One quarantined row, kept for audit/diagnostics — never shown to a

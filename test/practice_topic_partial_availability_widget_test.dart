@@ -8,7 +8,7 @@ import 'package:unified_math_tutor/services/curriculum_service.dart';
 
 /// D2.2 Topic Drill truthfulness corrective pass — the everyday-reachable
 /// case: the Topics screen is not stage-scoped, so a learner on KS3 tapping
-/// "Fractions" (real content at KS2/KS4, none at KS3 — see
+/// "Number & Place Value" (real content at KS3/KS4, none at KS2 — see
 /// practice_topic_mapping.dart) used to hit "not available yet" only after
 /// pressing Start. This proves the fix disables Start and dims only the
 /// genuinely-unavailable stage up front, while leaving the real ones
@@ -48,19 +48,18 @@ void main() {
 
   setUp(() async {
     SharedPreferences.setMockInitialValues({});
-    // The learner's current stage is KS3 — Fractions has zero real KS3
-    // questions (fused into the KS3 "fractions_decimals_percent" bucket,
-    // intentionally left unmapped — see practice_topic_mapping.dart).
-    await CurriculumService.instance.select('ks3');
+    // The learner's current stage is KS2 — Number & Place Value has no
+    // real KS2 questions (no pack rows are tagged for it at that stage).
+    await CurriculumService.instance.select('ks2');
   });
 
   testWidgets(
-      'Fractions arrives defaulted to KS3 (unavailable): Start is '
-      'disabled, only the KS3 chip is dimmed, and the notice names the '
-      'real alternatives — KS2 and KS4', (tester) async {
+      'Number & Place Value arrives defaulted to KS2 (unavailable): Start '
+      'is disabled, only the KS2 chip is dimmed, and the notice names the '
+      'real alternatives — KS3 and KS4', (tester) async {
     await tester.pumpWidget(_wrap(const PracticeScreen(
-      selectedTopicId: 'fractions',
-      selectedTopic: 'Fractions',
+      selectedTopicId: 'number_place_value',
+      selectedTopic: 'Number & Place Value',
     )));
     await _pumpUntil(
       tester,
@@ -72,7 +71,8 @@ void main() {
 
     expect(
       find.text(
-        l10n.practiceTopicUnavailableForStage('Fractions', 'KS3', 'KS2, KS4'),
+        l10n.practiceTopicUnavailableForStage(
+            'Number & Place Value', 'KS2', 'KS3, KS4'),
       ),
       findsOneWidget,
       reason: 'must name the real, currently-unavailable stage and the '
@@ -90,22 +90,22 @@ void main() {
             matching: find.byType(Opacity),
           ),
         );
-    expect(opacityFor('KS3').opacity, lessThan(1.0),
-        reason: 'KS3 has no real Fractions content — must read as disabled');
-    expect(opacityFor('KS2').opacity, 1.0,
-        reason: 'KS2 genuinely has Fractions content — must stay enabled');
+    expect(opacityFor('KS2').opacity, lessThan(1.0),
+        reason: 'KS2 has no real content here — must read as disabled');
+    expect(opacityFor('KS3').opacity, 1.0,
+        reason: 'KS3 genuinely has content — must stay enabled');
     expect(opacityFor('KS4').opacity, 1.0,
-        reason: 'KS4 genuinely has Fractions content — must stay enabled');
+        reason: 'KS4 genuinely has content — must stay enabled');
 
     // The learner's own explicit choice — never an automatic substitution
     // the app makes for them.
-    await tester.tap(find.text('KS2'));
+    await tester.tap(find.text('KS3'));
     await tester.pumpAndSettle();
 
     expect(
       find.byKey(const Key('practiceTopicUnavailableNotice')),
       findsNothing,
-      reason: 'KS2 genuinely has Fractions content — the notice must clear',
+      reason: 'KS3 genuinely has content — the notice must clear',
     );
     final startButtonAfter = tester.widget<FilledButton>(
       find.widgetWithText(FilledButton, l10n.practiceStartButton),
