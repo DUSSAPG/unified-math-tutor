@@ -48,7 +48,13 @@ void main() {
     expect(find.text('Preview'), findsNothing,
         reason: 'The abacus is genuinely interactive, so it carries no '
             'Preview label.');
-    expect(find.textContaining('Slide beads across the bar'), findsOneWidget);
+    expect(
+      find.text(
+        'An interactive place-value tool: tap or drag beads to explore '
+        'hundreds, tens and ones.',
+      ),
+      findsOneWidget,
+    );
     final ks1Titles = tester
         .widget<Text>(find.byKey(const Key('earlyMathsParentLedTitles')))
         .data!;
