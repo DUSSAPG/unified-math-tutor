@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../core/config/build_flags.dart';
 import '../models/family_activity.dart';
 import '../screens/home/home_shell.dart';
+import '../screens/interactive_studios/interactive_studios_screen.dart';
 import '../screens/journey/journey_screen.dart';
 import '../screens/splash/app_splash_screen.dart';
 import '../screens/practice/practice_screen.dart';
@@ -319,6 +320,10 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: '/explore',
       builder: (context, state) => const ExploreMathIntelligenceScreen(),
+    ),
+    GoRoute(
+      path: '/interactive-studios',
+      builder: (context, state) => const InteractiveStudiosScreen(),
     ),
 
     // ── Math Studio (curriculum-independent pillar, pushed above shell from
