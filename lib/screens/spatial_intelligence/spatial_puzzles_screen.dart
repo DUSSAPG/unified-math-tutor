@@ -4,8 +4,26 @@ import '../../shared/theme/app_spacing.dart';
 import '../../shared/theme/app_theme.dart';
 import 'spatial_activity_scaffold.dart';
 
+/// Which puzzles a visit shows. [all] is the Spatial Intelligence pillar's
+/// original 5-puzzle set. [shapeProperties] is the Topic Hub's KS2
+/// Geometry & Measures entry (Coverage Truth Repair V1): only the three
+/// verified face/edge/vertex 3D-shape-property puzzles — the cube-counting
+/// and mirror-image items have no single verified curriculum strand
+/// (STUDIO_ACTIVITY_CURRICULUM_LINK_AUDIT_V1.md row 6) and are excluded.
+enum SpatialPuzzleSet {
+  all,
+  shapeProperties;
+
+  static const shapePropertiesQueryValue = 'shape-properties';
+
+  static SpatialPuzzleSet fromQuery(String? value) =>
+      value == shapePropertiesQueryValue ? shapeProperties : all;
+}
+
 class _Puzzle {
   const _Puzzle({
+    required this.id,
+    required this.isShapeProperty,
     required this.prompt,
     required this.build,
     required this.options,
@@ -13,6 +31,10 @@ class _Puzzle {
     required this.explanation,
   });
 
+  final String id;
+
+  /// True only for face/edge/vertex questions about named 3D shapes.
+  final bool isShapeProperty;
   final String prompt;
   final WidgetBuilder? build;
   final List<String> options;
@@ -27,6 +49,8 @@ class _Puzzle {
 /// the rest of Studio's untimed formats already use.
 final _puzzles = <_Puzzle>[
   _Puzzle(
+    id: 'stack-cube-count',
+    isShapeProperty: false,
     prompt: 'How many cubes make up this stack?',
     build: (context) => const _StackedCubesDiagram(),
     options: const ['6', '8', '9', '10'],
@@ -35,6 +59,8 @@ final _puzzles = <_Puzzle>[
         'There are 4 cubes in the bottom layer and 4 on top of them: 4 + 4 = 8.',
   ),
   _Puzzle(
+    id: 'mirror-image',
+    isShapeProperty: false,
     prompt: 'Which shape is the mirror image of the shaded one?',
     build: (context) => const _MirrorChoiceDiagram(),
     options: const ['A', 'B', 'C'],
@@ -43,6 +69,8 @@ final _puzzles = <_Puzzle>[
         'A mirror image is flipped left-to-right, not rotated — shape A is the correct reflection.',
   ),
   _Puzzle(
+    id: 'triangular-prism-faces',
+    isShapeProperty: true,
     prompt: 'How many faces does a triangular prism have?',
     build: null,
     options: const ['4', '5', '6'],
@@ -51,6 +79,8 @@ final _puzzles = <_Puzzle>[
         'A triangular prism has 2 triangular faces (the ends) and 3 rectangular faces (the sides): 2 + 3 = 5.',
   ),
   _Puzzle(
+    id: 'cube-vertices',
+    isShapeProperty: true,
     prompt: 'How many vertices (corner points) does a cube have?',
     build: null,
     options: const ['6', '8', '12'],
@@ -59,6 +89,8 @@ final _puzzles = <_Puzzle>[
         'A cube has 8 corners — 4 on the top face and 4 directly below them on the bottom face.',
   ),
   _Puzzle(
+    id: 'square-pyramid-edges',
+    isShapeProperty: true,
     prompt: 'How many edges does a square-based pyramid have?',
     build: null,
     options: const ['6', '8', '10'],
@@ -68,8 +100,24 @@ final _puzzles = <_Puzzle>[
   ),
 ];
 
+/// The puzzles shown for [set], in their original order.
+List<String> spatialPuzzleIdsFor(SpatialPuzzleSet set) => [
+      for (final p in _puzzlesFor(set)) p.id,
+    ];
+
+List<_Puzzle> _puzzlesFor(SpatialPuzzleSet set) => switch (set) {
+      SpatialPuzzleSet.all => _puzzles,
+      SpatialPuzzleSet.shapeProperties =>
+        _puzzles.where((p) => p.isShapeProperty).toList(growable: false),
+    };
+
 class SpatialPuzzlesScreen extends StatefulWidget {
-  const SpatialPuzzlesScreen({super.key});
+  const SpatialPuzzlesScreen({
+    super.key,
+    this.puzzleSet = SpatialPuzzleSet.all,
+  });
+
+  final SpatialPuzzleSet puzzleSet;
 
   @override
   State<SpatialPuzzlesScreen> createState() => _SpatialPuzzlesScreenState();
@@ -79,13 +127,15 @@ class _SpatialPuzzlesScreenState extends State<SpatialPuzzlesScreen> {
   int _index = 0;
   int? _selected;
 
-  _Puzzle get _puzzle => _puzzles[_index];
+  late final List<_Puzzle> _set = _puzzlesFor(widget.puzzleSet);
+
+  _Puzzle get _puzzle => _set[_index];
 
   void _choose(int optionIndex) => setState(() => _selected = optionIndex);
 
   void _next() {
     setState(() {
-      _index = (_index + 1) % _puzzles.length;
+      _index = (_index + 1) % _set.length;
       _selected = null;
     });
   }
@@ -96,14 +146,16 @@ class _SpatialPuzzlesScreenState extends State<SpatialPuzzlesScreen> {
     final answered = _selected != null;
     final correct = answered && _selected == _puzzle.correctIndex;
 
+    final shapeOnly = widget.puzzleSet == SpatialPuzzleSet.shapeProperties;
     return SpatialActivityScaffold(
-      title: 'Spatial Puzzles',
-      caption:
-          'Short spatial-reasoning puzzles — no timer, no score. Take your time and think it through.',
+      title: shapeOnly ? '3D Shape Properties' : 'Spatial Puzzles',
+      caption: shapeOnly
+          ? 'Count the faces, edges and vertices of 3D shapes — no timer, no score.'
+          : 'Short spatial-reasoning puzzles — no timer, no score. Take your time and think it through.',
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Puzzle ${_index + 1} of ${_puzzles.length}',
+          Text('Puzzle ${_index + 1} of ${_set.length}',
               style: TextStyle(color: colors.secondaryText, fontSize: 12)),
           const SizedBox(height: AppSpacing.sm),
           Text(_puzzle.prompt,

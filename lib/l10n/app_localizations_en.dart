@@ -1206,6 +1206,83 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get topicHubStatusNoQuestionsTitle =>
+      'No topic-specific questions available yet';
+
+  @override
+  String get topicHubStatusNoQuestionsBody =>
+      'No topic-specific questions are available for this topic at this stage.';
+
+  @override
+  String get topicHubStatusNoPlannedTitle =>
+      'No planned learning activity for this stage';
+
+  @override
+  String topicHubStatusNoPlannedBody(String stage) {
+    return 'This app does not include learning activities for this topic at $stage.';
+  }
+
+  @override
+  String get topicHubBackToTopics => 'Back to Topics';
+
+  @override
+  String get topicHubSectionSupporting => 'Supporting learning';
+
+  @override
+  String get topicHubSupportingDisclaimer =>
+      'These activities help you explore this topic. They are not topic questions and do not cover everything at this stage.';
+
+  @override
+  String get topicHubLoadError => 'This topic could not be loaded right now.';
+
+  @override
+  String get topicHubSupportAbacusTitle => 'Interactive Abacus';
+
+  @override
+  String get topicHubSupportCubeNetsTitle => 'Cube Nets';
+
+  @override
+  String get topicHubSupportShapePropertiesTitle => '3D Shape Properties';
+
+  @override
+  String get topicHubSupportTransformationsTitle => 'Transformations';
+
+  @override
+  String get topicHubSupportRotationsTitle => 'Rotations';
+
+  @override
+  String get topicHubScopeNumberLineExplorer =>
+      'Place whole numbers, halves, quarters and negative numbers on a number line.';
+
+  @override
+  String get topicHubScopeAbacus =>
+      'Build and break apart numbers up to 999 with hundreds, tens and ones.';
+
+  @override
+  String get topicHubScopeCubeNets =>
+      'Decide which flat nets fold into a cube.';
+
+  @override
+  String get topicHubScopeShapeProperties =>
+      'Count the faces, edges and vertices of 3D shapes.';
+
+  @override
+  String get topicHubScopeTransformations =>
+      'Translate, reflect, rotate and enlarge a shape.';
+
+  @override
+  String get topicHubScopeRotations =>
+      'Rotate a shape about a fixed centre point.';
+
+  @override
+  String get topicHubScopeDataDetective =>
+      'See how one outlier changes the mean and the median.';
+
+  @override
+  String get topicHubScopeAircraftLanding =>
+      'Use angles, distance and speed to bring a plane in to land.';
+
+  @override
   String get ratioFoundationsHubCardTitle => 'Ratio scaling foundations';
 
   @override

@@ -18,7 +18,9 @@ void main() {
       'honest "no activities" message instead of any section. P0 content-'
       'integrity repair: Quick Start from a Topic Hub is exact-topic now, '
       'so it can no longer paper over a genuinely empty topic by falling '
-      'back to the stage-wide pool.', (tester) async {
+      'back to the stage-wide pool. Coverage Truth Repair V1: decimals is '
+      'outside current product scope at KS5, so the Hub says so plainly — no '
+      '"yet", no supporting learning.', (tester) async {
     SharedPreferences.setMockInitialValues({});
     await CurriculumService.instance.select('ks5');
 
@@ -30,12 +32,20 @@ void main() {
     expect(activityCard('formulaLibrary'), findsNothing);
     expect(activityCard('recallCards'), findsNothing);
     expect(find.textContaining('Workbook'), findsNothing);
-    // No section headers at all — every card is unavailable, so the Hub's
-    // own "available.isEmpty" branch shows one honest message instead.
-    expect(find.text(l10n.topicHubSectionPractise), findsNothing);
-    expect(find.text(l10n.topicHubSectionLearn), findsNothing);
-    expect(find.text(l10n.topicHubSectionExplore), findsNothing);
-    expect(find.text(l10n.topicHubNoActivities('KS5')), findsOneWidget);
+    // No section headers at all — every card is unavailable, so the Hub
+    // shows one honest stage-status message instead.
+    expect(find.text(l10n.topicHubSectionPractise.toUpperCase()), findsNothing);
+    expect(find.text(l10n.topicHubSectionLearn.toUpperCase()), findsNothing);
+    expect(find.text(l10n.topicHubSectionExplore.toUpperCase()), findsNothing);
+    expect(
+        find.text(l10n.topicHubSectionSupporting.toUpperCase()), findsNothing);
+    expect(find.text(l10n.topicHubNoActivities('KS5')), findsNothing);
+    expect(
+      find.byKey(const ValueKey('topicHubStageStatus-noPlannedActivity')),
+      findsOneWidget,
+    );
+    expect(find.text(l10n.topicHubStatusNoPlannedTitle), findsOneWidget);
+    expect(find.text(l10n.topicHubStatusNoPlannedBody('KS5')), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 }
