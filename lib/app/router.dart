@@ -414,7 +414,11 @@ final GoRouter appRouter = GoRouter(
             ),
             GoRoute(
               path: 'spatial-puzzles',
-              builder: (context, state) => const SpatialPuzzlesScreen(),
+              builder: (context, state) => SpatialPuzzlesScreen(
+                puzzleSet: SpatialPuzzleSet.fromQuery(
+                  state.uri.queryParameters['set'],
+                ),
+              ),
             ),
           ],
         ),
@@ -760,7 +764,20 @@ final GoRouter appRouter = GoRouter(
                 final categories = extra is Map<String, dynamic>
                     ? (extra['categories'] as List?)?.cast<String>().toSet()
                     : null;
-                return FormulaLibraryScreen(initialCategories: categories);
+                // Topic Hub (Coverage Truth Repair V1): exact per-stage
+                // formula ids. Keyed so a second Hub visit with a different
+                // stage's list never reuses the previous visit's filter.
+                final formulaIds = extra is Map<String, dynamic>
+                    ? (extra['formulaIds'] as List?)?.cast<String>().toSet()
+                    : null;
+                return FormulaLibraryScreen(
+                  key: ValueKey(
+                    'formulas-${(categories?.toList()?..sort())?.join(',')}'
+                    '-${(formulaIds?.toList()?..sort())?.join(',')}',
+                  ),
+                  initialCategories: categories,
+                  initialFormulaIds: formulaIds,
+                );
               },
             ),
           ],

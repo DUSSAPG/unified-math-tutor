@@ -145,7 +145,7 @@ void main() {
     });
   });
 
-  group('Learn/Explore gating derives from real topicDrill availability', () {
+  group('Learn/Explore availability derives from per-item stage evidence', () {
     test(
         'a topic+stage with real topicDrill content shows real supporting '
         'material where the underlying catalog actually has it', () async {
@@ -165,12 +165,13 @@ void main() {
     });
 
     test(
-        'a topic+stage with NO real topicDrill content shows no supporting '
-        'material either, even where the catalog has entries for the topic '
-        'at another stage', () async {
+        'a topic+stage with NO topicDrill content AND no stage evidence shows '
+        'no supporting material, even where the catalog has entries for the '
+        'topic at another stage (Coverage Truth Repair V1: supporting '
+        'learning is per-item stage-evidenced, not MCQ-gated)', () async {
       final rows = await TopicCapabilityResolver.resolve(
-        topicId: 'geometry_measures',
-        stage: 'KS3', // real KS3 geometry content does not exist
+        topicId: 'algebra',
+        stage: 'KS2', // no KS2 algebra MCQs and no KS2 stage evidence
       );
       final formula = rows.singleWhere(
           (r) => r.activityType == TopicActivityType.formulaLibrary);

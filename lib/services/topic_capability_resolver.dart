@@ -3,6 +3,15 @@ import '../models/interactive_lab_id.dart';
 import 'formula_library_service.dart';
 import 'practice_availability_resolver.dart';
 import 'recall_card_catalog_service.dart';
+import 'topic_supporting_learning_registry.dart';
+
+export 'topic_supporting_learning_registry.dart'
+    show
+        StageEvidence,
+        SupportingActivityId,
+        SupportingEvidenceBasis,
+        SupportingScope,
+        TopicStageStatus;
 
 /// D3 — the Topic Learning Hub's single source of truth for "what can a
 /// learner genuinely do with this topic, at this stage." Every other file
@@ -10,20 +19,19 @@ import 'recall_card_catalog_service.dart';
 /// .resolve] rather than re-deriving availability itself — see the sprint
 /// report's "Data Contract" requirement.
 ///
-/// # Design principle: where does stage-eligibility come from?
-/// Practice content (Topic Drill, Quick Start) already carries real,
-/// per-stage evidence via [PracticeAvailabilityResolver] — the same D1/D2
-/// pipeline audited in topic_drill_truthfulness_test.dart. Formula Library,
-/// Recall Cards and Interactive Labs carry no such per-stage tag of their
-/// own (their content is stage-agnostic reference/practice material). Bolting
-/// on a second, hand-authored stage tag for each would be exactly the kind
-/// of unverifiable guess this app has repeatedly had to correct — so instead
-/// this resolver gates all three on the SAME already-audited signal:
-/// "does this topic have real Topic Drill content at this stage?" A topic
-/// with no real Topic Drill content at a stage gets no supporting-material
-/// cards at that stage either, since there is nothing at that stage for
-/// them to support. This is a documented, deterministic, auditable rule —
-/// never a fabrication of new stage data.
+/// # Where does stage-eligibility come from?
+/// * **MCQ practice** (Topic Drill, Quick Start) — unchanged: real,
+///   per-stage evidence via [PracticeAvailabilityResolver] (canonical
+///   manifest + exact `topicId` pack tags), audited in
+///   topic_drill_truthfulness_test.dart.
+/// * **Supporting learning** (Formula Library items, Recall Cards,
+///   Interactive Labs, other Math Studio activities) — Topic Hub Coverage
+///   Truth Repair V1: resolved per item from
+///   [TopicSupportingLearningRegistry], which records the stage evidence
+///   for every (topic, stage, item). It is deliberately independent of MCQ
+///   availability: a cell can have supporting learning with no MCQs (shown
+///   under an explicit "no topic-specific questions" status), and MCQs at a
+///   stage no longer imply that unrelated-stage material is shown there.
 enum TopicActivitySection { practise, learn, explore, workbook }
 
 enum TopicActivityType {
@@ -32,6 +40,10 @@ enum TopicActivityType {
   formulaLibrary,
   recallCards,
   interactiveLab,
+
+  /// A verified Math Studio activity that is not an Interactive Lab (see
+  /// [SupportingActivityId]) — Abacus, Spatial Intelligence activities.
+  supportingActivity,
   workbook,
 }
 
@@ -50,6 +62,8 @@ class TopicActivityCapability {
     required this.available,
     required this.reason,
     this.supportingId,
+    this.scope,
+    this.evidence,
   });
 
   final String topicId;
@@ -61,15 +75,23 @@ class TopicActivityCapability {
   final bool available;
 
   /// A short, truthful, human-readable explanation — used both as the
-  /// audit record and (for unavailable rows a screen chooses to surface)
-  /// as learner-facing copy. Never claims content exists when it does not.
+  /// audit record and (for rows without a [scope]) as learner-facing copy.
+  /// Never claims content exists when it does not.
   final String reason;
 
-  /// Optional identifier for the specific formula/lab/recall-card evidence
-  /// behind this row — e.g. an [InteractiveLabId] name, a formula
-  /// category, or null for rows that aggregate a count (Formula Library,
-  /// Recall Cards) rather than pointing at one item.
+  /// Optional identifier for the specific formula/lab/activity evidence
+  /// behind this row — e.g. an [InteractiveLabId] or [SupportingActivityId]
+  /// name, or null for rows that aggregate a count (Formula Library, Recall
+  /// Cards) rather than pointing at one item.
   final String? supportingId;
+
+  /// Learner-facing scope statement for supporting rows that have one —
+  /// describes exactly what the item contains, never a coverage claim.
+  final SupportingScope? scope;
+
+  /// The stage evidence this row was made available on (null for MCQ and
+  /// unavailable rows). Audit data only — never shown to learners.
+  final StageEvidence? evidence;
 }
 
 class TopicCapabilityResolver {
@@ -89,7 +111,9 @@ class TopicCapabilityResolver {
   /// test/topic_capability_resolver_test.dart's drift guard). A lab absent
   /// from this table, or mapped to an empty set, has no explicit topic
   /// linkage and is never shown by the Hub — spatialCubeLab and
-  /// earlyMathsPlayground currently fall in that category.
+  /// earlyMathsPlayground currently fall in that category. Topic linkage
+  /// is necessary but not sufficient: a lab is shown at a stage only when
+  /// [TopicSupportingLearningRegistry] also records stage evidence for it.
   static const Map<InteractiveLabId, Set<String>> labTopicIds = {
     // fraction_builder_screen.dart
     InteractiveLabId.fractionBuilder: {'fractions'},
@@ -148,12 +172,11 @@ class TopicCapabilityResolver {
   };
 
   /// Formula catalog `category` values (assets/config/formula_catalog.json)
-  /// grouped by canonical topic id — built by reading every category the
-  /// catalog actually contains (Algebra, Area, Circle, Coordinate Geometry,
-  /// Fractions, Percentages, Probability, Pythagoras, Statistics,
-  /// Trigonometry, Volume) and assigning each to the topic it belongs to.
-  /// A topic with no entry here (number_place_value, ratio_proportion,
-  /// decimals) genuinely has zero relevant formulas in the catalog today.
+  /// grouped by canonical topic id. Since Coverage Truth Repair V1 the Hub
+  /// links to an explicit, per-stage list of formula *ids* (see
+  /// [TopicSupportingLearningRegistry]); this table is kept as the topic
+  /// boundary those ids must stay inside (enforced by
+  /// test/topic_supporting_learning_registry_test.dart).
   static const Map<String, Set<String>> formulaCategoriesForTopic = {
     'algebra': {'Algebra'},
     'fractions': {'Fractions'},
@@ -169,11 +192,28 @@ class TopicCapabilityResolver {
     'trigonometry': {'Trigonometry'},
   };
 
+  /// The stage-status message the Hub shows above (or instead of) any
+  /// cards. Depends only on MCQ availability and the registry's verified
+  /// product-scope (no planned activity) list — never on supporting learning.
+  static TopicStageStatus stageStatus({
+    required String topicId,
+    required String stage,
+    required bool mcqAvailable,
+  }) {
+    if (mcqAvailable) return TopicStageStatus.mcqAvailable;
+    if (TopicSupportingLearningRegistry.noPlannedActivity
+        .containsKey((topicId, stage))) {
+      return TopicStageStatus.noPlannedActivity;
+    }
+    return TopicStageStatus.contentGap;
+  }
+
   /// Resolves every activity row for [topicId] at [stage]. Always returns
   /// one row each for topicDrill/quickStart/formulaLibrary/recallCards/
-  /// workbook, plus one row per genuinely-linked Interactive Lab (or one
-  /// unavailable row if none is linked) — never zero rows for a section,
-  /// so an audit always sees why a section is empty.
+  /// workbook, plus one row per topic-linked Interactive Lab (or one
+  /// unavailable row if none is linked) and one row per registered
+  /// supporting activity — never zero rows for a section, so an audit
+  /// always sees why a section is empty.
   static Future<List<TopicActivityCapability>> resolve({
     required String topicId,
     required String stage,
@@ -190,6 +230,10 @@ class TopicCapabilityResolver {
         await PracticeAvailabilityResolver.resolveQuickStart(stage,
             topicId: topicId);
     final quickStartReady = quickStartOutcome is PracticeLoadReady;
+
+    // Supporting learning: per-item stage evidence only. topicDrillReady is
+    // intentionally NOT consulted below this line.
+    final cell = TopicSupportingLearningRegistry.cellFor(topicId, stage);
 
     final rows = <TopicActivityCapability>[
       TopicActivityCapability(
@@ -214,7 +258,8 @@ class TopicCapabilityResolver {
         // presence/absence only.
         reason: topicDrillReady
             ? 'Real questions are available for this topic at $stage.'
-            : 'No real questions exist for this topic at $stage yet.',
+            : 'No topic-specific questions are available for this topic at '
+                '$stage.',
       ),
       TopicActivityCapability(
         topicId: topicId,
@@ -222,13 +267,9 @@ class TopicCapabilityResolver {
         section: TopicActivitySection.practise,
         activityType: TopicActivityType.quickStart,
         route: '/practice',
-        // 'topicId' is now set deliberately — see resolveQuickStart's call
-        // above and PracticeScreen._loadSession's dispatch, which honours
-        // it for quickStart mode too. 'preselectQuickStart' still chooses
-        // the MODE shown on setup; 'topicId' is what the actual session
-        // content gets filtered by. 'returnToHubTopicId' is which Hub Back
-        // returns to — same value here, kept separate since they answer
-        // different questions.
+        // 'topicId' filters the session content; 'preselectQuickStart'
+        // chooses the MODE shown on setup; 'returnToHubTopicId' is which
+        // Hub Back returns to.
         routeExtra: {
           'topicId': topicId,
           'stage': stage,
@@ -238,10 +279,11 @@ class TopicCapabilityResolver {
         available: quickStartReady,
         reason: quickStartReady
             ? 'Real questions are available for this topic at $stage.'
-            : 'No real questions exist for this topic at $stage yet.',
+            : 'No topic-specific questions are available for this topic at '
+                '$stage.',
       ),
-      await _formulaLibraryRow(topicId, stage, topicDrillReady),
-      await _recallCardsRow(topicId, stage, topicDrillReady),
+      await _formulaLibraryRow(topicId, stage, cell.formulas),
+      await _recallCardsRow(topicId, stage, cell.recallCards),
       TopicActivityCapability(
         topicId: topicId,
         stage: stage,
@@ -250,9 +292,10 @@ class TopicCapabilityResolver {
         route: '',
         routeExtra: const {},
         available: false,
-        reason: 'No workbook exists for this topic yet.',
+        reason: 'No workbook exists for this topic.',
       ),
-      ..._interactiveLabRows(topicId, stage, topicDrillReady),
+      ..._interactiveLabRows(topicId, stage, cell.labs),
+      ..._supportingActivityRows(topicId, stage, cell.activities),
     ];
     return rows;
   }
@@ -260,43 +303,44 @@ class TopicCapabilityResolver {
   static Future<TopicActivityCapability> _formulaLibraryRow(
     String topicId,
     String stage,
-    bool topicDrillReady,
+    FormulaStageEntry? entry,
   ) async {
     final categories = formulaCategoriesForTopic[topicId] ?? const {};
-    final entries = categories.isEmpty
+    final wantedIds = entry?.formulaIds.toSet() ?? const <String>{};
+    final matching = wantedIds.isEmpty
         ? const <FormulaEntry>[]
         : (await FormulaLibraryService.instance.load())
-            .where((f) => categories.contains(f.category))
+            .where((f) =>
+                wantedIds.contains(f.id) && categories.contains(f.category))
             .toList();
-    final available = topicDrillReady && entries.isNotEmpty;
+    final available = matching.isNotEmpty;
+    final formulaIds = [for (final f in matching) f.id];
     return TopicActivityCapability(
       topicId: topicId,
       stage: stage,
       section: TopicActivitySection.learn,
       activityType: TopicActivityType.formulaLibrary,
       route: '/formulas',
-      routeExtra: {'categories': categories.toList()..sort()},
+      routeExtra: {'formulaIds': formulaIds},
       available: available,
-      reason: entries.isEmpty
+      reason: categories.isEmpty
           ? 'No relevant formulas in the library for this topic.'
-          : !topicDrillReady
-              ? 'Formulas exist, but this topic has no real content at $stage.'
-              : '${entries.length} relevant formula${entries.length == 1 ? '' : 's'} in the library.',
-      // Aggregates a count across possibly several categories — see the
-      // class doc on `supportingId`. The category list itself is already
-      // carried in routeExtra for navigation.
+          : !available
+              ? 'No formulas have stage evidence for this topic at $stage.'
+              : '${matching.length} relevant formula${matching.length == 1 ? '' : 's'} in the library.',
+      evidence: available ? entry!.stageEvidence : null,
     );
   }
 
   static Future<TopicActivityCapability> _recallCardsRow(
     String topicId,
     String stage,
-    bool topicDrillReady,
+    StageEvidence? stageEvidence,
   ) async {
     final cards = (await RecallCardCatalogService.instance.all())
         .where((c) => c.relatedPracticeTopicIds.contains(topicId))
         .toList();
-    final available = topicDrillReady && cards.isNotEmpty;
+    final available = stageEvidence != null && cards.isNotEmpty;
     return TopicActivityCapability(
       topicId: topicId,
       stage: stage,
@@ -307,16 +351,17 @@ class TopicCapabilityResolver {
       available: available,
       reason: cards.isEmpty
           ? 'No Recall Cards are tagged for this topic.'
-          : !topicDrillReady
-              ? 'Recall Cards exist, but this topic has no real content at $stage.'
+          : !available
+              ? 'Recall Cards exist, but none have stage evidence for $stage.'
               : '${cards.length} Recall Card${cards.length == 1 ? '' : 's'} support this topic.',
+      evidence: available ? stageEvidence : null,
     );
   }
 
   static List<TopicActivityCapability> _interactiveLabRows(
     String topicId,
     String stage,
-    bool topicDrillReady,
+    List<LabStageEntry> stageEntries,
   ) {
     final matches = [
       for (final entry in labTopicIds.entries)
@@ -336,6 +381,7 @@ class TopicCapabilityResolver {
         ),
       ];
     }
+    final byLab = {for (final e in stageEntries) e.labId: e};
     return [
       for (final labId in matches)
         TopicActivityCapability(
@@ -345,12 +391,38 @@ class TopicCapabilityResolver {
           activityType: TopicActivityType.interactiveLab,
           route: labRoutes[labId]!,
           routeExtra: const {},
-          available: topicDrillReady,
-          reason: topicDrillReady
+          available: byLab.containsKey(labId),
+          reason: byLab.containsKey(labId)
               ? '${labId.name} is mapped to this topic and stage.'
-              : '${labId.name} is mapped to this topic, but it has no real content at $stage.',
+              : '${labId.name} is mapped to this topic, but has no stage '
+                  'evidence for $stage.',
           supportingId: labId.name,
+          scope: byLab[labId]?.scope,
+          evidence: byLab[labId]?.stageEvidence,
         ),
     ];
   }
+
+  static List<TopicActivityCapability> _supportingActivityRows(
+    String topicId,
+    String stage,
+    List<ActivityStageEntry> entries,
+  ) =>
+      [
+        for (final entry in entries)
+          TopicActivityCapability(
+            topicId: topicId,
+            stage: stage,
+            section: TopicActivitySection.explore,
+            activityType: TopicActivityType.supportingActivity,
+            route: supportingActivityRoutes[entry.activityId]!,
+            routeExtra: const {},
+            available: true,
+            reason: '${entry.activityId.name} has stage evidence for this '
+                'topic at $stage.',
+            supportingId: entry.activityId.name,
+            scope: entry.scope,
+            evidence: entry.stageEvidence,
+          ),
+      ];
 }

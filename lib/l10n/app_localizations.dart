@@ -2293,6 +2293,132 @@ abstract class AppLocalizations {
   /// **'No activities are available for this topic at {stage} yet.'**
   String topicHubNoActivities(String stage);
 
+  /// Topic Learning Hub stage-status heading for a genuine content gap: the topic belongs to this stage but has no topic-specific questions. Must never promise future content.
+  ///
+  /// In en, this message translates to:
+  /// **'No topic-specific questions available yet'**
+  String get topicHubStatusNoQuestionsTitle;
+
+  /// Topic Learning Hub stage-status body for a stage with no topic-specific questions
+  ///
+  /// In en, this message translates to:
+  /// **'No topic-specific questions are available for this topic at this stage.'**
+  String get topicHubStatusNoQuestionsBody;
+
+  /// Topic Learning Hub stage-status heading for a topic/stage that is outside the app's current product scope. This is a product-scope statement, NOT a curriculum ruling, and must never promise future content.
+  ///
+  /// In en, this message translates to:
+  /// **'No planned learning activity for this stage'**
+  String get topicHubStatusNoPlannedTitle;
+
+  /// Topic Learning Hub stage-status body for a topic/stage outside the app's current product scope. Product scope only; must not claim what the curriculum does or does not contain.
+  ///
+  /// In en, this message translates to:
+  /// **'This app does not include learning activities for this topic at {stage}.'**
+  String topicHubStatusNoPlannedBody(String stage);
+
+  /// Accessible label and tooltip for the Topic Learning Hub app-bar back button, which returns to the Topics list
+  ///
+  /// In en, this message translates to:
+  /// **'Back to Topics'**
+  String get topicHubBackToTopics;
+
+  /// Topic Learning Hub section label for supporting activities shown when a stage has no topic-specific questions
+  ///
+  /// In en, this message translates to:
+  /// **'Supporting learning'**
+  String get topicHubSectionSupporting;
+
+  /// Shown above supporting learning on the Topic Learning Hub — supporting learning is never presented as question practice or full stage coverage
+  ///
+  /// In en, this message translates to:
+  /// **'These activities help you explore this topic. They are not topic questions and do not cover everything at this stage.'**
+  String get topicHubSupportingDisclaimer;
+
+  /// Topic Learning Hub message when capability resolution fails
+  ///
+  /// In en, this message translates to:
+  /// **'This topic could not be loaded right now.'**
+  String get topicHubLoadError;
+
+  /// No description provided for @topicHubSupportAbacusTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Interactive Abacus'**
+  String get topicHubSupportAbacusTitle;
+
+  /// No description provided for @topicHubSupportCubeNetsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Cube Nets'**
+  String get topicHubSupportCubeNetsTitle;
+
+  /// No description provided for @topicHubSupportShapePropertiesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'3D Shape Properties'**
+  String get topicHubSupportShapePropertiesTitle;
+
+  /// No description provided for @topicHubSupportTransformationsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Transformations'**
+  String get topicHubSupportTransformationsTitle;
+
+  /// No description provided for @topicHubSupportRotationsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Rotations'**
+  String get topicHubSupportRotationsTitle;
+
+  /// Exact scope of Number Line Explorer as supporting learning (whole numbers to 20, halves, quarters, negatives to -10)
+  ///
+  /// In en, this message translates to:
+  /// **'Place whole numbers, halves, quarters and negative numbers on a number line.'**
+  String get topicHubScopeNumberLineExplorer;
+
+  /// Exact scope of the Interactive Abacus (3 rods, values 0-999)
+  ///
+  /// In en, this message translates to:
+  /// **'Build and break apart numbers up to 999 with hundreds, tens and ones.'**
+  String get topicHubScopeAbacus;
+
+  /// No description provided for @topicHubScopeCubeNets.
+  ///
+  /// In en, this message translates to:
+  /// **'Decide which flat nets fold into a cube.'**
+  String get topicHubScopeCubeNets;
+
+  /// No description provided for @topicHubScopeShapeProperties.
+  ///
+  /// In en, this message translates to:
+  /// **'Count the faces, edges and vertices of 3D shapes.'**
+  String get topicHubScopeShapeProperties;
+
+  /// No description provided for @topicHubScopeTransformations.
+  ///
+  /// In en, this message translates to:
+  /// **'Translate, reflect, rotate and enlarge a shape.'**
+  String get topicHubScopeTransformations;
+
+  /// No description provided for @topicHubScopeRotations.
+  ///
+  /// In en, this message translates to:
+  /// **'Rotate a shape about a fixed centre point.'**
+  String get topicHubScopeRotations;
+
+  /// No description provided for @topicHubScopeDataDetective.
+  ///
+  /// In en, this message translates to:
+  /// **'See how one outlier changes the mean and the median.'**
+  String get topicHubScopeDataDetective;
+
+  /// No description provided for @topicHubScopeAircraftLanding.
+  ///
+  /// In en, this message translates to:
+  /// **'Use angles, distance and speed to bring a plane in to land.'**
+  String get topicHubScopeAircraftLanding;
+
   /// Topic Learning Hub card title for the KS3 Ratio & Proportion vertical slice — must never be worded as if it were the full Year 8 Ratio curriculum
   ///
   /// In en, this message translates to:
