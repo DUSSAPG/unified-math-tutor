@@ -8951,13 +8951,13 @@ abstract class AppLocalizations {
   /// Binomial Volume Lab / Applied Maths Studio copy.
   ///
   /// In en, this message translates to:
-  /// **'Applied explorations that turn algebra into shapes you can move.'**
+  /// **'Interactive explorations for mathematical ideas you can see, move and test.'**
   String get labsAppliedMathsStudioSubtitle;
 
   /// Binomial Volume Lab / Applied Maths Studio copy.
   ///
   /// In en, this message translates to:
-  /// **'Applied explorations: each one turns a piece of algebra into a model you can move and inspect, at your own pace.'**
+  /// **'Choose an exploration to investigate a mathematical idea through an interactive model.'**
   String get labsAppliedMathsStudioIntro;
 
   /// Binomial Volume Lab / Applied Maths Studio copy.
@@ -9272,6 +9272,218 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Back to Applied Maths Studio'**
   String get labsBinomialBackToStudio;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Create the Angle'**
+  String get labsCreateAngleTitle;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Aim a pass or shot to create the target angle.'**
+  String get labsCreateAngleCardSubtitle;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Applied exploration'**
+  String get labsCreateAngleCardKind;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Aim the pass. Drag the round handle from the ball until the dashed aim line makes the target angle with the solid baseline, then check your angle.'**
+  String get labsCreateAngleIntro;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Solid line: baseline · Dashed line: your aim · Square: target'**
+  String get labsCreateAngleLegend;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a target angle'**
+  String get labsCreateAngleTargetsHeading;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'{angle}°'**
+  String labsCreateAngleDegrees(String angle);
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'{target} degree target'**
+  String labsCreateAngleTargetChipSemantic(String target);
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'{target} degree target, created'**
+  String labsCreateAngleTargetChipMatchedSemantic(String target);
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Target: {target}°'**
+  String labsCreateAngleTargetReadout(String target);
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Your angle: {angle}°'**
+  String labsCreateAngleCurrentReadout(String angle);
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Target angle: {target} degrees'**
+  String labsCreateAngleTargetSemantic(String target);
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Your angle: {angle} degrees'**
+  String labsCreateAngleCurrentSemantic(String angle);
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Football pitch. The solid baseline runs right from the ball. Drag the round aim handle, or use the arrow keys, to turn the dashed aim line. The square shows the target.'**
+  String get labsCreateAnglePitchSemantic;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'{angle} degrees'**
+  String labsCreateAnglePitchValue(String angle);
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Decrease angle'**
+  String get labsCreateAngleDecrease;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Increase angle'**
+  String get labsCreateAngleIncrease;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset pitch'**
+  String get labsCreateAngleReset;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Check angle'**
+  String get labsCreateAngleCheck;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'A match is within {tolerance}° of the target.'**
+  String labsCreateAngleToleranceNote(String tolerance);
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'No dragging needed: use the buttons, or focus the pitch and press the left and right arrow keys to turn one degree at a time.'**
+  String get labsCreateAngleKeyboardHint;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'You created a {target}° angle. Your aim was {attempted}°, so the aim line has snapped to exactly {target}°.'**
+  String labsCreateAngleMatched(String target, String attempted);
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Your angle is {attempted}°. Turn the aim line {difference}° wider to reach {target}°.'**
+  String labsCreateAngleTurnWider(
+      String attempted, String difference, String target);
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Your angle is {attempted}°. Turn the aim line {difference}° narrower to reach {target}°.'**
+  String labsCreateAngleTurnNarrower(
+      String attempted, String difference, String target);
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'30° is a narrow angle: one third of a right angle.'**
+  String get labsCreateAngleExplain30;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'45° is exactly half a right angle: the diagonal pass.'**
+  String get labsCreateAngleExplain45;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'60° is two thirds of a right angle, a wider turn than 45°.'**
+  String get labsCreateAngleExplain60;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'90° is a right angle: a quarter turn, square to the baseline.'**
+  String get labsCreateAngleExplain90;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Try {target}° next'**
+  String labsCreateAngleNextTarget(String target);
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} of {total} target angles created this visit'**
+  String labsCreateAngleProgress(int count, int total);
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'All four angles created'**
+  String get labsCreateAngleCompleteTitle;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'You created 30°, 45°, 60° and 90° in this visit. Explore again, pick any target to revisit, or head back to Applied Maths Studio.'**
+  String get labsCreateAngleCompleteBody;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore again'**
+  String get labsCreateAngleExploreAgain;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to Applied Maths Studio'**
+  String get labsCreateAngleBackToStudio;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Optional exploration. Nothing is saved: leaving this screen clears this visit.'**
+  String get labsCreateAngleSessionNote;
 }
 
 class _AppLocalizationsDelegate
