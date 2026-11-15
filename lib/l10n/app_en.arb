@@ -3669,11 +3669,11 @@
   "@labsAppliedMathsStudioTitle": {
     "description": "Binomial Volume Lab / Applied Maths Studio copy."
   },
-  "labsAppliedMathsStudioSubtitle": "Applied explorations that turn algebra into shapes you can move.",
+  "labsAppliedMathsStudioSubtitle": "Interactive explorations for mathematical ideas you can see, move and test.",
   "@labsAppliedMathsStudioSubtitle": {
     "description": "Binomial Volume Lab / Applied Maths Studio copy."
   },
-  "labsAppliedMathsStudioIntro": "Applied explorations: each one turns a piece of algebra into a model you can move and inspect, at your own pace.",
+  "labsAppliedMathsStudioIntro": "Choose an exploration to investigate a mathematical idea through an interactive model.",
   "@labsAppliedMathsStudioIntro": {
     "description": "Binomial Volume Lab / Applied Maths Studio copy."
   },
@@ -3938,5 +3938,233 @@
   "labsBinomialBackToStudio": "Back to Applied Maths Studio",
   "@labsBinomialBackToStudio": {
     "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsCreateAngleTitle": "Create the Angle",
+  "@labsCreateAngleTitle": {
+    "description": "Create the Angle (Applied Maths Studio) copy."
+  },
+  "labsCreateAngleCardSubtitle": "Aim a pass or shot to create the target angle.",
+  "@labsCreateAngleCardSubtitle": {
+    "description": "Create the Angle (Applied Maths Studio) copy."
+  },
+  "labsCreateAngleCardKind": "Applied exploration",
+  "@labsCreateAngleCardKind": {
+    "description": "Create the Angle (Applied Maths Studio) copy."
+  },
+  "labsCreateAngleIntro": "Aim the pass. Drag the round handle from the ball until the dashed aim line makes the target angle with the solid baseline, then check your angle.",
+  "@labsCreateAngleIntro": {
+    "description": "Create the Angle (Applied Maths Studio) copy."
+  },
+  "labsCreateAngleLegend": "Solid line: baseline · Dashed line: your aim · Square: target",
+  "@labsCreateAngleLegend": {
+    "description": "Create the Angle (Applied Maths Studio) copy."
+  },
+  "labsCreateAngleTargetsHeading": "Choose a target angle",
+  "@labsCreateAngleTargetsHeading": {
+    "description": "Create the Angle (Applied Maths Studio) copy."
+  },
+  "labsCreateAngleDegrees": "{angle}°",
+  "@labsCreateAngleDegrees": {
+    "description": "Create the Angle (Applied Maths Studio) copy.",
+    "placeholders": {
+      "angle": {
+        "type": "String"
+      }
+    }
+  },
+  "labsCreateAngleTargetChipSemantic": "{target} degree target",
+  "@labsCreateAngleTargetChipSemantic": {
+    "description": "Create the Angle (Applied Maths Studio) copy.",
+    "placeholders": {
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "labsCreateAngleTargetChipMatchedSemantic": "{target} degree target, created",
+  "@labsCreateAngleTargetChipMatchedSemantic": {
+    "description": "Create the Angle (Applied Maths Studio) copy.",
+    "placeholders": {
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "labsCreateAngleTargetReadout": "Target: {target}°",
+  "@labsCreateAngleTargetReadout": {
+    "description": "Create the Angle (Applied Maths Studio) copy.",
+    "placeholders": {
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "labsCreateAngleCurrentReadout": "Your angle: {angle}°",
+  "@labsCreateAngleCurrentReadout": {
+    "description": "Create the Angle (Applied Maths Studio) copy.",
+    "placeholders": {
+      "angle": {
+        "type": "String"
+      }
+    }
+  },
+  "labsCreateAngleTargetSemantic": "Target angle: {target} degrees",
+  "@labsCreateAngleTargetSemantic": {
+    "description": "Create the Angle (Applied Maths Studio) copy.",
+    "placeholders": {
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "labsCreateAngleCurrentSemantic": "Your angle: {angle} degrees",
+  "@labsCreateAngleCurrentSemantic": {
+    "description": "Create the Angle (Applied Maths Studio) copy.",
+    "placeholders": {
+      "angle": {
+        "type": "String"
+      }
+    }
+  },
+  "labsCreateAnglePitchSemantic": "Football pitch. The solid baseline runs right from the ball. Drag the round aim handle, or use the arrow keys, to turn the dashed aim line. The square shows the target.",
+  "@labsCreateAnglePitchSemantic": {
+    "description": "Create the Angle (Applied Maths Studio) copy."
+  },
+  "labsCreateAnglePitchValue": "{angle} degrees",
+  "@labsCreateAnglePitchValue": {
+    "description": "Create the Angle (Applied Maths Studio) copy.",
+    "placeholders": {
+      "angle": {
+        "type": "String"
+      }
+    }
+  },
+  "labsCreateAngleDecrease": "Decrease angle",
+  "@labsCreateAngleDecrease": {
+    "description": "Create the Angle (Applied Maths Studio) copy."
+  },
+  "labsCreateAngleIncrease": "Increase angle",
+  "@labsCreateAngleIncrease": {
+    "description": "Create the Angle (Applied Maths Studio) copy."
+  },
+  "labsCreateAngleReset": "Reset pitch",
+  "@labsCreateAngleReset": {
+    "description": "Create the Angle (Applied Maths Studio) copy."
+  },
+  "labsCreateAngleCheck": "Check angle",
+  "@labsCreateAngleCheck": {
+    "description": "Create the Angle (Applied Maths Studio) copy."
+  },
+  "labsCreateAngleToleranceNote": "A match is within {tolerance}° of the target.",
+  "@labsCreateAngleToleranceNote": {
+    "description": "Create the Angle (Applied Maths Studio) copy.",
+    "placeholders": {
+      "tolerance": {
+        "type": "String"
+      }
+    }
+  },
+  "labsCreateAngleKeyboardHint": "No dragging needed: use the buttons, or focus the pitch and press the left and right arrow keys to turn one degree at a time.",
+  "@labsCreateAngleKeyboardHint": {
+    "description": "Create the Angle (Applied Maths Studio) copy."
+  },
+  "labsCreateAngleMatched": "You created a {target}° angle. Your aim was {attempted}°, so the aim line has snapped to exactly {target}°.",
+  "@labsCreateAngleMatched": {
+    "description": "Create the Angle (Applied Maths Studio) copy.",
+    "placeholders": {
+      "target": {
+        "type": "String"
+      },
+      "attempted": {
+        "type": "String"
+      }
+    }
+  },
+  "labsCreateAngleTurnWider": "Your angle is {attempted}°. Turn the aim line {difference}° wider to reach {target}°.",
+  "@labsCreateAngleTurnWider": {
+    "description": "Create the Angle (Applied Maths Studio) copy.",
+    "placeholders": {
+      "attempted": {
+        "type": "String"
+      },
+      "difference": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "labsCreateAngleTurnNarrower": "Your angle is {attempted}°. Turn the aim line {difference}° narrower to reach {target}°.",
+  "@labsCreateAngleTurnNarrower": {
+    "description": "Create the Angle (Applied Maths Studio) copy.",
+    "placeholders": {
+      "attempted": {
+        "type": "String"
+      },
+      "difference": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "labsCreateAngleExplain30": "30° is a narrow angle: one third of a right angle.",
+  "@labsCreateAngleExplain30": {
+    "description": "Create the Angle (Applied Maths Studio) copy."
+  },
+  "labsCreateAngleExplain45": "45° is exactly half a right angle: the diagonal pass.",
+  "@labsCreateAngleExplain45": {
+    "description": "Create the Angle (Applied Maths Studio) copy."
+  },
+  "labsCreateAngleExplain60": "60° is two thirds of a right angle, a wider turn than 45°.",
+  "@labsCreateAngleExplain60": {
+    "description": "Create the Angle (Applied Maths Studio) copy."
+  },
+  "labsCreateAngleExplain90": "90° is a right angle: a quarter turn, square to the baseline.",
+  "@labsCreateAngleExplain90": {
+    "description": "Create the Angle (Applied Maths Studio) copy."
+  },
+  "labsCreateAngleNextTarget": "Try {target}° next",
+  "@labsCreateAngleNextTarget": {
+    "description": "Create the Angle (Applied Maths Studio) copy.",
+    "placeholders": {
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "labsCreateAngleProgress": "{count} of {total} target angles created this visit",
+  "@labsCreateAngleProgress": {
+    "description": "Create the Angle (Applied Maths Studio) copy.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "labsCreateAngleCompleteTitle": "All four angles created",
+  "@labsCreateAngleCompleteTitle": {
+    "description": "Create the Angle (Applied Maths Studio) copy."
+  },
+  "labsCreateAngleCompleteBody": "You created 30°, 45°, 60° and 90° in this visit. Explore again, pick any target to revisit, or head back to Applied Maths Studio.",
+  "@labsCreateAngleCompleteBody": {
+    "description": "Create the Angle (Applied Maths Studio) copy."
+  },
+  "labsCreateAngleExploreAgain": "Explore again",
+  "@labsCreateAngleExploreAgain": {
+    "description": "Create the Angle (Applied Maths Studio) copy."
+  },
+  "labsCreateAngleBackToStudio": "Back to Applied Maths Studio",
+  "@labsCreateAngleBackToStudio": {
+    "description": "Create the Angle (Applied Maths Studio) copy."
+  },
+  "labsCreateAngleSessionNote": "Optional exploration. Nothing is saved: leaving this screen clears this visit.",
+  "@labsCreateAngleSessionNote": {
+    "description": "Create the Angle (Applied Maths Studio) copy."
   }
 }

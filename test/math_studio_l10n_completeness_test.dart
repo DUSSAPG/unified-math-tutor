@@ -68,6 +68,9 @@ const _cognateProneKeyPrefixes = [
   'familyMathsCategoryAlgebra',
   // "min" is a universal SI-style abbreviation for minutes, reused as-is.
   'familyActivityTimeRange',
+  // "{angle}°" is a number plus the degree sign, written the same way in
+  // every governed locale; the number itself is formatted per locale.
+  'labsCreateAngleDegrees',
 ];
 
 Map<String, dynamic> _loadArb(String filename) {

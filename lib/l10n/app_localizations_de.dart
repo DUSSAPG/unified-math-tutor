@@ -5259,11 +5259,11 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get labsAppliedMathsStudioSubtitle =>
-      'Applied explorations that turn algebra into shapes you can move.';
+      'Interactive explorations for mathematical ideas you can see, move and test.';
 
   @override
   String get labsAppliedMathsStudioIntro =>
-      'Applied explorations: each one turns a piece of algebra into a model you can move and inspect, at your own pace.';
+      'Choose an exploration to investigate a mathematical idea through an interactive model.';
 
   @override
   String get labsBinomialVolumeLabTitle => 'Binomial Volume Lab';
@@ -5446,6 +5446,152 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get labsBinomialBackToStudio => 'Back to Applied Maths Studio';
+
+  @override
+  String get labsCreateAngleTitle => 'Create the Angle';
+
+  @override
+  String get labsCreateAngleCardSubtitle =>
+      'Aim a pass or shot to create the target angle.';
+
+  @override
+  String get labsCreateAngleCardKind => 'Applied exploration';
+
+  @override
+  String get labsCreateAngleIntro =>
+      'Aim the pass. Drag the round handle from the ball until the dashed aim line makes the target angle with the solid baseline, then check your angle.';
+
+  @override
+  String get labsCreateAngleLegend =>
+      'Solid line: baseline · Dashed line: your aim · Square: target';
+
+  @override
+  String get labsCreateAngleTargetsHeading => 'Choose a target angle';
+
+  @override
+  String labsCreateAngleDegrees(String angle) {
+    return '$angle°';
+  }
+
+  @override
+  String labsCreateAngleTargetChipSemantic(String target) {
+    return '$target degree target';
+  }
+
+  @override
+  String labsCreateAngleTargetChipMatchedSemantic(String target) {
+    return '$target degree target, created';
+  }
+
+  @override
+  String labsCreateAngleTargetReadout(String target) {
+    return 'Target: $target°';
+  }
+
+  @override
+  String labsCreateAngleCurrentReadout(String angle) {
+    return 'Your angle: $angle°';
+  }
+
+  @override
+  String labsCreateAngleTargetSemantic(String target) {
+    return 'Target angle: $target degrees';
+  }
+
+  @override
+  String labsCreateAngleCurrentSemantic(String angle) {
+    return 'Your angle: $angle degrees';
+  }
+
+  @override
+  String get labsCreateAnglePitchSemantic =>
+      'Football pitch. The solid baseline runs right from the ball. Drag the round aim handle, or use the arrow keys, to turn the dashed aim line. The square shows the target.';
+
+  @override
+  String labsCreateAnglePitchValue(String angle) {
+    return '$angle degrees';
+  }
+
+  @override
+  String get labsCreateAngleDecrease => 'Decrease angle';
+
+  @override
+  String get labsCreateAngleIncrease => 'Increase angle';
+
+  @override
+  String get labsCreateAngleReset => 'Reset pitch';
+
+  @override
+  String get labsCreateAngleCheck => 'Check angle';
+
+  @override
+  String labsCreateAngleToleranceNote(String tolerance) {
+    return 'A match is within $tolerance° of the target.';
+  }
+
+  @override
+  String get labsCreateAngleKeyboardHint =>
+      'No dragging needed: use the buttons, or focus the pitch and press the left and right arrow keys to turn one degree at a time.';
+
+  @override
+  String labsCreateAngleMatched(String target, String attempted) {
+    return 'You created a $target° angle. Your aim was $attempted°, so the aim line has snapped to exactly $target°.';
+  }
+
+  @override
+  String labsCreateAngleTurnWider(
+      String attempted, String difference, String target) {
+    return 'Your angle is $attempted°. Turn the aim line $difference° wider to reach $target°.';
+  }
+
+  @override
+  String labsCreateAngleTurnNarrower(
+      String attempted, String difference, String target) {
+    return 'Your angle is $attempted°. Turn the aim line $difference° narrower to reach $target°.';
+  }
+
+  @override
+  String get labsCreateAngleExplain30 =>
+      '30° is a narrow angle: one third of a right angle.';
+
+  @override
+  String get labsCreateAngleExplain45 =>
+      '45° is exactly half a right angle: the diagonal pass.';
+
+  @override
+  String get labsCreateAngleExplain60 =>
+      '60° is two thirds of a right angle, a wider turn than 45°.';
+
+  @override
+  String get labsCreateAngleExplain90 =>
+      '90° is a right angle: a quarter turn, square to the baseline.';
+
+  @override
+  String labsCreateAngleNextTarget(String target) {
+    return 'Try $target° next';
+  }
+
+  @override
+  String labsCreateAngleProgress(int count, int total) {
+    return '$count of $total target angles created this visit';
+  }
+
+  @override
+  String get labsCreateAngleCompleteTitle => 'All four angles created';
+
+  @override
+  String get labsCreateAngleCompleteBody =>
+      'You created 30°, 45°, 60° and 90° in this visit. Explore again, pick any target to revisit, or head back to Applied Maths Studio.';
+
+  @override
+  String get labsCreateAngleExploreAgain => 'Explore again';
+
+  @override
+  String get labsCreateAngleBackToStudio => 'Back to Applied Maths Studio';
+
+  @override
+  String get labsCreateAngleSessionNote =>
+      'Optional exploration. Nothing is saved: leaving this screen clears this visit.';
 }
 
 /// The translations for German, as used in Switzerland (`de_CH`).
@@ -9662,11 +9808,11 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
 
   @override
   String get labsAppliedMathsStudioSubtitle =>
-      'Angewandte Erkundungen, die Algebra in bewegliche Formen verwandeln.';
+      'Interaktive Erkundungen zu mathematischen Ideen, die du sehen, bewegen und ausprobieren kannst.';
 
   @override
   String get labsAppliedMathsStudioIntro =>
-      'Angewandte Erkundungen: Jede verwandelt ein Stück Algebra in ein Modell, das du in deinem eigenen Tempo bewegen und untersuchen kannst.';
+      'Wähle eine Erkundung, um eine mathematische Idee mit einem interaktiven Modell zu untersuchen.';
 
   @override
   String get labsBinomialVolumeLabTitle => 'Binomisches Volumen-Labor';
@@ -9853,4 +9999,151 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
   @override
   String get labsBinomialBackToStudio =>
       'Zurück zum Studio für angewandte Mathematik';
+
+  @override
+  String get labsCreateAngleTitle => 'Erstelle den Winkel';
+
+  @override
+  String get labsCreateAngleCardSubtitle =>
+      'Ziele mit einem Pass oder Schuss, um den Zielwinkel zu erzeugen.';
+
+  @override
+  String get labsCreateAngleCardKind => 'Angewandte Erkundung';
+
+  @override
+  String get labsCreateAngleIntro =>
+      'Ziele den Pass. Zieh den runden Griff vom Ball weg, bis die gestrichelte Passlinie mit der durchgezogenen Grundlinie den Zielwinkel bildet. Prüfe dann deinen Winkel.';
+
+  @override
+  String get labsCreateAngleLegend =>
+      'Durchgezogene Linie: Grundlinie · Gestrichelte Linie: deine Passrichtung · Quadrat: Zielrichtung';
+
+  @override
+  String get labsCreateAngleTargetsHeading => 'Wähle einen Zielwinkel';
+
+  @override
+  String labsCreateAngleDegrees(String angle) {
+    return '$angle°';
+  }
+
+  @override
+  String labsCreateAngleTargetChipSemantic(String target) {
+    return 'Zielwinkel $target Grad';
+  }
+
+  @override
+  String labsCreateAngleTargetChipMatchedSemantic(String target) {
+    return 'Zielwinkel $target Grad, erzeugt';
+  }
+
+  @override
+  String labsCreateAngleTargetReadout(String target) {
+    return 'Ziel: $target°';
+  }
+
+  @override
+  String labsCreateAngleCurrentReadout(String angle) {
+    return 'Dein Winkel: $angle°';
+  }
+
+  @override
+  String labsCreateAngleTargetSemantic(String target) {
+    return 'Zielwinkel: $target Grad';
+  }
+
+  @override
+  String labsCreateAngleCurrentSemantic(String angle) {
+    return 'Dein Winkel: $angle Grad';
+  }
+
+  @override
+  String get labsCreateAnglePitchSemantic =>
+      'Fussballfeld. Die durchgezogene Grundlinie zeigt vom Ball nach rechts. Zieh den runden Griff oder benutze die Pfeiltasten, um die gestrichelte Passlinie zu drehen. Das Quadrat markiert das Ziel.';
+
+  @override
+  String labsCreateAnglePitchValue(String angle) {
+    return '$angle Grad';
+  }
+
+  @override
+  String get labsCreateAngleDecrease => 'Winkel verkleinern';
+
+  @override
+  String get labsCreateAngleIncrease => 'Winkel vergrössern';
+
+  @override
+  String get labsCreateAngleReset => 'Feld zurücksetzen';
+
+  @override
+  String get labsCreateAngleCheck => 'Winkel prüfen';
+
+  @override
+  String labsCreateAngleToleranceNote(String tolerance) {
+    return 'Es passt, wenn du höchstens $tolerance° vom Ziel entfernt bist.';
+  }
+
+  @override
+  String get labsCreateAngleKeyboardHint =>
+      'Ziehen ist nicht nötig: Benutze die Knöpfe, oder wähle das Feld aus und drücke die Pfeiltasten links und rechts, um jeweils um ein Grad zu drehen.';
+
+  @override
+  String labsCreateAngleMatched(String target, String attempted) {
+    return 'Du hast einen Winkel von $target° erzeugt. Deine Linie stand bei $attempted°, darum rastet sie jetzt genau auf $target° ein.';
+  }
+
+  @override
+  String labsCreateAngleTurnWider(
+      String attempted, String difference, String target) {
+    return 'Dein Winkel beträgt $attempted°. Öffne die Linie um $difference° weiter, um $target° zu erreichen.';
+  }
+
+  @override
+  String labsCreateAngleTurnNarrower(
+      String attempted, String difference, String target) {
+    return 'Dein Winkel beträgt $attempted°. Schliesse die Linie um $difference°, um $target° zu erreichen.';
+  }
+
+  @override
+  String get labsCreateAngleExplain30 =>
+      '30° ist ein schmaler Winkel: ein Drittel eines rechten Winkels.';
+
+  @override
+  String get labsCreateAngleExplain45 =>
+      '45° ist genau ein halber rechter Winkel: der diagonale Pass.';
+
+  @override
+  String get labsCreateAngleExplain60 =>
+      '60° sind zwei Drittel eines rechten Winkels, eine weitere Drehung als 45°.';
+
+  @override
+  String get labsCreateAngleExplain90 =>
+      '90° ist ein rechter Winkel: eine Vierteldrehung, senkrecht zur Grundlinie.';
+
+  @override
+  String labsCreateAngleNextTarget(String target) {
+    return 'Als Nächstes $target° versuchen';
+  }
+
+  @override
+  String labsCreateAngleProgress(int count, int total) {
+    return '$count von $total Zielwinkeln bei diesem Besuch erzeugt';
+  }
+
+  @override
+  String get labsCreateAngleCompleteTitle => 'Alle vier Winkel erzeugt';
+
+  @override
+  String get labsCreateAngleCompleteBody =>
+      'Du hast bei diesem Besuch 30°, 45°, 60° und 90° erzeugt. Erkunde noch einmal, wähle ein beliebiges Ziel oder kehre zum Studio für angewandte Mathematik zurück.';
+
+  @override
+  String get labsCreateAngleExploreAgain => 'Noch einmal erkunden';
+
+  @override
+  String get labsCreateAngleBackToStudio =>
+      'Zurück zum Studio für angewandte Mathematik';
+
+  @override
+  String get labsCreateAngleSessionNote =>
+      'Freiwillige Erkundung. Nichts wird gespeichert: Wenn du diese Seite verlässt, beginnt der nächste Besuch neu.';
 }
