@@ -4906,13 +4906,13 @@ abstract class AppLocalizations {
   /// No description provided for @labsEarlyMathsPlaygroundSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'Calm, playful counting activities for younger learners'**
+  /// **'Calm, playful counting, sharing and early-fraction activities for younger learners'**
   String get labsEarlyMathsPlaygroundSubtitle;
 
   /// No description provided for @earlyMathsPlaygroundIntro.
   ///
   /// In en, this message translates to:
-  /// **'A calm, untimed space for younger learners to practise counting — no scores, no timers, no pressure.'**
+  /// **'A calm, untimed space for younger learners to practise counting, sharing and early fractions — no scores, no timers, no pressure.'**
   String get earlyMathsPlaygroundIntro;
 
   /// No description provided for @feedTheHungryPandaTitle.
@@ -5244,6 +5244,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'You counted brilliantly!'**
   String get feedPandaRoundCompleteMessage;
+
+  /// Panda Garden: screen-reader label for the apple basket, announcing how many apples are still in it
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{The basket is empty.} =1{1 apple in the basket.} other{{count} apples in the basket.}}'**
+  String feedPandaBasketSemanticLabel(int count);
+
+  /// Panda Garden: screen-reader label for Panda's bowl and progress caption, e.g. 'Panda has 2 of 3 apples.'
+  ///
+  /// In en, this message translates to:
+  /// **'Panda has {given} of {target, plural, =1{1 apple} other{{target} apples}}.'**
+  String feedPandaBowlSemanticLabel(int given, int target);
+
+  /// Panda Garden: visible caption on Panda's feeding area, the place to drop or give apples
+  ///
+  /// In en, this message translates to:
+  /// **'Give apples to Panda here'**
+  String get feedPandaDropZoneLabel;
+
+  /// Panda Garden: shown after an apple is selected with a tap or keyboard, explaining the non-drag way to feed Panda
+  ///
+  /// In en, this message translates to:
+  /// **'Apple picked. Now tap Panda to give it.'**
+  String get feedPandaTapPandaHint;
 
   /// No description provided for @labsSpatialCubeWhichFaceOppositeMission.
   ///
@@ -8562,6 +8586,361 @@ abstract class AppLocalizations {
   /// **'0.00 is zero. Count {count} ticks to the right to reach {target}.'**
   String numberSenseHundredthsZeroGuidedFeedbackTarget(
       int count, String target);
+
+  /// Panda Portions: Title of the Panda Portions fraction lesson
+  ///
+  /// In en, this message translates to:
+  /// **'Panda Portions'**
+  String get pandaPortionsTitle;
+
+  /// Panda Portions: Entry-card subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Share an apple fairly and discover fractions.'**
+  String get pandaPortionsSubtitle;
+
+  /// Panda Portions: Lesson menu intro
+  ///
+  /// In en, this message translates to:
+  /// **'Choose where to start. You can change lessons at any time.'**
+  String get pandaPortionsMenuIntro;
+
+  /// Panda Portions: Menu option
+  ///
+  /// In en, this message translates to:
+  /// **'Guided Path'**
+  String get pandaPortionsGuidedPathTitle;
+
+  /// Panda Portions: Menu option description
+  ///
+  /// In en, this message translates to:
+  /// **'Equal parts, then halves, then quarters — one step at a time.'**
+  String get pandaPortionsGuidedPathDescription;
+
+  /// Panda Portions: Menu option
+  ///
+  /// In en, this message translates to:
+  /// **'Practise Halves'**
+  String get pandaPortionsPractiseHalvesTitle;
+
+  /// Panda Portions: Menu option description
+  ///
+  /// In en, this message translates to:
+  /// **'Share one apple into 2 equal parts.'**
+  String get pandaPortionsPractiseHalvesDescription;
+
+  /// Panda Portions: Menu option
+  ///
+  /// In en, this message translates to:
+  /// **'Practise Quarters'**
+  String get pandaPortionsPractiseQuartersTitle;
+
+  /// Panda Portions: Menu option description
+  ///
+  /// In en, this message translates to:
+  /// **'Share one apple into 4 equal parts.'**
+  String get pandaPortionsPractiseQuartersDescription;
+
+  /// Panda Portions: Guided Path position
+  ///
+  /// In en, this message translates to:
+  /// **'Guided Path · step {step} of {total}'**
+  String pandaPortionsGuidedStep(int step, int total);
+
+  /// Panda Portions: Lesson title
+  ///
+  /// In en, this message translates to:
+  /// **'Equal parts'**
+  String get pandaPortionsLessonEqualPartsTitle;
+
+  /// Panda Portions: Lesson purpose
+  ///
+  /// In en, this message translates to:
+  /// **'Find the apple that is shared fairly.'**
+  String get pandaPortionsLessonEqualPartsPurpose;
+
+  /// Panda Portions: Lesson title
+  ///
+  /// In en, this message translates to:
+  /// **'Halves'**
+  String get pandaPortionsLessonHalvesTitle;
+
+  /// Panda Portions: Lesson purpose
+  ///
+  /// In en, this message translates to:
+  /// **'Feed Panda one half of an apple.'**
+  String get pandaPortionsLessonHalvesPurpose;
+
+  /// Panda Portions: Lesson title
+  ///
+  /// In en, this message translates to:
+  /// **'Quarters'**
+  String get pandaPortionsLessonQuartersTitle;
+
+  /// Panda Portions: Lesson purpose
+  ///
+  /// In en, this message translates to:
+  /// **'Feed Panda one quarter of an apple.'**
+  String get pandaPortionsLessonQuartersPurpose;
+
+  /// Panda Portions: Prompt
+  ///
+  /// In en, this message translates to:
+  /// **'Which plate shows one apple shared into equal parts?'**
+  String get pandaPortionsPromptEqualParts;
+
+  /// Panda Portions: Prompt
+  ///
+  /// In en, this message translates to:
+  /// **'Feed Panda one half.'**
+  String get pandaPortionsPromptHalves;
+
+  /// Panda Portions: Prompt
+  ///
+  /// In en, this message translates to:
+  /// **'Feed Panda one quarter.'**
+  String get pandaPortionsPromptQuarters;
+
+  /// Panda Portions: Teaching line
+  ///
+  /// In en, this message translates to:
+  /// **'Fractions are equal parts of one whole.'**
+  String get pandaPortionsTeachEqualParts;
+
+  /// Panda Portions: Success, equal-parts lesson
+  ///
+  /// In en, this message translates to:
+  /// **'Yes — every part on this plate is the same size.'**
+  String get pandaPortionsSuccessEqualParts;
+
+  /// Panda Portions: Success: e.g. 'You fed Panda 1 of 2 equal parts: 1/2.'
+  ///
+  /// In en, this message translates to:
+  /// **'You fed Panda 1 of {parts} equal parts: {fraction}.'**
+  String pandaPortionsSuccessFedPart(int parts, String fraction);
+
+  /// Panda Portions: Fraction result
+  ///
+  /// In en, this message translates to:
+  /// **'Panda ate 1 of {parts} equal parts. That is {fraction}.'**
+  String pandaPortionsSuccessAte(int parts, String fraction);
+
+  /// Panda Portions: Remaining fraction
+  ///
+  /// In en, this message translates to:
+  /// **'{fraction} of the apple is left.'**
+  String pandaPortionsRemainingLeft(String fraction);
+
+  /// Panda Portions: Unequal-parts teaching feedback
+  ///
+  /// In en, this message translates to:
+  /// **'These parts are not equal, so they are not halves or quarters.'**
+  String get pandaPortionsMisconceptionUnequal;
+
+  /// Panda Portions: Incorrect selection
+  ///
+  /// In en, this message translates to:
+  /// **'Try again. Look for one equal part of the whole apple.'**
+  String get pandaPortionsIncorrectSelection;
+
+  /// Panda Portions: Hint
+  ///
+  /// In en, this message translates to:
+  /// **'In a fair share, every part is the same size. Compare the parts on each plate.'**
+  String get pandaPortionsHintEqualParts;
+
+  /// Panda Portions: Hint
+  ///
+  /// In en, this message translates to:
+  /// **'Halves are 2 equal parts. Both parts of one whole apple are the same size.'**
+  String get pandaPortionsHintHalves;
+
+  /// Panda Portions: Hint
+  ///
+  /// In en, this message translates to:
+  /// **'Quarters are 4 equal parts. All 4 parts of one whole apple are the same size.'**
+  String get pandaPortionsHintQuarters;
+
+  /// Panda Portions: Button
+  ///
+  /// In en, this message translates to:
+  /// **'Try another example'**
+  String get pandaPortionsRetryEqualParts;
+
+  /// Panda Portions: Button
+  ///
+  /// In en, this message translates to:
+  /// **'Try another half'**
+  String get pandaPortionsRetryHalves;
+
+  /// Panda Portions: Button
+  ///
+  /// In en, this message translates to:
+  /// **'Try another quarter'**
+  String get pandaPortionsRetryQuarters;
+
+  /// Panda Portions: Optional suggestion
+  ///
+  /// In en, this message translates to:
+  /// **'You could try halves next.'**
+  String get pandaPortionsSuggestTryHalves;
+
+  /// Panda Portions: Optional suggestion
+  ///
+  /// In en, this message translates to:
+  /// **'You could try quarters next.'**
+  String get pandaPortionsSuggestTryQuarters;
+
+  /// Panda Portions: Optional suggestion
+  ///
+  /// In en, this message translates to:
+  /// **'Ready for a new challenge?'**
+  String get pandaPortionsSuggestNewChallenge;
+
+  /// Panda Portions: Panel heading
+  ///
+  /// In en, this message translates to:
+  /// **'What next?'**
+  String get pandaPortionsWhatNext;
+
+  /// Panda Portions: Button
+  ///
+  /// In en, this message translates to:
+  /// **'Next lesson'**
+  String get pandaPortionsNextLesson;
+
+  /// Panda Portions: Button
+  ///
+  /// In en, this message translates to:
+  /// **'Keep practising this'**
+  String get pandaPortionsKeepPractising;
+
+  /// Panda Portions: Button
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a lesson'**
+  String get pandaPortionsChooseLesson;
+
+  /// Panda Portions: Button
+  ///
+  /// In en, this message translates to:
+  /// **'Reset apple'**
+  String get pandaPortionsResetApple;
+
+  /// Panda Portions: Button
+  ///
+  /// In en, this message translates to:
+  /// **'Show me a hint'**
+  String get pandaPortionsShowHint;
+
+  /// Panda Portions: Button
+  ///
+  /// In en, this message translates to:
+  /// **'Hide hint'**
+  String get pandaPortionsHideHint;
+
+  /// Panda Portions: Caption and screen-reader label for the whole apple
+  ///
+  /// In en, this message translates to:
+  /// **'1 whole apple'**
+  String get pandaPortionsWholeApple;
+
+  /// Panda Portions: Plate caption, e.g. 'Plate A'
+  ///
+  /// In en, this message translates to:
+  /// **'Plate {plate}'**
+  String pandaPortionsPlateLabel(String plate);
+
+  /// Panda Portions: Screen-reader label
+  ///
+  /// In en, this message translates to:
+  /// **'Plate {plate}: one apple cut into {parts} equal parts.'**
+  String pandaPortionsPlateEqualSemantic(String plate, int parts);
+
+  /// Panda Portions: Screen-reader label
+  ///
+  /// In en, this message translates to:
+  /// **'Plate {plate}: one apple cut into {parts} parts that are not the same size.'**
+  String pandaPortionsPlateUnequalSemantic(String plate, int parts);
+
+  /// Panda Portions: Screen-reader label
+  ///
+  /// In en, this message translates to:
+  /// **'Plate {plate}, piece {index} of {parts}. An equal part: {fraction} of the apple.'**
+  String pandaPortionsPieceEqualSemantic(
+      String plate, int index, int parts, String fraction);
+
+  /// Panda Portions: Screen-reader label
+  ///
+  /// In en, this message translates to:
+  /// **'Plate {plate}, piece {index} of {parts}. Not an equal part.'**
+  String pandaPortionsPieceUnequalSemantic(String plate, int index, int parts);
+
+  /// Panda Portions: Screen-reader label BEFORE the learner answers. Describes only what can be seen; must not say equal, unequal, a fraction, or correct.
+  ///
+  /// In en, this message translates to:
+  /// **'Plate {plate}: one apple cut into {parts} pieces.'**
+  String pandaPortionsPlatePiecesSemantic(String plate, int parts);
+
+  /// Panda Portions: Screen-reader label BEFORE the learner answers, for a 2-piece plate whose pieces differ in size. Must not say equal, unequal, a fraction, or correct.
+  ///
+  /// In en, this message translates to:
+  /// **'Plate {plate}: one apple cut into 2 pieces, one larger piece and one smaller piece.'**
+  String pandaPortionsPlateLargerSmallerSemantic(String plate);
+
+  /// Panda Portions: Screen-reader label BEFORE the learner answers, for a plate of 3 or more pieces that differ in size. Must not say equal, unequal, a fraction, or correct.
+  ///
+  /// In en, this message translates to:
+  /// **'Plate {plate}: one apple cut into {parts} pieces, some larger and some smaller.'**
+  String pandaPortionsPlateMixedSizesSemantic(String plate, int parts);
+
+  /// Panda Portions: Screen-reader label for a piece BEFORE the learner answers. Must not say equal, unequal, a fraction, or correct.
+  ///
+  /// In en, this message translates to:
+  /// **'Plate {plate}, piece {index} of {parts}.'**
+  String pandaPortionsPieceSemantic(String plate, int index, int parts);
+
+  /// Panda Portions: Tap-path hint
+  ///
+  /// In en, this message translates to:
+  /// **'Piece picked. Now tap Panda to give it.'**
+  String get pandaPortionsPiecePicked;
+
+  /// Panda Portions: Panda / bowl drop target label
+  ///
+  /// In en, this message translates to:
+  /// **'Give the piece to Panda'**
+  String get pandaPortionsFeedPanda;
+
+  /// Panda Portions: Screen-reader label
+  ///
+  /// In en, this message translates to:
+  /// **'Panda\'s bowl is empty.'**
+  String get pandaPortionsBowlEmpty;
+
+  /// Panda Portions: Screen-reader label
+  ///
+  /// In en, this message translates to:
+  /// **'Panda\'s bowl has {fraction} of the apple.'**
+  String pandaPortionsBowlHas(String fraction);
+
+  /// Panda Portions: Fraction strip label
+  ///
+  /// In en, this message translates to:
+  /// **'Fraction strip: {fed} of {parts} equal parts given to Panda.'**
+  String pandaPortionsStripLabel(int fed, int parts);
+
+  /// Panda Portions: Word shown inside a fed strip cell
+  ///
+  /// In en, this message translates to:
+  /// **'fed'**
+  String get pandaPortionsStripFed;
+
+  /// Panda Portions: Screen-reader hint for choosing a plate
+  ///
+  /// In en, this message translates to:
+  /// **'Choose plate {plate}'**
+  String pandaPortionsChoosePlate(String plate);
 }
 
 class _AppLocalizationsDelegate

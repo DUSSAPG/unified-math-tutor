@@ -29,6 +29,9 @@ class EarlyMathsPlaygroundHubScreen extends StatelessWidget {
         backgroundColor: colors.background,
         elevation: 0,
         leading: IconButton(
+          key: const Key('earlyMathsPlaygroundBackButton'),
+          // Screen readers announce this as "Back" (localised).
+          tooltip: MaterialLocalizations.of(context).backButtonTooltip,
           icon: Icon(Icons.arrow_back, color: colors.primaryText),
           onPressed: () => popOrGo(context, '/math-studio/interactive-labs'),
         ),
@@ -62,6 +65,16 @@ class EarlyMathsPlaygroundHubScreen extends StatelessWidget {
                     subtitle: l10n.feedTheHungryPandaSubtitle,
                     onTap: () => context.push(
                         '/math-studio/interactive-labs/early-maths-playground/feed-the-hungry-panda'),
+                  ),
+                  const SizedBox(height: AppSpacing.md),
+                  RouteLinkCard(
+                    key: const Key('pandaPortionsEntryCard'),
+                    icon: LucideIcons.pieChart,
+                    iconColor: const Color(0xFFE53935),
+                    title: l10n.pandaPortionsTitle,
+                    subtitle: l10n.pandaPortionsSubtitle,
+                    onTap: () => context.push(
+                        '/math-studio/interactive-labs/early-maths-playground/panda-portions'),
                   ),
                 ],
               ),

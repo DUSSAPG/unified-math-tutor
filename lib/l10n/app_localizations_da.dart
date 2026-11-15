@@ -2679,11 +2679,11 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get labsEarlyMathsPlaygroundSubtitle =>
-      'Calm, playful counting activities for younger learners';
+      'Calm, playful counting, sharing and early-fraction activities for younger learners';
 
   @override
   String get earlyMathsPlaygroundIntro =>
-      'A calm, untimed space for younger learners to practise counting — no scores, no timers, no pressure.';
+      'A calm, untimed space for younger learners to practise counting, sharing and early fractions — no scores, no timers, no pressure.';
 
   @override
   String get feedTheHungryPandaTitle => 'Feed the Hungry Panda';
@@ -2934,6 +2934,35 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get feedPandaRoundCompleteMessage => 'You counted brilliantly!';
+
+  @override
+  String feedPandaBasketSemanticLabel(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count apples in the basket.',
+      one: '1 apple in the basket.',
+      zero: 'The basket is empty.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String feedPandaBowlSemanticLabel(int given, int target) {
+    String _temp0 = intl.Intl.pluralLogic(
+      target,
+      locale: localeName,
+      other: '$target apples',
+      one: '1 apple',
+    );
+    return 'Panda has $given of $_temp0.';
+  }
+
+  @override
+  String get feedPandaDropZoneLabel => 'Give apples to Panda here';
+
+  @override
+  String get feedPandaTapPandaHint => 'Apple picked. Now tap Panda to give it.';
 
   @override
   String get labsSpatialCubeWhichFaceOppositeMission =>
@@ -4993,6 +5022,233 @@ class AppLocalizationsDa extends AppLocalizations {
   String numberSenseHundredthsZeroGuidedFeedbackTarget(
       int count, String target) {
     return '0.00 is zero. Count $count ticks to the right to reach $target.';
+  }
+
+  @override
+  String get pandaPortionsTitle => 'Panda Portions';
+
+  @override
+  String get pandaPortionsSubtitle =>
+      'Share an apple fairly and discover fractions.';
+
+  @override
+  String get pandaPortionsMenuIntro =>
+      'Choose where to start. You can change lessons at any time.';
+
+  @override
+  String get pandaPortionsGuidedPathTitle => 'Guided Path';
+
+  @override
+  String get pandaPortionsGuidedPathDescription =>
+      'Equal parts, then halves, then quarters — one step at a time.';
+
+  @override
+  String get pandaPortionsPractiseHalvesTitle => 'Practise Halves';
+
+  @override
+  String get pandaPortionsPractiseHalvesDescription =>
+      'Share one apple into 2 equal parts.';
+
+  @override
+  String get pandaPortionsPractiseQuartersTitle => 'Practise Quarters';
+
+  @override
+  String get pandaPortionsPractiseQuartersDescription =>
+      'Share one apple into 4 equal parts.';
+
+  @override
+  String pandaPortionsGuidedStep(int step, int total) {
+    return 'Guided Path · step $step of $total';
+  }
+
+  @override
+  String get pandaPortionsLessonEqualPartsTitle => 'Equal parts';
+
+  @override
+  String get pandaPortionsLessonEqualPartsPurpose =>
+      'Find the apple that is shared fairly.';
+
+  @override
+  String get pandaPortionsLessonHalvesTitle => 'Halves';
+
+  @override
+  String get pandaPortionsLessonHalvesPurpose =>
+      'Feed Panda one half of an apple.';
+
+  @override
+  String get pandaPortionsLessonQuartersTitle => 'Quarters';
+
+  @override
+  String get pandaPortionsLessonQuartersPurpose =>
+      'Feed Panda one quarter of an apple.';
+
+  @override
+  String get pandaPortionsPromptEqualParts =>
+      'Which plate shows one apple shared into equal parts?';
+
+  @override
+  String get pandaPortionsPromptHalves => 'Feed Panda one half.';
+
+  @override
+  String get pandaPortionsPromptQuarters => 'Feed Panda one quarter.';
+
+  @override
+  String get pandaPortionsTeachEqualParts =>
+      'Fractions are equal parts of one whole.';
+
+  @override
+  String get pandaPortionsSuccessEqualParts =>
+      'Yes — every part on this plate is the same size.';
+
+  @override
+  String pandaPortionsSuccessFedPart(int parts, String fraction) {
+    return 'You fed Panda 1 of $parts equal parts: $fraction.';
+  }
+
+  @override
+  String pandaPortionsSuccessAte(int parts, String fraction) {
+    return 'Panda ate 1 of $parts equal parts. That is $fraction.';
+  }
+
+  @override
+  String pandaPortionsRemainingLeft(String fraction) {
+    return '$fraction of the apple is left.';
+  }
+
+  @override
+  String get pandaPortionsMisconceptionUnequal =>
+      'These parts are not equal, so they are not halves or quarters.';
+
+  @override
+  String get pandaPortionsIncorrectSelection =>
+      'Try again. Look for one equal part of the whole apple.';
+
+  @override
+  String get pandaPortionsHintEqualParts =>
+      'In a fair share, every part is the same size. Compare the parts on each plate.';
+
+  @override
+  String get pandaPortionsHintHalves =>
+      'Halves are 2 equal parts. Both parts of one whole apple are the same size.';
+
+  @override
+  String get pandaPortionsHintQuarters =>
+      'Quarters are 4 equal parts. All 4 parts of one whole apple are the same size.';
+
+  @override
+  String get pandaPortionsRetryEqualParts => 'Try another example';
+
+  @override
+  String get pandaPortionsRetryHalves => 'Try another half';
+
+  @override
+  String get pandaPortionsRetryQuarters => 'Try another quarter';
+
+  @override
+  String get pandaPortionsSuggestTryHalves => 'You could try halves next.';
+
+  @override
+  String get pandaPortionsSuggestTryQuarters => 'You could try quarters next.';
+
+  @override
+  String get pandaPortionsSuggestNewChallenge => 'Ready for a new challenge?';
+
+  @override
+  String get pandaPortionsWhatNext => 'What next?';
+
+  @override
+  String get pandaPortionsNextLesson => 'Next lesson';
+
+  @override
+  String get pandaPortionsKeepPractising => 'Keep practising this';
+
+  @override
+  String get pandaPortionsChooseLesson => 'Choose a lesson';
+
+  @override
+  String get pandaPortionsResetApple => 'Reset apple';
+
+  @override
+  String get pandaPortionsShowHint => 'Show me a hint';
+
+  @override
+  String get pandaPortionsHideHint => 'Hide hint';
+
+  @override
+  String get pandaPortionsWholeApple => '1 whole apple';
+
+  @override
+  String pandaPortionsPlateLabel(String plate) {
+    return 'Plate $plate';
+  }
+
+  @override
+  String pandaPortionsPlateEqualSemantic(String plate, int parts) {
+    return 'Plate $plate: one apple cut into $parts equal parts.';
+  }
+
+  @override
+  String pandaPortionsPlateUnequalSemantic(String plate, int parts) {
+    return 'Plate $plate: one apple cut into $parts parts that are not the same size.';
+  }
+
+  @override
+  String pandaPortionsPieceEqualSemantic(
+      String plate, int index, int parts, String fraction) {
+    return 'Plate $plate, piece $index of $parts. An equal part: $fraction of the apple.';
+  }
+
+  @override
+  String pandaPortionsPieceUnequalSemantic(String plate, int index, int parts) {
+    return 'Plate $plate, piece $index of $parts. Not an equal part.';
+  }
+
+  @override
+  String pandaPortionsPlatePiecesSemantic(String plate, int parts) {
+    return 'Plate $plate: one apple cut into $parts pieces.';
+  }
+
+  @override
+  String pandaPortionsPlateLargerSmallerSemantic(String plate) {
+    return 'Plate $plate: one apple cut into 2 pieces, one larger piece and one smaller piece.';
+  }
+
+  @override
+  String pandaPortionsPlateMixedSizesSemantic(String plate, int parts) {
+    return 'Plate $plate: one apple cut into $parts pieces, some larger and some smaller.';
+  }
+
+  @override
+  String pandaPortionsPieceSemantic(String plate, int index, int parts) {
+    return 'Plate $plate, piece $index of $parts.';
+  }
+
+  @override
+  String get pandaPortionsPiecePicked =>
+      'Piece picked. Now tap Panda to give it.';
+
+  @override
+  String get pandaPortionsFeedPanda => 'Give the piece to Panda';
+
+  @override
+  String get pandaPortionsBowlEmpty => 'Panda\'s bowl is empty.';
+
+  @override
+  String pandaPortionsBowlHas(String fraction) {
+    return 'Panda\'s bowl has $fraction of the apple.';
+  }
+
+  @override
+  String pandaPortionsStripLabel(int fed, int parts) {
+    return 'Fraction strip: $fed of $parts equal parts given to Panda.';
+  }
+
+  @override
+  String get pandaPortionsStripFed => 'fed';
+
+  @override
+  String pandaPortionsChoosePlate(String plate) {
+    return 'Choose plate $plate';
   }
 }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../../app/safe_navigation.dart';
@@ -11,6 +12,7 @@ import '../../../shared/theme/app_spacing.dart';
 import '../../../shared/theme/app_theme.dart';
 import '../../../widgets/labs/feed_panda/feed_panda_round_controller.dart';
 import '../../../widgets/labs/feed_panda/fruit_matrix.dart';
+import '../../../widgets/labs/feed_panda/panda_feeding_bowl.dart';
 import '../../../widgets/labs/feed_panda/panda_habitat_backdrop.dart';
 import '../../../widgets/labs/feed_panda/panda_visual.dart';
 import '../../../widgets/labs/feed_panda/remaining_answer_choices.dart';
@@ -109,6 +111,20 @@ class _FeedTheHungryPandaScreenState extends State<FeedTheHungryPandaScreen> {
     _controller.acceptFruit(fruitId, usedDrag: usedDrag);
   }
 
+  /// The non-drag way to feed Panda: a tap, a screen-reader activation, or
+  /// Enter/Space on the focused feeding area all land here. Gives Panda
+  /// the currently selected apple; with nothing selected after the target
+  /// is reached, shows the same gentle reminder as an overfeed drag.
+  void _activatePanda() {
+    if (_controller.inputLocked) return;
+    final selected = _controller.selectedFruitId;
+    if (selected != null) {
+      _handleAccept(selected, usedDrag: false);
+    } else if (_controller.targetReached) {
+      _controller.notifyOverfeedAttempt();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
@@ -123,6 +139,8 @@ class _FeedTheHungryPandaScreenState extends State<FeedTheHungryPandaScreen> {
         backgroundColor: colors.background,
         elevation: 0,
         leading: IconButton(
+          key: const Key('feedPandaBackButton'),
+          tooltip: MaterialLocalizations.of(context).backButtonTooltip,
           icon: Icon(Icons.arrow_back, color: colors.primaryText),
           onPressed: () => popOrGo(
               context, '/math-studio/interactive-labs/early-maths-playground'),
@@ -143,22 +161,33 @@ class _FeedTheHungryPandaScreenState extends State<FeedTheHungryPandaScreen> {
                 controller: _controller,
                 reduceMotion: reduceMotion,
                 semanticLabel: _pandaSemanticLabel(l10n),
+                bowlSemanticLabel: l10n.feedPandaBowlSemanticLabel(
+                  _controller.acceptedCount,
+                  _controller.challenge.targetCount,
+                ),
+                dropZoneLabel: l10n.feedPandaDropZoneLabel,
                 onAccept: (fruitId) => _handleAccept(fruitId, usedDrag: true),
+                onActivate: _activatePanda,
               );
-              final fruitSection =
-                  _controller.phase != FeedPandaPhase.askRemaining &&
-                          _controller.phase != FeedPandaPhase.roundComplete
-                      ? FruitMatrix(
-                          allFruitIds: _controller.challenge.fruitIds,
-                          acceptedFruitIds: _controller.acceptedFruitIds,
-                          selectedFruitId: _controller.selectedFruitId,
-                          locked: _controller.inputLocked,
-                          onSelect: _controller.selectFruit,
-                          onDragReturned: (_) => _controller.rejectDrop(),
-                          semanticLabelFor: (id, pos, total) =>
-                              _fruitSemanticLabel(l10n, id, pos, total),
-                        )
-                      : const SizedBox.shrink();
+              final fruitSection = _controller.phase !=
+                          FeedPandaPhase.askRemaining &&
+                      _controller.phase != FeedPandaPhase.roundComplete
+                  ? FruitMatrix(
+                      allFruitIds: _controller.challenge.fruitIds,
+                      acceptedFruitIds: _controller.acceptedFruitIds,
+                      selectedFruitId: _controller.selectedFruitId,
+                      locked: _controller.inputLocked,
+                      onSelect: _controller.selectFruit,
+                      onDragReturned: (_) => _controller.rejectDrop(),
+                      semanticLabelFor: (id, pos, total) =>
+                          _fruitSemanticLabel(l10n, id, pos, total),
+                      basketSemanticLabel: l10n.feedPandaBasketSemanticLabel(
+                        _controller.challenge.fruitIds.length -
+                            _controller.acceptedCount,
+                      ),
+                      reduceMotion: reduceMotion,
+                    )
+                  : const SizedBox.shrink();
 
               return Center(
                 child: ConstrainedBox(
@@ -174,6 +203,20 @@ class _FeedTheHungryPandaScreenState extends State<FeedTheHungryPandaScreen> {
                         const SizedBox(height: AppSpacing.md),
                         if (_controller.gentleReminderActive)
                           _GentleReminderBanner(text: l10n.feedPandaHasEnough),
+                        // The hint's space is reserved for the whole
+                        // feeding phase, so selecting an apple never
+                        // pushes Panda down mid-reach. Hidden (and absent
+                        // from the semantics tree) until an apple is
+                        // selected.
+                        if (_controller.phase == FeedPandaPhase.feeding)
+                          Visibility(
+                            visible: _controller.selectedFruitId != null,
+                            maintainSize: true,
+                            maintainAnimation: true,
+                            maintainState: true,
+                            child:
+                                _TapPandaHint(text: l10n.feedPandaTapPandaHint),
+                          ),
                         if (isWide &&
                             _controller.phase != FeedPandaPhase.askRemaining &&
                             _controller.phase != FeedPandaPhase.roundComplete)
@@ -182,7 +225,13 @@ class _FeedTheHungryPandaScreenState extends State<FeedTheHungryPandaScreen> {
                             children: [
                               Expanded(child: fruitSection),
                               const SizedBox(width: AppSpacing.lg),
-                              pandaSection,
+                              // Bounded so the feeding-area caption wraps
+                              // at large text instead of widening the row.
+                              ConstrainedBox(
+                                constraints:
+                                    const BoxConstraints(maxWidth: 300),
+                                child: pandaSection,
+                              ),
                             ],
                           )
                         else ...[
@@ -348,22 +397,81 @@ class _GentleReminderBanner extends StatelessWidget {
   }
 }
 
-class _PandaSection extends StatelessWidget {
+class _TapPandaHint extends StatelessWidget {
+  const _TapPandaHint({required this.text});
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = context.appColors;
+    return Padding(
+      padding: const EdgeInsets.only(bottom: AppSpacing.md),
+      child: Semantics(
+        liveRegion: true,
+        child: Row(
+          key: const Key('feedPandaTapPandaHint'),
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.touch_app_outlined, color: colors.accent, size: 20),
+            const SizedBox(width: 8),
+            Flexible(
+              child: Text(
+                text,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: colors.primaryText,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// Panda's feeding area: Panda, the bowl that fills with the apples given,
+/// and a visible drop-zone outline. One drop target, one button for
+/// assistive technology and keyboards — never drag-only.
+class _PandaSection extends StatefulWidget {
   const _PandaSection({
     required this.controller,
     required this.reduceMotion,
     required this.semanticLabel,
+    required this.bowlSemanticLabel,
+    required this.dropZoneLabel,
     required this.onAccept,
+    required this.onActivate,
   });
 
   final FeedPandaRoundController controller;
   final bool reduceMotion;
   final String semanticLabel;
+  final String bowlSemanticLabel;
+  final String dropZoneLabel;
+
+  /// A successful drag-drop of [fruitId] onto the feeding area.
   final ValueChanged<String> onAccept;
+
+  /// Tap / screen-reader activation / Enter or Space on the feeding area.
+  final VoidCallback onActivate;
+
+  @override
+  State<_PandaSection> createState() => _PandaSectionState();
+}
+
+class _PandaSectionState extends State<_PandaSection> {
+  bool _focusHighlighted = false;
 
   @override
   Widget build(BuildContext context) {
     final colors = context.appColors;
+    final controller = widget.controller;
+    final feedingOpen =
+        controller.phase == FeedPandaPhase.feeding && !controller.targetReached;
+
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -371,32 +479,101 @@ class _PandaSection extends StatelessWidget {
           key: const Key('feedPandaDropTarget'),
           onWillAcceptWithDetails: (details) =>
               controller.canAccept(details.data),
-          onAcceptWithDetails: (details) => onAccept(details.data),
+          onAcceptWithDetails: (details) => widget.onAccept(details.data),
           builder: (context, candidateData, rejectedData) {
-            return GestureDetector(
-              onTap: () {
-                final selected = controller.selectedFruitId;
-                if (selected != null) {
-                  onAccept(selected);
-                } else if (controller.targetReached) {
-                  controller.notifyOverfeedAttempt();
-                }
-              },
-              child: Semantics(
-                button: true,
-                label: semanticLabel,
-                child: ExcludeSemantics(
-                  child: Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: candidateData.isNotEmpty
-                          ? colors.accent.withValues(alpha: 0.16)
-                          : Colors.transparent,
+            final hovering = candidateData.isNotEmpty;
+            return Semantics(
+              button: true,
+              label: widget.semanticLabel,
+              onTap: widget.onActivate,
+              child: ExcludeSemantics(
+                child: FocusableActionDetector(
+                  key: const Key('feedPandaFeedingArea'),
+                  onShowFocusHighlight: (value) =>
+                      setState(() => _focusHighlighted = value),
+                  actions: {
+                    ActivateIntent: CallbackAction<ActivateIntent>(
+                      onInvoke: (_) {
+                        widget.onActivate();
+                        return null;
+                      },
                     ),
-                    child: PandaVisual(
-                      state: controller.pandaState,
-                      reduceMotion: reduceMotion,
+                  },
+                  shortcuts: const {
+                    SingleActivator(LogicalKeyboardKey.enter): ActivateIntent(),
+                    SingleActivator(LogicalKeyboardKey.space): ActivateIntent(),
+                  },
+                  child: GestureDetector(
+                    onTap: widget.onActivate,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(28),
+                        border: _focusHighlighted
+                            ? Border.all(
+                                color: Theme.of(context).colorScheme.primary,
+                                width: 3,
+                              )
+                            : null,
+                      ),
+                      child: CustomPaint(
+                        key: const Key('feedPandaDropZone'),
+                        painter: FeedingZonePainter(
+                          color: colors.accent,
+                          active: hovering,
+                          visible: feedingOpen,
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(20, 12, 20, 14),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              PandaVisual(
+                                state: controller.pandaState,
+                                reduceMotion: widget.reduceMotion,
+                                feedCount: controller.acceptedCount,
+                                size: 150,
+                              ),
+                              Transform.translate(
+                                // The bowl sits on the ground in front of
+                                // Panda, overlapping its feet slightly.
+                                offset: const Offset(0, -18),
+                                child: PandaFeedingBowl(
+                                  given: controller.acceptedCount,
+                                  reduceMotion: widget.reduceMotion,
+                                ),
+                              ),
+                              if (feedingOpen)
+                                Row(
+                                  key: const Key('feedPandaDropZoneLabel'),
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Icon(
+                                      hovering
+                                          ? Icons.file_download_done
+                                          : Icons.south,
+                                      size: 18,
+                                      color: colors.accent,
+                                    ),
+                                    const SizedBox(width: 6),
+                                    Flexible(
+                                      child: Text(
+                                        widget.dropZoneLabel,
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          color: colors.primaryText,
+                                          fontSize: 14,
+                                          fontWeight: hovering
+                                              ? FontWeight.w800
+                                              : FontWeight.w600,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -405,13 +582,17 @@ class _PandaSection extends StatelessWidget {
           },
         ),
         const SizedBox(height: AppSpacing.sm),
-        Text(
-          '${controller.acceptedCount} / ${controller.challenge.targetCount}',
-          key: const Key('feedPandaProgressCaption'),
-          style: TextStyle(
-            color: colors.secondaryText,
-            fontSize: 14,
-            fontWeight: FontWeight.w600,
+        Semantics(
+          label: widget.bowlSemanticLabel,
+          excludeSemantics: true,
+          child: Text(
+            '${controller.acceptedCount} / ${controller.challenge.targetCount}',
+            key: const Key('feedPandaProgressCaption'),
+            style: TextStyle(
+              color: colors.secondaryText,
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
+            ),
           ),
         ),
       ],

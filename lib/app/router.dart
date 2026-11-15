@@ -99,6 +99,7 @@ import '../screens/labs/aircraft_landing/aircraft_landing_glide_path_screen.dart
 import '../screens/labs/aircraft_landing/aircraft_landing_vector_approach_screen.dart';
 import '../screens/labs/early_maths_playground_hub_screen.dart';
 import '../screens/labs/feed_panda/feed_the_hungry_panda_screen.dart';
+import '../screens/labs/panda_portions/panda_portions_screen.dart';
 import '../screens/settings/release_notes_screen.dart';
 import '../screens/settings/terms_screen.dart';
 import '../screens/mental_math/daily_teaser_detail_screen.dart';
@@ -564,6 +565,10 @@ final GoRouter appRouter = GoRouter(
                 GoRoute(
                   path: 'feed-the-hungry-panda',
                   builder: (context, state) => const FeedTheHungryPandaScreen(),
+                ),
+                GoRoute(
+                  path: 'panda-portions',
+                  builder: (context, state) => const PandaPortionsScreen(),
                 ),
               ],
             ),
