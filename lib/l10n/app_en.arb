@@ -3538,5 +3538,279 @@
   "numberSenseHundredthsIncorrectFeedbackTarget": "You selected {decimal}. Count {count} ticks to the right of 0.00 to reach {target}.",
   "@numberSenseHundredthsIncorrectFeedbackTarget": { "placeholders": { "decimal": { "type": "String" }, "count": { "type": "int" }, "target": { "type": "String" } } },
   "numberSenseHundredthsZeroGuidedFeedbackTarget": "0.00 is zero. Count {count} ticks to the right to reach {target}.",
-  "@numberSenseHundredthsZeroGuidedFeedbackTarget": { "placeholders": { "count": { "type": "int" }, "target": { "type": "String" } } }
+  "@numberSenseHundredthsZeroGuidedFeedbackTarget": { "placeholders": { "count": { "type": "int" }, "target": { "type": "String" } } },
+  "labsAppliedMathsStudioTitle": "Applied Maths Studio",
+  "@labsAppliedMathsStudioTitle": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsAppliedMathsStudioSubtitle": "Applied explorations that turn algebra into shapes you can move.",
+  "@labsAppliedMathsStudioSubtitle": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsAppliedMathsStudioIntro": "Applied explorations: each one turns a piece of algebra into a model you can move and inspect, at your own pace.",
+  "@labsAppliedMathsStudioIntro": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialVolumeLabTitle": "Binomial Volume Lab",
+  "@labsBinomialVolumeLabTitle": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialVolumeLabSubtitle": "Pull apart a cube to see the terms in (a + b)³.",
+  "@labsBinomialVolumeLabSubtitle": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialVolumeLabKind": "Binomial expansion visualisation",
+  "@labsBinomialVolumeLabKind": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialIntro": "A cube with side length a + b can be split into smaller volumes. Move the slider to pull the pieces apart.",
+  "@labsBinomialIntro": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialModelSemantic": "Cube model with side length a + b, split into eight pieces. Pulled apart {percent} percent.",
+  "@labsBinomialModelSemantic": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy.",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "labsBinomialModelHint": "Use the left and right arrow keys to move between pieces.",
+  "@labsBinomialModelHint": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialExplosionLabel": "Explosion amount",
+  "@labsBinomialExplosionLabel": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialExplosionValue": "{percent} percent",
+  "@labsBinomialExplosionValue": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy.",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "labsBinomialAssemble": "Assemble",
+  "@labsBinomialAssemble": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialAssembleSemantic": "Assemble cube",
+  "@labsBinomialAssembleSemantic": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialPullApart": "Pull apart",
+  "@labsBinomialPullApart": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialPullApartSemantic": "Pull cube apart",
+  "@labsBinomialPullApartSemantic": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialResetView": "Reset view",
+  "@labsBinomialResetView": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialResetViewSemantic": "Reset cube view",
+  "@labsBinomialResetViewSemantic": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialPiecesHeading": "The pieces",
+  "@labsBinomialPiecesHeading": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialSelectACubed": "Select a cubed block",
+  "@labsBinomialSelectACubed": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialSelectASquaredB": "Select an a squared b prism",
+  "@labsBinomialSelectASquaredB": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialSelectABSquared": "Select an a b squared prism",
+  "@labsBinomialSelectABSquared": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialSelectBCubed": "Select b cubed block",
+  "@labsBinomialSelectBCubed": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialOneCube": "one cube",
+  "@labsBinomialOneCube": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialThreePrisms": "three prisms",
+  "@labsBinomialThreePrisms": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialExplainACubed": "This cube measures a × a × a, so its volume is a³. There is one of these cubes.",
+  "@labsBinomialExplainACubed": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialExplainASquaredB": "This prism measures a × a × b, so its volume is a²b. There are three of these prisms.",
+  "@labsBinomialExplainASquaredB": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialExplainABSquared": "This prism measures a × b × b, so its volume is ab². There are three of these prisms.",
+  "@labsBinomialExplainABSquared": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialExplainBCubed": "This cube measures b × b × b, so its volume is b³. There is one of these cubes.",
+  "@labsBinomialExplainBCubed": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialExplainNumeric": "With a = {a} and b = {b}, each one has volume {volume}.",
+  "@labsBinomialExplainNumeric": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy.",
+    "placeholders": {
+      "a": {
+        "type": "int"
+      },
+      "b": {
+        "type": "int"
+      },
+      "volume": {
+        "type": "int"
+      }
+    }
+  },
+  "labsBinomialSelectPrompt": "Tap a piece in the model, or choose one from the list, to see its volume.",
+  "@labsBinomialSelectPrompt": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialStepsHeading": "Guided steps",
+  "@labsBinomialStepsHeading": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialStepsNote": "Choose any step, in any order.",
+  "@labsBinomialStepsNote": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialStepChip": "Step {number}",
+  "@labsBinomialStepChip": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "labsBinomialStepChipSemantic": "Step {number}: {title}",
+  "@labsBinomialStepChipSemantic": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      },
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "labsBinomialStep1": "Find the a³ cube",
+  "@labsBinomialStep1": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialStep2": "Find the three a²b prisms",
+  "@labsBinomialStep2": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialStep3": "Find the three ab² prisms",
+  "@labsBinomialStep3": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialStep4": "Find the b³ cube",
+  "@labsBinomialStep4": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialStep5": "Reveal the complete expansion",
+  "@labsBinomialStep5": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialStepFound": "Found it. Every matching piece is outlined.",
+  "@labsBinomialStepFound": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialStepKeepLooking": "That piece has a different volume. Keep looking for the one this step asks for.",
+  "@labsBinomialStepKeepLooking": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialNextStep": "Next step",
+  "@labsBinomialNextStep": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialRevealBody": "Each of the eight pieces is one term. Grouping the pieces with the same volume gives:",
+  "@labsBinomialRevealBody": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialDimensionsHeading": "Side lengths",
+  "@labsBinomialDimensionsHeading": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialSideA": "Length a",
+  "@labsBinomialSideA": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialSideB": "Length b",
+  "@labsBinomialSideB": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialNumericCheckHeading": "Numeric check",
+  "@labsBinomialNumericCheckHeading": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialNumericCheckSpoken": "{side} cubed equals {aCubed} plus {aSquaredB} plus {aBSquared} plus {bCubed}, which equals {total}.",
+  "@labsBinomialNumericCheckSpoken": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy.",
+    "placeholders": {
+      "side": {
+        "type": "int"
+      },
+      "aCubed": {
+        "type": "int"
+      },
+      "aSquaredB": {
+        "type": "int"
+      },
+      "aBSquared": {
+        "type": "int"
+      },
+      "bCubed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "labsBinomialLegendHeading": "Key",
+  "@labsBinomialLegendHeading": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialLegendBody": "Each edge is cut into a length a and a length b. Every piece is named by a label and a pattern, not only by its colour.",
+  "@labsBinomialLegendBody": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialCompleteHeading": "You have seen the whole expansion",
+  "@labsBinomialCompleteHeading": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialCompleteBody": "Whatever lengths you choose, the eight pieces always fill the same cube of side a + b.",
+  "@labsBinomialCompleteBody": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialExploreAgain": "Explore again",
+  "@labsBinomialExploreAgain": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialChooseStep": "Choose a step",
+  "@labsBinomialChooseStep": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  },
+  "labsBinomialBackToStudio": "Back to Applied Maths Studio",
+  "@labsBinomialBackToStudio": {
+    "description": "Binomial Volume Lab / Applied Maths Studio copy."
+  }
 }

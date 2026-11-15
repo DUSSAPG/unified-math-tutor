@@ -5000,6 +5000,199 @@ class AppLocalizationsIt extends AppLocalizations {
       int count, String target) {
     return '0.00 is zero. Count $count ticks to the right to reach $target.';
   }
+
+  @override
+  String get labsAppliedMathsStudioTitle => 'Applied Maths Studio';
+
+  @override
+  String get labsAppliedMathsStudioSubtitle =>
+      'Applied explorations that turn algebra into shapes you can move.';
+
+  @override
+  String get labsAppliedMathsStudioIntro =>
+      'Applied explorations: each one turns a piece of algebra into a model you can move and inspect, at your own pace.';
+
+  @override
+  String get labsBinomialVolumeLabTitle => 'Binomial Volume Lab';
+
+  @override
+  String get labsBinomialVolumeLabSubtitle =>
+      'Pull apart a cube to see the terms in (a + b)³.';
+
+  @override
+  String get labsBinomialVolumeLabKind => 'Binomial expansion visualisation';
+
+  @override
+  String get labsBinomialIntro =>
+      'A cube with side length a + b can be split into smaller volumes. Move the slider to pull the pieces apart.';
+
+  @override
+  String labsBinomialModelSemantic(int percent) {
+    return 'Cube model with side length a + b, split into eight pieces. Pulled apart $percent percent.';
+  }
+
+  @override
+  String get labsBinomialModelHint =>
+      'Use the left and right arrow keys to move between pieces.';
+
+  @override
+  String get labsBinomialExplosionLabel => 'Explosion amount';
+
+  @override
+  String labsBinomialExplosionValue(int percent) {
+    return '$percent percent';
+  }
+
+  @override
+  String get labsBinomialAssemble => 'Assemble';
+
+  @override
+  String get labsBinomialAssembleSemantic => 'Assemble cube';
+
+  @override
+  String get labsBinomialPullApart => 'Pull apart';
+
+  @override
+  String get labsBinomialPullApartSemantic => 'Pull cube apart';
+
+  @override
+  String get labsBinomialResetView => 'Reset view';
+
+  @override
+  String get labsBinomialResetViewSemantic => 'Reset cube view';
+
+  @override
+  String get labsBinomialPiecesHeading => 'The pieces';
+
+  @override
+  String get labsBinomialSelectACubed => 'Select a cubed block';
+
+  @override
+  String get labsBinomialSelectASquaredB => 'Select an a squared b prism';
+
+  @override
+  String get labsBinomialSelectABSquared => 'Select an a b squared prism';
+
+  @override
+  String get labsBinomialSelectBCubed => 'Select b cubed block';
+
+  @override
+  String get labsBinomialOneCube => 'one cube';
+
+  @override
+  String get labsBinomialThreePrisms => 'three prisms';
+
+  @override
+  String get labsBinomialExplainACubed =>
+      'This cube measures a × a × a, so its volume is a³. There is one of these cubes.';
+
+  @override
+  String get labsBinomialExplainASquaredB =>
+      'This prism measures a × a × b, so its volume is a²b. There are three of these prisms.';
+
+  @override
+  String get labsBinomialExplainABSquared =>
+      'This prism measures a × b × b, so its volume is ab². There are three of these prisms.';
+
+  @override
+  String get labsBinomialExplainBCubed =>
+      'This cube measures b × b × b, so its volume is b³. There is one of these cubes.';
+
+  @override
+  String labsBinomialExplainNumeric(int a, int b, int volume) {
+    return 'With a = $a and b = $b, each one has volume $volume.';
+  }
+
+  @override
+  String get labsBinomialSelectPrompt =>
+      'Tap a piece in the model, or choose one from the list, to see its volume.';
+
+  @override
+  String get labsBinomialStepsHeading => 'Guided steps';
+
+  @override
+  String get labsBinomialStepsNote => 'Choose any step, in any order.';
+
+  @override
+  String labsBinomialStepChip(int number) {
+    return 'Step $number';
+  }
+
+  @override
+  String labsBinomialStepChipSemantic(int number, String title) {
+    return 'Step $number: $title';
+  }
+
+  @override
+  String get labsBinomialStep1 => 'Find the a³ cube';
+
+  @override
+  String get labsBinomialStep2 => 'Find the three a²b prisms';
+
+  @override
+  String get labsBinomialStep3 => 'Find the three ab² prisms';
+
+  @override
+  String get labsBinomialStep4 => 'Find the b³ cube';
+
+  @override
+  String get labsBinomialStep5 => 'Reveal the complete expansion';
+
+  @override
+  String get labsBinomialStepFound =>
+      'Found it. Every matching piece is outlined.';
+
+  @override
+  String get labsBinomialStepKeepLooking =>
+      'That piece has a different volume. Keep looking for the one this step asks for.';
+
+  @override
+  String get labsBinomialNextStep => 'Next step';
+
+  @override
+  String get labsBinomialRevealBody =>
+      'Each of the eight pieces is one term. Grouping the pieces with the same volume gives:';
+
+  @override
+  String get labsBinomialDimensionsHeading => 'Side lengths';
+
+  @override
+  String get labsBinomialSideA => 'Length a';
+
+  @override
+  String get labsBinomialSideB => 'Length b';
+
+  @override
+  String get labsBinomialNumericCheckHeading => 'Numeric check';
+
+  @override
+  String labsBinomialNumericCheckSpoken(int side, int aCubed, int aSquaredB,
+      int aBSquared, int bCubed, int total) {
+    return '$side cubed equals $aCubed plus $aSquaredB plus $aBSquared plus $bCubed, which equals $total.';
+  }
+
+  @override
+  String get labsBinomialLegendHeading => 'Key';
+
+  @override
+  String get labsBinomialLegendBody =>
+      'Each edge is cut into a length a and a length b. Every piece is named by a label and a pattern, not only by its colour.';
+
+  @override
+  String get labsBinomialCompleteHeading => 'You have seen the whole expansion';
+
+  @override
+  String get labsBinomialCompleteBody =>
+      'Whatever lengths you choose, the eight pieces always fill the same cube of side a + b.';
+
+  @override
+  String get labsBinomialExploreAgain => 'Explore again';
+
+  @override
+  String get labsBinomialChooseStep => 'Choose a step';
+
+  @override
+  String get labsBinomialBackToStudio => 'Back to Applied Maths Studio';
 }
 
 /// The translations for Italian, as used in Switzerland (`it_CH`).
@@ -9188,4 +9381,200 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
 
   @override
   String get appearanceResetOnboardingButton => 'Reset Onboarding';
+
+  @override
+  String get labsAppliedMathsStudioTitle => 'Studio di matematica applicata';
+
+  @override
+  String get labsAppliedMathsStudioSubtitle =>
+      'Esplorazioni applicate che trasformano l’algebra in forme da muovere.';
+
+  @override
+  String get labsAppliedMathsStudioIntro =>
+      'Esplorazioni applicate: ognuna trasforma un po’ di algebra in un modello da muovere ed esaminare, con i tuoi tempi.';
+
+  @override
+  String get labsBinomialVolumeLabTitle => 'Laboratorio del volume binomiale';
+
+  @override
+  String get labsBinomialVolumeLabSubtitle =>
+      'Separa un cubo per vedere i termini di (a + b)³.';
+
+  @override
+  String get labsBinomialVolumeLabKind =>
+      'Visualizzazione dello sviluppo binomiale';
+
+  @override
+  String get labsBinomialIntro =>
+      'Un cubo di lato a + b può essere diviso in volumi più piccoli. Sposta il cursore per separare i pezzi.';
+
+  @override
+  String labsBinomialModelSemantic(int percent) {
+    return 'Modello di cubo di lato a + b, diviso in otto pezzi. Separato al $percent percento.';
+  }
+
+  @override
+  String get labsBinomialModelHint =>
+      'Usa le frecce sinistra e destra per passare da un pezzo all’altro.';
+
+  @override
+  String get labsBinomialExplosionLabel => 'Grado di separazione';
+
+  @override
+  String labsBinomialExplosionValue(int percent) {
+    return '$percent percento';
+  }
+
+  @override
+  String get labsBinomialAssemble => 'Ricomponi';
+
+  @override
+  String get labsBinomialAssembleSemantic => 'Ricomponi il cubo';
+
+  @override
+  String get labsBinomialPullApart => 'Separa';
+
+  @override
+  String get labsBinomialPullApartSemantic => 'Separa il cubo';
+
+  @override
+  String get labsBinomialResetView => 'Ripristina la vista';
+
+  @override
+  String get labsBinomialResetViewSemantic => 'Ripristina la vista del cubo';
+
+  @override
+  String get labsBinomialPiecesHeading => 'I pezzi';
+
+  @override
+  String get labsBinomialSelectACubed => 'Seleziona il blocco a al cubo';
+
+  @override
+  String get labsBinomialSelectASquaredB => 'Seleziona un prisma a quadro b';
+
+  @override
+  String get labsBinomialSelectABSquared => 'Seleziona un prisma a b quadro';
+
+  @override
+  String get labsBinomialSelectBCubed => 'Seleziona il blocco b al cubo';
+
+  @override
+  String get labsBinomialOneCube => 'un cubo';
+
+  @override
+  String get labsBinomialThreePrisms => 'tre prismi';
+
+  @override
+  String get labsBinomialExplainACubed =>
+      'Questo cubo misura a × a × a, quindi il suo volume è a³. C’è un solo cubo come questo.';
+
+  @override
+  String get labsBinomialExplainASquaredB =>
+      'Questo prisma misura a × a × b, quindi il suo volume è a²b. Ci sono tre prismi come questo.';
+
+  @override
+  String get labsBinomialExplainABSquared =>
+      'Questo prisma misura a × b × b, quindi il suo volume è ab². Ci sono tre prismi come questo.';
+
+  @override
+  String get labsBinomialExplainBCubed =>
+      'Questo cubo misura b × b × b, quindi il suo volume è b³. C’è un solo cubo come questo.';
+
+  @override
+  String labsBinomialExplainNumeric(int a, int b, int volume) {
+    return 'Con a = $a e b = $b, ognuno ha volume $volume.';
+  }
+
+  @override
+  String get labsBinomialSelectPrompt =>
+      'Tocca un pezzo nel modello o scegline uno dall’elenco per vederne il volume.';
+
+  @override
+  String get labsBinomialStepsHeading => 'Passi guidati';
+
+  @override
+  String get labsBinomialStepsNote =>
+      'Scegli qualsiasi passo, nell’ordine che preferisci.';
+
+  @override
+  String labsBinomialStepChip(int number) {
+    return 'Passo $number';
+  }
+
+  @override
+  String labsBinomialStepChipSemantic(int number, String title) {
+    return 'Passo $number: $title';
+  }
+
+  @override
+  String get labsBinomialStep1 => 'Trova il cubo a³';
+
+  @override
+  String get labsBinomialStep2 => 'Trova i tre prismi a²b';
+
+  @override
+  String get labsBinomialStep3 => 'Trova i tre prismi ab²';
+
+  @override
+  String get labsBinomialStep4 => 'Trova il cubo b³';
+
+  @override
+  String get labsBinomialStep5 => 'Mostra lo sviluppo completo';
+
+  @override
+  String get labsBinomialStepFound =>
+      'Trovato. Ogni pezzo corrispondente è contornato.';
+
+  @override
+  String get labsBinomialStepKeepLooking =>
+      'Questo pezzo ha un volume diverso. Continua a cercare quello richiesto da questo passo.';
+
+  @override
+  String get labsBinomialNextStep => 'Passo successivo';
+
+  @override
+  String get labsBinomialRevealBody =>
+      'Ognuno degli otto pezzi è un termine. Raggruppando i pezzi con lo stesso volume si ottiene:';
+
+  @override
+  String get labsBinomialDimensionsHeading => 'Lunghezze dei lati';
+
+  @override
+  String get labsBinomialSideA => 'Lunghezza a';
+
+  @override
+  String get labsBinomialSideB => 'Lunghezza b';
+
+  @override
+  String get labsBinomialNumericCheckHeading => 'Verifica numerica';
+
+  @override
+  String labsBinomialNumericCheckSpoken(int side, int aCubed, int aSquaredB,
+      int aBSquared, int bCubed, int total) {
+    return '$side al cubo è uguale a $aCubed più $aSquaredB più $aBSquared più $bCubed, cioè $total.';
+  }
+
+  @override
+  String get labsBinomialLegendHeading => 'Legenda';
+
+  @override
+  String get labsBinomialLegendBody =>
+      'Ogni spigolo è diviso in una lunghezza a e una lunghezza b. Ogni pezzo è indicato da un’etichetta e da un motivo, non solo dal colore.';
+
+  @override
+  String get labsBinomialCompleteHeading => 'Hai visto tutto lo sviluppo';
+
+  @override
+  String get labsBinomialCompleteBody =>
+      'Qualunque lunghezza tu scelga, gli otto pezzi riempiono sempre lo stesso cubo di lato a + b.';
+
+  @override
+  String get labsBinomialExploreAgain => 'Esplora di nuovo';
+
+  @override
+  String get labsBinomialChooseStep => 'Scegli un passo';
+
+  @override
+  String get labsBinomialBackToStudio =>
+      'Torna allo Studio di matematica applicata';
 }

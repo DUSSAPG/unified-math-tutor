@@ -8562,6 +8562,337 @@ abstract class AppLocalizations {
   /// **'0.00 is zero. Count {count} ticks to the right to reach {target}.'**
   String numberSenseHundredthsZeroGuidedFeedbackTarget(
       int count, String target);
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Applied Maths Studio'**
+  String get labsAppliedMathsStudioTitle;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Applied explorations that turn algebra into shapes you can move.'**
+  String get labsAppliedMathsStudioSubtitle;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Applied explorations: each one turns a piece of algebra into a model you can move and inspect, at your own pace.'**
+  String get labsAppliedMathsStudioIntro;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Binomial Volume Lab'**
+  String get labsBinomialVolumeLabTitle;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Pull apart a cube to see the terms in (a + b)³.'**
+  String get labsBinomialVolumeLabSubtitle;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Binomial expansion visualisation'**
+  String get labsBinomialVolumeLabKind;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'A cube with side length a + b can be split into smaller volumes. Move the slider to pull the pieces apart.'**
+  String get labsBinomialIntro;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Cube model with side length a + b, split into eight pieces. Pulled apart {percent} percent.'**
+  String labsBinomialModelSemantic(int percent);
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Use the left and right arrow keys to move between pieces.'**
+  String get labsBinomialModelHint;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Explosion amount'**
+  String get labsBinomialExplosionLabel;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'{percent} percent'**
+  String labsBinomialExplosionValue(int percent);
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Assemble'**
+  String get labsBinomialAssemble;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Assemble cube'**
+  String get labsBinomialAssembleSemantic;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Pull apart'**
+  String get labsBinomialPullApart;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Pull cube apart'**
+  String get labsBinomialPullApartSemantic;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset view'**
+  String get labsBinomialResetView;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset cube view'**
+  String get labsBinomialResetViewSemantic;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'The pieces'**
+  String get labsBinomialPiecesHeading;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Select a cubed block'**
+  String get labsBinomialSelectACubed;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Select an a squared b prism'**
+  String get labsBinomialSelectASquaredB;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Select an a b squared prism'**
+  String get labsBinomialSelectABSquared;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Select b cubed block'**
+  String get labsBinomialSelectBCubed;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'one cube'**
+  String get labsBinomialOneCube;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'three prisms'**
+  String get labsBinomialThreePrisms;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'This cube measures a × a × a, so its volume is a³. There is one of these cubes.'**
+  String get labsBinomialExplainACubed;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'This prism measures a × a × b, so its volume is a²b. There are three of these prisms.'**
+  String get labsBinomialExplainASquaredB;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'This prism measures a × b × b, so its volume is ab². There are three of these prisms.'**
+  String get labsBinomialExplainABSquared;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'This cube measures b × b × b, so its volume is b³. There is one of these cubes.'**
+  String get labsBinomialExplainBCubed;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'With a = {a} and b = {b}, each one has volume {volume}.'**
+  String labsBinomialExplainNumeric(int a, int b, int volume);
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap a piece in the model, or choose one from the list, to see its volume.'**
+  String get labsBinomialSelectPrompt;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Guided steps'**
+  String get labsBinomialStepsHeading;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose any step, in any order.'**
+  String get labsBinomialStepsNote;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Step {number}'**
+  String labsBinomialStepChip(int number);
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Step {number}: {title}'**
+  String labsBinomialStepChipSemantic(int number, String title);
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Find the a³ cube'**
+  String get labsBinomialStep1;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Find the three a²b prisms'**
+  String get labsBinomialStep2;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Find the three ab² prisms'**
+  String get labsBinomialStep3;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Find the b³ cube'**
+  String get labsBinomialStep4;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Reveal the complete expansion'**
+  String get labsBinomialStep5;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Found it. Every matching piece is outlined.'**
+  String get labsBinomialStepFound;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'That piece has a different volume. Keep looking for the one this step asks for.'**
+  String get labsBinomialStepKeepLooking;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Next step'**
+  String get labsBinomialNextStep;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Each of the eight pieces is one term. Grouping the pieces with the same volume gives:'**
+  String get labsBinomialRevealBody;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Side lengths'**
+  String get labsBinomialDimensionsHeading;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Length a'**
+  String get labsBinomialSideA;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Length b'**
+  String get labsBinomialSideB;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Numeric check'**
+  String get labsBinomialNumericCheckHeading;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'{side} cubed equals {aCubed} plus {aSquaredB} plus {aBSquared} plus {bCubed}, which equals {total}.'**
+  String labsBinomialNumericCheckSpoken(int side, int aCubed, int aSquaredB,
+      int aBSquared, int bCubed, int total);
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Key'**
+  String get labsBinomialLegendHeading;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Each edge is cut into a length a and a length b. Every piece is named by a label and a pattern, not only by its colour.'**
+  String get labsBinomialLegendBody;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'You have seen the whole expansion'**
+  String get labsBinomialCompleteHeading;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Whatever lengths you choose, the eight pieces always fill the same cube of side a + b.'**
+  String get labsBinomialCompleteBody;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore again'**
+  String get labsBinomialExploreAgain;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a step'**
+  String get labsBinomialChooseStep;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to Applied Maths Studio'**
+  String get labsBinomialBackToStudio;
 }
 
 class _AppLocalizationsDelegate

@@ -98,6 +98,8 @@ import '../screens/labs/aircraft_landing/aircraft_landing_descent_line_screen.da
 import '../screens/labs/aircraft_landing/aircraft_landing_glide_path_screen.dart';
 import '../screens/labs/aircraft_landing/aircraft_landing_vector_approach_screen.dart';
 import '../screens/labs/early_maths_playground_hub_screen.dart';
+import '../screens/labs/applied_maths_studio_hub_screen.dart';
+import '../screens/labs/binomial_volume/binomial_volume_lab_screen.dart';
 import '../screens/labs/feed_panda/feed_the_hungry_panda_screen.dart';
 import '../screens/settings/release_notes_screen.dart';
 import '../screens/settings/terms_screen.dart';
@@ -564,6 +566,16 @@ final GoRouter appRouter = GoRouter(
                 GoRoute(
                   path: 'feed-the-hungry-panda',
                   builder: (context, state) => const FeedTheHungryPandaScreen(),
+                ),
+              ],
+            ),
+            GoRoute(
+              path: 'applied-maths-studio',
+              builder: (context, state) => const AppliedMathsStudioHubScreen(),
+              routes: [
+                GoRoute(
+                  path: 'binomial-volume-lab',
+                  builder: (context, state) => const BinomialVolumeLabScreen(),
                 ),
               ],
             ),
