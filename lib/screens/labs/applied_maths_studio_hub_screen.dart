@@ -19,6 +19,9 @@ const binomialVolumeLabPath = '$appliedMathsStudioPath/binomial-volume-lab';
 /// Route of Create the Angle, the studio's applied angle exploration.
 const createAnglePath = '$appliedMathsStudioPath/create-the-angle';
 
+/// Route of Pitch Coordinates, the studio's applied coordinate exploration.
+const pitchCoordinatesPath = '$appliedMathsStudioPath/pitch-coordinates';
+
 /// Applied Maths Studio landing page: applied explorations that turn a piece
 /// of algebra into something the learner can move and inspect. Reached the
 /// same way Early Maths Playground and Spatial Cube Lab are — as an entry
@@ -112,6 +115,25 @@ class AppliedMathsStudioHubScreen extends StatelessWidget {
                     title: l10n.labsCreateAngleTitle,
                     subtitle: l10n.labsCreateAngleCardSubtitle,
                     onTap: () => context.push(createAnglePath),
+                  ),
+                  const SizedBox(height: AppSpacing.lg),
+                  Text(
+                    l10n.labsPitchCoordinatesCardKind,
+                    key: const Key('pitchCoordinatesKindLabel'),
+                    style: TextStyle(
+                      color: colors.secondaryText,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const SizedBox(height: AppSpacing.sm),
+                  RouteLinkCard(
+                    key: const Key('pitchCoordinatesEntryCard'),
+                    icon: LucideIcons.grid,
+                    iconColor: const Color(0xFFD55E00),
+                    title: l10n.labsPitchCoordinatesTitle,
+                    subtitle: l10n.labsPitchCoordinatesCardSubtitle,
+                    onTap: () => context.push(pitchCoordinatesPath),
                   ),
                 ],
               ),

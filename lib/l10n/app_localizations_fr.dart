@@ -5595,6 +5595,281 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get labsCreateAngleSessionNote =>
       'Optional exploration. Nothing is saved: leaving this screen clears this visit.';
+
+  @override
+  String get labsPitchCoordinatesTitle => 'Pitch Coordinates';
+
+  @override
+  String get labsPitchCoordinatesCardSubtitle =>
+      'Find and move players using coordinates on a grid.';
+
+  @override
+  String get labsPitchCoordinatesCardKind => 'Applied exploration';
+
+  @override
+  String get labsPitchCoordinatesIntro =>
+      'Each player stands where two grid lines cross. The first number tells you how many steps right or left from the origin. The second tells you how many steps up or down.';
+
+  @override
+  String get labsPitchCoordinatesChooseStart => 'Where should the grid start?';
+
+  @override
+  String get labsPitchCoordinatesCornerStart => 'Corner start';
+
+  @override
+  String get labsPitchCoordinatesCornerStartHint =>
+      'The origin is the corner flag. Numbers go right and up.';
+
+  @override
+  String get labsPitchCoordinatesCentreStart => 'Centre start';
+
+  @override
+  String get labsPitchCoordinatesCentreStartHint =>
+      'The origin is the centre spot. Numbers go right, left, up and down.';
+
+  @override
+  String get labsPitchCoordinatesPromptRead =>
+      'Where is this player? Enter their coordinates.';
+
+  @override
+  String labsPitchCoordinatesPromptPlace(int x, int y) {
+    return 'Put the player at ($x, $y).';
+  }
+
+  @override
+  String labsPitchCoordinatesPromptTranslate(String move) {
+    return 'Move the player $move. Where do they finish?';
+  }
+
+  @override
+  String get labsPitchCoordinatesPromptInverse =>
+      'What move takes the player from the start to the finish?';
+
+  @override
+  String labsPitchCoordinatesPromptTransfer(String move) {
+    return 'Grid only: move the player $move. Where do they finish?';
+  }
+
+  @override
+  String labsPitchCoordinatesMoveBoth(String h, String v) {
+    return '$h and $v';
+  }
+
+  @override
+  String labsPitchCoordinatesStepsRight(int n) {
+    return '$n right';
+  }
+
+  @override
+  String labsPitchCoordinatesStepsLeft(int n) {
+    return '$n left';
+  }
+
+  @override
+  String labsPitchCoordinatesStepsUp(int n) {
+    return '$n up';
+  }
+
+  @override
+  String labsPitchCoordinatesStepsDown(int n) {
+    return '$n down';
+  }
+
+  @override
+  String get labsPitchCoordinatesNoHorizontal => 'no steps right or left';
+
+  @override
+  String get labsPitchCoordinatesNoVertical => 'no steps up or down';
+
+  @override
+  String labsPitchCoordinatesSelectedWords(String h, String v) {
+    return 'Selected: $h, $v.';
+  }
+
+  @override
+  String get labsPitchCoordinatesFirstNumber => 'First number';
+
+  @override
+  String get labsPitchCoordinatesSecondNumber => 'Second number';
+
+  @override
+  String labsPitchCoordinatesYourPair(int x, int y) {
+    return 'Your coordinates: ($x, $y)';
+  }
+
+  @override
+  String get labsPitchCoordinatesExploreGrid => 'Explore the grid';
+
+  @override
+  String get labsPitchCoordinatesStepperIncrease => 'Increase';
+
+  @override
+  String get labsPitchCoordinatesStepperDecrease => 'Decrease';
+
+  @override
+  String get labsPitchCoordinatesConfirmSpot => 'Confirm this spot';
+
+  @override
+  String get labsPitchCoordinatesConfirmNumbers => 'Confirm these numbers';
+
+  @override
+  String get labsPitchCoordinatesConfirmMove => 'Confirm this move';
+
+  @override
+  String get labsPitchCoordinatesMoveRight => 'Move right';
+
+  @override
+  String get labsPitchCoordinatesMoveLeft => 'Move left';
+
+  @override
+  String get labsPitchCoordinatesMoveUp => 'Move up';
+
+  @override
+  String get labsPitchCoordinatesMoveDown => 'Move down';
+
+  @override
+  String get labsPitchCoordinatesEdgeRight => 'No more steps right';
+
+  @override
+  String get labsPitchCoordinatesEdgeLeft => 'No more steps left';
+
+  @override
+  String get labsPitchCoordinatesEdgeUp => 'No more steps up';
+
+  @override
+  String get labsPitchCoordinatesEdgeDown => 'No more steps down';
+
+  @override
+  String get labsPitchCoordinatesPickHorizontal => 'Right or left';
+
+  @override
+  String get labsPitchCoordinatesPickVertical => 'Up or down';
+
+  @override
+  String get labsPitchCoordinatesOptRight => 'Right';
+
+  @override
+  String get labsPitchCoordinatesOptLeft => 'Left';
+
+  @override
+  String get labsPitchCoordinatesOptUp => 'Up';
+
+  @override
+  String get labsPitchCoordinatesOptDown => 'Down';
+
+  @override
+  String get labsPitchCoordinatesOptNone => 'No move';
+
+  @override
+  String get labsPitchCoordinatesSteps => 'Steps';
+
+  @override
+  String get labsPitchCoordinatesPlayerUnanswered => 'Player';
+
+  @override
+  String labsPitchCoordinatesPlayerAnswered(String h, String v, int x, int y) {
+    return 'Player at $h, $v: coordinates $x, $y';
+  }
+
+  @override
+  String labsPitchCoordinatesStartMarker(String h, String v) {
+    return 'Start: $h, $v';
+  }
+
+  @override
+  String labsPitchCoordinatesFinishMarker(String h, String v) {
+    return 'Finish: $h, $v';
+  }
+
+  @override
+  String get labsPitchCoordinatesSameColumn => 'Same column as the player';
+
+  @override
+  String get labsPitchCoordinatesSameRow => 'Same row as the player';
+
+  @override
+  String get labsPitchCoordinatesOnPlayer => 'On the player';
+
+  @override
+  String labsPitchCoordinatesAxisHorizontal(int lo, int hi) {
+    return 'Horizontal number line, from $lo to $hi';
+  }
+
+  @override
+  String labsPitchCoordinatesAxisVertical(int lo, int hi) {
+    return 'Vertical number line, from $lo to $hi';
+  }
+
+  @override
+  String get labsPitchCoordinatesCorrect => 'Yes, that\'s correct.';
+
+  @override
+  String get labsPitchCoordinatesFbGeneric =>
+      'Not yet. Check the first number for right or left, then the second number for up or down.';
+
+  @override
+  String get labsPitchCoordinatesFbOrderSwapped =>
+      'The numbers are the wrong way round. The first number is right or left; the second is up or down.';
+
+  @override
+  String get labsPitchCoordinatesFbOriginCounted =>
+      'The origin counts as 0. Count each step along the lines from there.';
+
+  @override
+  String get labsPitchCoordinatesFbStartNotMoved =>
+      'That is where the player started. Now make the move.';
+
+  @override
+  String get labsPitchCoordinatesFbHorizontalOnly =>
+      'You made the right-or-left move. Now make the up-or-down move too.';
+
+  @override
+  String get labsPitchCoordinatesFbVerticalOnly =>
+      'You made the up-or-down move. Now make the right-or-left move too.';
+
+  @override
+  String get labsPitchCoordinatesFbBothReversed =>
+      'Both moves went the opposite way. Right and up make the numbers bigger; left and down make them smaller.';
+
+  @override
+  String get labsPitchCoordinatesFbHorizontalReversed =>
+      'Check the right-or-left move: right makes the first number bigger, left makes it smaller.';
+
+  @override
+  String get labsPitchCoordinatesFbVerticalReversed =>
+      'Check the up-or-down move: up makes the second number bigger, down makes it smaller.';
+
+  @override
+  String get labsPitchCoordinatesFbMovesSwapped =>
+      'The two moves were swapped. The right-or-left move changes the first number.';
+
+  @override
+  String get labsPitchCoordinatesFbGaveMove =>
+      'That is the move. Where does the player finish?';
+
+  @override
+  String get labsPitchCoordinatesFbGaveFinish =>
+      'That is where the player finishes. What move gets them there?';
+
+  @override
+  String get labsPitchCoordinatesFbGaveStart =>
+      'That is where the player started. What move gets them to the finish?';
+
+  @override
+  String get labsPitchCoordinatesFbMoveReversed =>
+      'That move goes from the finish back to the start. Go from the start to the finish.';
+
+  @override
+  String get labsPitchCoordinatesTryAgain => 'Try again';
+
+  @override
+  String get labsPitchCoordinatesShowMe => 'Show me';
+
+  @override
+  String get labsPitchCoordinatesNext => 'Next';
+
+  @override
+  String get labsPitchCoordinatesExploreAgain => 'Explore again';
 }
 
 /// The translations for French, as used in Switzerland (`fr_CH`).
@@ -10165,4 +10440,284 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
   @override
   String get labsCreateAngleSessionNote =>
       'Exploration facultative. Rien n\'est enregistré : quitter cet écran efface cette visite.';
+
+  @override
+  String get labsPitchCoordinatesTitle => 'Coordonnées sur le terrain';
+
+  @override
+  String get labsPitchCoordinatesCardSubtitle =>
+      'Trouve et déplace des joueurs grâce aux coordonnées sur une grille.';
+
+  @override
+  String get labsPitchCoordinatesCardKind => 'Exploration appliquée';
+
+  @override
+  String get labsPitchCoordinatesIntro =>
+      'Chaque joueur se tient là où deux lignes de la grille se croisent. Le premier nombre indique combien de pas vers la droite ou la gauche depuis l\'origine. Le second indique combien de pas vers le haut ou le bas.';
+
+  @override
+  String get labsPitchCoordinatesChooseStart =>
+      'Où la grille doit-elle commencer ?';
+
+  @override
+  String get labsPitchCoordinatesCornerStart => 'Départ au coin';
+
+  @override
+  String get labsPitchCoordinatesCornerStartHint =>
+      'L\'origine est le drapeau de corner. Les nombres vont vers la droite et vers le haut.';
+
+  @override
+  String get labsPitchCoordinatesCentreStart => 'Départ au centre';
+
+  @override
+  String get labsPitchCoordinatesCentreStartHint =>
+      'L\'origine est le centre du terrain. Les nombres vont vers la droite, la gauche, le haut et le bas.';
+
+  @override
+  String get labsPitchCoordinatesPromptRead =>
+      'Où se trouve ce joueur ? Saisis ses coordonnées.';
+
+  @override
+  String labsPitchCoordinatesPromptPlace(int x, int y) {
+    return 'Place le joueur en ($x, $y).';
+  }
+
+  @override
+  String labsPitchCoordinatesPromptTranslate(String move) {
+    return 'Déplace le joueur : $move. Où arrive-t-il ?';
+  }
+
+  @override
+  String get labsPitchCoordinatesPromptInverse =>
+      'Quel déplacement amène le joueur du départ à l\'arrivée ?';
+
+  @override
+  String labsPitchCoordinatesPromptTransfer(String move) {
+    return 'Grille seule. Déplace le joueur : $move. Où arrive-t-il ?';
+  }
+
+  @override
+  String labsPitchCoordinatesMoveBoth(String h, String v) {
+    return '$h et $v';
+  }
+
+  @override
+  String labsPitchCoordinatesStepsRight(int n) {
+    return '$n vers la droite';
+  }
+
+  @override
+  String labsPitchCoordinatesStepsLeft(int n) {
+    return '$n vers la gauche';
+  }
+
+  @override
+  String labsPitchCoordinatesStepsUp(int n) {
+    return '$n vers le haut';
+  }
+
+  @override
+  String labsPitchCoordinatesStepsDown(int n) {
+    return '$n vers le bas';
+  }
+
+  @override
+  String get labsPitchCoordinatesNoHorizontal =>
+      'aucun pas vers la droite ou la gauche';
+
+  @override
+  String get labsPitchCoordinatesNoVertical =>
+      'aucun pas vers le haut ou le bas';
+
+  @override
+  String labsPitchCoordinatesSelectedWords(String h, String v) {
+    return 'Sélection : $h, $v.';
+  }
+
+  @override
+  String get labsPitchCoordinatesFirstNumber => 'Premier nombre';
+
+  @override
+  String get labsPitchCoordinatesSecondNumber => 'Second nombre';
+
+  @override
+  String labsPitchCoordinatesYourPair(int x, int y) {
+    return 'Tes coordonnées : ($x, $y)';
+  }
+
+  @override
+  String get labsPitchCoordinatesExploreGrid => 'Explorer la grille';
+
+  @override
+  String get labsPitchCoordinatesStepperIncrease => 'Augmenter';
+
+  @override
+  String get labsPitchCoordinatesStepperDecrease => 'Diminuer';
+
+  @override
+  String get labsPitchCoordinatesConfirmSpot => 'Confirmer cet emplacement';
+
+  @override
+  String get labsPitchCoordinatesConfirmNumbers => 'Confirmer ces nombres';
+
+  @override
+  String get labsPitchCoordinatesConfirmMove => 'Confirmer ce déplacement';
+
+  @override
+  String get labsPitchCoordinatesMoveRight => 'Un pas vers la droite';
+
+  @override
+  String get labsPitchCoordinatesMoveLeft => 'Un pas vers la gauche';
+
+  @override
+  String get labsPitchCoordinatesMoveUp => 'Un pas vers le haut';
+
+  @override
+  String get labsPitchCoordinatesMoveDown => 'Un pas vers le bas';
+
+  @override
+  String get labsPitchCoordinatesEdgeRight =>
+      'Plus de pas possible vers la droite';
+
+  @override
+  String get labsPitchCoordinatesEdgeLeft =>
+      'Plus de pas possible vers la gauche';
+
+  @override
+  String get labsPitchCoordinatesEdgeUp => 'Plus de pas possible vers le haut';
+
+  @override
+  String get labsPitchCoordinatesEdgeDown => 'Plus de pas possible vers le bas';
+
+  @override
+  String get labsPitchCoordinatesPickHorizontal => 'Droite ou gauche';
+
+  @override
+  String get labsPitchCoordinatesPickVertical => 'Haut ou bas';
+
+  @override
+  String get labsPitchCoordinatesOptRight => 'Droite';
+
+  @override
+  String get labsPitchCoordinatesOptLeft => 'Gauche';
+
+  @override
+  String get labsPitchCoordinatesOptUp => 'Haut';
+
+  @override
+  String get labsPitchCoordinatesOptDown => 'Bas';
+
+  @override
+  String get labsPitchCoordinatesOptNone => 'Aucun déplacement';
+
+  @override
+  String get labsPitchCoordinatesSteps => 'Pas';
+
+  @override
+  String get labsPitchCoordinatesPlayerUnanswered => 'Joueur';
+
+  @override
+  String labsPitchCoordinatesPlayerAnswered(String h, String v, int x, int y) {
+    return 'Joueur à $h, $v : coordonnées $x, $y';
+  }
+
+  @override
+  String labsPitchCoordinatesStartMarker(String h, String v) {
+    return 'Départ : $h, $v';
+  }
+
+  @override
+  String labsPitchCoordinatesFinishMarker(String h, String v) {
+    return 'Arrivée : $h, $v';
+  }
+
+  @override
+  String get labsPitchCoordinatesSameColumn => 'Même colonne que le joueur';
+
+  @override
+  String get labsPitchCoordinatesSameRow => 'Même ligne que le joueur';
+
+  @override
+  String get labsPitchCoordinatesOnPlayer => 'Sur le joueur';
+
+  @override
+  String labsPitchCoordinatesAxisHorizontal(int lo, int hi) {
+    return 'Droite numérique horizontale, de $lo à $hi';
+  }
+
+  @override
+  String labsPitchCoordinatesAxisVertical(int lo, int hi) {
+    return 'Droite numérique verticale, de $lo à $hi';
+  }
+
+  @override
+  String get labsPitchCoordinatesCorrect => 'Oui, c\'est correct.';
+
+  @override
+  String get labsPitchCoordinatesFbGeneric =>
+      'Pas encore. Regarde le premier nombre pour la droite ou la gauche, puis le second pour le haut ou le bas.';
+
+  @override
+  String get labsPitchCoordinatesFbOrderSwapped =>
+      'Les nombres sont inversés. Le premier nombre indique la droite ou la gauche ; le second, le haut ou le bas.';
+
+  @override
+  String get labsPitchCoordinatesFbOriginCounted =>
+      'L\'origine compte pour 0. Compte chaque pas le long des lignes à partir de là.';
+
+  @override
+  String get labsPitchCoordinatesFbStartNotMoved =>
+      'C\'est là que le joueur a commencé. Fais maintenant le déplacement.';
+
+  @override
+  String get labsPitchCoordinatesFbHorizontalOnly =>
+      'Tu as fait le déplacement vers la droite ou la gauche. Fais aussi le déplacement vers le haut ou le bas.';
+
+  @override
+  String get labsPitchCoordinatesFbVerticalOnly =>
+      'Tu as fait le déplacement vers le haut ou le bas. Fais aussi le déplacement vers la droite ou la gauche.';
+
+  @override
+  String get labsPitchCoordinatesFbBothReversed =>
+      'Les deux déplacements sont allés dans le sens contraire. La droite et le haut agrandissent les nombres ; la gauche et le bas les rendent plus petits.';
+
+  @override
+  String get labsPitchCoordinatesFbHorizontalReversed =>
+      'Regarde le déplacement vers la droite ou la gauche : la droite agrandit le premier nombre, la gauche le rend plus petit.';
+
+  @override
+  String get labsPitchCoordinatesFbVerticalReversed =>
+      'Regarde le déplacement vers le haut ou le bas : le haut agrandit le second nombre, le bas le rend plus petit.';
+
+  @override
+  String get labsPitchCoordinatesFbMovesSwapped =>
+      'Les deux déplacements ont été échangés. Le déplacement vers la droite ou la gauche change le premier nombre.';
+
+  @override
+  String get labsPitchCoordinatesFbGaveMove =>
+      'C\'est le déplacement. Où le joueur arrive-t-il ?';
+
+  @override
+  String get labsPitchCoordinatesFbGaveFinish =>
+      'C\'est là que le joueur arrive. Quel déplacement l\'y amène ?';
+
+  @override
+  String get labsPitchCoordinatesFbGaveStart =>
+      'C\'est là que le joueur a commencé. Quel déplacement l\'amène à l\'arrivée ?';
+
+  @override
+  String get labsPitchCoordinatesFbMoveReversed =>
+      'Ce déplacement va de l\'arrivée au départ. Va du départ à l\'arrivée.';
+
+  @override
+  String get labsPitchCoordinatesTryAgain => 'Réessayer';
+
+  @override
+  String get labsPitchCoordinatesShowMe => 'Montre-moi';
+
+  @override
+  String get labsPitchCoordinatesNext => 'Suivant';
+
+  @override
+  String get labsPitchCoordinatesExploreAgain => 'Explorer à nouveau';
 }

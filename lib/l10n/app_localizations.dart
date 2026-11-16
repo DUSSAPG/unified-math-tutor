@@ -9484,6 +9484,456 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Optional exploration. Nothing is saved: leaving this screen clears this visit.'**
   String get labsCreateAngleSessionNote;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: Activity title on the card and app bar.
+  ///
+  /// In en, this message translates to:
+  /// **'Pitch Coordinates'**
+  String get labsPitchCoordinatesTitle;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: Studio card subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Find and move players using coordinates on a grid.'**
+  String get labsPitchCoordinatesCardSubtitle;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: Studio card kind label.
+  ///
+  /// In en, this message translates to:
+  /// **'Applied exploration'**
+  String get labsPitchCoordinatesCardKind;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: Intro.
+  ///
+  /// In en, this message translates to:
+  /// **'Each player stands where two grid lines cross. The first number tells you how many steps right or left from the origin. The second tells you how many steps up or down.'**
+  String get labsPitchCoordinatesIntro;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: ChooseStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Where should the grid start?'**
+  String get labsPitchCoordinatesChooseStart;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: CornerStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Corner start'**
+  String get labsPitchCoordinatesCornerStart;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: CornerStartHint.
+  ///
+  /// In en, this message translates to:
+  /// **'The origin is the corner flag. Numbers go right and up.'**
+  String get labsPitchCoordinatesCornerStartHint;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: CentreStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Centre start'**
+  String get labsPitchCoordinatesCentreStart;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: CentreStartHint.
+  ///
+  /// In en, this message translates to:
+  /// **'The origin is the centre spot. Numbers go right, left, up and down.'**
+  String get labsPitchCoordinatesCentreStartHint;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: PromptRead.
+  ///
+  /// In en, this message translates to:
+  /// **'Where is this player? Enter their coordinates.'**
+  String get labsPitchCoordinatesPromptRead;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: PromptPlace.
+  ///
+  /// In en, this message translates to:
+  /// **'Put the player at ({x}, {y}).'**
+  String labsPitchCoordinatesPromptPlace(int x, int y);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: PromptTranslate.
+  ///
+  /// In en, this message translates to:
+  /// **'Move the player {move}. Where do they finish?'**
+  String labsPitchCoordinatesPromptTranslate(String move);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: PromptInverse.
+  ///
+  /// In en, this message translates to:
+  /// **'What move takes the player from the start to the finish?'**
+  String get labsPitchCoordinatesPromptInverse;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: PromptTransfer.
+  ///
+  /// In en, this message translates to:
+  /// **'Grid only: move the player {move}. Where do they finish?'**
+  String labsPitchCoordinatesPromptTransfer(String move);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: MoveBoth.
+  ///
+  /// In en, this message translates to:
+  /// **'{h} and {v}'**
+  String labsPitchCoordinatesMoveBoth(String h, String v);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: StepsRight.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} right'**
+  String labsPitchCoordinatesStepsRight(int n);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: StepsLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} left'**
+  String labsPitchCoordinatesStepsLeft(int n);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: StepsUp.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} up'**
+  String labsPitchCoordinatesStepsUp(int n);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: StepsDown.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} down'**
+  String labsPitchCoordinatesStepsDown(int n);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: NoHorizontal.
+  ///
+  /// In en, this message translates to:
+  /// **'no steps right or left'**
+  String get labsPitchCoordinatesNoHorizontal;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: NoVertical.
+  ///
+  /// In en, this message translates to:
+  /// **'no steps up or down'**
+  String get labsPitchCoordinatesNoVertical;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: SelectedWords.
+  ///
+  /// In en, this message translates to:
+  /// **'Selected: {h}, {v}.'**
+  String labsPitchCoordinatesSelectedWords(String h, String v);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FirstNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'First number'**
+  String get labsPitchCoordinatesFirstNumber;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: SecondNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Second number'**
+  String get labsPitchCoordinatesSecondNumber;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: YourPair.
+  ///
+  /// In en, this message translates to:
+  /// **'Your coordinates: ({x}, {y})'**
+  String labsPitchCoordinatesYourPair(int x, int y);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: ExploreGrid.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore the grid'**
+  String get labsPitchCoordinatesExploreGrid;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: StepperIncrease.
+  ///
+  /// In en, this message translates to:
+  /// **'Increase'**
+  String get labsPitchCoordinatesStepperIncrease;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: StepperDecrease.
+  ///
+  /// In en, this message translates to:
+  /// **'Decrease'**
+  String get labsPitchCoordinatesStepperDecrease;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: ConfirmSpot.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm this spot'**
+  String get labsPitchCoordinatesConfirmSpot;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: ConfirmNumbers.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm these numbers'**
+  String get labsPitchCoordinatesConfirmNumbers;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: ConfirmMove.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm this move'**
+  String get labsPitchCoordinatesConfirmMove;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: MoveRight.
+  ///
+  /// In en, this message translates to:
+  /// **'Move right'**
+  String get labsPitchCoordinatesMoveRight;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: MoveLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'Move left'**
+  String get labsPitchCoordinatesMoveLeft;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: MoveUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Move up'**
+  String get labsPitchCoordinatesMoveUp;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: MoveDown.
+  ///
+  /// In en, this message translates to:
+  /// **'Move down'**
+  String get labsPitchCoordinatesMoveDown;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: EdgeRight.
+  ///
+  /// In en, this message translates to:
+  /// **'No more steps right'**
+  String get labsPitchCoordinatesEdgeRight;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: EdgeLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'No more steps left'**
+  String get labsPitchCoordinatesEdgeLeft;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: EdgeUp.
+  ///
+  /// In en, this message translates to:
+  /// **'No more steps up'**
+  String get labsPitchCoordinatesEdgeUp;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: EdgeDown.
+  ///
+  /// In en, this message translates to:
+  /// **'No more steps down'**
+  String get labsPitchCoordinatesEdgeDown;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: PickHorizontal.
+  ///
+  /// In en, this message translates to:
+  /// **'Right or left'**
+  String get labsPitchCoordinatesPickHorizontal;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: PickVertical.
+  ///
+  /// In en, this message translates to:
+  /// **'Up or down'**
+  String get labsPitchCoordinatesPickVertical;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: OptRight.
+  ///
+  /// In en, this message translates to:
+  /// **'Right'**
+  String get labsPitchCoordinatesOptRight;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: OptLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'Left'**
+  String get labsPitchCoordinatesOptLeft;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: OptUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Up'**
+  String get labsPitchCoordinatesOptUp;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: OptDown.
+  ///
+  /// In en, this message translates to:
+  /// **'Down'**
+  String get labsPitchCoordinatesOptDown;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: OptNone.
+  ///
+  /// In en, this message translates to:
+  /// **'No move'**
+  String get labsPitchCoordinatesOptNone;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: Steps.
+  ///
+  /// In en, this message translates to:
+  /// **'Steps'**
+  String get labsPitchCoordinatesSteps;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: PlayerUnanswered.
+  ///
+  /// In en, this message translates to:
+  /// **'Player'**
+  String get labsPitchCoordinatesPlayerUnanswered;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: PlayerAnswered.
+  ///
+  /// In en, this message translates to:
+  /// **'Player at {h}, {v}: coordinates {x}, {y}'**
+  String labsPitchCoordinatesPlayerAnswered(String h, String v, int x, int y);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: StartMarker.
+  ///
+  /// In en, this message translates to:
+  /// **'Start: {h}, {v}'**
+  String labsPitchCoordinatesStartMarker(String h, String v);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FinishMarker.
+  ///
+  /// In en, this message translates to:
+  /// **'Finish: {h}, {v}'**
+  String labsPitchCoordinatesFinishMarker(String h, String v);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: SameColumn.
+  ///
+  /// In en, this message translates to:
+  /// **'Same column as the player'**
+  String get labsPitchCoordinatesSameColumn;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: SameRow.
+  ///
+  /// In en, this message translates to:
+  /// **'Same row as the player'**
+  String get labsPitchCoordinatesSameRow;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: OnPlayer.
+  ///
+  /// In en, this message translates to:
+  /// **'On the player'**
+  String get labsPitchCoordinatesOnPlayer;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: AxisHorizontal.
+  ///
+  /// In en, this message translates to:
+  /// **'Horizontal number line, from {lo} to {hi}'**
+  String labsPitchCoordinatesAxisHorizontal(int lo, int hi);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: AxisVertical.
+  ///
+  /// In en, this message translates to:
+  /// **'Vertical number line, from {lo} to {hi}'**
+  String labsPitchCoordinatesAxisVertical(int lo, int hi);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: Correct.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes, that\'s correct.'**
+  String get labsPitchCoordinatesCorrect;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FbGeneric.
+  ///
+  /// In en, this message translates to:
+  /// **'Not yet. Check the first number for right or left, then the second number for up or down.'**
+  String get labsPitchCoordinatesFbGeneric;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FbOrderSwapped.
+  ///
+  /// In en, this message translates to:
+  /// **'The numbers are the wrong way round. The first number is right or left; the second is up or down.'**
+  String get labsPitchCoordinatesFbOrderSwapped;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FbOriginCounted.
+  ///
+  /// In en, this message translates to:
+  /// **'The origin counts as 0. Count each step along the lines from there.'**
+  String get labsPitchCoordinatesFbOriginCounted;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FbStartNotMoved.
+  ///
+  /// In en, this message translates to:
+  /// **'That is where the player started. Now make the move.'**
+  String get labsPitchCoordinatesFbStartNotMoved;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FbHorizontalOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'You made the right-or-left move. Now make the up-or-down move too.'**
+  String get labsPitchCoordinatesFbHorizontalOnly;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FbVerticalOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'You made the up-or-down move. Now make the right-or-left move too.'**
+  String get labsPitchCoordinatesFbVerticalOnly;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FbBothReversed.
+  ///
+  /// In en, this message translates to:
+  /// **'Both moves went the opposite way. Right and up make the numbers bigger; left and down make them smaller.'**
+  String get labsPitchCoordinatesFbBothReversed;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FbHorizontalReversed.
+  ///
+  /// In en, this message translates to:
+  /// **'Check the right-or-left move: right makes the first number bigger, left makes it smaller.'**
+  String get labsPitchCoordinatesFbHorizontalReversed;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FbVerticalReversed.
+  ///
+  /// In en, this message translates to:
+  /// **'Check the up-or-down move: up makes the second number bigger, down makes it smaller.'**
+  String get labsPitchCoordinatesFbVerticalReversed;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FbMovesSwapped.
+  ///
+  /// In en, this message translates to:
+  /// **'The two moves were swapped. The right-or-left move changes the first number.'**
+  String get labsPitchCoordinatesFbMovesSwapped;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FbGaveMove.
+  ///
+  /// In en, this message translates to:
+  /// **'That is the move. Where does the player finish?'**
+  String get labsPitchCoordinatesFbGaveMove;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FbGaveFinish.
+  ///
+  /// In en, this message translates to:
+  /// **'That is where the player finishes. What move gets them there?'**
+  String get labsPitchCoordinatesFbGaveFinish;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FbGaveStart.
+  ///
+  /// In en, this message translates to:
+  /// **'That is where the player started. What move gets them to the finish?'**
+  String get labsPitchCoordinatesFbGaveStart;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FbMoveReversed.
+  ///
+  /// In en, this message translates to:
+  /// **'That move goes from the finish back to the start. Go from the start to the finish.'**
+  String get labsPitchCoordinatesFbMoveReversed;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: TryAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get labsPitchCoordinatesTryAgain;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: ShowMe.
+  ///
+  /// In en, this message translates to:
+  /// **'Show me'**
+  String get labsPitchCoordinatesShowMe;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: Next.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get labsPitchCoordinatesNext;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: ExploreAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore again'**
+  String get labsPitchCoordinatesExploreAgain;
 }
 
 class _AppLocalizationsDelegate

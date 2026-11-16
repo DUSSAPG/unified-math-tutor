@@ -102,6 +102,7 @@ import '../screens/labs/applied_maths_studio_hub_screen.dart';
 import '../screens/labs/binomial_volume/binomial_volume_lab_screen.dart';
 import '../screens/labs/create_angle/create_angle_screen.dart';
 import '../screens/labs/feed_panda/feed_the_hungry_panda_screen.dart';
+import '../screens/labs/pitch_coordinates/pitch_coordinates_screen.dart';
 import '../screens/labs/panda_portions/panda_portions_screen.dart';
 import '../screens/settings/release_notes_screen.dart';
 import '../screens/settings/terms_screen.dart';
@@ -586,6 +587,10 @@ final GoRouter appRouter = GoRouter(
                 GoRoute(
                   path: 'create-the-angle',
                   builder: (context, state) => const CreateAngleScreen(),
+                ),
+                GoRoute(
+                  path: 'pitch-coordinates',
+                  builder: (context, state) => const PitchCoordinatesScreen(),
                 ),
               ],
             ),
