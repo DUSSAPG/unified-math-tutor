@@ -4166,5 +4166,413 @@
   "labsCreateAngleSessionNote": "Optional exploration. Nothing is saved: leaving this screen clears this visit.",
   "@labsCreateAngleSessionNote": {
     "description": "Create the Angle (Applied Maths Studio) copy."
+  },
+  "labsPitchCoordinatesTitle": "Pitch Coordinates",
+  "@labsPitchCoordinatesTitle": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: Activity title on the card and app bar."
+  },
+  "labsPitchCoordinatesCardSubtitle": "Find and move players using coordinates on a grid.",
+  "@labsPitchCoordinatesCardSubtitle": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: Studio card subtitle."
+  },
+  "labsPitchCoordinatesCardKind": "Applied exploration",
+  "@labsPitchCoordinatesCardKind": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: Studio card kind label."
+  },
+  "labsPitchCoordinatesIntro": "Each player stands where two grid lines cross. The first number tells you how many steps right or left from the origin. The second tells you how many steps up or down.",
+  "@labsPitchCoordinatesIntro": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: Intro."
+  },
+  "labsPitchCoordinatesChooseStart": "Where should the grid start?",
+  "@labsPitchCoordinatesChooseStart": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: ChooseStart."
+  },
+  "labsPitchCoordinatesCornerStart": "Corner start",
+  "@labsPitchCoordinatesCornerStart": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: CornerStart."
+  },
+  "labsPitchCoordinatesCornerStartHint": "The origin is the corner flag. Numbers go right and up.",
+  "@labsPitchCoordinatesCornerStartHint": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: CornerStartHint."
+  },
+  "labsPitchCoordinatesCentreStart": "Centre start",
+  "@labsPitchCoordinatesCentreStart": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: CentreStart."
+  },
+  "labsPitchCoordinatesCentreStartHint": "The origin is the centre spot. Numbers go right, left, up and down.",
+  "@labsPitchCoordinatesCentreStartHint": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: CentreStartHint."
+  },
+  "labsPitchCoordinatesPromptRead": "Where is this player? Enter their coordinates.",
+  "@labsPitchCoordinatesPromptRead": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: PromptRead."
+  },
+  "labsPitchCoordinatesPromptPlace": "Put the player at ({x}, {y}).",
+  "@labsPitchCoordinatesPromptPlace": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: PromptPlace.",
+    "placeholders": {
+      "x": {
+        "type": "int"
+      },
+      "y": {
+        "type": "int"
+      }
+    }
+  },
+  "labsPitchCoordinatesPromptTranslate": "Move the player {move}. Where do they finish?",
+  "@labsPitchCoordinatesPromptTranslate": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: PromptTranslate.",
+    "placeholders": {
+      "move": {
+        "type": "String"
+      }
+    }
+  },
+  "labsPitchCoordinatesPromptInverse": "What move takes the player from the start to the finish?",
+  "@labsPitchCoordinatesPromptInverse": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: PromptInverse."
+  },
+  "labsPitchCoordinatesPromptTransfer": "Grid only: move the player {move}. Where do they finish?",
+  "@labsPitchCoordinatesPromptTransfer": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: PromptTransfer.",
+    "placeholders": {
+      "move": {
+        "type": "String"
+      }
+    }
+  },
+  "labsPitchCoordinatesMoveBoth": "{h} and {v}",
+  "@labsPitchCoordinatesMoveBoth": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: MoveBoth.",
+    "placeholders": {
+      "h": {
+        "type": "String"
+      },
+      "v": {
+        "type": "String"
+      }
+    }
+  },
+  "labsPitchCoordinatesStepsRight": "{n} right",
+  "@labsPitchCoordinatesStepsRight": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: StepsRight.",
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "labsPitchCoordinatesStepsLeft": "{n} left",
+  "@labsPitchCoordinatesStepsLeft": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: StepsLeft.",
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "labsPitchCoordinatesStepsUp": "{n} up",
+  "@labsPitchCoordinatesStepsUp": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: StepsUp.",
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "labsPitchCoordinatesStepsDown": "{n} down",
+  "@labsPitchCoordinatesStepsDown": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: StepsDown.",
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "labsPitchCoordinatesNoHorizontal": "no steps right or left",
+  "@labsPitchCoordinatesNoHorizontal": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: NoHorizontal."
+  },
+  "labsPitchCoordinatesNoVertical": "no steps up or down",
+  "@labsPitchCoordinatesNoVertical": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: NoVertical."
+  },
+  "labsPitchCoordinatesSelectedWords": "Selected: {h}, {v}.",
+  "@labsPitchCoordinatesSelectedWords": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: SelectedWords.",
+    "placeholders": {
+      "h": {
+        "type": "String"
+      },
+      "v": {
+        "type": "String"
+      }
+    }
+  },
+  "labsPitchCoordinatesFirstNumber": "First number",
+  "@labsPitchCoordinatesFirstNumber": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: FirstNumber."
+  },
+  "labsPitchCoordinatesSecondNumber": "Second number",
+  "@labsPitchCoordinatesSecondNumber": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: SecondNumber."
+  },
+  "labsPitchCoordinatesYourPair": "Your coordinates: ({x}, {y})",
+  "@labsPitchCoordinatesYourPair": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: YourPair.",
+    "placeholders": {
+      "x": {
+        "type": "int"
+      },
+      "y": {
+        "type": "int"
+      }
+    }
+  },
+  "labsPitchCoordinatesExploreGrid": "Explore the grid",
+  "@labsPitchCoordinatesExploreGrid": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: ExploreGrid."
+  },
+  "labsPitchCoordinatesStepperIncrease": "Increase",
+  "@labsPitchCoordinatesStepperIncrease": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: StepperIncrease."
+  },
+  "labsPitchCoordinatesStepperDecrease": "Decrease",
+  "@labsPitchCoordinatesStepperDecrease": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: StepperDecrease."
+  },
+  "labsPitchCoordinatesConfirmSpot": "Confirm this spot",
+  "@labsPitchCoordinatesConfirmSpot": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: ConfirmSpot."
+  },
+  "labsPitchCoordinatesConfirmNumbers": "Confirm these numbers",
+  "@labsPitchCoordinatesConfirmNumbers": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: ConfirmNumbers."
+  },
+  "labsPitchCoordinatesConfirmMove": "Confirm this move",
+  "@labsPitchCoordinatesConfirmMove": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: ConfirmMove."
+  },
+  "labsPitchCoordinatesMoveRight": "Move right",
+  "@labsPitchCoordinatesMoveRight": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: MoveRight."
+  },
+  "labsPitchCoordinatesMoveLeft": "Move left",
+  "@labsPitchCoordinatesMoveLeft": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: MoveLeft."
+  },
+  "labsPitchCoordinatesMoveUp": "Move up",
+  "@labsPitchCoordinatesMoveUp": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: MoveUp."
+  },
+  "labsPitchCoordinatesMoveDown": "Move down",
+  "@labsPitchCoordinatesMoveDown": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: MoveDown."
+  },
+  "labsPitchCoordinatesEdgeRight": "No more steps right",
+  "@labsPitchCoordinatesEdgeRight": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: EdgeRight."
+  },
+  "labsPitchCoordinatesEdgeLeft": "No more steps left",
+  "@labsPitchCoordinatesEdgeLeft": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: EdgeLeft."
+  },
+  "labsPitchCoordinatesEdgeUp": "No more steps up",
+  "@labsPitchCoordinatesEdgeUp": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: EdgeUp."
+  },
+  "labsPitchCoordinatesEdgeDown": "No more steps down",
+  "@labsPitchCoordinatesEdgeDown": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: EdgeDown."
+  },
+  "labsPitchCoordinatesPickHorizontal": "Right or left",
+  "@labsPitchCoordinatesPickHorizontal": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: PickHorizontal."
+  },
+  "labsPitchCoordinatesPickVertical": "Up or down",
+  "@labsPitchCoordinatesPickVertical": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: PickVertical."
+  },
+  "labsPitchCoordinatesOptRight": "Right",
+  "@labsPitchCoordinatesOptRight": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: OptRight."
+  },
+  "labsPitchCoordinatesOptLeft": "Left",
+  "@labsPitchCoordinatesOptLeft": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: OptLeft."
+  },
+  "labsPitchCoordinatesOptUp": "Up",
+  "@labsPitchCoordinatesOptUp": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: OptUp."
+  },
+  "labsPitchCoordinatesOptDown": "Down",
+  "@labsPitchCoordinatesOptDown": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: OptDown."
+  },
+  "labsPitchCoordinatesOptNone": "No move",
+  "@labsPitchCoordinatesOptNone": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: OptNone."
+  },
+  "labsPitchCoordinatesSteps": "Steps",
+  "@labsPitchCoordinatesSteps": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: Steps."
+  },
+  "labsPitchCoordinatesPlayerUnanswered": "Player",
+  "@labsPitchCoordinatesPlayerUnanswered": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: PlayerUnanswered."
+  },
+  "labsPitchCoordinatesPlayerAnswered": "Player at {h}, {v}: coordinates {x}, {y}",
+  "@labsPitchCoordinatesPlayerAnswered": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: PlayerAnswered.",
+    "placeholders": {
+      "h": {
+        "type": "String"
+      },
+      "v": {
+        "type": "String"
+      },
+      "x": {
+        "type": "int"
+      },
+      "y": {
+        "type": "int"
+      }
+    }
+  },
+  "labsPitchCoordinatesStartMarker": "Start: {h}, {v}",
+  "@labsPitchCoordinatesStartMarker": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: StartMarker.",
+    "placeholders": {
+      "h": {
+        "type": "String"
+      },
+      "v": {
+        "type": "String"
+      }
+    }
+  },
+  "labsPitchCoordinatesFinishMarker": "Finish: {h}, {v}",
+  "@labsPitchCoordinatesFinishMarker": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: FinishMarker.",
+    "placeholders": {
+      "h": {
+        "type": "String"
+      },
+      "v": {
+        "type": "String"
+      }
+    }
+  },
+  "labsPitchCoordinatesSameColumn": "Same column as the player",
+  "@labsPitchCoordinatesSameColumn": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: SameColumn."
+  },
+  "labsPitchCoordinatesSameRow": "Same row as the player",
+  "@labsPitchCoordinatesSameRow": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: SameRow."
+  },
+  "labsPitchCoordinatesOnPlayer": "On the player",
+  "@labsPitchCoordinatesOnPlayer": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: OnPlayer."
+  },
+  "labsPitchCoordinatesAxisHorizontal": "Horizontal number line, from {lo} to {hi}",
+  "@labsPitchCoordinatesAxisHorizontal": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: AxisHorizontal.",
+    "placeholders": {
+      "lo": {
+        "type": "int"
+      },
+      "hi": {
+        "type": "int"
+      }
+    }
+  },
+  "labsPitchCoordinatesAxisVertical": "Vertical number line, from {lo} to {hi}",
+  "@labsPitchCoordinatesAxisVertical": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: AxisVertical.",
+    "placeholders": {
+      "lo": {
+        "type": "int"
+      },
+      "hi": {
+        "type": "int"
+      }
+    }
+  },
+  "labsPitchCoordinatesCorrect": "Yes, that's correct.",
+  "@labsPitchCoordinatesCorrect": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: Correct."
+  },
+  "labsPitchCoordinatesFbGeneric": "Not yet. Check the first number for right or left, then the second number for up or down.",
+  "@labsPitchCoordinatesFbGeneric": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: FbGeneric."
+  },
+  "labsPitchCoordinatesFbOrderSwapped": "The numbers are the wrong way round. The first number is right or left; the second is up or down.",
+  "@labsPitchCoordinatesFbOrderSwapped": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: FbOrderSwapped."
+  },
+  "labsPitchCoordinatesFbOriginCounted": "The origin counts as 0. Count each step along the lines from there.",
+  "@labsPitchCoordinatesFbOriginCounted": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: FbOriginCounted."
+  },
+  "labsPitchCoordinatesFbStartNotMoved": "That is where the player started. Now make the move.",
+  "@labsPitchCoordinatesFbStartNotMoved": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: FbStartNotMoved."
+  },
+  "labsPitchCoordinatesFbHorizontalOnly": "You made the right-or-left move. Now make the up-or-down move too.",
+  "@labsPitchCoordinatesFbHorizontalOnly": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: FbHorizontalOnly."
+  },
+  "labsPitchCoordinatesFbVerticalOnly": "You made the up-or-down move. Now make the right-or-left move too.",
+  "@labsPitchCoordinatesFbVerticalOnly": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: FbVerticalOnly."
+  },
+  "labsPitchCoordinatesFbBothReversed": "Both moves went the opposite way. Right and up make the numbers bigger; left and down make them smaller.",
+  "@labsPitchCoordinatesFbBothReversed": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: FbBothReversed."
+  },
+  "labsPitchCoordinatesFbHorizontalReversed": "Check the right-or-left move: right makes the first number bigger, left makes it smaller.",
+  "@labsPitchCoordinatesFbHorizontalReversed": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: FbHorizontalReversed."
+  },
+  "labsPitchCoordinatesFbVerticalReversed": "Check the up-or-down move: up makes the second number bigger, down makes it smaller.",
+  "@labsPitchCoordinatesFbVerticalReversed": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: FbVerticalReversed."
+  },
+  "labsPitchCoordinatesFbMovesSwapped": "The two moves were swapped. The right-or-left move changes the first number.",
+  "@labsPitchCoordinatesFbMovesSwapped": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: FbMovesSwapped."
+  },
+  "labsPitchCoordinatesFbGaveMove": "That is the move. Where does the player finish?",
+  "@labsPitchCoordinatesFbGaveMove": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: FbGaveMove."
+  },
+  "labsPitchCoordinatesFbGaveFinish": "That is where the player finishes. What move gets them there?",
+  "@labsPitchCoordinatesFbGaveFinish": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: FbGaveFinish."
+  },
+  "labsPitchCoordinatesFbGaveStart": "That is where the player started. What move gets them to the finish?",
+  "@labsPitchCoordinatesFbGaveStart": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: FbGaveStart."
+  },
+  "labsPitchCoordinatesFbMoveReversed": "That move goes from the finish back to the start. Go from the start to the finish.",
+  "@labsPitchCoordinatesFbMoveReversed": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: FbMoveReversed."
+  },
+  "labsPitchCoordinatesTryAgain": "Try again",
+  "@labsPitchCoordinatesTryAgain": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: TryAgain."
+  },
+  "labsPitchCoordinatesShowMe": "Show me",
+  "@labsPitchCoordinatesShowMe": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: ShowMe."
+  },
+  "labsPitchCoordinatesNext": "Next",
+  "@labsPitchCoordinatesNext": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: Next."
+  },
+  "labsPitchCoordinatesExploreAgain": "Explore again",
+  "@labsPitchCoordinatesExploreAgain": {
+    "description": "Pitch Coordinates (Applied Maths Studio) copy: ExploreAgain."
   }
 }

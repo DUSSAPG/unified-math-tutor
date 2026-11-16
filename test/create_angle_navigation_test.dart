@@ -70,10 +70,11 @@ void main() {
     await tap(tester, find.byKey(const Key('appliedMathsStudioEntryCard')));
     expect(find.byType(AppliedMathsStudioHubScreen), findsOneWidget);
 
-    // Two cards now: Binomial first and unchanged, Create the Angle second.
+    // Binomial first and unchanged, Create the Angle second, then Pitch
+    // Coordinates immediately after it.
     final cards = tester.widgetList<RouteLinkCard>(find.byType(RouteLinkCard));
-    expect(
-        cards.map((c) => c.title), ['Binomial Volume Lab', 'Create the Angle']);
+    expect(cards.map((c) => c.title),
+        ['Binomial Volume Lab', 'Create the Angle', 'Pitch Coordinates']);
     final card = find.byKey(const Key('createAngleEntryCard'));
     expect(find.descendant(of: card, matching: find.text('Create the Angle')),
         findsOneWidget);
