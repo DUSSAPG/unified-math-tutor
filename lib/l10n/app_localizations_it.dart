@@ -5870,6 +5870,357 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get labsPitchCoordinatesExploreAgain => 'Explore again';
+
+  @override
+  String get labsFractionsOfASetTitle => 'Fractions of a Set';
+
+  @override
+  String get labsFractionsOfASetCardSubtitle =>
+      'Share a collection into equal groups to find a fraction of it.';
+
+  @override
+  String get labsFractionsOfASetCardKind => 'Number model';
+
+  @override
+  String get labsFractionsOfASetIntro =>
+      'The bottom number says how many equal groups to make. The top number says how many groups to take.';
+
+  @override
+  String labsFractionsOfASetPromptFind(int total, String fraction) {
+    return 'What is $fraction of these $total counters?';
+  }
+
+  @override
+  String labsFractionsOfASetPromptTransfer(int total, String fraction) {
+    return '$fraction of $total = ?';
+  }
+
+  @override
+  String labsFractionsOfASetPromptWhat(int total, int chosen) {
+    return '$chosen of these $total counters are chosen. What fraction of the collection is that?';
+  }
+
+  @override
+  String labsFractionsOfASetPromptCompare(
+      int total, String fractionA, String fractionB) {
+    return 'Which is more: $fractionA of $total or $fractionB of $total?';
+  }
+
+  @override
+  String labsFractionsOfASetPromptEqual(int groups) {
+    return 'Is this a fair split into $groups equal groups?';
+  }
+
+  @override
+  String get labsFractionsOfASetPrediction => 'Your answer';
+
+  @override
+  String get labsFractionsOfASetConfirmAnswer => 'Confirm my answer';
+
+  @override
+  String labsFractionsOfASetStepGroup(int groups) {
+    return 'Make $groups equal groups. Tap a tray to put a counter in it.';
+  }
+
+  @override
+  String get labsFractionsOfASetDeal => 'Deal one to each tray';
+
+  @override
+  String labsFractionsOfASetTakeOneOutOfTray(int index) {
+    return 'Take one out of tray $index';
+  }
+
+  @override
+  String get labsFractionsOfASetStartAgain => 'Start again';
+
+  @override
+  String labsFractionsOfASetLeftToPlace(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count counters left to place',
+      one: '1 counter left to place',
+      zero: 'Every counter is placed.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get labsFractionsOfASetGroupsReady => 'These groups are ready';
+
+  @override
+  String labsFractionsOfASetStepTake(int groups, int n) {
+    return 'Take $n of the $groups groups. Tap the trays you want.';
+  }
+
+  @override
+  String get labsFractionsOfASetTakeConfirm => 'Take these groups';
+
+  @override
+  String labsFractionsOfASetTakeCount(int chosen, int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: 'Take $n trays.',
+      one: 'Take 1 tray.',
+    );
+    return '$_temp0 You have chosen $chosen.';
+  }
+
+  @override
+  String labsFractionsOfASetTray(int groups, int count, int index) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count counters',
+      one: '1 counter',
+      zero: 'empty',
+    );
+    return 'Tray $index of $groups: $_temp0';
+  }
+
+  @override
+  String get labsFractionsOfASetChosen => 'chosen';
+
+  @override
+  String get labsFractionsOfASetDifferent => 'different';
+
+  @override
+  String labsFractionsOfASetCollection(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Collection: $count counters to place',
+      one: 'Collection: 1 counter to place',
+      zero: 'Collection: empty',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get labsFractionsOfASetTopNumber => 'Top number';
+
+  @override
+  String labsFractionsOfASetOutOfGroups(int groups) {
+    return 'out of $groups equal groups';
+  }
+
+  @override
+  String get labsFractionsOfASetSame => 'They are the same';
+
+  @override
+  String get labsFractionsOfASetYes => 'Yes, it\'s fair';
+
+  @override
+  String get labsFractionsOfASetNo => 'No, it\'s not fair';
+
+  @override
+  String labsFractionsOfASetRevealFind(int total, int answer, String fraction) {
+    return '$fraction of $total is $answer.';
+  }
+
+  @override
+  String labsFractionsOfASetRevealSteps(
+      int total, int groups, int n, int size, int answer) {
+    return '$total ÷ $groups = $size, then $n × $size = $answer';
+  }
+
+  @override
+  String labsFractionsOfASetRevealWhat(
+      int total, int chosen, int groups, int n, String fraction) {
+    return '$chosen of $total is $fraction: $n of the $groups equal groups.';
+  }
+
+  @override
+  String labsFractionsOfASetRevealCompare(
+      int total, int valueA, int valueB, String fractionA, String fractionB) {
+    return '$fractionA of $total is $valueA; $fractionB of $total is $valueB.';
+  }
+
+  @override
+  String labsFractionsOfASetRevealEqual(int groups, int size) {
+    return '$groups trays with $size in each.';
+  }
+
+  @override
+  String get labsFractionsOfASetCorrect => 'Yes, that\'s correct.';
+
+  @override
+  String labsFractionsOfASetFbDivNum(int groups, int n) {
+    return 'The bottom number, $groups, says how many equal groups to make. The top number, $n, says how many of those groups to take.';
+  }
+
+  @override
+  String get labsFractionsOfASetFbTookN =>
+      'The fraction is of the whole collection, so take whole groups, not single counters.';
+
+  @override
+  String labsFractionsOfASetFbOneGroup(int n) {
+    return 'That is one group. The top number says take $n groups, so count them all.';
+  }
+
+  @override
+  String labsFractionsOfASetFbOtherGroups(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: 'the $n groups',
+      one: 'the group',
+    );
+    return 'That counts the groups you did not take. Count only $_temp0 the top number asks for.';
+  }
+
+  @override
+  String get labsFractionsOfASetFbWhole =>
+      'That is the whole collection. The fraction is only part of it.';
+
+  @override
+  String labsFractionsOfASetFbFindGeneric(int groups, int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n of them',
+      one: 'one of them',
+    );
+    return 'Make $groups equal groups, then count the counters in $_temp0.';
+  }
+
+  @override
+  String get labsFractionsOfASetFbObjectCount =>
+      'That is the number of chosen counters. The top number counts groups, not counters.';
+
+  @override
+  String get labsFractionsOfASetFbGroupSize =>
+      'That is how many counters are in one group. The top number counts the chosen groups.';
+
+  @override
+  String get labsFractionsOfASetFbNotChosen =>
+      'That counts the groups that are not chosen.';
+
+  @override
+  String labsFractionsOfASetFbWhatWhole(int groups) {
+    return 'That would be all $groups groups: the whole collection.';
+  }
+
+  @override
+  String labsFractionsOfASetFbWhatGeneric(int groups) {
+    return 'Share the counters into $groups equal groups, then count the groups that are chosen.';
+  }
+
+  @override
+  String labsFractionsOfASetFbBiggerDenominator(
+      int total, String fractionA, String fractionB) {
+    return 'More equal groups means each group is smaller, so $fractionB of $total is less than $fractionA of $total.';
+  }
+
+  @override
+  String get labsFractionsOfASetFbSame =>
+      'Different numbers of equal groups give different group sizes, so these are not the same.';
+
+  @override
+  String get labsFractionsOfASetFbUnequalTrays =>
+      'Some trays have different numbers of counters, so the groups are not equal. The trays that differ are outlined. \"Deal one to each tray\" shares fairly.';
+
+  @override
+  String get labsFractionsOfASetFbUnequalAccepted =>
+      'Look again: two trays have different counts. They are outlined. Equal groups must all be the same size.';
+
+  @override
+  String labsFractionsOfASetFbEqualRejected(int size) {
+    return 'Every tray has $size counters, so these groups are equal.';
+  }
+
+  @override
+  String get labsFractionsOfASetNext => 'Next';
+
+  @override
+  String get labsFractionsOfASetExploreAgain => 'Explore again';
+
+  @override
+  String get labsFractionsOfASetBack => 'Back';
+
+  @override
+  String get labsFractionsOfASetStepperIncrease => 'Increase';
+
+  @override
+  String get labsFractionsOfASetStepperDecrease => 'Decrease';
+
+  @override
+  String labsFractionsOfASetHalves(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n halves',
+      one: 'one half',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String labsFractionsOfASetThirds(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n thirds',
+      one: 'one third',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String labsFractionsOfASetQuarters(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n quarters',
+      one: 'one quarter',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String labsFractionsOfASetFifths(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n fifths',
+      one: 'one fifth',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String labsFractionsOfASetSixths(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n sixths',
+      one: 'one sixth',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String labsFractionsOfASetEighths(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n eighths',
+      one: 'one eighth',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String labsFractionsOfASetTenths(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n tenths',
+      one: 'one tenth',
+    );
+    return '$_temp0';
+  }
 }
 
 /// The translations for Italian, as used in Switzerland (`it_CH`).
@@ -10709,4 +11060,367 @@ class AppLocalizationsItCh extends AppLocalizationsIt {
 
   @override
   String get labsPitchCoordinatesExploreAgain => 'Esplora di nuovo';
+
+  @override
+  String get labsFractionsOfASetTitle => 'Frazioni di un insieme';
+
+  @override
+  String get labsFractionsOfASetCardSubtitle =>
+      'Dividi una raccolta in gruppi uguali per trovarne una frazione.';
+
+  @override
+  String get labsFractionsOfASetCardKind => 'Modello numerico';
+
+  @override
+  String get labsFractionsOfASetIntro =>
+      'Il numero in basso dice quanti gruppi uguali formare. Il numero in alto dice quanti gruppi prendere.';
+
+  @override
+  String labsFractionsOfASetPromptFind(int total, String fraction) {
+    return 'Quanto fa $fraction di questi $total gettoni?';
+  }
+
+  @override
+  String labsFractionsOfASetPromptTransfer(int total, String fraction) {
+    return '$fraction di $total = ?';
+  }
+
+  @override
+  String labsFractionsOfASetPromptWhat(int total, int chosen) {
+    return '$chosen di questi $total gettoni sono scelti. Che frazione della raccolta è?';
+  }
+
+  @override
+  String labsFractionsOfASetPromptCompare(
+      int total, String fractionA, String fractionB) {
+    return 'Che cosa è di più: $fractionA di $total o $fractionB di $total?';
+  }
+
+  @override
+  String labsFractionsOfASetPromptEqual(int groups) {
+    return 'È una divisione equa in $groups gruppi uguali?';
+  }
+
+  @override
+  String get labsFractionsOfASetPrediction => 'La tua risposta';
+
+  @override
+  String get labsFractionsOfASetConfirmAnswer => 'Conferma la mia risposta';
+
+  @override
+  String labsFractionsOfASetStepGroup(int groups) {
+    return 'Forma $groups gruppi uguali. Tocca un vassoio per metterci un gettone.';
+  }
+
+  @override
+  String get labsFractionsOfASetDeal => 'Uno in ogni vassoio';
+
+  @override
+  String labsFractionsOfASetTakeOneOutOfTray(int index) {
+    return 'Togline uno dal vassoio $index';
+  }
+
+  @override
+  String get labsFractionsOfASetStartAgain => 'Ricomincia';
+
+  @override
+  String labsFractionsOfASetLeftToPlace(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Ancora $count gettoni da sistemare',
+      one: 'Ancora 1 gettone da sistemare',
+      zero: 'Tutti i gettoni sono sistemati.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get labsFractionsOfASetGroupsReady => 'Questi gruppi sono pronti';
+
+  @override
+  String labsFractionsOfASetStepTake(int groups, int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n gruppi',
+      one: '1 gruppo',
+    );
+    return 'Prendi $_temp0 su $groups. Tocca i vassoi che vuoi.';
+  }
+
+  @override
+  String get labsFractionsOfASetTakeConfirm => 'Prendi questi gruppi';
+
+  @override
+  String labsFractionsOfASetTakeCount(int chosen, int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: 'Prendi $n vassoi.',
+      one: 'Prendi 1 vassoio.',
+    );
+    return '$_temp0 Ne hai scelti $chosen.';
+  }
+
+  @override
+  String labsFractionsOfASetTray(int groups, int count, int index) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count gettoni',
+      one: '1 gettone',
+      zero: 'vuoto',
+    );
+    return 'Vassoio $index di $groups: $_temp0';
+  }
+
+  @override
+  String get labsFractionsOfASetChosen => 'scelto';
+
+  @override
+  String get labsFractionsOfASetDifferent => 'diverso';
+
+  @override
+  String labsFractionsOfASetCollection(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Raccolta: ancora $count gettoni da sistemare',
+      one: 'Raccolta: ancora 1 gettone da sistemare',
+      zero: 'Raccolta: vuota',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get labsFractionsOfASetTopNumber => 'Numero in alto';
+
+  @override
+  String labsFractionsOfASetOutOfGroups(int groups) {
+    return 'su $groups gruppi uguali';
+  }
+
+  @override
+  String get labsFractionsOfASetSame => 'Sono uguali';
+
+  @override
+  String get labsFractionsOfASetYes => 'Sì, è equa';
+
+  @override
+  String get labsFractionsOfASetNo => 'No, non è equa';
+
+  @override
+  String labsFractionsOfASetRevealFind(int total, int answer, String fraction) {
+    return '$fraction di $total è $answer.';
+  }
+
+  @override
+  String labsFractionsOfASetRevealSteps(
+      int total, int groups, int n, int size, int answer) {
+    return '$total ÷ $groups = $size, poi $n × $size = $answer';
+  }
+
+  @override
+  String labsFractionsOfASetRevealWhat(
+      int total, int chosen, int groups, int n, String fraction) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n gruppi uguali',
+      one: '1 gruppo uguale',
+    );
+    return '$chosen su $total è $fraction: $_temp0 su $groups.';
+  }
+
+  @override
+  String labsFractionsOfASetRevealCompare(
+      int total, int valueA, int valueB, String fractionA, String fractionB) {
+    return '$fractionA di $total è $valueA; $fractionB di $total è $valueB.';
+  }
+
+  @override
+  String labsFractionsOfASetRevealEqual(int groups, int size) {
+    return '$groups vassoi con $size in ciascuno.';
+  }
+
+  @override
+  String get labsFractionsOfASetCorrect => 'Sì, è corretto.';
+
+  @override
+  String labsFractionsOfASetFbDivNum(int groups, int n) {
+    return 'Il numero in basso, $groups, dice quanti gruppi uguali formare. Il numero in alto, $n, dice quanti di quei gruppi prendere.';
+  }
+
+  @override
+  String get labsFractionsOfASetFbTookN =>
+      'La frazione è di tutta la raccolta: prendi gruppi interi, non singoli gettoni.';
+
+  @override
+  String labsFractionsOfASetFbOneGroup(int n) {
+    return 'Questo è un solo gruppo. Il numero in alto dice di prendere $n gruppi: contali tutti.';
+  }
+
+  @override
+  String labsFractionsOfASetFbOtherGroups(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n',
+      one: 'uno',
+    );
+    return 'Così conti i gruppi che non hai preso. Conta solo i gruppi che chiede il numero in alto: $_temp0.';
+  }
+
+  @override
+  String get labsFractionsOfASetFbWhole =>
+      'Questa è tutta la raccolta. La frazione ne è solo una parte.';
+
+  @override
+  String labsFractionsOfASetFbFindGeneric(int groups, int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n di essi',
+      one: 'uno di essi',
+    );
+    return 'Forma $groups gruppi uguali, poi conta i gettoni in $_temp0.';
+  }
+
+  @override
+  String get labsFractionsOfASetFbObjectCount =>
+      'Questo è il numero di gettoni scelti. Il numero in alto conta i gruppi, non i gettoni.';
+
+  @override
+  String get labsFractionsOfASetFbGroupSize =>
+      'Questo è quanti gettoni ci sono in un gruppo. Il numero in alto conta i gruppi scelti.';
+
+  @override
+  String get labsFractionsOfASetFbNotChosen =>
+      'Così conti i gruppi che non sono scelti.';
+
+  @override
+  String labsFractionsOfASetFbWhatWhole(int groups) {
+    return 'Sarebbero tutti i gruppi ($groups su $groups): l\'intera raccolta.';
+  }
+
+  @override
+  String labsFractionsOfASetFbWhatGeneric(int groups) {
+    return 'Dividi i gettoni in $groups gruppi uguali, poi conta i gruppi scelti.';
+  }
+
+  @override
+  String labsFractionsOfASetFbBiggerDenominator(
+      int total, String fractionA, String fractionB) {
+    return 'Più gruppi uguali significa che ogni gruppo è più piccolo. Quindi $fractionB di $total è meno di $fractionA di $total.';
+  }
+
+  @override
+  String get labsFractionsOfASetFbSame =>
+      'Numeri diversi di gruppi uguali danno gruppi di grandezza diversa: quindi non sono uguali.';
+
+  @override
+  String get labsFractionsOfASetFbUnequalTrays =>
+      'Alcuni vassoi hanno un numero diverso di gettoni: i gruppi non sono uguali. I vassoi diversi sono contornati. «Uno in ogni vassoio» divide in modo equo.';
+
+  @override
+  String get labsFractionsOfASetFbUnequalAccepted =>
+      'Guarda di nuovo: due vassoi hanno un numero diverso. Sono contornati. I gruppi uguali hanno tutti la stessa grandezza.';
+
+  @override
+  String labsFractionsOfASetFbEqualRejected(int size) {
+    return 'Ogni vassoio ha $size gettoni: quindi questi gruppi sono uguali.';
+  }
+
+  @override
+  String get labsFractionsOfASetNext => 'Avanti';
+
+  @override
+  String get labsFractionsOfASetExploreAgain => 'Esplora di nuovo';
+
+  @override
+  String get labsFractionsOfASetBack => 'Indietro';
+
+  @override
+  String get labsFractionsOfASetStepperIncrease => 'Aumenta';
+
+  @override
+  String get labsFractionsOfASetStepperDecrease => 'Diminuisci';
+
+  @override
+  String labsFractionsOfASetHalves(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n mezzi',
+      one: 'un mezzo',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String labsFractionsOfASetThirds(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n terzi',
+      one: 'un terzo',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String labsFractionsOfASetQuarters(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n quarti',
+      one: 'un quarto',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String labsFractionsOfASetFifths(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n quinti',
+      one: 'un quinto',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String labsFractionsOfASetSixths(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n sesti',
+      one: 'un sesto',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String labsFractionsOfASetEighths(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n ottavi',
+      one: 'un ottavo',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String labsFractionsOfASetTenths(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n decimi',
+      one: 'un decimo',
+    );
+    return '$_temp0';
+  }
 }

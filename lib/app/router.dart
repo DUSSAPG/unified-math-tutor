@@ -103,6 +103,7 @@ import '../screens/labs/binomial_volume/binomial_volume_lab_screen.dart';
 import '../screens/labs/create_angle/create_angle_screen.dart';
 import '../screens/labs/feed_panda/feed_the_hungry_panda_screen.dart';
 import '../screens/labs/pitch_coordinates/pitch_coordinates_screen.dart';
+import '../screens/labs/fractions_of_a_set/fractions_of_a_set_screen.dart';
 import '../screens/labs/panda_portions/panda_portions_screen.dart';
 import '../screens/settings/release_notes_screen.dart';
 import '../screens/settings/terms_screen.dart';
@@ -591,6 +592,10 @@ final GoRouter appRouter = GoRouter(
                 GoRoute(
                   path: 'pitch-coordinates',
                   builder: (context, state) => const PitchCoordinatesScreen(),
+                ),
+                GoRoute(
+                  path: 'fractions-of-a-set',
+                  builder: (context, state) => const FractionsOfASetScreen(),
                 ),
               ],
             ),
