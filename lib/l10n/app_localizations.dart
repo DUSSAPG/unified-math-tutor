@@ -9934,6 +9934,389 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Explore again'**
   String get labsPitchCoordinatesExploreAgain;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Fractions of a Set'**
+  String get labsFractionsOfASetTitle;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: CardSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Share a collection into equal groups to find a fraction of it.'**
+  String get labsFractionsOfASetCardSubtitle;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: CardKind.
+  ///
+  /// In en, this message translates to:
+  /// **'Number model'**
+  String get labsFractionsOfASetCardKind;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Intro.
+  ///
+  /// In en, this message translates to:
+  /// **'The bottom number says how many equal groups to make. The top number says how many groups to take.'**
+  String get labsFractionsOfASetIntro;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: PromptFind.
+  ///
+  /// In en, this message translates to:
+  /// **'What is {fraction} of these {total} counters?'**
+  String labsFractionsOfASetPromptFind(int total, String fraction);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: PromptTransfer.
+  ///
+  /// In en, this message translates to:
+  /// **'{fraction} of {total} = ?'**
+  String labsFractionsOfASetPromptTransfer(int total, String fraction);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: PromptWhat.
+  ///
+  /// In en, this message translates to:
+  /// **'{chosen} of these {total} counters are chosen. What fraction of the collection is that?'**
+  String labsFractionsOfASetPromptWhat(int total, int chosen);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: PromptCompare.
+  ///
+  /// In en, this message translates to:
+  /// **'Which is more: {fractionA} of {total} or {fractionB} of {total}?'**
+  String labsFractionsOfASetPromptCompare(
+      int total, String fractionA, String fractionB);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: PromptEqual.
+  ///
+  /// In en, this message translates to:
+  /// **'Is this a fair split into {groups} equal groups?'**
+  String labsFractionsOfASetPromptEqual(int groups);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Prediction.
+  ///
+  /// In en, this message translates to:
+  /// **'Your answer'**
+  String get labsFractionsOfASetPrediction;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: ConfirmAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm my answer'**
+  String get labsFractionsOfASetConfirmAnswer;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: StepGroup.
+  ///
+  /// In en, this message translates to:
+  /// **'Make {groups} equal groups. Tap a tray to put a counter in it.'**
+  String labsFractionsOfASetStepGroup(int groups);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Deal.
+  ///
+  /// In en, this message translates to:
+  /// **'Deal one to each tray'**
+  String get labsFractionsOfASetDeal;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: TakeOneOutOfTray. Accessible name of the take-one-out button under one tray, and of that tray's take-one-out action; index is the tray number, counted from 1.
+  ///
+  /// In en, this message translates to:
+  /// **'Take one out of tray {index}'**
+  String labsFractionsOfASetTakeOneOutOfTray(int index);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: StartAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Start again'**
+  String get labsFractionsOfASetStartAgain;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: LeftToPlace.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{Every counter is placed.} =1{1 counter left to place} other{{count} counters left to place}}'**
+  String labsFractionsOfASetLeftToPlace(int count);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: GroupsReady.
+  ///
+  /// In en, this message translates to:
+  /// **'These groups are ready'**
+  String get labsFractionsOfASetGroupsReady;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: StepTake.
+  ///
+  /// In en, this message translates to:
+  /// **'Take {n} of the {groups} groups. Tap the trays you want.'**
+  String labsFractionsOfASetStepTake(int groups, int n);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: TakeConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Take these groups'**
+  String get labsFractionsOfASetTakeConfirm;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: TakeCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =1{Take 1 tray.} other{Take {n} trays.}} You have chosen {chosen}.'**
+  String labsFractionsOfASetTakeCount(int chosen, int n);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Tray.
+  ///
+  /// In en, this message translates to:
+  /// **'Tray {index} of {groups}: {count, plural, =0{empty} =1{1 counter} other{{count} counters}}'**
+  String labsFractionsOfASetTray(int groups, int count, int index);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Chosen.
+  ///
+  /// In en, this message translates to:
+  /// **'chosen'**
+  String get labsFractionsOfASetChosen;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Different.
+  ///
+  /// In en, this message translates to:
+  /// **'different'**
+  String get labsFractionsOfASetDifferent;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Collection.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{Collection: empty} =1{Collection: 1 counter to place} other{Collection: {count} counters to place}}'**
+  String labsFractionsOfASetCollection(int count);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: TopNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Top number'**
+  String get labsFractionsOfASetTopNumber;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: OutOfGroups.
+  ///
+  /// In en, this message translates to:
+  /// **'out of {groups} equal groups'**
+  String labsFractionsOfASetOutOfGroups(int groups);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Same.
+  ///
+  /// In en, this message translates to:
+  /// **'They are the same'**
+  String get labsFractionsOfASetSame;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Yes.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes, it\'s fair'**
+  String get labsFractionsOfASetYes;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: No.
+  ///
+  /// In en, this message translates to:
+  /// **'No, it\'s not fair'**
+  String get labsFractionsOfASetNo;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: RevealFind.
+  ///
+  /// In en, this message translates to:
+  /// **'{fraction} of {total} is {answer}.'**
+  String labsFractionsOfASetRevealFind(int total, int answer, String fraction);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: RevealSteps.
+  ///
+  /// In en, this message translates to:
+  /// **'{total} ÷ {groups} = {size}, then {n} × {size} = {answer}'**
+  String labsFractionsOfASetRevealSteps(
+      int total, int groups, int n, int size, int answer);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: RevealWhat.
+  ///
+  /// In en, this message translates to:
+  /// **'{chosen} of {total} is {fraction}: {n} of the {groups} equal groups.'**
+  String labsFractionsOfASetRevealWhat(
+      int total, int chosen, int groups, int n, String fraction);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: RevealCompare.
+  ///
+  /// In en, this message translates to:
+  /// **'{fractionA} of {total} is {valueA}; {fractionB} of {total} is {valueB}.'**
+  String labsFractionsOfASetRevealCompare(
+      int total, int valueA, int valueB, String fractionA, String fractionB);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: RevealEqual.
+  ///
+  /// In en, this message translates to:
+  /// **'{groups} trays with {size} in each.'**
+  String labsFractionsOfASetRevealEqual(int groups, int size);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Correct.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes, that\'s correct.'**
+  String get labsFractionsOfASetCorrect;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbDivNum.
+  ///
+  /// In en, this message translates to:
+  /// **'The bottom number, {groups}, says how many equal groups to make. The top number, {n}, says how many of those groups to take.'**
+  String labsFractionsOfASetFbDivNum(int groups, int n);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbTookN.
+  ///
+  /// In en, this message translates to:
+  /// **'The fraction is of the whole collection, so take whole groups, not single counters.'**
+  String get labsFractionsOfASetFbTookN;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbOneGroup.
+  ///
+  /// In en, this message translates to:
+  /// **'That is one group. The top number says take {n} groups, so count them all.'**
+  String labsFractionsOfASetFbOneGroup(int n);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbOtherGroups.
+  ///
+  /// In en, this message translates to:
+  /// **'That counts the groups you did not take. Count only {n, plural, =1{the group} other{the {n} groups}} the top number asks for.'**
+  String labsFractionsOfASetFbOtherGroups(int n);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbWhole.
+  ///
+  /// In en, this message translates to:
+  /// **'That is the whole collection. The fraction is only part of it.'**
+  String get labsFractionsOfASetFbWhole;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbFindGeneric.
+  ///
+  /// In en, this message translates to:
+  /// **'Make {groups} equal groups, then count the counters in {n, plural, =1{one of them} other{{n} of them}}.'**
+  String labsFractionsOfASetFbFindGeneric(int groups, int n);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbObjectCount.
+  ///
+  /// In en, this message translates to:
+  /// **'That is the number of chosen counters. The top number counts groups, not counters.'**
+  String get labsFractionsOfASetFbObjectCount;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbGroupSize.
+  ///
+  /// In en, this message translates to:
+  /// **'That is how many counters are in one group. The top number counts the chosen groups.'**
+  String get labsFractionsOfASetFbGroupSize;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbNotChosen.
+  ///
+  /// In en, this message translates to:
+  /// **'That counts the groups that are not chosen.'**
+  String get labsFractionsOfASetFbNotChosen;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbWhatWhole.
+  ///
+  /// In en, this message translates to:
+  /// **'That would be all {groups} groups: the whole collection.'**
+  String labsFractionsOfASetFbWhatWhole(int groups);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbWhatGeneric.
+  ///
+  /// In en, this message translates to:
+  /// **'Share the counters into {groups} equal groups, then count the groups that are chosen.'**
+  String labsFractionsOfASetFbWhatGeneric(int groups);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbBiggerDenominator.
+  ///
+  /// In en, this message translates to:
+  /// **'More equal groups means each group is smaller, so {fractionB} of {total} is less than {fractionA} of {total}.'**
+  String labsFractionsOfASetFbBiggerDenominator(
+      int total, String fractionA, String fractionB);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbSame.
+  ///
+  /// In en, this message translates to:
+  /// **'Different numbers of equal groups give different group sizes, so these are not the same.'**
+  String get labsFractionsOfASetFbSame;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbUnequalTrays.
+  ///
+  /// In en, this message translates to:
+  /// **'Some trays have different numbers of counters, so the groups are not equal. The trays that differ are outlined. \"Deal one to each tray\" shares fairly.'**
+  String get labsFractionsOfASetFbUnequalTrays;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbUnequalAccepted.
+  ///
+  /// In en, this message translates to:
+  /// **'Look again: two trays have different counts. They are outlined. Equal groups must all be the same size.'**
+  String get labsFractionsOfASetFbUnequalAccepted;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbEqualRejected.
+  ///
+  /// In en, this message translates to:
+  /// **'Every tray has {size} counters, so these groups are equal.'**
+  String labsFractionsOfASetFbEqualRejected(int size);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Next.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get labsFractionsOfASetNext;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: ExploreAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore again'**
+  String get labsFractionsOfASetExploreAgain;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Back.
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get labsFractionsOfASetBack;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: StepperIncrease.
+  ///
+  /// In en, this message translates to:
+  /// **'Increase'**
+  String get labsFractionsOfASetStepperIncrease;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: StepperDecrease.
+  ///
+  /// In en, this message translates to:
+  /// **'Decrease'**
+  String get labsFractionsOfASetStepperDecrease;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Halves.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =1{one half} other{{n} halves}}'**
+  String labsFractionsOfASetHalves(int n);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Thirds.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =1{one third} other{{n} thirds}}'**
+  String labsFractionsOfASetThirds(int n);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Quarters.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =1{one quarter} other{{n} quarters}}'**
+  String labsFractionsOfASetQuarters(int n);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Fifths.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =1{one fifth} other{{n} fifths}}'**
+  String labsFractionsOfASetFifths(int n);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Sixths.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =1{one sixth} other{{n} sixths}}'**
+  String labsFractionsOfASetSixths(int n);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Eighths.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =1{one eighth} other{{n} eighths}}'**
+  String labsFractionsOfASetEighths(int n);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Tenths.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =1{one tenth} other{{n} tenths}}'**
+  String labsFractionsOfASetTenths(int n);
 }
 
 class _AppLocalizationsDelegate

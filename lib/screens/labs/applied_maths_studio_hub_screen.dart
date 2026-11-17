@@ -22,6 +22,9 @@ const createAnglePath = '$appliedMathsStudioPath/create-the-angle';
 /// Route of Pitch Coordinates, the studio's applied coordinate exploration.
 const pitchCoordinatesPath = '$appliedMathsStudioPath/pitch-coordinates';
 
+/// Route of Fractions of a Set, the studio's number model.
+const fractionsOfASetPath = '$appliedMathsStudioPath/fractions-of-a-set';
+
 /// Applied Maths Studio landing page: applied explorations that turn a piece
 /// of algebra into something the learner can move and inspect. Reached the
 /// same way Early Maths Playground and Spatial Cube Lab are — as an entry
@@ -134,6 +137,25 @@ class AppliedMathsStudioHubScreen extends StatelessWidget {
                     title: l10n.labsPitchCoordinatesTitle,
                     subtitle: l10n.labsPitchCoordinatesCardSubtitle,
                     onTap: () => context.push(pitchCoordinatesPath),
+                  ),
+                  const SizedBox(height: AppSpacing.lg),
+                  Text(
+                    l10n.labsFractionsOfASetCardKind,
+                    key: const Key('fractionsOfASetKindLabel'),
+                    style: TextStyle(
+                      color: colors.secondaryText,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const SizedBox(height: AppSpacing.sm),
+                  RouteLinkCard(
+                    key: const Key('fractionsOfASetEntryCard'),
+                    icon: LucideIcons.boxes,
+                    iconColor: const Color(0xFFCC79A7),
+                    title: l10n.labsFractionsOfASetTitle,
+                    subtitle: l10n.labsFractionsOfASetCardSubtitle,
+                    onTap: () => context.push(fractionsOfASetPath),
                   ),
                 ],
               ),

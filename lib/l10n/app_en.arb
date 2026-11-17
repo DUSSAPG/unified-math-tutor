@@ -4574,5 +4574,506 @@
   "labsPitchCoordinatesExploreAgain": "Explore again",
   "@labsPitchCoordinatesExploreAgain": {
     "description": "Pitch Coordinates (Applied Maths Studio) copy: ExploreAgain."
+  },
+  "labsFractionsOfASetTitle": "Fractions of a Set",
+  "@labsFractionsOfASetTitle": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: Title."
+  },
+  "labsFractionsOfASetCardSubtitle": "Share a collection into equal groups to find a fraction of it.",
+  "@labsFractionsOfASetCardSubtitle": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: CardSubtitle."
+  },
+  "labsFractionsOfASetCardKind": "Number model",
+  "@labsFractionsOfASetCardKind": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: CardKind."
+  },
+  "labsFractionsOfASetIntro": "The bottom number says how many equal groups to make. The top number says how many groups to take.",
+  "@labsFractionsOfASetIntro": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: Intro."
+  },
+  "labsFractionsOfASetPromptFind": "What is {fraction} of these {total} counters?",
+  "@labsFractionsOfASetPromptFind": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: PromptFind.",
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "fraction": {
+        "type": "String"
+      }
+    }
+  },
+  "labsFractionsOfASetPromptTransfer": "{fraction} of {total} = ?",
+  "@labsFractionsOfASetPromptTransfer": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: PromptTransfer.",
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "fraction": {
+        "type": "String"
+      }
+    }
+  },
+  "labsFractionsOfASetPromptWhat": "{chosen} of these {total} counters are chosen. What fraction of the collection is that?",
+  "@labsFractionsOfASetPromptWhat": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: PromptWhat.",
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "chosen": {
+        "type": "int"
+      }
+    }
+  },
+  "labsFractionsOfASetPromptCompare": "Which is more: {fractionA} of {total} or {fractionB} of {total}?",
+  "@labsFractionsOfASetPromptCompare": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: PromptCompare.",
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "fractionA": {
+        "type": "String"
+      },
+      "fractionB": {
+        "type": "String"
+      }
+    }
+  },
+  "labsFractionsOfASetPromptEqual": "Is this a fair split into {groups} equal groups?",
+  "@labsFractionsOfASetPromptEqual": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: PromptEqual.",
+    "placeholders": {
+      "groups": {
+        "type": "int"
+      }
+    }
+  },
+  "labsFractionsOfASetPrediction": "Your answer",
+  "@labsFractionsOfASetPrediction": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: Prediction."
+  },
+  "labsFractionsOfASetConfirmAnswer": "Confirm my answer",
+  "@labsFractionsOfASetConfirmAnswer": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: ConfirmAnswer."
+  },
+  "labsFractionsOfASetStepGroup": "Make {groups} equal groups. Tap a tray to put a counter in it.",
+  "@labsFractionsOfASetStepGroup": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: StepGroup.",
+    "placeholders": {
+      "groups": {
+        "type": "int"
+      }
+    }
+  },
+  "labsFractionsOfASetDeal": "Deal one to each tray",
+  "@labsFractionsOfASetDeal": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: Deal."
+  },
+  "labsFractionsOfASetTakeOneOutOfTray": "Take one out of tray {index}",
+  "@labsFractionsOfASetTakeOneOutOfTray": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: TakeOneOutOfTray. Accessible name of the take-one-out button under one tray, and of that tray's take-one-out action; index is the tray number, counted from 1.",
+    "placeholders": {
+      "index": {
+        "type": "int"
+      }
+    }
+  },
+  "labsFractionsOfASetStartAgain": "Start again",
+  "@labsFractionsOfASetStartAgain": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: StartAgain."
+  },
+  "labsFractionsOfASetLeftToPlace": "{count, plural, =0{Every counter is placed.} =1{1 counter left to place} other{{count} counters left to place}}",
+  "@labsFractionsOfASetLeftToPlace": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: LeftToPlace.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "labsFractionsOfASetGroupsReady": "These groups are ready",
+  "@labsFractionsOfASetGroupsReady": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: GroupsReady."
+  },
+  "labsFractionsOfASetStepTake": "Take {n} of the {groups} groups. Tap the trays you want.",
+  "@labsFractionsOfASetStepTake": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: StepTake.",
+    "placeholders": {
+      "groups": {
+        "type": "int"
+      },
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "labsFractionsOfASetTakeConfirm": "Take these groups",
+  "@labsFractionsOfASetTakeConfirm": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: TakeConfirm."
+  },
+  "labsFractionsOfASetTakeCount": "{n, plural, =1{Take 1 tray.} other{Take {n} trays.}} You have chosen {chosen}.",
+  "@labsFractionsOfASetTakeCount": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: TakeCount.",
+    "placeholders": {
+      "chosen": {
+        "type": "int"
+      },
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "labsFractionsOfASetTray": "Tray {index} of {groups}: {count, plural, =0{empty} =1{1 counter} other{{count} counters}}",
+  "@labsFractionsOfASetTray": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: Tray.",
+    "placeholders": {
+      "groups": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      },
+      "index": {
+        "type": "int"
+      }
+    }
+  },
+  "labsFractionsOfASetChosen": "chosen",
+  "@labsFractionsOfASetChosen": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: Chosen."
+  },
+  "labsFractionsOfASetDifferent": "different",
+  "@labsFractionsOfASetDifferent": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: Different."
+  },
+  "labsFractionsOfASetCollection": "{count, plural, =0{Collection: empty} =1{Collection: 1 counter to place} other{Collection: {count} counters to place}}",
+  "@labsFractionsOfASetCollection": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: Collection.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "labsFractionsOfASetTopNumber": "Top number",
+  "@labsFractionsOfASetTopNumber": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: TopNumber."
+  },
+  "labsFractionsOfASetOutOfGroups": "out of {groups} equal groups",
+  "@labsFractionsOfASetOutOfGroups": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: OutOfGroups.",
+    "placeholders": {
+      "groups": {
+        "type": "int"
+      }
+    }
+  },
+  "labsFractionsOfASetSame": "They are the same",
+  "@labsFractionsOfASetSame": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: Same."
+  },
+  "labsFractionsOfASetYes": "Yes, it's fair",
+  "@labsFractionsOfASetYes": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: Yes."
+  },
+  "labsFractionsOfASetNo": "No, it's not fair",
+  "@labsFractionsOfASetNo": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: No."
+  },
+  "labsFractionsOfASetRevealFind": "{fraction} of {total} is {answer}.",
+  "@labsFractionsOfASetRevealFind": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: RevealFind.",
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "answer": {
+        "type": "int"
+      },
+      "fraction": {
+        "type": "String"
+      }
+    }
+  },
+  "labsFractionsOfASetRevealSteps": "{total} ÷ {groups} = {size}, then {n} × {size} = {answer}",
+  "@labsFractionsOfASetRevealSteps": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: RevealSteps.",
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "groups": {
+        "type": "int"
+      },
+      "n": {
+        "type": "int"
+      },
+      "size": {
+        "type": "int"
+      },
+      "answer": {
+        "type": "int"
+      }
+    }
+  },
+  "labsFractionsOfASetRevealWhat": "{chosen} of {total} is {fraction}: {n} of the {groups} equal groups.",
+  "@labsFractionsOfASetRevealWhat": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: RevealWhat.",
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "chosen": {
+        "type": "int"
+      },
+      "groups": {
+        "type": "int"
+      },
+      "n": {
+        "type": "int"
+      },
+      "fraction": {
+        "type": "String"
+      }
+    }
+  },
+  "labsFractionsOfASetRevealCompare": "{fractionA} of {total} is {valueA}; {fractionB} of {total} is {valueB}.",
+  "@labsFractionsOfASetRevealCompare": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: RevealCompare.",
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "valueA": {
+        "type": "int"
+      },
+      "valueB": {
+        "type": "int"
+      },
+      "fractionA": {
+        "type": "String"
+      },
+      "fractionB": {
+        "type": "String"
+      }
+    }
+  },
+  "labsFractionsOfASetRevealEqual": "{groups} trays with {size} in each.",
+  "@labsFractionsOfASetRevealEqual": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: RevealEqual.",
+    "placeholders": {
+      "groups": {
+        "type": "int"
+      },
+      "size": {
+        "type": "int"
+      }
+    }
+  },
+  "labsFractionsOfASetCorrect": "Yes, that's correct.",
+  "@labsFractionsOfASetCorrect": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: Correct."
+  },
+  "labsFractionsOfASetFbDivNum": "The bottom number, {groups}, says how many equal groups to make. The top number, {n}, says how many of those groups to take.",
+  "@labsFractionsOfASetFbDivNum": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: FbDivNum.",
+    "placeholders": {
+      "groups": {
+        "type": "int"
+      },
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "labsFractionsOfASetFbTookN": "The fraction is of the whole collection, so take whole groups, not single counters.",
+  "@labsFractionsOfASetFbTookN": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: FbTookN."
+  },
+  "labsFractionsOfASetFbOneGroup": "That is one group. The top number says take {n} groups, so count them all.",
+  "@labsFractionsOfASetFbOneGroup": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: FbOneGroup.",
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "labsFractionsOfASetFbOtherGroups": "That counts the groups you did not take. Count only {n, plural, =1{the group} other{the {n} groups}} the top number asks for.",
+  "@labsFractionsOfASetFbOtherGroups": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: FbOtherGroups.",
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "labsFractionsOfASetFbWhole": "That is the whole collection. The fraction is only part of it.",
+  "@labsFractionsOfASetFbWhole": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: FbWhole."
+  },
+  "labsFractionsOfASetFbFindGeneric": "Make {groups} equal groups, then count the counters in {n, plural, =1{one of them} other{{n} of them}}.",
+  "@labsFractionsOfASetFbFindGeneric": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: FbFindGeneric.",
+    "placeholders": {
+      "groups": {
+        "type": "int"
+      },
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "labsFractionsOfASetFbObjectCount": "That is the number of chosen counters. The top number counts groups, not counters.",
+  "@labsFractionsOfASetFbObjectCount": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: FbObjectCount."
+  },
+  "labsFractionsOfASetFbGroupSize": "That is how many counters are in one group. The top number counts the chosen groups.",
+  "@labsFractionsOfASetFbGroupSize": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: FbGroupSize."
+  },
+  "labsFractionsOfASetFbNotChosen": "That counts the groups that are not chosen.",
+  "@labsFractionsOfASetFbNotChosen": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: FbNotChosen."
+  },
+  "labsFractionsOfASetFbWhatWhole": "That would be all {groups} groups: the whole collection.",
+  "@labsFractionsOfASetFbWhatWhole": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: FbWhatWhole.",
+    "placeholders": {
+      "groups": {
+        "type": "int"
+      }
+    }
+  },
+  "labsFractionsOfASetFbWhatGeneric": "Share the counters into {groups} equal groups, then count the groups that are chosen.",
+  "@labsFractionsOfASetFbWhatGeneric": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: FbWhatGeneric.",
+    "placeholders": {
+      "groups": {
+        "type": "int"
+      }
+    }
+  },
+  "labsFractionsOfASetFbBiggerDenominator": "More equal groups means each group is smaller, so {fractionB} of {total} is less than {fractionA} of {total}.",
+  "@labsFractionsOfASetFbBiggerDenominator": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: FbBiggerDenominator.",
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "fractionA": {
+        "type": "String"
+      },
+      "fractionB": {
+        "type": "String"
+      }
+    }
+  },
+  "labsFractionsOfASetFbSame": "Different numbers of equal groups give different group sizes, so these are not the same.",
+  "@labsFractionsOfASetFbSame": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: FbSame."
+  },
+  "labsFractionsOfASetFbUnequalTrays": "Some trays have different numbers of counters, so the groups are not equal. The trays that differ are outlined. \"Deal one to each tray\" shares fairly.",
+  "@labsFractionsOfASetFbUnequalTrays": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: FbUnequalTrays."
+  },
+  "labsFractionsOfASetFbUnequalAccepted": "Look again: two trays have different counts. They are outlined. Equal groups must all be the same size.",
+  "@labsFractionsOfASetFbUnequalAccepted": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: FbUnequalAccepted."
+  },
+  "labsFractionsOfASetFbEqualRejected": "Every tray has {size} counters, so these groups are equal.",
+  "@labsFractionsOfASetFbEqualRejected": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: FbEqualRejected.",
+    "placeholders": {
+      "size": {
+        "type": "int"
+      }
+    }
+  },
+  "labsFractionsOfASetNext": "Next",
+  "@labsFractionsOfASetNext": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: Next."
+  },
+  "labsFractionsOfASetExploreAgain": "Explore again",
+  "@labsFractionsOfASetExploreAgain": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: ExploreAgain."
+  },
+  "labsFractionsOfASetBack": "Back",
+  "@labsFractionsOfASetBack": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: Back."
+  },
+  "labsFractionsOfASetStepperIncrease": "Increase",
+  "@labsFractionsOfASetStepperIncrease": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: StepperIncrease."
+  },
+  "labsFractionsOfASetStepperDecrease": "Decrease",
+  "@labsFractionsOfASetStepperDecrease": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: StepperDecrease."
+  },
+  "labsFractionsOfASetHalves": "{n, plural, =1{one half} other{{n} halves}}",
+  "@labsFractionsOfASetHalves": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: Halves.",
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "labsFractionsOfASetThirds": "{n, plural, =1{one third} other{{n} thirds}}",
+  "@labsFractionsOfASetThirds": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: Thirds.",
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "labsFractionsOfASetQuarters": "{n, plural, =1{one quarter} other{{n} quarters}}",
+  "@labsFractionsOfASetQuarters": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: Quarters.",
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "labsFractionsOfASetFifths": "{n, plural, =1{one fifth} other{{n} fifths}}",
+  "@labsFractionsOfASetFifths": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: Fifths.",
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "labsFractionsOfASetSixths": "{n, plural, =1{one sixth} other{{n} sixths}}",
+  "@labsFractionsOfASetSixths": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: Sixths.",
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "labsFractionsOfASetEighths": "{n, plural, =1{one eighth} other{{n} eighths}}",
+  "@labsFractionsOfASetEighths": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: Eighths.",
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "labsFractionsOfASetTenths": "{n, plural, =1{one tenth} other{{n} tenths}}",
+  "@labsFractionsOfASetTenths": {
+    "description": "Fractions of a Set (Applied Maths Studio) copy: Tenths.",
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
   }
 }

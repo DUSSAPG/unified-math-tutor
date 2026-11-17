@@ -71,10 +71,14 @@ void main() {
     expect(find.byType(AppliedMathsStudioHubScreen), findsOneWidget);
 
     // Binomial first and unchanged, Create the Angle second, then Pitch
-    // Coordinates immediately after it.
+    // Coordinates immediately after it, then Fractions of a Set.
     final cards = tester.widgetList<RouteLinkCard>(find.byType(RouteLinkCard));
-    expect(cards.map((c) => c.title),
-        ['Binomial Volume Lab', 'Create the Angle', 'Pitch Coordinates']);
+    expect(cards.map((c) => c.title), [
+      'Binomial Volume Lab',
+      'Create the Angle',
+      'Pitch Coordinates',
+      'Fractions of a Set',
+    ]);
     final card = find.byKey(const Key('createAngleEntryCard'));
     expect(find.descendant(of: card, matching: find.text('Create the Angle')),
         findsOneWidget);
