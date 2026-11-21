@@ -77,6 +77,19 @@ void main() {
       expect(inPitch, greaterThan(0));
       expect(all, inPitch);
     });
+
+    test('comment stripping works for LF and CRLF sources', () {
+      for (final eol in ['\n', '\r\n']) {
+        final stripped = _stripComments([
+          '/// never given the target',
+          'final angle = 1; // target',
+          ''
+        ].join(eol));
+        expect(RegExp(r'\btarget\b').hasMatch(stripped), isFalse,
+            reason: 'eol=${eol.codeUnits}');
+        expect(stripped, contains('final angle = 1;'));
+      }
+    });
   });
 
   // ---------------------------------------------------------------- T-2
@@ -364,7 +377,11 @@ List<(SemanticsNode, Rect)> _allNodes(WidgetTester tester) {
   return out;
 }
 
+/// Removes `//` comments line by line. Line endings are normalised first:
+/// on a CRLF checkout `.` cannot match the trailing `\r`, so `//.*$` would
+/// never match and comments would be left in.
 String _stripComments(String source) => source
+    .replaceAll('\r\n', '\n')
     .split('\n')
     .map((l) => l.replaceFirst(RegExp(r'//.*$'), ''))
     .join('\n');
