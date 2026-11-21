@@ -3955,7 +3955,7 @@
   "@labsCreateAngleIntro": {
     "description": "Create the Angle (Applied Maths Studio) copy."
   },
-  "labsCreateAngleLegend": "Solid line: baseline · Dashed line: your aim · Square: target",
+  "labsCreateAngleLegend": "Solid line: baseline · Dashed line: your aim",
   "@labsCreateAngleLegend": {
     "description": "Create the Angle (Applied Maths Studio) copy."
   },
@@ -4026,7 +4026,7 @@
       }
     }
   },
-  "labsCreateAnglePitchSemantic": "Football pitch. The solid baseline runs right from the ball. Drag the round aim handle, or use the arrow keys, to turn the dashed aim line. The square shows the target.",
+  "labsCreateAnglePitchSemantic": "Football pitch. The solid baseline runs right from the ball. Drag the round aim handle, or use the arrow keys, to turn the dashed aim line.",
   "@labsCreateAnglePitchSemantic": {
     "description": "Create the Angle (Applied Maths Studio) copy."
   },

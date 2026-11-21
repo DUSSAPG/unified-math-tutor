@@ -348,14 +348,13 @@ class _CreateAngleScreenState extends State<CreateAngleScreen>
                       child: CustomPaint(
                         painter: CreateAnglePitchPainter(
                           angle: _displayAngle,
-                          target: _session.target,
                           angleLabel: l10n
                               .labsCreateAngleDegrees(_degrees(_displayAngle)),
                           matched: _session.lastCheck?.matched ?? false,
                           palette: CreateAnglePitchPalette(
                             grass: lab.pitchSurface,
                             markings: Colors.white,
-                            target: lab.targetHighlight,
+                            matchedArc: lab.targetHighlight,
                             ball: lab.ballColor,
                             labelBackground: const Color(0xE60B1120),
                             labelText: Colors.white,

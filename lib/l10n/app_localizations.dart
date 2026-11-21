@@ -9300,7 +9300,7 @@ abstract class AppLocalizations {
   /// Create the Angle (Applied Maths Studio) copy.
   ///
   /// In en, this message translates to:
-  /// **'Solid line: baseline · Dashed line: your aim · Square: target'**
+  /// **'Solid line: baseline · Dashed line: your aim'**
   String get labsCreateAngleLegend;
 
   /// Create the Angle (Applied Maths Studio) copy.
@@ -9354,7 +9354,7 @@ abstract class AppLocalizations {
   /// Create the Angle (Applied Maths Studio) copy.
   ///
   /// In en, this message translates to:
-  /// **'Football pitch. The solid baseline runs right from the ball. Drag the round aim handle, or use the arrow keys, to turn the dashed aim line. The square shows the target.'**
+  /// **'Football pitch. The solid baseline runs right from the ball. Drag the round aim handle, or use the arrow keys, to turn the dashed aim line.'**
   String get labsCreateAnglePitchSemantic;
 
   /// Create the Angle (Applied Maths Studio) copy.

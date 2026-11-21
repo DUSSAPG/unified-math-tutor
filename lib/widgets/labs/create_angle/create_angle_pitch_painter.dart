@@ -37,7 +37,7 @@ class CreateAnglePitchPalette {
   const CreateAnglePitchPalette({
     required this.grass,
     required this.markings,
-    required this.target,
+    required this.matchedArc,
     required this.ball,
     required this.labelBackground,
     required this.labelText,
@@ -45,7 +45,9 @@ class CreateAnglePitchPalette {
 
   final Color grass;
   final Color markings;
-  final Color target;
+
+  /// The heavier angle arc drawn once a Check has matched.
+  final Color matchedArc;
   final Color ball;
   final Color labelBackground;
   final Color labelText;
@@ -55,28 +57,29 @@ class CreateAnglePitchPalette {
       other is CreateAnglePitchPalette &&
       other.grass == grass &&
       other.markings == markings &&
-      other.target == target &&
+      other.matchedArc == matchedArc &&
       other.ball == ball &&
       other.labelBackground == labelBackground &&
       other.labelText == labelText;
 
   @override
-  int get hashCode =>
-      Object.hash(grass, markings, target, ball, labelBackground, labelText);
+  int get hashCode => Object.hash(
+      grass, markings, matchedArc, ball, labelBackground, labelText);
 }
 
 /// Vector-drawn top-down football pitch for Create the Angle: striped grass,
 /// touchlines, halfway line, centre circle and two goal mouths, then the
 /// angle itself — a solid baseline, a dashed aim (pass) line, the angle arc,
-/// a live degree label, a square target marker and a round aim handle.
+/// a live degree label and a round aim handle.
 ///
-/// States never rely on colour alone: the target is a square and the handle
-/// is round, the baseline is solid and the aim is dashed, and a match adds a
-/// tick and a heavier arc. High contrast thickens every stroke. No assets.
+/// Nothing on the pitch marks where the answer is: the painter is never given
+/// the target, so before a Check the picture depends only on the learner's own
+/// aim. States never rely on colour alone: the baseline is solid and the aim
+/// is dashed, the handle is round, and a match adds a tick and a heavier arc.
+/// High contrast thickens every stroke. No assets.
 class CreateAnglePitchPainter extends CustomPainter {
   const CreateAnglePitchPainter({
     required this.angle,
-    required this.target,
     required this.angleLabel,
     required this.matched,
     required this.palette,
@@ -88,7 +91,6 @@ class CreateAnglePitchPainter extends CustomPainter {
 
   /// The aim being drawn, in degrees (may be mid-snap).
   final double angle;
-  final int target;
 
   /// The already-localised live degree label, e.g. "43°".
   final String angleLabel;
@@ -111,19 +113,6 @@ class CreateAnglePitchPainter extends CustomPainter {
       ..color = palette.markings
       ..strokeCap = StrokeCap.round
       ..strokeWidth = stroke;
-
-    // Target: a square, so it never looks like the round handle.
-    final targetPoint = g.point(target.toDouble());
-    final targetRect =
-        Rect.fromCenter(center: targetPoint, width: 24, height: 24);
-    canvas.drawRect(targetRect, Paint()..color = palette.target);
-    canvas.drawRect(
-      targetRect,
-      Paint()
-        ..color = palette.labelBackground
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = highContrast ? 3 : 2,
-    );
 
     // Baseline: solid.
     canvas.drawLine(g.ball, g.point(0), line);
@@ -151,7 +140,7 @@ class CreateAnglePitchPainter extends CustomPainter {
       -angle * math.pi / 180,
       false,
       Paint()
-        ..color = matched ? palette.target : palette.markings
+        ..color = matched ? palette.matchedArc : palette.markings
         ..style = PaintingStyle.stroke
         ..strokeWidth = matched || highContrast ? 5 : 3,
     );
@@ -281,7 +270,6 @@ class CreateAnglePitchPainter extends CustomPainter {
   @override
   bool shouldRepaint(CreateAnglePitchPainter old) =>
       old.angle != angle ||
-      old.target != target ||
       old.angleLabel != angleLabel ||
       old.matched != matched ||
       old.palette != palette ||

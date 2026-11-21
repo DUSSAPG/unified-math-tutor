@@ -5461,7 +5461,7 @@ class AppLocalizationsNb extends AppLocalizations {
 
   @override
   String get labsCreateAngleLegend =>
-      'Solid line: baseline · Dashed line: your aim · Square: target';
+      'Solid line: baseline · Dashed line: your aim';
 
   @override
   String get labsCreateAngleTargetsHeading => 'Choose a target angle';
@@ -5503,7 +5503,7 @@ class AppLocalizationsNb extends AppLocalizations {
 
   @override
   String get labsCreateAnglePitchSemantic =>
-      'Football pitch. The solid baseline runs right from the ball. Drag the round aim handle, or use the arrow keys, to turn the dashed aim line. The square shows the target.';
+      'Football pitch. The solid baseline runs right from the ball. Drag the round aim handle, or use the arrow keys, to turn the dashed aim line.';
 
   @override
   String labsCreateAnglePitchValue(String angle) {
