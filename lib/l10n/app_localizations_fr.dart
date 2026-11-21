@@ -5466,7 +5466,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get labsCreateAngleLegend =>
-      'Solid line: baseline · Dashed line: your aim · Square: target';
+      'Solid line: baseline · Dashed line: your aim';
 
   @override
   String get labsCreateAngleTargetsHeading => 'Choose a target angle';
@@ -5508,7 +5508,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get labsCreateAnglePitchSemantic =>
-      'Football pitch. The solid baseline runs right from the ball. Drag the round aim handle, or use the arrow keys, to turn the dashed aim line. The square shows the target.';
+      'Football pitch. The solid baseline runs right from the ball. Drag the round aim handle, or use the arrow keys, to turn the dashed aim line.';
 
   @override
   String labsCreateAnglePitchValue(String angle) {
@@ -10661,7 +10661,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsCreateAngleLegend =>
-      'Ligne continue : ligne de base · Pointillés : ta visée · Carré : cible';
+      'Ligne continue : ligne de base · Pointillés : ta visée';
 
   @override
   String get labsCreateAngleTargetsHeading => 'Choisis un angle cible';
@@ -10703,7 +10703,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsCreateAnglePitchSemantic =>
-      'Terrain de football. La ligne de base continue part du ballon vers la droite. Fais glisser la poignée ronde ou utilise les flèches du clavier pour tourner la ligne en pointillés. Le carré marque la cible.';
+      'Terrain de football. La ligne de base continue part du ballon vers la droite. Fais glisser la poignée ronde ou utilise les flèches du clavier pour tourner la ligne en pointillés.';
 
   @override
   String labsCreateAnglePitchValue(String angle) {
