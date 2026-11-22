@@ -7,7 +7,7 @@
 | Commit | `449435679207e97e2a9f0e6fa81325facb57ce43` (test-only fix on merge `b3ced977`) |
 | APK | Debug, clean build from that commit. `com.quantumlab.mathtutor.gb`, versionName 1.0.0, versionCode 1 (`pubspec` 1.0.0+1). 197,931,523 bytes. SHA-256 `741abb065b2ef71839e6adba118f21e0c6095c21ad00bc6da620332f3a052309` |
 | Signer | Android Debug, cert SHA-256 `e9fbc282…0763`. Same as the build it replaced |
-| Device | Pixel 6a, serial `23291JEGR05756`, Android 17 (build CP3A.261005.002.A1) |
+| Device | Pixel 6a, serial `Pixel 6a`, Android 17 (build CP3A.261005.002.A1) |
 | Install | `adb install -r` only. No uninstall, no data clear. `firstInstallTime` 2026-10-11 15:10:27 preserved. Replaced build `7f2a4ade…9d84` (same app code; built before the test-only commit) |
 | Method | adb input, uiautomator accessibility tree, and screencap pixel hashes. No `flutter test` or `flutter drive` on the device. No TalkBack listening in this run |
 

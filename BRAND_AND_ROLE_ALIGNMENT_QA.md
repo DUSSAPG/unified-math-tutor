@@ -104,7 +104,7 @@ Manual device screenshots were not captured because no Android devices were visi
   - Built `build/app/outputs/flutter-apk/app-release.apk`
 - `flutter devices`: BLOCKED for Android hardware
   - Visible devices: Windows, Chrome, Edge
-- `flutter run -d 23291JEGR05756`: BLOCKED
+- `flutter run -d Pixel 6a`: BLOCKED
   - Pixel 6a not visible to Flutter.
 - `flutter run -d G900005500301722`: BLOCKED
   - Android tablet not visible to Flutter.

@@ -4,7 +4,7 @@
 
 **BLOCKER for live Pixel validation**
 
-The Android launcher package alignment is correct and the cleaned project rebuilds a debug APK. The remaining blocker is that Flutter/ADB cannot currently see Pixel 6a device `23291JEGR05756`, so the requested `flutter run -d 23291JEGR05756` launch check could not be completed in this session.
+The Android launcher package alignment is correct and the cleaned project rebuilds a debug APK. The remaining blocker is that Flutter/ADB cannot currently see Pixel 6a device `Pixel 6a`, so the requested `flutter run -d Pixel 6a` launch check could not be completed in this session.
 
 ## Root Cause
 
@@ -73,8 +73,8 @@ Report updated:
   - `All tests passed!`
 - `flutter build apk --debug`: **PASS**
   - Built `build/app/outputs/flutter-apk/app-debug.apk`
-- `flutter run -d 23291JEGR05756`: **BLOCKED**
-  - Flutter reported no supported device with ID `23291JEGR05756`.
+- `flutter run -d Pixel 6a`: **BLOCKED**
+  - Flutter reported no supported device with ID `Pixel 6a`.
   - Visible devices were Windows desktop, Chrome, and Edge only.
   - Retried with elevated ADB/Flutter access; the Pixel device was still not visible.
 
@@ -84,4 +84,4 @@ Report updated:
 
 **Live Pixel 6a launch validation: BLOCKER**
 
-Blocker reason: Pixel 6a device `23291JEGR05756` is not currently visible to Flutter/ADB from this environment.
+Blocker reason: Pixel 6a device `Pixel 6a` is not currently visible to Flutter/ADB from this environment.
