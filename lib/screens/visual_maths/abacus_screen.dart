@@ -181,7 +181,9 @@ class _AbacusScreenState extends State<AbacusScreen> {
         backgroundColor: colors.background,
         elevation: 0,
         leading: IconButton(
+          key: const Key('abacusBackButton'),
           icon: Icon(Icons.arrow_back, color: colors.primaryText),
+          tooltip: MaterialLocalizations.of(context).backButtonTooltip,
           onPressed: () => popOrGo(context, '/math-studio/visual-maths'),
         ),
         title: Text(l10n.visualMathsAbacusTitle,

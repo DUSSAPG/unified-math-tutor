@@ -179,38 +179,61 @@ class _SizeOption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colors = context.appColors;
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 16),
-        decoration: BoxDecoration(
-          color: colors.cardSurface,
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(
-            color: selected ? colors.accent : colors.divider,
-            width: selected ? 2 : 1,
+    final radius = BorderRadius.circular(12);
+    // Same semantics as Settings > Accessibility: one merged node per option
+    // with its name, button role, selected state in a single-choice group
+    // and tap action; InkWell adds keyboard focus and Enter/Space. The "Aa"
+    // preview is visual only.
+    return MergeSemantics(
+      child: Semantics(
+        key: Key('onboardingReadingSizeOption-$label'),
+        button: true,
+        inMutuallyExclusiveGroup: true,
+        selected: selected,
+        child: Material(
+          type: MaterialType.transparency,
+          child: InkWell(
+            onTap: onTap,
+            borderRadius: radius,
+            child: Ink(
+              decoration: BoxDecoration(
+                color: colors.cardSurface,
+                borderRadius: radius,
+                border: Border.all(
+                  color: selected ? colors.accent : colors.divider,
+                  width: selected ? 2 : 1,
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16),
+                child: Column(
+                  children: [
+                    ExcludeSemantics(
+                      child: Text(
+                        'Aa',
+                        style: TextStyle(
+                          color:
+                              selected ? colors.accent : colors.secondaryText,
+                          fontSize: fontSize,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 6),
+                    Text(
+                      label,
+                      style: TextStyle(
+                        color: selected ? colors.accent : colors.secondaryText,
+                        fontSize: 11,
+                        fontWeight:
+                            selected ? FontWeight.w600 : FontWeight.w400,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ),
-        ),
-        child: Column(
-          children: [
-            Text(
-              'Aa',
-              style: TextStyle(
-                color: selected ? colors.accent : colors.secondaryText,
-                fontSize: fontSize,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            const SizedBox(height: 6),
-            Text(
-              label,
-              style: TextStyle(
-                color: selected ? colors.accent : colors.secondaryText,
-                fontSize: 11,
-                fontWeight: selected ? FontWeight.w600 : FontWeight.w400,
-              ),
-            ),
-          ],
         ),
       ),
     );
