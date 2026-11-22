@@ -1,0 +1,7 @@
+[11,143][137,269] |c=true |sel=false |chk=false | [Back]
+[189,179][498,232] |c=false |sel=false |chk=false | [Panda Portions]
+[42,771][1038,913] |c=false |sel=false |chk=false | [Share an apple fairly and discover fractions.]
+[42,929][1038,1044] |c=false |sel=false |chk=false | [Choose where to start. You can change lessons at any time.]
+[42,1086][1038,1320] |c=true |sel=false |chk=false | [Guided Path. Equal parts, then halves, then quarters — one step at a time. / Guided Path / Equal parts, then halves, then quarters — one step at a time.]
+[42,1351][1038,1546] |c=true |sel=false |chk=false | [Practise Halves. Share one apple into 2 equal parts. / Practise Halves / Share one apple into 2 equal parts.]
+[42,1577][1038,1771] |c=true |sel=false |chk=false | [Practise Quarters. Share one apple into 4 equal parts. / Practise Quarters / Share one apple into 4 equal parts.]

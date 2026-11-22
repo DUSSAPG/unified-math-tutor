@@ -1,0 +1,8 @@
+[189,175][557,236] |c=false |sel=false |chk=false | [Interactive Labs]
+[42,279][1038,506] |c=true |sel=false |chk=false | [Football Precision. Choose angle and power, then compare score, accuracy and average result. / Football Precision / Choose angle and power, then compare score, accuracy and average result.]
+[42,532][1038,837] |c=true |sel=false |chk=false | [Maze Driver. Guide the robot car through one LDtk-authored proof-of-concept maze. / Maze Driver / Guide the robot car through one LDtk-authored proof-of-concept maze.]
+[42,863][1038,1118] |c=true |sel=false |chk=false | [Data Detective. See how one outlier changes an average / Data Detective / See how one outlier changes an average]
+[42,1144][1038,1398] |c=true |sel=false |chk=false | [Spatial Cube Lab. Rotate, fold and explore a labelled cube / Spatial Cube Lab / Rotate, fold and explore a labelled cube]
+[42,1425][1038,1679] |c=true |sel=false |chk=false | [Aircraft Landing Lab. Fly the descent angle, distance and speed that bring a plane in safely / Aircraft Landing Lab / Fly the descent angle, distance and speed that bring a plane in safely]
+[42,1706][1038,2010] |c=true |sel=false |chk=false | [Early Maths Playground. Calm, playful counting, sharing and early-fraction activities for younger learners / Early Maths Playground / Calm, playful counting, sharing and early-fraction activities for younger learners]
+[42,2036][1038,2337] |c=true |sel=false |chk=false | [Applied Maths Studio. Interactive explorations for mathematical ideas you can see, move and test. / Applied Maths Studio / Interactive explorations for mathematical ideas you can see, move and test.]

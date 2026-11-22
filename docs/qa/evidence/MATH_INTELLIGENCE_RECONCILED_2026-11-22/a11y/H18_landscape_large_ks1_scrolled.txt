@@ -1,0 +1,7 @@
+[143,85][269,211] |c=true |sel=false |chk=false | [Back]
+[321,117][868,178] |c=false |sel=false |chk=false | [Early Maths Playground]
+[416,221][764,230] |c=false |sel=false |chk=false | [ACTIVITIES TO TRY]
+[416,251][2117,505] |c=true |sel=false |chk=false | [Abacus. An interactive place-value tool: tap or drag beads to explore hundreds, tens and ones. / Abacus / An interactive place-value tool: tap or drag beads to explore hundreds, tens and ones.]
+[416,563][739,613] |c=false |sel=false |chk=false | [FOR GROWN-UPS]
+[416,634][2117,839] |c=true |sel=false |chk=false | [Parent-led activities. Short activities to do together. Opens with your parent PIN. / Parent-led activities / Short activities to do together. Opens with your parent PIN.]
+[416,860][1988,912] |c=false |sel=false |chk=false | [Includes: Build Twenty, Shape Hunt, Dice Race, Pattern Detective, Garden Geometry]

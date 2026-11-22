@@ -1,0 +1,7 @@
+[143,85][269,211] |c=true |sel=false |chk=false | [Back]
+[321,117][868,178] |c=false |sel=false |chk=false | [Early Maths Playground]
+[416,221][2117,274] |c=true |sel=false |chk=false | [Feed the Hungry Panda. Count out 1 to 3 apples from 5, then say how many are left. / Feed the Hungry Panda / Count out 1 to 3 apples from 5, then say how many are left.]
+[416,300][2117,505] |c=true |sel=false |chk=false | [Panda Portions. Share an apple fairly and discover fractions. / Panda Portions / Share an apple fairly and discover fractions.]
+[416,563][739,613] |c=false |sel=false |chk=false | [FOR GROWN-UPS]
+[416,634][2117,839] |c=true |sel=false |chk=false | [Parent-led activities. Short activities to do together. Opens with your parent PIN. / Parent-led activities / Short activities to do together. Opens with your parent PIN.]
+[416,860][813,912] |c=false |sel=false |chk=false | [Includes: Shape Hunt]
