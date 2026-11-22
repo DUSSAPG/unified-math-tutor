@@ -4906,13 +4906,13 @@ abstract class AppLocalizations {
   /// No description provided for @labsEarlyMathsPlaygroundSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'Calm, playful counting activities for younger learners'**
+  /// **'Calm, playful counting, sharing and early-fraction activities for younger learners'**
   String get labsEarlyMathsPlaygroundSubtitle;
 
   /// No description provided for @earlyMathsPlaygroundIntro.
   ///
   /// In en, this message translates to:
-  /// **'A calm, untimed space for younger learners to practise counting — no scores, no timers, no pressure.'**
+  /// **'A calm, untimed space for younger learners to practise counting, sharing and early fractions — no scores, no timers, no pressure.'**
   String get earlyMathsPlaygroundIntro;
 
   /// No description provided for @feedTheHungryPandaTitle.
@@ -5244,6 +5244,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'You counted brilliantly!'**
   String get feedPandaRoundCompleteMessage;
+
+  /// Panda Garden: screen-reader label for the apple basket, announcing how many apples are still in it
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{The basket is empty.} =1{1 apple in the basket.} other{{count} apples in the basket.}}'**
+  String feedPandaBasketSemanticLabel(int count);
+
+  /// Panda Garden: screen-reader label for Panda's bowl and progress caption, e.g. 'Panda has 2 of 3 apples.'
+  ///
+  /// In en, this message translates to:
+  /// **'Panda has {given} of {target, plural, =1{1 apple} other{{target} apples}}.'**
+  String feedPandaBowlSemanticLabel(int given, int target);
+
+  /// Panda Garden: visible caption on Panda's feeding area, the place to drop or give apples
+  ///
+  /// In en, this message translates to:
+  /// **'Give apples to Panda here'**
+  String get feedPandaDropZoneLabel;
+
+  /// Panda Garden: shown after an apple is selected with a tap or keyboard, explaining the non-drag way to feed Panda
+  ///
+  /// In en, this message translates to:
+  /// **'Apple picked. Now tap Panda to give it.'**
+  String get feedPandaTapPandaHint;
 
   /// No description provided for @labsSpatialCubeWhichFaceOppositeMission.
   ///
@@ -8562,6 +8586,1851 @@ abstract class AppLocalizations {
   /// **'0.00 is zero. Count {count} ticks to the right to reach {target}.'**
   String numberSenseHundredthsZeroGuidedFeedbackTarget(
       int count, String target);
+
+  /// Panda Portions: Title of the Panda Portions fraction lesson
+  ///
+  /// In en, this message translates to:
+  /// **'Panda Portions'**
+  String get pandaPortionsTitle;
+
+  /// Panda Portions: Entry-card subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Share an apple fairly and discover fractions.'**
+  String get pandaPortionsSubtitle;
+
+  /// Panda Portions: Lesson menu intro
+  ///
+  /// In en, this message translates to:
+  /// **'Choose where to start. You can change lessons at any time.'**
+  String get pandaPortionsMenuIntro;
+
+  /// Panda Portions: Menu option
+  ///
+  /// In en, this message translates to:
+  /// **'Guided Path'**
+  String get pandaPortionsGuidedPathTitle;
+
+  /// Panda Portions: Menu option description
+  ///
+  /// In en, this message translates to:
+  /// **'Equal parts, then halves, then quarters — one step at a time.'**
+  String get pandaPortionsGuidedPathDescription;
+
+  /// Panda Portions: Menu option
+  ///
+  /// In en, this message translates to:
+  /// **'Practise Halves'**
+  String get pandaPortionsPractiseHalvesTitle;
+
+  /// Panda Portions: Menu option description
+  ///
+  /// In en, this message translates to:
+  /// **'Share one apple into 2 equal parts.'**
+  String get pandaPortionsPractiseHalvesDescription;
+
+  /// Panda Portions: Menu option
+  ///
+  /// In en, this message translates to:
+  /// **'Practise Quarters'**
+  String get pandaPortionsPractiseQuartersTitle;
+
+  /// Panda Portions: Menu option description
+  ///
+  /// In en, this message translates to:
+  /// **'Share one apple into 4 equal parts.'**
+  String get pandaPortionsPractiseQuartersDescription;
+
+  /// Panda Portions: Guided Path position
+  ///
+  /// In en, this message translates to:
+  /// **'Guided Path · step {step} of {total}'**
+  String pandaPortionsGuidedStep(int step, int total);
+
+  /// Panda Portions: Lesson title
+  ///
+  /// In en, this message translates to:
+  /// **'Equal parts'**
+  String get pandaPortionsLessonEqualPartsTitle;
+
+  /// Panda Portions: Lesson purpose
+  ///
+  /// In en, this message translates to:
+  /// **'Find the apple that is shared fairly.'**
+  String get pandaPortionsLessonEqualPartsPurpose;
+
+  /// Panda Portions: Lesson title
+  ///
+  /// In en, this message translates to:
+  /// **'Halves'**
+  String get pandaPortionsLessonHalvesTitle;
+
+  /// Panda Portions: Lesson purpose
+  ///
+  /// In en, this message translates to:
+  /// **'Feed Panda one half of an apple.'**
+  String get pandaPortionsLessonHalvesPurpose;
+
+  /// Panda Portions: Lesson title
+  ///
+  /// In en, this message translates to:
+  /// **'Quarters'**
+  String get pandaPortionsLessonQuartersTitle;
+
+  /// Panda Portions: Lesson purpose
+  ///
+  /// In en, this message translates to:
+  /// **'Feed Panda one quarter of an apple.'**
+  String get pandaPortionsLessonQuartersPurpose;
+
+  /// Panda Portions: Prompt
+  ///
+  /// In en, this message translates to:
+  /// **'Which plate shows one apple shared into equal parts?'**
+  String get pandaPortionsPromptEqualParts;
+
+  /// Panda Portions: Prompt
+  ///
+  /// In en, this message translates to:
+  /// **'Feed Panda one half.'**
+  String get pandaPortionsPromptHalves;
+
+  /// Panda Portions: Prompt
+  ///
+  /// In en, this message translates to:
+  /// **'Feed Panda one quarter.'**
+  String get pandaPortionsPromptQuarters;
+
+  /// Panda Portions: Teaching line
+  ///
+  /// In en, this message translates to:
+  /// **'Fractions are equal parts of one whole.'**
+  String get pandaPortionsTeachEqualParts;
+
+  /// Panda Portions: Success, equal-parts lesson
+  ///
+  /// In en, this message translates to:
+  /// **'Yes — every part on this plate is the same size.'**
+  String get pandaPortionsSuccessEqualParts;
+
+  /// Panda Portions: Success: e.g. 'You fed Panda 1 of 2 equal parts: 1/2.'
+  ///
+  /// In en, this message translates to:
+  /// **'You fed Panda 1 of {parts} equal parts: {fraction}.'**
+  String pandaPortionsSuccessFedPart(int parts, String fraction);
+
+  /// Panda Portions: Fraction result
+  ///
+  /// In en, this message translates to:
+  /// **'Panda ate 1 of {parts} equal parts. That is {fraction}.'**
+  String pandaPortionsSuccessAte(int parts, String fraction);
+
+  /// Panda Portions: Remaining fraction
+  ///
+  /// In en, this message translates to:
+  /// **'{fraction} of the apple is left.'**
+  String pandaPortionsRemainingLeft(String fraction);
+
+  /// Panda Portions: Unequal-parts teaching feedback
+  ///
+  /// In en, this message translates to:
+  /// **'These parts are not equal, so they are not halves or quarters.'**
+  String get pandaPortionsMisconceptionUnequal;
+
+  /// Panda Portions: Incorrect selection
+  ///
+  /// In en, this message translates to:
+  /// **'Try again. Look for one equal part of the whole apple.'**
+  String get pandaPortionsIncorrectSelection;
+
+  /// Panda Portions: Hint
+  ///
+  /// In en, this message translates to:
+  /// **'In a fair share, every part is the same size. Compare the parts on each plate.'**
+  String get pandaPortionsHintEqualParts;
+
+  /// Panda Portions: Hint
+  ///
+  /// In en, this message translates to:
+  /// **'Halves are 2 equal parts. Both parts of one whole apple are the same size.'**
+  String get pandaPortionsHintHalves;
+
+  /// Panda Portions: Hint
+  ///
+  /// In en, this message translates to:
+  /// **'Quarters are 4 equal parts. All 4 parts of one whole apple are the same size.'**
+  String get pandaPortionsHintQuarters;
+
+  /// Panda Portions: Button
+  ///
+  /// In en, this message translates to:
+  /// **'Try another example'**
+  String get pandaPortionsRetryEqualParts;
+
+  /// Panda Portions: Button
+  ///
+  /// In en, this message translates to:
+  /// **'Try another half'**
+  String get pandaPortionsRetryHalves;
+
+  /// Panda Portions: Button
+  ///
+  /// In en, this message translates to:
+  /// **'Try another quarter'**
+  String get pandaPortionsRetryQuarters;
+
+  /// Panda Portions: Optional suggestion
+  ///
+  /// In en, this message translates to:
+  /// **'You could try halves next.'**
+  String get pandaPortionsSuggestTryHalves;
+
+  /// Panda Portions: Optional suggestion
+  ///
+  /// In en, this message translates to:
+  /// **'You could try quarters next.'**
+  String get pandaPortionsSuggestTryQuarters;
+
+  /// Panda Portions: Optional suggestion
+  ///
+  /// In en, this message translates to:
+  /// **'Ready for a new challenge?'**
+  String get pandaPortionsSuggestNewChallenge;
+
+  /// Panda Portions: Panel heading
+  ///
+  /// In en, this message translates to:
+  /// **'What next?'**
+  String get pandaPortionsWhatNext;
+
+  /// Panda Portions: Button
+  ///
+  /// In en, this message translates to:
+  /// **'Next lesson'**
+  String get pandaPortionsNextLesson;
+
+  /// Panda Portions: Button
+  ///
+  /// In en, this message translates to:
+  /// **'Keep practising this'**
+  String get pandaPortionsKeepPractising;
+
+  /// Panda Portions: Button
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a lesson'**
+  String get pandaPortionsChooseLesson;
+
+  /// Panda Portions: Button
+  ///
+  /// In en, this message translates to:
+  /// **'Reset apple'**
+  String get pandaPortionsResetApple;
+
+  /// Panda Portions: Button
+  ///
+  /// In en, this message translates to:
+  /// **'Show me a hint'**
+  String get pandaPortionsShowHint;
+
+  /// Panda Portions: Button
+  ///
+  /// In en, this message translates to:
+  /// **'Hide hint'**
+  String get pandaPortionsHideHint;
+
+  /// Panda Portions: Caption and screen-reader label for the whole apple
+  ///
+  /// In en, this message translates to:
+  /// **'1 whole apple'**
+  String get pandaPortionsWholeApple;
+
+  /// Panda Portions: Plate caption, e.g. 'Plate A'
+  ///
+  /// In en, this message translates to:
+  /// **'Plate {plate}'**
+  String pandaPortionsPlateLabel(String plate);
+
+  /// Panda Portions: Screen-reader label
+  ///
+  /// In en, this message translates to:
+  /// **'Plate {plate}: one apple cut into {parts} equal parts.'**
+  String pandaPortionsPlateEqualSemantic(String plate, int parts);
+
+  /// Panda Portions: Screen-reader label
+  ///
+  /// In en, this message translates to:
+  /// **'Plate {plate}: one apple cut into {parts} parts that are not the same size.'**
+  String pandaPortionsPlateUnequalSemantic(String plate, int parts);
+
+  /// Panda Portions: Screen-reader label
+  ///
+  /// In en, this message translates to:
+  /// **'Plate {plate}, piece {index} of {parts}. An equal part: {fraction} of the apple.'**
+  String pandaPortionsPieceEqualSemantic(
+      String plate, int index, int parts, String fraction);
+
+  /// Panda Portions: Screen-reader label
+  ///
+  /// In en, this message translates to:
+  /// **'Plate {plate}, piece {index} of {parts}. Not an equal part.'**
+  String pandaPortionsPieceUnequalSemantic(String plate, int index, int parts);
+
+  /// Panda Portions: Screen-reader label BEFORE the learner answers. Describes only what can be seen; must not say equal, unequal, a fraction, or correct.
+  ///
+  /// In en, this message translates to:
+  /// **'Plate {plate}: one apple cut into {parts} pieces.'**
+  String pandaPortionsPlatePiecesSemantic(String plate, int parts);
+
+  /// Panda Portions: Screen-reader label BEFORE the learner answers, for a 2-piece plate whose pieces differ in size. Must not say equal, unequal, a fraction, or correct.
+  ///
+  /// In en, this message translates to:
+  /// **'Plate {plate}: one apple cut into 2 pieces, one larger piece and one smaller piece.'**
+  String pandaPortionsPlateLargerSmallerSemantic(String plate);
+
+  /// Panda Portions: Screen-reader label BEFORE the learner answers, for a plate of 3 or more pieces that differ in size. Must not say equal, unequal, a fraction, or correct.
+  ///
+  /// In en, this message translates to:
+  /// **'Plate {plate}: one apple cut into {parts} pieces, some larger and some smaller.'**
+  String pandaPortionsPlateMixedSizesSemantic(String plate, int parts);
+
+  /// Panda Portions: Screen-reader label for a piece BEFORE the learner answers. Must not say equal, unequal, a fraction, or correct.
+  ///
+  /// In en, this message translates to:
+  /// **'Plate {plate}, piece {index} of {parts}.'**
+  String pandaPortionsPieceSemantic(String plate, int index, int parts);
+
+  /// Panda Portions: Tap-path hint
+  ///
+  /// In en, this message translates to:
+  /// **'Piece picked. Now tap Panda to give it.'**
+  String get pandaPortionsPiecePicked;
+
+  /// Panda Portions: Panda / bowl drop target label
+  ///
+  /// In en, this message translates to:
+  /// **'Give the piece to Panda'**
+  String get pandaPortionsFeedPanda;
+
+  /// Panda Portions: Screen-reader label
+  ///
+  /// In en, this message translates to:
+  /// **'Panda\'s bowl is empty.'**
+  String get pandaPortionsBowlEmpty;
+
+  /// Panda Portions: Screen-reader label
+  ///
+  /// In en, this message translates to:
+  /// **'Panda\'s bowl has {fraction} of the apple.'**
+  String pandaPortionsBowlHas(String fraction);
+
+  /// Panda Portions: Fraction strip label
+  ///
+  /// In en, this message translates to:
+  /// **'Fraction strip: {fed} of {parts} equal parts given to Panda.'**
+  String pandaPortionsStripLabel(int fed, int parts);
+
+  /// Panda Portions: Word shown inside a fed strip cell
+  ///
+  /// In en, this message translates to:
+  /// **'fed'**
+  String get pandaPortionsStripFed;
+
+  /// Panda Portions: Screen-reader hint for choosing a plate
+  ///
+  /// In en, this message translates to:
+  /// **'Choose plate {plate}'**
+  String pandaPortionsChoosePlate(String plate);
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Applied Maths Studio'**
+  String get labsAppliedMathsStudioTitle;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Interactive explorations for mathematical ideas you can see, move and test.'**
+  String get labsAppliedMathsStudioSubtitle;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose an exploration to investigate a mathematical idea through an interactive model.'**
+  String get labsAppliedMathsStudioIntro;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Binomial Volume Lab'**
+  String get labsBinomialVolumeLabTitle;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Pull apart a cube to see the terms in (a + b)³.'**
+  String get labsBinomialVolumeLabSubtitle;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Binomial expansion visualisation'**
+  String get labsBinomialVolumeLabKind;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'A cube with side length a + b can be split into smaller volumes. Move the slider to pull the pieces apart.'**
+  String get labsBinomialIntro;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Cube model with side length a + b, split into eight pieces. Pulled apart {percent} percent.'**
+  String labsBinomialModelSemantic(int percent);
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Use the left and right arrow keys to move between pieces.'**
+  String get labsBinomialModelHint;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Explosion amount'**
+  String get labsBinomialExplosionLabel;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'{percent} percent'**
+  String labsBinomialExplosionValue(int percent);
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Assemble'**
+  String get labsBinomialAssemble;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Assemble cube'**
+  String get labsBinomialAssembleSemantic;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Pull apart'**
+  String get labsBinomialPullApart;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Pull cube apart'**
+  String get labsBinomialPullApartSemantic;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset view'**
+  String get labsBinomialResetView;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset cube view'**
+  String get labsBinomialResetViewSemantic;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'The pieces'**
+  String get labsBinomialPiecesHeading;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Select a cubed block'**
+  String get labsBinomialSelectACubed;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Select an a squared b prism'**
+  String get labsBinomialSelectASquaredB;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Select an a b squared prism'**
+  String get labsBinomialSelectABSquared;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Select b cubed block'**
+  String get labsBinomialSelectBCubed;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'one cube'**
+  String get labsBinomialOneCube;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'three prisms'**
+  String get labsBinomialThreePrisms;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'This cube measures a × a × a, so its volume is a³. There is one of these cubes.'**
+  String get labsBinomialExplainACubed;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'This prism measures a × a × b, so its volume is a²b. There are three of these prisms.'**
+  String get labsBinomialExplainASquaredB;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'This prism measures a × b × b, so its volume is ab². There are three of these prisms.'**
+  String get labsBinomialExplainABSquared;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'This cube measures b × b × b, so its volume is b³. There is one of these cubes.'**
+  String get labsBinomialExplainBCubed;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'With a = {a} and b = {b}, each one has volume {volume}.'**
+  String labsBinomialExplainNumeric(int a, int b, int volume);
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap a piece in the model, or choose one from the list, to see its volume.'**
+  String get labsBinomialSelectPrompt;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Guided steps'**
+  String get labsBinomialStepsHeading;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose any step, in any order.'**
+  String get labsBinomialStepsNote;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Step {number}'**
+  String labsBinomialStepChip(int number);
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Step {number}: {title}'**
+  String labsBinomialStepChipSemantic(int number, String title);
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Find the a³ cube'**
+  String get labsBinomialStep1;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Find the three a²b prisms'**
+  String get labsBinomialStep2;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Find the three ab² prisms'**
+  String get labsBinomialStep3;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Find the b³ cube'**
+  String get labsBinomialStep4;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Reveal the complete expansion'**
+  String get labsBinomialStep5;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Found it. Every matching piece is outlined.'**
+  String get labsBinomialStepFound;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'That piece has a different volume. Keep looking for the one this step asks for.'**
+  String get labsBinomialStepKeepLooking;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Next step'**
+  String get labsBinomialNextStep;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Each of the eight pieces is one term. Grouping the pieces with the same volume gives:'**
+  String get labsBinomialRevealBody;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Side lengths'**
+  String get labsBinomialDimensionsHeading;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Length a'**
+  String get labsBinomialSideA;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Length b'**
+  String get labsBinomialSideB;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Numeric check'**
+  String get labsBinomialNumericCheckHeading;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'{side} cubed equals {aCubed} plus {aSquaredB} plus {aBSquared} plus {bCubed}, which equals {total}.'**
+  String labsBinomialNumericCheckSpoken(int side, int aCubed, int aSquaredB,
+      int aBSquared, int bCubed, int total);
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Key'**
+  String get labsBinomialLegendHeading;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Each edge is cut into a length a and a length b. Every piece is named by a label and a pattern, not only by its colour.'**
+  String get labsBinomialLegendBody;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'You have seen the whole expansion'**
+  String get labsBinomialCompleteHeading;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Whatever lengths you choose, the eight pieces always fill the same cube of side a + b.'**
+  String get labsBinomialCompleteBody;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore again'**
+  String get labsBinomialExploreAgain;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a step'**
+  String get labsBinomialChooseStep;
+
+  /// Binomial Volume Lab / Applied Maths Studio copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to Applied Maths Studio'**
+  String get labsBinomialBackToStudio;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Create the Angle'**
+  String get labsCreateAngleTitle;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Aim a pass or shot to create the target angle.'**
+  String get labsCreateAngleCardSubtitle;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Applied exploration'**
+  String get labsCreateAngleCardKind;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Aim the pass. Drag the round handle from the ball until the dashed aim line makes the target angle with the solid baseline, then check your angle.'**
+  String get labsCreateAngleIntro;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Solid line: baseline · Dashed line: your aim'**
+  String get labsCreateAngleLegend;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a target angle'**
+  String get labsCreateAngleTargetsHeading;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'{angle}°'**
+  String labsCreateAngleDegrees(String angle);
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'{target} degree target'**
+  String labsCreateAngleTargetChipSemantic(String target);
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'{target} degree target, created'**
+  String labsCreateAngleTargetChipMatchedSemantic(String target);
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Target: {target}°'**
+  String labsCreateAngleTargetReadout(String target);
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Your angle: {angle}°'**
+  String labsCreateAngleCurrentReadout(String angle);
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Target angle: {target} degrees'**
+  String labsCreateAngleTargetSemantic(String target);
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Your angle: {angle} degrees'**
+  String labsCreateAngleCurrentSemantic(String angle);
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Football pitch. The solid baseline runs right from the ball. Drag the round aim handle, or use the arrow keys, to turn the dashed aim line.'**
+  String get labsCreateAnglePitchSemantic;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'{angle} degrees'**
+  String labsCreateAnglePitchValue(String angle);
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Decrease angle'**
+  String get labsCreateAngleDecrease;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Increase angle'**
+  String get labsCreateAngleIncrease;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset pitch'**
+  String get labsCreateAngleReset;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Check angle'**
+  String get labsCreateAngleCheck;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'A match is within {tolerance}° of the target.'**
+  String labsCreateAngleToleranceNote(String tolerance);
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'No dragging needed: use the buttons, or focus the pitch and press the left and right arrow keys to turn one degree at a time.'**
+  String get labsCreateAngleKeyboardHint;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'You created a {target}° angle. Your aim was {attempted}°, so the aim line has snapped to exactly {target}°.'**
+  String labsCreateAngleMatched(String target, String attempted);
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Your angle is {attempted}°. Turn the aim line {difference}° wider to reach {target}°.'**
+  String labsCreateAngleTurnWider(
+      String attempted, String difference, String target);
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Your angle is {attempted}°. Turn the aim line {difference}° narrower to reach {target}°.'**
+  String labsCreateAngleTurnNarrower(
+      String attempted, String difference, String target);
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'30° is a narrow angle: one third of a right angle.'**
+  String get labsCreateAngleExplain30;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'45° is exactly half a right angle: the diagonal pass.'**
+  String get labsCreateAngleExplain45;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'60° is two thirds of a right angle, a wider turn than 45°.'**
+  String get labsCreateAngleExplain60;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'90° is a right angle: a quarter turn, square to the baseline.'**
+  String get labsCreateAngleExplain90;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Try {target}° next'**
+  String labsCreateAngleNextTarget(String target);
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} of {total} target angles created this visit'**
+  String labsCreateAngleProgress(int count, int total);
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'All four angles created'**
+  String get labsCreateAngleCompleteTitle;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'You created 30°, 45°, 60° and 90° in this visit. Explore again, pick any target to revisit, or head back to Applied Maths Studio.'**
+  String get labsCreateAngleCompleteBody;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore again'**
+  String get labsCreateAngleExploreAgain;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to Applied Maths Studio'**
+  String get labsCreateAngleBackToStudio;
+
+  /// Create the Angle (Applied Maths Studio) copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Optional exploration. Nothing is saved: leaving this screen clears this visit.'**
+  String get labsCreateAngleSessionNote;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: Activity title on the card and app bar.
+  ///
+  /// In en, this message translates to:
+  /// **'Pitch Coordinates'**
+  String get labsPitchCoordinatesTitle;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: Studio card subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Find and move players using coordinates on a grid.'**
+  String get labsPitchCoordinatesCardSubtitle;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: Studio card kind label.
+  ///
+  /// In en, this message translates to:
+  /// **'Applied exploration'**
+  String get labsPitchCoordinatesCardKind;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: Intro.
+  ///
+  /// In en, this message translates to:
+  /// **'Each player stands where two grid lines cross. The first number tells you how many steps right or left from the origin. The second tells you how many steps up or down.'**
+  String get labsPitchCoordinatesIntro;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: ChooseStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Where should the grid start?'**
+  String get labsPitchCoordinatesChooseStart;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: CornerStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Corner start'**
+  String get labsPitchCoordinatesCornerStart;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: CornerStartHint.
+  ///
+  /// In en, this message translates to:
+  /// **'The origin is the corner flag. Numbers go right and up.'**
+  String get labsPitchCoordinatesCornerStartHint;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: CentreStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Centre start'**
+  String get labsPitchCoordinatesCentreStart;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: CentreStartHint.
+  ///
+  /// In en, this message translates to:
+  /// **'The origin is the centre spot. Numbers go right, left, up and down.'**
+  String get labsPitchCoordinatesCentreStartHint;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: PromptRead.
+  ///
+  /// In en, this message translates to:
+  /// **'Where is this player? Enter their coordinates.'**
+  String get labsPitchCoordinatesPromptRead;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: PromptPlace.
+  ///
+  /// In en, this message translates to:
+  /// **'Put the player at ({x}, {y}).'**
+  String labsPitchCoordinatesPromptPlace(int x, int y);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: PromptTranslate.
+  ///
+  /// In en, this message translates to:
+  /// **'Move the player {move}. Where do they finish?'**
+  String labsPitchCoordinatesPromptTranslate(String move);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: PromptInverse.
+  ///
+  /// In en, this message translates to:
+  /// **'What move takes the player from the start to the finish?'**
+  String get labsPitchCoordinatesPromptInverse;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: PromptTransfer.
+  ///
+  /// In en, this message translates to:
+  /// **'Grid only: move the player {move}. Where do they finish?'**
+  String labsPitchCoordinatesPromptTransfer(String move);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: MoveBoth.
+  ///
+  /// In en, this message translates to:
+  /// **'{h} and {v}'**
+  String labsPitchCoordinatesMoveBoth(String h, String v);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: StepsRight.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} right'**
+  String labsPitchCoordinatesStepsRight(int n);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: StepsLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} left'**
+  String labsPitchCoordinatesStepsLeft(int n);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: StepsUp.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} up'**
+  String labsPitchCoordinatesStepsUp(int n);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: StepsDown.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} down'**
+  String labsPitchCoordinatesStepsDown(int n);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: NoHorizontal.
+  ///
+  /// In en, this message translates to:
+  /// **'no steps right or left'**
+  String get labsPitchCoordinatesNoHorizontal;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: NoVertical.
+  ///
+  /// In en, this message translates to:
+  /// **'no steps up or down'**
+  String get labsPitchCoordinatesNoVertical;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: SelectedWords.
+  ///
+  /// In en, this message translates to:
+  /// **'Selected: {h}, {v}.'**
+  String labsPitchCoordinatesSelectedWords(String h, String v);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FirstNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'First number'**
+  String get labsPitchCoordinatesFirstNumber;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: SecondNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Second number'**
+  String get labsPitchCoordinatesSecondNumber;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: YourPair.
+  ///
+  /// In en, this message translates to:
+  /// **'Your coordinates: ({x}, {y})'**
+  String labsPitchCoordinatesYourPair(int x, int y);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: ExploreGrid.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore the grid'**
+  String get labsPitchCoordinatesExploreGrid;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: StepperIncrease.
+  ///
+  /// In en, this message translates to:
+  /// **'Increase'**
+  String get labsPitchCoordinatesStepperIncrease;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: StepperDecrease.
+  ///
+  /// In en, this message translates to:
+  /// **'Decrease'**
+  String get labsPitchCoordinatesStepperDecrease;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: ConfirmSpot.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm this spot'**
+  String get labsPitchCoordinatesConfirmSpot;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: ConfirmNumbers.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm these numbers'**
+  String get labsPitchCoordinatesConfirmNumbers;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: ConfirmMove.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm this move'**
+  String get labsPitchCoordinatesConfirmMove;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: MoveRight.
+  ///
+  /// In en, this message translates to:
+  /// **'Move right'**
+  String get labsPitchCoordinatesMoveRight;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: MoveLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'Move left'**
+  String get labsPitchCoordinatesMoveLeft;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: MoveUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Move up'**
+  String get labsPitchCoordinatesMoveUp;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: MoveDown.
+  ///
+  /// In en, this message translates to:
+  /// **'Move down'**
+  String get labsPitchCoordinatesMoveDown;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: EdgeRight.
+  ///
+  /// In en, this message translates to:
+  /// **'No more steps right'**
+  String get labsPitchCoordinatesEdgeRight;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: EdgeLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'No more steps left'**
+  String get labsPitchCoordinatesEdgeLeft;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: EdgeUp.
+  ///
+  /// In en, this message translates to:
+  /// **'No more steps up'**
+  String get labsPitchCoordinatesEdgeUp;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: EdgeDown.
+  ///
+  /// In en, this message translates to:
+  /// **'No more steps down'**
+  String get labsPitchCoordinatesEdgeDown;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: PickHorizontal.
+  ///
+  /// In en, this message translates to:
+  /// **'Right or left'**
+  String get labsPitchCoordinatesPickHorizontal;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: PickVertical.
+  ///
+  /// In en, this message translates to:
+  /// **'Up or down'**
+  String get labsPitchCoordinatesPickVertical;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: OptRight.
+  ///
+  /// In en, this message translates to:
+  /// **'Right'**
+  String get labsPitchCoordinatesOptRight;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: OptLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'Left'**
+  String get labsPitchCoordinatesOptLeft;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: OptUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Up'**
+  String get labsPitchCoordinatesOptUp;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: OptDown.
+  ///
+  /// In en, this message translates to:
+  /// **'Down'**
+  String get labsPitchCoordinatesOptDown;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: OptNone.
+  ///
+  /// In en, this message translates to:
+  /// **'No move'**
+  String get labsPitchCoordinatesOptNone;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: Steps.
+  ///
+  /// In en, this message translates to:
+  /// **'Steps'**
+  String get labsPitchCoordinatesSteps;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: PlayerUnanswered.
+  ///
+  /// In en, this message translates to:
+  /// **'Player'**
+  String get labsPitchCoordinatesPlayerUnanswered;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: PlayerAnswered.
+  ///
+  /// In en, this message translates to:
+  /// **'Player at {h}, {v}: coordinates {x}, {y}'**
+  String labsPitchCoordinatesPlayerAnswered(String h, String v, int x, int y);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: StartMarker.
+  ///
+  /// In en, this message translates to:
+  /// **'Start: {h}, {v}'**
+  String labsPitchCoordinatesStartMarker(String h, String v);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FinishMarker.
+  ///
+  /// In en, this message translates to:
+  /// **'Finish: {h}, {v}'**
+  String labsPitchCoordinatesFinishMarker(String h, String v);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: SameColumn.
+  ///
+  /// In en, this message translates to:
+  /// **'Same column as the player'**
+  String get labsPitchCoordinatesSameColumn;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: SameRow.
+  ///
+  /// In en, this message translates to:
+  /// **'Same row as the player'**
+  String get labsPitchCoordinatesSameRow;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: OnPlayer.
+  ///
+  /// In en, this message translates to:
+  /// **'On the player'**
+  String get labsPitchCoordinatesOnPlayer;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: AxisHorizontal.
+  ///
+  /// In en, this message translates to:
+  /// **'Horizontal number line, from {lo} to {hi}'**
+  String labsPitchCoordinatesAxisHorizontal(int lo, int hi);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: AxisVertical.
+  ///
+  /// In en, this message translates to:
+  /// **'Vertical number line, from {lo} to {hi}'**
+  String labsPitchCoordinatesAxisVertical(int lo, int hi);
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: Correct.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes, that\'s correct.'**
+  String get labsPitchCoordinatesCorrect;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FbGeneric.
+  ///
+  /// In en, this message translates to:
+  /// **'Not yet. Check the first number for right or left, then the second number for up or down.'**
+  String get labsPitchCoordinatesFbGeneric;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FbOrderSwapped.
+  ///
+  /// In en, this message translates to:
+  /// **'The numbers are the wrong way round. The first number is right or left; the second is up or down.'**
+  String get labsPitchCoordinatesFbOrderSwapped;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FbOriginCounted.
+  ///
+  /// In en, this message translates to:
+  /// **'The origin counts as 0. Count each step along the lines from there.'**
+  String get labsPitchCoordinatesFbOriginCounted;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FbStartNotMoved.
+  ///
+  /// In en, this message translates to:
+  /// **'That is where the player started. Now make the move.'**
+  String get labsPitchCoordinatesFbStartNotMoved;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FbHorizontalOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'You made the right-or-left move. Now make the up-or-down move too.'**
+  String get labsPitchCoordinatesFbHorizontalOnly;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FbVerticalOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'You made the up-or-down move. Now make the right-or-left move too.'**
+  String get labsPitchCoordinatesFbVerticalOnly;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FbBothReversed.
+  ///
+  /// In en, this message translates to:
+  /// **'Both moves went the opposite way. Right and up make the numbers bigger; left and down make them smaller.'**
+  String get labsPitchCoordinatesFbBothReversed;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FbHorizontalReversed.
+  ///
+  /// In en, this message translates to:
+  /// **'Check the right-or-left move: right makes the first number bigger, left makes it smaller.'**
+  String get labsPitchCoordinatesFbHorizontalReversed;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FbVerticalReversed.
+  ///
+  /// In en, this message translates to:
+  /// **'Check the up-or-down move: up makes the second number bigger, down makes it smaller.'**
+  String get labsPitchCoordinatesFbVerticalReversed;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FbMovesSwapped.
+  ///
+  /// In en, this message translates to:
+  /// **'The two moves were swapped. The right-or-left move changes the first number.'**
+  String get labsPitchCoordinatesFbMovesSwapped;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FbGaveMove.
+  ///
+  /// In en, this message translates to:
+  /// **'That is the move. Where does the player finish?'**
+  String get labsPitchCoordinatesFbGaveMove;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FbGaveFinish.
+  ///
+  /// In en, this message translates to:
+  /// **'That is where the player finishes. What move gets them there?'**
+  String get labsPitchCoordinatesFbGaveFinish;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FbGaveStart.
+  ///
+  /// In en, this message translates to:
+  /// **'That is where the player started. What move gets them to the finish?'**
+  String get labsPitchCoordinatesFbGaveStart;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: FbMoveReversed.
+  ///
+  /// In en, this message translates to:
+  /// **'That move goes from the finish back to the start. Go from the start to the finish.'**
+  String get labsPitchCoordinatesFbMoveReversed;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: TryAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get labsPitchCoordinatesTryAgain;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: ShowMe.
+  ///
+  /// In en, this message translates to:
+  /// **'Show me'**
+  String get labsPitchCoordinatesShowMe;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: Next.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get labsPitchCoordinatesNext;
+
+  /// Pitch Coordinates (Applied Maths Studio) copy: ExploreAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore again'**
+  String get labsPitchCoordinatesExploreAgain;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Fractions of a Set'**
+  String get labsFractionsOfASetTitle;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: CardSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Share a collection into equal groups to find a fraction of it.'**
+  String get labsFractionsOfASetCardSubtitle;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: CardKind.
+  ///
+  /// In en, this message translates to:
+  /// **'Number model'**
+  String get labsFractionsOfASetCardKind;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Intro.
+  ///
+  /// In en, this message translates to:
+  /// **'The bottom number says how many equal groups to make. The top number says how many groups to take.'**
+  String get labsFractionsOfASetIntro;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: PromptFind.
+  ///
+  /// In en, this message translates to:
+  /// **'What is {fraction} of these {total} counters?'**
+  String labsFractionsOfASetPromptFind(int total, String fraction);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: PromptTransfer.
+  ///
+  /// In en, this message translates to:
+  /// **'{fraction} of {total} = ?'**
+  String labsFractionsOfASetPromptTransfer(int total, String fraction);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: PromptWhat.
+  ///
+  /// In en, this message translates to:
+  /// **'{chosen} of these {total} counters are chosen. What fraction of the collection is that?'**
+  String labsFractionsOfASetPromptWhat(int total, int chosen);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: PromptCompare.
+  ///
+  /// In en, this message translates to:
+  /// **'Which is more: {fractionA} of {total} or {fractionB} of {total}?'**
+  String labsFractionsOfASetPromptCompare(
+      int total, String fractionA, String fractionB);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: PromptEqual.
+  ///
+  /// In en, this message translates to:
+  /// **'Is this a fair split into {groups} equal groups?'**
+  String labsFractionsOfASetPromptEqual(int groups);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Prediction.
+  ///
+  /// In en, this message translates to:
+  /// **'Your answer'**
+  String get labsFractionsOfASetPrediction;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: ConfirmAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm my answer'**
+  String get labsFractionsOfASetConfirmAnswer;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: StepGroup.
+  ///
+  /// In en, this message translates to:
+  /// **'Make {groups} equal groups. Tap a tray to put a counter in it.'**
+  String labsFractionsOfASetStepGroup(int groups);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Deal.
+  ///
+  /// In en, this message translates to:
+  /// **'Deal one to each tray'**
+  String get labsFractionsOfASetDeal;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: TakeOneOutOfTray. Accessible name of the take-one-out button under one tray, and of that tray's take-one-out action; index is the tray number, counted from 1.
+  ///
+  /// In en, this message translates to:
+  /// **'Take one out of tray {index}'**
+  String labsFractionsOfASetTakeOneOutOfTray(int index);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: StartAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Start again'**
+  String get labsFractionsOfASetStartAgain;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: LeftToPlace.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{Every counter is placed.} =1{1 counter left to place} other{{count} counters left to place}}'**
+  String labsFractionsOfASetLeftToPlace(int count);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: GroupsReady.
+  ///
+  /// In en, this message translates to:
+  /// **'These groups are ready'**
+  String get labsFractionsOfASetGroupsReady;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: StepTake.
+  ///
+  /// In en, this message translates to:
+  /// **'Take {n} of the {groups} groups. Tap the trays you want.'**
+  String labsFractionsOfASetStepTake(int groups, int n);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: TakeConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Take these groups'**
+  String get labsFractionsOfASetTakeConfirm;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: TakeCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =1{Take 1 tray.} other{Take {n} trays.}} You have chosen {chosen}.'**
+  String labsFractionsOfASetTakeCount(int chosen, int n);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Tray.
+  ///
+  /// In en, this message translates to:
+  /// **'Tray {index} of {groups}: {count, plural, =0{empty} =1{1 counter} other{{count} counters}}'**
+  String labsFractionsOfASetTray(int groups, int count, int index);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Chosen.
+  ///
+  /// In en, this message translates to:
+  /// **'chosen'**
+  String get labsFractionsOfASetChosen;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Different.
+  ///
+  /// In en, this message translates to:
+  /// **'different'**
+  String get labsFractionsOfASetDifferent;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Collection.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{Collection: empty} =1{Collection: 1 counter to place} other{Collection: {count} counters to place}}'**
+  String labsFractionsOfASetCollection(int count);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: TopNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Top number'**
+  String get labsFractionsOfASetTopNumber;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: OutOfGroups.
+  ///
+  /// In en, this message translates to:
+  /// **'out of {groups} equal groups'**
+  String labsFractionsOfASetOutOfGroups(int groups);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Same.
+  ///
+  /// In en, this message translates to:
+  /// **'They are the same'**
+  String get labsFractionsOfASetSame;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Yes.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes, it\'s fair'**
+  String get labsFractionsOfASetYes;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: No.
+  ///
+  /// In en, this message translates to:
+  /// **'No, it\'s not fair'**
+  String get labsFractionsOfASetNo;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: RevealFind.
+  ///
+  /// In en, this message translates to:
+  /// **'{fraction} of {total} is {answer}.'**
+  String labsFractionsOfASetRevealFind(int total, int answer, String fraction);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: RevealSteps.
+  ///
+  /// In en, this message translates to:
+  /// **'{total} ÷ {groups} = {size}, then {n} × {size} = {answer}'**
+  String labsFractionsOfASetRevealSteps(
+      int total, int groups, int n, int size, int answer);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: RevealWhat.
+  ///
+  /// In en, this message translates to:
+  /// **'{chosen} of {total} is {fraction}: {n} of the {groups} equal groups.'**
+  String labsFractionsOfASetRevealWhat(
+      int total, int chosen, int groups, int n, String fraction);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: RevealCompare.
+  ///
+  /// In en, this message translates to:
+  /// **'{fractionA} of {total} is {valueA}; {fractionB} of {total} is {valueB}.'**
+  String labsFractionsOfASetRevealCompare(
+      int total, int valueA, int valueB, String fractionA, String fractionB);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: RevealEqual.
+  ///
+  /// In en, this message translates to:
+  /// **'{groups} trays with {size} in each.'**
+  String labsFractionsOfASetRevealEqual(int groups, int size);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Correct.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes, that\'s correct.'**
+  String get labsFractionsOfASetCorrect;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbDivNum.
+  ///
+  /// In en, this message translates to:
+  /// **'The bottom number, {groups}, says how many equal groups to make. The top number, {n}, says how many of those groups to take.'**
+  String labsFractionsOfASetFbDivNum(int groups, int n);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbTookN.
+  ///
+  /// In en, this message translates to:
+  /// **'The fraction is of the whole collection, so take whole groups, not single counters.'**
+  String get labsFractionsOfASetFbTookN;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbOneGroup.
+  ///
+  /// In en, this message translates to:
+  /// **'That is one group. The top number says take {n} groups, so count them all.'**
+  String labsFractionsOfASetFbOneGroup(int n);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbOtherGroups.
+  ///
+  /// In en, this message translates to:
+  /// **'That counts the groups you did not take. Count only {n, plural, =1{the group} other{the {n} groups}} the top number asks for.'**
+  String labsFractionsOfASetFbOtherGroups(int n);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbWhole.
+  ///
+  /// In en, this message translates to:
+  /// **'That is the whole collection. The fraction is only part of it.'**
+  String get labsFractionsOfASetFbWhole;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbFindGeneric.
+  ///
+  /// In en, this message translates to:
+  /// **'Make {groups} equal groups, then count the counters in {n, plural, =1{one of them} other{{n} of them}}.'**
+  String labsFractionsOfASetFbFindGeneric(int groups, int n);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbObjectCount.
+  ///
+  /// In en, this message translates to:
+  /// **'That is the number of chosen counters. The top number counts groups, not counters.'**
+  String get labsFractionsOfASetFbObjectCount;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbGroupSize.
+  ///
+  /// In en, this message translates to:
+  /// **'That is how many counters are in one group. The top number counts the chosen groups.'**
+  String get labsFractionsOfASetFbGroupSize;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbNotChosen.
+  ///
+  /// In en, this message translates to:
+  /// **'That counts the groups that are not chosen.'**
+  String get labsFractionsOfASetFbNotChosen;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbWhatWhole.
+  ///
+  /// In en, this message translates to:
+  /// **'That would be all {groups} groups: the whole collection.'**
+  String labsFractionsOfASetFbWhatWhole(int groups);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbWhatGeneric.
+  ///
+  /// In en, this message translates to:
+  /// **'Share the counters into {groups} equal groups, then count the groups that are chosen.'**
+  String labsFractionsOfASetFbWhatGeneric(int groups);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbBiggerDenominator.
+  ///
+  /// In en, this message translates to:
+  /// **'More equal groups means each group is smaller, so {fractionB} of {total} is less than {fractionA} of {total}.'**
+  String labsFractionsOfASetFbBiggerDenominator(
+      int total, String fractionA, String fractionB);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbSame.
+  ///
+  /// In en, this message translates to:
+  /// **'Different numbers of equal groups give different group sizes, so these are not the same.'**
+  String get labsFractionsOfASetFbSame;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbUnequalTrays.
+  ///
+  /// In en, this message translates to:
+  /// **'Some trays have different numbers of counters, so the groups are not equal. The trays that differ are outlined. \"Deal one to each tray\" shares fairly.'**
+  String get labsFractionsOfASetFbUnequalTrays;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbUnequalAccepted.
+  ///
+  /// In en, this message translates to:
+  /// **'Look again: two trays have different counts. They are outlined. Equal groups must all be the same size.'**
+  String get labsFractionsOfASetFbUnequalAccepted;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: FbEqualRejected.
+  ///
+  /// In en, this message translates to:
+  /// **'Every tray has {size} counters, so these groups are equal.'**
+  String labsFractionsOfASetFbEqualRejected(int size);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Next.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get labsFractionsOfASetNext;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: ExploreAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore again'**
+  String get labsFractionsOfASetExploreAgain;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Back.
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get labsFractionsOfASetBack;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: StepperIncrease.
+  ///
+  /// In en, this message translates to:
+  /// **'Increase'**
+  String get labsFractionsOfASetStepperIncrease;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: StepperDecrease.
+  ///
+  /// In en, this message translates to:
+  /// **'Decrease'**
+  String get labsFractionsOfASetStepperDecrease;
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Halves.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =1{one half} other{{n} halves}}'**
+  String labsFractionsOfASetHalves(int n);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Thirds.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =1{one third} other{{n} thirds}}'**
+  String labsFractionsOfASetThirds(int n);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Quarters.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =1{one quarter} other{{n} quarters}}'**
+  String labsFractionsOfASetQuarters(int n);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Fifths.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =1{one fifth} other{{n} fifths}}'**
+  String labsFractionsOfASetFifths(int n);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Sixths.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =1{one sixth} other{{n} sixths}}'**
+  String labsFractionsOfASetSixths(int n);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Eighths.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =1{one eighth} other{{n} eighths}}'**
+  String labsFractionsOfASetEighths(int n);
+
+  /// Fractions of a Set (Applied Maths Studio) copy: Tenths.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =1{one tenth} other{{n} tenths}}'**
+  String labsFractionsOfASetTenths(int n);
+
+  /// No description provided for @earlyMathsEntryIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick a friendly place to start. Age is only a suggestion, not a level. There is no test, and you can switch at any time.'**
+  String get earlyMathsEntryIntro;
+
+  /// No description provided for @earlyMathsLaneChooserLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a starting point'**
+  String get earlyMathsLaneChooserLabel;
+
+  /// No description provided for @earlyMathsLanePlayTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Early Maths Play'**
+  String get earlyMathsLanePlayTitle;
+
+  /// No description provided for @earlyMathsLanePlayAges.
+  ///
+  /// In en, this message translates to:
+  /// **'Typical ages 4–5 · Reception'**
+  String get earlyMathsLanePlayAges;
+
+  /// No description provided for @earlyMathsLaneKs1Title.
+  ///
+  /// In en, this message translates to:
+  /// **'KS1 Maths Foundations'**
+  String get earlyMathsLaneKs1Title;
+
+  /// No description provided for @earlyMathsLaneKs1Ages.
+  ///
+  /// In en, this message translates to:
+  /// **'Typical ages 5–7 · Years 1–2'**
+  String get earlyMathsLaneKs1Ages;
+
+  /// No description provided for @earlyMathsLaneNotSureTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'m not sure'**
+  String get earlyMathsLaneNotSureTitle;
+
+  /// No description provided for @earlyMathsLaneNotSureSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No test needed. We\'ll suggest one gentle first step.'**
+  String get earlyMathsLaneNotSureSubtitle;
+
+  /// No description provided for @earlyMathsLaneSwitchNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Switching never removes anything your child has already done.'**
+  String get earlyMathsLaneSwitchNote;
+
+  /// No description provided for @earlyMathsActivitiesHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'Activities to try'**
+  String get earlyMathsActivitiesHeading;
+
+  /// No description provided for @earlyMathsNotSureHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'A gentle first step'**
+  String get earlyMathsNotSureHeading;
+
+  /// No description provided for @earlyMathsNotSureBody.
+  ///
+  /// In en, this message translates to:
+  /// **'There is no right or wrong choice. Try this one small activity and see how it feels. You can choose a different starting point above whenever you like.'**
+  String get earlyMathsNotSureBody;
+
+  /// No description provided for @earlyMathsPandaScope.
+  ///
+  /// In en, this message translates to:
+  /// **'Count out 1 to 3 apples from 5, then say how many are left.'**
+  String get earlyMathsPandaScope;
+
+  /// No description provided for @earlyMathsAbacusTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Abacus'**
+  String get earlyMathsAbacusTitle;
+
+  /// No description provided for @earlyMathsAbacusScope.
+  ///
+  /// In en, this message translates to:
+  /// **'An interactive place-value tool: tap or drag beads to explore hundreds, tens and ones.'**
+  String get earlyMathsAbacusScope;
+
+  /// No description provided for @earlyMathsParentHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'For grown-ups'**
+  String get earlyMathsParentHeading;
+
+  /// No description provided for @earlyMathsParentCardTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Parent-led activities'**
+  String get earlyMathsParentCardTitle;
+
+  /// No description provided for @earlyMathsParentCardSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Short activities to do together. Opens with your parent PIN.'**
+  String get earlyMathsParentCardSubtitle;
+
+  /// No description provided for @earlyMathsParentTitlesLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Includes: {titles}'**
+  String earlyMathsParentTitlesLine(String titles);
 }
 
 class _AppLocalizationsDelegate

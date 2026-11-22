@@ -911,7 +911,10 @@ void main() {
         (tester) async {
       final l10n = await pumpRoute(
           tester, '/math-studio/interactive-labs/early-maths-playground');
-      await tester.tap(find.text(l10n.feedTheHungryPandaTitle));
+      final entry = find.text(l10n.feedTheHungryPandaTitle);
+      await tester.ensureVisible(entry);
+      await tester.pumpAndSettle();
+      await tester.tap(entry);
       await tester.pumpAndSettle();
       expect(find.byType(FeedTheHungryPandaScreen), findsOneWidget);
       expect(tester.takeException(), isNull);
@@ -1046,6 +1049,8 @@ void main() {
             reason: 'Feed the Hungry Panda entry card text missing in '
                 'locale $locale — see l10n keys feedTheHungryPandaTitle/'
                 'Subtitle in lib/l10n/app_${locale.toString().replaceAll('_', '_')}.arb');
+        await tester.ensureVisible(entryFinder);
+        await tester.pumpAndSettle();
         await tester.tap(entryFinder);
         await tester.pumpAndSettle();
         expect(find.byType(FeedTheHungryPandaScreen), findsOneWidget);

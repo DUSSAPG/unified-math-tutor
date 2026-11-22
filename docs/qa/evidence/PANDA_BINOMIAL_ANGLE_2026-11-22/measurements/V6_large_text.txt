@@ -1,0 +1,8 @@
+t=30 pitch=[32,374,1049,1236] aim0=aafa5708aa361d78 aim29=ac9f0f563513797e | Target angle: 30 degrees Your angle: 0 degrees  | Target angle: 30 degrees Your angle: 29 degrees 
+t=45 pitch=[32,374,1049,1236] aim0=aafa5708aa361d78 aim29=ac9f0f563513797e | Target angle: 45 degrees Your angle: 0 degrees  | Target angle: 45 degrees Your angle: 29 degrees 
+t=60 pitch=[32,374,1049,1236] aim0=aafa5708aa361d78 aim29=ac9f0f563513797e | Target angle: 60 degrees Your angle: 0 degrees  | Target angle: 60 degrees Your angle: 29 degrees 
+t=90 pitch=[32,374,1049,1236] aim0=aafa5708aa361d78 aim29=ac9f0f563513797e | Target angle: 90 degrees Your angle: 0 degrees  | Target angle: 90 degrees Your angle: 29 degrees 
+pre-match: Target angle: 45 degrees Your angle: 44 degrees 
+post-match: Target angle: 45 degrees Your angle: 45 degrees 
+content-desc="45 degree target, created"
+unique aim0 hashes: 1, unique aim29 hashes: 1

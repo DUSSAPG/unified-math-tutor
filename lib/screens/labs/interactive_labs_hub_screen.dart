@@ -141,6 +141,16 @@ class InteractiveLabsHubScreen extends StatelessWidget {
                     onTap: () => context.push(
                         '/math-studio/interactive-labs/early-maths-playground'),
                   ),
+                  const SizedBox(height: 10),
+                  RouteLinkCard(
+                    key: const Key('appliedMathsStudioEntryCard'),
+                    icon: LucideIcons.box,
+                    iconColor: const Color(0xFF0072B2),
+                    title: l10n.labsAppliedMathsStudioTitle,
+                    subtitle: l10n.labsAppliedMathsStudioSubtitle,
+                    onTap: () => context.push(
+                        '/math-studio/interactive-labs/applied-maths-studio'),
+                  ),
                 ],
               ),
             ),

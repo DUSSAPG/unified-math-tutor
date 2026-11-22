@@ -2682,11 +2682,11 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get labsEarlyMathsPlaygroundSubtitle =>
-      'Calm, playful counting activities for younger learners';
+      'Calm, playful counting, sharing and early-fraction activities for younger learners';
 
   @override
   String get earlyMathsPlaygroundIntro =>
-      'A calm, untimed space for younger learners to practise counting — no scores, no timers, no pressure.';
+      'A calm, untimed space for younger learners to practise counting, sharing and early fractions — no scores, no timers, no pressure.';
 
   @override
   String get feedTheHungryPandaTitle => 'Feed the Hungry Panda';
@@ -2937,6 +2937,35 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get feedPandaRoundCompleteMessage => 'You counted brilliantly!';
+
+  @override
+  String feedPandaBasketSemanticLabel(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count apples in the basket.',
+      one: '1 apple in the basket.',
+      zero: 'The basket is empty.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String feedPandaBowlSemanticLabel(int given, int target) {
+    String _temp0 = intl.Intl.pluralLogic(
+      target,
+      locale: localeName,
+      other: '$target apples',
+      one: '1 apple',
+    );
+    return 'Panda has $given of $_temp0.';
+  }
+
+  @override
+  String get feedPandaDropZoneLabel => 'Give apples to Panda here';
+
+  @override
+  String get feedPandaTapPandaHint => 'Apple picked. Now tap Panda to give it.';
 
   @override
   String get labsSpatialCubeWhichFaceOppositeMission =>
@@ -4997,5 +5026,1263 @@ class AppLocalizationsId extends AppLocalizations {
   String numberSenseHundredthsZeroGuidedFeedbackTarget(
       int count, String target) {
     return '0.00 is zero. Count $count ticks to the right to reach $target.';
+  }
+
+  @override
+  String get pandaPortionsTitle => 'Panda Portions';
+
+  @override
+  String get pandaPortionsSubtitle =>
+      'Share an apple fairly and discover fractions.';
+
+  @override
+  String get pandaPortionsMenuIntro =>
+      'Choose where to start. You can change lessons at any time.';
+
+  @override
+  String get pandaPortionsGuidedPathTitle => 'Guided Path';
+
+  @override
+  String get pandaPortionsGuidedPathDescription =>
+      'Equal parts, then halves, then quarters — one step at a time.';
+
+  @override
+  String get pandaPortionsPractiseHalvesTitle => 'Practise Halves';
+
+  @override
+  String get pandaPortionsPractiseHalvesDescription =>
+      'Share one apple into 2 equal parts.';
+
+  @override
+  String get pandaPortionsPractiseQuartersTitle => 'Practise Quarters';
+
+  @override
+  String get pandaPortionsPractiseQuartersDescription =>
+      'Share one apple into 4 equal parts.';
+
+  @override
+  String pandaPortionsGuidedStep(int step, int total) {
+    return 'Guided Path · step $step of $total';
+  }
+
+  @override
+  String get pandaPortionsLessonEqualPartsTitle => 'Equal parts';
+
+  @override
+  String get pandaPortionsLessonEqualPartsPurpose =>
+      'Find the apple that is shared fairly.';
+
+  @override
+  String get pandaPortionsLessonHalvesTitle => 'Halves';
+
+  @override
+  String get pandaPortionsLessonHalvesPurpose =>
+      'Feed Panda one half of an apple.';
+
+  @override
+  String get pandaPortionsLessonQuartersTitle => 'Quarters';
+
+  @override
+  String get pandaPortionsLessonQuartersPurpose =>
+      'Feed Panda one quarter of an apple.';
+
+  @override
+  String get pandaPortionsPromptEqualParts =>
+      'Which plate shows one apple shared into equal parts?';
+
+  @override
+  String get pandaPortionsPromptHalves => 'Feed Panda one half.';
+
+  @override
+  String get pandaPortionsPromptQuarters => 'Feed Panda one quarter.';
+
+  @override
+  String get pandaPortionsTeachEqualParts =>
+      'Fractions are equal parts of one whole.';
+
+  @override
+  String get pandaPortionsSuccessEqualParts =>
+      'Yes — every part on this plate is the same size.';
+
+  @override
+  String pandaPortionsSuccessFedPart(int parts, String fraction) {
+    return 'You fed Panda 1 of $parts equal parts: $fraction.';
+  }
+
+  @override
+  String pandaPortionsSuccessAte(int parts, String fraction) {
+    return 'Panda ate 1 of $parts equal parts. That is $fraction.';
+  }
+
+  @override
+  String pandaPortionsRemainingLeft(String fraction) {
+    return '$fraction of the apple is left.';
+  }
+
+  @override
+  String get pandaPortionsMisconceptionUnequal =>
+      'These parts are not equal, so they are not halves or quarters.';
+
+  @override
+  String get pandaPortionsIncorrectSelection =>
+      'Try again. Look for one equal part of the whole apple.';
+
+  @override
+  String get pandaPortionsHintEqualParts =>
+      'In a fair share, every part is the same size. Compare the parts on each plate.';
+
+  @override
+  String get pandaPortionsHintHalves =>
+      'Halves are 2 equal parts. Both parts of one whole apple are the same size.';
+
+  @override
+  String get pandaPortionsHintQuarters =>
+      'Quarters are 4 equal parts. All 4 parts of one whole apple are the same size.';
+
+  @override
+  String get pandaPortionsRetryEqualParts => 'Try another example';
+
+  @override
+  String get pandaPortionsRetryHalves => 'Try another half';
+
+  @override
+  String get pandaPortionsRetryQuarters => 'Try another quarter';
+
+  @override
+  String get pandaPortionsSuggestTryHalves => 'You could try halves next.';
+
+  @override
+  String get pandaPortionsSuggestTryQuarters => 'You could try quarters next.';
+
+  @override
+  String get pandaPortionsSuggestNewChallenge => 'Ready for a new challenge?';
+
+  @override
+  String get pandaPortionsWhatNext => 'What next?';
+
+  @override
+  String get pandaPortionsNextLesson => 'Next lesson';
+
+  @override
+  String get pandaPortionsKeepPractising => 'Keep practising this';
+
+  @override
+  String get pandaPortionsChooseLesson => 'Choose a lesson';
+
+  @override
+  String get pandaPortionsResetApple => 'Reset apple';
+
+  @override
+  String get pandaPortionsShowHint => 'Show me a hint';
+
+  @override
+  String get pandaPortionsHideHint => 'Hide hint';
+
+  @override
+  String get pandaPortionsWholeApple => '1 whole apple';
+
+  @override
+  String pandaPortionsPlateLabel(String plate) {
+    return 'Plate $plate';
+  }
+
+  @override
+  String pandaPortionsPlateEqualSemantic(String plate, int parts) {
+    return 'Plate $plate: one apple cut into $parts equal parts.';
+  }
+
+  @override
+  String pandaPortionsPlateUnequalSemantic(String plate, int parts) {
+    return 'Plate $plate: one apple cut into $parts parts that are not the same size.';
+  }
+
+  @override
+  String pandaPortionsPieceEqualSemantic(
+      String plate, int index, int parts, String fraction) {
+    return 'Plate $plate, piece $index of $parts. An equal part: $fraction of the apple.';
+  }
+
+  @override
+  String pandaPortionsPieceUnequalSemantic(String plate, int index, int parts) {
+    return 'Plate $plate, piece $index of $parts. Not an equal part.';
+  }
+
+  @override
+  String pandaPortionsPlatePiecesSemantic(String plate, int parts) {
+    return 'Plate $plate: one apple cut into $parts pieces.';
+  }
+
+  @override
+  String pandaPortionsPlateLargerSmallerSemantic(String plate) {
+    return 'Plate $plate: one apple cut into 2 pieces, one larger piece and one smaller piece.';
+  }
+
+  @override
+  String pandaPortionsPlateMixedSizesSemantic(String plate, int parts) {
+    return 'Plate $plate: one apple cut into $parts pieces, some larger and some smaller.';
+  }
+
+  @override
+  String pandaPortionsPieceSemantic(String plate, int index, int parts) {
+    return 'Plate $plate, piece $index of $parts.';
+  }
+
+  @override
+  String get pandaPortionsPiecePicked =>
+      'Piece picked. Now tap Panda to give it.';
+
+  @override
+  String get pandaPortionsFeedPanda => 'Give the piece to Panda';
+
+  @override
+  String get pandaPortionsBowlEmpty => 'Panda\'s bowl is empty.';
+
+  @override
+  String pandaPortionsBowlHas(String fraction) {
+    return 'Panda\'s bowl has $fraction of the apple.';
+  }
+
+  @override
+  String pandaPortionsStripLabel(int fed, int parts) {
+    return 'Fraction strip: $fed of $parts equal parts given to Panda.';
+  }
+
+  @override
+  String get pandaPortionsStripFed => 'fed';
+
+  @override
+  String pandaPortionsChoosePlate(String plate) {
+    return 'Choose plate $plate';
+  }
+
+  @override
+  String get labsAppliedMathsStudioTitle => 'Applied Maths Studio';
+
+  @override
+  String get labsAppliedMathsStudioSubtitle =>
+      'Interactive explorations for mathematical ideas you can see, move and test.';
+
+  @override
+  String get labsAppliedMathsStudioIntro =>
+      'Choose an exploration to investigate a mathematical idea through an interactive model.';
+
+  @override
+  String get labsBinomialVolumeLabTitle => 'Binomial Volume Lab';
+
+  @override
+  String get labsBinomialVolumeLabSubtitle =>
+      'Pull apart a cube to see the terms in (a + b)³.';
+
+  @override
+  String get labsBinomialVolumeLabKind => 'Binomial expansion visualisation';
+
+  @override
+  String get labsBinomialIntro =>
+      'A cube with side length a + b can be split into smaller volumes. Move the slider to pull the pieces apart.';
+
+  @override
+  String labsBinomialModelSemantic(int percent) {
+    return 'Cube model with side length a + b, split into eight pieces. Pulled apart $percent percent.';
+  }
+
+  @override
+  String get labsBinomialModelHint =>
+      'Use the left and right arrow keys to move between pieces.';
+
+  @override
+  String get labsBinomialExplosionLabel => 'Explosion amount';
+
+  @override
+  String labsBinomialExplosionValue(int percent) {
+    return '$percent percent';
+  }
+
+  @override
+  String get labsBinomialAssemble => 'Assemble';
+
+  @override
+  String get labsBinomialAssembleSemantic => 'Assemble cube';
+
+  @override
+  String get labsBinomialPullApart => 'Pull apart';
+
+  @override
+  String get labsBinomialPullApartSemantic => 'Pull cube apart';
+
+  @override
+  String get labsBinomialResetView => 'Reset view';
+
+  @override
+  String get labsBinomialResetViewSemantic => 'Reset cube view';
+
+  @override
+  String get labsBinomialPiecesHeading => 'The pieces';
+
+  @override
+  String get labsBinomialSelectACubed => 'Select a cubed block';
+
+  @override
+  String get labsBinomialSelectASquaredB => 'Select an a squared b prism';
+
+  @override
+  String get labsBinomialSelectABSquared => 'Select an a b squared prism';
+
+  @override
+  String get labsBinomialSelectBCubed => 'Select b cubed block';
+
+  @override
+  String get labsBinomialOneCube => 'one cube';
+
+  @override
+  String get labsBinomialThreePrisms => 'three prisms';
+
+  @override
+  String get labsBinomialExplainACubed =>
+      'This cube measures a × a × a, so its volume is a³. There is one of these cubes.';
+
+  @override
+  String get labsBinomialExplainASquaredB =>
+      'This prism measures a × a × b, so its volume is a²b. There are three of these prisms.';
+
+  @override
+  String get labsBinomialExplainABSquared =>
+      'This prism measures a × b × b, so its volume is ab². There are three of these prisms.';
+
+  @override
+  String get labsBinomialExplainBCubed =>
+      'This cube measures b × b × b, so its volume is b³. There is one of these cubes.';
+
+  @override
+  String labsBinomialExplainNumeric(int a, int b, int volume) {
+    return 'With a = $a and b = $b, each one has volume $volume.';
+  }
+
+  @override
+  String get labsBinomialSelectPrompt =>
+      'Tap a piece in the model, or choose one from the list, to see its volume.';
+
+  @override
+  String get labsBinomialStepsHeading => 'Guided steps';
+
+  @override
+  String get labsBinomialStepsNote => 'Choose any step, in any order.';
+
+  @override
+  String labsBinomialStepChip(int number) {
+    return 'Step $number';
+  }
+
+  @override
+  String labsBinomialStepChipSemantic(int number, String title) {
+    return 'Step $number: $title';
+  }
+
+  @override
+  String get labsBinomialStep1 => 'Find the a³ cube';
+
+  @override
+  String get labsBinomialStep2 => 'Find the three a²b prisms';
+
+  @override
+  String get labsBinomialStep3 => 'Find the three ab² prisms';
+
+  @override
+  String get labsBinomialStep4 => 'Find the b³ cube';
+
+  @override
+  String get labsBinomialStep5 => 'Reveal the complete expansion';
+
+  @override
+  String get labsBinomialStepFound =>
+      'Found it. Every matching piece is outlined.';
+
+  @override
+  String get labsBinomialStepKeepLooking =>
+      'That piece has a different volume. Keep looking for the one this step asks for.';
+
+  @override
+  String get labsBinomialNextStep => 'Next step';
+
+  @override
+  String get labsBinomialRevealBody =>
+      'Each of the eight pieces is one term. Grouping the pieces with the same volume gives:';
+
+  @override
+  String get labsBinomialDimensionsHeading => 'Side lengths';
+
+  @override
+  String get labsBinomialSideA => 'Length a';
+
+  @override
+  String get labsBinomialSideB => 'Length b';
+
+  @override
+  String get labsBinomialNumericCheckHeading => 'Numeric check';
+
+  @override
+  String labsBinomialNumericCheckSpoken(int side, int aCubed, int aSquaredB,
+      int aBSquared, int bCubed, int total) {
+    return '$side cubed equals $aCubed plus $aSquaredB plus $aBSquared plus $bCubed, which equals $total.';
+  }
+
+  @override
+  String get labsBinomialLegendHeading => 'Key';
+
+  @override
+  String get labsBinomialLegendBody =>
+      'Each edge is cut into a length a and a length b. Every piece is named by a label and a pattern, not only by its colour.';
+
+  @override
+  String get labsBinomialCompleteHeading => 'You have seen the whole expansion';
+
+  @override
+  String get labsBinomialCompleteBody =>
+      'Whatever lengths you choose, the eight pieces always fill the same cube of side a + b.';
+
+  @override
+  String get labsBinomialExploreAgain => 'Explore again';
+
+  @override
+  String get labsBinomialChooseStep => 'Choose a step';
+
+  @override
+  String get labsBinomialBackToStudio => 'Back to Applied Maths Studio';
+
+  @override
+  String get labsCreateAngleTitle => 'Create the Angle';
+
+  @override
+  String get labsCreateAngleCardSubtitle =>
+      'Aim a pass or shot to create the target angle.';
+
+  @override
+  String get labsCreateAngleCardKind => 'Applied exploration';
+
+  @override
+  String get labsCreateAngleIntro =>
+      'Aim the pass. Drag the round handle from the ball until the dashed aim line makes the target angle with the solid baseline, then check your angle.';
+
+  @override
+  String get labsCreateAngleLegend =>
+      'Solid line: baseline · Dashed line: your aim';
+
+  @override
+  String get labsCreateAngleTargetsHeading => 'Choose a target angle';
+
+  @override
+  String labsCreateAngleDegrees(String angle) {
+    return '$angle°';
+  }
+
+  @override
+  String labsCreateAngleTargetChipSemantic(String target) {
+    return '$target degree target';
+  }
+
+  @override
+  String labsCreateAngleTargetChipMatchedSemantic(String target) {
+    return '$target degree target, created';
+  }
+
+  @override
+  String labsCreateAngleTargetReadout(String target) {
+    return 'Target: $target°';
+  }
+
+  @override
+  String labsCreateAngleCurrentReadout(String angle) {
+    return 'Your angle: $angle°';
+  }
+
+  @override
+  String labsCreateAngleTargetSemantic(String target) {
+    return 'Target angle: $target degrees';
+  }
+
+  @override
+  String labsCreateAngleCurrentSemantic(String angle) {
+    return 'Your angle: $angle degrees';
+  }
+
+  @override
+  String get labsCreateAnglePitchSemantic =>
+      'Football pitch. The solid baseline runs right from the ball. Drag the round aim handle, or use the arrow keys, to turn the dashed aim line.';
+
+  @override
+  String labsCreateAnglePitchValue(String angle) {
+    return '$angle degrees';
+  }
+
+  @override
+  String get labsCreateAngleDecrease => 'Decrease angle';
+
+  @override
+  String get labsCreateAngleIncrease => 'Increase angle';
+
+  @override
+  String get labsCreateAngleReset => 'Reset pitch';
+
+  @override
+  String get labsCreateAngleCheck => 'Check angle';
+
+  @override
+  String labsCreateAngleToleranceNote(String tolerance) {
+    return 'A match is within $tolerance° of the target.';
+  }
+
+  @override
+  String get labsCreateAngleKeyboardHint =>
+      'No dragging needed: use the buttons, or focus the pitch and press the left and right arrow keys to turn one degree at a time.';
+
+  @override
+  String labsCreateAngleMatched(String target, String attempted) {
+    return 'You created a $target° angle. Your aim was $attempted°, so the aim line has snapped to exactly $target°.';
+  }
+
+  @override
+  String labsCreateAngleTurnWider(
+      String attempted, String difference, String target) {
+    return 'Your angle is $attempted°. Turn the aim line $difference° wider to reach $target°.';
+  }
+
+  @override
+  String labsCreateAngleTurnNarrower(
+      String attempted, String difference, String target) {
+    return 'Your angle is $attempted°. Turn the aim line $difference° narrower to reach $target°.';
+  }
+
+  @override
+  String get labsCreateAngleExplain30 =>
+      '30° is a narrow angle: one third of a right angle.';
+
+  @override
+  String get labsCreateAngleExplain45 =>
+      '45° is exactly half a right angle: the diagonal pass.';
+
+  @override
+  String get labsCreateAngleExplain60 =>
+      '60° is two thirds of a right angle, a wider turn than 45°.';
+
+  @override
+  String get labsCreateAngleExplain90 =>
+      '90° is a right angle: a quarter turn, square to the baseline.';
+
+  @override
+  String labsCreateAngleNextTarget(String target) {
+    return 'Try $target° next';
+  }
+
+  @override
+  String labsCreateAngleProgress(int count, int total) {
+    return '$count of $total target angles created this visit';
+  }
+
+  @override
+  String get labsCreateAngleCompleteTitle => 'All four angles created';
+
+  @override
+  String get labsCreateAngleCompleteBody =>
+      'You created 30°, 45°, 60° and 90° in this visit. Explore again, pick any target to revisit, or head back to Applied Maths Studio.';
+
+  @override
+  String get labsCreateAngleExploreAgain => 'Explore again';
+
+  @override
+  String get labsCreateAngleBackToStudio => 'Back to Applied Maths Studio';
+
+  @override
+  String get labsCreateAngleSessionNote =>
+      'Optional exploration. Nothing is saved: leaving this screen clears this visit.';
+
+  @override
+  String get labsPitchCoordinatesTitle => 'Pitch Coordinates';
+
+  @override
+  String get labsPitchCoordinatesCardSubtitle =>
+      'Find and move players using coordinates on a grid.';
+
+  @override
+  String get labsPitchCoordinatesCardKind => 'Applied exploration';
+
+  @override
+  String get labsPitchCoordinatesIntro =>
+      'Each player stands where two grid lines cross. The first number tells you how many steps right or left from the origin. The second tells you how many steps up or down.';
+
+  @override
+  String get labsPitchCoordinatesChooseStart => 'Where should the grid start?';
+
+  @override
+  String get labsPitchCoordinatesCornerStart => 'Corner start';
+
+  @override
+  String get labsPitchCoordinatesCornerStartHint =>
+      'The origin is the corner flag. Numbers go right and up.';
+
+  @override
+  String get labsPitchCoordinatesCentreStart => 'Centre start';
+
+  @override
+  String get labsPitchCoordinatesCentreStartHint =>
+      'The origin is the centre spot. Numbers go right, left, up and down.';
+
+  @override
+  String get labsPitchCoordinatesPromptRead =>
+      'Where is this player? Enter their coordinates.';
+
+  @override
+  String labsPitchCoordinatesPromptPlace(int x, int y) {
+    return 'Put the player at ($x, $y).';
+  }
+
+  @override
+  String labsPitchCoordinatesPromptTranslate(String move) {
+    return 'Move the player $move. Where do they finish?';
+  }
+
+  @override
+  String get labsPitchCoordinatesPromptInverse =>
+      'What move takes the player from the start to the finish?';
+
+  @override
+  String labsPitchCoordinatesPromptTransfer(String move) {
+    return 'Grid only: move the player $move. Where do they finish?';
+  }
+
+  @override
+  String labsPitchCoordinatesMoveBoth(String h, String v) {
+    return '$h and $v';
+  }
+
+  @override
+  String labsPitchCoordinatesStepsRight(int n) {
+    return '$n right';
+  }
+
+  @override
+  String labsPitchCoordinatesStepsLeft(int n) {
+    return '$n left';
+  }
+
+  @override
+  String labsPitchCoordinatesStepsUp(int n) {
+    return '$n up';
+  }
+
+  @override
+  String labsPitchCoordinatesStepsDown(int n) {
+    return '$n down';
+  }
+
+  @override
+  String get labsPitchCoordinatesNoHorizontal => 'no steps right or left';
+
+  @override
+  String get labsPitchCoordinatesNoVertical => 'no steps up or down';
+
+  @override
+  String labsPitchCoordinatesSelectedWords(String h, String v) {
+    return 'Selected: $h, $v.';
+  }
+
+  @override
+  String get labsPitchCoordinatesFirstNumber => 'First number';
+
+  @override
+  String get labsPitchCoordinatesSecondNumber => 'Second number';
+
+  @override
+  String labsPitchCoordinatesYourPair(int x, int y) {
+    return 'Your coordinates: ($x, $y)';
+  }
+
+  @override
+  String get labsPitchCoordinatesExploreGrid => 'Explore the grid';
+
+  @override
+  String get labsPitchCoordinatesStepperIncrease => 'Increase';
+
+  @override
+  String get labsPitchCoordinatesStepperDecrease => 'Decrease';
+
+  @override
+  String get labsPitchCoordinatesConfirmSpot => 'Confirm this spot';
+
+  @override
+  String get labsPitchCoordinatesConfirmNumbers => 'Confirm these numbers';
+
+  @override
+  String get labsPitchCoordinatesConfirmMove => 'Confirm this move';
+
+  @override
+  String get labsPitchCoordinatesMoveRight => 'Move right';
+
+  @override
+  String get labsPitchCoordinatesMoveLeft => 'Move left';
+
+  @override
+  String get labsPitchCoordinatesMoveUp => 'Move up';
+
+  @override
+  String get labsPitchCoordinatesMoveDown => 'Move down';
+
+  @override
+  String get labsPitchCoordinatesEdgeRight => 'No more steps right';
+
+  @override
+  String get labsPitchCoordinatesEdgeLeft => 'No more steps left';
+
+  @override
+  String get labsPitchCoordinatesEdgeUp => 'No more steps up';
+
+  @override
+  String get labsPitchCoordinatesEdgeDown => 'No more steps down';
+
+  @override
+  String get labsPitchCoordinatesPickHorizontal => 'Right or left';
+
+  @override
+  String get labsPitchCoordinatesPickVertical => 'Up or down';
+
+  @override
+  String get labsPitchCoordinatesOptRight => 'Right';
+
+  @override
+  String get labsPitchCoordinatesOptLeft => 'Left';
+
+  @override
+  String get labsPitchCoordinatesOptUp => 'Up';
+
+  @override
+  String get labsPitchCoordinatesOptDown => 'Down';
+
+  @override
+  String get labsPitchCoordinatesOptNone => 'No move';
+
+  @override
+  String get labsPitchCoordinatesSteps => 'Steps';
+
+  @override
+  String get labsPitchCoordinatesPlayerUnanswered => 'Player';
+
+  @override
+  String labsPitchCoordinatesPlayerAnswered(String h, String v, int x, int y) {
+    return 'Player at $h, $v: coordinates $x, $y';
+  }
+
+  @override
+  String labsPitchCoordinatesStartMarker(String h, String v) {
+    return 'Start: $h, $v';
+  }
+
+  @override
+  String labsPitchCoordinatesFinishMarker(String h, String v) {
+    return 'Finish: $h, $v';
+  }
+
+  @override
+  String get labsPitchCoordinatesSameColumn => 'Same column as the player';
+
+  @override
+  String get labsPitchCoordinatesSameRow => 'Same row as the player';
+
+  @override
+  String get labsPitchCoordinatesOnPlayer => 'On the player';
+
+  @override
+  String labsPitchCoordinatesAxisHorizontal(int lo, int hi) {
+    return 'Horizontal number line, from $lo to $hi';
+  }
+
+  @override
+  String labsPitchCoordinatesAxisVertical(int lo, int hi) {
+    return 'Vertical number line, from $lo to $hi';
+  }
+
+  @override
+  String get labsPitchCoordinatesCorrect => 'Yes, that\'s correct.';
+
+  @override
+  String get labsPitchCoordinatesFbGeneric =>
+      'Not yet. Check the first number for right or left, then the second number for up or down.';
+
+  @override
+  String get labsPitchCoordinatesFbOrderSwapped =>
+      'The numbers are the wrong way round. The first number is right or left; the second is up or down.';
+
+  @override
+  String get labsPitchCoordinatesFbOriginCounted =>
+      'The origin counts as 0. Count each step along the lines from there.';
+
+  @override
+  String get labsPitchCoordinatesFbStartNotMoved =>
+      'That is where the player started. Now make the move.';
+
+  @override
+  String get labsPitchCoordinatesFbHorizontalOnly =>
+      'You made the right-or-left move. Now make the up-or-down move too.';
+
+  @override
+  String get labsPitchCoordinatesFbVerticalOnly =>
+      'You made the up-or-down move. Now make the right-or-left move too.';
+
+  @override
+  String get labsPitchCoordinatesFbBothReversed =>
+      'Both moves went the opposite way. Right and up make the numbers bigger; left and down make them smaller.';
+
+  @override
+  String get labsPitchCoordinatesFbHorizontalReversed =>
+      'Check the right-or-left move: right makes the first number bigger, left makes it smaller.';
+
+  @override
+  String get labsPitchCoordinatesFbVerticalReversed =>
+      'Check the up-or-down move: up makes the second number bigger, down makes it smaller.';
+
+  @override
+  String get labsPitchCoordinatesFbMovesSwapped =>
+      'The two moves were swapped. The right-or-left move changes the first number.';
+
+  @override
+  String get labsPitchCoordinatesFbGaveMove =>
+      'That is the move. Where does the player finish?';
+
+  @override
+  String get labsPitchCoordinatesFbGaveFinish =>
+      'That is where the player finishes. What move gets them there?';
+
+  @override
+  String get labsPitchCoordinatesFbGaveStart =>
+      'That is where the player started. What move gets them to the finish?';
+
+  @override
+  String get labsPitchCoordinatesFbMoveReversed =>
+      'That move goes from the finish back to the start. Go from the start to the finish.';
+
+  @override
+  String get labsPitchCoordinatesTryAgain => 'Try again';
+
+  @override
+  String get labsPitchCoordinatesShowMe => 'Show me';
+
+  @override
+  String get labsPitchCoordinatesNext => 'Next';
+
+  @override
+  String get labsPitchCoordinatesExploreAgain => 'Explore again';
+
+  @override
+  String get labsFractionsOfASetTitle => 'Fractions of a Set';
+
+  @override
+  String get labsFractionsOfASetCardSubtitle =>
+      'Share a collection into equal groups to find a fraction of it.';
+
+  @override
+  String get labsFractionsOfASetCardKind => 'Number model';
+
+  @override
+  String get labsFractionsOfASetIntro =>
+      'The bottom number says how many equal groups to make. The top number says how many groups to take.';
+
+  @override
+  String labsFractionsOfASetPromptFind(int total, String fraction) {
+    return 'What is $fraction of these $total counters?';
+  }
+
+  @override
+  String labsFractionsOfASetPromptTransfer(int total, String fraction) {
+    return '$fraction of $total = ?';
+  }
+
+  @override
+  String labsFractionsOfASetPromptWhat(int total, int chosen) {
+    return '$chosen of these $total counters are chosen. What fraction of the collection is that?';
+  }
+
+  @override
+  String labsFractionsOfASetPromptCompare(
+      int total, String fractionA, String fractionB) {
+    return 'Which is more: $fractionA of $total or $fractionB of $total?';
+  }
+
+  @override
+  String labsFractionsOfASetPromptEqual(int groups) {
+    return 'Is this a fair split into $groups equal groups?';
+  }
+
+  @override
+  String get labsFractionsOfASetPrediction => 'Your answer';
+
+  @override
+  String get labsFractionsOfASetConfirmAnswer => 'Confirm my answer';
+
+  @override
+  String labsFractionsOfASetStepGroup(int groups) {
+    return 'Make $groups equal groups. Tap a tray to put a counter in it.';
+  }
+
+  @override
+  String get labsFractionsOfASetDeal => 'Deal one to each tray';
+
+  @override
+  String labsFractionsOfASetTakeOneOutOfTray(int index) {
+    return 'Take one out of tray $index';
+  }
+
+  @override
+  String get labsFractionsOfASetStartAgain => 'Start again';
+
+  @override
+  String labsFractionsOfASetLeftToPlace(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count counters left to place',
+      one: '1 counter left to place',
+      zero: 'Every counter is placed.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get labsFractionsOfASetGroupsReady => 'These groups are ready';
+
+  @override
+  String labsFractionsOfASetStepTake(int groups, int n) {
+    return 'Take $n of the $groups groups. Tap the trays you want.';
+  }
+
+  @override
+  String get labsFractionsOfASetTakeConfirm => 'Take these groups';
+
+  @override
+  String labsFractionsOfASetTakeCount(int chosen, int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: 'Take $n trays.',
+      one: 'Take 1 tray.',
+    );
+    return '$_temp0 You have chosen $chosen.';
+  }
+
+  @override
+  String labsFractionsOfASetTray(int groups, int count, int index) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count counters',
+      one: '1 counter',
+      zero: 'empty',
+    );
+    return 'Tray $index of $groups: $_temp0';
+  }
+
+  @override
+  String get labsFractionsOfASetChosen => 'chosen';
+
+  @override
+  String get labsFractionsOfASetDifferent => 'different';
+
+  @override
+  String labsFractionsOfASetCollection(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Collection: $count counters to place',
+      one: 'Collection: 1 counter to place',
+      zero: 'Collection: empty',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get labsFractionsOfASetTopNumber => 'Top number';
+
+  @override
+  String labsFractionsOfASetOutOfGroups(int groups) {
+    return 'out of $groups equal groups';
+  }
+
+  @override
+  String get labsFractionsOfASetSame => 'They are the same';
+
+  @override
+  String get labsFractionsOfASetYes => 'Yes, it\'s fair';
+
+  @override
+  String get labsFractionsOfASetNo => 'No, it\'s not fair';
+
+  @override
+  String labsFractionsOfASetRevealFind(int total, int answer, String fraction) {
+    return '$fraction of $total is $answer.';
+  }
+
+  @override
+  String labsFractionsOfASetRevealSteps(
+      int total, int groups, int n, int size, int answer) {
+    return '$total ÷ $groups = $size, then $n × $size = $answer';
+  }
+
+  @override
+  String labsFractionsOfASetRevealWhat(
+      int total, int chosen, int groups, int n, String fraction) {
+    return '$chosen of $total is $fraction: $n of the $groups equal groups.';
+  }
+
+  @override
+  String labsFractionsOfASetRevealCompare(
+      int total, int valueA, int valueB, String fractionA, String fractionB) {
+    return '$fractionA of $total is $valueA; $fractionB of $total is $valueB.';
+  }
+
+  @override
+  String labsFractionsOfASetRevealEqual(int groups, int size) {
+    return '$groups trays with $size in each.';
+  }
+
+  @override
+  String get labsFractionsOfASetCorrect => 'Yes, that\'s correct.';
+
+  @override
+  String labsFractionsOfASetFbDivNum(int groups, int n) {
+    return 'The bottom number, $groups, says how many equal groups to make. The top number, $n, says how many of those groups to take.';
+  }
+
+  @override
+  String get labsFractionsOfASetFbTookN =>
+      'The fraction is of the whole collection, so take whole groups, not single counters.';
+
+  @override
+  String labsFractionsOfASetFbOneGroup(int n) {
+    return 'That is one group. The top number says take $n groups, so count them all.';
+  }
+
+  @override
+  String labsFractionsOfASetFbOtherGroups(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: 'the $n groups',
+      one: 'the group',
+    );
+    return 'That counts the groups you did not take. Count only $_temp0 the top number asks for.';
+  }
+
+  @override
+  String get labsFractionsOfASetFbWhole =>
+      'That is the whole collection. The fraction is only part of it.';
+
+  @override
+  String labsFractionsOfASetFbFindGeneric(int groups, int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n of them',
+      one: 'one of them',
+    );
+    return 'Make $groups equal groups, then count the counters in $_temp0.';
+  }
+
+  @override
+  String get labsFractionsOfASetFbObjectCount =>
+      'That is the number of chosen counters. The top number counts groups, not counters.';
+
+  @override
+  String get labsFractionsOfASetFbGroupSize =>
+      'That is how many counters are in one group. The top number counts the chosen groups.';
+
+  @override
+  String get labsFractionsOfASetFbNotChosen =>
+      'That counts the groups that are not chosen.';
+
+  @override
+  String labsFractionsOfASetFbWhatWhole(int groups) {
+    return 'That would be all $groups groups: the whole collection.';
+  }
+
+  @override
+  String labsFractionsOfASetFbWhatGeneric(int groups) {
+    return 'Share the counters into $groups equal groups, then count the groups that are chosen.';
+  }
+
+  @override
+  String labsFractionsOfASetFbBiggerDenominator(
+      int total, String fractionA, String fractionB) {
+    return 'More equal groups means each group is smaller, so $fractionB of $total is less than $fractionA of $total.';
+  }
+
+  @override
+  String get labsFractionsOfASetFbSame =>
+      'Different numbers of equal groups give different group sizes, so these are not the same.';
+
+  @override
+  String get labsFractionsOfASetFbUnequalTrays =>
+      'Some trays have different numbers of counters, so the groups are not equal. The trays that differ are outlined. \"Deal one to each tray\" shares fairly.';
+
+  @override
+  String get labsFractionsOfASetFbUnequalAccepted =>
+      'Look again: two trays have different counts. They are outlined. Equal groups must all be the same size.';
+
+  @override
+  String labsFractionsOfASetFbEqualRejected(int size) {
+    return 'Every tray has $size counters, so these groups are equal.';
+  }
+
+  @override
+  String get labsFractionsOfASetNext => 'Next';
+
+  @override
+  String get labsFractionsOfASetExploreAgain => 'Explore again';
+
+  @override
+  String get labsFractionsOfASetBack => 'Back';
+
+  @override
+  String get labsFractionsOfASetStepperIncrease => 'Increase';
+
+  @override
+  String get labsFractionsOfASetStepperDecrease => 'Decrease';
+
+  @override
+  String labsFractionsOfASetHalves(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n halves',
+      one: 'one half',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String labsFractionsOfASetThirds(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n thirds',
+      one: 'one third',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String labsFractionsOfASetQuarters(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n quarters',
+      one: 'one quarter',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String labsFractionsOfASetFifths(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n fifths',
+      one: 'one fifth',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String labsFractionsOfASetSixths(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n sixths',
+      one: 'one sixth',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String labsFractionsOfASetEighths(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n eighths',
+      one: 'one eighth',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String labsFractionsOfASetTenths(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n tenths',
+      one: 'one tenth',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get earlyMathsEntryIntro =>
+      'Pick a friendly place to start. Age is only a suggestion, not a level. There is no test, and you can switch at any time.';
+
+  @override
+  String get earlyMathsLaneChooserLabel => 'Choose a starting point';
+
+  @override
+  String get earlyMathsLanePlayTitle => 'Early Maths Play';
+
+  @override
+  String get earlyMathsLanePlayAges => 'Typical ages 4–5 · Reception';
+
+  @override
+  String get earlyMathsLaneKs1Title => 'KS1 Maths Foundations';
+
+  @override
+  String get earlyMathsLaneKs1Ages => 'Typical ages 5–7 · Years 1–2';
+
+  @override
+  String get earlyMathsLaneNotSureTitle => 'I\'m not sure';
+
+  @override
+  String get earlyMathsLaneNotSureSubtitle =>
+      'No test needed. We\'ll suggest one gentle first step.';
+
+  @override
+  String get earlyMathsLaneSwitchNote =>
+      'Switching never removes anything your child has already done.';
+
+  @override
+  String get earlyMathsActivitiesHeading => 'Activities to try';
+
+  @override
+  String get earlyMathsNotSureHeading => 'A gentle first step';
+
+  @override
+  String get earlyMathsNotSureBody =>
+      'There is no right or wrong choice. Try this one small activity and see how it feels. You can choose a different starting point above whenever you like.';
+
+  @override
+  String get earlyMathsPandaScope =>
+      'Count out 1 to 3 apples from 5, then say how many are left.';
+
+  @override
+  String get earlyMathsAbacusTitle => 'Abacus';
+
+  @override
+  String get earlyMathsAbacusScope =>
+      'An interactive place-value tool: tap or drag beads to explore hundreds, tens and ones.';
+
+  @override
+  String get earlyMathsParentHeading => 'For grown-ups';
+
+  @override
+  String get earlyMathsParentCardTitle => 'Parent-led activities';
+
+  @override
+  String get earlyMathsParentCardSubtitle =>
+      'Short activities to do together. Opens with your parent PIN.';
+
+  @override
+  String earlyMathsParentTitlesLine(String titles) {
+    return 'Includes: $titles';
   }
 }
