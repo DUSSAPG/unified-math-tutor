@@ -48,18 +48,25 @@ class OnboardingProgressHeader extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 12),
-        Row(
-          children: [
-            Text(
-              'Step $currentStep of $totalSteps',
-              style: TextStyle(color: colors.secondaryText, fontSize: 13),
-            ),
-            const Spacer(),
-            Text(
-              timeEstimate,
-              style: TextStyle(color: colors.secondaryText, fontSize: 13),
-            ),
-          ],
+        // Wrap rather than Row + Spacer: at large system text sizes the two
+        // labels move onto two lines instead of overflowing.
+        SizedBox(
+          width: double.infinity,
+          child: Wrap(
+            alignment: WrapAlignment.spaceBetween,
+            spacing: 12,
+            runSpacing: 4,
+            children: [
+              Text(
+                'Step $currentStep of $totalSteps',
+                style: TextStyle(color: colors.secondaryText, fontSize: 13),
+              ),
+              Text(
+                timeEstimate,
+                style: TextStyle(color: colors.secondaryText, fontSize: 13),
+              ),
+            ],
+          ),
         ),
       ],
     );

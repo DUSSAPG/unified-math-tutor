@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'app/reading_size_text_scaler.dart';
 import 'app/router.dart';
 import 'core/bootstrap.dart';
 import 'l10n/app_localizations.dart';
@@ -111,21 +112,9 @@ class _UnifiedMathTutorAppState extends State<UnifiedMathTutorApp>
                 GlobalWidgetsLocalizations.delegate,
                 GlobalCupertinoLocalizations.delegate,
               ],
-              builder: (context, child) {
-                return ValueListenableBuilder<double>(
-                  valueListenable: LocalPreferencesService.instance.textScale,
-                  builder: (context, textScale, child) {
-                    final mediaQuery = MediaQuery.of(context);
-                    return MediaQuery(
-                      data: mediaQuery.copyWith(
-                        textScaler: TextScaler.linear(textScale),
-                      ),
-                      child: child!,
-                    );
-                  },
-                  child: child,
-                );
-              },
+              // Honours the system text size together with Reading Size;
+              // see ReadingSizeTextScaler for the combination policy.
+              builder: readingSizeAppBuilder,
             );
           },
         );

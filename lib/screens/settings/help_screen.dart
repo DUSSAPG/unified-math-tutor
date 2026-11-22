@@ -401,13 +401,17 @@ class _HelpSection extends StatelessWidget {
             children: [
               Icon(icon, color: iconColor, size: 15),
               const SizedBox(width: 6),
-              Text(
-                title,
-                style: TextStyle(
-                  color: colors.secondaryText,
-                  fontSize: 11,
-                  fontWeight: FontWeight.w600,
-                  letterSpacing: 0.8,
+              // Expanded so long section titles wrap at large system text
+              // sizes instead of overflowing.
+              Expanded(
+                child: Text(
+                  title,
+                  style: TextStyle(
+                    color: colors.secondaryText,
+                    fontSize: 11,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 0.8,
+                  ),
                 ),
               ),
             ],

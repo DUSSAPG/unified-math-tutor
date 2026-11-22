@@ -500,6 +500,9 @@ class _AchievementsCard extends StatelessWidget {
 // ─── Achievement badges row ────────────────────────────────────────────────────
 
 class _AchievementBadgesRow extends StatelessWidget {
+  /// Allowance per scaled font pixel for each badge text line's height.
+  static const double _badgeLineHeight = 1.3;
+
   final bool hasAnySession;
   final int totalQuestionsAnswered;
 
@@ -512,8 +515,13 @@ class _AchievementBadgesRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final tenQuestionsUnlocked = totalQuestionsAnswered >= 10;
+    // 86 at normal text sizes; grows by the extra height the two scaled
+    // badge text lines need at large system text sizes, so they never clip.
+    final scaler = MediaQuery.textScalerOf(context);
+    final textGrowth =
+        (scaler.scale(11) - 11 + scaler.scale(10) - 10) * _badgeLineHeight;
     return SizedBox(
-      height: 86,
+      height: 86 + max(0.0, textGrowth),
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: [
@@ -665,13 +673,20 @@ class _DailyGoalCard extends StatelessWidget {
                   ],
                 ),
               ),
-              Text(
-                l10n.homeDailyGoalProgress(
-                    questionsAnsweredToday, _dailyTarget),
-                style: TextStyle(
-                  color: colors.success,
-                  fontSize: 13,
-                  fontWeight: FontWeight.w600,
+              // Natural width at normal text sizes; wraps within 45% of the
+              // row at large system text sizes instead of overflowing.
+              ConstrainedBox(
+                constraints: BoxConstraints(
+                    maxWidth: MediaQuery.sizeOf(context).width * 0.45),
+                child: Text(
+                  l10n.homeDailyGoalProgress(
+                      questionsAnsweredToday, _dailyTarget),
+                  textAlign: TextAlign.end,
+                  style: TextStyle(
+                    color: colors.success,
+                    fontSize: 13,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
             ],

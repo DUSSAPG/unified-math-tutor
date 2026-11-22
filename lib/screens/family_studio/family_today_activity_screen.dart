@@ -42,32 +42,44 @@ class FamilyTodayActivityScreen extends StatelessWidget {
             }
             final activity = snapshot.data!;
             final text = activity.textFor(Localizations.localeOf(context));
-            return Padding(
-              padding: const EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(text.title,
-                      style: TextStyle(
-                          color: colors.primaryText,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w700)),
-                  const SizedBox(height: 12),
-                  Text(text.whatYourChildLearns,
-                      style:
-                          TextStyle(color: colors.secondaryText, height: 1.4)),
-                  const SizedBox(height: 16),
-                  AllieCard(message: text.alliePrompt),
-                  const Spacer(),
-                  SizedBox(
-                    width: double.infinity,
-                    child: FilledButton(
-                      onPressed: () => context.push(
-                          '/help/parent-teacher-tools/family-maths/activity/${activity.id}'),
-                      child: Text(l10n.familyStudioTodayStartButton),
+            // Button pinned to the bottom when everything fits; the page
+            // scrolls instead of overflowing when it does not (landscape,
+            // large system text sizes).
+            return LayoutBuilder(
+              builder: (context, constraints) => SingleChildScrollView(
+                padding: const EdgeInsets.all(16),
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                      minHeight: (constraints.maxHeight - 32)
+                          .clamp(0.0, double.infinity)),
+                  child: IntrinsicHeight(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(text.title,
+                            style: TextStyle(
+                                color: colors.primaryText,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w700)),
+                        const SizedBox(height: 12),
+                        Text(text.whatYourChildLearns,
+                            style: TextStyle(
+                                color: colors.secondaryText, height: 1.4)),
+                        const SizedBox(height: 16),
+                        AllieCard(message: text.alliePrompt),
+                        const Spacer(),
+                        SizedBox(
+                          width: double.infinity,
+                          child: FilledButton(
+                            onPressed: () => context.push(
+                                '/help/parent-teacher-tools/family-maths/activity/${activity.id}'),
+                            child: Text(l10n.familyStudioTodayStartButton),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                ],
+                ),
               ),
             );
           },
