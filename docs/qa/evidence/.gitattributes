@@ -1,0 +1,3 @@
+# QA evidence is stored byte-for-byte: hashes in each EVIDENCE_MANIFEST.sha256
+# must verify on every checkout, so no line-ending conversion or whitespace fixes.
+* -text -whitespace

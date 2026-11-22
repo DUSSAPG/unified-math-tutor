@@ -1,0 +1,9 @@
+t=30 pitch=[32,363,1049,1236] aim0=39d4dac5ba688142 aim29=064178788a28ec2b | Target angle: 30 degrees Your angle: 0 degrees  | Target angle: 30 degrees Your angle: 29 degrees 
+t=45 pitch=[32,363,1049,1236] aim0=39d4dac5ba688142 aim29=064178788a28ec2b | Target angle: 45 degrees Your angle: 0 degrees  | Target angle: 45 degrees Your angle: 29 degrees 
+t=60 pitch=[32,363,1049,1236] aim0=39d4dac5ba688142 aim29=064178788a28ec2b | Target angle: 60 degrees Your angle: 0 degrees  | Target angle: 60 degrees Your angle: 29 degrees 
+t=90 pitch=[32,363,1049,1236] aim0=39d4dac5ba688142 aim29=064178788a28ec2b | Target angle: 90 degrees Your angle: 0 degrees  | Target angle: 90 degrees Your angle: 29 degrees 
+pre-match: Target angle: 45 degrees Your angle: 44 degrees 
+post-match: Target angle: 45 degrees Your angle: 45 degrees 
+content-desc="45 degree target, created"
+content-desc="You created a 45° angle. Your aim was 44°, so the aim line has snapped to exactly 45°. 45° is exactly half a right angle: the diagonal pass."
+unique aim0 hashes: 1, unique aim29 hashes: 1

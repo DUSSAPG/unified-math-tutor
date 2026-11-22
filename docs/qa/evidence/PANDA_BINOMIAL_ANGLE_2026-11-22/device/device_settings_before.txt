@@ -1,0 +1,19 @@
+system font_scale=1.0
+secure display_density_forced=
+global window_animation_scale=1.0
+global transition_animation_scale=1.0
+global animator_duration_scale=1.0
+secure high_text_contrast_enabled=0
+secure ui_night_mode=1
+secure enabled_accessibility_services=null
+secure accessibility_enabled=0
+system accelerometer_rotation=1
+system user_rotation=0
+secure touch_exploration_enabled=0
+system screen_off_timeout=1800000
+global stay_on_while_plugged_in=2
+wm_density=Physical density: 420
+wm_size=Physical size: 1080x2400
+Night mode: no
+Locales for com.quantumlab.mathtutor.gb for user 0 are []
+sys_locale=en-US
