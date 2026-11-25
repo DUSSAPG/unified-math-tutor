@@ -19,6 +19,7 @@ class ReleaseNotesScreen extends StatelessWidget {
         centerTitle: false,
         titleSpacing: 0,
         leading: IconButton(
+          tooltip: MaterialLocalizations.of(context).backButtonTooltip,
           icon: Icon(Icons.arrow_back, color: colors.primaryText),
           onPressed: () => popOrGo(context, '/profile'),
         ),

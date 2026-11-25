@@ -96,6 +96,7 @@ class _ParentTeacherToolsScreenState extends State<ParentTeacherToolsScreen> {
       backgroundColor: colors.background,
       appBar: AppBar(
         leading: IconButton(
+          tooltip: MaterialLocalizations.of(context).backButtonTooltip,
           icon: const Icon(Icons.arrow_back),
           onPressed: () => popOrGo(context, '/profile/settings'),
         ),

@@ -54,6 +54,7 @@ class _FamilyActivityDetailScreenState
             backgroundColor: colors.background,
             elevation: 0,
             leading: IconButton(
+              tooltip: MaterialLocalizations.of(context).backButtonTooltip,
               icon: Icon(Icons.arrow_back, color: colors.primaryText),
               onPressed: () => popOrGo(
                   context, '/help/parent-teacher-tools/family-maths/library'),

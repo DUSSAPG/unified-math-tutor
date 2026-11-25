@@ -25,6 +25,7 @@ class OnboardingProgressHeader extends StatelessWidget {
           children: [
             if (onBack != null)
               IconButton(
+                tooltip: MaterialLocalizations.of(context).backButtonTooltip,
                 onPressed: onBack,
                 icon: const Icon(Icons.arrow_back_ios_new, size: 18),
               ),
