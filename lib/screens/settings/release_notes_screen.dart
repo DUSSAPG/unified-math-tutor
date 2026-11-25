@@ -19,6 +19,7 @@ class ReleaseNotesScreen extends StatelessWidget {
         centerTitle: false,
         titleSpacing: 0,
         leading: IconButton(
+          tooltip: MaterialLocalizations.of(context).backButtonTooltip,
           icon: Icon(Icons.arrow_back, color: colors.primaryText),
           onPressed: () => popOrGo(context, '/profile'),
         ),
@@ -189,34 +190,46 @@ class _ReleaseSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // Version and badge wrap onto two lines at large system text
+          // sizes; at normal sizes the layout is unchanged (date at the end).
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                version,
-                style: TextStyle(
-                  color: colors.primaryText,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w700,
+              Flexible(
+                child: Wrap(
+                  spacing: 8,
+                  runSpacing: 4,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  children: [
+                    Text(
+                      version,
+                      style: TextStyle(
+                        color: colors.primaryText,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8, vertical: 3),
+                      decoration: BoxDecoration(
+                        color: labelColor.withValues(alpha: 0.15),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Text(
+                        label,
+                        style: TextStyle(
+                          color: labelColor,
+                          fontSize: 10,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: 0.8,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
               const SizedBox(width: 8),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-                decoration: BoxDecoration(
-                  color: labelColor.withValues(alpha: 0.15),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Text(
-                  label,
-                  style: TextStyle(
-                    color: labelColor,
-                    fontSize: 10,
-                    fontWeight: FontWeight.w700,
-                    letterSpacing: 0.8,
-                  ),
-                ),
-              ),
-              const Spacer(),
               Flexible(
                 child: Text(
                   date,
@@ -298,16 +311,23 @@ class _InfoRow extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            label,
-            style: TextStyle(color: colors.secondaryText, fontSize: 13),
+          // Both sides may wrap at large system text sizes.
+          Flexible(
+            child: Text(
+              label,
+              style: TextStyle(color: colors.secondaryText, fontSize: 13),
+            ),
           ),
-          Text(
-            value,
-            style: TextStyle(
-              color: colors.primaryText,
-              fontSize: 13,
-              fontWeight: FontWeight.w500,
+          const SizedBox(width: 12),
+          Flexible(
+            child: Text(
+              value,
+              textAlign: TextAlign.end,
+              style: TextStyle(
+                color: colors.primaryText,
+                fontSize: 13,
+                fontWeight: FontWeight.w500,
+              ),
             ),
           ),
         ],

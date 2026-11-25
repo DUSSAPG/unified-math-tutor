@@ -77,6 +77,7 @@ class _ParentCheatSheetScreenState extends State<ParentCheatSheetScreen> {
 
   AppBar _appBar(BuildContext context) => AppBar(
         leading: IconButton(
+          tooltip: MaterialLocalizations.of(context).backButtonTooltip,
           icon: const Icon(Icons.arrow_back),
           onPressed: () => popOrGo(context, '/help/parent-teacher-tools'),
         ),

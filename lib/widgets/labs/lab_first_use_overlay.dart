@@ -17,6 +17,9 @@ Future<void> showLabFirstUseWalkthrough(
     context: context,
     barrierDismissible: true,
     builder: (context) => AlertDialog(
+      // Scrolls when the steps do not fit, e.g. landscape at large system
+      // text sizes; unchanged when they do.
+      scrollable: true,
       backgroundColor: colors.cardSurface,
       // Flutter's default 40px horizontal inset leaves only ~240px of
       // usable width on a 320px phone — tight for a numbered-step list.

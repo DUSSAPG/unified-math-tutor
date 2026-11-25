@@ -18,6 +18,7 @@ class SettingsScreen extends StatelessWidget {
       backgroundColor: colors.background,
       appBar: AppBar(
         leading: IconButton(
+          tooltip: MaterialLocalizations.of(context).backButtonTooltip,
           icon: const Icon(Icons.arrow_back),
           onPressed: () => popOrGo(context, '/profile'),
         ),

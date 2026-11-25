@@ -81,6 +81,7 @@ class _RecallCardsHubScreenState extends State<RecallCardsHubScreen> {
         backgroundColor: colors.background,
         elevation: 0,
         leading: IconButton(
+          tooltip: MaterialLocalizations.of(context).backButtonTooltip,
           icon: Icon(Icons.arrow_back, color: colors.primaryText),
           onPressed: () => popOrGo(context, '/math-studio'),
         ),

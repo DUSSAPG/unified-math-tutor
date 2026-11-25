@@ -93,9 +93,14 @@ class OnboardingShell extends StatelessWidget {
                             style: TextStyle(color: colors.secondaryText),
                           ),
                         ),
-                      SizedBox(
-                        width: double.infinity,
-                        height: 56,
+                      // Full width, 56 high at normal text sizes; grows
+                      // taller (label wraps) at large system text sizes
+                      // instead of overflowing.
+                      ConstrainedBox(
+                        constraints: const BoxConstraints(
+                          minWidth: double.infinity,
+                          minHeight: 56,
+                        ),
                         // No explicit FilledButton.styleFrom override — the
                         // app theme's filledButtonTheme already supplies
                         // primaryAction/disabled colors correctly for both
@@ -111,11 +116,14 @@ class OnboardingShell extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text(
-                                continueLabel,
-                                style: const TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
+                              Flexible(
+                                child: Text(
+                                  continueLabel,
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                  ),
                                 ),
                               ),
                               if (showContinueArrow) ...[
