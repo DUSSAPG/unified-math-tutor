@@ -2,7 +2,7 @@
 
 - **Branch:** `fix/accessibility-release-closure-a`, from `de7c6da` (the PR #6 merge on `feature/math-intelligence-v2`).
 - **Scope:** four bounded accessibility and interaction defects. All work was on the host only: no Pixel, adb, APK or TalkBack.
-- **Status:** not committed; awaiting review of the scope and results.
+- **Status:** application changes committed as `0b19490` (parent `de7c6da`). Verified on the clean committed tree: 3,238 passed, 0 failed, 0 skipped (§3). Pixel verification is pending, and public release remains NO-GO.
 
 ## 1. Defects and fixes
 
@@ -78,18 +78,33 @@ There are 23 new tests in three files.
 
 ## 3. Verification
 
+The full suite ran twice: once on the uncommitted working tree before review, and again on the clean tree after commit `0b19490`. The application source and tests are identical in both runs. The only difference is that the hub file was uncommitted in the first.
+
+### 3.1 Post-commit verification on the clean tree (`0b19490`), the result of record
+
+| Check | Result |
+|---|---|
+| Worktree | clean (`git status --porcelain` empty) before and after every run |
+| `fractions_of_a_set_distinction_guard_test.dart` | **5 of 5 passed.** The working-tree guard ran (it was not skipped) and passed. |
+| New tests (3 files) | 23 passed, 0 failed |
+| `flutter analyze` | No issues found |
+| `git diff --check` | clean |
+| Full host suite (258 test files in 6 batches of 50; `practice_screen_continue_learning_resume_test.dart` excluded as in every gate, because of its known pre-existing hang) | **3,238 passed, 0 failed, 0 skipped** (Gate C: 3,215, plus 23 new) |
+
+### 3.2 Pre-commit verification on the uncommitted working tree
+
 | Check | Result |
 |---|---|
 | `flutter analyze` | No issues found |
 | `dart format` (`lib/` and the new tests) | 0 changed |
 | New tests (3 files) | 23 passed, 0 failed |
 | Focused regressions (37 files) | 1,225 passed, 1 failed. The files are: the new tests, Gate A–C accessibility (AF-1, AF-2, AF-3, FU-2), every `early_maths_*` and `fractions_of_a_set_*` test, the route sweeps, and the theme and navigator-key regressions. |
-| Full host suite (258 test files in 6 batches of 50; `practice_screen_continue_learning_resume_test.dart` excluded as in every gate, because of its known pre-existing hang) | **3,237 passed, 1 failed, 0 skipped** of 3,238 (Gate C: 3,215, plus 23 new). The one failure is the working-tree guard below. |
+| Full host suite (same 258 files and exclusion) | 3,237 passed, 1 failed, 0 skipped of 3,238. The one failure is the working-tree guard below. |
 
-**The one failure is expected and depends on the working tree.** It is in `fractions_of_a_set_distinction_guard_test.dart`: "Panda, Create the Angle, Pitch and Binomial files are unchanged in this working tree".
+**Why the pre-commit runs had one failure.** The failure was expected and depended only on the working tree. It is in `fractions_of_a_set_distinction_guard_test.dart`: "Panda, Create the Angle, Pitch and Binomial files are unchanged in this working tree".
 - That test runs `git status --porcelain` on a list of protected lab files that includes `early_maths_playground_hub_screen.dart`. It fails while that file has any uncommitted change.
-- The D-1 and lane fixes are in that file by design. The guard checks only working-tree status, not content, so it passes once the change is committed.
-- The guard was not modified.
+- The D-1 and lane fixes are in that file by design. The guard checks only working-tree status, not content, so it needed a clean checkout. It passed after the commit (§3.1).
+- The guard was not modified or weakened.
 
 ## 4. Limitations
 
@@ -107,5 +122,6 @@ There are 23 new tests in three files.
 
 ## 6. Recommendation
 
-- **Host: GO** for SW-1, HL-1, FU-1 and D-1. They are fixed with local wrapper or condition changes only, the behaviour that must stay the same is unchanged, analyze is clean, and the full suite is green apart from the one expected working-tree guard.
+- **Host: GO** for SW-1, HL-1, FU-1 and D-1. They are fixed with local wrapper or condition changes only, the behaviour that must stay the same is unchanged, analyze is clean, and the full suite is green on the clean committed tree (3,238 passed, 0 failed, 0 skipped at `0b19490`).
+- **Pixel 6a verification: pending.** Neither TalkBack nor a visual check has been done for SW-1, HL-1, FU-1 or D-1.
 - **Public release: still NO-GO** until the blockers in §5 are closed.
