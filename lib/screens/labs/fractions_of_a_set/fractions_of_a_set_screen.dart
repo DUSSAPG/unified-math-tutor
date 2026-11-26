@@ -6,6 +6,7 @@ import 'package:unified_math_tutor/l10n/app_localizations.dart';
 
 import '../../../app/safe_navigation.dart';
 import '../../../models/fractions_of_a_set/fractions_of_a_set_session.dart';
+import '../../../services/local_preferences_service.dart';
 import '../../../shared/theme/app_spacing.dart';
 import '../../../shared/theme/app_theme.dart';
 import '../../../widgets/labs/fractions_of_a_set/fractions_of_a_set_bar.dart';
@@ -81,8 +82,9 @@ class _FractionsOfASetScreenState extends State<FractionsOfASetScreen> {
   }
 
   /// Brings the feedback card fully into view when it lands below the fold,
-  /// keeping its top visible if it is taller than the panel. Jumps under
-  /// Reduce Motion.
+  /// keeping its top visible if it is taller than the panel. Jumps instead of
+  /// animating when either Android's "Remove animations" or the app's own
+  /// Reduce Motion setting is on (FU-1), as the other labs do.
   void _revealFeedback() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       final card = _feedbackKey.currentContext?.findRenderObject();
@@ -99,7 +101,8 @@ class _FractionsOfASetScreenState extends State<FractionsOfASetScreen> {
           .clamp(pos.minScrollExtent, pos.maxScrollExtent)
           .toDouble();
       if ((target - pos.pixels).abs() < .5) return;
-      if (MediaQuery.disableAnimationsOf(context)) {
+      if (MediaQuery.disableAnimationsOf(context) ||
+          LocalPreferencesService.instance.reduceMotion.value) {
         _scroll.jumpTo(target);
       } else {
         _scroll.animateTo(target,

@@ -108,7 +108,11 @@ class _EarlyMathsPlaygroundHubScreenState
         ),
       ),
       body: SafeArea(
-        child: Center(
+        // Top-anchored, still centred horizontally on wide screens. A plain
+        // Center vertically centred short content, so the page jumped when
+        // a lane change altered its height (D-1).
+        child: Align(
+          alignment: Alignment.topCenter,
           child: ConstrainedBox(
             constraints: BoxConstraints(
                 maxWidth: AppResponsive.contentMaxWidth(context)),
@@ -228,62 +232,72 @@ class _LaneTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colors = context.appColors;
-    return Material(
-      color:
-          selected ? colors.accent.withValues(alpha: 0.12) : colors.cardSurface,
-      borderRadius: BorderRadius.circular(14),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(14),
-        onTap: onTap,
-        child: Semantics(
-          button: true,
-          selected: selected,
-          excludeSemantics: true,
-          label: '$title. $subtitle',
-          onTap: onTap,
-          child: Container(
-            padding: const EdgeInsets.all(14),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(14),
-              border: Border.all(
-                color: selected ? colors.accent : colors.divider,
-                width: selected ? 2 : 1,
-              ),
-            ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Icon(
-                  selected ? Icons.check_circle : Icons.radio_button_unchecked,
-                  color: selected ? colors.accent : colors.tertiaryText,
-                  size: 22,
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        title,
-                        style: TextStyle(
-                          color: colors.primaryText,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      const SizedBox(height: 3),
-                      Text(
-                        subtitle,
-                        style: TextStyle(
-                          color: colors.secondaryText,
-                          fontSize: 13,
-                          height: 1.3,
-                        ),
-                      ),
-                    ],
+    // One screen-reader stop per lane: the name, button role and selected
+    // state merge with the InkWell's tap and focus into a single node.
+    // (Before, the InkWell added a second, unlabelled tappable node at the
+    // same position.) The visible texts are excluded so the name is spoken
+    // once.
+    return MergeSemantics(
+      child: Semantics(
+        button: true,
+        selected: selected,
+        label: '$title. $subtitle',
+        child: Material(
+          color: selected
+              ? colors.accent.withValues(alpha: 0.12)
+              : colors.cardSurface,
+          borderRadius: BorderRadius.circular(14),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(14),
+            onTap: onTap,
+            child: ExcludeSemantics(
+              child: Container(
+                padding: const EdgeInsets.all(14),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(14),
+                  border: Border.all(
+                    color: selected ? colors.accent : colors.divider,
+                    width: selected ? 2 : 1,
                   ),
                 ),
-              ],
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Icon(
+                      selected
+                          ? Icons.check_circle
+                          : Icons.radio_button_unchecked,
+                      color: selected ? colors.accent : colors.tertiaryText,
+                      size: 22,
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            title,
+                            style: TextStyle(
+                              color: colors.primaryText,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                          const SizedBox(height: 3),
+                          Text(
+                            subtitle,
+                            style: TextStyle(
+                              color: colors.secondaryText,
+                              fontSize: 13,
+                              height: 1.3,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
         ),

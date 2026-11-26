@@ -105,56 +105,60 @@ class _AccessibilityStepScreenState extends State<AccessibilityStepScreen> {
             ),
           ),
           const SizedBox(height: 12),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-            decoration: BoxDecoration(
-              color: colors.cardSurface,
-              borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: colors.divider),
-            ),
-            child: Row(
-              children: [
-                Container(
-                  width: 40,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF00BCD4).withValues(alpha: 0.15),
-                    borderRadius: BorderRadius.circular(10),
+          // One screen-reader stop: title and description merge into the
+          // Switch's node (same as Settings > Accessibility).
+          MergeSemantics(
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+              decoration: BoxDecoration(
+                color: colors.cardSurface,
+                borderRadius: BorderRadius.circular(14),
+                border: Border.all(color: colors.divider),
+              ),
+              child: Row(
+                children: [
+                  Container(
+                    width: 40,
+                    height: 40,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF00BCD4).withValues(alpha: 0.15),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Icon(Icons.animation,
+                        color: Color(0xFF00BCD4), size: 20),
                   ),
-                  child: const Icon(Icons.animation,
-                      color: Color(0xFF00BCD4), size: 20),
-                ),
-                const SizedBox(width: 14),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Reduce Motion',
-                        style: TextStyle(
-                          color: colors.primaryText,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w600,
+                  const SizedBox(width: 14),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Reduce Motion',
+                          style: TextStyle(
+                            color: colors.primaryText,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
-                      ),
-                      const SizedBox(height: 2),
-                      Text(
-                        'Minimise animations and transitions',
-                        style: TextStyle(
-                            color: colors.secondaryText, fontSize: 13),
-                      ),
-                    ],
+                        const SizedBox(height: 2),
+                        Text(
+                          'Minimise animations and transitions',
+                          style: TextStyle(
+                              color: colors.secondaryText, fontSize: 13),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                Switch(
-                  value: _reduceMotion,
-                  onChanged: (v) async {
-                    await LocalPreferencesService.instance.setReduceMotion(v);
-                    if (mounted) setState(() => _reduceMotion = v);
-                  },
-                  activeThumbColor: colors.accent,
-                ),
-              ],
+                  Switch(
+                    value: _reduceMotion,
+                    onChanged: (v) async {
+                      await LocalPreferencesService.instance.setReduceMotion(v);
+                      if (mounted) setState(() => _reduceMotion = v);
+                    },
+                    activeThumbColor: colors.accent,
+                  ),
+                ],
+              ),
             ),
           ),
         ],
