@@ -6280,6 +6280,46 @@ class AppLocalizationsEn extends AppLocalizations {
   String earlyMathsParentTitlesLine(String titles) {
     return 'Includes: $titles';
   }
+
+  @override
+  String get accessibilitySettingsSubtitle =>
+      'Adjust for comfort and readability';
+
+  @override
+  String get accessibilityReadingSizeSubtitle =>
+      'Choose a comfortable reading size';
+
+  @override
+  String get accessibilityReadingSizeSmall => 'Small';
+
+  @override
+  String get accessibilityReadingSizeDefault => 'Default';
+
+  @override
+  String get accessibilityReadingSizeLarge => 'Large';
+
+  @override
+  String get accessibilityReduceMotionTitle => 'Reduce Motion';
+
+  @override
+  String get accessibilityReduceMotionSubtitle =>
+      'Minimise animations and transitions';
+
+  @override
+  String get accessibilityQuietStudyModeSubtitle =>
+      'Inspired by Nyepi, a Balinese tradition of reflection, stillness and focus — reduces Captain Math and sound cues';
+
+  @override
+  String get accessibilitySoundCuesTitle => 'Sound Cues';
+
+  @override
+  String get accessibilitySoundCuesSubtitle =>
+      'Short, optional sounds for Interactive Labs actions';
+
+  @override
+  String onboardingTimeEstimateSeconds(int seconds) {
+    return '~$seconds seconds';
+  }
 }
 
 /// The translations for English, as used in the United Kingdom (`en_GB`).
@@ -10103,5 +10143,111 @@ class AppLocalizationsEnGb extends AppLocalizationsEn {
       one: 'one tenth',
     );
     return '$_temp0';
+  }
+
+  @override
+  String get earlyMathsEntryIntro =>
+      'Pick a friendly place to start. Age is only a suggestion, not a level. There is no test, and you can switch at any time.';
+
+  @override
+  String get earlyMathsLaneChooserLabel => 'Choose a starting point';
+
+  @override
+  String get earlyMathsLanePlayTitle => 'Early Maths Play';
+
+  @override
+  String get earlyMathsLanePlayAges => 'Typical ages 4–5 · Reception';
+
+  @override
+  String get earlyMathsLaneKs1Title => 'KS1 Maths Foundations';
+
+  @override
+  String get earlyMathsLaneKs1Ages => 'Typical ages 5–7 · Years 1–2';
+
+  @override
+  String get earlyMathsLaneNotSureTitle => 'I\'m not sure';
+
+  @override
+  String get earlyMathsLaneNotSureSubtitle =>
+      'No test needed. We\'ll suggest one gentle first step.';
+
+  @override
+  String get earlyMathsLaneSwitchNote =>
+      'Switching never removes anything your child has already done.';
+
+  @override
+  String get earlyMathsActivitiesHeading => 'Activities to try';
+
+  @override
+  String get earlyMathsNotSureHeading => 'A gentle first step';
+
+  @override
+  String get earlyMathsNotSureBody =>
+      'There is no right or wrong choice. Try this one small activity and see how it feels. You can choose a different starting point above whenever you like.';
+
+  @override
+  String get earlyMathsPandaScope =>
+      'Count out 1 to 3 apples from 5, then say how many are left.';
+
+  @override
+  String get earlyMathsAbacusTitle => 'Abacus';
+
+  @override
+  String get earlyMathsAbacusScope =>
+      'An interactive place-value tool: tap or drag beads to explore hundreds, tens and ones.';
+
+  @override
+  String get earlyMathsParentHeading => 'For grown-ups';
+
+  @override
+  String get earlyMathsParentCardTitle => 'Parent-led activities';
+
+  @override
+  String get earlyMathsParentCardSubtitle =>
+      'Short activities to do together. Opens with your parent PIN.';
+
+  @override
+  String earlyMathsParentTitlesLine(String titles) {
+    return 'Includes: $titles';
+  }
+
+  @override
+  String get accessibilitySettingsSubtitle =>
+      'Adjust for comfort and readability';
+
+  @override
+  String get accessibilityReadingSizeSubtitle =>
+      'Choose a comfortable reading size';
+
+  @override
+  String get accessibilityReadingSizeSmall => 'Small';
+
+  @override
+  String get accessibilityReadingSizeDefault => 'Default';
+
+  @override
+  String get accessibilityReadingSizeLarge => 'Large';
+
+  @override
+  String get accessibilityReduceMotionTitle => 'Reduce Motion';
+
+  @override
+  String get accessibilityReduceMotionSubtitle =>
+      'Minimise animations and transitions';
+
+  @override
+  String get accessibilityQuietStudyModeSubtitle =>
+      'Inspired by Nyepi, a Balinese tradition of reflection, stillness and focus — reduces Captain Math and sound cues';
+
+  @override
+  String get accessibilitySoundCuesTitle => 'Sound Cues';
+
+  @override
+  String get accessibilitySoundCuesSubtitle =>
+      'Short, optional sounds for Interactive Labs actions';
+
+  @override
+  String onboardingTimeEstimateSeconds(int seconds) {
+    return '~$seconds seconds';
   }
 }

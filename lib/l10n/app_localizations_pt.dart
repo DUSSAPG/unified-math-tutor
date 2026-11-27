@@ -6284,4 +6284,44 @@ class AppLocalizationsPt extends AppLocalizations {
   String earlyMathsParentTitlesLine(String titles) {
     return 'Includes: $titles';
   }
+
+  @override
+  String get accessibilitySettingsSubtitle =>
+      'Adjust for comfort and readability';
+
+  @override
+  String get accessibilityReadingSizeSubtitle =>
+      'Choose a comfortable reading size';
+
+  @override
+  String get accessibilityReadingSizeSmall => 'Small';
+
+  @override
+  String get accessibilityReadingSizeDefault => 'Default';
+
+  @override
+  String get accessibilityReadingSizeLarge => 'Large';
+
+  @override
+  String get accessibilityReduceMotionTitle => 'Reduce Motion';
+
+  @override
+  String get accessibilityReduceMotionSubtitle =>
+      'Minimise animations and transitions';
+
+  @override
+  String get accessibilityQuietStudyModeSubtitle =>
+      'Inspired by Nyepi, a Balinese tradition of reflection, stillness and focus — reduces Captain Math and sound cues';
+
+  @override
+  String get accessibilitySoundCuesTitle => 'Sound Cues';
+
+  @override
+  String get accessibilitySoundCuesSubtitle =>
+      'Short, optional sounds for Interactive Labs actions';
+
+  @override
+  String onboardingTimeEstimateSeconds(int seconds) {
+    return '~$seconds seconds';
+  }
 }

@@ -1287,12 +1287,12 @@
   "@appearanceThemeDark": {},
   "appearanceThemeLight": "Light",
   "@appearanceThemeLight": {},
-  "appearanceAccessibilityHeading": "ACCESSIBILITY",
-  "@appearanceAccessibilityHeading": {},
-  "appearanceReadingSizeTitle": "Reading Size",
-  "@appearanceReadingSizeTitle": {},
-  "appearanceReadingSizeSub": "Small, Default, or Large text scaling",
-  "@appearanceReadingSizeSub": {},
+  "appearanceAccessibilityHeading": "ACCESSIBILITÉ",
+  "@appearanceAccessibilityHeading": {"description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."},
+  "appearanceReadingSizeTitle": "Taille du texte",
+  "@appearanceReadingSizeTitle": {"description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."},
+  "appearanceReadingSizeSub": "Taille du texte Petit, Par défaut ou Grand",
+  "@appearanceReadingSizeSub": {"description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."},
   "appearanceTouchTargetsTitle": "Touch Targets 44px",
   "@appearanceTouchTargetsTitle": {},
   "appearanceTouchTargetsSub": "Ergonomic controls",
@@ -1665,5 +1665,135 @@
   "labsFractionsOfASetFifths": "{n, plural, =1{un cinquième} other{{n} cinquièmes}}",
   "labsFractionsOfASetSixths": "{n, plural, =1{un sixième} other{{n} sixièmes}}",
   "labsFractionsOfASetEighths": "{n, plural, =1{un huitième} other{{n} huitièmes}}",
-  "labsFractionsOfASetTenths": "{n, plural, =1{un dixième} other{{n} dixièmes}}"
+  "labsFractionsOfASetTenths": "{n, plural, =1{un dixième} other{{n} dixièmes}}",
+  "accessibilitySettingsSubtitle": "Ajuster pour plus de confort et de lisibilité",
+  "@accessibilitySettingsSubtitle": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "accessibilityReadingSizeSubtitle": "Choisir une taille de texte confortable",
+  "@accessibilityReadingSizeSubtitle": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "accessibilityReadingSizeSmall": "Petit",
+  "@accessibilityReadingSizeSmall": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "accessibilityReadingSizeDefault": "Par défaut",
+  "@accessibilityReadingSizeDefault": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "accessibilityReadingSizeLarge": "Grand",
+  "@accessibilityReadingSizeLarge": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "accessibilityReduceMotionTitle": "Réduire les animations",
+  "@accessibilityReduceMotionTitle": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "accessibilityReduceMotionSubtitle": "Limiter au minimum les animations et les transitions",
+  "@accessibilityReduceMotionSubtitle": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "accessibilityQuietStudyModeSubtitle": "Inspiré de Nyepi, une tradition balinaise de réflexion, de calme et de concentration — réduit Captain Math et les signaux sonores",
+  "@accessibilityQuietStudyModeSubtitle": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "accessibilitySoundCuesTitle": "Signaux sonores",
+  "@accessibilitySoundCuesTitle": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "accessibilitySoundCuesSubtitle": "Sons courts et facultatifs pour les actions des laboratoires interactifs",
+  "@accessibilitySoundCuesSubtitle": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingTimeEstimateSeconds": "~{seconds} secondes",
+  "@onboardingTimeEstimateSeconds": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy.",
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "earlyMathsAbacusScope": "Un outil interactif sur la valeur positionnelle : touche ou fais glisser les perles pour explorer les centaines, les dizaines et les unités.",
+  "@earlyMathsAbacusScope": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "earlyMathsAbacusTitle": "Boulier",
+  "@earlyMathsAbacusTitle": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "earlyMathsActivitiesHeading": "Activités à essayer",
+  "@earlyMathsActivitiesHeading": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "earlyMathsEntryIntro": "Choisis un point de départ agréable. L'âge n'est qu'une suggestion, pas un niveau. Il n'y a pas de test, et tu peux changer à tout moment.",
+  "@earlyMathsEntryIntro": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "earlyMathsLaneChooserLabel": "Choisis un point de départ",
+  "@earlyMathsLaneChooserLabel": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "earlyMathsLaneKs1Ages": "Âge habituel : 5–7 ans · Year 1–2 (Angleterre)",
+  "@earlyMathsLaneKs1Ages": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "earlyMathsLaneKs1Title": "Bases des maths KS1 (programme d'Angleterre)",
+  "@earlyMathsLaneKs1Title": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "earlyMathsLaneNotSureSubtitle": "Aucun test nécessaire. Nous te proposerons une première étape en douceur.",
+  "@earlyMathsLaneNotSureSubtitle": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "earlyMathsLaneNotSureTitle": "Je ne sais pas encore",
+  "@earlyMathsLaneNotSureTitle": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "earlyMathsLanePlayAges": "Âge habituel : 4–5 ans",
+  "@earlyMathsLanePlayAges": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "earlyMathsLanePlayTitle": "Découvrir les maths en jouant",
+  "@earlyMathsLanePlayTitle": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "earlyMathsLaneSwitchNote": "Changer n'efface jamais ce que ton enfant a déjà fait.",
+  "@earlyMathsLaneSwitchNote": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "earlyMathsNotSureBody": "Il n'y a pas de bon ou de mauvais choix. Essaie cette petite activité et vois comment ça se passe. Tu peux choisir un autre point de départ ci-dessus quand tu veux.",
+  "@earlyMathsNotSureBody": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "earlyMathsNotSureHeading": "Une première étape en douceur",
+  "@earlyMathsNotSureHeading": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "earlyMathsPandaScope": "Compte 1 à 3 pommes parmi 5, puis dis combien il en reste.",
+  "@earlyMathsPandaScope": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "earlyMathsParentCardSubtitle": "De courtes activités à faire ensemble. S'ouvre avec ton code PIN parental.",
+  "@earlyMathsParentCardSubtitle": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "earlyMathsParentCardTitle": "Activités guidées par un parent",
+  "@earlyMathsParentCardTitle": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "earlyMathsParentHeading": "Pour les adultes",
+  "@earlyMathsParentHeading": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "earlyMathsParentTitlesLine": "Comprend : {titles}",
+  "@earlyMathsParentTitlesLine": {
+    "description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy.",
+    "placeholders": {
+      "titles": {
+        "type": "String"
+      }
+    }
+  }
 }

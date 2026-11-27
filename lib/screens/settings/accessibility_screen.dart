@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../app/safe_navigation.dart';
+import '../../l10n/app_localizations.dart';
 import '../../services/local_preferences_service.dart';
 import '../../shared/theme/app_theme.dart';
 
@@ -39,6 +40,7 @@ class _AccessibilityScreenState extends State<AccessibilityScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final colors = context.appColors;
     return Scaffold(
       backgroundColor: colors.background,
@@ -57,14 +59,14 @@ class _AccessibilityScreenState extends State<AccessibilityScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Accessibility',
+              l10n.profileAccessibility,
               style: TextStyle(
                   color: colors.primaryText,
                   fontSize: 20,
                   fontWeight: FontWeight.w700),
             ),
             Text(
-              'Adjust for comfort and readability',
+              l10n.accessibilitySettingsSubtitle,
               style: TextStyle(color: colors.secondaryText, fontSize: 12),
             ),
           ],
@@ -82,26 +84,29 @@ class _AccessibilityScreenState extends State<AccessibilityScreen> {
                   // Reading Size
                   _sectionCard(
                     context,
-                    title: 'Reading Size',
-                    subtitle: 'Choose a comfortable reading size',
+                    title: l10n.appearanceReadingSizeTitle,
+                    subtitle: l10n.accessibilityReadingSizeSubtitle,
                     child: Row(
                       children: [
                         _SizeOption(
-                          label: 'Small',
+                          id: 'small',
+                          label: l10n.accessibilityReadingSizeSmall,
                           fontSize: 12,
                           selected: _textSize == 0,
                           onTap: () => _selectTextSize(0),
                         ),
                         const SizedBox(width: 10),
                         _SizeOption(
-                          label: 'Default',
+                          id: 'default',
+                          label: l10n.accessibilityReadingSizeDefault,
                           fontSize: 14,
                           selected: _textSize == 1,
                           onTap: () => _selectTextSize(1),
                         ),
                         const SizedBox(width: 10),
                         _SizeOption(
-                          label: 'Large',
+                          id: 'large',
+                          label: l10n.accessibilityReadingSizeLarge,
                           fontSize: 18,
                           selected: _textSize == 2,
                           onTap: () => _selectTextSize(2),
@@ -116,8 +121,8 @@ class _AccessibilityScreenState extends State<AccessibilityScreen> {
                     icon: Icons.animation,
                     iconColor: const Color(0xFF00BCD4),
                     iconBg: const Color(0xFF003040),
-                    title: 'Reduce Motion',
-                    subtitle: 'Minimise animations and transitions',
+                    title: l10n.accessibilityReduceMotionTitle,
+                    subtitle: l10n.accessibilityReduceMotionSubtitle,
                     value: _reduceMotion,
                     onChanged: (v) async {
                       await LocalPreferencesService.instance.setReduceMotion(v);
@@ -131,9 +136,8 @@ class _AccessibilityScreenState extends State<AccessibilityScreen> {
                     icon: Icons.self_improvement,
                     iconColor: const Color(0xFF34C759),
                     iconBg: const Color(0xFF0F2E1A),
-                    title: 'Quiet Study Mode',
-                    subtitle:
-                        'Inspired by Nyepi, a Balinese tradition of reflection, stillness and focus — reduces Captain Math and sound cues',
+                    title: l10n.quietStudyModeLabel,
+                    subtitle: l10n.accessibilityQuietStudyModeSubtitle,
                     value: _quietStudyMode,
                     onChanged: (v) async {
                       await LocalPreferencesService.instance
@@ -148,9 +152,8 @@ class _AccessibilityScreenState extends State<AccessibilityScreen> {
                     icon: Icons.volume_up_outlined,
                     iconColor: const Color(0xFFFFBD00),
                     iconBg: const Color(0xFF2E2500),
-                    title: 'Sound Cues',
-                    subtitle:
-                        'Short, optional sounds for Interactive Labs actions',
+                    title: l10n.accessibilitySoundCuesTitle,
+                    subtitle: l10n.accessibilitySoundCuesSubtitle,
                     value: _soundEnabled,
                     onChanged: (v) async {
                       await LocalPreferencesService.instance.setSoundEnabled(v);
@@ -200,12 +203,16 @@ class _AccessibilityScreenState extends State<AccessibilityScreen> {
 // ─── Size Option ──────────────────────────────────────────────────────────────
 
 class _SizeOption extends StatelessWidget {
+  /// Stable, language-independent identifier used for the widget key, so
+  /// tests and tooling find the same option in every locale.
+  final String id;
   final String label;
   final double fontSize;
   final bool selected;
   final VoidCallback onTap;
 
   const _SizeOption({
+    required this.id,
     required this.label,
     required this.fontSize,
     required this.selected,
@@ -216,15 +223,15 @@ class _SizeOption extends StatelessWidget {
   Widget build(BuildContext context) {
     final colors = context.appColors;
     final radius = BorderRadius.circular(12);
-    // One merged screen-reader node per option: its name ("Small", "Default",
-    // "Large"), button role, selected state within a single-choice group, and
+    // One merged screen-reader node per option: its localised name (Small,
+    // Default or Large in the active language), button role, selected state within a single-choice group, and
     // the tap action. InkWell (rather than a bare GestureDetector) makes the
     // option keyboard-focusable and activatable with Enter or Space. The "Aa"
     // preview is visual only and excluded from the spoken name.
     return Expanded(
       child: MergeSemantics(
         child: Semantics(
-          key: Key('readingSizeOption-$label'),
+          key: Key('readingSizeOption-$id'),
           button: true,
           inMutuallyExclusiveGroup: true,
           selected: selected,

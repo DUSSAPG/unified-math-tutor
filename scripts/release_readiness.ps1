@@ -23,6 +23,9 @@ if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 py tools\test_ch_translation_workflow.py
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
+py scripts\test_l10n_approval_gate.py
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
 flutter test
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
