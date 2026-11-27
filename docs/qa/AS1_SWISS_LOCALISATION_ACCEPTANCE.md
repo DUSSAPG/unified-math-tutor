@@ -150,6 +150,10 @@ These follow the authorised product decisions. No Swiss school-year equivalence 
   5. the explicit review outcome for each string or block: approved, approved with changes (with the final text), or rejected.
 - **Order of steps:** the record comes first; then the marker is removed from exactly the approved strings and the marker test is updated in the same change, citing the record.
 - **Current state:** no approval record exists for any AS-1 string, and none is implied by this document.
+- **Production-release gate:** `scripts/l10n_approval_gate.py`, run by `check_enabled_l10n.py` and `release_readiness.ps1`, enforces the points above for a production release.
+  - It fails on any remaining marker, and on any required key (`docs/l10n_approvals/required_keys.json`) without a valid approval record matching its current text.
+  - It reports without failing for `--env dev` and `--env uat`.
+  - It currently reports 99 pending drafts and blocks production. See `RELEASE_CHECKLIST.md`, "Linguistic approval gate".
 
 ## 8. Other localisation deficiencies outside AS-1
 

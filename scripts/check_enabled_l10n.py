@@ -1,11 +1,19 @@
 #!/usr/bin/env python3
-"""Fail when an enabled production locale lacks template ARB messages."""
+"""Fail when an enabled production locale lacks template ARB messages, or when
+a production translation lacks linguistic approval (see l10n_approval_gate).
+
+Usage: py scripts/check_enabled_l10n.py [--env dev|uat|prod]   (default prod)
+"""
 
 from __future__ import annotations
 
+import argparse
 import json
 import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import l10n_approval_gate  # noqa: E402
 
 
 ARB_DIR = Path("lib/l10n")
@@ -30,7 +38,10 @@ def remove_inherited_override_noise() -> None:
     )
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument("--env", choices=l10n_approval_gate.ENVS, default="prod")
+    args = parser.parse_args(argv)
     remove_inherited_override_noise()
     template_keys = keys(TEMPLATE)
     failed = False
@@ -42,6 +53,10 @@ def main() -> int:
         if missing:
             failed = True
             print("  " + ", ".join(missing))
+    approval = l10n_approval_gate.evaluate(Path("."), args.env)
+    l10n_approval_gate.report(approval)
+    if approval.blocking:
+        failed = True
     return 1 if failed else 0
 
 

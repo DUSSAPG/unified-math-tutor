@@ -20,7 +20,8 @@ Market behavior:
 
 ## Release Commands
 
-Validate UI localization coverage:
+Validate UI localization coverage and linguistic approval (production by
+default; see "Linguistic approval gate" below):
 
 ```powershell
 .\scripts\check_enabled_l10n.ps1
@@ -46,6 +47,7 @@ py scripts\test_translate_ch_packs.py
 py scripts\test_autofill_ch_translation_csv.py
 py scripts\test_split_ch_translation_template.py
 py tools\test_ch_translation_workflow.py
+py scripts\test_l10n_approval_gate.py
 flutter test
 flutter analyze
 ```
@@ -76,6 +78,41 @@ Prepare store screenshot export folders:
 ```powershell
 .\scripts\prepare_store_screenshots.ps1
 ```
+
+## Linguistic approval gate
+
+Three separate decisions apply to UI translations. One never implies another:
+
+| Stage | What it means | Who or what decides | Evidence |
+|---|---|---|---|
+| Engineering integration | The code, ARB structure, generated localisations and tests are correct, and the branch can merge | Code review and the host test suite | PR, test results, `docs/qa/*` reports |
+| Linguistic approval | A named reviewer has approved the exact text of a translation | A native or professional reviewer for that locale | An approval record in `docs/l10n_approvals/records/` |
+| Production-release authorisation | A build may ship to the public | The release owner, after the release commands pass with `--env prod` | This checklist |
+
+**How the gate works.** `scripts/l10n_approval_gate.py` runs inside `check_enabled_l10n.py`, and so inside `release_readiness.ps1`. For a production release (`--env prod`, the default) it fails if:
+
+- **a draft remains:** any production-locale ARB (the locales come from `LocaleService.productionLocales`) still has a `PENDING LINGUISTIC REVIEW` marker;
+- **an approval is missing or stale:** any key in `docs/l10n_approvals/required_keys.json` lacks a valid approval record for its current text. Removing a marker is never enough; editing an approved text needs a new review;
+- **a record is malformed:** any approval record is missing the reviewer, date, locale, ARB file, ARB hash or per-key outcome and text hash;
+- **the manifest is missing or malformed:** `required_keys.json` is absent, unreadable, has the wrong schema, lists no locales or names a non-production locale. The gate fails closed; it never treats a missing manifest as "nothing required".
+
+**Environments.** `--env dev` and `--env uat` report the same findings without failing. Ordinary `flutter run` and `flutter build` don't run the gate at all.
+
+**Output.** The report lists locales, keys and record file names only, never translation text or reviewer identities. The record format is in `docs/l10n_approvals/README.md`.
+
+```powershell
+py scripts\l10n_approval_gate.py --env prod   # release decision
+py scripts\l10n_approval_gate.py --env uat    # report only
+py scripts\check_enabled_l10n.py --env prod   # coverage + approval
+```
+
+**Limits.**
+
+- **It is manual:** the gate is part of the documented release procedure, not of `flutter build`. There is no CI, so it is enforced only when this checklist is followed.
+- **Coverage fails separately:** the coverage half of `check_enabled_l10n.py` (template keys missing in de_CH, fr_CH and it_CH) fails on its own, in every `--env`. On 2026-11-27 that was 272 keys per Swiss locale, which predates AS-1.
+- **The gate checks evidence, not quality:** it verifies that records exist, are well formed and match the current text. It cannot verify that a review actually happened. Records must come from the reviewer and must never be fabricated.
+
+**Current state (2026-11-27).** The 99 AS-1 Swiss drafts (33 each in de_CH, fr_CH and it_CH) are pending, and no approval record exists. A production release is blocked.
 
 ## CH Translation Pipeline
 
