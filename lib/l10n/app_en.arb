@@ -5119,5 +5119,54 @@
         "type": "String"
       }
     }
+  },
+  "accessibilitySettingsSubtitle": "Adjust for comfort and readability",
+  "@accessibilitySettingsSubtitle": {
+    "description": "Subtitle under the Settings > Accessibility title."
+  },
+  "accessibilityReadingSizeSubtitle": "Choose a comfortable reading size",
+  "@accessibilityReadingSizeSubtitle": {
+    "description": "Description under the Reading Size heading (Settings > Accessibility and the onboarding accessibility step)."
+  },
+  "accessibilityReadingSizeSmall": "Small",
+  "@accessibilityReadingSizeSmall": {
+    "description": "Reading Size option: the smallest text size. Spoken by screen readers as the option name."
+  },
+  "accessibilityReadingSizeDefault": "Default",
+  "@accessibilityReadingSizeDefault": {
+    "description": "Reading Size option: the standard text size. Spoken by screen readers as the option name."
+  },
+  "accessibilityReadingSizeLarge": "Large",
+  "@accessibilityReadingSizeLarge": {
+    "description": "Reading Size option: the largest text size. Spoken by screen readers as the option name."
+  },
+  "accessibilityReduceMotionTitle": "Reduce Motion",
+  "@accessibilityReduceMotionTitle": {
+    "description": "Switch name: the app's own Reduce Motion setting."
+  },
+  "accessibilityReduceMotionSubtitle": "Minimise animations and transitions",
+  "@accessibilityReduceMotionSubtitle": {
+    "description": "Description of the Reduce Motion switch."
+  },
+  "accessibilityQuietStudyModeSubtitle": "Inspired by Nyepi, a Balinese tradition of reflection, stillness and focus — reduces Captain Math and sound cues",
+  "@accessibilityQuietStudyModeSubtitle": {
+    "description": "Description of the Quiet Study Mode switch. Keep the name Nyepi and the persona name Captain Math untranslated."
+  },
+  "accessibilitySoundCuesTitle": "Sound Cues",
+  "@accessibilitySoundCuesTitle": {
+    "description": "Switch name: short optional sounds in Interactive Labs."
+  },
+  "accessibilitySoundCuesSubtitle": "Short, optional sounds for Interactive Labs actions",
+  "@accessibilitySoundCuesSubtitle": {
+    "description": "Description of the Sound Cues switch."
+  },
+  "onboardingTimeEstimateSeconds": "~{seconds} seconds",
+  "@onboardingTimeEstimateSeconds": {
+    "description": "Approximate time an onboarding step takes, shown in the onboarding header.",
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
   }
 }

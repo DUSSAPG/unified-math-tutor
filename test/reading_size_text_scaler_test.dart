@@ -189,7 +189,8 @@ void main() {
       expect(effective(tester), closeTo(1.6, 1e-9));
 
       for (final entry in readingSizes.entries) {
-        final option = find.byKey(Key('readingSizeOption-${entry.key}'));
+        final option =
+            find.byKey(Key('readingSizeOption-${entry.key.toLowerCase()}'));
         await tester.ensureVisible(option);
         await tester.tap(option);
         await tester.pumpAndSettle();
@@ -201,7 +202,8 @@ void main() {
         for (final other in readingSizes.keys) {
           expect(
             tester
-                    .getSemantics(find.byKey(Key('readingSizeOption-$other')))
+                    .getSemantics(find
+                        .byKey(Key('readingSizeOption-${other.toLowerCase()}')))
                     .getSemanticsData()
                     .flagsCollection
                     .isSelected ==
@@ -218,7 +220,7 @@ void main() {
       final semantics = tester.ensureSemantics();
       expect(
           tester
-              .getSemantics(find.byKey(const Key('readingSizeOption-Large')))
+              .getSemantics(find.byKey(const Key('readingSizeOption-large')))
               .getSemanticsData()
               .flagsCollection
               .isSelected,

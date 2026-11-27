@@ -10431,6 +10431,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Includes: {titles}'**
   String earlyMathsParentTitlesLine(String titles);
+
+  /// Subtitle under the Settings > Accessibility title.
+  ///
+  /// In en, this message translates to:
+  /// **'Adjust for comfort and readability'**
+  String get accessibilitySettingsSubtitle;
+
+  /// Description under the Reading Size heading (Settings > Accessibility and the onboarding accessibility step).
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a comfortable reading size'**
+  String get accessibilityReadingSizeSubtitle;
+
+  /// Reading Size option: the smallest text size. Spoken by screen readers as the option name.
+  ///
+  /// In en, this message translates to:
+  /// **'Small'**
+  String get accessibilityReadingSizeSmall;
+
+  /// Reading Size option: the standard text size. Spoken by screen readers as the option name.
+  ///
+  /// In en, this message translates to:
+  /// **'Default'**
+  String get accessibilityReadingSizeDefault;
+
+  /// Reading Size option: the largest text size. Spoken by screen readers as the option name.
+  ///
+  /// In en, this message translates to:
+  /// **'Large'**
+  String get accessibilityReadingSizeLarge;
+
+  /// Switch name: the app's own Reduce Motion setting.
+  ///
+  /// In en, this message translates to:
+  /// **'Reduce Motion'**
+  String get accessibilityReduceMotionTitle;
+
+  /// Description of the Reduce Motion switch.
+  ///
+  /// In en, this message translates to:
+  /// **'Minimise animations and transitions'**
+  String get accessibilityReduceMotionSubtitle;
+
+  /// Description of the Quiet Study Mode switch. Keep the name Nyepi and the persona name Captain Math untranslated.
+  ///
+  /// In en, this message translates to:
+  /// **'Inspired by Nyepi, a Balinese tradition of reflection, stillness and focus — reduces Captain Math and sound cues'**
+  String get accessibilityQuietStudyModeSubtitle;
+
+  /// Switch name: short optional sounds in Interactive Labs.
+  ///
+  /// In en, this message translates to:
+  /// **'Sound Cues'**
+  String get accessibilitySoundCuesTitle;
+
+  /// Description of the Sound Cues switch.
+  ///
+  /// In en, this message translates to:
+  /// **'Short, optional sounds for Interactive Labs actions'**
+  String get accessibilitySoundCuesSubtitle;
+
+  /// Approximate time an onboarding step takes, shown in the onboarding header.
+  ///
+  /// In en, this message translates to:
+  /// **'~{seconds} seconds'**
+  String onboardingTimeEstimateSeconds(int seconds);
 }
 
 class _AppLocalizationsDelegate

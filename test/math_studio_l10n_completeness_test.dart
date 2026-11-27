@@ -21,7 +21,11 @@ const _prefixes = [
   'allieLabel',
   'feedPanda',
   'feedTheHungryPanda',
-  'earlyMathsPlayground',
+  // 'earlyMaths' covers the playground intro and the 19 lane strings (AS-1);
+  // before, only 'earlyMathsPlayground' was checked, so the lane keys were
+  // missing from every Swiss locale without failing.
+  'earlyMaths',
+  'accessibility',
 ];
 
 // Brand terms deliberately kept identical across every locale.

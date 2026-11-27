@@ -19,6 +19,9 @@ import 'package:unified_math_tutor/shared/theme/app_theme.dart';
 /// unchanged, and the options work by touch, screen reader and keyboard.
 void main() {
   const labels = ['Small', 'Default', 'Large'];
+  // Widget keys use stable, language-independent ids (AS-1); the English
+  // labels above are what these English-locale tests expect to be spoken.
+  const ids = ['small', 'default', 'large'];
   const scales = [0.9, 1.0, 1.15];
 
   const surfaces = <String, ({Widget home, String keyPrefix})>{
@@ -36,7 +39,8 @@ void main() {
       (await SharedPreferences.getInstance()).getDouble('text_scale');
 
   for (final MapEntry(key: surface, value: s) in surfaces.entries) {
-    Finder option(String label) => find.byKey(Key('${s.keyPrefix}$label'));
+    Finder option(String label) =>
+        find.byKey(Key('${s.keyPrefix}${ids[labels.indexOf(label)]}'));
 
     Future<void> pumpScreen(WidgetTester tester, {double? stored}) async {
       SharedPreferences.setMockInitialValues(

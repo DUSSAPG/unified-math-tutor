@@ -20,7 +20,9 @@ class AccessibilityStepScreen extends StatefulWidget {
 
 class _AccessibilityStepScreenState extends State<AccessibilityStepScreen> {
   static const List<double> _textScales = [0.9, 1.0, 1.15];
-  static const _sizeLabels = ['Small', 'Default', 'Large'];
+  // Stable, language-independent identifiers for the widget keys; the
+  // visible names come from the localisations.
+  static const _sizeIds = ['small', 'default', 'large'];
 
   late int _textSize =
       _textScaleIndex(LocalPreferencesService.instance.textScale.value);
@@ -48,10 +50,15 @@ class _AccessibilityStepScreenState extends State<AccessibilityStepScreen> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final colors = context.appColors;
+    final sizeLabels = [
+      l10n.accessibilityReadingSizeSmall,
+      l10n.accessibilityReadingSizeDefault,
+      l10n.accessibilityReadingSizeLarge,
+    ];
     return OnboardingShell(
       step: 3,
       totalSteps: 4,
-      timeEstimate: '~15 seconds',
+      timeEstimate: l10n.onboardingTimeEstimateSeconds(15),
       title: l10n.onboardingAccessibilityTitle,
       subtitle: l10n.onboardingAccessibilitySub,
       continueLabel: l10n.onboardingContinue,
@@ -71,7 +78,7 @@ class _AccessibilityStepScreenState extends State<AccessibilityStepScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Reading Size',
+                  l10n.appearanceReadingSizeTitle,
                   style: TextStyle(
                     color: colors.primaryText,
                     fontSize: 15,
@@ -80,19 +87,20 @@ class _AccessibilityStepScreenState extends State<AccessibilityStepScreen> {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  'Choose a comfortable reading size',
+                  l10n.accessibilityReadingSizeSubtitle,
                   style: TextStyle(color: colors.secondaryText, fontSize: 13),
                 ),
                 const SizedBox(height: 14),
                 Row(
-                  children: List.generate(_sizeLabels.length, (i) {
+                  children: List.generate(_sizeIds.length, (i) {
                     return Expanded(
                       child: Padding(
                         padding: EdgeInsets.only(
-                          right: i < _sizeLabels.length - 1 ? 10 : 0,
+                          right: i < _sizeIds.length - 1 ? 10 : 0,
                         ),
                         child: _SizeOption(
-                          label: _sizeLabels[i],
+                          id: _sizeIds[i],
+                          label: sizeLabels[i],
                           fontSize: 12.0 + (i * 3),
                           selected: _textSize == i,
                           onTap: () => _selectTextSize(i),
@@ -133,7 +141,7 @@ class _AccessibilityStepScreenState extends State<AccessibilityStepScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Reduce Motion',
+                          l10n.accessibilityReduceMotionTitle,
                           style: TextStyle(
                             color: colors.primaryText,
                             fontSize: 15,
@@ -142,7 +150,7 @@ class _AccessibilityStepScreenState extends State<AccessibilityStepScreen> {
                         ),
                         const SizedBox(height: 2),
                         Text(
-                          'Minimise animations and transitions',
+                          l10n.accessibilityReduceMotionSubtitle,
                           style: TextStyle(
                               color: colors.secondaryText, fontSize: 13),
                         ),
@@ -168,12 +176,15 @@ class _AccessibilityStepScreenState extends State<AccessibilityStepScreen> {
 }
 
 class _SizeOption extends StatelessWidget {
+  /// Stable, language-independent identifier used for the widget key.
+  final String id;
   final String label;
   final double fontSize;
   final bool selected;
   final VoidCallback onTap;
 
   const _SizeOption({
+    required this.id,
     required this.label,
     required this.fontSize,
     required this.selected,
@@ -190,7 +201,7 @@ class _SizeOption extends StatelessWidget {
     // preview is visual only.
     return MergeSemantics(
       child: Semantics(
-        key: Key('onboardingReadingSizeOption-$label'),
+        key: Key('onboardingReadingSizeOption-$id'),
         button: true,
         inMutuallyExclusiveGroup: true,
         selected: selected,

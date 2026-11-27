@@ -6287,6 +6287,46 @@ class AppLocalizationsFr extends AppLocalizations {
   String earlyMathsParentTitlesLine(String titles) {
     return 'Includes: $titles';
   }
+
+  @override
+  String get accessibilitySettingsSubtitle =>
+      'Adjust for comfort and readability';
+
+  @override
+  String get accessibilityReadingSizeSubtitle =>
+      'Choose a comfortable reading size';
+
+  @override
+  String get accessibilityReadingSizeSmall => 'Small';
+
+  @override
+  String get accessibilityReadingSizeDefault => 'Default';
+
+  @override
+  String get accessibilityReadingSizeLarge => 'Large';
+
+  @override
+  String get accessibilityReduceMotionTitle => 'Reduce Motion';
+
+  @override
+  String get accessibilityReduceMotionSubtitle =>
+      'Minimise animations and transitions';
+
+  @override
+  String get accessibilityQuietStudyModeSubtitle =>
+      'Inspired by Nyepi, a Balinese tradition of reflection, stillness and focus — reduces Captain Math and sound cues';
+
+  @override
+  String get accessibilitySoundCuesTitle => 'Sound Cues';
+
+  @override
+  String get accessibilitySoundCuesSubtitle =>
+      'Short, optional sounds for Interactive Labs actions';
+
+  @override
+  String onboardingTimeEstimateSeconds(int seconds) {
+    return '~$seconds seconds';
+  }
 }
 
 /// The translations for French, as used in Switzerland (`fr_CH`).
@@ -10485,14 +10525,14 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
   String get appearanceThemeLight => 'Light';
 
   @override
-  String get appearanceAccessibilityHeading => 'ACCESSIBILITY';
+  String get appearanceAccessibilityHeading => 'ACCESSIBILITÉ';
 
   @override
-  String get appearanceReadingSizeTitle => 'Reading Size';
+  String get appearanceReadingSizeTitle => 'Taille du texte';
 
   @override
   String get appearanceReadingSizeSub =>
-      'Small, Default, or Large text scaling';
+      'Taille du texte Petit, Par défaut ou Grand';
 
   @override
   String get appearanceTouchTargetsTitle => 'Touch Targets 44px';
@@ -11487,5 +11527,113 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
       one: 'un dixième',
     );
     return '$_temp0';
+  }
+
+  @override
+  String get earlyMathsEntryIntro =>
+      'Choisis un point de départ agréable. L\'âge n\'est qu\'une suggestion, pas un niveau. Il n\'y a pas de test, et tu peux changer à tout moment.';
+
+  @override
+  String get earlyMathsLaneChooserLabel => 'Choisis un point de départ';
+
+  @override
+  String get earlyMathsLanePlayTitle => 'Découvrir les maths en jouant';
+
+  @override
+  String get earlyMathsLanePlayAges => 'Âge habituel : 4–5 ans';
+
+  @override
+  String get earlyMathsLaneKs1Title =>
+      'Bases des maths KS1 (programme d\'Angleterre)';
+
+  @override
+  String get earlyMathsLaneKs1Ages =>
+      'Âge habituel : 5–7 ans · Year 1–2 (Angleterre)';
+
+  @override
+  String get earlyMathsLaneNotSureTitle => 'Je ne sais pas encore';
+
+  @override
+  String get earlyMathsLaneNotSureSubtitle =>
+      'Aucun test nécessaire. Nous te proposerons une première étape en douceur.';
+
+  @override
+  String get earlyMathsLaneSwitchNote =>
+      'Changer n\'efface jamais ce que ton enfant a déjà fait.';
+
+  @override
+  String get earlyMathsActivitiesHeading => 'Activités à essayer';
+
+  @override
+  String get earlyMathsNotSureHeading => 'Une première étape en douceur';
+
+  @override
+  String get earlyMathsNotSureBody =>
+      'Il n\'y a pas de bon ou de mauvais choix. Essaie cette petite activité et vois comment ça se passe. Tu peux choisir un autre point de départ ci-dessus quand tu veux.';
+
+  @override
+  String get earlyMathsPandaScope =>
+      'Compte 1 à 3 pommes parmi 5, puis dis combien il en reste.';
+
+  @override
+  String get earlyMathsAbacusTitle => 'Boulier';
+
+  @override
+  String get earlyMathsAbacusScope =>
+      'Un outil interactif sur la valeur positionnelle : touche ou fais glisser les perles pour explorer les centaines, les dizaines et les unités.';
+
+  @override
+  String get earlyMathsParentHeading => 'Pour les adultes';
+
+  @override
+  String get earlyMathsParentCardTitle => 'Activités guidées par un parent';
+
+  @override
+  String get earlyMathsParentCardSubtitle =>
+      'De courtes activités à faire ensemble. S\'ouvre avec ton code PIN parental.';
+
+  @override
+  String earlyMathsParentTitlesLine(String titles) {
+    return 'Comprend : $titles';
+  }
+
+  @override
+  String get accessibilitySettingsSubtitle =>
+      'Ajuster pour plus de confort et de lisibilité';
+
+  @override
+  String get accessibilityReadingSizeSubtitle =>
+      'Choisir une taille de texte confortable';
+
+  @override
+  String get accessibilityReadingSizeSmall => 'Petit';
+
+  @override
+  String get accessibilityReadingSizeDefault => 'Par défaut';
+
+  @override
+  String get accessibilityReadingSizeLarge => 'Grand';
+
+  @override
+  String get accessibilityReduceMotionTitle => 'Réduire les animations';
+
+  @override
+  String get accessibilityReduceMotionSubtitle =>
+      'Limiter au minimum les animations et les transitions';
+
+  @override
+  String get accessibilityQuietStudyModeSubtitle =>
+      'Inspiré de Nyepi, une tradition balinaise de réflexion, de calme et de concentration — réduit Captain Math et les signaux sonores';
+
+  @override
+  String get accessibilitySoundCuesTitle => 'Signaux sonores';
+
+  @override
+  String get accessibilitySoundCuesSubtitle =>
+      'Sons courts et facultatifs pour les actions des laboratoires interactifs';
+
+  @override
+  String onboardingTimeEstimateSeconds(int seconds) {
+    return '~$seconds secondes';
   }
 }
