@@ -42,6 +42,22 @@
   "onboardingTeacherLabel": "Je suis enseignant",
   "onboardingTeacherSub": "Suis la progression de ta classe et propose des exercices à tes élèves.",
   "onboardingSelectError": "Veuillez choisir une option",
+  "onboardingSignInPrompt": "Tu as déjà un compte ?",
+  "@onboardingSignInPrompt": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingSignIn": "Se connecter",
+  "@onboardingSignIn": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingGuestMode": "Mode invité",
+  "@onboardingGuestMode": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingGuestModeSub": "Essaie une séance d'entraînement limitée.",
+  "@onboardingGuestModeSub": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "onboardingContinue": "Continuer",
   "onboardingFooter": "Données minimales. Pas de publicité. Learning Analytics disponible.",
   "onboardingAccessibilityTitle": "Rends la lecture plus confortable",
@@ -49,22 +65,63 @@
   "onboardingStageTitle": "À quel degré scolaire est l'élève ?",
   "onboardingStageSub": "Nous adaptons le contenu au bon niveau",
   "onboardingStageCount": "4",
-  "onboardingStage1Label": "Primaire (degrés 3–6)",
+  "onboardingStage1Label": "KS2 (Year 3–6, Angleterre)",
+  "@onboardingStage1Label": {
+    "description": "Swiss Phase 2 P0 correction (curriculum terminology). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "onboardingStage1Sub": "Mathématiques de base",
-  "onboardingStage2Label": "Secondaire I (degrés 7–9)",
+  "onboardingStage2Label": "KS3 (Year 7–9, Angleterre)",
+  "@onboardingStage2Label": {
+    "description": "Swiss Phase 2 P0 correction (curriculum terminology). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "onboardingStage2Sub": "Mathématiques approfondies",
-  "onboardingStage3Label": "Secondaire II (degrés 10–11)",
-  "onboardingStage3Sub": "Mathématiques gymnasiales",
-  "onboardingStage4Label": "Gymnase / Maturité (degrés 12–13)",
+  "onboardingStage3Label": "KS4 GCSE (Year 10–11, Angleterre)",
+  "@onboardingStage3Label": {
+    "description": "Swiss Phase 2 P0 correction (curriculum terminology). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingStage3Sub": "Préparation au GCSE de mathématiques",
+  "@onboardingStage3Sub": {
+    "description": "Swiss Phase 2 P0 correction (curriculum terminology). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingStage4Label": "KS5 (Year 12–13, Angleterre)",
+  "@onboardingStage4Label": {
+    "description": "Swiss Phase 2 P0 correction (curriculum terminology). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "onboardingStage4Sub": "Mathématiques avancées",
   "onboardingGoalTitle": "Quel est l'objectif ?",
   "onboardingGoalSub": "Choisis ton axe d'apprentissage",
-  "onboardingGoal1Label": "Soutien scolaire",
-  "onboardingGoal1Sub": "Gagner en confiance à tous les niveaux",
-  "onboardingGoal2Label": "Préparation aux examens",
-  "onboardingGoal2Sub": "Exercices ciblés et séries chronométrées",
-  "onboardingGoal3Label": "Parcours Oxford",
-  "onboardingGoal3Sub": "Approfondissement et mathématiques de compétition",
+  "onboardingGoal1Label": "Prendre confiance",
+  "@onboardingGoal1Label": {
+    "description": "Swiss Phase 2 P0 correction (stale translation). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingGoal1Sub": "Un entraînement régulier et serein, à ton rythme",
+  "@onboardingGoal1Sub": {
+    "description": "Swiss Phase 2 P0 correction (stale translation). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingGoal2Label": "Progresser en maths à l'école",
+  "@onboardingGoal2Label": {
+    "description": "Swiss Phase 2 P0 correction (stale translation). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingGoal2Sub": "Consolider les notions vues en classe",
+  "@onboardingGoal2Sub": {
+    "description": "Swiss Phase 2 P0 correction (stale translation). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingGoal3Label": "Préparer des examens",
+  "@onboardingGoal3Label": {
+    "description": "Swiss Phase 2 P0 correction (stale translation). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingGoal3Sub": "Entraînement ciblé au GCSE et séries chronométrées",
+  "@onboardingGoal3Sub": {
+    "description": "Swiss Phase 2 P0 correction (stale translation). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingGoal4Label": "Me lancer des défis",
+  "@onboardingGoal4Label": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingGoal4Sub": "Défis exigeants et problèmes avancés",
+  "@onboardingGoal4Sub": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "onboardingProfileTitle": "Enregistre ta progression",
   "onboardingProfileSub": "Facultatif — tu peux toujours modifier cela plus tard dans ton profil.",
   "onboardingDisplayNameLabel": "Comment devons-nous t'appeler ?",
@@ -72,7 +129,10 @@
   "onboardingDisplayNameHint": "ex. Alex",
   "onboardingLearnerNameLabel": "Comment devons-nous appeler ton apprenant ?",
   "onboardingLearnerNameSub": "Personnalise son Maths Journey.",
-  "onboardingLearnerNameHint": "e.g. Alex",
+  "onboardingLearnerNameHint": "p. ex. Alex",
+  "@onboardingLearnerNameHint": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "onboardingRelationshipLabel": "Ton lien avec l'apprenant",
   "onboardingRelationshipParent": "Parent",
   "onboardingRelationshipGuardian": "Tuteur légal / Tutrice légale",
@@ -97,8 +157,14 @@
   "upgradeWhatsIncluded": "Ce qui est inclus",
   "upgradeBenefit1Title": "Tuteur IA illimité",
   "upgradeBenefit1Sub": "Pose autant de questions que tu veux, reçois des explications étape par étape et des indices personnalisés — sans limite de crédits.",
-  "upgradeBenefit2Title": "Parcours Oxford",
-  "upgradeBenefit2Sub": "Accès au programme Oxford structuré avec des séries d'exercices sélectionnés et une progression guidée du primaire à la maturité.",
+  "upgradeBenefit2Title": "Parcours de style Oxford",
+  "@upgradeBenefit2Title": {
+    "description": "Swiss Phase 2 P0 correction (Oxford naming). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "upgradeBenefit2Sub": "Parcours structuré de style Oxford, avec des séries d'exercices sélectionnés et une progression guidée de KS3 à A-Level (programme anglais).",
+  "@upgradeBenefit2Sub": {
+    "description": "Swiss Phase 2 P0 correction (curriculum terminology). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "upgradeBenefit3Title": "Learning Analytics",
   "upgradeBenefit3Sub": "Suis ta progression grâce à des graphiques de performance détaillés, la détection de tes points faibles et des recommandations d'apprentissage personnalisées.",
   "upgradeComingSoonLabel": "Inclus dans Premium",
@@ -116,7 +182,10 @@
   "homeAchievementUnlocked": "Débloqué",
   "homeBadgeLocked": "Verrouillé",
   "homeWhatsNewTitle": "Nouveau dans v1.0",
-  "homeWhatsNewBody": "Le tuteur IA, le parcours Oxford et les nouveaux packs d'examens sont désormais disponibles.",
+  "homeWhatsNewBody": "Le tuteur IA, le parcours Oxford et les packs d'examens GCSE sont désormais disponibles.",
+  "@homeWhatsNewBody": {
+    "description": "Swiss Phase 2 P0 correction (curriculum terminology). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "homeDailyGoalTitle": "Objectif du jour",
   "homeDailyGoalSubtitle": "Résous 15 exercices aujourd'hui",
   "homeDailyGoalProgress": "{completed} / {target} complétés",
@@ -144,16 +213,25 @@
   "topicsFilterAll": "Tous",
   "topicsFilterRecommended": "Recommandés",
   "topicsFilterPractice": "Entraînement",
-  "topicsFilterGcse": "Examen cantonal",
+  "topicsFilterGcse": "GCSE",
+  "@topicsFilterGcse": {
+    "description": "Swiss Phase 2 P0 correction (curriculum terminology). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "topicsFilterOxfordTrack": "Parcours Oxford",
   "topicsFilterMore": "Plus",
   "topicsSearchHint": "Rechercher des thèmes",
   "topicsSelectTrack": "Choisir un parcours",
   "topicsTrackStandard": "Standard",
   "topicsTrackStandardSub": "Programme équilibré",
-  "topicsTrackGcseFoundation": "Examen cantonal — Base",
+  "topicsTrackGcseFoundation": "GCSE Foundation",
+  "@topicsTrackGcseFoundation": {
+    "description": "Swiss Phase 2 P0 correction (curriculum terminology). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "topicsTrackGcseFoundationSub": "Maîtriser les fondamentaux",
-  "topicsTrackGcseHigher": "Examen cantonal — Avancé",
+  "topicsTrackGcseHigher": "GCSE Higher",
+  "@topicsTrackGcseHigher": {
+    "description": "Swiss Phase 2 P0 correction (curriculum terminology). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "topicsTrackGcseHigherSub": "Contenus plus exigeants",
   "topicsTrackOxford": "Parcours Oxford",
   "topicsTrackOxfordSub": "Approfondissement et défi",
@@ -168,6 +246,18 @@
   "practiceModeTimedChallengeSub": "S'entraîner contre la montre",
   "practiceModeExamSimulator": "Simulateur d'examen",
   "practiceModeExamSimulatorSub": "Simuler les conditions d'un examen",
+  "practiceModeExamSimulatorSubFor": "Examen blanc de type {examLabel}",
+  "@practiceModeExamSimulatorSubFor": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "practiceExamSimulatorSelectPrompt": "Choisis un examen pour commencer",
+  "@practiceExamSimulatorSelectPrompt": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "practiceSelectExamLabel": "CHOISIR UN EXAMEN",
+  "@practiceSelectExamLabel": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "practiceQuestionsLabel": "Questions",
   "practiceStartButton": "Démarrer l'entraînement",
   "practiceExit": "Quitter",
@@ -245,7 +335,10 @@
   "helpPrivacyBullet3": "Learning Analytics disponible",
   "helpPrivacyBullet4": "Les outils parentaux sont protégés par un code PIN",
   "helpTermsTitle": "Conditions d'utilisation",
-  "helpTermsBody": "Utilise l'application comme outil d'apprentissage. Vérifie les décisions importantes avec un enseignant ou un parent.",
+  "helpTermsBody": "Gratuit pour les élèves et les parents. En utilisant Math Intelligence, tu acceptes nos conditions d'utilisation. Aucun paiement n'est requis pour l'accès standard.",
+  "@helpTermsBody": {
+    "description": "Swiss Phase 2 P0 correction (stale translation). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "helpParentalTitle": "Learning Analytics",
   "helpParentalHeadline": "Comprendre les progrès, repérer les lacunes et soutenir la prochaine étape.",
   "helpParentalBullet1": "Vue d'ensemble des progrès",
@@ -259,6 +352,14 @@
   "helpFooter": "Données minimales. Pas de publicité. Learning Analytics disponible.",
   "mentalMathVaultTitle": "Coffre de calcul mental",
   "mentalMathVaultSubtitle": "Apprends de puissantes astuces de calcul",
+  "homeFormulaLibraryTitle": "Formulaire",
+  "@homeFormulaLibraryTitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "homeFormulaLibrarySubtitle": "Aide-mémoire des principales formules mathématiques",
+  "@homeFormulaLibrarySubtitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "comingSoon": "Bientôt disponible",
   "dailyBrainTeaser": "Énigme du jour",
   "revealAnswer": "Afficher la réponse",
@@ -269,6 +370,10 @@
   "practiceExample": "Exercice",
   "loading": "Chargement...",
   "practiceNoQuestions": "Aucune question d'entraînement n'est disponible.",
+  "practiceTopicDrillEmpty": "Aucune question pour ce thème à ce niveau pour l'instant. Essaie un autre thème ou un autre niveau.",
+  "@practiceTopicDrillEmpty": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "practiceUnavailableTitle": "Cette zone d'entraînement n'est pas encore disponible.",
   "practiceUnavailableAction": "Choisir un autre sujet",
   "practiceEnglishContentNotice": "Les questions d'entraînement sont actuellement disponibles uniquement en anglais.",
@@ -307,6 +412,66 @@
       }
     }
   },
+  "ratioFoundationsHubCardTitle": "Bases : mise à l'échelle des rapports",
+  "@ratioFoundationsHubCardTitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "ratioFoundationsHubCardReason": "Reconnaître des rapports équivalents, puis s'entraîner, d'abord guidé puis seul, à multiplier les deux termes par un même nombre.",
+  "@ratioFoundationsHubCardReason": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "ratioFoundationsScreenTitle": "Bases : mise à l'échelle des rapports",
+  "@ratioFoundationsScreenTitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "ratioFoundationsRungRecognise": "Reconnaître",
+  "@ratioFoundationsRungRecognise": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "ratioFoundationsRungGuided": "Entraînement guidé",
+  "@ratioFoundationsRungGuided": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "ratioFoundationsRungFluency": "Automatisation",
+  "@ratioFoundationsRungFluency": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "ratioFoundationsShowHint": "Afficher l'indice",
+  "@ratioFoundationsShowHint": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "ratioFoundationsHideHint": "Masquer l'indice",
+  "@ratioFoundationsHideHint": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "ratioFoundationsCorrect": "Correct !",
+  "@ratioFoundationsCorrect": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "ratioFoundationsIncorrect": "Pas tout à fait",
+  "@ratioFoundationsIncorrect": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "ratioFoundationsContinue": "Continuer",
+  "@ratioFoundationsContinue": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "ratioFoundationsNextItem": "Exercice suivant",
+  "@ratioFoundationsNextItem": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "ratioFoundationsFluencyProgress": "{correct} exercices d'automatisation réussis sur {target} jusqu'ici",
+  "@ratioFoundationsFluencyProgress": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "ratioFoundationsCompletionTitle": "Bases de la mise à l'échelle des rapports terminées.",
+  "@ratioFoundationsCompletionTitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "ratioFoundationsCompletionBody": "D'autres activités sur les rapports arrivent bientôt.",
+  "@ratioFoundationsCompletionBody": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "mascotGreeting": "Prêt à faire le plein d'énergie mathématique ?",
   "mascotThinking": "Prends ton temps et réfléchis bien !",
   "mascotSuccess": "Excellent calcul ! Énergie ajoutée.",
@@ -325,7 +490,10 @@
   "topicsStandardSelected": "Parcours standard sélectionné.",
   "topicsNoResults": "Aucun thème trouvé",
   "topicsClearFilters": "Effacer les filtres",
-  "examPacksCtaSubtitle": "Débloque les niveaux GCSE, le parcours Oxford et les crédits Tutor.",
+  "examPacksCtaSubtitle": "Débloque GCSE Foundation, GCSE Higher, le parcours Oxford et les crédits Tutor.",
+  "@examPacksCtaSubtitle": {
+    "description": "Swiss Phase 2 P0 correction (curriculum terminology). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "examPacksIntro": "Choisis un pack pour un entraînement ciblé et l'aide du Tutor.",
   "examPackSelected": "{stage} sélectionné",
   "examPackKs2Title": "Mathématiques KS2",
@@ -394,6 +562,110 @@
   "pinMustBeFourDigits": "Entrez exactement 4 chiffres.",
   "pinIncorrect": "Code PIN incorrect.",
   "pinResetFailed": "Échec de la réinitialisation du PIN.",
+  "navJourney": "Journey",
+  "@navJourney": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "navMore": "Plus",
+  "@navMore": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "interactiveStudiosTitle": "Studios interactifs",
+  "@interactiveStudiosTitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "footballStudioDescription": "Football Studio propose des activités d'application sur les coordonnées, les rapports et les échelles, les angles, la relation distance-temps-vitesse, les aires et l'algèbre.",
+  "@footballStudioDescription": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "footballStudioChecking": "Vérification de l'installation de Football Studio…",
+  "@footballStudioChecking": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "footballStudioInstalled": "Football Studio est installé et prêt à s'ouvrir.",
+  "@footballStudioInstalled": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "footballStudioUnavailable": "Football Studio n'est pas installé sur cet appareil.",
+  "@footballStudioUnavailable": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "footballStudioInstallNeeded": "Installe Football Studio séparément pour ouvrir ces activités.",
+  "@footballStudioInstallNeeded": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "footballStudioOpen": "Ouvrir Football Studio",
+  "@footballStudioOpen": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "footballStudioOpening": "Ouverture de Football Studio…",
+  "@footballStudioOpening": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "footballStudioCheckFailed": "Impossible de vérifier si Football Studio est installé.",
+  "@footballStudioCheckFailed": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "footballStudioLaunchFailed": "Football Studio est installé, mais Android n'a pas pu l'ouvrir.",
+  "@footballStudioLaunchFailed": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "footballStudioTryAgain": "Réessayer d'ouvrir",
+  "@footballStudioTryAgain": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "footballStudioCheckAgain": "Vérifier à nouveau",
+  "@footballStudioCheckAgain": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "footballStudioAndroidOnly": "Football Studio est disponible sous forme d'application Android distincte.",
+  "@footballStudioAndroidOnly": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "footballStudioProgressOwnership": "Dans la V1, les réussites et les progrès restent sur cet appareil, dans Football Studio. Unified Math Tutor ne les lit pas et ne les partage pas.",
+  "@footballStudioProgressOwnership": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "navHideAction": "Masquer la navigation",
+  "@navHideAction": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "navShowAction": "Afficher la navigation",
+  "@navShowAction": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "commonCancel": "Annuler",
+  "@commonCancel": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "journeyTitle": "Ton Journey",
+  "@journeyTitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "journeySubtitle": "Séries, réussites et étapes clés au même endroit.",
+  "@journeySubtitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "journeyTeaserSubtitle": "Consulte ta série, tes réussites et tes étapes clés",
+  "@journeyTeaserSubtitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "practiceExitSessionTitle": "Quitter la séance ?",
+  "@practiceExitSessionTitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "practiceExitSessionBody": "Ta progression actuelle risque de ne pas être enregistrée.",
+  "@practiceExitSessionBody": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingDiscardTitle": "Supprimer tes réponses ?",
+  "@onboardingDiscardTitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingDiscardBody": "Si tu reviens en arrière, ce que tu as saisi à cette étape sera effacé.",
+  "@onboardingDiscardBody": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "onboardingProductName": "Math Intelligence",
   "onboardingTechBadge": "Propulsé par Adaptive Learning Intelligence",
   "onboardingHeroStatement": "Développe ta pensée mathématique.\nLibère ton potentiel.",
@@ -429,8 +701,14 @@
   "exploreMathIntelligenceTitle": "Découvrir Math Intelligence",
   "exploreHeaderSubtitle": "Ce que Math Intelligence propose aujourd'hui, et ce qui arrive ensuite.",
   "exploreAvailableTodaySection": "DISPONIBLE AUJOURD'HUI",
-  "exploreInAtelierSection": "IN ATELIER",
-  "exploreInAtelierBadge": "In Atelier",
+  "exploreInAtelierSection": "EN ATELIER",
+  "@exploreInAtelierSection": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "exploreInAtelierBadge": "En atelier",
+  "@exploreInAtelierBadge": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "exploreInDevelopmentNote": "Cette fonctionnalité est actuellement en cours de développement.",
   "exploreRoadmapTitle": "Philosophie de développement",
   "exploreRoadmapBody": "Math Intelligence est conçu pour évoluer avec le temps. Certaines fonctionnalités sont disponibles dès aujourd'hui. D'autres sont en cours de développement et de test avant leur lancement.",
@@ -478,11 +756,20 @@
   "journeyCardGoalTeacherAssign": "Tu assignes des exercices",
   "journeyCardGoalTeacherExplore": "Tu explores le programme",
   "mathStudioNavCardTitle": "Math Studio",
-  "mathStudioNavCardSubtitle": "Decouvre les maths que tu utilises deja",
+  "mathStudioNavCardSubtitle": "Découvre les maths que tu utilises déjà",
+  "@mathStudioNavCardSubtitle": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "mathStudioHubTitle": "Math Studio",
-  "mathStudioHubTagline": "Decouvre les mathematiques que tu utilises depuis toujours.",
+  "mathStudioHubTagline": "Découvre les mathématiques que tu utilises depuis toujours.",
+  "@mathStudioHubTagline": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "mathStudioBuildConfidenceTitle": "Renforcer la confiance",
-  "mathStudioBuildConfidenceSubtitle": "Entrainement doux et sans chrono, avec des explications detaillees",
+  "mathStudioBuildConfidenceSubtitle": "Entraînement doux et sans chrono, avec des explications détaillées",
+  "@mathStudioBuildConfidenceSubtitle": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "mathStudioMentalMathsTitle": "Calcul mental",
   "mathStudioMentalMathsSubtitle": "Strategies numeriques quotidiennes, sans pression",
   "mathStudioVisualMathsTitle": "Maths visuelles",
@@ -490,7 +777,10 @@
   "mathStudioDiscoveryTitle": "Bibliotheque de decouvertes",
   "mathStudioDiscoverySubtitle": "Des maths bien reelles, une carte a la fois",
   "mathStudioMathMagicTitle": "Maths & Magie",
-  "mathStudioMathMagicSubtitle": "Enigmes, motifs et surprises mathematiques ludiques",
+  "mathStudioMathMagicSubtitle": "Énigmes, motifs et surprises mathématiques ludiques",
+  "@mathStudioMathMagicSubtitle": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "mathStudioMathMagicBody": "Enigmes recreatives, tours de magie numeriques et curiosites mathematiques",
   "mathStudioMathMagicNumberTricksLabel": "Tours de nombres visuels",
   "mathStudioMathMagicNumberTricksSubtitle": "Suis un tour de nombres, etape par etape",
@@ -501,9 +791,15 @@
   "mathStudioMathMagicParityLabel": "Parite",
   "mathStudioMathMagicParitySubtitle": "Explore ce qui se passe quand on additionne des nombres pairs et impairs",
   "mathStudioSpatialIntelligenceTitle": "Intelligence spatiale",
-  "mathStudioSpatialIntelligenceSubtitle": "Developpe ton sens de la forme, de l'espace et du mouvement",
+  "mathStudioSpatialIntelligenceSubtitle": "Développe ton sens de la forme, de l'espace et du mouvement",
+  "@mathStudioSpatialIntelligenceSubtitle": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "mathStudioSpatialIntelligenceBody": "Patrons de cubes, rotations, transformations et casse-tetes spatiaux",
-  "mathStudioInDevelopmentBadge": "En developpement",
+  "mathStudioInDevelopmentBadge": "En développement",
+  "@mathStudioInDevelopmentBadge": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "mathStudioInDevelopmentNote": "Cette section est encore en construction - reviens bientot pour du nouveau contenu.",
   "mathStudioSpatialCubeActivitiesLabel": "Activites avec des cubes",
   "mathStudioSpatialRotationsLabel": "Rotations",
@@ -542,8 +838,14 @@
   "mathStudioWhereYoullUseThisLabel": "Ou tu utiliseras cela",
   "mathStudioFollowUpLabel": "A toi d'essayer",
   "mathStudioFollowUpCheckButton": "Verifier ma reponse",
-  "mathStudioFollowUpCorrect": "Bien joue — c'est exact.",
-  "mathStudioFollowUpTryAgain": "Pas tout a fait — revois les etapes ci-dessus.",
+  "mathStudioFollowUpCorrect": "Bien joué – c'est exact.",
+  "@mathStudioFollowUpCorrect": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "mathStudioFollowUpTryAgain": "Pas tout à fait – revois les étapes ci-dessus.",
+  "@mathStudioFollowUpTryAgain": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "mathStudioFollowUpAnswerLabel": "Reponse",
   "mathStudioExportButton": "Imprimer ou partager",
   "mathStudioExportChallengeOnly": "Fiche defi",
@@ -641,7 +943,10 @@
   "recallCardsBookmarkRemove": "Retirer des favoris",
   "recallCardsExportButton": "Imprimer ou partager",
   "recallCardsExportFiveCardSheet": "Feuille de revision (questions seulement)",
-  "recallCardsExportAnswerSheet": "Feuille de reponses",
+  "recallCardsExportAnswerSheet": "Feuille de réponses",
+  "@recallCardsExportAnswerSheet": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "recallCardsSessionComplete": "Session terminee",
   "recallCardsSessionCompleteSubtitle": "Bravo — reviens demain pour continuer",
   "recallCardsCardOf": "Carte {current} sur {total}",
@@ -665,11 +970,17 @@
   "recallCardsTopicProbability": "Probabilites",
 
   "mathStudioInteractiveLabsTitle": "Laboratoires interactifs",
-  "mathStudioInteractiveLabsSubtitle": "Des mathematiques concretes a toucher, modifier et tester",
+  "mathStudioInteractiveLabsSubtitle": "Des mathématiques concrètes à toucher, modifier et tester",
+  "@mathStudioInteractiveLabsSubtitle": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
 
   "labsHubTitle": "Laboratoires interactifs",
   "labsHubSubtitle": "Voir un concept, le toucher, le modifier et tester ta prediction",
-  "labsResetButton": "Reinitialiser",
+  "labsResetButton": "Réinitialiser",
+  "@labsResetButton": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsCheckButton": "Verifier",
   "labsNextChallengeButton": "Suivant",
   "labsFeedbackCorrect": "Bravo — c'est exact.",
@@ -692,7 +1003,10 @@
   "labsAlgebraBalanceStep2Button": "Diviser pour isoler x",
   "labsAlgebraBalanceSolvedFeedback": "Resolu ! x = {x}",
 
-  "labsNumberLineExplorerTitle": "Explorateur de droite numerique",
+  "labsNumberLineExplorerTitle": "Explorateur de droite numérique",
+  "@labsNumberLineExplorerTitle": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsNumberLineExplorerSubtitle": "Fais glisser pour atteindre une valeur sur la droite",
   "labsNumberLineExplorerConcept": "La position d'un nombre sur une droite numerique correspond a sa valeur — y compris les nombres negatifs et les decimales.",
   "labsNumberLineExplorerWhereUsed": "Lire un thermometre, une frise chronologique ou une echelle de mesure repose sur cette correspondance entre position et valeur.",
@@ -703,7 +1017,10 @@
   "labsFlightPathLabConcept": "Un cap (relevement) et une vitesse, maintenus pendant un temps fixe, determinent exactement ou tu arrives — cela combine les relevements avec vitesse, distance et temps.",
   "labsFlightPathLabWhereUsed": "Les pilotes et les marins utilisent ensemble le relevement et la vitesse pour naviguer vers une destination.",
   "labsFlightPathLabPrompt": "Cible : relevement {bearing}°, a {distance} km. Le temps de vol est fixe a 2 heures — choisis un cap et une vitesse pour l'atteindre.",
-  "labsFlightPathLabRadarLabel": "Une vue radar montrant la cible et, apres un vol test, l'endroit ou l'avion a atterri.",
+  "labsFlightPathLabRadarLabel": "Une vue radar montrant la cible et, après un vol test, l'endroit où l'avion a atterri.",
+  "@labsFlightPathLabRadarLabel": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsFlightPathLabHeadingLabel": "Direction : {direction}  •  Cap : {degrees}°",
   "labsFlightPathLabSpeedLabel": "Vitesse : {speed} km/h",
   "labsFlightPathLabTestButton": "Vol test",
@@ -744,6 +1061,18 @@
   "earlyMathsPlaygroundIntro": "Un espace calme et sans limite de temps ou les jeunes apprenants peuvent s'exercer a compter, a partager et a decouvrir les premieres fractions — sans points, sans chronometre, sans pression.",
   "feedTheHungryPandaTitle": "Nourris le panda affame",
   "feedTheHungryPandaSubtitle": "Compte les pommes une par une pour nourrir le panda",
+  "abacusPlayBuildDone": "Tu as formé 34 : 3 dizaines et 4 unités.",
+  "@abacusPlayBuildDone": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayBreakDone": "47 se décompose en 40 et 7.",
+  "@abacusPlayBreakDone": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayExchangeDone": "10 unités échangées contre 1 dizaine, donc 29 + 1 = 30.",
+  "@abacusPlayExchangeDone": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "feedPandaInstruction": "Donne au panda {count, plural, =1{1 pomme} other{{count} pommes}}.",
   "feedPandaWellDone": "Bravo ! Le panda a mange {count, plural, =1{1 pomme} other{{count} pommes}}.",
   "feedPandaHowManyLeft": "Combien de pommes reste-t-il ?",
@@ -797,7 +1126,10 @@
   "labsSpatialCubeNetExplorerFoldButton": "Plier",
   "labsSpatialCubeNetExplorerUnfoldButton": "Deplier",
   "labsSpatialCubeNetExplorerNextNetButton": "Patron suivant",
-  "labsSpatialCubeNetExplorerStepBackButton": "Precedent",
+  "labsSpatialCubeNetExplorerStepBackButton": "Précédent",
+  "@labsSpatialCubeNetExplorerStepBackButton": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsSpatialCubeNetExplorerStepForwardButton": "Etape suivante",
   "labsSpatialCubeNetExplorerWhereUsed": "La conception d'emballages et la tolerie commencent toutes deux par un patron a plat qui se plie en une forme 3D finie.",
   "labsSpatialCubeNetExplorerHelpWhatToDo": "Etudie le patron a plat, puis appuie sur Plier pour voir s'il se referme en cube.",
@@ -858,7 +1190,10 @@
   "labsAircraftLandingVectorApproachHelpWhatToDo": "Ajuste les curseurs de vitesse horizontale et verticale, puis teste ton approche.",
   "labsAircraftLandingVectorApproachHelpWhatToNotice": "Remarque comment la vitesse resultante et la trajectoire de descente changent toutes deux quand tu ajustes l'une ou l'autre composante.",
   "labsAircraftLandingVectorApproachHelpWhatItMeans": "Toute vitesse peut etre decomposee en une composante horizontale et une composante verticale, puis recombinee avec le theoreme de Pythagore pour trouver la vitesse resultante.",
-  "labsTryAgainButton": "Reessayer",
+  "labsTryAgainButton": "Réessayer",
+  "@labsTryAgainButton": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsHelpButton": "Aide",
   "labsHelpTitle": "Aide",
   "labsHelpWhatToDo": "Quoi faire",
@@ -900,9 +1235,18 @@
   "labsDataDetectiveFirstUseStep2": "Predis ce qui changera le plus : la moyenne ou la mediane.",
   "labsDataDetectiveFirstUseStep3": "Retire la valeur aberrante et revele la reponse.",
   "labsAlgebraBalanceMission": "Garde les deux plateaux en equilibre jusqu'a ce que x soit seul.",
-  "labsAlgebraBalanceStep1RemoveButton": "Retire {value} des deux cotes",
-  "labsAlgebraBalanceStep1AddButton": "Ajoute {value} aux deux cotes",
-  "labsAlgebraBalanceStep2DivideButton": "Divise les deux cotes par {value}",
+  "labsAlgebraBalanceStep1RemoveButton": "Retire {value} des deux côtés",
+  "@labsAlgebraBalanceStep1RemoveButton": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsAlgebraBalanceStep1AddButton": "Ajoute {value} aux deux côtés",
+  "@labsAlgebraBalanceStep1AddButton": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsAlgebraBalanceStep2DivideButton": "Divise les deux côtés par {value}",
+  "@labsAlgebraBalanceStep2DivideButton": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsAlgebraBalanceHelpWhatToDo": "Retire d'abord le terme constant, puis divise pour isoler x.",
   "labsAlgebraBalanceHelpWhatToNotice": "Observe que les deux plateaux changent toujours ensemble, de la meme quantite — l'equation reste toujours vraie.",
   "labsAlgebraBalanceHelpWhatItMeans": "Appliquer la meme operation aux deux cotes d'une equation la garde en equilibre, ce qui permet de la simplifier en toute securite jusqu'a x seul.",
@@ -1078,134 +1422,258 @@
   "familyMathsReassurance5": "Laisse ton enfant choisir les objets.",
   "familyMathsReassurance6": "Essayez une autre représentation si la première n'aide pas.",
 
-  "onboardingFamilyRoleDetailTitle": "Tell us about your family",
-  "@onboardingFamilyRoleDetailTitle": {},
-  "onboardingFamilyRoleDetailSub": "A couple of quick questions so we can help the right way.",
-  "@onboardingFamilyRoleDetailSub": {},
-  "onboardingFamilyLearnerNamesLabel": "Learner name(s)",
-  "@onboardingFamilyLearnerNamesLabel": {},
-  "onboardingFamilyLearnerNamesSub": "Add at least one — you can add more later.",
-  "@onboardingFamilyLearnerNamesSub": {},
-  "onboardingFamilyAddAnotherLearner": "Add another learner",
-  "@onboardingFamilyAddAnotherLearner": {},
-  "onboardingFamilyLearnerContextTitle": "What stage is your child at?",
-  "@onboardingFamilyLearnerContextTitle": {},
-  "onboardingFamilyLearnerContextSub": "This helps us suggest the right activities and topics.",
-  "@onboardingFamilyLearnerContextSub": {},
-  "onboardingFamilyGoalTitle": "What brings you here?",
-  "@onboardingFamilyGoalTitle": {},
-  "onboardingFamilyGoalSub": "Choose what matters most right now — you can change this later.",
-  "@onboardingFamilyGoalSub": {},
-  "onboardingFamilyGoalHomework": "Help with homework",
-  "@onboardingFamilyGoalHomework": {},
-  "onboardingFamilyGoalUnderstandMethods": "Understand modern methods",
-  "@onboardingFamilyGoalUnderstandMethods": {},
-  "onboardingFamilyGoalBuildConfidence": "Build confidence",
-  "@onboardingFamilyGoalBuildConfidence": {},
-  "onboardingFamilyGoalPractiseTogether": "Practise together",
-  "@onboardingFamilyGoalPractiseTogether": {},
-  "onboardingFamilyGoalPrepareExam": "Prepare for an exam",
-  "@onboardingFamilyGoalPrepareExam": {},
-  "onboardingFamilyGoalMonitorProgress": "Monitor progress",
-  "@onboardingFamilyGoalMonitorProgress": {},
-  "onboardingFamilyGoalSupportStruggling": "Support a learner who finds maths difficult",
-  "@onboardingFamilyGoalSupportStruggling": {},
-  "onboardingFamilyActivityLengthLabel": "Preferred activity length",
-  "@onboardingFamilyActivityLengthLabel": {},
-  "onboardingFamilyActivityLengthShort": "~10 minutes",
-  "@onboardingFamilyActivityLengthShort": {},
-  "onboardingFamilyActivityLengthMedium": "~20 minutes",
-  "@onboardingFamilyActivityLengthMedium": {},
-  "onboardingFamilyActivityLengthLong": "~30 minutes",
-  "@onboardingFamilyActivityLengthLong": {},
-  "onboardingFamilyPreferencesTitle": "Almost done",
-  "@onboardingFamilyPreferencesTitle": {},
-  "onboardingFamilyPreferencesSub": "A couple of optional extras, then you're in.",
-  "@onboardingFamilyPreferencesSub": {},
-  "onboardingFamilyAllieIntro": "You do not need to explain everything immediately.",
-  "@onboardingFamilyAllieIntro": {},
-  "onboardingFamilyNotificationsLabel": "Gentle reminders",
-  "@onboardingFamilyNotificationsLabel": {},
-  "onboardingFamilyNotificationsSub": "Optional — occasional nudges about your family activity.",
-  "@onboardingFamilyNotificationsSub": {},
-  "onboardingFamilyPinLabel": "Set a Parent PIN (optional)",
-  "@onboardingFamilyPinLabel": {},
-  "onboardingFamilyPinSub": "Protects Family Maths and parent content on a shared device. You can set this later in Settings instead.",
-  "@onboardingFamilyPinSub": {},
-  "onboardingFamilyFinishButton": "Go to Family Studio",
-  "@onboardingFamilyFinishButton": {},
-  "recallTopicNumber": "Number",
-  "@recallTopicNumber": {},
-  "recallTopicRatioAndProportion": "Ratio and Proportion",
-  "@recallTopicRatioAndProportion": {},
-  "recallTopicAlgebra": "Algebra",
-  "@recallTopicAlgebra": {},
-  "recallTopicGeometryAndMeasures": "Geometry and Measures",
-  "@recallTopicGeometryAndMeasures": {},
-  "recallTopicStatistics": "Statistics",
-  "@recallTopicStatistics": {},
-  "recallTopicProbability": "Probability",
-  "@recallTopicProbability": {},
+  "onboardingFamilyRoleDetailTitle": "Parle-nous de ta famille",
+  "@onboardingFamilyRoleDetailTitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingFamilyRoleDetailSub": "Quelques questions rapides pour t'aider au mieux.",
+  "@onboardingFamilyRoleDetailSub": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingFamilyLearnerNamesLabel": "Prénom(s) de l'apprenant ou des apprenants",
+  "@onboardingFamilyLearnerNamesLabel": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingFamilyLearnerNamesSub": "Ajoute au moins un prénom – tu pourras en ajouter d'autres plus tard.",
+  "@onboardingFamilyLearnerNamesSub": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingFamilyAddAnotherLearner": "Ajouter un autre apprenant",
+  "@onboardingFamilyAddAnotherLearner": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingFamilyLearnerContextTitle": "Où en est ton enfant ?",
+  "@onboardingFamilyLearnerContextTitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingFamilyLearnerContextSub": "Cela nous aide à proposer les bonnes activités et les bons thèmes.",
+  "@onboardingFamilyLearnerContextSub": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingFamilyGoalTitle": "Qu'est-ce qui t'amène ici ?",
+  "@onboardingFamilyGoalTitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingFamilyGoalSub": "Choisis ce qui compte le plus pour l'instant – tu pourras le modifier plus tard.",
+  "@onboardingFamilyGoalSub": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingFamilyGoalHomework": "Aider aux devoirs",
+  "@onboardingFamilyGoalHomework": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingFamilyGoalUnderstandMethods": "Comprendre les méthodes actuelles",
+  "@onboardingFamilyGoalUnderstandMethods": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingFamilyGoalBuildConfidence": "Prendre confiance",
+  "@onboardingFamilyGoalBuildConfidence": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingFamilyGoalPractiseTogether": "S'entraîner ensemble",
+  "@onboardingFamilyGoalPractiseTogether": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingFamilyGoalPrepareExam": "Préparer un examen",
+  "@onboardingFamilyGoalPrepareExam": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingFamilyGoalMonitorProgress": "Suivre les progrès",
+  "@onboardingFamilyGoalMonitorProgress": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingFamilyGoalSupportStruggling": "Soutenir un apprenant qui trouve les maths difficiles",
+  "@onboardingFamilyGoalSupportStruggling": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingFamilyActivityLengthLabel": "Durée d'activité préférée",
+  "@onboardingFamilyActivityLengthLabel": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingFamilyActivityLengthShort": "env. 10 minutes",
+  "@onboardingFamilyActivityLengthShort": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingFamilyActivityLengthMedium": "env. 20 minutes",
+  "@onboardingFamilyActivityLengthMedium": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingFamilyActivityLengthLong": "env. 30 minutes",
+  "@onboardingFamilyActivityLengthLong": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingFamilyPreferencesTitle": "Presque terminé",
+  "@onboardingFamilyPreferencesTitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingFamilyPreferencesSub": "Quelques options facultatives, et c'est parti.",
+  "@onboardingFamilyPreferencesSub": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingFamilyAllieIntro": "Tu n'as pas besoin de tout expliquer tout de suite.",
+  "@onboardingFamilyAllieIntro": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingFamilyNotificationsLabel": "Rappels discrets",
+  "@onboardingFamilyNotificationsLabel": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingFamilyNotificationsSub": "Facultatif – des rappels occasionnels pour votre activité en famille.",
+  "@onboardingFamilyNotificationsSub": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingFamilyPinLabel": "Définir un code PIN parental (facultatif)",
+  "@onboardingFamilyPinLabel": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingFamilyPinSub": "Protège Maths en famille et le contenu pour les parents sur un appareil partagé. Tu peux aussi le définir plus tard dans les réglages.",
+  "@onboardingFamilyPinSub": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "onboardingFamilyFinishButton": "Aller à Family Studio",
+  "@onboardingFamilyFinishButton": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "recallTopicNumber": "Nombres",
+  "@recallTopicNumber": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "recallTopicRatioAndProportion": "Rapports et proportionnalité",
+  "@recallTopicRatioAndProportion": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "recallTopicAlgebra": "Algèbre",
+  "@recallTopicAlgebra": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "recallTopicGeometryAndMeasures": "Géométrie et mesures",
+  "@recallTopicGeometryAndMeasures": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "recallTopicStatistics": "Statistiques",
+  "@recallTopicStatistics": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "recallTopicProbability": "Probabilités",
+  "@recallTopicProbability": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "familyStudioHubTitle": "Family Studio",
   "@familyStudioHubTitle": {},
-  "familyStudioHubOpeningPromise": "Parents do not need to become teachers.",
-  "@familyStudioHubOpeningPromise": {},
-  "familyStudioHubSupportingCopy": "Choose a topic, a short activity or a homework goal. Math Intelligence will help you begin.",
-  "@familyStudioHubSupportingCopy": {},
-  "familyStudioHubAllieMessage": "Ask what your child notices first.",
-  "@familyStudioHubAllieMessage": {},
-  "familyStudioProfileEntrySubtitle": "Activities, homework help and progress for your family.",
-  "@familyStudioProfileEntrySubtitle": {},
-  "familyStudioPrimaryActionStartActivity": "Start a Family Activity",
-  "@familyStudioPrimaryActionStartActivity": {},
-  "familyStudioPrimaryActionHomework": "Help with Homework",
-  "@familyStudioPrimaryActionHomework": {},
-  "familyStudioPrimaryActionLearning": "See What My Child Is Learning",
-  "@familyStudioPrimaryActionLearning": {},
-  "familyStudioPrimaryActionGuides": "Browse Parent Guides",
-  "@familyStudioPrimaryActionGuides": {},
-  "familyStudioSectionTodaysActivityTitle": "Today's Family Activity",
-  "@familyStudioSectionTodaysActivityTitle": {},
-  "familyStudioSectionTodaysActivitySubtitle": "One deterministic pick for today, from Family Maths.",
-  "@familyStudioSectionTodaysActivitySubtitle": {},
-  "familyStudioSectionHomeworkCompanionTitle": "Homework Companion",
-  "@familyStudioSectionHomeworkCompanionTitle": {},
-  "familyStudioSectionHomeworkCompanionSubtitle": "A short, deterministic session for tonight's homework.",
-  "@familyStudioSectionHomeworkCompanionSubtitle": {},
-  "familyStudioSectionLearningTitle": "What Your Child Is Learning",
-  "@familyStudioSectionLearningTitle": {},
-  "familyStudioSectionLearningSubtitle": "Recent Practice topics.",
-  "@familyStudioSectionLearningSubtitle": {},
-  "familyStudioSectionExplainTitle": "Explain This Method",
-  "@familyStudioSectionExplainTitle": {},
-  "familyStudioSectionExplainSubtitle": "Open the Formula Library.",
-  "@familyStudioSectionExplainSubtitle": {},
-  "familyStudioSectionConversationStartersTitle": "Conversation Starters",
-  "@familyStudioSectionConversationStartersTitle": {},
-  "familyStudioSectionConversationStartersSubtitle": "Questions to ask while you work together.",
+  "familyStudioHubOpeningPromise": "Les parents n'ont pas besoin de devenir enseignants.",
+  "@familyStudioHubOpeningPromise": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioHubSupportingCopy": "Choisis un thème, une activité courte ou un objectif de devoirs. Math Intelligence t'aide à commencer.",
+  "@familyStudioHubSupportingCopy": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioHubAllieMessage": "Demande d'abord à ton enfant ce qu'il remarque.",
+  "@familyStudioHubAllieMessage": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioProfileEntrySubtitle": "Activités, aide aux devoirs et progrès pour ta famille.",
+  "@familyStudioProfileEntrySubtitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioPrimaryActionStartActivity": "Commencer une activité en famille",
+  "@familyStudioPrimaryActionStartActivity": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioPrimaryActionHomework": "Aider aux devoirs",
+  "@familyStudioPrimaryActionHomework": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioPrimaryActionLearning": "Voir ce que mon enfant apprend",
+  "@familyStudioPrimaryActionLearning": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioPrimaryActionGuides": "Parcourir les guides pour parents",
+  "@familyStudioPrimaryActionGuides": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioSectionTodaysActivityTitle": "Activité en famille du jour",
+  "@familyStudioSectionTodaysActivityTitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioSectionTodaysActivitySubtitle": "Une proposition fixe pour aujourd'hui, tirée de Maths en famille.",
+  "@familyStudioSectionTodaysActivitySubtitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioSectionHomeworkCompanionTitle": "Compagnon des devoirs",
+  "@familyStudioSectionHomeworkCompanionTitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioSectionHomeworkCompanionSubtitle": "Une séance courte et prévisible pour les devoirs de ce soir.",
+  "@familyStudioSectionHomeworkCompanionSubtitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioSectionLearningTitle": "Ce que ton enfant apprend",
+  "@familyStudioSectionLearningTitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioSectionLearningSubtitle": "Thèmes d'entraînement récents.",
+  "@familyStudioSectionLearningSubtitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioSectionExplainTitle": "Expliquer cette méthode",
+  "@familyStudioSectionExplainTitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioSectionExplainSubtitle": "Ouvre le formulaire.",
+  "@familyStudioSectionExplainSubtitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioSectionConversationStartersTitle": "Pistes de conversation",
+  "@familyStudioSectionConversationStartersTitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioSectionConversationStartersSubtitle": "Des questions à poser pendant que vous travaillez ensemble.",
   "familyStudioSectionParentRecallCardsTitle": "Cartes memo pour parents",
   "familyStudioSectionParentRecallCardsSubtitle": "Des astuces chaleureuses et pratiques — pas des questions d'examen.",
-  "@familyStudioSectionConversationStartersSubtitle": {},
-  "familyStudioSectionFractionsRatioTitle": "Fractions and Ratio",
-  "@familyStudioSectionFractionsRatioTitle": {},
-  "familyStudioSectionFractionsRatioSubtitle": "Family Maths activities for this topic.",
-  "@familyStudioSectionFractionsRatioSubtitle": {},
-  "familyStudioSectionMentalMathsTitle": "Mental Maths Together",
-  "@familyStudioSectionMentalMathsTitle": {},
-  "familyStudioSectionMentalMathsSubtitle": "Quick number challenges for two.",
-  "@familyStudioSectionMentalMathsSubtitle": {},
-  "familyStudioSectionCubeSpatialTitle": "Cube and Spatial Activities",
-  "@familyStudioSectionCubeSpatialTitle": {},
-  "familyStudioSectionCubeSpatialSubtitle": "Build and view together.",
-  "@familyStudioSectionCubeSpatialSubtitle": {},
-  "familyStudioSectionProgressTitle": "Progress Snapshot",
-  "@familyStudioSectionProgressTitle": {},
-  "familyStudioSectionProgressSubtitle": "Topics studied, strengths and areas to revisit.",
-  "@familyStudioSectionProgressSubtitle": {},
-  "familyStudioSectionTutorToolsTitle": "Tutor Tools",
-  "@familyStudioSectionTutorToolsTitle": {},
-  "familyStudioSectionTutorToolsSubtitle": "Choose a learner, assign practice, add a note.",
-  "@familyStudioSectionTutorToolsSubtitle": {},
+  "@familyStudioSectionConversationStartersSubtitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioSectionFractionsRatioTitle": "Fractions et rapports",
+  "@familyStudioSectionFractionsRatioTitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioSectionFractionsRatioSubtitle": "Activités Maths en famille sur ce thème.",
+  "@familyStudioSectionFractionsRatioSubtitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioSectionMentalMathsTitle": "Calcul mental ensemble",
+  "@familyStudioSectionMentalMathsTitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioSectionMentalMathsSubtitle": "Défis de calcul rapides à deux.",
+  "@familyStudioSectionMentalMathsSubtitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioSectionCubeSpatialTitle": "Cubes et activités spatiales",
+  "@familyStudioSectionCubeSpatialTitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioSectionCubeSpatialSubtitle": "Construire et observer ensemble.",
+  "@familyStudioSectionCubeSpatialSubtitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioSectionProgressTitle": "Aperçu des progrès",
+  "@familyStudioSectionProgressTitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioSectionProgressSubtitle": "Thèmes étudiés, points forts et points à revoir.",
+  "@familyStudioSectionProgressSubtitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioSectionTutorToolsTitle": "Outils pour répétiteurs",
+  "@familyStudioSectionTutorToolsTitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioSectionTutorToolsSubtitle": "Choisis un apprenant, attribue des exercices, ajoute une note.",
+  "@familyStudioSectionTutorToolsSubtitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "familyStudioPinReminderTitle": "Protéger Family Studio",
   "@familyStudioPinReminderTitle": {},
   "familyStudioPinReminderBody": "Créez un code PIN parent pour protéger les devoirs, les rapports et les paramètres de l'apprenant.",
@@ -1214,107 +1682,256 @@
   "@familyStudioPinReminderSetPinButton": {},
   "familyStudioPinReminderLaterButton": "Me le rappeler plus tard",
   "@familyStudioPinReminderLaterButton": {},
-  "familyStudioTodayStartButton": "Start this activity",
-  "@familyStudioTodayStartButton": {},
-  "familyStudioLearningNoDataYet": "No Practice sessions yet — recent topics will appear here.",
-  "@familyStudioLearningNoDataYet": {},
-  "familyStudioLearningTopicSubtitle": "Recently studied in Practice.",
-  "@familyStudioLearningTopicSubtitle": {},
-  "familyStudioConversationAllieMessage": "A mistake can start a useful conversation.",
-  "@familyStudioConversationAllieMessage": {},
-  "familyStudioHomeworkTopicLabel": "Topic",
-  "@familyStudioHomeworkTopicLabel": {},
-  "familyStudioHomeworkTimeLabel": "Time available",
-  "@familyStudioHomeworkTimeLabel": {},
+  "familyStudioTodayStartButton": "Commencer cette activité",
+  "@familyStudioTodayStartButton": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioLearningNoDataYet": "Aucune séance d'entraînement pour l'instant – les thèmes récents apparaîtront ici.",
+  "@familyStudioLearningNoDataYet": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioLearningTopicSubtitle": "Étudié récemment dans Entraînement.",
+  "@familyStudioLearningTopicSubtitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioConversationAllieMessage": "Une erreur peut ouvrir une conversation utile.",
+  "@familyStudioConversationAllieMessage": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioHomeworkTopicLabel": "Thème",
+  "@familyStudioHomeworkTopicLabel": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioHomeworkTimeLabel": "Temps disponible",
+  "@familyStudioHomeworkTimeLabel": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "familyStudioHomeworkMinutes": "{minutes} min",
   "@familyStudioHomeworkMinutes": {
     "placeholders": {
       "minutes": { "type": "int" }
     }
   },
-  "familyStudioHomeworkHelpTypeLabel": "Type of help needed",
-  "@familyStudioHomeworkHelpTypeLabel": {},
-  "familyStudioHomeworkHelpUnderstandMethod": "Understand the method",
-  "@familyStudioHomeworkHelpUnderstandMethod": {},
-  "familyStudioHomeworkHelpPractiseTogether": "Practise together",
-  "@familyStudioHomeworkHelpPractiseTogether": {},
-  "familyStudioHomeworkHelpReviewMistakes": "Review mistakes",
-  "@familyStudioHomeworkHelpReviewMistakes": {},
-  "familyStudioHomeworkHelpPrepareTomorrow": "Prepare for tomorrow",
-  "@familyStudioHomeworkHelpPrepareTomorrow": {},
-  "familyStudioHomeworkHelpBuildConfidence": "Build confidence",
-  "@familyStudioHomeworkHelpBuildConfidence": {},
-  "familyStudioHomeworkGenerateButton": "Generate session",
-  "@familyStudioHomeworkGenerateButton": {},
-  "familyStudioHomeworkEmptySession": "Nothing to suggest yet for this combination — try a different topic or time.",
-  "@familyStudioHomeworkEmptySession": {},
-  "familyStudioProgressRecentTopics": "Topics recently studied",
-  "@familyStudioProgressRecentTopics": {},
-  "familyStudioProgressActivitiesCompleted": "Activities completed",
-  "@familyStudioProgressActivitiesCompleted": {},
-  "familyStudioProgressAreasToRevisit": "Areas to revisit",
-  "@familyStudioProgressAreasToRevisit": {},
-  "familyStudioProgressSuggestedActivity": "Suggested family activity",
-  "@familyStudioProgressSuggestedActivity": {},
-  "familyStudioProgressNoDataYet": "Not enough data yet — this will fill in as your family uses the app.",
-  "@familyStudioProgressNoDataYet": {},
-  "familyStudioTutorChooseLearnerLabel": "Choose a learner",
-  "@familyStudioTutorChooseLearnerLabel": {},
-  "familyStudioTutorAssignLabel": "Assign",
-  "@familyStudioTutorAssignLabel": {},
-  "familyStudioTutorAssignPractice": "Assign Practice",
-  "@familyStudioTutorAssignPractice": {},
-  "familyStudioTutorAssignRecallCards": "Assign Recall Cards",
-  "@familyStudioTutorAssignRecallCards": {},
-  "familyStudioTutorCompletionLabel": "{count} interactive lab completions so far",
+  "familyStudioHomeworkHelpTypeLabel": "Type d'aide souhaité",
+  "@familyStudioHomeworkHelpTypeLabel": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioHomeworkHelpUnderstandMethod": "Comprendre la méthode",
+  "@familyStudioHomeworkHelpUnderstandMethod": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioHomeworkHelpPractiseTogether": "S'entraîner ensemble",
+  "@familyStudioHomeworkHelpPractiseTogether": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioHomeworkHelpReviewMistakes": "Revoir les erreurs",
+  "@familyStudioHomeworkHelpReviewMistakes": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioHomeworkHelpPrepareTomorrow": "Se préparer pour demain",
+  "@familyStudioHomeworkHelpPrepareTomorrow": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioHomeworkHelpBuildConfidence": "Prendre confiance",
+  "@familyStudioHomeworkHelpBuildConfidence": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioHomeworkGenerateButton": "Créer une séance",
+  "@familyStudioHomeworkGenerateButton": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioHomeworkEmptySession": "Rien à proposer pour cette combinaison pour l'instant – essaie un autre thème ou une autre durée.",
+  "@familyStudioHomeworkEmptySession": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioProgressRecentTopics": "Thèmes étudiés récemment",
+  "@familyStudioProgressRecentTopics": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioProgressActivitiesCompleted": "Activités terminées",
+  "@familyStudioProgressActivitiesCompleted": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioProgressAreasToRevisit": "Points à revoir",
+  "@familyStudioProgressAreasToRevisit": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioProgressSuggestedActivity": "Activité en famille suggérée",
+  "@familyStudioProgressSuggestedActivity": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioProgressNoDataYet": "Pas encore assez de données – cela se remplira à mesure que ta famille utilise l'application.",
+  "@familyStudioProgressNoDataYet": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioTutorChooseLearnerLabel": "Choisir un apprenant",
+  "@familyStudioTutorChooseLearnerLabel": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioTutorAssignLabel": "Attribuer",
+  "@familyStudioTutorAssignLabel": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioTutorAssignPractice": "Attribuer des exercices",
+  "@familyStudioTutorAssignPractice": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioTutorAssignRecallCards": "Attribuer des cartes mémo",
+  "@familyStudioTutorAssignRecallCards": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioTutorCompletionLabel": "{count} laboratoires interactifs terminés jusqu'ici",
   "@familyStudioTutorCompletionLabel": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy.",
     "placeholders": {
-      "count": { "type": "int" }
+      "count": {
+        "type": "int"
+      }
     }
   },
   "familyStudioTutorNotesLabel": "Notes",
-  "@familyStudioTutorNotesLabel": {},
-  "familyStudioTutorNotesHint": "A short note for next time",
-  "@familyStudioTutorNotesHint": {},
+  "@familyStudioTutorNotesLabel": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "familyStudioTutorNotesHint": "Une courte note pour la prochaine fois",
+  "@familyStudioTutorNotesHint": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
 
-  "appearanceThemeTitle": "Appearance",
-  "@appearanceThemeTitle": {},
-  "appearanceThemeSub": "Choose how Math Intelligence looks — match your device, or pick Dark or Light.",
-  "@appearanceThemeSub": {},
-  "appearanceThemeSystem": "System",
-  "@appearanceThemeSystem": {},
-  "appearanceThemeDark": "Dark",
-  "@appearanceThemeDark": {},
-  "appearanceThemeLight": "Light",
-  "@appearanceThemeLight": {},
+  "appearanceThemeTitle": "Apparence",
+  "@appearanceThemeTitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "appearanceThemeSub": "Choisis l'apparence de Math Intelligence – comme ton appareil, ou en mode sombre ou clair.",
+  "@appearanceThemeSub": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "appearanceThemeSystem": "Système",
+  "@appearanceThemeSystem": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "appearanceThemeDark": "Sombre",
+  "@appearanceThemeDark": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "appearanceThemeLight": "Clair",
+  "@appearanceThemeLight": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "appearanceAccessibilityHeading": "ACCESSIBILITÉ",
   "@appearanceAccessibilityHeading": {"description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."},
   "appearanceReadingSizeTitle": "Taille du texte",
   "@appearanceReadingSizeTitle": {"description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."},
   "appearanceReadingSizeSub": "Taille du texte Petit, Par défaut ou Grand",
   "@appearanceReadingSizeSub": {"description": "AS-1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."},
-  "appearanceTouchTargetsTitle": "Touch Targets 44px",
-  "@appearanceTouchTargetsTitle": {},
-  "appearanceTouchTargetsSub": "Ergonomic controls",
-  "@appearanceTouchTargetsSub": {},
-  "appearanceTypographyTitle": "Clear Typography",
-  "@appearanceTypographyTitle": {},
-  "appearanceTypographySub": "Readable font at all sizes",
-  "@appearanceTypographySub": {},
-  "appearanceResetOnboardingHeading": "RESET ONBOARDING",
-  "@appearanceResetOnboardingHeading": {},
-  "appearanceResetOnboardingSub": "Reset the app introduction to go through the initial setup again.",
-  "@appearanceResetOnboardingSub": {},
-  "appearanceResetOnboardingButton": "Reset Onboarding",
-  "@appearanceResetOnboardingButton": {},
-  "practiceExamEntranceExamPrep": "Preparation examen d'entree",
-  "@practiceExamEntranceExamPrep": {},
-  "entranceExamHubTitle": "Preparation a l'examen d'entree",
-  "@entranceExamHubTitle": {},
-  "entranceExamHubIntro": "Entrainement aux examens d'entree des ecoles independantes, distinct du simulateur d'examen GCSE — concu pour la tranche d'age 11+ et evalue en comparant ta propre demarche a une solution modele, pas par choix multiple.",
-  "@entranceExamHubIntro": {},
-  "entranceExamDisclaimerHeading": "Aucune affiliation avec une ecole ou un office d'examen",
-  "@entranceExamDisclaimerHeading": {},
+  "appearanceTouchTargetsTitle": "Zones tactiles de 44 px",
+  "@appearanceTouchTargetsTitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "appearanceTouchTargetsSub": "Commandes ergonomiques",
+  "@appearanceTouchTargetsSub": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "appearanceTypographyTitle": "Typographie claire",
+  "@appearanceTypographyTitle": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "appearanceTypographySub": "Police lisible à toutes les tailles",
+  "@appearanceTypographySub": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "appearanceResetOnboardingHeading": "RÉINITIALISER L'INTRODUCTION",
+  "@appearanceResetOnboardingHeading": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "appearanceResetOnboardingSub": "Réinitialise l'introduction de l'application pour refaire la configuration initiale.",
+  "@appearanceResetOnboardingSub": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "appearanceResetOnboardingButton": "Réinitialiser l'introduction",
+  "@appearanceResetOnboardingButton": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseHundredthsLineLabel": "Droite numérique agrandie de 0.00 à 0.10, graduée en centièmes",
+  "@numberSenseHundredthsLineLabel": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseCompareLeftMarkerSemantics": "Repère sur la droite numérique pour deux tiers, 2/3",
+  "@numberSenseCompareLeftMarkerSemantics": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseCompareRightMarkerSemantics": "Repère sur la droite numérique pour trois quarts, 3/4",
+  "@numberSenseCompareRightMarkerSemantics": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonCorrectLabel": "Correct",
+  "@numberSenseComparisonCorrectLabel": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonReviewLabel": "Revoir la comparaison",
+  "@numberSenseComparisonReviewLabel": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseNextSkill": "Compétence suivante",
+  "@numberSenseNextSkill": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseSkillSheetClose": "Fermer",
+  "@numberSenseSkillSheetClose": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsRetryEqualParts": "Essayer un autre exemple",
+  "@pandaPortionsRetryEqualParts": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsRetryHalves": "Essayer une autre moitié",
+  "@pandaPortionsRetryHalves": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsRetryQuarters": "Essayer un autre quart",
+  "@pandaPortionsRetryQuarters": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsWhatNext": "Et maintenant ?",
+  "@pandaPortionsWhatNext": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsNextLesson": "Leçon suivante",
+  "@pandaPortionsNextLesson": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsWholeApple": "1 pomme entière",
+  "@pandaPortionsWholeApple": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsStripLabel": "Bande de fractions : {fed} parts égales sur {parts} données au panda.",
+  "@pandaPortionsStripLabel": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsStripFed": "donné",
+  "@pandaPortionsStripFed": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsChoosePlate": "Choisir l'assiette {plate}",
+  "@pandaPortionsChoosePlate": {
+    "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "practiceExamEntranceExamPrep": "Préparation aux examens d'entrée",
+  "@practiceExamEntranceExamPrep": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "entranceExamHubTitle": "Préparation à l'examen d'entrée",
+  "@entranceExamHubTitle": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "entranceExamHubIntro": "Entraînement aux examens d'entrée des écoles indépendantes anglaises (independent schools), distinct du simulateur d'examen GCSE – conçu pour la tranche d'âge 11+ et évalué en comparant ta propre démarche à une solution modèle, pas par choix multiple.",
+  "@entranceExamHubIntro": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "entranceExamDisclaimerHeading": "Aucune affiliation avec une école ou un office d'examen",
+  "@entranceExamDisclaimerHeading": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "entranceExamAgeBandLabel": "Tranche d'age",
   "@entranceExamAgeBandLabel": {},
   "entranceExamDurationLabel": "Duree",
@@ -1335,28 +1952,37 @@
       }
     }
   },
-  "entranceExamModePracticeBySkillTitle": "Entrainement par competence",
-  "@entranceExamModePracticeBySkillTitle": {},
+  "entranceExamModePracticeBySkillTitle": "Entraînement par compétence",
+  "@entranceExamModePracticeBySkillTitle": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "entranceExamModePracticeBySkillSub": "Travaille des questions regroupees par competence, avec des demarches types pour te comparer.",
   "@entranceExamModePracticeBySkillSub": {},
   "entranceExamModeReviewMethodsTitle": "Revoir les methodes",
   "@entranceExamModeReviewMethodsTitle": {},
-  "entranceExamModeReviewMethodsSub": "Revois la demarche complete de chaque question disponible — sans chronometre, sans notation.",
-  "@entranceExamModeReviewMethodsSub": {},
-  "entranceExamModeUntimedPaperTitle": "Epreuve sans chronometre",
-  "@entranceExamModeUntimedPaperTitle": {},
+  "entranceExamModeReviewMethodsSub": "Revois la démarche complète de chaque question disponible – sans chronomètre, sans notation.",
+  "@entranceExamModeReviewMethodsSub": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "entranceExamModeUntimedPaperTitle": "Épreuve sans chronomètre",
+  "@entranceExamModeUntimedPaperTitle": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "entranceExamModeUntimedPaperSub": "Passe l'epreuve complete sans limite de temps.",
   "@entranceExamModeUntimedPaperSub": {},
-  "entranceExamModeTimedMockTitle": "Examen blanc chronometre",
-  "@entranceExamModeTimedMockTitle": {},
+  "entranceExamModeTimedMockTitle": "Examen blanc chronométré",
+  "@entranceExamModeTimedMockTitle": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "entranceExamModeTimedMockSub": "Passe l'epreuve complete dans les conditions reelles de l'examen, chronometree.",
   "@entranceExamModeTimedMockSub": {},
   "entranceExamModeScholarshipChallengeTitle": "Defi bourse d'etudes",
   "@entranceExamModeScholarshipChallengeTitle": {},
   "entranceExamModeScholarshipChallengeSub": "Une epreuve plus exigeante pour les candidats de niveau bourse d'etudes.",
   "@entranceExamModeScholarshipChallengeSub": {},
-  "entranceExamModeLockedFullPaperReason": "Se debloque une fois l'epreuve complete de {declared} questions prete — {authored} redigees pour l'instant.",
+  "entranceExamModeLockedFullPaperReason": "Se débloque une fois l'épreuve complète de {declared} questions prête – {authored} rédigées pour l'instant.",
   "@entranceExamModeLockedFullPaperReason": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy.",
     "placeholders": {
       "declared": {
         "type": "int"
@@ -1415,12 +2041,16 @@
   "@entranceExamMethodMarkPartial": {},
   "entranceExamMethodMarkUnsupported": "Reponse seule, sans demarche",
   "@entranceExamMethodMarkUnsupported": {},
-  "entranceExamMethodMarkBlank": "Je n'ai pas essaye",
-  "@entranceExamMethodMarkBlank": {},
+  "entranceExamMethodMarkBlank": "Je n'ai pas essayé",
+  "@entranceExamMethodMarkBlank": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "entranceExamNextQuestionButton": "Question suivante",
   "@entranceExamNextQuestionButton": {},
-  "entranceExamSessionCompleteTitle": "Entrainement termine",
-  "@entranceExamSessionCompleteTitle": {},
+  "entranceExamSessionCompleteTitle": "Entraînement terminé",
+  "@entranceExamSessionCompleteTitle": {
+    "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "entranceExamSessionEstimatedMarks": "Points estimes : {marks} / {total}",
   "@entranceExamSessionEstimatedMarks": {
     "placeholders": {

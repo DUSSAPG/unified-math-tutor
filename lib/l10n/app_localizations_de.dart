@@ -6361,10 +6361,10 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
   String get topicsFilterRecommended => 'Empfohlen';
 
   @override
-  String get topicsFilterOxfordTrack => 'Oxford-Pfad';
+  String get topicsFilterOxfordTrack => 'Oxford-Track';
 
   @override
-  String get topicsFilterGcse => 'Kantonalprüfung';
+  String get topicsFilterGcse => 'GCSE';
 
   @override
   String get topicsFilterMore => 'Mehr';
@@ -6379,19 +6379,19 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
   String get topicsTrackStandardSub => 'Ausgewogener Lehrplan';
 
   @override
-  String get topicsTrackGcseFoundation => 'Kantonalprüfung – Grundniveau';
+  String get topicsTrackGcseFoundation => 'GCSE Foundation';
 
   @override
   String get topicsTrackGcseFoundationSub => 'Grundlagen sicher beherrschen';
 
   @override
-  String get topicsTrackGcseHigher => 'Kantonalprüfung – Erweitertes Niveau';
+  String get topicsTrackGcseHigher => 'GCSE Higher';
 
   @override
   String get topicsTrackGcseHigherSub => 'Anspruchsvollere Inhalte';
 
   @override
-  String get topicsTrackOxford => 'Oxford-Pfad';
+  String get topicsTrackOxford => 'Oxford-Track';
 
   @override
   String get topicsTrackOxfordSub => 'Vertiefung und Herausforderung';
@@ -6441,14 +6441,30 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
       'Eine Prüfungssituation simulieren';
 
   @override
-  String get practiceExamEntranceExamPrep => 'Aufnahmepruefung-Vorbereitung';
+  String practiceModeExamSimulatorSubFor(String examLabel) {
+    return 'Probeprüfung im Stil von $examLabel';
+  }
+
+  @override
+  String get practiceExamSimulatorSelectPrompt =>
+      'Wähle eine Prüfung, um zu beginnen';
+
+  @override
+  String get practiceSelectExamLabel => 'PRÜFUNG WÄHLEN';
+
+  @override
+  String get practiceExamSwissGymnasium => 'Gymnasium (Schweiz)';
+
+  @override
+  String get practiceExamEntranceExamPrep =>
+      'Vorbereitung auf Aufnahmeprüfungen';
 
   @override
   String get entranceExamHubTitle => 'Vorbereitung auf die Aufnahmepruefung';
 
   @override
   String get entranceExamHubIntro =>
-      'Uebung fuer Aufnahmepruefungen an Privatschulen, getrennt vom GCSE-Pruefungssimulator — konzipiert fuer die Altersgruppe 11+ und bewertet, indem du deinen eigenen Loesungsweg mit einer Musterloesung vergleichst, nicht per Multiple-Choice.';
+      'Übung für Aufnahmeprüfungen englischer Privatschulen (Independent Schools), getrennt vom GCSE-Prüfungssimulator – konzipiert für die Altersgruppe 11+ und bewertet, indem du deinen eigenen Lösungsweg mit einer Musterlösung vergleichst, nicht per Multiple-Choice.';
 
   @override
   String get entranceExamDisclaimerHeading =>
@@ -6479,8 +6495,7 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
   }
 
   @override
-  String get entranceExamModePracticeBySkillTitle =>
-      'Uebung nach Themenbereich';
+  String get entranceExamModePracticeBySkillTitle => 'Übung nach Themenbereich';
 
   @override
   String get entranceExamModePracticeBySkillSub =>
@@ -6494,11 +6509,11 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
       'Sieh dir den vollstaendigen Loesungsweg jeder verfuegbaren Aufgabe noch einmal an — ohne Zeitlimit, ohne Bewertung.';
 
   @override
-  String get entranceExamModeUntimedPaperTitle => 'Pruefung ohne Zeitlimit';
+  String get entranceExamModeUntimedPaperTitle => 'Prüfung ohne Zeitlimit';
 
   @override
   String get entranceExamModeUntimedPaperSub =>
-      'Bearbeite die vollstaendige Pruefung ohne Zeitlimit.';
+      'Bearbeite die vollständige Prüfung ohne Zeitlimit.';
 
   @override
   String get entranceExamModeTimedMockTitle =>
@@ -6506,7 +6521,7 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
 
   @override
   String get entranceExamModeTimedMockSub =>
-      'Bearbeite die vollstaendige Pruefung unter echten Pruefungsbedingungen mit Zeitlimit.';
+      'Bearbeite die vollständige Prüfung unter echten Prüfungsbedingungen mit Zeitlimit.';
 
   @override
   String get entranceExamModeScholarshipChallengeTitle =>
@@ -6514,11 +6529,11 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
 
   @override
   String get entranceExamModeScholarshipChallengeSub =>
-      'Eine anspruchsvollere Pruefung fuer Kandidatinnen und Kandidaten auf Stipendiumsniveau.';
+      'Eine anspruchsvollere Prüfung für Kandidatinnen und Kandidaten auf Stipendiumsniveau.';
 
   @override
   String entranceExamModeLockedFullPaperReason(int declared, int authored) {
-    return 'Wird freigeschaltet, sobald die vollstaendige Pruefung mit $declared Aufgaben bereit ist — bisher sind $authored verfasst.';
+    return 'Wird freigeschaltet, sobald die vollständige Prüfung mit $declared Aufgaben bereit ist – bisher sind $authored verfasst.';
   }
 
   @override
@@ -6526,24 +6541,24 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
       'Dieses Paket ist auf Grundniveau — die Stipendium-Herausforderung braucht ein Paket auf Stipendiumsniveau.';
 
   @override
-  String get entranceExamModeLockedBadge => 'Demnaechst';
+  String get entranceExamModeLockedBadge => 'Demnächst';
 
   @override
-  String get entranceExamSkillPickerTitle => 'Themenbereich waehlen';
+  String get entranceExamSkillPickerTitle => 'Themenbereich wählen';
 
   @override
   String entranceExamSkillQuestionCountLabel(int count) {
-    return '$count Aufgaben verfuegbar';
+    return '$count Aufgaben verfügbar';
   }
 
   @override
   String get entranceExamSkillNumberFluency => 'Rechenfertigkeit';
 
   @override
-  String get entranceExamSkillFractionsAndPercentages => 'Brueche & Prozente';
+  String get entranceExamSkillFractionsAndPercentages => 'Brüche & Prozente';
 
   @override
-  String get entranceExamSkillRatioAndProportion => 'Verhaeltnis & Proportion';
+  String get entranceExamSkillRatioAndProportion => 'Verhältnis & Proportion';
 
   @override
   String get entranceExamSkillAlgebraicReasoning => 'Algebraisches Denken';
@@ -6587,7 +6602,7 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
   String get entranceExamNextQuestionButton => 'Naechste Aufgabe';
 
   @override
-  String get entranceExamSessionCompleteTitle => 'Uebung abgeschlossen';
+  String get entranceExamSessionCompleteTitle => 'Übung abgeschlossen';
 
   @override
   String entranceExamSessionEstimatedMarks(String marks, int total) {
@@ -6828,7 +6843,7 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
 
   @override
   String get helpTermsBody =>
-      'Nutze die App als Lernhilfe. Prüfe wichtige Entscheidungen mit einer Lehrperson oder einem Elternteil.';
+      'Kostenlos für Lernende und Eltern. Mit der Nutzung von Math Intelligence stimmst du unseren Nutzungsbedingungen zu. Für den Standardzugang ist keine Zahlung erforderlich.';
 
   @override
   String get helpParentalTitle => 'Learning Analytics';
@@ -7028,6 +7043,19 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
   String get onboardingSelectError => 'Bitte wähle eine Option';
 
   @override
+  String get onboardingSignInPrompt => 'Hast du bereits ein Konto?';
+
+  @override
+  String get onboardingSignIn => 'Anmelden';
+
+  @override
+  String get onboardingGuestMode => 'Gastmodus';
+
+  @override
+  String get onboardingGuestModeSub =>
+      'Probiere eine eingeschränkte Übungseinheit aus.';
+
+  @override
   String get onboardingContinue => 'Weiter';
 
   @override
@@ -7060,25 +7088,25 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
   String get onboardingStageCount => '4';
 
   @override
-  String get onboardingStage1Label => 'Primarstufe (Kl. 3–6)';
+  String get onboardingStage1Label => 'KS2 (Year 3–6, England)';
 
   @override
   String get onboardingStage1Sub => 'Grundschulmathematik';
 
   @override
-  String get onboardingStage2Label => 'Sekundarstufe I (Kl. 7–9)';
+  String get onboardingStage2Label => 'KS3 (Year 7–9, England)';
 
   @override
   String get onboardingStage2Sub => 'Weiterführende Mathematik';
 
   @override
-  String get onboardingStage3Label => 'Sekundarstufe II (Kl. 10–11)';
+  String get onboardingStage3Label => 'KS4 GCSE (Year 10–11, England)';
 
   @override
-  String get onboardingStage3Sub => 'Gymnasialmathematik';
+  String get onboardingStage3Sub => 'Vorbereitung auf GCSE Mathematik';
 
   @override
-  String get onboardingStage4Label => 'Gymnasium / Maturität (Kl. 12–13)';
+  String get onboardingStage4Label => 'KS5 (Year 12–13, England)';
 
   @override
   String get onboardingStage4Sub => 'Höhere Mathematik';
@@ -7097,22 +7125,32 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
       'Wähle den passenden Unterstützungsschwerpunkt.';
 
   @override
-  String get onboardingGoal1Label => 'Schulunterstützung';
+  String get onboardingGoal1Label => 'Selbstvertrauen aufbauen';
 
   @override
-  String get onboardingGoal1Sub => 'Vertrauen über alle Lernstufen aufbauen';
+  String get onboardingGoal1Sub =>
+      'Ruhiges Üben ohne Druck, in deinem eigenen Tempo';
 
   @override
-  String get onboardingGoal2Label => 'Prüfungsvorbereitung';
+  String get onboardingGoal2Label => 'Schulmathematik verbessern';
 
   @override
-  String get onboardingGoal2Sub => 'Gezielte Übungen & zeitgesteuerte Sets';
+  String get onboardingGoal2Sub =>
+      'Alltägliche Themen aus dem Unterricht festigen';
 
   @override
-  String get onboardingGoal3Label => 'Oxford-Track';
+  String get onboardingGoal3Label => 'Auf Prüfungen vorbereiten';
 
   @override
-  String get onboardingGoal3Sub => 'Vertiefung und Wettbewerbsmathematik';
+  String get onboardingGoal3Sub =>
+      'Gezieltes GCSE-Training und Übungssets mit Zeitlimit';
+
+  @override
+  String get onboardingGoal4Label => 'Mich herausfordern';
+
+  @override
+  String get onboardingGoal4Sub =>
+      'Anspruchsvolle Aufgaben und fortgeschrittene Probleme';
 
   @override
   String get onboardingParentGoal1Label =>
@@ -7203,7 +7241,7 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
   String get onboardingLearnerNameSub => 'Personalisiert die Maths Journey.';
 
   @override
-  String get onboardingLearnerNameHint => 'e.g. Alex';
+  String get onboardingLearnerNameHint => 'z. B. Alex';
 
   @override
   String get onboardingRelationshipLabel =>
@@ -7284,11 +7322,11 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
       'Stelle unbegrenzt Fragen, erhalte Schritt-für-Schritt-Erklärungen und persönliche Hinweise ohne Kreditlimit.';
 
   @override
-  String get upgradeBenefit2Title => 'Oxford-Kurs';
+  String get upgradeBenefit2Title => 'Track im Oxford-Stil';
 
   @override
   String get upgradeBenefit2Sub =>
-      'Zugang zum strukturierten Oxford-Lehrplan mit kuratierten Aufgabensets und geführtem Fortschritt von der Primarstufe bis zur Maturität.';
+      'Strukturierter Track im Oxford-Stil mit kuratierten Aufgabensets und geführtem Fortschritt von KS3 bis A-Level (englischer Lehrplan).';
 
   @override
   String get upgradeBenefit3Title => 'Learning Analytics';
@@ -7347,7 +7385,7 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
 
   @override
   String get homeWhatsNewBody =>
-      'KI-Tutor, Oxford-Kurs und neue Prüfungspakete sind jetzt verfügbar.';
+      'KI-Tutor, Oxford-Track und GCSE-Prüfungspakete sind jetzt verfügbar.';
 
   @override
   String get homeDailyGoalTitle => 'Tagesziel';
@@ -7423,6 +7461,13 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
   String get mentalMathVaultSubtitle => 'Lerne starke Rechentricks';
 
   @override
+  String get homeFormulaLibraryTitle => 'Formelsammlung';
+
+  @override
+  String get homeFormulaLibrarySubtitle =>
+      'Schnellübersicht der wichtigsten Mathematikformeln';
+
+  @override
   String get comingSoon => 'Demnächst';
 
   @override
@@ -7451,6 +7496,10 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
 
   @override
   String get practiceNoQuestions => 'Es sind keine Übungsaufgaben verfügbar.';
+
+  @override
+  String get practiceTopicDrillEmpty =>
+      'Für dieses Thema gibt es auf dieser Stufe noch keine Aufgaben. Versuche ein anderes Thema oder eine andere Stufe.';
 
   @override
   String get practiceUnavailableTitle =>
@@ -7494,6 +7543,58 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
   String topicHubNoActivities(String stage) {
     return 'Für dieses Thema gibt es bei $stage noch keine Aktivitäten.';
   }
+
+  @override
+  String get ratioFoundationsHubCardTitle =>
+      'Grundlagen: Verhältnisse skalieren';
+
+  @override
+  String get ratioFoundationsHubCardReason =>
+      'Gleichwertige Verhältnisse erkennen, dann geführt und selbstständig üben, beide Teile gleichmässig zu skalieren.';
+
+  @override
+  String get ratioFoundationsScreenTitle =>
+      'Grundlagen: Verhältnisse skalieren';
+
+  @override
+  String get ratioFoundationsRungRecognise => 'Erkennen';
+
+  @override
+  String get ratioFoundationsRungGuided => 'Geführtes Üben';
+
+  @override
+  String get ratioFoundationsRungFluency => 'Automatisieren';
+
+  @override
+  String get ratioFoundationsShowHint => 'Tipp anzeigen';
+
+  @override
+  String get ratioFoundationsHideHint => 'Tipp ausblenden';
+
+  @override
+  String get ratioFoundationsCorrect => 'Richtig!';
+
+  @override
+  String get ratioFoundationsIncorrect => 'Nicht ganz';
+
+  @override
+  String get ratioFoundationsContinue => 'Weiter';
+
+  @override
+  String get ratioFoundationsNextItem => 'Nächste Aufgabe';
+
+  @override
+  String ratioFoundationsFluencyProgress(int correct, int target) {
+    return 'Bisher $correct von $target Übungsaufgaben richtig';
+  }
+
+  @override
+  String get ratioFoundationsCompletionTitle =>
+      'Grundlagen zum Skalieren von Verhältnissen abgeschlossen.';
+
+  @override
+  String get ratioFoundationsCompletionBody =>
+      'Weitere Lerneinheiten zu Verhältnissen folgen bald.';
 
   @override
   String get mascotGreeting => 'Bereit für neue Mathe-Energie?';
@@ -7552,7 +7653,7 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
 
   @override
   String get examPacksCtaSubtitle =>
-      'Schalte GCSE-Stufen, den Oxford-Pfad und Tutor-Guthaben frei.';
+      'Schalte GCSE Foundation, GCSE Higher, den Oxford-Track und Tutor-Guthaben frei.';
 
   @override
   String get examPacksIntro =>
@@ -7755,10 +7856,102 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
   String get pinResetFailed => 'PIN-Zurücksetzung fehlgeschlagen.';
 
   @override
+  String get navJourney => 'Journey';
+
+  @override
+  String get navMore => 'Mehr';
+
+  @override
+  String get interactiveStudiosTitle => 'Interaktive Studios';
+
+  @override
+  String get footballStudioDescription =>
+      'Football Studio enthält Anwendungsaktivitäten zu Koordinaten, Verhältnis und Massstab, Winkeln, Weg-Zeit-Geschwindigkeit, Flächen und Algebra.';
+
+  @override
+  String get footballStudioChecking =>
+      'Es wird geprüft, ob Football Studio installiert ist …';
+
+  @override
+  String get footballStudioInstalled =>
+      'Football Studio ist installiert und bereit.';
+
+  @override
+  String get footballStudioUnavailable =>
+      'Football Studio ist auf diesem Gerät nicht installiert.';
+
+  @override
+  String get footballStudioInstallNeeded =>
+      'Installiere Football Studio separat, um diese Aktivitäten zu öffnen.';
+
+  @override
+  String get footballStudioOpen => 'Football Studio öffnen';
+
+  @override
+  String get footballStudioOpening => 'Football Studio wird geöffnet …';
+
+  @override
+  String get footballStudioCheckFailed =>
+      'Es konnte nicht geprüft werden, ob Football Studio installiert ist.';
+
+  @override
+  String get footballStudioLaunchFailed =>
+      'Football Studio ist installiert, aber Android konnte es nicht öffnen.';
+
+  @override
+  String get footballStudioTryAgain => 'Erneut öffnen';
+
+  @override
+  String get footballStudioCheckAgain => 'Erneut prüfen';
+
+  @override
+  String get footballStudioAndroidOnly =>
+      'Football Studio ist als separate Android-App erhältlich.';
+
+  @override
+  String get footballStudioProgressOwnership =>
+      'Erfolge und Fortschritt bleiben in V1 auf diesem Gerät in Football Studio. Unified Math Tutor liest oder teilt sie nicht.';
+
+  @override
+  String get navHideAction => 'Navigation ausblenden';
+
+  @override
+  String get navShowAction => 'Navigation einblenden';
+
+  @override
+  String get commonCancel => 'Abbrechen';
+
+  @override
+  String get journeyTitle => 'Deine Journey';
+
+  @override
+  String get journeySubtitle =>
+      'Serien, Erfolge und Meilensteine an einem Ort.';
+
+  @override
+  String get journeyTeaserSubtitle =>
+      'Sieh dir deine Serie, Erfolge und Meilensteine an';
+
+  @override
+  String get practiceExitSessionTitle => 'Übung beenden?';
+
+  @override
+  String get practiceExitSessionBody =>
+      'Dein aktueller Fortschritt wird möglicherweise nicht gespeichert.';
+
+  @override
+  String get onboardingDiscardTitle => 'Antworten verwerfen?';
+
+  @override
+  String get onboardingDiscardBody =>
+      'Wenn du zurückgehst, wird gelöscht, was du in diesem Schritt eingegeben hast.';
+
+  @override
   String get onboardingProductName => 'Math Intelligence';
 
   @override
-  String get onboardingTechBadge => 'Powered by Adaptive Learning Intelligence';
+  String get onboardingTechBadge =>
+      'Unterstützt durch Adaptive Learning Intelligence';
 
   @override
   String get onboardingHeroStatement =>
@@ -7801,10 +7994,10 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
   String get exploreAvailableTodaySection => 'HEUTE VERFÜGBAR';
 
   @override
-  String get exploreInAtelierSection => 'IN ATELIER';
+  String get exploreInAtelierSection => 'IM ATELIER';
 
   @override
-  String get exploreInAtelierBadge => 'In Atelier';
+  String get exploreInAtelierBadge => 'Im Atelier';
 
   @override
   String get exploreInDevelopmentNote =>
@@ -7988,14 +8181,14 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
 
   @override
   String get mathStudioBuildConfidenceSubtitle =>
-      'Sanftes, unbefristetes Ueben mit ausfuehrlichen Erklaerungen';
+      'Sanftes Üben ohne Zeitdruck, mit ausführlichen Erklärungen';
 
   @override
   String get mathStudioMentalMathsTitle => 'Kopfrechnen';
 
   @override
   String get mathStudioMentalMathsSubtitle =>
-      'Taegliche Zahlenstrategien, ganz ohne Druck';
+      'Tägliche Zahlenstrategien, ganz ohne Druck';
 
   @override
   String get mathStudioVisualMathsTitle => 'Visuelle Mathematik';
@@ -8009,7 +8202,7 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
 
   @override
   String get mathStudioDiscoverySubtitle =>
-      'Mathematik aus dem echten Leben, Karte fuer Karte';
+      'Mathematik aus dem echten Leben, Karte für Karte';
 
   @override
   String get mathStudioMathMagicTitle => 'Mathe & Magie';
@@ -8051,11 +8244,11 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
       'Erforsche, was beim Addieren gerader und ungerader Zahlen passiert';
 
   @override
-  String get mathStudioSpatialIntelligenceTitle => 'Raeumliches Denken';
+  String get mathStudioSpatialIntelligenceTitle => 'Räumliches Denken';
 
   @override
   String get mathStudioSpatialIntelligenceSubtitle =>
-      'Entwickle dein Gefuehl fuer Form, Raum und Bewegung';
+      'Entwickle dein Gefühl für Form, Raum und Bewegung';
 
   @override
   String get mathStudioSpatialIntelligenceBody =>
@@ -8111,7 +8304,7 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
 
   @override
   String get mathStudioDiscoveryEmptyCategory =>
-      'Weitere Karten fuer diese Kategorie folgen bald.';
+      'Weitere Karten für diese Kategorie folgen bald.';
 
   @override
   String get mathStudioCategoryEverydayLife => 'Alltag';
@@ -8173,10 +8366,10 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
   String get mathStudioThinkLabel => 'Ueberlege in Ruhe';
 
   @override
-  String get mathStudioRevealButton => 'Loesung anzeigen';
+  String get mathStudioRevealButton => 'Lösung anzeigen';
 
   @override
-  String get mathStudioRevealedLabel => 'Ausfuehrliche Loesung';
+  String get mathStudioRevealedLabel => 'Ausführliche Lösung';
 
   @override
   String get mathStudioWhereYoullUseThisLabel => 'Wo du das brauchst';
@@ -8185,7 +8378,7 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
   String get mathStudioFollowUpLabel => 'Probier es selbst';
 
   @override
-  String get mathStudioFollowUpCheckButton => 'Antwort pruefen';
+  String get mathStudioFollowUpCheckButton => 'Antwort prüfen';
 
   @override
   String get mathStudioFollowUpCorrect => 'Gut gemacht — das stimmt.';
@@ -8207,7 +8400,7 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
   String get mathStudioExportSolutionOnly => 'Loesungsblatt';
 
   @override
-  String get mathStudioExportCombined => 'Aufgabe + Loesung';
+  String get mathStudioExportCombined => 'Aufgabe + Lösung';
 
   @override
   String get mathStudioExportIncludeNameLabel =>
@@ -8445,7 +8638,7 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
   String get recallCardsMoreTypesSheetTitle => 'Weitere Kartentypen';
 
   @override
-  String get recallCardsClearFiltersButton => 'Filter zuruecksetzen';
+  String get recallCardsClearFiltersButton => 'Filter zurücksetzen';
 
   @override
   String get recallCardsSearchTitle => 'Suche';
@@ -8595,7 +8788,7 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
       'Ein Konzept sehen, anfassen, veraendern und deine Vermutung testen';
 
   @override
-  String get labsResetButton => 'Zuruecksetzen';
+  String get labsResetButton => 'Zurücksetzen';
 
   @override
   String get labsCheckButton => 'Pruefen';
@@ -8634,7 +8827,7 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
 
   @override
   String labsFractionBuilderFilledCount(int filled, int denominator) {
-    return '$filled von $denominator gefuellt';
+    return '$filled von $denominator gefüllt';
   }
 
   @override
@@ -8752,7 +8945,7 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
       'Ein \'typisches\' Gehalt, einen Preis oder eine Punktzahl fair zu berichten bedeutet zu wissen, wann der Mittelwert irrefuehrend ist und der Median die bessere Zusammenfassung ist.';
 
   @override
-  String get labsDataDetectiveAddValueButton => 'Typischen Wert hinzufuegen';
+  String get labsDataDetectiveAddValueButton => 'Typischen Wert hinzufügen';
 
   @override
   String get labsDataDetectivePredictionPrompt =>
@@ -8852,6 +9045,17 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
       'Zaehle Aepfel einzeln ab, um den Panda zu fuettern';
 
   @override
+  String get abacusPlayBuildDone =>
+      'Du hast 34 gebildet: 3 Zehner und 4 Einer.';
+
+  @override
+  String get abacusPlayBreakDone => '47 lässt sich in 40 und 7 zerlegen.';
+
+  @override
+  String get abacusPlayExchangeDone =>
+      '10 Einer gegen 1 Zehner getauscht, also 29 + 1 = 30.';
+
+  @override
   String feedPandaInstruction(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -8867,7 +9071,7 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count Aepfel',
+      other: '$count Äpfel',
       one: '1 Apfel',
     );
     return 'Gut gemacht! Der Panda hat $_temp0 gegessen.';
@@ -8892,7 +9096,7 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
   }
 
   @override
-  String get feedPandaSelectedSuffix => 'Ausgewaehlt.';
+  String get feedPandaSelectedSuffix => 'Ausgewählt.';
 
   @override
   String feedPandaPandaSemanticReady(int remaining) {
@@ -8907,7 +9111,7 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
 
   @override
   String get feedPandaPandaSemanticFull =>
-      'Der Panda hat fuer diese Runde genug.';
+      'Der Panda hat für diese Runde genug.';
 
   @override
   String feedPandaAnswerChoiceSemanticLabel(int value) {
@@ -8925,7 +9129,7 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count Aepfel im Korb.',
+      other: '$count Äpfel im Korb.',
       one: '1 Apfel im Korb.',
       zero: 'Der Korb ist leer.',
     );
@@ -8948,7 +9152,7 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
 
   @override
   String get feedPandaTapPandaHint =>
-      'Apfel ausgewaehlt. Tippe jetzt auf den Panda, um ihn zu geben.';
+      'Apfel ausgewählt. Tippe jetzt auf den Panda, um ihn zu geben.';
 
   @override
   String get labsSpatialCubeWhichFaceOppositeMission =>
@@ -9007,7 +9211,7 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
   String get labsSpatialCubeRotateToMatchYourCubeLabel => 'Dein Wuerfel';
 
   @override
-  String get labsSpatialCubeRotateToMatchTestButton => 'Drehung pruefen';
+  String get labsSpatialCubeRotateToMatchTestButton => 'Drehung prüfen';
 
   @override
   String get labsSpatialCubeRotateToMatchCorrect =>
@@ -9088,13 +9292,13 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
   String get labsSpatialCubeNetExplorerUnfoldButton => 'Entfalten';
 
   @override
-  String get labsSpatialCubeNetExplorerNextNetButton => 'Naechstes Netz';
+  String get labsSpatialCubeNetExplorerNextNetButton => 'Nächstes Netz';
 
   @override
-  String get labsSpatialCubeNetExplorerStepBackButton => 'Zurueck';
+  String get labsSpatialCubeNetExplorerStepBackButton => 'Zurück';
 
   @override
-  String get labsSpatialCubeNetExplorerStepForwardButton => 'Naechster Schritt';
+  String get labsSpatialCubeNetExplorerStepForwardButton => 'Nächster Schritt';
 
   @override
   String get labsSpatialCubeNetExplorerWhereUsed =>
@@ -10159,185 +10363,188 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
       'Probiert eine andere Darstellung aus, wenn die erste nicht hilft.';
 
   @override
-  String get onboardingFamilyRoleDetailTitle => 'Tell us about your family';
+  String get onboardingFamilyRoleDetailTitle => 'Erzähl uns von deiner Familie';
 
   @override
   String get onboardingFamilyRoleDetailSub =>
-      'A couple of quick questions so we can help the right way.';
+      'Ein paar kurze Fragen, damit wir richtig helfen können.';
 
   @override
-  String get onboardingFamilyLearnerNamesLabel => 'Learner name(s)';
+  String get onboardingFamilyLearnerNamesLabel =>
+      'Name(n) der lernenden Person(en)';
 
   @override
   String get onboardingFamilyLearnerNamesSub =>
-      'Add at least one — you can add more later.';
+      'Füge mindestens einen Namen hinzu – weitere kannst du später ergänzen.';
 
   @override
-  String get onboardingFamilyAddAnotherLearner => 'Add another learner';
+  String get onboardingFamilyAddAnotherLearner =>
+      'Weitere lernende Person hinzufügen';
 
   @override
-  String get onboardingFamilyLearnerContextTitle =>
-      'What stage is your child at?';
+  String get onboardingFamilyLearnerContextTitle => 'Wo steht dein Kind?';
 
   @override
   String get onboardingFamilyLearnerContextSub =>
-      'This helps us suggest the right activities and topics.';
+      'So können wir passende Aktivitäten und Themen vorschlagen.';
 
   @override
-  String get onboardingFamilyGoalTitle => 'What brings you here?';
+  String get onboardingFamilyGoalTitle => 'Was führt dich hierher?';
 
   @override
   String get onboardingFamilyGoalSub =>
-      'Choose what matters most right now — you can change this later.';
+      'Wähle, was dir gerade am wichtigsten ist – du kannst das später ändern.';
 
   @override
-  String get onboardingFamilyGoalHomework => 'Help with homework';
+  String get onboardingFamilyGoalHomework => 'Bei Hausaufgaben helfen';
 
   @override
   String get onboardingFamilyGoalUnderstandMethods =>
-      'Understand modern methods';
+      'Heutige Lösungswege verstehen';
 
   @override
-  String get onboardingFamilyGoalBuildConfidence => 'Build confidence';
+  String get onboardingFamilyGoalBuildConfidence => 'Selbstvertrauen aufbauen';
 
   @override
-  String get onboardingFamilyGoalPractiseTogether => 'Practise together';
+  String get onboardingFamilyGoalPractiseTogether => 'Gemeinsam üben';
 
   @override
-  String get onboardingFamilyGoalPrepareExam => 'Prepare for an exam';
+  String get onboardingFamilyGoalPrepareExam => 'Auf eine Prüfung vorbereiten';
 
   @override
-  String get onboardingFamilyGoalMonitorProgress => 'Monitor progress';
+  String get onboardingFamilyGoalMonitorProgress => 'Fortschritt verfolgen';
 
   @override
   String get onboardingFamilyGoalSupportStruggling =>
-      'Support a learner who finds maths difficult';
+      'Eine lernende Person unterstützen, der Mathematik schwerfällt';
 
   @override
-  String get onboardingFamilyActivityLengthLabel => 'Preferred activity length';
+  String get onboardingFamilyActivityLengthLabel =>
+      'Bevorzugte Dauer der Aktivität';
 
   @override
-  String get onboardingFamilyActivityLengthShort => '~10 minutes';
+  String get onboardingFamilyActivityLengthShort => 'ca. 10 Minuten';
 
   @override
-  String get onboardingFamilyActivityLengthMedium => '~20 minutes';
+  String get onboardingFamilyActivityLengthMedium => 'ca. 20 Minuten';
 
   @override
-  String get onboardingFamilyActivityLengthLong => '~30 minutes';
+  String get onboardingFamilyActivityLengthLong => 'ca. 30 Minuten';
 
   @override
-  String get onboardingFamilyPreferencesTitle => 'Almost done';
+  String get onboardingFamilyPreferencesTitle => 'Fast geschafft';
 
   @override
   String get onboardingFamilyPreferencesSub =>
-      'A couple of optional extras, then you\'re in.';
+      'Noch ein paar optionale Extras, dann kann es losgehen.';
 
   @override
   String get onboardingFamilyAllieIntro =>
-      'You do not need to explain everything immediately.';
+      'Du musst nicht gleich alles erklären.';
 
   @override
-  String get onboardingFamilyNotificationsLabel => 'Gentle reminders';
+  String get onboardingFamilyNotificationsLabel => 'Sanfte Erinnerungen';
 
   @override
   String get onboardingFamilyNotificationsSub =>
-      'Optional — occasional nudges about your family activity.';
+      'Optional – gelegentliche Hinweise zu eurer Familienaktivität.';
 
   @override
-  String get onboardingFamilyPinLabel => 'Set a Parent PIN (optional)';
+  String get onboardingFamilyPinLabel => 'Eltern-PIN festlegen (optional)';
 
   @override
   String get onboardingFamilyPinSub =>
-      'Protects Family Maths and parent content on a shared device. You can set this later in Settings instead.';
+      'Schützt Familien-Mathe und Inhalte für Eltern auf einem gemeinsam genutzten Gerät. Du kannst die PIN stattdessen auch später in den Einstellungen festlegen.';
 
   @override
-  String get onboardingFamilyFinishButton => 'Go to Family Studio';
+  String get onboardingFamilyFinishButton => 'Weiter zu Family Studio';
 
   @override
-  String get recallTopicNumber => 'Number';
+  String get recallTopicNumber => 'Zahlen';
 
   @override
-  String get recallTopicRatioAndProportion => 'Ratio and Proportion';
+  String get recallTopicRatioAndProportion =>
+      'Verhältnisse und Proportionalität';
 
   @override
   String get recallTopicAlgebra => 'Algebra';
 
   @override
-  String get recallTopicGeometryAndMeasures => 'Geometry and Measures';
+  String get recallTopicGeometryAndMeasures => 'Geometrie und Masse';
 
   @override
-  String get recallTopicStatistics => 'Statistics';
+  String get recallTopicStatistics => 'Statistik';
 
   @override
-  String get recallTopicProbability => 'Probability';
+  String get recallTopicProbability => 'Wahrscheinlichkeit';
 
   @override
   String get familyStudioHubTitle => 'Family Studio';
 
   @override
   String get familyStudioHubOpeningPromise =>
-      'Parents do not need to become teachers.';
+      'Eltern müssen nicht zu Lehrpersonen werden.';
 
   @override
   String get familyStudioHubSupportingCopy =>
-      'Choose a topic, a short activity or a homework goal. Math Intelligence will help you begin.';
+      'Wähle ein Thema, eine kurze Aktivität oder ein Hausaufgabenziel. Math Intelligence hilft dir beim Einstieg.';
 
   @override
   String get familyStudioHubAllieMessage =>
-      'Ask what your child notices first.';
+      'Frag zuerst, was deinem Kind auffällt.';
 
   @override
   String get familyStudioProfileEntrySubtitle =>
-      'Activities, homework help and progress for your family.';
+      'Aktivitäten, Hausaufgabenhilfe und Fortschritt für deine Familie.';
 
   @override
   String get familyStudioPrimaryActionStartActivity =>
-      'Start a Family Activity';
+      'Familienaktivität starten';
 
   @override
-  String get familyStudioPrimaryActionHomework => 'Help with Homework';
+  String get familyStudioPrimaryActionHomework => 'Bei Hausaufgaben helfen';
 
   @override
-  String get familyStudioPrimaryActionLearning =>
-      'See What My Child Is Learning';
+  String get familyStudioPrimaryActionLearning => 'Sehen, was mein Kind lernt';
 
   @override
-  String get familyStudioPrimaryActionGuides => 'Browse Parent Guides';
+  String get familyStudioPrimaryActionGuides => 'Elternratgeber ansehen';
 
   @override
   String get familyStudioSectionTodaysActivityTitle =>
-      'Today\'s Family Activity';
+      'Familienaktivität des Tages';
 
   @override
   String get familyStudioSectionTodaysActivitySubtitle =>
-      'One deterministic pick for today, from Family Maths.';
+      'Ein fester Vorschlag für heute, aus Familien-Mathe.';
 
   @override
-  String get familyStudioSectionHomeworkCompanionTitle => 'Homework Companion';
+  String get familyStudioSectionHomeworkCompanionTitle =>
+      'Hausaufgabenbegleiter';
 
   @override
   String get familyStudioSectionHomeworkCompanionSubtitle =>
-      'A short, deterministic session for tonight\'s homework.';
+      'Eine kurze, fest zusammengestellte Einheit für die heutigen Hausaufgaben.';
 
   @override
-  String get familyStudioSectionLearningTitle => 'What Your Child Is Learning';
+  String get familyStudioSectionLearningTitle => 'Was dein Kind lernt';
 
   @override
-  String get familyStudioSectionLearningSubtitle => 'Recent Practice topics.';
+  String get familyStudioSectionLearningSubtitle => 'Letzte Übungsthemen.';
 
   @override
-  String get familyStudioSectionExplainTitle => 'Explain This Method';
+  String get familyStudioSectionExplainTitle => 'Diesen Lösungsweg erklären';
 
   @override
-  String get familyStudioSectionExplainSubtitle => 'Open the Formula Library.';
+  String get familyStudioSectionExplainSubtitle => 'Öffne die Formelsammlung.';
 
   @override
   String get familyStudioSectionConversationStartersTitle =>
-      'Conversation Starters';
+      'Gesprächsanstösse';
 
   @override
   String get familyStudioSectionConversationStartersSubtitle =>
-      'Questions to ask while you work together.';
+      'Fragen für die gemeinsame Arbeit.';
 
   @override
   String get familyStudioSectionParentRecallCardsTitle => 'Eltern-Merkkarten';
@@ -10347,40 +10554,42 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
       'Warmherzige, praktische Tipps — keine Pruefungsfragen.';
 
   @override
-  String get familyStudioSectionFractionsRatioTitle => 'Fractions and Ratio';
+  String get familyStudioSectionFractionsRatioTitle =>
+      'Brüche und Verhältnisse';
 
   @override
   String get familyStudioSectionFractionsRatioSubtitle =>
-      'Family Maths activities for this topic.';
+      'Familien-Mathe-Aktivitäten zu diesem Thema.';
 
   @override
-  String get familyStudioSectionMentalMathsTitle => 'Mental Maths Together';
+  String get familyStudioSectionMentalMathsTitle => 'Gemeinsam Kopfrechnen';
 
   @override
   String get familyStudioSectionMentalMathsSubtitle =>
-      'Quick number challenges for two.';
+      'Schnelle Zahlenaufgaben zu zweit.';
 
   @override
   String get familyStudioSectionCubeSpatialTitle =>
-      'Cube and Spatial Activities';
+      'Würfel und räumliches Denken';
 
   @override
   String get familyStudioSectionCubeSpatialSubtitle =>
-      'Build and view together.';
+      'Gemeinsam bauen und betrachten.';
 
   @override
-  String get familyStudioSectionProgressTitle => 'Progress Snapshot';
+  String get familyStudioSectionProgressTitle => 'Fortschritt auf einen Blick';
 
   @override
   String get familyStudioSectionProgressSubtitle =>
-      'Topics studied, strengths and areas to revisit.';
+      'Bearbeitete Themen, Stärken und Bereiche zum Wiederholen.';
 
   @override
-  String get familyStudioSectionTutorToolsTitle => 'Tutor Tools';
+  String get familyStudioSectionTutorToolsTitle =>
+      'Werkzeuge für Tutorinnen und Tutoren';
 
   @override
   String get familyStudioSectionTutorToolsSubtitle =>
-      'Choose a learner, assign practice, add a note.';
+      'Lernende Person wählen, Übungen zuweisen, Notiz hinzufügen.';
 
   @override
   String get familyStudioPinReminderTitle => 'Family Studio schützen';
@@ -10396,25 +10605,25 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
   String get familyStudioPinReminderLaterButton => 'Später erinnern';
 
   @override
-  String get familyStudioTodayStartButton => 'Start this activity';
+  String get familyStudioTodayStartButton => 'Diese Aktivität starten';
 
   @override
   String get familyStudioLearningNoDataYet =>
-      'No Practice sessions yet — recent topics will appear here.';
+      'Noch keine Übungseinheiten – hier erscheinen bald die letzten Themen.';
 
   @override
   String get familyStudioLearningTopicSubtitle =>
-      'Recently studied in Practice.';
+      'Kürzlich beim Üben bearbeitet.';
 
   @override
   String get familyStudioConversationAllieMessage =>
-      'A mistake can start a useful conversation.';
+      'Ein Fehler kann ein nützliches Gespräch eröffnen.';
 
   @override
-  String get familyStudioHomeworkTopicLabel => 'Topic';
+  String get familyStudioHomeworkTopicLabel => 'Thema';
 
   @override
-  String get familyStudioHomeworkTimeLabel => 'Time available';
+  String get familyStudioHomeworkTimeLabel => 'Verfügbare Zeit';
 
   @override
   String familyStudioHomeworkMinutes(int minutes) {
@@ -10422,86 +10631,90 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
   }
 
   @override
-  String get familyStudioHomeworkHelpTypeLabel => 'Type of help needed';
+  String get familyStudioHomeworkHelpTypeLabel => 'Gewünschte Unterstützung';
 
   @override
   String get familyStudioHomeworkHelpUnderstandMethod =>
-      'Understand the method';
+      'Den Lösungsweg verstehen';
 
   @override
-  String get familyStudioHomeworkHelpPractiseTogether => 'Practise together';
+  String get familyStudioHomeworkHelpPractiseTogether => 'Gemeinsam üben';
 
   @override
-  String get familyStudioHomeworkHelpReviewMistakes => 'Review mistakes';
+  String get familyStudioHomeworkHelpReviewMistakes => 'Fehler besprechen';
 
   @override
-  String get familyStudioHomeworkHelpPrepareTomorrow => 'Prepare for tomorrow';
+  String get familyStudioHomeworkHelpPrepareTomorrow =>
+      'Auf morgen vorbereiten';
 
   @override
-  String get familyStudioHomeworkHelpBuildConfidence => 'Build confidence';
+  String get familyStudioHomeworkHelpBuildConfidence =>
+      'Selbstvertrauen aufbauen';
 
   @override
-  String get familyStudioHomeworkGenerateButton => 'Generate session';
+  String get familyStudioHomeworkGenerateButton => 'Einheit erstellen';
 
   @override
   String get familyStudioHomeworkEmptySession =>
-      'Nothing to suggest yet for this combination — try a different topic or time.';
+      'Für diese Kombination gibt es noch keinen Vorschlag – versuche ein anderes Thema oder eine andere Zeit.';
 
   @override
-  String get familyStudioProgressRecentTopics => 'Topics recently studied';
+  String get familyStudioProgressRecentTopics => 'Kürzlich bearbeitete Themen';
 
   @override
-  String get familyStudioProgressActivitiesCompleted => 'Activities completed';
+  String get familyStudioProgressActivitiesCompleted =>
+      'Abgeschlossene Aktivitäten';
 
   @override
-  String get familyStudioProgressAreasToRevisit => 'Areas to revisit';
+  String get familyStudioProgressAreasToRevisit => 'Bereiche zum Wiederholen';
 
   @override
   String get familyStudioProgressSuggestedActivity =>
-      'Suggested family activity';
+      'Vorgeschlagene Familienaktivität';
 
   @override
   String get familyStudioProgressNoDataYet =>
-      'Not enough data yet — this will fill in as your family uses the app.';
+      'Noch nicht genug Daten – das füllt sich, sobald deine Familie die App nutzt.';
 
   @override
-  String get familyStudioTutorChooseLearnerLabel => 'Choose a learner';
+  String get familyStudioTutorChooseLearnerLabel => 'Lernende Person wählen';
 
   @override
-  String get familyStudioTutorAssignLabel => 'Assign';
+  String get familyStudioTutorAssignLabel => 'Zuweisen';
 
   @override
-  String get familyStudioTutorAssignPractice => 'Assign Practice';
+  String get familyStudioTutorAssignPractice => 'Übungen zuweisen';
 
   @override
-  String get familyStudioTutorAssignRecallCards => 'Assign Recall Cards';
+  String get familyStudioTutorAssignRecallCards => 'Merkkarten zuweisen';
 
   @override
   String familyStudioTutorCompletionLabel(int count) {
-    return '$count interactive lab completions so far';
+    return 'Bisher $count abgeschlossene interaktive Labore';
   }
 
   @override
-  String get familyStudioTutorNotesLabel => 'Notes';
+  String get familyStudioTutorNotesLabel => 'Notizen';
 
   @override
-  String get familyStudioTutorNotesHint => 'A short note for next time';
+  String get familyStudioTutorNotesHint =>
+      'Eine kurze Notiz für das nächste Mal';
 
   @override
-  String get appearanceThemeTitle => 'Appearance';
+  String get appearanceThemeTitle => 'Darstellung';
 
   @override
   String get appearanceThemeSub =>
-      'Choose how Math Intelligence looks — match your device, or pick Dark or Light.';
+      'Wähle, wie Math Intelligence aussieht – passend zu deinem Gerät, oder wähle Dunkel oder Hell.';
 
   @override
   String get appearanceThemeSystem => 'System';
 
   @override
-  String get appearanceThemeDark => 'Dark';
+  String get appearanceThemeDark => 'Dunkel';
 
   @override
-  String get appearanceThemeLight => 'Light';
+  String get appearanceThemeLight => 'Hell';
 
   @override
   String get appearanceAccessibilityHeading => 'BARRIEREFREIHEIT';
@@ -10514,26 +10727,81 @@ class AppLocalizationsDeCh extends AppLocalizationsDe {
       'Textgrösse Klein, Standard oder Gross';
 
   @override
-  String get appearanceTouchTargetsTitle => 'Touch Targets 44px';
+  String get appearanceTouchTargetsTitle => 'Tippflächen 44 px';
 
   @override
-  String get appearanceTouchTargetsSub => 'Ergonomic controls';
+  String get appearanceTouchTargetsSub => 'Ergonomische Bedienelemente';
 
   @override
-  String get appearanceTypographyTitle => 'Clear Typography';
+  String get appearanceTypographyTitle => 'Klare Typografie';
 
   @override
-  String get appearanceTypographySub => 'Readable font at all sizes';
+  String get appearanceTypographySub => 'Gut lesbare Schrift in allen Grössen';
 
   @override
-  String get appearanceResetOnboardingHeading => 'RESET ONBOARDING';
+  String get appearanceResetOnboardingHeading => 'EINFÜHRUNG ZURÜCKSETZEN';
 
   @override
   String get appearanceResetOnboardingSub =>
-      'Reset the app introduction to go through the initial setup again.';
+      'Setzt die App-Einführung zurück, damit du die Ersteinrichtung erneut durchlaufen kannst.';
 
   @override
-  String get appearanceResetOnboardingButton => 'Reset Onboarding';
+  String get appearanceResetOnboardingButton => 'Einführung zurücksetzen';
+
+  @override
+  String get numberSenseHundredthsLineLabel =>
+      'Vergrösserter Zahlenstrahl von 0.00 bis 0.10, in Hundertstel eingeteilt';
+
+  @override
+  String get numberSenseCompareLeftMarkerSemantics =>
+      'Markierung auf dem Zahlenstrahl für zwei Drittel, 2/3';
+
+  @override
+  String get numberSenseCompareRightMarkerSemantics =>
+      'Markierung auf dem Zahlenstrahl für drei Viertel, 3/4';
+
+  @override
+  String get numberSenseComparisonCorrectLabel => 'Richtig';
+
+  @override
+  String get numberSenseComparisonReviewLabel => 'Vergleich überprüfen';
+
+  @override
+  String get numberSenseNextSkill => 'Nächste Fertigkeit';
+
+  @override
+  String get numberSenseSkillSheetClose => 'Schliessen';
+
+  @override
+  String get pandaPortionsRetryEqualParts => 'Ein anderes Beispiel versuchen';
+
+  @override
+  String get pandaPortionsRetryHalves => 'Eine andere Hälfte versuchen';
+
+  @override
+  String get pandaPortionsRetryQuarters => 'Ein anderes Viertel versuchen';
+
+  @override
+  String get pandaPortionsWhatNext => 'Wie geht es weiter?';
+
+  @override
+  String get pandaPortionsNextLesson => 'Nächste Lektion';
+
+  @override
+  String get pandaPortionsWholeApple => '1 ganzer Apfel';
+
+  @override
+  String pandaPortionsStripLabel(int fed, int parts) {
+    return 'Bruchstreifen: $fed von $parts gleichen Teilen dem Panda gegeben.';
+  }
+
+  @override
+  String get pandaPortionsStripFed => 'gefüttert';
+
+  @override
+  String pandaPortionsChoosePlate(String plate) {
+    return 'Teller $plate wählen';
+  }
 
   @override
   String get labsAppliedMathsStudioTitle => 'Studio für angewandte Mathematik';
