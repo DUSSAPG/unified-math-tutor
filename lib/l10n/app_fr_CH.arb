@@ -808,9 +808,18 @@
   "mathStudioSpatialCubeNetsLabel": "Patrons de cube",
   "mathStudioSpatialCubeNetsSubtitle": "Determine quels patrons se replient en un cube ferme",
   "mathStudioSpatialRotationsSubtitle": "Fais tourner une forme autour d'un point fixe et observe ce qui change",
-  "mathStudioSpatialTransformationsSubtitle": "Translation, reflexion, rotation et agrandissement sur un quadrillage",
-  "mathStudioSpatialPuzzlesSubtitle": "Courtes enigmes sur les formes, l'espace et la pensee en 3D",
-  "mathStudioFeaturedFormatsSectionLabel": "Formats a decouvrir",
+  "mathStudioSpatialTransformationsSubtitle": "Translation, réflexion, rotation et agrandissement sur un quadrillage",
+  "@mathStudioSpatialTransformationsSubtitle": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "mathStudioSpatialPuzzlesSubtitle": "Courtes énigmes sur les formes, l'espace et la pensée en 3D",
+  "@mathStudioSpatialPuzzlesSubtitle": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "mathStudioFeaturedFormatsSectionLabel": "Formats à découvrir",
+  "@mathStudioFeaturedFormatsSectionLabel": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "mathStudioRelatedLabsSectionLabel": "Laboratoires lies",
   "mathStudioSpatialLabsEntrySubtitle": "Essaie Flight Path Lab et d'autres outils pratiques qui developpent le raisonnement spatial",
   "mathStudioDiscoveryEmptyCategory": "D'autres cartes pour cette categorie arrivent bientot.",
@@ -858,7 +867,10 @@
   "captainMathCalm": "Remarque comment cela se relie a autre chose.",
   "captainMathCelebrating": "Bravo !",
   "mentalMathsCategoryNumberBonds": "Complements numeriques",
-  "mentalMathsCategoryDecomposition": "Decomposition",
+  "mentalMathsCategoryDecomposition": "Décomposition",
+  "@mentalMathsCategoryDecomposition": {
+    "description": "Swiss Phase 3 P1 correction (English copy replaced). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "mentalMathsCategoryCompensation": "Compensation",
   "mentalMathsCategoryEstimation": "Estimation",
   "mentalMathsCategoryMultiplicationStrategies": "Strategies de multiplication",
@@ -868,13 +880,22 @@
   "mentalMathsCategoryPlaceValue": "Valeur de position",
   "mentalMathsCategoryPatternRecognition": "Reconnaissance de motifs",
   "mentalMathsTodaysChallenge": "Le defi du jour",
-  "mentalMathsUntimedNote": "Pas de chronometre — prends le temps qu'il te faut.",
+  "mentalMathsUntimedNote": "Pas de chronomètre — prends le temps qu'il te faut.",
+  "@mentalMathsUntimedNote": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "buildConfidenceProgress": "Question {current} sur {total}",
   "buildConfidenceContinueButton": "Continuer",
-  "buildConfidenceCompletionTitle": "Bien joue",
+  "buildConfidenceCompletionTitle": "Bien joué",
+  "@buildConfidenceCompletionTitle": {
+    "description": "Swiss Phase 3 P1 correction (ambiguous_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "buildConfidenceCompletionBody": "Tu as termine la session d'aujourd'hui a ton propre rythme. Reviens quand tu es pret pour la suivante.",
   "buildConfidenceDoneButton": "Termine",
-  "visualMathsNumberLineTitle": "Droite numerique",
+  "visualMathsNumberLineTitle": "Droite numérique",
+  "@visualMathsNumberLineTitle": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "visualMathsNumberLineSubtitle": "Fais glisser le point pour explorer les nombres sur une droite",
   "visualMathsFractionBarsTitle": "Barres de fractions",
   "visualMathsFractionBarsSubtitle": "Compare des fractions sous forme de barres, cote a cote",
@@ -883,38 +904,68 @@
   "visualMathsPlaceValueTitle": "Explorateur de valeur de position",
   "visualMathsPlaceValueSubtitle": "Decompose les nombres selon leur valeur de position",
   "visualMathsInteractiveBadge": "Interactif",
-  "visualMathsPreviewBadge": "Apercu",
+  "visualMathsPreviewBadge": "Aperçu",
+  "@visualMathsPreviewBadge": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "visualMathsComingSoonNote": "Version interactive disponible dans une prochaine version.",
   "visualMathsTryAnotherExample": "Essayer un autre exemple",
   "numberLineExampleBasicWholeNumber": "Un nombre entier sur une droite de 0 a 10",
   "numberLineExampleNegativeNumber": "Un nombre negatif sur une droite de −10 a 10",
   "numberLineExampleSimpleFraction": "Une fraction sur une droite de 0 a 1",
   "numberLineExampleDecimal": "Un nombre decimal sur une droite de 0 a 5",
-  "fractionBarsCaption1": "1/2 est exactement la moitie de la barre entiere.",
-  "fractionBarsCaption2": "2/4 couvre la meme longueur que 1/2 — des fractions equivalentes.",
-  "fractionBarsCaption3": "3/4 est plus que la moitie, moins que le tout.",
-  "fractionBarsCaption4": "5/8 depasse tout juste la moitie de la barre entiere.",
+  "fractionBarsCaption1": "1/2 est exactement la moitié de la barre entière.",
+  "@fractionBarsCaption1": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "fractionBarsCaption2": "2/4 couvre la même longueur que 1/2 — des fractions équivalentes.",
+  "@fractionBarsCaption2": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "fractionBarsCaption3": "3/4 est plus que la moitié, moins que le tout.",
+  "@fractionBarsCaption3": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "fractionBarsCaption4": "5/8 dépasse tout juste la moitié de la barre entière.",
+  "@fractionBarsCaption4": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "abacusCaption1": "Une boule deplacee dans la colonne des unites represente 1.",
   "abacusCaption2": "Dix unites se regroupent en une boule dans la colonne des dizaines.",
   "abacusCaption3": "Une boule dans la colonne des centaines vaut 100 unites.",
   "placeValueCaption1": "3742 se decompose en 3 milliers, 7 centaines, 4 dizaines, 2 unites.",
-  "placeValueCaption2": "6.4 se decompose en 6 unites et 4 dixiemes.",
+  "placeValueCaption2": "6.4 se décompose en 6 unités et 4 dixièmes.",
+  "@placeValueCaption2": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "placeValueCaption3": "805 se decompose en 8 centaines, 0 dizaine, 5 unites — le 0 occupe la position des dizaines.",
   "abacusColumnHundreds": "Centaines",
   "abacusColumnTens": "Dizaines",
   "abacusColumnOnes": "Unites",
 
   "mathStudioRecallCardsTitle": "Cartes memo",
-  "mathStudioRecallCardsSubtitle": "Entrainement rapide pour les faits a retenir",
+  "mathStudioRecallCardsSubtitle": "Entrainement rapide pour les faits à retenir",
+  "@mathStudioRecallCardsSubtitle": {
+    "description": "Swiss Phase 3 P1 correction (ambiguous_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
 
   "recallCardsHubTitle": "Cartes memo",
-  "recallCardsHubSubtitle": "Entrainement court et cible pour les formules, le vocabulaire, les symboles et les idees qui les sous-tendent",
+  "recallCardsHubSubtitle": "Entrainement court et cible pour les formules, le vocabulaire, les symboles et les idées qui les sous-tendent",
+  "@recallCardsHubSubtitle": {
+    "description": "Swiss Phase 3 P1 correction (ambiguous_accent, missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "recallCardsQuickReviewTitle": "Revision rapide de cinq cartes",
-  "recallCardsQuickReviewSubtitle": "Une courte selection quotidienne, choisie pour toi",
+  "recallCardsQuickReviewSubtitle": "Une courte sélection quotidienne, choisie pour toi",
+  "@recallCardsQuickReviewSubtitle": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "recallCardsReviewDueTitle": "Revisions dues",
   "recallCardsReviewDueCount": "{count} a reviser",
   "recallCardsReviewDueEmpty": "Rien a reviser pour le moment — bravo",
-  "recallCardsBrowseByTopicTitle": "Parcourir par theme",
+  "recallCardsBrowseByTopicTitle": "Parcourir par thème",
+  "@recallCardsBrowseByTopicTitle": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "recallCardsBrowseByTypeTitle": "Parcourir par type de carte",
   "recallCardsTopicFilterGroupLabel": "Sujet",
   "recallCardsTypeFilterGroupLabel": "Type de carte",
@@ -923,7 +974,10 @@
   "recallCardsMoreTypesSheetTitle": "Plus de types de cartes",
   "recallCardsClearFiltersButton": "Effacer les filtres",
   "recallCardsSearchTitle": "Recherche",
-  "recallCardsSearchHint": "Rechercher des formules, des termes et des idees",
+  "recallCardsSearchHint": "Rechercher des formules, des termes et des idées",
+  "@recallCardsSearchHint": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "recallCardsBookmarksTitle": "Favoris",
   "recallCardsEmptyBookmarks": "Pas encore de favoris — appuie sur l'icone favori d'une carte pour l'enregistrer ici",
   "recallCardsNoResults": "Aucune carte trouvee",
@@ -947,13 +1001,19 @@
   "@recallCardsExportAnswerSheet": {
     "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
-  "recallCardsSessionComplete": "Session terminee",
+  "recallCardsSessionComplete": "Session terminée",
+  "@recallCardsSessionComplete": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "recallCardsSessionCompleteSubtitle": "Bravo — reviens demain pour continuer",
   "recallCardsCardOf": "Carte {current} sur {total}",
   "recallCardsStateNew": "Nouveau",
   "recallCardsStateLearning": "En apprentissage",
   "recallCardsStateReviewDue": "Revision due",
-  "recallCardsStateMastered": "Maitrise",
+  "recallCardsStateMastered": "Maîtrisé",
+  "@recallCardsStateMastered": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "recallCardsTypeFormula": "Formule",
   "recallCardsTypeMeaning": "Signification",
   "recallCardsTypeSymbol": "Symbole",
@@ -964,10 +1024,19 @@
   "recallCardsTypeRealWorldConnection": "Lien avec le reel",
   "recallCardsTopicNumber": "Nombres",
   "recallCardsTopicRatioAndProportion": "Rapports et proportions",
-  "recallCardsTopicAlgebra": "Algebre",
-  "recallCardsTopicGeometryAndMeasures": "Geometrie et mesures",
+  "recallCardsTopicAlgebra": "Algèbre",
+  "@recallCardsTopicAlgebra": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "recallCardsTopicGeometryAndMeasures": "Géométrie et mesures",
+  "@recallCardsTopicGeometryAndMeasures": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "recallCardsTopicStatistics": "Statistiques",
-  "recallCardsTopicProbability": "Probabilites",
+  "recallCardsTopicProbability": "Probabilités",
+  "@recallCardsTopicProbability": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
 
   "mathStudioInteractiveLabsTitle": "Laboratoires interactifs",
   "mathStudioInteractiveLabsSubtitle": "Des mathématiques concrètes à toucher, modifier et tester",
@@ -990,32 +1059,56 @@
   "labsFractionBuilderTitle": "Constructeur de fractions",
   "labsFractionBuilderSubtitle": "Construis une fraction en remplissant des parts egales",
   "labsFractionBuilderConcept": "Une fraction compte des parts egales d'un tout. Touche les segments pour les remplir et atteindre la fraction cible.",
-  "labsFractionBuilderWhereUsed": "Partager la nourriture equitablement, lire une recette et mesurer des ingredients reposent tous sur des fractions d'un tout.",
+  "labsFractionBuilderWhereUsed": "Partager la nourriture équitablement, lire une recette et mesurer des ingrédients reposent tous sur des fractions d'un tout.",
+  "@labsFractionBuilderWhereUsed": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsFractionBuilderPrompt": "Remplis {numerator} segments sur {denominator}.",
   "labsFractionBuilderFilledCount": "{filled} sur {denominator} remplis",
 
   "labsAlgebraBalanceTitle": "Balance algebrique",
-  "labsAlgebraBalanceSubtitle": "Garde les deux plateaux egaux pour resoudre x",
-  "labsAlgebraBalanceConcept": "Une equation reste vraie seulement si tu fais la meme chose des deux cotes. Simplifie etape par etape jusqu'a isoler x.",
-  "labsAlgebraBalanceWhereUsed": "Repartir d'un total pour trouver une quantite inconnue utilise exactement ce principe d'equilibre.",
+  "labsAlgebraBalanceSubtitle": "Garde les deux plateaux égaux pour résoudre x",
+  "@labsAlgebraBalanceSubtitle": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsAlgebraBalanceConcept": "Une équation reste vraie seulement si tu fais la même chose des deux côtés. Simplifie étape par étape jusqu'à isoler x.",
+  "@labsAlgebraBalanceConcept": {
+    "description": "Swiss Phase 3 P1 correction (ambiguous_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsAlgebraBalanceWhereUsed": "Repartir d'un total pour trouver une quantité inconnue utilise exactement ce principe d'équilibre.",
+  "@labsAlgebraBalanceWhereUsed": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsAlgebraBalanceEquationLabel": "Equation : {equation}",
   "labsAlgebraBalanceStep1Button": "Retirer la constante",
   "labsAlgebraBalanceStep2Button": "Diviser pour isoler x",
-  "labsAlgebraBalanceSolvedFeedback": "Resolu ! x = {x}",
+  "labsAlgebraBalanceSolvedFeedback": "Résolu ! x = {x}",
+  "@labsAlgebraBalanceSolvedFeedback": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
 
   "labsNumberLineExplorerTitle": "Explorateur de droite numérique",
   "@labsNumberLineExplorerTitle": {
     "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
   "labsNumberLineExplorerSubtitle": "Fais glisser pour atteindre une valeur sur la droite",
-  "labsNumberLineExplorerConcept": "La position d'un nombre sur une droite numerique correspond a sa valeur — y compris les nombres negatifs et les decimales.",
+  "labsNumberLineExplorerConcept": "La position d'un nombre sur une droite numérique correspond à sa valeur — y compris les nombres négatifs et les décimales.",
+  "@labsNumberLineExplorerConcept": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsNumberLineExplorerWhereUsed": "Lire un thermometre, une frise chronologique ou une echelle de mesure repose sur cette correspondance entre position et valeur.",
   "labsNumberLineExplorerPrompt": "Fais glisser le point sur {target}.",
 
   "labsFlightPathLabTitle": "Laboratoire de trajectoire de vol",
   "labsFlightPathLabSubtitle": "Regle un cap et une vitesse pour atteindre la cible",
-  "labsFlightPathLabConcept": "Un cap (relevement) et une vitesse, maintenus pendant un temps fixe, determinent exactement ou tu arrives — cela combine les relevements avec vitesse, distance et temps.",
-  "labsFlightPathLabWhereUsed": "Les pilotes et les marins utilisent ensemble le relevement et la vitesse pour naviguer vers une destination.",
+  "labsFlightPathLabConcept": "Un cap (relèvement) et une vitesse, maintenus pendant un temps fixe, déterminent exactement où tu arrives — cela combine les relèvements avec vitesse, distance et temps.",
+  "@labsFlightPathLabConcept": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsFlightPathLabWhereUsed": "Les pilotes et les marins utilisent ensemble le relèvement et la vitesse pour naviguer vers une destination.",
+  "@labsFlightPathLabWhereUsed": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsFlightPathLabPrompt": "Cible : relevement {bearing}°, a {distance} km. Le temps de vol est fixe a 2 heures — choisis un cap et une vitesse pour l'atteindre.",
   "labsFlightPathLabRadarLabel": "Une vue radar montrant la cible et, après un vol test, l'endroit où l'avion a atterri.",
   "@labsFlightPathLabRadarLabel": {
@@ -1032,7 +1125,10 @@
   "labsDataDetectiveTitle": "Detective des donnees",
   "labsDataDetectiveSubtitle": "Vois comment une valeur aberrante change une moyenne",
   "labsDataDetectiveConcept": "La moyenne est bien plus attiree par une valeur aberrante que la mediane. Retire des valeurs et observe chaque moyenne se mettre a jour en direct.",
-  "labsDataDetectiveWhereUsed": "Rapporter un salaire, un prix ou un score 'typique' de facon equitable suppose de savoir quand la moyenne est trompeuse et la mediane un meilleur resume.",
+  "labsDataDetectiveWhereUsed": "Rapporter un salaire, un prix ou un score 'typique' de façon équitable suppose de savoir quand la moyenne est trompeuse et la médiane un meilleur résumé.",
+  "@labsDataDetectiveWhereUsed": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsDataDetectiveAddValueButton": "Ajouter une valeur typique",
   "labsDataDetectivePredictionPrompt": "Laquelle changera le plus une fois la valeur aberrante retiree ?",
   "labsDataDetectivePredictMeanButton": "Moyenne",
@@ -1047,31 +1143,197 @@
   "labsSpatialCubeLabTitle": "Laboratoire du cube spatial",
   "labsSpatialCubeLabSubtitle": "Fais pivoter, deplie et explore un cube etiquete",
   "labsSpatialCubeLabIntro": "Fais glisser le cube pour le tourner. Remarque que les faces restent a la meme place les unes par rapport aux autres, quel que soit le sens de rotation.",
-  "labsSpatialCubeLabFreePlayCaption": "Essaie: fais glisser le cube, ou utilise les boutons ci-dessous.",
-  "labsSpatialCubeWhichFaceOppositeTitle": "Quelle face est opposee?",
-  "labsSpatialCubeWhichFaceOppositeSubtitle": "Predis la face opposee, puis verifie en tournant le cube",
+  "labsSpatialCubeLabFreePlayCaption": "Essaie : fais glisser le cube, ou utilise les boutons ci-dessous.",
+  "@labsSpatialCubeLabFreePlayCaption": {
+    "description": "Swiss Phase 3 P1 correction (fr_punctuation_minority). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsSpatialCubeWhichFaceOppositeTitle": "Quelle face est opposée ?",
+  "@labsSpatialCubeWhichFaceOppositeTitle": {
+    "description": "Swiss Phase 3 P1 correction (fr_punctuation_minority). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsSpatialCubeWhichFaceOppositeSubtitle": "Prédis la face opposée, puis vérifie en tournant le cube",
+  "@labsSpatialCubeWhichFaceOppositeSubtitle": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsSpatialCubeRotateToMatchTitle": "Tourner pour faire correspondre",
   "labsSpatialCubeRotateToMatchSubtitle": "Tourne ton cube pour qu'il corresponde a l'orientation cible",
   "labsSpatialCubeHiddenFaceTitle": "Face cachee",
-  "labsSpatialCubeHiddenFaceSubtitle": "Trouve quelle etiquette se trouve sur une face que tu ne vois pas",
+  "labsSpatialCubeHiddenFaceSubtitle": "Trouve quelle étiquette se trouve sur une face que tu ne vois pas",
+  "@labsSpatialCubeHiddenFaceSubtitle": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsSpatialCubeNetExplorerTitle": "Explorateur de patrons de cube",
   "labsSpatialCubeNetExplorerSubtitle": "Predis les faces opposees sur un patron a plat, puis plie-le",
   "labsEarlyMathsPlaygroundTitle": "Aire de jeu de maths pour les tout-petits",
-  "labsEarlyMathsPlaygroundSubtitle": "Activites calmes et ludiques pour compter, partager et decouvrir les premieres fractions, pour les jeunes apprenants",
-  "earlyMathsPlaygroundIntro": "Un espace calme et sans limite de temps ou les jeunes apprenants peuvent s'exercer a compter, a partager et a decouvrir les premieres fractions — sans points, sans chronometre, sans pression.",
+  "labsEarlyMathsPlaygroundSubtitle": "Activités calmes et ludiques pour compter, partager et découvrir les premières fractions, pour les jeunes apprenants",
+  "@labsEarlyMathsPlaygroundSubtitle": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "earlyMathsPlaygroundIntro": "Un espace calme et sans limite de temps où les jeunes apprenants peuvent s'exercer à compter, à partager et à découvrir les premières fractions — sans points, sans chronomètre, sans pression.",
+  "@earlyMathsPlaygroundIntro": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "feedTheHungryPandaTitle": "Nourris le panda affame",
   "feedTheHungryPandaSubtitle": "Compte les pommes une par une pour nourrir le panda",
+  "abacusPlayModeGuided": "Guidé",
+  "@abacusPlayModeGuided": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayModeFree": "Exploration libre",
+  "@abacusPlayModeFree": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayFreeTitle": "Exploration libre",
+  "@abacusPlayFreeTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayFreeIntro": "Fais glisser les boules de l'autre côté de la barre pour former n'importe quel nombre jusqu'à 999. Il n'y a pas d'objectif ici. Explore simplement.",
+  "@abacusPlayFreeIntro": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayHowTo": "Touche une boule ou fais-la glisser de l'autre côté de la barre pour la compter. Touche une boule comptée pour la renvoyer.",
+  "@abacusPlayHowTo": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayReset": "Réinitialiser",
+  "@abacusPlayReset": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayBuildTitle": "Former un nombre",
+  "@abacusPlayBuildTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayBuildTask": "Forme 34. Fais glisser 3 dizaines et 4 unités de l'autre côté de la barre.",
+  "@abacusPlayBuildTask": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "abacusPlayBuildDone": "Tu as formé 34 : 3 dizaines et 4 unités.",
   "@abacusPlayBuildDone": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayBreakTitle": "Décomposer un nombre",
+  "@abacusPlayBreakTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayBreakTask": "Voici 47. Fais glisser les 7 unités en arrière pour qu'il ne reste que les dizaines.",
+  "@abacusPlayBreakTask": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
   "abacusPlayBreakDone": "47 se décompose en 40 et 7.",
   "@abacusPlayBreakDone": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
+  "abacusPlayExchangeTitle": "Échanger dix unités contre une dizaine",
+  "@abacusPlayExchangeTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayExchangeTask": "Voici 29. Appuie sur +1 pour en ajouter un, et observe ce qui arrive aux unités.",
+  "@abacusPlayExchangeTask": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "abacusPlayExchangeDone": "10 unités échangées contre 1 dizaine, donc 29 + 1 = 30.",
   "@abacusPlayExchangeDone": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayNoteTenOnes": "10 unités échangées contre 1 dizaine.",
+  "@abacusPlayNoteTenOnes": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayNoteTenTens": "10 dizaines échangées contre 1 centaine.",
+  "@abacusPlayNoteTenTens": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayNoteTenOnesAndTens": "10 unités échangées contre 1 dizaine, et 10 dizaines contre 1 centaine.",
+  "@abacusPlayNoteTenOnesAndTens": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayNoteTenToOnes": "1 dizaine échangée contre 10 unités.",
+  "@abacusPlayNoteTenToOnes": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayNoteHundredToTens": "1 centaine échangée contre 10 dizaines.",
+  "@abacusPlayNoteHundredToTens": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayNoteHundredCascade": "1 centaine échangée contre 10 dizaines, et 1 dizaine contre 10 unités.",
+  "@abacusPlayNoteHundredCascade": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayParentNote": "Pour les adultes : chaque tige porte jusqu'à neuf boules. Le tableau des nombres montre le même nombre en chiffres, et les deux correspondent toujours. Dix boules sur une tige s'échangent contre une boule sur la tige de gauche. Demande à ton enfant de dire ce qui a changé. C'est une représentation concrète de la valeur de position, pas un test.",
+  "@abacusPlayParentNote": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusBoardTitle": "Tableau des nombres",
+  "@abacusBoardTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusBoardZero": "0 : aucune boule comptée pour l'instant",
+  "@abacusBoardZero": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusBoardAddOne": "Ajouter 1",
+  "@abacusBoardAddOne": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusBoardSubtractOne": "Enlever 1",
+  "@abacusBoardSubtractOne": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusBoardAddTen": "Ajouter 10",
+  "@abacusBoardAddTen": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusBoardSubtractTen": "Enlever 10",
+  "@abacusBoardSubtractTen": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusSpokenZero": "0. Aucune boule n'est encore comptée.",
+  "@abacusSpokenZero": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayRodLabel": "Tige : {name}",
+  "@abacusPlayRodLabel": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayRodValue": "{count, plural, =0{Aucune boule comptée} =1{1 boule comptée} other{{count} boules comptées}}",
+  "@abacusPlayRodValue": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayPartHundreds": "{count, plural, =1{1 centaine} other{{count} centaines}}",
+  "@abacusPlayPartHundreds": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayPartTens": "{count, plural, =1{1 dizaine} other{{count} dizaines}}",
+  "@abacusPlayPartTens": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayPartOnes": "{count, plural, =1{1 unité} other{{count} unités}}",
+  "@abacusPlayPartOnes": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusBoardEquationOne": "{value} = {a}",
+  "@abacusBoardEquationOne": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusBoardEquationTwo": "{value} = {a} + {b}",
+  "@abacusBoardEquationTwo": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusBoardEquationThree": "{value} = {a} + {b} + {c}",
+  "@abacusBoardEquationThree": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusSpokenOne": "{value}, c'est {a}",
+  "@abacusSpokenOne": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusSpokenTwo": "{value}, c'est {a} et {b}",
+  "@abacusSpokenTwo": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusSpokenThree": "{value}, c'est {a}, {b} et {c}",
+  "@abacusSpokenThree": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
   "feedPandaInstruction": "Donne au panda {count, plural, =1{1 pomme} other{{count} pommes}}.",
   "feedPandaWellDone": "Bravo ! Le panda a mange {count, plural, =1{1 pomme} other{{count} pommes}}.",
@@ -1091,13 +1353,25 @@
   "feedPandaDropZoneLabel": "Donne les pommes au panda ici",
   "feedPandaTapPandaHint": "Pomme choisie. Touche maintenant le panda pour la lui donner.",
   "labsSpatialCubeWhichFaceOppositeMission": "Regarde le cube, puis decide quelle face est opposee a celle indiquee.",
-  "labsSpatialCubeWhichFaceOppositeQuestion": "Quelle face est opposee a {faceLabel}?",
+  "labsSpatialCubeWhichFaceOppositeQuestion": "Quelle face est opposée à {faceLabel} ?",
+  "@labsSpatialCubeWhichFaceOppositeQuestion": {
+    "description": "Swiss Phase 3 P1 correction (fr_punctuation_minority). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsSpatialCubeWhichFaceOppositeHintButton": "Indice",
-  "labsSpatialCubeWhichFaceOppositeHintText": "Les faces opposees ne partagent jamais une arete — avant/arriere, dessus/dessous et gauche/droite sont toujours les trois paires.",
+  "labsSpatialCubeWhichFaceOppositeHintText": "Les faces opposées ne partagent jamais une arête — avant/arrière, dessus/dessous et gauche/droite sont toujours les trois paires.",
+  "@labsSpatialCubeWhichFaceOppositeHintText": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsSpatialCubeWhichFaceOppositeCorrect": "Bien vu. Tu as bien tenu compte des relations entre les faces.",
-  "labsSpatialCubeWhichFaceOppositeIncorrect": "Presque. Regarde quelles faces partagent une arete.",
+  "labsSpatialCubeWhichFaceOppositeIncorrect": "Presque. Regarde quelles faces partagent une arête.",
+  "@labsSpatialCubeWhichFaceOppositeIncorrect": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsSpatialCubeWhichFaceOppositeWhereUsed": "Emballer des boites, lire un de a jouer et travailler avec des patrons 3D reposent tous sur le fait de savoir quelles faces d'un cube sont opposees.",
-  "labsSpatialCubeWhichFaceOppositeHelpWhatToDo": "Fais pivoter le cube si tu veux, puis choisis la face que tu penses etre opposee a celle indiquee.",
+  "labsSpatialCubeWhichFaceOppositeHelpWhatToDo": "Fais pivoter le cube si tu veux, puis choisis la face que tu penses être opposée à celle indiquée.",
+  "@labsSpatialCubeWhichFaceOppositeHelpWhatToDo": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsSpatialCubeWhichFaceOppositeHelpWhatToNotice": "Remarque que les faces opposees ne sont jamais cote a cote, quelle que soit la facon dont tu tournes le cube.",
   "labsSpatialCubeWhichFaceOppositeHelpWhatItMeans": "Chaque cube a exactement trois paires de faces opposees — avant/arriere, dessus/dessous, gauche/droite — et faire pivoter le cube ne change jamais quelles faces sont associees.",
   "labsSpatialCubeWhichFaceOppositeReveal": "{correctLabel} est oppose a {askedLabel}.",
@@ -1108,21 +1382,36 @@
   "labsSpatialCubeRotateToMatchCorrect": "Bravo — c'est une bonne correspondance.",
   "labsSpatialCubeRotateToMatchIncorrect": "Pas encore tout a fait. Compare quelle face est devant et laquelle est dessus.",
   "labsSpatialCubeRotateToMatchWhereUsed": "Faire correspondre l'orientation d'un objet a un schema fait partie de la lecture des dessins techniques et des instructions de montage.",
-  "labsSpatialCubeRotateToMatchHelpWhatToDo": "Fais glisser ton cube pour aligner ses faces avec la cible affichee a cote, puis teste ta rotation.",
+  "labsSpatialCubeRotateToMatchHelpWhatToDo": "Fais glisser ton cube pour aligner ses faces avec la cible affichée à côté, puis teste ta rotation.",
+  "@labsSpatialCubeRotateToMatchHelpWhatToDo": {
+    "description": "Swiss Phase 3 P1 correction (ambiguous_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsSpatialCubeRotateToMatchHelpWhatToNotice": "Remarque que tu n'as pas besoin d'une correspondance parfaite au pixel pres — il suffit que les memes faces soient devant et dessus.",
   "labsSpatialCubeRotateToMatchHelpWhatItMeans": "Une orientation est entierement decrite par la face qui est devant et celle qui est dessus — ces deux informations fixent tout le reste.",
   "labsSpatialCubeHiddenFaceMission": "Regarde les trois faces visibles, puis trouve ce qui se trouve sur celle qui est cachee.",
-  "labsSpatialCubeHiddenFaceQuestion": "Quelle etiquette se trouve sur la face {direction}?",
+  "labsSpatialCubeHiddenFaceQuestion": "Quelle étiquette se trouve sur la face {direction} ?",
+  "@labsSpatialCubeHiddenFaceQuestion": {
+    "description": "Swiss Phase 3 P1 correction (fr_punctuation_minority, missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsSpatialCubeHiddenFaceHintButton": "Indice",
   "labsSpatialCubeHiddenFaceHintText": "Trouve d'abord les faces que tu PEUX voir — la face cachee est l'une des trois restantes.",
-  "labsSpatialCubeHiddenFaceCorrect": "Bravo. Tu as correctement predit la face cachee.",
+  "labsSpatialCubeHiddenFaceCorrect": "Bravo. Tu as correctement prédit la face cachée.",
+  "@labsSpatialCubeHiddenFaceCorrect": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsSpatialCubeHiddenFaceIncorrect": "Bon essai. Fais pivoter le cube pour verifier, puis essaie le suivant.",
   "labsSpatialCubeHiddenFaceWhereUsed": "Lire des schemas isometriques et des dessins techniques demande de raisonner sur des faces que l'on ne voit pas directement.",
-  "labsSpatialCubeHiddenFaceHelpWhatToDo": "Regarde les trois faces visibles, puis choisis l'etiquette que tu penses se trouver sur la face cachee indiquee.",
+  "labsSpatialCubeHiddenFaceHelpWhatToDo": "Regarde les trois faces visibles, puis choisis l'étiquette que tu penses se trouver sur la face cachée indiquée.",
+  "@labsSpatialCubeHiddenFaceHelpWhatToDo": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsSpatialCubeHiddenFaceHelpWhatToNotice": "Remarque que seulement trois faces sont visibles a la fois depuis cet angle — les trois autres sont toujours cachees.",
   "labsSpatialCubeHiddenFaceHelpWhatItMeans": "Un cube ne montre jamais que trois faces depuis un point de vue, donc trouver une face cachee demande de raisonner sur tout le cube, pas seulement sur ce qui est visible.",
   "labsSpatialCubeNetExplorerMission": "Regarde le patron a plat, predis quelles faces finiront opposees l'une a l'autre, puis plie-le pour verifier.",
-  "labsSpatialCubeNetExplorerPredictPrompt": "Quels deux carres penses-tu finiront opposes l'un a l'autre?",
+  "labsSpatialCubeNetExplorerPredictPrompt": "Quels deux carrés penses-tu finiront opposés l'un à l'autre ?",
+  "@labsSpatialCubeNetExplorerPredictPrompt": {
+    "description": "Swiss Phase 3 P1 correction (fr_punctuation_minority). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsSpatialCubeNetExplorerFoldButton": "Plier",
   "labsSpatialCubeNetExplorerUnfoldButton": "Deplier",
   "labsSpatialCubeNetExplorerNextNetButton": "Patron suivant",
@@ -1134,11 +1423,17 @@
   "labsSpatialCubeNetExplorerWhereUsed": "La conception d'emballages et la tolerie commencent toutes deux par un patron a plat qui se plie en une forme 3D finie.",
   "labsSpatialCubeNetExplorerHelpWhatToDo": "Etudie le patron a plat, puis appuie sur Plier pour voir s'il se referme en cube.",
   "labsSpatialCubeNetExplorerHelpWhatToNotice": "Remarque que tous les arrangements de six carres ne se plient pas en cube ferme — certains se chevauchent ou laissent un vide.",
-  "labsSpatialCubeNetExplorerHelpWhatItMeans": "Un patron est une forme 2D qui se plie le long de ses aretes en un solide 3D — le meme carre peut finir sur des faces tres differentes du cube selon la forme du patron.",
+  "labsSpatialCubeNetExplorerHelpWhatItMeans": "Un patron est une forme 2D qui se plie le long de ses arêtes en un solide 3D — le même carré peut finir sur des faces très différentes du cube selon la forme du patron.",
+  "@labsSpatialCubeNetExplorerHelpWhatItMeans": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsAircraftLandingLabTitle": "Laboratoire d'atterrissage",
   "labsAircraftLandingLabSubtitle": "Pilote l'angle de descente, la distance et la vitesse qui permettent un atterrissage en toute securite",
   "labsAircraftLandingLabIntro": "Ajuste l'angle de descente et la vitesse, puis appuie sur Tester l'approche pour voir l'avion suivre la trajectoire et voir ou il se pose.",
-  "labsAircraftLandingLabFreePlayCaption": "Essaie: fais glisser les curseurs, puis appuie sur Tester l'approche.",
+  "labsAircraftLandingLabFreePlayCaption": "Essaie : fais glisser les curseurs, puis appuie sur Tester l'approche.",
+  "@labsAircraftLandingLabFreePlayCaption": {
+    "description": "Swiss Phase 3 P1 correction (fr_punctuation_minority). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsAircraftLandingFindTheTimeTitle": "Trouve le temps",
   "labsAircraftLandingFindTheTimeSubtitle": "Calcule combien de temps prend le vol jusqu'a la piste",
   "labsAircraftLandingDescentLineTitle": "Suis la ligne de descente",
@@ -1147,12 +1442,24 @@
   "labsAircraftLandingGlidePathSubtitle": "Choisis l'angle et la vitesse pour atterrir en toute securite sur la piste",
   "labsAircraftLandingVectorApproachTitle": "Approche vectorielle",
   "labsAircraftLandingVectorApproachSubtitle": "Ajuste la vitesse horizontale et verticale pour correspondre a une approche cible",
-  "labsAircraftLandingDescentAngleLabel": "Angle de descente: {degrees}°",
-  "labsAircraftLandingAirspeedLabel": "Vitesse: {metresPerSecond} m/s",
+  "labsAircraftLandingDescentAngleLabel": "Angle de descente : {degrees}°",
+  "@labsAircraftLandingDescentAngleLabel": {
+    "description": "Swiss Phase 3 P1 correction (fr_punctuation_minority). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsAircraftLandingAirspeedLabel": "Vitesse : {metresPerSecond} m/s",
+  "@labsAircraftLandingAirspeedLabel": {
+    "description": "Swiss Phase 3 P1 correction (fr_punctuation_minority). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsAircraftLandingTestApproachButton": "Tester l'approche",
   "labsAircraftLandingFindTheTimeDiagramLabel": "Un avion a {distanceM} metres de la piste, volant a {speedMps} metres par seconde.",
-  "labsAircraftLandingFindTheTimeSpeedLabel": "Vitesse: {speedMps} m/s",
-  "labsAircraftLandingFindTheTimeQuestion": "Combien de temps faudra-t-il pour atteindre la piste?",
+  "labsAircraftLandingFindTheTimeSpeedLabel": "Vitesse : {speedMps} m/s",
+  "@labsAircraftLandingFindTheTimeSpeedLabel": {
+    "description": "Swiss Phase 3 P1 correction (fr_punctuation_minority). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsAircraftLandingFindTheTimeQuestion": "Combien de temps faudra-t-il pour atteindre la piste ?",
+  "@labsAircraftLandingFindTheTimeQuestion": {
+    "description": "Swiss Phase 3 P1 correction (fr_punctuation_minority). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsAircraftLandingFindTheTimeHintButton": "Indice",
   "labsAircraftLandingFindTheTimeHintText": "Temps = distance / vitesse.",
   "labsAircraftLandingFindTheTimeMission": "Utilise la distance et la vitesse indiquees pour calculer combien de temps prendra le vol jusqu'a la piste.",
@@ -1164,32 +1471,71 @@
   "labsAircraftLandingFindTheTimeHelpWhatToNotice": "Remarque qu'une vitesse plus elevee signifie toujours un temps plus court pour la meme distance.",
   "labsAircraftLandingFindTheTimeHelpWhatItMeans": "Le temps, la distance et la vitesse sont toujours lies par temps = distance / vitesse — la meme relation utilisee pour n'importe quel trajet, pas seulement les vols.",
   "labsAircraftLandingDescentLineTestButton": "Tester ma ligne",
-  "labsAircraftLandingDescentLineMission": "Ajuste ton angle de descente jusqu'a ce que ta ligne corresponde a la ligne cible en pointilles.",
+  "labsAircraftLandingDescentLineMission": "Ajuste ton angle de descente jusqu'à ce que ta ligne corresponde à la ligne cible en pointillés.",
+  "@labsAircraftLandingDescentLineMission": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsAircraftLandingDescentLineWhereUsed": "Faire correspondre une pente requise se produit chaque fois qu'un chemin, une rampe ou un tuyau doit suivre une inclinaison fixe.",
   "labsAircraftLandingDescentLineCorrect": "Bravo — ta ligne correspond au plan de descente cible.",
-  "labsAircraftLandingDescentLineIncorrect": "Pas encore. Compare a quel point ta ligne est raide par rapport a la ligne cible en pointilles.",
-  "labsAircraftLandingDescentLineHelpWhatToDo": "Deplace le curseur d'angle de descente jusqu'a ce que ta ligne pleine se superpose a la ligne cible en pointilles, puis teste-la.",
+  "labsAircraftLandingDescentLineIncorrect": "Pas encore. Compare à quel point ta ligne est raide par rapport à la ligne cible en pointillés.",
+  "@labsAircraftLandingDescentLineIncorrect": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsAircraftLandingDescentLineHelpWhatToDo": "Déplace le curseur d'angle de descente jusqu'à ce que ta ligne pleine se superpose à la ligne cible en pointillés, puis teste-la.",
+  "@labsAircraftLandingDescentLineHelpWhatToDo": {
+    "description": "Swiss Phase 3 P1 correction (ambiguous_accent, missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsAircraftLandingDescentLineHelpWhatToNotice": "Remarque qu'un angle plus raide fait descendre la ligne plus vite — une pente negative plus grande.",
-  "labsAircraftLandingDescentLineHelpWhatItMeans": "L'angle de descente est la pente de la ligne: variation d'altitude divisee par la distance parcourue, ecrite y = mx + c avec un m negatif.",
+  "labsAircraftLandingDescentLineHelpWhatItMeans": "L'angle de descente est la pente de la ligne : variation d'altitude divisée par la distance parcourue, écrite y = mx + c avec un m négatif.",
+  "@labsAircraftLandingDescentLineHelpWhatItMeans": {
+    "description": "Swiss Phase 3 P1 correction (fr_punctuation_minority). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsAircraftLandingGlidePathSafe": "Atterrissage en douceur — pile sur la piste.",
   "labsAircraftLandingGlidePathTooSteep": "Trop raide — l'avion a touche le sol avant la piste.",
-  "labsAircraftLandingGlidePathTooShallow": "Trop plat — l'avion etait encore en vol apres la piste.",
-  "labsAircraftLandingGlidePathMission": "Choisis un angle et une vitesse, puis teste ton approche pour atterrir en toute securite sur la piste.",
-  "labsAircraftLandingGlidePathWhereUsed": "Chaque atterrissage reel equilibre un angle de descente sur avec la vitesse et la distance pour toucher le sol exactement au bon endroit.",
+  "labsAircraftLandingGlidePathTooShallow": "Trop plat — l'avion était encore en vol après la piste.",
+  "@labsAircraftLandingGlidePathTooShallow": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsAircraftLandingGlidePathMission": "Choisis un angle et une vitesse, puis teste ton approche pour atterrir en toute sécurité sur la piste.",
+  "@labsAircraftLandingGlidePathMission": {
+    "description": "Swiss Phase 3 P1 correction (ambiguous_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsAircraftLandingGlidePathWhereUsed": "Chaque atterrissage réel équilibre un angle de descente sur avec la vitesse et la distance pour toucher le sol exactement au bon endroit.",
+  "@labsAircraftLandingGlidePathWhereUsed": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsAircraftLandingGlidePathTouchdownError": "{metres} metres du seuil de piste.",
   "labsAircraftLandingGlidePathHelpWhatToDo": "Ajuste l'angle et la vitesse, puis appuie sur Tester l'approche pour voir ou l'avion touche vraiment le sol.",
   "labsAircraftLandingGlidePathHelpWhatToNotice": "Remarque comment le point de toucher des roues se deplace quand tu changes l'angle, meme si la vitesse reste la meme.",
-  "labsAircraftLandingGlidePathHelpWhatItMeans": "tan(angle) = altitude / distance — c'est exactement ce rapport qui fait qu'une descente atterrit precisement sur la piste plutot que trop court ou trop long.",
-  "labsAircraftLandingVectorHorizontalLabel": "Vitesse horizontale: {metresPerSecond} m/s",
-  "labsAircraftLandingVectorVerticalLabel": "Vitesse verticale: {metresPerSecond} m/s",
-  "labsAircraftLandingVectorResultantLabel": "Vitesse combinee (resultante): {metresPerSecond} m/s",
+  "labsAircraftLandingGlidePathHelpWhatItMeans": "tan(angle) = altitude / distance — c'est exactement ce rapport qui fait qu'une descente atterrit précisément sur la piste plutôt que trop court ou trop long.",
+  "@labsAircraftLandingGlidePathHelpWhatItMeans": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsAircraftLandingVectorHorizontalLabel": "Vitesse horizontale : {metresPerSecond} m/s",
+  "@labsAircraftLandingVectorHorizontalLabel": {
+    "description": "Swiss Phase 3 P1 correction (fr_punctuation_minority). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsAircraftLandingVectorVerticalLabel": "Vitesse verticale : {metresPerSecond} m/s",
+  "@labsAircraftLandingVectorVerticalLabel": {
+    "description": "Swiss Phase 3 P1 correction (fr_punctuation_minority). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsAircraftLandingVectorResultantLabel": "Vitesse combinée (résultante) : {metresPerSecond} m/s",
+  "@labsAircraftLandingVectorResultantLabel": {
+    "description": "Swiss Phase 3 P1 correction (fr_punctuation_minority). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsAircraftLandingVectorApproachMission": "Ajuste les composantes de vitesse horizontale et verticale pour correspondre a l'approche cible.",
-  "labsAircraftLandingVectorApproachWhereUsed": "Combiner une vitesse horizontale et verticale en un seul vecteur resultant est exactement la facon dont une trajectoire de vol reelle, ou tout mouvement 2D, est decrite mathematiquement.",
+  "labsAircraftLandingVectorApproachWhereUsed": "Combiner une vitesse horizontale et verticale en un seul vecteur résultant est exactement la façon dont une trajectoire de vol réelle, ou tout mouvement 2D, est décrite mathématiquement.",
+  "@labsAircraftLandingVectorApproachWhereUsed": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsAircraftLandingVectorApproachCorrect": "Correct — tes composantes correspondent a l'approche cible.",
   "labsAircraftLandingVectorApproachIncorrect": "Pas encore. Compare tes vitesses horizontale et verticale a la cible.",
   "labsAircraftLandingVectorApproachHelpWhatToDo": "Ajuste les curseurs de vitesse horizontale et verticale, puis teste ton approche.",
   "labsAircraftLandingVectorApproachHelpWhatToNotice": "Remarque comment la vitesse resultante et la trajectoire de descente changent toutes deux quand tu ajustes l'une ou l'autre composante.",
-  "labsAircraftLandingVectorApproachHelpWhatItMeans": "Toute vitesse peut etre decomposee en une composante horizontale et une composante verticale, puis recombinee avec le theoreme de Pythagore pour trouver la vitesse resultante.",
+  "labsAircraftLandingVectorApproachHelpWhatItMeans": "Toute vitesse peut être décomposée en une composante horizontale et une composante verticale, puis recombinée avec le théorème de Pythagore pour trouver la vitesse résultante.",
+  "@labsAircraftLandingVectorApproachHelpWhatItMeans": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsTryAgainButton": "Réessayer",
   "@labsTryAgainButton": {
     "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
@@ -1214,7 +1560,10 @@
   "labsFlightPathLabHeadingNavigatorLabel": "Cap : {bearing}",
   "labsFlightPathLabHeadingHelper": "Tourne ceci pour choisir la direction de l'avion",
   "labsFlightPathLabSpeedHelper": "Choisis la distance que l'avion doit parcourir",
-  "labsFlightPathLabTargetExplanation": "Le repere jaune est ta cible. Il est a {distance} km, sur un relevement de {bearing}.",
+  "labsFlightPathLabTargetExplanation": "Le repère jaune est ta cible. Il est à {distance} km, sur un relèvement de {bearing}.",
+  "@labsFlightPathLabTargetExplanation": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsFlightPathLabPredictionPrompt": "Avant de tester : vas-tu atterrir trop court, sur la cible, ou trop loin ?",
   "labsFlightPathLabPredictShort": "Trop court",
   "labsFlightPathLabPredictOnTarget": "Sur la cible",
@@ -1230,11 +1579,17 @@
   "labsDataDetectiveBeforeAfter": "Moyenne : {meanBefore} → {meanAfter}. Mediane : {medianBefore} → {medianAfter}.",
   "labsDataDetectiveHelpWhatToDo": "Regarde les valeurs, predis si la moyenne ou la mediane changera le plus, puis retire la valeur aberrante pour reveler la reponse.",
   "labsDataDetectiveHelpWhatToNotice": "Observe a quel point la moyenne bouge par rapport a la mediane une fois la valeur aberrante retiree.",
-  "labsDataDetectiveHelpWhatItMeans": "La moyenne utilise chaque valeur, donc une valeur extreme peut beaucoup la deplacer. La mediane ne depend que de la position centrale, donc elle bouge a peine.",
+  "labsDataDetectiveHelpWhatItMeans": "La moyenne utilise chaque valeur, donc une valeur extrême peut beaucoup la déplacer. La médiane ne dépend que de la position centrale, donc elle bouge à peine.",
+  "@labsDataDetectiveHelpWhatItMeans": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsDataDetectiveFirstUseStep1": "Regarde la liste des valeurs — l'une d'elles se distingue.",
   "labsDataDetectiveFirstUseStep2": "Predis ce qui changera le plus : la moyenne ou la mediane.",
   "labsDataDetectiveFirstUseStep3": "Retire la valeur aberrante et revele la reponse.",
-  "labsAlgebraBalanceMission": "Garde les deux plateaux en equilibre jusqu'a ce que x soit seul.",
+  "labsAlgebraBalanceMission": "Garde les deux plateaux en équilibre jusqu'à ce que x soit seul.",
+  "@labsAlgebraBalanceMission": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsAlgebraBalanceStep1RemoveButton": "Retire {value} des deux côtés",
   "@labsAlgebraBalanceStep1RemoveButton": {
     "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
@@ -1249,15 +1604,27 @@
   },
   "labsAlgebraBalanceHelpWhatToDo": "Retire d'abord le terme constant, puis divise pour isoler x.",
   "labsAlgebraBalanceHelpWhatToNotice": "Observe que les deux plateaux changent toujours ensemble, de la meme quantite — l'equation reste toujours vraie.",
-  "labsAlgebraBalanceHelpWhatItMeans": "Appliquer la meme operation aux deux cotes d'une equation la garde en equilibre, ce qui permet de la simplifier en toute securite jusqu'a x seul.",
+  "labsAlgebraBalanceHelpWhatItMeans": "Appliquer la même opération aux deux côtés d'une équation la garde en équilibre, ce qui permet de la simplifier en toute sécurité jusqu'à x seul.",
+  "@labsAlgebraBalanceHelpWhatItMeans": {
+    "description": "Swiss Phase 3 P1 correction (ambiguous_accent, missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsAlgebraBalanceFirstUseStep1": "Regarde l'equation et la balance en dessous.",
-  "labsAlgebraBalanceFirstUseStep2": "Utilise les boutons pour simplifier les deux cotes ensemble.",
+  "labsAlgebraBalanceFirstUseStep2": "Utilise les boutons pour simplifier les deux côtés ensemble.",
+  "@labsAlgebraBalanceFirstUseStep2": {
+    "description": "Swiss Phase 3 P1 correction (ambiguous_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsAlgebraBalanceFirstUseStep3": "Continue jusqu'a ce que x soit seul.",
   "labsFractionBuilderMission": "Remplis {numerator} parts sur {denominator} parts egales.",
   "labsFractionBuilderTapGuidance": "Touche un segment pour le remplir, ou touche a nouveau pour le vider.",
-  "labsFractionBuilderSymbolicResult": "{numerator}/{denominator} — {numerator} part(s) egale(s) remplie(s) sur {denominator}.",
+  "labsFractionBuilderSymbolicResult": "{numerator}/{denominator} — {numerator} part(s) égale(s) remplie(s) sur {denominator}.",
+  "@labsFractionBuilderSymbolicResult": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsFractionBuilderHelpWhatToDo": "Touche des segments jusqu'a ce que le nombre rempli corresponde a la fraction, puis appuie sur Verifier.",
-  "labsFractionBuilderHelpWhatToNotice": "Observe que le denominateur est le nombre total de parts egales, et le numerateur combien sont remplies.",
+  "labsFractionBuilderHelpWhatToNotice": "Observe que le dénominateur est le nombre total de parts égales, et le numérateur combien sont remplies.",
+  "@labsFractionBuilderHelpWhatToNotice": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsFractionBuilderHelpWhatItMeans": "Une fraction compte des parts egales d'un tout — la meme idee qu'il s'agisse d'une barre, d'une pizza ou d'une tasse a mesurer.",
   "labsFractionBuilderFirstUseStep1": "Regarde combien de parts remplir.",
   "labsFractionBuilderFirstUseStep2": "Touche les segments pour les remplir.",
@@ -1268,11 +1635,23 @@
   "labsNumberLineExplorerMoveLeft": "Deplace-toi de {distance} de plus vers la gauche",
   "labsNumberLineExplorerIncreaseButton": "Vers la droite",
   "labsNumberLineExplorerDecreaseButton": "Vers la gauche",
-  "labsNumberLineExplorerHelpWhatToDo": "Fais glisser le point, ou utilise les boutons fleches, pour atteindre la valeur cible, puis appuie sur Verifier.",
+  "labsNumberLineExplorerHelpWhatToDo": "Fais glisser le point, ou utilise les boutons flèches, pour atteindre la valeur cible, puis appuie sur Vérifier.",
+  "@labsNumberLineExplorerHelpWhatToDo": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsNumberLineExplorerHelpWhatToNotice": "Observe comment la position du point correspond a sa valeur — plus a droite est un nombre plus grand, plus a gauche plus petit.",
-  "labsNumberLineExplorerHelpWhatItMeans": "Une droite numerique montre chaque nombre dans l'ordre, dans les deux directions depuis zero, y compris les nombres negatifs et les decimales.",
-  "labsNumberLineExplorerFirstUseStep1": "Regarde ou le point commence.",
-  "labsNumberLineExplorerFirstUseStep2": "Fais glisser le point, ou utilise les boutons fleches, vers la cible.",
+  "labsNumberLineExplorerHelpWhatItMeans": "Une droite numérique montre chaque nombre dans l'ordre, dans les deux directions depuis zéro, y compris les nombres négatifs et les décimales.",
+  "@labsNumberLineExplorerHelpWhatItMeans": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsNumberLineExplorerFirstUseStep1": "Regarde où le point commence.",
+  "@labsNumberLineExplorerFirstUseStep1": {
+    "description": "Swiss Phase 3 P1 correction (ambiguous_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsNumberLineExplorerFirstUseStep2": "Fais glisser le point, ou utilise les boutons flèches, vers la cible.",
+  "@labsNumberLineExplorerFirstUseStep2": {
+    "description": "Swiss Phase 3 P1 correction (missing_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsNumberLineExplorerFirstUseStep3": "Appuie sur Verifier pour voir si tu l'as atteinte.",
   "labsMissionOf": "Mission {current} sur {total}",
   "labsDirectionUp": "Haut",
@@ -1296,7 +1675,10 @@
   "labsFlightPathLabNarrationIntroExplorer": "Vise la cible jaune avec l'avion, puis appuie sur Tester le vol pour voir où il atterrit.",
   "labsFlightPathLabNarrationIntroBuilder": "Choisis un cap et une vitesse, prédis où tu vas atterrir, puis teste ta prédiction.",
   "labsFlightPathLabNarrationIntroNavigator": "Choisis un cap et une vitesse ; le déplacement obtenu combine le cap et la vitesse fois le temps en un seul vecteur.",
-  "labsFlightPathLabNarrationResultNearMissExplorer": "Tout près ! Essaie une vitesse ou une direction légèrement différente et teste à nouveau.",
+  "labsFlightPathLabNarrationResultNearMissExplorer": "Tout près ! Essaie une vitesse ou une direction légèrement différente et teste à nouveau.",
+  "@labsFlightPathLabNarrationResultNearMissExplorer": {
+    "description": "Swiss Phase 3 P1 correction (ambiguous_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsFlightPathLabNarrationResultNearMissBuilder": "Tu as atterri près de la cible. Vérifie si tu es un peu en avance ou en retard, et ajuste légèrement la vitesse ou le cap.",
   "labsFlightPathLabNarrationResultNearMissNavigator": "Le déplacement résultant est proche du vecteur cible mais pas exact — affine le cap et/ou la vitesse et teste à nouveau.",
   "labsFlightPathLabNarrationResultCorrectHeadingTooFarExplorer": "Bonne direction ! Mais l'avion a volé trop loin. Essaie une vitesse plus lente.",
@@ -1352,7 +1734,10 @@
   "labsAlgebraBalanceNarrationHintNextStepNavigator": "Applique d'abord l'opération additive inverse, puis l'opération multiplicative inverse, pour isoler x.",
   "labsAlgebraBalanceNarrationCompletionExplorer": "Résolu ! Tu as trouvé la valeur de x.",
   "labsAlgebraBalanceNarrationCompletionBuilder": "Résolu ! Toute équation de cette forme se résout en retirant la constante, puis en divisant.",
-  "labsAlgebraBalanceNarrationCompletionNavigator": "Résolu : x est isolé par des opérations inverses appliquées aux deux côtés, préservant l'égalité tout du long.",
+  "labsAlgebraBalanceNarrationCompletionNavigator": "Résolu : x est isolé par des opérations inverses appliquées aux deux côtés, préservant l'égalité tout du long.",
+  "@labsAlgebraBalanceNarrationCompletionNavigator": {
+    "description": "Swiss Phase 3 P1 correction (ambiguous_accent). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsAlgebraBalanceNarrationHintInactivityExplorer": "Toujours là ? Essaie le premier bouton pour retirer le nombre.",
   "labsAlgebraBalanceNarrationHintInactivityBuilder": "Prends ton temps — retire la constante, puis divise, quand tu es prêt.",
   "labsAlgebraBalanceNarrationHintInactivityNavigator": "Aucune saisie récente — applique la prochaine opération inverse pour continuer.",
@@ -1848,13 +2233,157 @@
   "@appearanceResetOnboardingSub": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
+  "numberSenseLabTitle": "Labo du sens du nombre",
+  "@numberSenseLabTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseModeGuided": "Guidé",
+  "@numberSenseModeGuided": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseModeFreeExplore": "Exploration libre",
+  "@numberSenseModeFreeExplore": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseExampleEquivalenceTitle": "Former une fraction équivalente",
+  "@numberSenseExampleEquivalenceTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseExampleEquivalenceTask": "Montre une demie avec des parts égales.",
+  "@numberSenseExampleEquivalenceTask": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseExamplePlacementTitle": "Placer une fraction",
+  "@numberSenseExamplePlacementTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseExamplePlacementTask": "Place trois huitièmes sur la droite numérique.",
+  "@numberSenseExamplePlacementTask": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseExampleComparisonTitle": "Comparer des fractions",
+  "@numberSenseExampleComparisonTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseExampleComparisonTask": "Choisis comment ces fractions se comparent.",
+  "@numberSenseExampleComparisonTask": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseTarget": "Cible : {fraction}",
+  "@numberSenseTarget": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseCompareLessThan": "Plus petit que",
+  "@numberSenseCompareLessThan": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseCompareEqualTo": "Égal à",
+  "@numberSenseCompareEqualTo": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseCompareGreaterThan": "Plus grand que",
+  "@numberSenseCompareGreaterThan": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComplete": "Tu l'as trouvé.",
+  "@numberSenseComplete": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseReset": "Réinitialiser",
+  "@numberSenseReset": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseLabDescription": "Construire, placer et comparer des fractions unitaires.",
+  "@numberSenseLabDescription": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "appearanceResetOnboardingButton": "Réinitialiser l'introduction",
   "@appearanceResetOnboardingButton": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
+  "numberSenseFreeExploreInstruction": "Choisis un modèle, puis touche des parts égales ou touche/fais glisser un point pour explorer les fractions.",
+  "@numberSenseFreeExploreInstruction": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseClearExplore": "Effacer",
+  "@numberSenseClearExplore": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseScopeStatement": "Ce modèle tout-partie de départ ne prend en charge que 2, 3, 4, 6 ou 8 parts égales. Les centièmes sont pris en charge sur la droite de précision ; les autres dénominateurs non pris en charge nécessitent une droite de précision ou agrandie.",
+  "@numberSenseScopeStatement": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseWholePartModel": "Barre tout-partie",
+  "@numberSenseWholePartModel": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSensePrecisionLine": "Droite de précision",
+  "@numberSensePrecisionLine": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseExampleHundredthsTitle": "Trouver un centième",
+  "@numberSenseExampleHundredthsTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseExampleHundredthsTask": "Utilise la droite numérique agrandie pour trouver un centième. Chaque pas vaut un centième.",
+  "@numberSenseExampleHundredthsTask": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseHundredthsExploreInstruction": "Choisis un centième de 0.00 à 0.10. Touche un point légendé ou fais glisser le long de la droite.",
+  "@numberSenseHundredthsExploreInstruction": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "numberSenseHundredthsLineLabel": "Droite numérique agrandie de 0.00 à 0.10, graduée en centièmes",
   "@numberSenseHundredthsLineLabel": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseHundredthsSelectionExplanation": "{fraction} signifie {decimal} : {count} parts égales sur 100.",
+  "@numberSenseHundredthsSelectionExplanation": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseHundredthsIncorrectFeedback": "Tu as choisi {decimal}. Un centième est la graduation qui suit 0.00 : choisis 0.01.",
+  "@numberSenseHundredthsIncorrectFeedback": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseHundredthsZeroExplanation": "Zéro est au début de la droite.",
+  "@numberSenseHundredthsZeroExplanation": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseHundredthsZeroGuidedFeedback": "0.00, c'est zéro. Un centième est la première graduation à droite : 0.01.",
+  "@numberSenseHundredthsZeroGuidedFeedback": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseGuidedWrongAdjacent": "Pas tout à fait. Tu as choisi {selected}. Avance d'une graduation vers la {direction} pour atteindre {target}.",
+  "@numberSenseGuidedWrongAdjacent": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseGuidedWrongGeneral": "Pas tout à fait. Tu as choisi {selected}. La cible est {target}. Modifie les parts égales coloriées pour montrer la quantité visée.",
+  "@numberSenseGuidedWrongGeneral": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseGuidedWrongPartition": "Pas tout à fait. Tu as choisi {selected}. La cible est {target}. Choisis des parts égales qui permettent de montrer la fraction visée.",
+  "@numberSenseGuidedWrongPartition": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseGuidedWrongEquivalenceWhole": "{selected}, c'est un entier, pas {target}. Colorie la moitié des parts égales.",
+  "@numberSenseGuidedWrongEquivalenceWhole": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseGuidedDirectionLeft": "gauche",
+  "@numberSenseGuidedDirectionLeft": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseGuidedDirectionRight": "droite",
+  "@numberSenseGuidedDirectionRight": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseEqualPartsLabel": "Parts égales",
+  "@numberSenseEqualPartsLabel": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseCompareSharedLineLabel": "Droite numérique commune de zéro à un. Le cercle marque la fraction de gauche et le losange la fraction de droite.",
+  "@numberSenseCompareSharedLineLabel": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
   "numberSenseCompareLeftMarkerSemantics": "Repère sur la droite numérique pour deux tiers, 2/3",
   "@numberSenseCompareLeftMarkerSemantics": {
@@ -1864,6 +2393,34 @@
   "@numberSenseCompareRightMarkerSemantics": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
+  "numberSenseComparisonCorrectResultDynamic": "Correct : {leftFraction} {relation} {rightFraction}.",
+  "@numberSenseComparisonCorrectResultDynamic": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonIncorrectResultDynamic": "Pas tout à fait. {leftFraction} est {relationWords} {rightFraction}.",
+  "@numberSenseComparisonIncorrectResultDynamic": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonProofDynamic": "{leftNumerator} × {rightDenominator} = {leftProduct} ; {rightNumerator} × {leftDenominator} = {rightProduct} ; comme {leftProduct} {relation} {rightProduct}, {leftFraction} {relation} {rightFraction}.",
+  "@numberSenseComparisonProofDynamic": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseCompareLessThanWords": "plus petit que",
+  "@numberSenseCompareLessThanWords": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseCompareEqualWords": "égal à",
+  "@numberSenseCompareEqualWords": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseCompareGreaterThanWords": "plus grand que",
+  "@numberSenseCompareGreaterThanWords": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseCompareMarkerExplanation": "{fraction} = {decimal} – {numerator} parts égales sur {denominator}",
+  "@numberSenseCompareMarkerExplanation": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "numberSenseComparisonCorrectLabel": "Correct",
   "@numberSenseComparisonCorrectLabel": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
@@ -1872,13 +2429,301 @@
   "@numberSenseComparisonReviewLabel": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
+  "numberSenseSkillProgress": "Compétence {current} sur {total} : {name}",
+  "@numberSenseSkillProgress": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseSkillPlaceFraction": "Placer une fraction",
+  "@numberSenseSkillPlaceFraction": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseSkillMakeEquivalent": "Former une fraction équivalente",
+  "@numberSenseSkillMakeEquivalent": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseSkillCompareFractions": "Comparer des fractions",
+  "@numberSenseSkillCompareFractions": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseSkillFindOneHundredth": "Trouver un centième",
+  "@numberSenseSkillFindOneHundredth": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSensePractiseThis": "S'entraîner",
+  "@numberSensePractiseThis": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "numberSenseNextSkill": "Compétence suivante",
   "@numberSenseNextSkill": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
+  "numberSenseChooseSkill": "Choisis une compétence",
+  "@numberSenseChooseSkill": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseChooseComparisonType": "Choisis un type de comparaison",
+  "@numberSenseChooseComparisonType": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "numberSenseSkillSheetClose": "Fermer",
   "@numberSenseSkillSheetClose": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseFocusSameDenominator": "Même dénominateur",
+  "@numberSenseFocusSameDenominator": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseFocusSameNumerator": "Même numérateur",
+  "@numberSenseFocusSameNumerator": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseFocusEquivalent": "Fractions équivalentes",
+  "@numberSenseFocusEquivalent": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseFocusCompareToHalf": "Comparer à une demie",
+  "@numberSenseFocusCompareToHalf": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseFocusMixed": "Entraînement mixte",
+  "@numberSenseFocusMixed": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonExplanationEquivalent": "{leftFraction} a la même valeur que {rightFraction}. Les deux sont au même point de la droite numérique.",
+  "@numberSenseComparisonExplanationEquivalent": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonExplanationSameDenominator": "Les deux fractions sont en {unit}. {largerCount} {unit}, c'est plus que {smallerCount} {unit}, donc {leftFraction} {relation} {rightFraction}.",
+  "@numberSenseComparisonExplanationSameDenominator": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonExplanationSameNumerator": "Les deux fractions montrent {numerator} parts. {largerUnit} : des parts plus grandes que les {smallerUnit}, donc {largerFraction} {relation} {smallerFraction}.",
+  "@numberSenseComparisonExplanationSameNumerator": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonExplanationBenchmarkHalf": "Une demie, c'est {halfEquivalent}. Comme {otherFraction} vaut un {unit} de {direction} que {halfEquivalent}, {leftFraction} {relation} {rightFraction}.",
+  "@numberSenseComparisonExplanationBenchmarkHalf": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonHalf": "demi",
+  "@numberSenseComparisonHalf": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonThird": "tiers",
+  "@numberSenseComparisonThird": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonFourth": "quart",
+  "@numberSenseComparisonFourth": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonSixth": "sixième",
+  "@numberSenseComparisonSixth": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonEighth": "huitième",
+  "@numberSenseComparisonEighth": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonHalves": "demis",
+  "@numberSenseComparisonHalves": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonThirds": "tiers",
+  "@numberSenseComparisonThirds": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonFourths": "quarts",
+  "@numberSenseComparisonFourths": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonSixths": "sixièmes",
+  "@numberSenseComparisonSixths": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonEighths": "huitièmes",
+  "@numberSenseComparisonEighths": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonCapHalves": "Demis",
+  "@numberSenseComparisonCapHalves": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonCapThirds": "Tiers",
+  "@numberSenseComparisonCapThirds": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonCapFourths": "Quarts",
+  "@numberSenseComparisonCapFourths": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonCapSixths": "Sixièmes",
+  "@numberSenseComparisonCapSixths": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonCapEighths": "Huitièmes",
+  "@numberSenseComparisonCapEighths": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonMore": "plus",
+  "@numberSenseComparisonMore": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonLess": "moins",
+  "@numberSenseComparisonLess": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseAnotherExample": "Un autre exemple",
+  "@numberSenseAnotherExample": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseExamplePlacementTaskHalf": "Place une demie sur la droite numérique.",
+  "@numberSenseExamplePlacementTaskHalf": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseExamplePlacementTaskTwoThirds": "Place deux tiers sur la droite numérique.",
+  "@numberSenseExamplePlacementTaskTwoThirds": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseExampleEquivalenceTaskParts": "Montre une demie avec {count} parts égales.",
+  "@numberSenseExampleEquivalenceTaskParts": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseExampleHundredthsTitleCount": "Trouver {count} centièmes",
+  "@numberSenseExampleHundredthsTitleCount": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseExampleHundredthsTaskCount": "Utilise la droite numérique agrandie pour trouver {count} centièmes. Chaque pas vaut un centième.",
+  "@numberSenseExampleHundredthsTaskCount": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseHundredthsTargetEquationDynamic": "{fraction} = {decimal}",
+  "@numberSenseHundredthsTargetEquationDynamic": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseHundredthsIncorrectFeedbackTarget": "Tu as choisi {decimal}. Compte {count} graduations à droite de 0.00 pour atteindre {target}.",
+  "@numberSenseHundredthsIncorrectFeedbackTarget": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseHundredthsZeroGuidedFeedbackTarget": "0.00, c'est zéro. Compte {count} graduations vers la droite pour atteindre {target}.",
+  "@numberSenseHundredthsZeroGuidedFeedbackTarget": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsTitle": "Panda Portions",
+  "@pandaPortionsTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsSubtitle": "Partage une pomme équitablement et découvre les fractions.",
+  "@pandaPortionsSubtitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsMenuIntro": "Choisis par où commencer. Tu peux changer de leçon à tout moment.",
+  "@pandaPortionsMenuIntro": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsGuidedPathTitle": "Parcours guidé",
+  "@pandaPortionsGuidedPathTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsGuidedPathDescription": "Parts égales, puis moitiés, puis quarts – une étape à la fois.",
+  "@pandaPortionsGuidedPathDescription": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPractiseHalvesTitle": "S'entraîner aux moitiés",
+  "@pandaPortionsPractiseHalvesTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPractiseHalvesDescription": "Partage une pomme en 2 parts égales.",
+  "@pandaPortionsPractiseHalvesDescription": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPractiseQuartersTitle": "S'entraîner aux quarts",
+  "@pandaPortionsPractiseQuartersTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPractiseQuartersDescription": "Partage une pomme en 4 parts égales.",
+  "@pandaPortionsPractiseQuartersDescription": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsGuidedStep": "Parcours guidé · étape {step} sur {total}",
+  "@pandaPortionsGuidedStep": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsLessonEqualPartsTitle": "Parts égales",
+  "@pandaPortionsLessonEqualPartsTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsLessonEqualPartsPurpose": "Trouve la pomme partagée équitablement.",
+  "@pandaPortionsLessonEqualPartsPurpose": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsLessonHalvesTitle": "Moitiés",
+  "@pandaPortionsLessonHalvesTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsLessonHalvesPurpose": "Donne au panda la moitié d'une pomme.",
+  "@pandaPortionsLessonHalvesPurpose": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsLessonQuartersTitle": "Quarts",
+  "@pandaPortionsLessonQuartersTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsLessonQuartersPurpose": "Donne au panda un quart de pomme.",
+  "@pandaPortionsLessonQuartersPurpose": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPromptEqualParts": "Quelle assiette montre une pomme partagée en parts égales ?",
+  "@pandaPortionsPromptEqualParts": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPromptHalves": "Donne une moitié au panda.",
+  "@pandaPortionsPromptHalves": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPromptQuarters": "Donne un quart au panda.",
+  "@pandaPortionsPromptQuarters": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsTeachEqualParts": "Les fractions sont des parts égales d'un tout.",
+  "@pandaPortionsTeachEqualParts": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsSuccessEqualParts": "Oui – toutes les parts de cette assiette ont la même taille.",
+  "@pandaPortionsSuccessEqualParts": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsSuccessFedPart": "Tu as donné au panda 1 part égale sur {parts} : {fraction}.",
+  "@pandaPortionsSuccessFedPart": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsSuccessAte": "Le panda a mangé 1 part égale sur {parts}. C'est {fraction}.",
+  "@pandaPortionsSuccessAte": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsRemainingLeft": "Il reste {fraction} de la pomme.",
+  "@pandaPortionsRemainingLeft": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsMisconceptionUnequal": "Ces parts ne sont pas égales, donc ce ne sont pas des moitiés ni des quarts.",
+  "@pandaPortionsMisconceptionUnequal": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsIncorrectSelection": "Essaie encore. Cherche une part égale de la pomme entière.",
+  "@pandaPortionsIncorrectSelection": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsHintEqualParts": "Dans un partage équitable, toutes les parts ont la même taille. Compare les parts de chaque assiette.",
+  "@pandaPortionsHintEqualParts": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsHintHalves": "Les moitiés sont 2 parts égales. Les deux parts d'une pomme entière ont la même taille.",
+  "@pandaPortionsHintHalves": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsHintQuarters": "Les quarts sont 4 parts égales. Les 4 parts d'une pomme entière ont la même taille.",
+  "@pandaPortionsHintQuarters": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
   "pandaPortionsRetryEqualParts": "Essayer un autre exemple",
   "@pandaPortionsRetryEqualParts": {
@@ -1892,6 +2737,18 @@
   "@pandaPortionsRetryQuarters": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
+  "pandaPortionsSuggestTryHalves": "Tu pourrais essayer les moitiés ensuite.",
+  "@pandaPortionsSuggestTryHalves": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsSuggestTryQuarters": "Tu pourrais essayer les quarts ensuite.",
+  "@pandaPortionsSuggestTryQuarters": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsSuggestNewChallenge": "Prêt pour un nouveau défi ?",
+  "@pandaPortionsSuggestNewChallenge": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "pandaPortionsWhatNext": "Et maintenant ?",
   "@pandaPortionsWhatNext": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
@@ -1900,9 +2757,81 @@
   "@pandaPortionsNextLesson": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
+  "pandaPortionsKeepPractising": "Continuer à s'entraîner",
+  "@pandaPortionsKeepPractising": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsChooseLesson": "Choisis une leçon",
+  "@pandaPortionsChooseLesson": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsResetApple": "Réinitialiser la pomme",
+  "@pandaPortionsResetApple": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsShowHint": "Montre-moi un indice",
+  "@pandaPortionsShowHint": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsHideHint": "Masquer l'indice",
+  "@pandaPortionsHideHint": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "pandaPortionsWholeApple": "1 pomme entière",
   "@pandaPortionsWholeApple": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPlateLabel": "Assiette {plate}",
+  "@pandaPortionsPlateLabel": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPlateEqualSemantic": "Assiette {plate} : une pomme coupée en {parts} parts égales.",
+  "@pandaPortionsPlateEqualSemantic": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPlateUnequalSemantic": "Assiette {plate} : une pomme coupée en {parts} parts qui n'ont pas la même taille.",
+  "@pandaPortionsPlateUnequalSemantic": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPieceEqualSemantic": "Assiette {plate}, morceau {index} sur {parts}. Une part égale : {fraction} de la pomme.",
+  "@pandaPortionsPieceEqualSemantic": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPieceUnequalSemantic": "Assiette {plate}, morceau {index} sur {parts}. Pas une part égale.",
+  "@pandaPortionsPieceUnequalSemantic": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPlatePiecesSemantic": "Assiette {plate} : une pomme coupée en {parts} morceaux.",
+  "@pandaPortionsPlatePiecesSemantic": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPlateLargerSmallerSemantic": "Assiette {plate} : une pomme coupée en 2 morceaux, un plus grand et un plus petit.",
+  "@pandaPortionsPlateLargerSmallerSemantic": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPlateMixedSizesSemantic": "Assiette {plate} : une pomme coupée en {parts} morceaux, certains plus grands, d'autres plus petits.",
+  "@pandaPortionsPlateMixedSizesSemantic": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPieceSemantic": "Assiette {plate}, morceau {index} sur {parts}.",
+  "@pandaPortionsPieceSemantic": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPiecePicked": "Morceau choisi. Touche maintenant le panda pour le lui donner.",
+  "@pandaPortionsPiecePicked": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsFeedPanda": "Donne le morceau au panda",
+  "@pandaPortionsFeedPanda": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsBowlEmpty": "Le bol du panda est vide.",
+  "@pandaPortionsBowlEmpty": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsBowlHas": "Le bol du panda contient {fraction} de la pomme.",
+  "@pandaPortionsBowlHas": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
   "pandaPortionsStripLabel": "Bande de fractions : {fed} parts égales sur {parts} données au panda.",
   "@pandaPortionsStripLabel": {

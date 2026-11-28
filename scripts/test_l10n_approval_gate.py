@@ -232,10 +232,10 @@ class SyntheticGateTest(unittest.TestCase):
 
 
 class RepositoryGateTest(unittest.TestCase):
-    """The real repository: the Swiss drafts (AS-1 and Phase 2 P0) are not approved."""
+    """The real repository: the Swiss drafts (AS-1, Phase 2 P0 and Phase 3 P1) are not approved."""
 
-    # AS-1 (33 per locale) + Swiss Phase 2 P0 drafts and corrections.
-    EXPECTED_PENDING = {"de_CH": 267, "fr_CH": 256, "it_CH": 231}
+    # AS-1 (33 per locale) + Swiss Phase 2 P0 + Swiss Phase 3 P1 drafts and corrections.
+    EXPECTED_PENDING = {"de_CH": 530, "fr_CH": 508, "it_CH": 432}
 
     def _counts(self, pairs) -> dict[str, int]:
         counts: dict[str, int] = {}

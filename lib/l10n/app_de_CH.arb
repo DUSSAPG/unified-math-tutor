@@ -793,7 +793,10 @@
   "mathStudioMathMagicSubtitle": "Raetsel, Muster und verblueffende mathematische Ueberraschungen",
   "mathStudioMathMagicBody": "Denksportaufgaben, Zahlentricks und mathematische Kuriositaeten",
   "mathStudioMathMagicNumberTricksLabel": "Zahlentricks",
-  "mathStudioMathMagicNumberTricksSubtitle": "Verfolge Schritt fuer Schritt, wie ein Zahlentrick funktioniert",
+  "mathStudioMathMagicNumberTricksSubtitle": "Verfolge Schritt für Schritt, wie ein Zahlentrick funktioniert",
+  "@mathStudioMathMagicNumberTricksSubtitle": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "mathStudioMathMagicPatternsLabel": "Muster",
   "mathStudioMathMagicPatternsSubtitle": "Lass ein Punktmuster wachsen und entdecke die Regel dahinter",
   "mathStudioMathMagicMagicSquaresLabel": "Magische Quadrate",
@@ -816,13 +819,25 @@
   "mathStudioSpatialTransformationsLabel": "Transformationen",
   "mathStudioSpatialPuzzlesLabel": "Raumraetsel",
   "mathStudioSpatialCubeNetsLabel": "Wuerfelnetze",
-  "mathStudioSpatialCubeNetsSubtitle": "Entscheide, welche Netze sich zu einem geschlossenen Wuerfel falten lassen",
-  "mathStudioSpatialRotationsSubtitle": "Drehe eine Form um einen festen Punkt und beobachte, was sich aendert",
-  "mathStudioSpatialTransformationsSubtitle": "Verschieben, spiegeln, drehen und vergroessern auf einem Koordinatengitter",
+  "mathStudioSpatialCubeNetsSubtitle": "Entscheide, welche Netze sich zu einem geschlossenen Würfel falten lassen",
+  "@mathStudioSpatialCubeNetsSubtitle": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "mathStudioSpatialRotationsSubtitle": "Drehe eine Form um einen festen Punkt und beobachte, was sich ändert",
+  "@mathStudioSpatialRotationsSubtitle": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "mathStudioSpatialTransformationsSubtitle": "Verschieben, spiegeln, drehen und vergrössern auf einem Koordinatengitter",
+  "@mathStudioSpatialTransformationsSubtitle": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "mathStudioSpatialPuzzlesSubtitle": "Kurze Raetsel zu Form, Raum und 3D-Denken",
   "mathStudioFeaturedFormatsSectionLabel": "Ausgewaehlte Formate",
   "mathStudioRelatedLabsSectionLabel": "Verwandte Labore",
-  "mathStudioSpatialLabsEntrySubtitle": "Probiere Flight Path Lab und weitere praktische Werkzeuge fuer raeumliches Denken aus",
+  "mathStudioSpatialLabsEntrySubtitle": "Probiere Flight Path Lab und weitere praktische Werkzeuge für räumliches Denken aus",
+  "@mathStudioSpatialLabsEntrySubtitle": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "mathStudioDiscoveryEmptyCategory": "Weitere Karten für diese Kategorie folgen bald.",
   "@mathStudioDiscoveryEmptyCategory": {
     "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
@@ -883,7 +898,10 @@
   "mentalMathsCategoryMultiplicationStrategies": "Multiplikationsstrategien",
   "mentalMathsCategoryDivisionStrategies": "Divisionsstrategien",
   "mentalMathsCategoryPercentages": "Prozente",
-  "mentalMathsCategoryFractions": "Brueche",
+  "mentalMathsCategoryFractions": "Brüche",
+  "@mentalMathsCategoryFractions": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "mentalMathsCategoryPlaceValue": "Stellenwert",
   "mentalMathsCategoryPatternRecognition": "Muster erkennen",
   "mentalMathsTodaysChallenge": "Heutige Aufgabe",
@@ -891,14 +909,20 @@
   "buildConfidenceProgress": "Frage {current} von {total}",
   "buildConfidenceContinueButton": "Weiter",
   "buildConfidenceCompletionTitle": "Gut gemacht",
-  "buildConfidenceCompletionBody": "Du hast die heutige Sitzung in deinem eigenen Tempo durchgearbeitet. Komm zurueck, wann immer du bereit fuer die naechste bist.",
+  "buildConfidenceCompletionBody": "Du hast die heutige Sitzung in deinem eigenen Tempo durchgearbeitet. Komm zurück, wann immer du bereit für die nächste bist.",
+  "@buildConfidenceCompletionBody": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "buildConfidenceDoneButton": "Fertig",
   "visualMathsNumberLineTitle": "Zahlenstrahl",
   "visualMathsNumberLineSubtitle": "Ziehe den Punkt, um Zahlen auf einem Strahl zu erkunden",
   "visualMathsFractionBarsTitle": "Bruchbalken",
   "visualMathsFractionBarsSubtitle": "Vergleiche Brueche als Balken, nebeneinander",
   "visualMathsAbacusTitle": "Animierter Abakus",
-  "visualMathsAbacusSubtitle": "Sieh Stellenwert in Aktion, Perle fuer Perle",
+  "visualMathsAbacusSubtitle": "Sieh Stellenwert in Aktion, Perle für Perle",
+  "@visualMathsAbacusSubtitle": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "visualMathsPlaceValueTitle": "Stellenwert-Explorer",
   "visualMathsPlaceValueSubtitle": "Zerlege Zahlen nach ihrem Stellenwert",
   "visualMathsInteractiveBadge": "Interaktiv",
@@ -910,7 +934,10 @@
   "numberLineExampleSimpleFraction": "Ein Bruch auf einem Strahl von 0 bis 1",
   "numberLineExampleDecimal": "Eine Dezimalzahl auf einem Strahl von 0 bis 5",
   "fractionBarsCaption1": "1/2 ist genau die Haelfte des ganzen Balkens.",
-  "fractionBarsCaption2": "2/4 deckt dieselbe Laenge wie 1/2 ab — aequivalente Brueche.",
+  "fractionBarsCaption2": "2/4 deckt dieselbe Länge wie 1/2 ab — äquivalente Brüche.",
+  "@fractionBarsCaption2": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "fractionBarsCaption3": "3/4 ist mehr als die Haelfte, weniger als das Ganze.",
   "fractionBarsCaption4": "5/8 ist knapp mehr als die Haelfte des ganzen Balkens.",
   "abacusCaption1": "Eine verschobene Perle in der Einerspalte steht fuer 1.",
@@ -924,12 +951,24 @@
   "abacusColumnOnes": "Einer",
 
   "mathStudioRecallCardsTitle": "Merkkarten",
-  "mathStudioRecallCardsSubtitle": "Schnelles Abrufen fuer die Fakten, die du behalten musst",
+  "mathStudioRecallCardsSubtitle": "Schnelles Abrufen für die Fakten, die du behalten musst",
+  "@mathStudioRecallCardsSubtitle": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
 
   "recallCardsHubTitle": "Merkkarten",
-  "recallCardsHubSubtitle": "Kurzes, gezieltes Training fuer Formeln, Begriffe, Symbole und die Ideen dahinter",
-  "recallCardsQuickReviewTitle": "Fuenf-Karten-Schnellwiederholung",
-  "recallCardsQuickReviewSubtitle": "Eine kurze taegliche Auswahl, fuer dich zusammengestellt",
+  "recallCardsHubSubtitle": "Kurzes, gezieltes Training für Formeln, Begriffe, Symbole und die Ideen dahinter",
+  "@recallCardsHubSubtitle": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "recallCardsQuickReviewTitle": "Fünf-Karten-Schnellwiederholung",
+  "@recallCardsQuickReviewTitle": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "recallCardsQuickReviewSubtitle": "Eine kurze tägliche Auswahl, für dich zusammengestellt",
+  "@recallCardsQuickReviewSubtitle": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "recallCardsReviewDueTitle": "Faellige Wiederholung",
   "recallCardsReviewDueCount": "{count} zur Wiederholung faellig",
   "recallCardsReviewDueEmpty": "Gerade nichts faellig — gut gemacht",
@@ -955,7 +994,10 @@
   "recallCardsCommonMistakeLabel": "Haeufiger Fehler",
   "recallCardsConnectLabel": "Wo das verwendet wird",
   "recallCardsRelatedDiscoveryLabel": "Verwandte Entdeckerkarten",
-  "recallCardsRelatedPracticeLabel": "Verwandte Uebungen",
+  "recallCardsRelatedPracticeLabel": "Verwandte Übungen",
+  "@recallCardsRelatedPracticeLabel": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "recallCardsRelatedLabsLabel": "Verwandte interaktive Labore",
   "recallCardsLabComingSoon": "Demnaechst verfuegbar",
   "recallCardsRememberedButton": "Das wusste ich noch",
@@ -967,7 +1009,10 @@
   "recallCardsExportFiveCardSheet": "Merkblatt (nur Fragen)",
   "recallCardsExportAnswerSheet": "Antwortblatt",
   "recallCardsSessionComplete": "Sitzung abgeschlossen",
-  "recallCardsSessionCompleteSubtitle": "Gut gemacht — komm morgen fuer mehr wieder",
+  "recallCardsSessionCompleteSubtitle": "Gut gemacht — komm morgen für mehr wieder",
+  "@recallCardsSessionCompleteSubtitle": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "recallCardsCardOf": "Karte {current} von {total}",
   "recallCardsStateNew": "Neu",
   "recallCardsStateLearning": "Lernphase",
@@ -982,7 +1027,10 @@
   "recallCardsTypeVisual": "Visuell",
   "recallCardsTypeRealWorldConnection": "Alltagsbezug",
   "recallCardsTopicNumber": "Zahlen",
-  "recallCardsTopicRatioAndProportion": "Verhaeltnis & Proportion",
+  "recallCardsTopicRatioAndProportion": "Verhältnis & Proportion",
+  "@recallCardsTopicRatioAndProportion": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "recallCardsTopicAlgebra": "Algebra",
   "recallCardsTopicGeometryAndMeasures": "Geometrie & Masse",
   "recallCardsTopicStatistics": "Statistik",
@@ -1005,7 +1053,10 @@
 
   "labsFractionBuilderTitle": "Bruch-Baukasten",
   "labsFractionBuilderSubtitle": "Baue einen Bruch, indem du gleiche Teile fuellst",
-  "labsFractionBuilderConcept": "Ein Bruch zaehlt gleiche Teile eines Ganzen. Tippe auf Segmente, um sie zu fuellen und den Zielbruch zu erreichen.",
+  "labsFractionBuilderConcept": "Ein Bruch zählt gleiche Teile eines Ganzen. Tippe auf Segmente, um sie zu füllen und den Zielbruch zu erreichen.",
+  "@labsFractionBuilderConcept": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsFractionBuilderWhereUsed": "Essen gerecht teilen, Rezepte lesen und Zutaten abmessen beruhen alle auf Bruechen eines Ganzen.",
   "labsFractionBuilderPrompt": "Fuelle {numerator} von {denominator} Segmenten.",
   "labsFractionBuilderFilledCount": "{filled} von {denominator} gefüllt",
@@ -1014,13 +1065,22 @@
   },
 
   "labsAlgebraBalanceTitle": "Algebra-Waage",
-  "labsAlgebraBalanceSubtitle": "Halte beide Seiten gleich, um x zu loesen",
-  "labsAlgebraBalanceConcept": "Eine Gleichung bleibt nur wahr, wenn du auf beiden Seiten dasselbe tust. Vereinfache Schritt fuer Schritt, bis x allein steht.",
+  "labsAlgebraBalanceSubtitle": "Halte beide Seiten gleich, um x zu lösen",
+  "@labsAlgebraBalanceSubtitle": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsAlgebraBalanceConcept": "Eine Gleichung bleibt nur wahr, wenn du auf beiden Seiten dasselbe tust. Vereinfache Schritt für Schritt, bis x allein steht.",
+  "@labsAlgebraBalanceConcept": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsAlgebraBalanceWhereUsed": "Von einer Summe rueckwaerts zu einer unbekannten Menge zu rechnen nutzt genau dieses Gleichgewichtsprinzip.",
   "labsAlgebraBalanceEquationLabel": "Gleichung: {equation}",
   "labsAlgebraBalanceStep1Button": "Konstante entfernen",
   "labsAlgebraBalanceStep2Button": "Durch Teilen x isolieren",
-  "labsAlgebraBalanceSolvedFeedback": "Geloest! x = {x}",
+  "labsAlgebraBalanceSolvedFeedback": "Gelöst! x = {x}",
+  "@labsAlgebraBalanceSolvedFeedback": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
 
   "labsNumberLineExplorerTitle": "Zahlenstrahl-Entdecker",
   "labsNumberLineExplorerSubtitle": "Ziehe den Punkt auf einen Wert am Zahlenstrahl",
@@ -1030,7 +1090,10 @@
 
   "labsFlightPathLabTitle": "Flugbahn-Labor",
   "labsFlightPathLabSubtitle": "Stelle Kurs und Geschwindigkeit ein, um das Ziel zu erreichen",
-  "labsFlightPathLabConcept": "Ein Kurs (Peilung) und eine Geschwindigkeit, ueber eine feste Zeit gehalten, legen genau fest, wo du landest — das verbindet Peilung mit Geschwindigkeit, Strecke und Zeit.",
+  "labsFlightPathLabConcept": "Ein Kurs (Peilung) und eine Geschwindigkeit, über eine feste Zeit gehalten, legen genau fest, wo du landest — das verbindet Peilung mit Geschwindigkeit, Strecke und Zeit.",
+  "@labsFlightPathLabConcept": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsFlightPathLabWhereUsed": "Piloten und Seefahrer nutzen Peilung und Geschwindigkeit gemeinsam, um ein Ziel anzusteuern.",
   "labsFlightPathLabPrompt": "Ziel: Peilung {bearing}°, {distance} km entfernt. Die Flugzeit ist fest bei 2 Stunden — waehle Kurs und Geschwindigkeit, um es zu erreichen.",
   "labsFlightPathLabRadarLabel": "Eine Radaransicht mit dem Ziel und, nach einem Testflug, wo das Flugzeug gelandet ist.",
@@ -1043,14 +1106,23 @@
   "labsFlightPathLabResultDistance": "Du bist {distance} km vom Ziel entfernt gelandet.",
 
   "labsDataDetectiveTitle": "Daten-Detektiv",
-  "labsDataDetectiveSubtitle": "Sieh, wie ein Ausreisser einen Durchschnitt veraendert",
-  "labsDataDetectiveConcept": "Der Mittelwert wird viel staerker von einem Ausreisser angezogen als der Median. Entferne Werte und beobachte, wie sich jeder Durchschnitt sofort aendert.",
+  "labsDataDetectiveSubtitle": "Sieh, wie ein Ausreisser einen Durchschnitt verändert",
+  "@labsDataDetectiveSubtitle": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsDataDetectiveConcept": "Der Mittelwert wird viel stärker von einem Ausreisser angezogen als der Median. Entferne Werte und beobachte, wie sich jeder Durchschnitt sofort ändert.",
+  "@labsDataDetectiveConcept": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsDataDetectiveWhereUsed": "Ein 'typisches' Gehalt, einen Preis oder eine Punktzahl fair zu berichten bedeutet zu wissen, wann der Mittelwert irrefuehrend ist und der Median die bessere Zusammenfassung ist.",
   "labsDataDetectiveAddValueButton": "Typischen Wert hinzufügen",
   "@labsDataDetectiveAddValueButton": {
     "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
-  "labsDataDetectivePredictionPrompt": "Was aendert sich mehr, wenn der Ausreisser entfernt wird?",
+  "labsDataDetectivePredictionPrompt": "Was ändert sich mehr, wenn der Ausreisser entfernt wird?",
+  "@labsDataDetectivePredictionPrompt": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsDataDetectivePredictMeanButton": "Mittelwert",
   "labsDataDetectivePredictMedianButton": "Median",
   "labsDataDetectiveRevealButton": "Ausreisser entfernen & aufdecken",
@@ -1061,41 +1133,219 @@
   "labsDataDetectiveMedianLabel": "Median",
   "labsDataDetectiveRangeLabel": "Spannweite",
   "labsSpatialCubeLabTitle": "Raumwuerfel-Labor",
-  "labsSpatialCubeLabSubtitle": "Drehe, falte und erkunde einen beschrifteten Wuerfel",
-  "labsSpatialCubeLabIntro": "Ziehe am Wuerfel, um ihn zu drehen. Beachte, wie die Flaechen zueinander an derselben Stelle bleiben, egal wie du drehst.",
-  "labsSpatialCubeLabFreePlayCaption": "Probier's aus: Ziehe am Wuerfel oder nutze die Schaltflaechen unten.",
-  "labsSpatialCubeWhichFaceOppositeTitle": "Welche Flaeche liegt gegenueber?",
-  "labsSpatialCubeWhichFaceOppositeSubtitle": "Sage die gegenueberliegende Flaeche voraus und pruefe durch Drehen",
+  "labsSpatialCubeLabSubtitle": "Drehe, falte und erkunde einen beschrifteten Würfel",
+  "@labsSpatialCubeLabSubtitle": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsSpatialCubeLabIntro": "Ziehe am Würfel, um ihn zu drehen. Beachte, wie die Flächen zueinander an derselben Stelle bleiben, egal wie du drehst.",
+  "@labsSpatialCubeLabIntro": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsSpatialCubeLabFreePlayCaption": "Probier's aus: Ziehe am Würfel oder nutze die Schaltflächen unten.",
+  "@labsSpatialCubeLabFreePlayCaption": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsSpatialCubeWhichFaceOppositeTitle": "Welche Fläche liegt gegenüber?",
+  "@labsSpatialCubeWhichFaceOppositeTitle": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsSpatialCubeWhichFaceOppositeSubtitle": "Sage die gegenüberliegende Fläche voraus und prüfe durch Drehen",
+  "@labsSpatialCubeWhichFaceOppositeSubtitle": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsSpatialCubeRotateToMatchTitle": "Drehen zum Abgleichen",
-  "labsSpatialCubeRotateToMatchSubtitle": "Drehe deinen Wuerfel, bis er zur Zielausrichtung passt",
+  "labsSpatialCubeRotateToMatchSubtitle": "Drehe deinen Würfel, bis er zur Zielausrichtung passt",
+  "@labsSpatialCubeRotateToMatchSubtitle": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsSpatialCubeHiddenFaceTitle": "Versteckte Flaeche",
   "labsSpatialCubeHiddenFaceSubtitle": "Finde heraus, welche Beschriftung auf einer unsichtbaren Flaeche steht",
   "labsSpatialCubeNetExplorerTitle": "Wuerfelnetz-Entdecker",
   "labsSpatialCubeNetExplorerSubtitle": "Sage gegenueberliegende Flaechen auf einem flachen Netz voraus und falte es dann",
   "labsEarlyMathsPlaygroundTitle": "Fruehe Mathe-Spielwiese",
-  "labsEarlyMathsPlaygroundSubtitle": "Ruhige, spielerische Aktivitaeten zum Zaehlen, Teilen und zu ersten Bruechen fuer juengere Lernende",
-  "earlyMathsPlaygroundIntro": "Ein ruhiger, zeitlich unbegrenzter Bereich, in dem juengere Lernende Zaehlen, faires Teilen und erste Brueche ueben koennen — keine Punkte, keine Zeitlimits, kein Druck.",
+  "labsEarlyMathsPlaygroundSubtitle": "Ruhige, spielerische Aktivitäten zum Zählen, Teilen und zu ersten Brüchen für jüngere Lernende",
+  "@labsEarlyMathsPlaygroundSubtitle": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "earlyMathsPlaygroundIntro": "Ein ruhiger, zeitlich unbegrenzter Bereich, in dem jüngere Lernende Zählen, faires Teilen und erste Brüche üben können — keine Punkte, keine Zeitlimits, kein Druck.",
+  "@earlyMathsPlaygroundIntro": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "feedTheHungryPandaTitle": "Fuettere den hungrigen Panda",
   "feedTheHungryPandaSubtitle": "Zaehle Aepfel einzeln ab, um den Panda zu fuettern",
+  "abacusPlayModeGuided": "Geführt",
+  "@abacusPlayModeGuided": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayModeFree": "Frei erkunden",
+  "@abacusPlayModeFree": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayFreeTitle": "Frei erkunden",
+  "@abacusPlayFreeTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayFreeIntro": "Schiebe Perlen über die Stange und bilde eine beliebige Zahl bis 999. Hier gibt es kein Ziel. Probiere einfach aus.",
+  "@abacusPlayFreeIntro": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayHowTo": "Tippe auf eine Perle oder ziehe sie über die Stange, um sie zu zählen. Tippe auf eine gezählte Perle, um sie zurückzuschieben.",
+  "@abacusPlayHowTo": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayReset": "Zurücksetzen",
+  "@abacusPlayReset": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayBuildTitle": "Eine Zahl bilden",
+  "@abacusPlayBuildTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayBuildTask": "Bilde 34. Schiebe 3 Zehner und 4 Einer über die Stange.",
+  "@abacusPlayBuildTask": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "abacusPlayBuildDone": "Du hast 34 gebildet: 3 Zehner und 4 Einer.",
   "@abacusPlayBuildDone": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayBreakTitle": "Eine Zahl zerlegen",
+  "@abacusPlayBreakTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayBreakTask": "Das ist 47. Schiebe die 7 Einer zurück, sodass nur die Zehner übrig bleiben.",
+  "@abacusPlayBreakTask": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
   "abacusPlayBreakDone": "47 lässt sich in 40 und 7 zerlegen.",
   "@abacusPlayBreakDone": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
+  "abacusPlayExchangeTitle": "Zehn Einer gegen einen Zehner tauschen",
+  "@abacusPlayExchangeTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayExchangeTask": "Das ist 29. Drücke +1, um eins dazuzugeben, und beobachte, was mit den Einern passiert.",
+  "@abacusPlayExchangeTask": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "abacusPlayExchangeDone": "10 Einer gegen 1 Zehner getauscht, also 29 + 1 = 30.",
   "@abacusPlayExchangeDone": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayNoteTenOnes": "10 Einer gegen 1 Zehner getauscht.",
+  "@abacusPlayNoteTenOnes": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayNoteTenTens": "10 Zehner gegen 1 Hunderter getauscht.",
+  "@abacusPlayNoteTenTens": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayNoteTenOnesAndTens": "10 Einer gegen 1 Zehner getauscht und 10 Zehner gegen 1 Hunderter.",
+  "@abacusPlayNoteTenOnesAndTens": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayNoteTenToOnes": "1 Zehner gegen 10 Einer getauscht.",
+  "@abacusPlayNoteTenToOnes": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayNoteHundredToTens": "1 Hunderter gegen 10 Zehner getauscht.",
+  "@abacusPlayNoteHundredToTens": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayNoteHundredCascade": "1 Hunderter gegen 10 Zehner getauscht und 1 Zehner gegen 10 Einer.",
+  "@abacusPlayNoteHundredCascade": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayParentNote": "Für Erwachsene: Jede Stange trägt bis zu neun Perlen. Die Zahlentafel zeigt dieselbe Zahl in Ziffern, und beide stimmen immer überein. Zehn Perlen auf einer Stange werden gegen eine Perle auf der Stange links davon getauscht. Lass dein Kind sagen, was sich verändert hat. Das ist ein anschauliches Bild des Stellenwerts, kein Test.",
+  "@abacusPlayParentNote": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusBoardTitle": "Zahlentafel",
+  "@abacusBoardTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusBoardZero": "0: noch keine Perlen gezählt",
+  "@abacusBoardZero": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusBoardAddOne": "1 dazu",
+  "@abacusBoardAddOne": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusBoardSubtractOne": "1 weg",
+  "@abacusBoardSubtractOne": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusBoardAddTen": "10 dazu",
+  "@abacusBoardAddTen": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusBoardSubtractTen": "10 weg",
+  "@abacusBoardSubtractTen": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusSpokenZero": "0. Noch keine Perlen gezählt.",
+  "@abacusSpokenZero": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayRodLabel": "{name}-Stange",
+  "@abacusPlayRodLabel": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayRodValue": "{count, plural, =0{Keine Perlen gezählt} =1{1 Perle gezählt} other{{count} Perlen gezählt}}",
+  "@abacusPlayRodValue": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayPartHundreds": "{count, plural, =1{1 Hunderter} other{{count} Hunderter}}",
+  "@abacusPlayPartHundreds": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayPartTens": "{count, plural, =1{1 Zehner} other{{count} Zehner}}",
+  "@abacusPlayPartTens": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusPlayPartOnes": "{count, plural, =1{1 Einer} other{{count} Einer}}",
+  "@abacusPlayPartOnes": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusBoardEquationOne": "{value} = {a}",
+  "@abacusBoardEquationOne": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusBoardEquationTwo": "{value} = {a} + {b}",
+  "@abacusBoardEquationTwo": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusBoardEquationThree": "{value} = {a} + {b} + {c}",
+  "@abacusBoardEquationThree": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusSpokenOne": "{value} ist {a}",
+  "@abacusSpokenOne": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusSpokenTwo": "{value} ist {a} und {b}",
+  "@abacusSpokenTwo": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "abacusSpokenThree": "{value} ist {a}, {b} und {c}",
+  "@abacusSpokenThree": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
   "feedPandaInstruction": "Fuettere den Panda mit {count, plural, =1{1 Apfel} other{{count} Aepfeln}}.",
   "feedPandaWellDone": "Gut gemacht! Der Panda hat {count, plural, =1{1 Apfel} other{{count} Äpfel}} gegessen.",
   "@feedPandaWellDone": {
     "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
-  "feedPandaHowManyLeft": "Wie viele Aepfel sind noch uebrig?",
-  "feedPandaHasEnough": "Der Panda hat genug. Lass uns zusammen zaehlen.",
+  "feedPandaHowManyLeft": "Wie viele Äpfel sind noch übrig?",
+  "@feedPandaHowManyLeft": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "feedPandaHasEnough": "Der Panda hat genug. Lass uns zusammen zählen.",
+  "@feedPandaHasEnough": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "feedPandaReplayInstructionButton": "Anweisung wiederholen",
   "feedPandaNewRoundButton": "Neue Runde",
   "feedPandaFruitSemanticLabel": "Apfel {position} von {total}. Doppeltippen zum Auswaehlen.",
@@ -1103,7 +1353,10 @@
   "@feedPandaSelectedSuffix": {
     "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
-  "feedPandaPandaSemanticReady": "Fuettere den Panda. {remaining, plural, =1{Noch 1 Apfel noetig} other{Noch {remaining} Aepfel noetig}}.",
+  "feedPandaPandaSemanticReady": "Füttere den Panda. {remaining, plural, =1{Noch 1 Apfel nötig} other{Noch {remaining} Äpfel nötig}}.",
+  "@feedPandaPandaSemanticReady": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "feedPandaPandaSemanticFull": "Der Panda hat für diese Runde genug.",
   "@feedPandaPandaSemanticFull": {
     "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
@@ -1116,25 +1369,55 @@
     "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
   "feedPandaBowlSemanticLabel": "Der Panda hat {given} von {target, plural, =1{1 Apfel} other{{target} Aepfeln}}.",
-  "feedPandaDropZoneLabel": "Gib dem Panda hier die Aepfel",
+  "feedPandaDropZoneLabel": "Gib dem Panda hier die Äpfel",
+  "@feedPandaDropZoneLabel": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "feedPandaTapPandaHint": "Apfel ausgewählt. Tippe jetzt auf den Panda, um ihn zu geben.",
   "@feedPandaTapPandaHint": {
     "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
-  "labsSpatialCubeWhichFaceOppositeMission": "Schau dir den Wuerfel an und entscheide, welche Flaeche der genannten gegenueberliegt.",
-  "labsSpatialCubeWhichFaceOppositeQuestion": "Welche Flaeche liegt {faceLabel} gegenueber?",
+  "labsSpatialCubeWhichFaceOppositeMission": "Schau dir den Würfel an und entscheide, welche Fläche der genannten gegenüberliegt.",
+  "@labsSpatialCubeWhichFaceOppositeMission": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsSpatialCubeWhichFaceOppositeQuestion": "Welche Fläche liegt {faceLabel} gegenüber?",
+  "@labsSpatialCubeWhichFaceOppositeQuestion": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsSpatialCubeWhichFaceOppositeHintButton": "Tipp",
   "labsSpatialCubeWhichFaceOppositeHintText": "Gegenueberliegende Flaechen teilen sich nie eine Kante — vorne/hinten, oben/unten und links/rechts sind immer die drei Paare.",
   "labsSpatialCubeWhichFaceOppositeCorrect": "Gut gedacht. Du hast die Beziehungen zwischen den Flaechen im Kopf behalten.",
   "labsSpatialCubeWhichFaceOppositeIncorrect": "Fast geschafft. Schau, welche Flaechen sich eine Kante teilen.",
-  "labsSpatialCubeWhichFaceOppositeWhereUsed": "Kartons packen, Wuerfel lesen und mit 3D-Netzen arbeiten beruhen alle darauf, zu wissen, welche Flaechen eines Wuerfels sich gegenueberliegen.",
-  "labsSpatialCubeWhichFaceOppositeHelpWhatToDo": "Drehe den Wuerfel, wenn du moechtest, und waehle dann die Flaeche, die deiner Meinung nach gegenueberliegt.",
-  "labsSpatialCubeWhichFaceOppositeHelpWhatToNotice": "Beachte, dass gegenueberliegende Flaechen nie nebeneinander sind, egal wie du den Wuerfel drehst.",
-  "labsSpatialCubeWhichFaceOppositeHelpWhatItMeans": "Jeder Wuerfel hat genau drei Paare gegenueberliegender Flaechen — vorne/hinten, oben/unten, links/rechts — und Drehen aendert nie, welche Flaechen zusammengehoeren.",
-  "labsSpatialCubeWhichFaceOppositeReveal": "{correctLabel} liegt {askedLabel} gegenueber.",
-  "labsSpatialCubeRotateToMatchMission": "Drehe deinen Wuerfel, bis er zur gezeigten Zielausrichtung passt.",
+  "labsSpatialCubeWhichFaceOppositeWhereUsed": "Kartons packen, Würfel lesen und mit 3D-Netzen arbeiten beruhen alle darauf, zu wissen, welche Flächen eines Würfels sich gegenüberliegen.",
+  "@labsSpatialCubeWhichFaceOppositeWhereUsed": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsSpatialCubeWhichFaceOppositeHelpWhatToDo": "Drehe den Würfel, wenn du möchtest, und wähle dann die Fläche, die deiner Meinung nach gegenüberliegt.",
+  "@labsSpatialCubeWhichFaceOppositeHelpWhatToDo": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsSpatialCubeWhichFaceOppositeHelpWhatToNotice": "Beachte, dass gegenüberliegende Flächen nie nebeneinander sind, egal wie du den Würfel drehst.",
+  "@labsSpatialCubeWhichFaceOppositeHelpWhatToNotice": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsSpatialCubeWhichFaceOppositeHelpWhatItMeans": "Jeder Würfel hat genau drei Paare gegenüberliegender Flächen — vorne/hinten, oben/unten, links/rechts — und Drehen ändert nie, welche Flächen zusammengehören.",
+  "@labsSpatialCubeWhichFaceOppositeHelpWhatItMeans": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsSpatialCubeWhichFaceOppositeReveal": "{correctLabel} liegt {askedLabel} gegenüber.",
+  "@labsSpatialCubeWhichFaceOppositeReveal": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsSpatialCubeRotateToMatchMission": "Drehe deinen Würfel, bis er zur gezeigten Zielausrichtung passt.",
+  "@labsSpatialCubeRotateToMatchMission": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsSpatialCubeRotateToMatchTargetLabel": "Zielausrichtung",
-  "labsSpatialCubeRotateToMatchYourCubeLabel": "Dein Wuerfel",
+  "labsSpatialCubeRotateToMatchYourCubeLabel": "Dein Würfel",
+  "@labsSpatialCubeRotateToMatchYourCubeLabel": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsSpatialCubeRotateToMatchTestButton": "Drehung prüfen",
   "@labsSpatialCubeRotateToMatchTestButton": {
     "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
@@ -1142,19 +1425,37 @@
   "labsSpatialCubeRotateToMatchCorrect": "Gut gemacht — das passt sehr gut.",
   "labsSpatialCubeRotateToMatchIncorrect": "Noch nicht ganz. Vergleiche, welche Flaeche vorne und welche oben ist.",
   "labsSpatialCubeRotateToMatchWhereUsed": "Die Ausrichtung eines Objekts an ein Diagramm anzupassen gehoert zum Lesen von technischen Zeichnungen und Montageanleitungen.",
-  "labsSpatialCubeRotateToMatchHelpWhatToDo": "Ziehe deinen Wuerfel, bis seine Flaechen mit dem daneben gezeigten Ziel uebereinstimmen, und pruefe dann deine Drehung.",
-  "labsSpatialCubeRotateToMatchHelpWhatToNotice": "Beachte, dass du keine pixelgenaue Uebereinstimmung brauchst — es reicht, wenn dieselben Flaechen vorne und oben sind.",
+  "labsSpatialCubeRotateToMatchHelpWhatToDo": "Ziehe deinen Würfel, bis seine Flächen mit dem daneben gezeigten Ziel übereinstimmen, und prüfe dann deine Drehung.",
+  "@labsSpatialCubeRotateToMatchHelpWhatToDo": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsSpatialCubeRotateToMatchHelpWhatToNotice": "Beachte, dass du keine pixelgenaue Übereinstimmung brauchst — es reicht, wenn dieselben Flächen vorne und oben sind.",
+  "@labsSpatialCubeRotateToMatchHelpWhatToNotice": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsSpatialCubeRotateToMatchHelpWhatItMeans": "Eine Ausrichtung wird vollstaendig dadurch beschrieben, welche Flaeche vorne und welche oben ist — diese beiden Angaben legen alles andere fest.",
   "labsSpatialCubeHiddenFaceMission": "Schau dir die drei sichtbaren Flaechen an und finde heraus, was auf der versteckten steht.",
   "labsSpatialCubeHiddenFaceQuestion": "Welche Beschriftung steht auf der Flaeche {direction}?",
   "labsSpatialCubeHiddenFaceHintButton": "Tipp",
   "labsSpatialCubeHiddenFaceHintText": "Finde zuerst heraus, welche Flaechen du SEHEN kannst — die versteckte Flaeche ist eine der drei uebrigen.",
   "labsSpatialCubeHiddenFaceCorrect": "Gut gemacht. Du hast die versteckte Flaeche richtig vorausgesagt.",
-  "labsSpatialCubeHiddenFaceIncorrect": "Guter Versuch. Drehe den Wuerfel zur Kontrolle und probiere dann die naechste Aufgabe.",
-  "labsSpatialCubeHiddenFaceWhereUsed": "Isometrische Diagramme und technische Zeichnungen zu lesen bedeutet, ueber Flaechen nachzudenken, die man nicht direkt sieht.",
-  "labsSpatialCubeHiddenFaceHelpWhatToDo": "Schau dir die drei sichtbaren Flaechen an und waehle dann die Beschriftung, die deiner Meinung nach auf der genannten versteckten Flaeche steht.",
+  "labsSpatialCubeHiddenFaceIncorrect": "Guter Versuch. Drehe den Würfel zur Kontrolle und probiere dann die nächste Aufgabe.",
+  "@labsSpatialCubeHiddenFaceIncorrect": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsSpatialCubeHiddenFaceWhereUsed": "Isometrische Diagramme und technische Zeichnungen zu lesen bedeutet, über Flächen nachzudenken, die man nicht direkt sieht.",
+  "@labsSpatialCubeHiddenFaceWhereUsed": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsSpatialCubeHiddenFaceHelpWhatToDo": "Schau dir die drei sichtbaren Flächen an und wähle dann die Beschriftung, die deiner Meinung nach auf der genannten versteckten Fläche steht.",
+  "@labsSpatialCubeHiddenFaceHelpWhatToDo": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsSpatialCubeHiddenFaceHelpWhatToNotice": "Beachte, dass aus diesem Blickwinkel immer nur drei Flaechen sichtbar sind — die anderen drei sind immer versteckt.",
-  "labsSpatialCubeHiddenFaceHelpWhatItMeans": "Ein Wuerfel zeigt aus einem Blickwinkel immer nur drei Flaechen, daher bedeutet das Erschliessen einer versteckten Flaeche, ueber den ganzen Wuerfel nachzudenken, nicht nur ueber das Sichtbare.",
+  "labsSpatialCubeHiddenFaceHelpWhatItMeans": "Ein Würfel zeigt aus einem Blickwinkel immer nur drei Flächen, daher bedeutet das Erschliessen einer versteckten Fläche, über den ganzen Würfel nachzudenken, nicht nur über das Sichtbare.",
+  "@labsSpatialCubeHiddenFaceHelpWhatItMeans": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsSpatialCubeNetExplorerMission": "Schau dir das flache Netz an, sage voraus, welche Flaechen sich gegenueberliegen werden, und falte es dann zur Kontrolle.",
   "labsSpatialCubeNetExplorerPredictPrompt": "Welche zwei Quadrate werden deiner Meinung nach gegenueberliegen?",
   "labsSpatialCubeNetExplorerFoldButton": "Falten",
@@ -1172,19 +1473,34 @@
     "description": "Swiss Phase 2 P0 correction (diacritics). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
   "labsSpatialCubeNetExplorerWhereUsed": "Verpackungsdesign und Blechbearbeitung beginnen beide mit einem flachen Netz, das sich zu einer fertigen 3D-Form faltet.",
-  "labsSpatialCubeNetExplorerHelpWhatToDo": "Betrachte das flache Netz und druecke dann Falten, um zu sehen, ob es sich zu einem Wuerfel schliesst.",
-  "labsSpatialCubeNetExplorerHelpWhatToNotice": "Beachte, dass nicht jede Anordnung von sechs Quadraten sich zu einem geschlossenen Wuerfel faltet — manche ueberlappen sich oder lassen eine Luecke.",
+  "labsSpatialCubeNetExplorerHelpWhatToDo": "Betrachte das flache Netz und drücke dann Falten, um zu sehen, ob es sich zu einem Würfel schliesst.",
+  "@labsSpatialCubeNetExplorerHelpWhatToDo": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsSpatialCubeNetExplorerHelpWhatToNotice": "Beachte, dass nicht jede Anordnung von sechs Quadraten sich zu einem geschlossenen Würfel faltet — manche überlappen sich oder lassen eine Lücke.",
+  "@labsSpatialCubeNetExplorerHelpWhatToNotice": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsSpatialCubeNetExplorerHelpWhatItMeans": "Ein Netz ist eine 2D-Form, die sich entlang ihrer Kanten zu einem 3D-Koerper faltet — dasselbe Quadrat kann je nach Form des Netzes auf ganz unterschiedlichen Seiten des Wuerfels landen.",
   "labsAircraftLandingLabTitle": "Flugzeuglandungs-Labor",
   "labsAircraftLandingLabSubtitle": "Fliege den Sinkwinkel, die Distanz und die Geschwindigkeit, die ein Flugzeug sicher landen lassen",
-  "labsAircraftLandingLabIntro": "Passe Sinkwinkel und Geschwindigkeit an und druecke dann Anflug testen, um zu sehen, wie das Flugzeug die Strecke fliegt und wo es aufsetzt.",
-  "labsAircraftLandingLabFreePlayCaption": "Probier's aus: Ziehe an den Reglern und druecke dann Anflug testen.",
+  "labsAircraftLandingLabIntro": "Passe Sinkwinkel und Geschwindigkeit an und drücke dann Anflug testen, um zu sehen, wie das Flugzeug die Strecke fliegt und wo es aufsetzt.",
+  "@labsAircraftLandingLabIntro": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsAircraftLandingLabFreePlayCaption": "Probier's aus: Ziehe an den Reglern und drücke dann Anflug testen.",
+  "@labsAircraftLandingLabFreePlayCaption": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsAircraftLandingFindTheTimeTitle": "Finde die Zeit",
   "labsAircraftLandingFindTheTimeSubtitle": "Finde heraus, wie lange der Flug zur Landebahn dauert",
   "labsAircraftLandingDescentLineTitle": "Folge der Sinkfluglinie",
   "labsAircraftLandingDescentLineSubtitle": "Passe deinen Sinkwinkel an eine Ziel-Gleitlinie an",
   "labsAircraftLandingGlidePathTitle": "Lande auf dem Gleitpfad",
-  "labsAircraftLandingGlidePathSubtitle": "Waehle Winkel und Geschwindigkeit, um sicher auf der Landebahn zu landen",
+  "labsAircraftLandingGlidePathSubtitle": "Wähle Winkel und Geschwindigkeit, um sicher auf der Landebahn zu landen",
+  "@labsAircraftLandingGlidePathSubtitle": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsAircraftLandingVectorApproachTitle": "Vektor-Anflug",
   "labsAircraftLandingVectorApproachSubtitle": "Passe horizontale und vertikale Geschwindigkeit an einen Ziel-Anflug an",
   "labsAircraftLandingDescentAngleLabel": "Sinkwinkel: {degrees}°",
@@ -1200,26 +1516,47 @@
   "labsAircraftLandingFindTheTimeCorrect": "Richtig — du hast die Zeit bis zur Landebahn gefunden.",
   "labsAircraftLandingFindTheTimeIncorrect": "Noch nicht ganz. Versuche, die Distanz durch die Geschwindigkeit zu teilen.",
   "labsAircraftLandingFindTheTimeReveal": "Die richtige Zeit ist {seconds} Sekunden.",
-  "labsAircraftLandingFindTheTimeHelpWhatToDo": "Lies die gezeigte Distanz und Geschwindigkeit ab und waehle dann die passende Zeit aus den Optionen.",
+  "labsAircraftLandingFindTheTimeHelpWhatToDo": "Lies die gezeigte Distanz und Geschwindigkeit ab und wähle dann die passende Zeit aus den Optionen.",
+  "@labsAircraftLandingFindTheTimeHelpWhatToDo": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsAircraftLandingFindTheTimeHelpWhatToNotice": "Beachte, dass eine hoehere Geschwindigkeit bei gleicher Distanz immer eine kuerzere Zeit bedeutet.",
-  "labsAircraftLandingFindTheTimeHelpWhatItMeans": "Zeit, Distanz und Geschwindigkeit haengen immer ueber Zeit = Distanz ÷ Geschwindigkeit zusammen — dieselbe Beziehung gilt fuer jede Reise, nicht nur fuer Fluege.",
+  "labsAircraftLandingFindTheTimeHelpWhatItMeans": "Zeit, Distanz und Geschwindigkeit hängen immer über Zeit = Distanz ÷ Geschwindigkeit zusammen — dieselbe Beziehung gilt für jede Reise, nicht nur für Flüge.",
+  "@labsAircraftLandingFindTheTimeHelpWhatItMeans": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsAircraftLandingDescentLineTestButton": "Meine Linie testen",
   "labsAircraftLandingDescentLineMission": "Passe deinen Sinkwinkel an, bis deine Linie mit der gestrichelten Ziellinie uebereinstimmt.",
   "labsAircraftLandingDescentLineWhereUsed": "Eine geforderte Steigung zu treffen kommt immer dann vor, wenn ein Weg, eine Rampe oder ein Rohr einer festen Neigung folgen muss.",
   "labsAircraftLandingDescentLineCorrect": "Gut gemacht — deine Linie stimmt mit dem Ziel-Gleitpfad ueberein.",
   "labsAircraftLandingDescentLineIncorrect": "Noch nicht. Vergleiche, wie steil deine Linie im Vergleich zur gestrichelten Ziellinie ist.",
   "labsAircraftLandingDescentLineHelpWhatToDo": "Bewege den Sinkwinkel-Regler, bis deine durchgezogene Linie genau auf der gestrichelten Ziellinie liegt, und teste sie dann.",
-  "labsAircraftLandingDescentLineHelpWhatToNotice": "Beachte, dass ein steilerer Winkel die Linie schneller fallen laesst — eine groessere negative Steigung.",
+  "labsAircraftLandingDescentLineHelpWhatToNotice": "Beachte, dass ein steilerer Winkel die Linie schneller fallen lässt — eine grössere negative Steigung.",
+  "@labsAircraftLandingDescentLineHelpWhatToNotice": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsAircraftLandingDescentLineHelpWhatItMeans": "Der Sinkwinkel ist die Steigung der Linie: Hoehenaenderung geteilt durch zurueckgelegte Distanz, geschrieben als y = mx + c mit einem negativen m.",
   "labsAircraftLandingGlidePathSafe": "Sanfte Landung — genau auf der Landebahn.",
   "labsAircraftLandingGlidePathTooSteep": "Zu steil — das Flugzeug ist vor der Landebahn aufgesetzt.",
   "labsAircraftLandingGlidePathTooShallow": "Zu flach — das Flugzeug war hinter der Landebahn noch in der Luft.",
-  "labsAircraftLandingGlidePathMission": "Waehle Winkel und Geschwindigkeit und teste dann deinen Anflug, um sicher auf der Landebahn zu landen.",
+  "labsAircraftLandingGlidePathMission": "Wähle Winkel und Geschwindigkeit und teste dann deinen Anflug, um sicher auf der Landebahn zu landen.",
+  "@labsAircraftLandingGlidePathMission": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsAircraftLandingGlidePathWhereUsed": "Jede echte Landung balanciert einen sicheren Sinkwinkel gegen Geschwindigkeit und Distanz, um genau an der richtigen Stelle aufzusetzen.",
   "labsAircraftLandingGlidePathTouchdownError": "{metres} Meter von der Landebahnschwelle entfernt.",
-  "labsAircraftLandingGlidePathHelpWhatToDo": "Passe Winkel und Geschwindigkeit an und druecke dann Anflug testen, um zu sehen, wo das Flugzeug tatsaechlich aufsetzt.",
-  "labsAircraftLandingGlidePathHelpWhatToNotice": "Beachte, wie sich der Aufsetzpunkt aendert, wenn du den Winkel aenderst, auch wenn die Geschwindigkeit gleich bleibt.",
-  "labsAircraftLandingGlidePathHelpWhatItMeans": "tan(Winkel) = Hoehe ÷ Distanz — genau dieses Verhaeltnis sorgt dafuer, dass eine Landung genau auf der Landebahn aufsetzt statt zu kurz oder zu weit.",
+  "labsAircraftLandingGlidePathHelpWhatToDo": "Passe Winkel und Geschwindigkeit an und drücke dann Anflug testen, um zu sehen, wo das Flugzeug tatsächlich aufsetzt.",
+  "@labsAircraftLandingGlidePathHelpWhatToDo": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsAircraftLandingGlidePathHelpWhatToNotice": "Beachte, wie sich der Aufsetzpunkt ändert, wenn du den Winkel änderst, auch wenn die Geschwindigkeit gleich bleibt.",
+  "@labsAircraftLandingGlidePathHelpWhatToNotice": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsAircraftLandingGlidePathHelpWhatItMeans": "tan(Winkel) = Höhe ÷ Distanz — genau dieses Verhältnis sorgt dafür, dass eine Landung genau auf der Landebahn aufsetzt statt zu kurz oder zu weit.",
+  "@labsAircraftLandingGlidePathHelpWhatItMeans": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsAircraftLandingVectorHorizontalLabel": "Horizontale Geschwindigkeit: {metresPerSecond} m/s",
   "labsAircraftLandingVectorVerticalLabel": "Vertikale Geschwindigkeit: {metresPerSecond} m/s",
   "labsAircraftLandingVectorResultantLabel": "Kombinierte (resultierende) Geschwindigkeit: {metresPerSecond} m/s",
@@ -1227,9 +1564,18 @@
   "labsAircraftLandingVectorApproachWhereUsed": "Eine horizontale und eine vertikale Geschwindigkeit zu einem resultierenden Vektor zu kombinieren ist genau die Art, wie ein echter Flugpfad oder jede 2D-Bewegung mathematisch beschrieben wird.",
   "labsAircraftLandingVectorApproachCorrect": "Richtig — deine Komponenten stimmen mit dem Ziel-Anflug ueberein.",
   "labsAircraftLandingVectorApproachIncorrect": "Noch nicht. Vergleiche deine horizontale und vertikale Geschwindigkeit mit dem Ziel.",
-  "labsAircraftLandingVectorApproachHelpWhatToDo": "Passe die Regler fuer horizontale und vertikale Geschwindigkeit an und teste dann deinen Anflug.",
-  "labsAircraftLandingVectorApproachHelpWhatToNotice": "Beachte, wie sich die resultierende Geschwindigkeit und der Sinkflugpfad aendern, wenn du eine der beiden Komponenten anpasst.",
-  "labsAircraftLandingVectorApproachHelpWhatItMeans": "Jede Geschwindigkeit laesst sich in eine horizontale und eine vertikale Komponente zerlegen und mit dem Satz des Pythagoras zur resultierenden Geschwindigkeit zusammensetzen.",
+  "labsAircraftLandingVectorApproachHelpWhatToDo": "Passe die Regler für horizontale und vertikale Geschwindigkeit an und teste dann deinen Anflug.",
+  "@labsAircraftLandingVectorApproachHelpWhatToDo": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsAircraftLandingVectorApproachHelpWhatToNotice": "Beachte, wie sich die resultierende Geschwindigkeit und der Sinkflugpfad ändern, wenn du eine der beiden Komponenten anpasst.",
+  "@labsAircraftLandingVectorApproachHelpWhatToNotice": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsAircraftLandingVectorApproachHelpWhatItMeans": "Jede Geschwindigkeit lässt sich in eine horizontale und eine vertikale Komponente zerlegen und mit dem Satz des Pythagoras zur resultierenden Geschwindigkeit zusammensetzen.",
+  "@labsAircraftLandingVectorApproachHelpWhatItMeans": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsTryAgainButton": "Nochmal versuchen",
   "labsHelpButton": "Hilfe",
   "labsHelpTitle": "Hilfe",
@@ -1247,48 +1593,102 @@
   "labsDirectionRight": "Rechts",
   "labsDirectionToward": "Zu dir hin",
   "labsDirectionLeft": "Links",
-  "labsFlightPathLabMission": "Richte das Flugzeug auf das gelbe Ziel, dann druecke Testflug, um zu sehen, wo es landet.",
+  "labsFlightPathLabMission": "Richte das Flugzeug auf das gelbe Ziel, dann drücke Testflug, um zu sehen, wo es landet.",
+  "@labsFlightPathLabMission": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsFlightPathLabHeadingNavigatorLabel": "Kurs: {bearing}",
-  "labsFlightPathLabHeadingHelper": "Drehe das, um zu waehlen, wohin das Flugzeug zeigt",
-  "labsFlightPathLabSpeedHelper": "Waehle, wie weit das Flugzeug fliegen soll",
+  "labsFlightPathLabHeadingHelper": "Drehe das, um zu wählen, wohin das Flugzeug zeigt",
+  "@labsFlightPathLabHeadingHelper": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsFlightPathLabSpeedHelper": "Wähle, wie weit das Flugzeug fliegen soll",
+  "@labsFlightPathLabSpeedHelper": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsFlightPathLabTargetExplanation": "Die gelbe Markierung ist dein Ziel. Sie ist {distance} km entfernt, auf einer Peilung von {bearing}.",
   "labsFlightPathLabPredictionPrompt": "Bevor du testest: landest du zu kurz, genau im Ziel oder darueber hinaus?",
   "labsFlightPathLabPredictShort": "Zu kurz",
   "labsFlightPathLabPredictOnTarget": "Im Ziel",
   "labsFlightPathLabPredictOver": "Darueber hinaus",
-  "labsFlightPathLabHelpWhatToDo": "Stelle Kurs und Geschwindigkeit ein, mache wenn gefragt eine Vorhersage, dann druecke Testflug.",
+  "labsFlightPathLabHelpWhatToDo": "Stelle Kurs und Geschwindigkeit ein, mache wenn gefragt eine Vorhersage, dann drücke Testflug.",
+  "@labsFlightPathLabHelpWhatToDo": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsFlightPathLabHelpWhatToNotice": "Achte darauf, wie weit vom Ziel das Flugzeug landet und in welche Richtung du anpassen musst.",
-  "labsFlightPathLabHelpWhatItMeans": "Ein gleichbleibender Kurs und eine gleichbleibende Geschwindigkeit fuehren ueber eine feste Zeit immer zu genau einem Landepunkt — das ist Geschwindigkeit, Strecke und Zeit zusammen mit einer Richtung.",
+  "labsFlightPathLabHelpWhatItMeans": "Ein gleichbleibender Kurs und eine gleichbleibende Geschwindigkeit führen über eine feste Zeit immer zu genau einem Landepunkt — das ist Geschwindigkeit, Strecke und Zeit zusammen mit einer Richtung.",
+  "@labsFlightPathLabHelpWhatItMeans": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsFlightPathLabFirstUseStep1": "Richte das Flugzeug auf das gelbe Ziel.",
-  "labsFlightPathLabFirstUseStep2": "Waehle, wie weit das Flugzeug fliegen soll.",
+  "labsFlightPathLabFirstUseStep2": "Wähle, wie weit das Flugzeug fliegen soll.",
+  "@labsFlightPathLabFirstUseStep2": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsFlightPathLabFirstUseStep3": "Druecke Testflug, um zu sehen, wo es landet.",
   "labsDataDetectiveMission": "Sage voraus, was mit Mittelwert und Median passiert, dann entferne den ungewoehnlichen Wert, um es herauszufinden.",
   "labsDataDetectiveOutlierExplanation": "Ein Wert, {outlier}, sticht aus den anderen heraus — er ist viel hoeher oder tiefer als die uebrigen. Das nennt man einen Ausreisser.",
   "labsDataDetectiveBeforeAfter": "Mittelwert: {meanBefore} → {meanAfter}. Median: {medianBefore} → {medianAfter}.",
-  "labsDataDetectiveHelpWhatToDo": "Schau dir die Werte an, sage voraus, ob sich Mittelwert oder Median staerker aendert, dann entferne den Ausreisser, um die Antwort zu sehen.",
-  "labsDataDetectiveHelpWhatToNotice": "Achte darauf, wie stark sich der Mittelwert im Vergleich zum Median veraendert, sobald der Ausreisser weg ist.",
+  "labsDataDetectiveHelpWhatToDo": "Schau dir die Werte an, sage voraus, ob sich Mittelwert oder Median stärker ändert, dann entferne den Ausreisser, um die Antwort zu sehen.",
+  "@labsDataDetectiveHelpWhatToDo": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsDataDetectiveHelpWhatToNotice": "Achte darauf, wie stark sich der Mittelwert im Vergleich zum Median verändert, sobald der Ausreisser weg ist.",
+  "@labsDataDetectiveHelpWhatToNotice": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsDataDetectiveHelpWhatItMeans": "Der Mittelwert nutzt jeden Wert, daher kann ihn ein extremer Wert stark verschieben. Der Median haengt nur von der mittleren Position ab, darum bewegt er sich kaum.",
   "labsDataDetectiveFirstUseStep1": "Schau dir die Liste der Werte an — einer sticht heraus.",
-  "labsDataDetectiveFirstUseStep2": "Sage voraus, was sich staerker aendert: Mittelwert oder Median.",
+  "labsDataDetectiveFirstUseStep2": "Sage voraus, was sich stärker ändert: Mittelwert oder Median.",
+  "@labsDataDetectiveFirstUseStep2": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsDataDetectiveFirstUseStep3": "Entferne den Ausreisser und decke die Antwort auf.",
   "labsAlgebraBalanceMission": "Halte beide Seiten im Gleichgewicht, bis x allein steht.",
   "labsAlgebraBalanceStep1RemoveButton": "Entferne {value} von beiden Seiten",
   "labsAlgebraBalanceStep1AddButton": "Addiere {value} zu beiden Seiten",
   "labsAlgebraBalanceStep2DivideButton": "Teile beide Seiten durch {value}",
   "labsAlgebraBalanceHelpWhatToDo": "Entferne zuerst die Zahl, dann teile, um x allein stehen zu lassen.",
-  "labsAlgebraBalanceHelpWhatToNotice": "Achte darauf, dass sich beide Waagschalen immer gemeinsam und um den gleichen Betrag aendern — die Gleichung bleibt immer wahr.",
+  "labsAlgebraBalanceHelpWhatToNotice": "Achte darauf, dass sich beide Waagschalen immer gemeinsam und um den gleichen Betrag ändern — die Gleichung bleibt immer wahr.",
+  "@labsAlgebraBalanceHelpWhatToNotice": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsAlgebraBalanceHelpWhatItMeans": "Dieselbe Operation auf beiden Seiten einer Gleichung anzuwenden haelt sie im Gleichgewicht — so kannst du sicher bis auf x vereinfachen.",
   "labsAlgebraBalanceFirstUseStep1": "Schau dir die Gleichung und die Waage darunter an.",
-  "labsAlgebraBalanceFirstUseStep2": "Nutze die Knoepfe, um beide Seiten gemeinsam zu vereinfachen.",
+  "labsAlgebraBalanceFirstUseStep2": "Nutze die Knöpfe, um beide Seiten gemeinsam zu vereinfachen.",
+  "@labsAlgebraBalanceFirstUseStep2": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsAlgebraBalanceFirstUseStep3": "Mach weiter, bis x allein steht.",
   "labsFractionBuilderMission": "Fuelle {numerator} von {denominator} gleichen Teilen.",
-  "labsFractionBuilderTapGuidance": "Tippe auf ein Segment, um es zu fuellen, oder nochmal, um es zu leeren.",
-  "labsFractionBuilderSymbolicResult": "{numerator}/{denominator} — {numerator} gleiche(r) Teil(e) von {denominator} gefuellt.",
-  "labsFractionBuilderHelpWhatToDo": "Tippe Segmente, bis die gefuellte Anzahl zum Bruch passt, dann druecke Pruefen.",
-  "labsFractionBuilderHelpWhatToNotice": "Achte darauf, dass der Nenner die Gesamtzahl gleicher Teile ist und der Zaehler, wie viele gefuellt sind.",
-  "labsFractionBuilderHelpWhatItMeans": "Ein Bruch zaehlt gleiche Teile eines Ganzen — dieselbe Idee, egal ob Balken, Pizza oder Messbecher.",
-  "labsFractionBuilderFirstUseStep1": "Schau, wie viele Teile zu fuellen sind.",
-  "labsFractionBuilderFirstUseStep2": "Tippe Segmente, um sie zu fuellen.",
+  "labsFractionBuilderTapGuidance": "Tippe auf ein Segment, um es zu füllen, oder nochmal, um es zu leeren.",
+  "@labsFractionBuilderTapGuidance": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsFractionBuilderSymbolicResult": "{numerator}/{denominator} — {numerator} gleiche(r) Teil(e) von {denominator} gefüllt.",
+  "@labsFractionBuilderSymbolicResult": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsFractionBuilderHelpWhatToDo": "Tippe Segmente, bis die gefüllte Anzahl zum Bruch passt, dann drücke Prüfen.",
+  "@labsFractionBuilderHelpWhatToDo": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsFractionBuilderHelpWhatToNotice": "Achte darauf, dass der Nenner die Gesamtzahl gleicher Teile ist und der Zähler, wie viele gefüllt sind.",
+  "@labsFractionBuilderHelpWhatToNotice": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsFractionBuilderHelpWhatItMeans": "Ein Bruch zählt gleiche Teile eines Ganzen — dieselbe Idee, egal ob Balken, Pizza oder Messbecher.",
+  "@labsFractionBuilderHelpWhatItMeans": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsFractionBuilderFirstUseStep1": "Schau, wie viele Teile zu füllen sind.",
+  "@labsFractionBuilderFirstUseStep1": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsFractionBuilderFirstUseStep2": "Tippe Segmente, um sie zu füllen.",
+  "@labsFractionBuilderFirstUseStep2": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsFractionBuilderFirstUseStep3": "Druecke Pruefen, um zu sehen, ob du den Bruch getroffen hast.",
   "labsNumberLineExplorerMission": "Bewege den Punkt auf {target}.",
   "labsNumberLineExplorerStartInstruction": "Starte bei {min} und bewege den Punkt zum Ziel.",
@@ -1296,7 +1696,10 @@
   "labsNumberLineExplorerMoveLeft": "Bewege {distance} weiter nach links",
   "labsNumberLineExplorerIncreaseButton": "Nach rechts",
   "labsNumberLineExplorerDecreaseButton": "Nach links",
-  "labsNumberLineExplorerHelpWhatToDo": "Ziehe den Punkt, oder nutze die Pfeilknoepfe, um den Zielwert zu erreichen, dann druecke Pruefen.",
+  "labsNumberLineExplorerHelpWhatToDo": "Ziehe den Punkt, oder nutze die Pfeilknöpfe, um den Zielwert zu erreichen, dann drücke Prüfen.",
+  "@labsNumberLineExplorerHelpWhatToDo": {
+    "description": "Swiss Phase 3 P1 correction (umlaut_digraph). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsNumberLineExplorerHelpWhatToNotice": "Achte darauf, wie die Position des Punktes seinem Wert entspricht — weiter rechts ist eine groessere Zahl, weiter links eine kleinere.",
   "labsNumberLineExplorerHelpWhatItMeans": "Ein Zahlenstrahl zeigt jede Zahl der Reihe nach, in beiden Richtungen von null, einschliesslich negativer Zahlen und Dezimalzahlen.",
   "labsNumberLineExplorerFirstUseStep1": "Schau, wo der Punkt startet.",
@@ -1356,7 +1759,10 @@
   "labsNumberLineExplorerNarrationResultCloseNavigator": "Der Wert liegt innerhalb eines Schritts vom Ziel — eine einzige Anpassung sollte genügen.",
   "labsNumberLineExplorerNarrationCompletionExplorer": "Genau richtig! Du hast die exakte Position des Ziels auf der Linie gefunden.",
   "labsNumberLineExplorerNarrationCompletionBuilder": "Genau richtig! Einen Wert seiner Position zuzuordnen ist genau das, was eine Zahlenlinie darstellt.",
-  "labsNumberLineExplorerNarrationCompletionNavigator": "Exakte Übereinstimmung: Die Position des Werts auf der Linie entspricht genau seinem Zahlenwert, einschließlich Vorzeichen und Betrag.",
+  "labsNumberLineExplorerNarrationCompletionNavigator": "Exakte Übereinstimmung: Die Position des Werts auf der Linie entspricht genau seinem Zahlenwert, einschliesslich Vorzeichen und Betrag.",
+  "@labsNumberLineExplorerNarrationCompletionNavigator": {
+    "description": "Swiss Phase 3 P1 correction (eszett_in_swiss_german). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsNumberLineExplorerNarrationHintRepeatedExplorer": "Das ist derselbe Punkt wie zuvor — bewege ihn, bevor du erneut prüfst.",
   "labsNumberLineExplorerNarrationHintRepeatedBuilder": "Du hast denselben Wert erneut geprüft. Bewege ihn um mindestens einen Schritt vor der nächsten Prüfung.",
   "labsNumberLineExplorerNarrationHintRepeatedNavigator": "Der Wert ist unverändert gegenüber der letzten Prüfung — passe ihn vor dem erneuten Test an.",
@@ -1387,9 +1793,18 @@
   "labsDataDetectiveNarrationResultWrongExplorer": "Nicht ganz — schau, wie stark sich jeder Durchschnitt verändert hat, und wähle erneut.",
   "labsDataDetectiveNarrationResultWrongBuilder": "Vergleiche, wie stark sich Mittelwert und Median jeweils verändert haben, und sage dann erneut voraus, welcher sich stärker verschoben hat.",
   "labsDataDetectiveNarrationResultWrongNavigator": "Überprüfe die berechneten Verschiebungen erneut: sage voraus, welche Kennzahl sich stärker verändert hat.",
-  "labsDataDetectiveNarrationCompletionExplorer": "Richtig! Du hast erkannt, welchen Durchschnitt der Ausreißer am stärksten beeinflusst.",
-  "labsDataDetectiveNarrationCompletionBuilder": "Richtig! Zu erkennen, welche Kennzahl ein Ausreißer am stärksten verzerrt, ist genau die Kernidee dieses Labors.",
-  "labsDataDetectiveNarrationCompletionNavigator": "Richtig: Die Kennzahl mit der größeren Verschiebung reagiert empfindlicher auf den Ausreißer, passend zur Empfindlichkeit des Mittelwerts gegenüber Extremwerten im Vergleich zum Median.",
+  "labsDataDetectiveNarrationCompletionExplorer": "Richtig! Du hast erkannt, welchen Durchschnitt der Ausreisser am stärksten beeinflusst.",
+  "@labsDataDetectiveNarrationCompletionExplorer": {
+    "description": "Swiss Phase 3 P1 correction (eszett_in_swiss_german). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsDataDetectiveNarrationCompletionBuilder": "Richtig! Zu erkennen, welche Kennzahl ein Ausreisser am stärksten verzerrt, ist genau die Kernidee dieses Labors.",
+  "@labsDataDetectiveNarrationCompletionBuilder": {
+    "description": "Swiss Phase 3 P1 correction (eszett_in_swiss_german). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "labsDataDetectiveNarrationCompletionNavigator": "Richtig: Die Kennzahl mit der grösseren Verschiebung reagiert empfindlicher auf den Ausreisser, passend zur Empfindlichkeit des Mittelwerts gegenüber Extremwerten im Vergleich zum Median.",
+  "@labsDataDetectiveNarrationCompletionNavigator": {
+    "description": "Swiss Phase 3 P1 correction (eszett_in_swiss_german). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "labsDataDetectiveNarrationHintRepeatedExplorer": "Dieselbe Vermutung wie zuvor — versuche die andere.",
   "labsDataDetectiveNarrationHintRepeatedBuilder": "Du hast erneut dieselbe Kennzahl vorhergesagt. Erwäge die andere Option.",
   "labsDataDetectiveNarrationHintRepeatedNavigator": "Dieselbe Vorhersage wurde wiederholt — überdenke sie anhand der berechneten Verschiebungswerte.",
@@ -1407,7 +1822,10 @@
   "labsFractionBuilderNarrationIntro": "Tippe auf Segmente, um den Bruch zu füllen, und prüfe dann deine Antwort.",
   "labsNumberLineExplorerNarrationIntro": "Bewege die Markierung zum Zielwert und prüfe dann deine Antwort.",
   "labsAlgebraBalanceNarrationIntro": "Nutze die Waage-Operationen, um x Schritt für Schritt zu isolieren.",
-  "labsDataDetectiveNarrationIntro": "Sage voraus, welchen Durchschnitt der Ausreißer am stärksten beeinflusst, und decke dann die Antwort auf.",
+  "labsDataDetectiveNarrationIntro": "Sage voraus, welchen Durchschnitt der Ausreisser am stärksten beeinflusst, und decke dann die Antwort auf.",
+  "@labsDataDetectiveNarrationIntro": {
+    "description": "Swiss Phase 3 P1 correction (eszett_in_swiss_german). PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
 
   "allieLabel": "Allie",
   "familyMathsEntryTitle": "Familien-Mathe",
@@ -1874,13 +2292,157 @@
   "@appearanceResetOnboardingSub": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
+  "numberSenseLabTitle": "Zahlensinn-Labor",
+  "@numberSenseLabTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseModeGuided": "Geführt",
+  "@numberSenseModeGuided": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseModeFreeExplore": "Frei erkunden",
+  "@numberSenseModeFreeExplore": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseExampleEquivalenceTitle": "Einen gleichwertigen Bruch bilden",
+  "@numberSenseExampleEquivalenceTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseExampleEquivalenceTask": "Zeige ein Halbes mit gleichen Teilen.",
+  "@numberSenseExampleEquivalenceTask": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseExamplePlacementTitle": "Einen Bruch platzieren",
+  "@numberSenseExamplePlacementTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseExamplePlacementTask": "Setze drei Achtel auf den Zahlenstrahl.",
+  "@numberSenseExamplePlacementTask": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseExampleComparisonTitle": "Brüche vergleichen",
+  "@numberSenseExampleComparisonTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseExampleComparisonTask": "Wähle, wie sich diese Brüche zueinander verhalten.",
+  "@numberSenseExampleComparisonTask": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseTarget": "Ziel: {fraction}",
+  "@numberSenseTarget": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseCompareLessThan": "Kleiner als",
+  "@numberSenseCompareLessThan": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseCompareEqualTo": "Gleich",
+  "@numberSenseCompareEqualTo": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseCompareGreaterThan": "Grösser als",
+  "@numberSenseCompareGreaterThan": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComplete": "Gefunden!",
+  "@numberSenseComplete": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseReset": "Zurücksetzen",
+  "@numberSenseReset": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseLabDescription": "Stammbrüche bilden, platzieren und vergleichen.",
+  "@numberSenseLabDescription": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "appearanceResetOnboardingButton": "Einführung zurücksetzen",
   "@appearanceResetOnboardingButton": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
+  "numberSenseFreeExploreInstruction": "Wähle ein Modell und tippe dann auf gleiche Teile oder tippe auf einen Punkt bzw. ziehe ihn, um Brüche zu erkunden.",
+  "@numberSenseFreeExploreInstruction": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseClearExplore": "Leeren",
+  "@numberSenseClearExplore": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseScopeStatement": "Dieses Einstiegsmodell Ganzes–Teil unterstützt nur 2, 3, 4, 6 oder 8 gleiche Teile. Hundertstel werden auf dem Präzisionsstrahl unterstützt; andere, nicht unterstützte Nenner brauchen einen Präzisions- oder vergrösserten Strahl.",
+  "@numberSenseScopeStatement": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseWholePartModel": "Ganzes-Teil-Streifen",
+  "@numberSenseWholePartModel": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSensePrecisionLine": "Präzisionsstrahl",
+  "@numberSensePrecisionLine": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseExampleHundredthsTitle": "Ein Hundertstel finden",
+  "@numberSenseExampleHundredthsTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseExampleHundredthsTask": "Finde ein Hundertstel auf dem vergrösserten Zahlenstrahl. Jeder Schritt ist ein Hundertstel.",
+  "@numberSenseExampleHundredthsTask": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseHundredthsExploreInstruction": "Wähle ein Hundertstel von 0.00 bis 0.10. Tippe auf einen beschrifteten Punkt oder ziehe entlang des Strahls.",
+  "@numberSenseHundredthsExploreInstruction": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "numberSenseHundredthsLineLabel": "Vergrösserter Zahlenstrahl von 0.00 bis 0.10, in Hundertstel eingeteilt",
   "@numberSenseHundredthsLineLabel": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseHundredthsSelectionExplanation": "{fraction} bedeutet {decimal}: {count} von 100 gleichen Teilen.",
+  "@numberSenseHundredthsSelectionExplanation": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseHundredthsIncorrectFeedback": "Du hast {decimal} gewählt. Ein Hundertstel ist der nächste Strich nach 0.00: Wähle 0.01.",
+  "@numberSenseHundredthsIncorrectFeedback": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseHundredthsZeroExplanation": "Null steht am Anfang des Strahls.",
+  "@numberSenseHundredthsZeroExplanation": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseHundredthsZeroGuidedFeedback": "0.00 ist null. Ein Hundertstel ist der erste Strich rechts davon: 0.01.",
+  "@numberSenseHundredthsZeroGuidedFeedback": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseGuidedWrongAdjacent": "Nicht ganz. Du hast {selected} gewählt. Geh einen Strich nach {direction}, um {target} zu erreichen.",
+  "@numberSenseGuidedWrongAdjacent": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseGuidedWrongGeneral": "Nicht ganz. Du hast {selected} gewählt. Das Ziel ist {target}. Ändere die eingefärbten gleichen Teile, um die Zielmenge zu zeigen.",
+  "@numberSenseGuidedWrongGeneral": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseGuidedWrongPartition": "Nicht ganz. Du hast {selected} gewählt. Das Ziel ist {target}. Wähle gleiche Teile, mit denen sich der Zielbruch zeigen lässt.",
+  "@numberSenseGuidedWrongPartition": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseGuidedWrongEquivalenceWhole": "{selected} ist ein Ganzes, nicht {target}. Färbe die Hälfte der gleichen Teile ein.",
+  "@numberSenseGuidedWrongEquivalenceWhole": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseGuidedDirectionLeft": "links",
+  "@numberSenseGuidedDirectionLeft": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseGuidedDirectionRight": "rechts",
+  "@numberSenseGuidedDirectionRight": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseEqualPartsLabel": "Gleiche Teile",
+  "@numberSenseEqualPartsLabel": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseCompareSharedLineLabel": "Gemeinsamer Zahlenstrahl von null bis eins. Der Kreis markiert den linken Bruch, die Raute den rechten Bruch.",
+  "@numberSenseCompareSharedLineLabel": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
   "numberSenseCompareLeftMarkerSemantics": "Markierung auf dem Zahlenstrahl für zwei Drittel, 2/3",
   "@numberSenseCompareLeftMarkerSemantics": {
@@ -1890,6 +2452,34 @@
   "@numberSenseCompareRightMarkerSemantics": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
+  "numberSenseComparisonCorrectResultDynamic": "Richtig: {leftFraction} {relation} {rightFraction}.",
+  "@numberSenseComparisonCorrectResultDynamic": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonIncorrectResultDynamic": "Nicht ganz. {leftFraction} ist {relationWords} {rightFraction}.",
+  "@numberSenseComparisonIncorrectResultDynamic": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonProofDynamic": "{leftNumerator} × {rightDenominator} = {leftProduct}; {rightNumerator} × {leftDenominator} = {rightProduct}; da {leftProduct} {relation} {rightProduct}, gilt {leftFraction} {relation} {rightFraction}.",
+  "@numberSenseComparisonProofDynamic": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseCompareLessThanWords": "kleiner als",
+  "@numberSenseCompareLessThanWords": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseCompareEqualWords": "gleich",
+  "@numberSenseCompareEqualWords": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseCompareGreaterThanWords": "grösser als",
+  "@numberSenseCompareGreaterThanWords": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseCompareMarkerExplanation": "{fraction} = {decimal} – {numerator} von {denominator} gleichen Teilen",
+  "@numberSenseCompareMarkerExplanation": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "numberSenseComparisonCorrectLabel": "Richtig",
   "@numberSenseComparisonCorrectLabel": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
@@ -1898,13 +2488,301 @@
   "@numberSenseComparisonReviewLabel": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
+  "numberSenseSkillProgress": "Fertigkeit {current} von {total}: {name}",
+  "@numberSenseSkillProgress": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseSkillPlaceFraction": "Einen Bruch platzieren",
+  "@numberSenseSkillPlaceFraction": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseSkillMakeEquivalent": "Einen gleichwertigen Bruch bilden",
+  "@numberSenseSkillMakeEquivalent": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseSkillCompareFractions": "Brüche vergleichen",
+  "@numberSenseSkillCompareFractions": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseSkillFindOneHundredth": "Ein Hundertstel finden",
+  "@numberSenseSkillFindOneHundredth": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSensePractiseThis": "Das üben",
+  "@numberSensePractiseThis": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "numberSenseNextSkill": "Nächste Fertigkeit",
   "@numberSenseNextSkill": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
+  "numberSenseChooseSkill": "Fertigkeit wählen",
+  "@numberSenseChooseSkill": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseChooseComparisonType": "Art des Vergleichs wählen",
+  "@numberSenseChooseComparisonType": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "numberSenseSkillSheetClose": "Schliessen",
   "@numberSenseSkillSheetClose": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseFocusSameDenominator": "Gleicher Nenner",
+  "@numberSenseFocusSameDenominator": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseFocusSameNumerator": "Gleicher Zähler",
+  "@numberSenseFocusSameNumerator": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseFocusEquivalent": "Gleichwertige Brüche",
+  "@numberSenseFocusEquivalent": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseFocusCompareToHalf": "Mit einem Halben vergleichen",
+  "@numberSenseFocusCompareToHalf": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseFocusMixed": "Gemischtes Üben",
+  "@numberSenseFocusMixed": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonExplanationEquivalent": "{leftFraction} hat denselben Wert wie {rightFraction}. Beide liegen an derselben Stelle auf dem Zahlenstrahl.",
+  "@numberSenseComparisonExplanationEquivalent": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonExplanationSameDenominator": "Bei beiden Brüchen geht es um {unit}. {largerCount} {unit} sind mehr als {smallerCount} {unit}, also gilt {leftFraction} {relation} {rightFraction}.",
+  "@numberSenseComparisonExplanationSameDenominator": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonExplanationSameNumerator": "Beide Brüche zeigen {numerator} Teile. {largerUnit} sind grössere Stücke als {smallerUnit}, also gilt {largerFraction} {relation} {smallerFraction}.",
+  "@numberSenseComparisonExplanationSameNumerator": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonExplanationBenchmarkHalf": "Ein Halbes ist {halfEquivalent}. Da {otherFraction} ein {unit} {direction} als {halfEquivalent} ist, gilt {leftFraction} {relation} {rightFraction}.",
+  "@numberSenseComparisonExplanationBenchmarkHalf": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonHalf": "Halbes",
+  "@numberSenseComparisonHalf": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonThird": "Drittel",
+  "@numberSenseComparisonThird": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonFourth": "Viertel",
+  "@numberSenseComparisonFourth": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonSixth": "Sechstel",
+  "@numberSenseComparisonSixth": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonEighth": "Achtel",
+  "@numberSenseComparisonEighth": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonHalves": "Halbe",
+  "@numberSenseComparisonHalves": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonThirds": "Drittel",
+  "@numberSenseComparisonThirds": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonFourths": "Viertel",
+  "@numberSenseComparisonFourths": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonSixths": "Sechstel",
+  "@numberSenseComparisonSixths": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonEighths": "Achtel",
+  "@numberSenseComparisonEighths": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonCapHalves": "Halbe",
+  "@numberSenseComparisonCapHalves": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonCapThirds": "Drittel",
+  "@numberSenseComparisonCapThirds": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonCapFourths": "Viertel",
+  "@numberSenseComparisonCapFourths": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonCapSixths": "Sechstel",
+  "@numberSenseComparisonCapSixths": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonCapEighths": "Achtel",
+  "@numberSenseComparisonCapEighths": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonMore": "mehr",
+  "@numberSenseComparisonMore": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseComparisonLess": "weniger",
+  "@numberSenseComparisonLess": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseAnotherExample": "Ein anderes Beispiel",
+  "@numberSenseAnotherExample": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseExamplePlacementTaskHalf": "Setze ein Halbes auf den Zahlenstrahl.",
+  "@numberSenseExamplePlacementTaskHalf": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseExamplePlacementTaskTwoThirds": "Setze zwei Drittel auf den Zahlenstrahl.",
+  "@numberSenseExamplePlacementTaskTwoThirds": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseExampleEquivalenceTaskParts": "Zeige ein Halbes mit {count} gleichen Teilen.",
+  "@numberSenseExampleEquivalenceTaskParts": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseExampleHundredthsTitleCount": "{count} Hundertstel finden",
+  "@numberSenseExampleHundredthsTitleCount": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseExampleHundredthsTaskCount": "Finde {count} Hundertstel auf dem vergrösserten Zahlenstrahl. Jeder Schritt ist ein Hundertstel.",
+  "@numberSenseExampleHundredthsTaskCount": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseHundredthsTargetEquationDynamic": "{fraction} = {decimal}",
+  "@numberSenseHundredthsTargetEquationDynamic": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseHundredthsIncorrectFeedbackTarget": "Du hast {decimal} gewählt. Zähle {count} Striche rechts von 0.00, um {target} zu erreichen.",
+  "@numberSenseHundredthsIncorrectFeedbackTarget": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "numberSenseHundredthsZeroGuidedFeedbackTarget": "0.00 ist null. Zähle {count} Striche nach rechts, um {target} zu erreichen.",
+  "@numberSenseHundredthsZeroGuidedFeedbackTarget": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsTitle": "Panda Portions",
+  "@pandaPortionsTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsSubtitle": "Teile einen Apfel gerecht und entdecke Brüche.",
+  "@pandaPortionsSubtitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsMenuIntro": "Wähle, wo du beginnen möchtest. Du kannst die Lektion jederzeit wechseln.",
+  "@pandaPortionsMenuIntro": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsGuidedPathTitle": "Geführter Weg",
+  "@pandaPortionsGuidedPathTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsGuidedPathDescription": "Gleiche Teile, dann Halbe, dann Viertel – Schritt für Schritt.",
+  "@pandaPortionsGuidedPathDescription": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPractiseHalvesTitle": "Halbe üben",
+  "@pandaPortionsPractiseHalvesTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPractiseHalvesDescription": "Teile einen Apfel in 2 gleiche Teile.",
+  "@pandaPortionsPractiseHalvesDescription": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPractiseQuartersTitle": "Viertel üben",
+  "@pandaPortionsPractiseQuartersTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPractiseQuartersDescription": "Teile einen Apfel in 4 gleiche Teile.",
+  "@pandaPortionsPractiseQuartersDescription": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsGuidedStep": "Geführter Weg · Schritt {step} von {total}",
+  "@pandaPortionsGuidedStep": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsLessonEqualPartsTitle": "Gleiche Teile",
+  "@pandaPortionsLessonEqualPartsTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsLessonEqualPartsPurpose": "Finde den Apfel, der gerecht geteilt ist.",
+  "@pandaPortionsLessonEqualPartsPurpose": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsLessonHalvesTitle": "Halbe",
+  "@pandaPortionsLessonHalvesTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsLessonHalvesPurpose": "Gib dem Panda einen halben Apfel.",
+  "@pandaPortionsLessonHalvesPurpose": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsLessonQuartersTitle": "Viertel",
+  "@pandaPortionsLessonQuartersTitle": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsLessonQuartersPurpose": "Gib dem Panda ein Viertel eines Apfels.",
+  "@pandaPortionsLessonQuartersPurpose": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPromptEqualParts": "Auf welchem Teller ist ein Apfel in gleiche Teile geteilt?",
+  "@pandaPortionsPromptEqualParts": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPromptHalves": "Gib dem Panda ein Halbes.",
+  "@pandaPortionsPromptHalves": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPromptQuarters": "Gib dem Panda ein Viertel.",
+  "@pandaPortionsPromptQuarters": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsTeachEqualParts": "Brüche sind gleiche Teile eines Ganzen.",
+  "@pandaPortionsTeachEqualParts": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsSuccessEqualParts": "Ja – alle Teile auf diesem Teller sind gleich gross.",
+  "@pandaPortionsSuccessEqualParts": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsSuccessFedPart": "Du hast dem Panda 1 von {parts} gleichen Teilen gegeben: {fraction}.",
+  "@pandaPortionsSuccessFedPart": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsSuccessAte": "Der Panda hat 1 von {parts} gleichen Teilen gegessen. Das ist {fraction}.",
+  "@pandaPortionsSuccessAte": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsRemainingLeft": "{fraction} des Apfels ist übrig.",
+  "@pandaPortionsRemainingLeft": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsMisconceptionUnequal": "Diese Teile sind nicht gleich gross, also sind es keine Halben oder Viertel.",
+  "@pandaPortionsMisconceptionUnequal": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsIncorrectSelection": "Versuch es noch einmal. Suche einen gleichen Teil des ganzen Apfels.",
+  "@pandaPortionsIncorrectSelection": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsHintEqualParts": "Wenn gerecht geteilt wird, sind alle Teile gleich gross. Vergleiche die Teile auf jedem Teller.",
+  "@pandaPortionsHintEqualParts": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsHintHalves": "Halbe sind 2 gleiche Teile. Beide Teile eines ganzen Apfels sind gleich gross.",
+  "@pandaPortionsHintHalves": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsHintQuarters": "Viertel sind 4 gleiche Teile. Alle 4 Teile eines ganzen Apfels sind gleich gross.",
+  "@pandaPortionsHintQuarters": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
   "pandaPortionsRetryEqualParts": "Ein anderes Beispiel versuchen",
   "@pandaPortionsRetryEqualParts": {
@@ -1918,6 +2796,18 @@
   "@pandaPortionsRetryQuarters": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
+  "pandaPortionsSuggestTryHalves": "Als Nächstes könntest du Halbe ausprobieren.",
+  "@pandaPortionsSuggestTryHalves": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsSuggestTryQuarters": "Als Nächstes könntest du Viertel ausprobieren.",
+  "@pandaPortionsSuggestTryQuarters": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsSuggestNewChallenge": "Bereit für eine neue Herausforderung?",
+  "@pandaPortionsSuggestNewChallenge": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "pandaPortionsWhatNext": "Wie geht es weiter?",
   "@pandaPortionsWhatNext": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
@@ -1926,9 +2816,81 @@
   "@pandaPortionsNextLesson": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
+  "pandaPortionsKeepPractising": "Weiter üben",
+  "@pandaPortionsKeepPractising": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsChooseLesson": "Wähle eine Lektion",
+  "@pandaPortionsChooseLesson": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsResetApple": "Apfel zurücksetzen",
+  "@pandaPortionsResetApple": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsShowHint": "Zeig mir einen Tipp",
+  "@pandaPortionsShowHint": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsHideHint": "Tipp ausblenden",
+  "@pandaPortionsHideHint": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
   "pandaPortionsWholeApple": "1 ganzer Apfel",
   "@pandaPortionsWholeApple": {
     "description": "Swiss Phase 2 P0 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPlateLabel": "Teller {plate}",
+  "@pandaPortionsPlateLabel": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPlateEqualSemantic": "Teller {plate}: ein Apfel, in {parts} gleiche Teile geschnitten.",
+  "@pandaPortionsPlateEqualSemantic": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPlateUnequalSemantic": "Teller {plate}: ein Apfel, in {parts} Teile geschnitten, die nicht gleich gross sind.",
+  "@pandaPortionsPlateUnequalSemantic": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPieceEqualSemantic": "Teller {plate}, Stück {index} von {parts}. Ein gleicher Teil: {fraction} des Apfels.",
+  "@pandaPortionsPieceEqualSemantic": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPieceUnequalSemantic": "Teller {plate}, Stück {index} von {parts}. Kein gleicher Teil.",
+  "@pandaPortionsPieceUnequalSemantic": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPlatePiecesSemantic": "Teller {plate}: ein Apfel, in {parts} Stücke geschnitten.",
+  "@pandaPortionsPlatePiecesSemantic": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPlateLargerSmallerSemantic": "Teller {plate}: ein Apfel, in 2 Stücke geschnitten, ein grösseres und ein kleineres.",
+  "@pandaPortionsPlateLargerSmallerSemantic": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPlateMixedSizesSemantic": "Teller {plate}: ein Apfel, in {parts} Stücke geschnitten, einige grösser, einige kleiner.",
+  "@pandaPortionsPlateMixedSizesSemantic": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPieceSemantic": "Teller {plate}, Stück {index} von {parts}.",
+  "@pandaPortionsPieceSemantic": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsPiecePicked": "Stück ausgewählt. Tippe jetzt auf den Panda, um es ihm zu geben.",
+  "@pandaPortionsPiecePicked": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsFeedPanda": "Gib dem Panda das Stück",
+  "@pandaPortionsFeedPanda": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsBowlEmpty": "Die Schale des Pandas ist leer.",
+  "@pandaPortionsBowlEmpty": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
+  },
+  "pandaPortionsBowlHas": "In der Schale des Pandas ist {fraction} des Apfels.",
+  "@pandaPortionsBowlHas": {
+    "description": "Swiss Phase 3 P1 draft translation. PENDING LINGUISTIC REVIEW: not yet approved by a native speaker; not production-approved copy."
   },
   "pandaPortionsStripLabel": "Bruchstreifen: {fed} von {parts} gleichen Teilen dem Panda gegeben.",
   "@pandaPortionsStripLabel": {

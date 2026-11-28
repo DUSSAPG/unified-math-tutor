@@ -8294,14 +8294,14 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get mathStudioSpatialTransformationsSubtitle =>
-      'Translation, reflexion, rotation et agrandissement sur un quadrillage';
+      'Translation, réflexion, rotation et agrandissement sur un quadrillage';
 
   @override
   String get mathStudioSpatialPuzzlesSubtitle =>
-      'Courtes enigmes sur les formes, l\'espace et la pensee en 3D';
+      'Courtes énigmes sur les formes, l\'espace et la pensée en 3D';
 
   @override
-  String get mathStudioFeaturedFormatsSectionLabel => 'Formats a decouvrir';
+  String get mathStudioFeaturedFormatsSectionLabel => 'Formats à découvrir';
 
   @override
   String get mathStudioRelatedLabsSectionLabel => 'Laboratoires lies';
@@ -8434,7 +8434,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
   String get mentalMathsCategoryNumberBonds => 'Complements numeriques';
 
   @override
-  String get mentalMathsCategoryDecomposition => 'Decomposition';
+  String get mentalMathsCategoryDecomposition => 'Décomposition';
 
   @override
   String get mentalMathsCategoryCompensation => 'Compensation';
@@ -8467,7 +8467,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get mentalMathsUntimedNote =>
-      'Pas de chronometre — prends le temps qu\'il te faut.';
+      'Pas de chronomètre — prends le temps qu\'il te faut.';
 
   @override
   String buildConfidenceProgress(int current, int total) {
@@ -8478,7 +8478,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
   String get buildConfidenceContinueButton => 'Continuer';
 
   @override
-  String get buildConfidenceCompletionTitle => 'Bien joue';
+  String get buildConfidenceCompletionTitle => 'Bien joué';
 
   @override
   String get buildConfidenceCompletionBody =>
@@ -8488,7 +8488,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
   String get buildConfidenceDoneButton => 'Termine';
 
   @override
-  String get visualMathsNumberLineTitle => 'Droite numerique';
+  String get visualMathsNumberLineTitle => 'Droite numérique';
 
   @override
   String get visualMathsNumberLineSubtitle =>
@@ -8519,7 +8519,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
   String get visualMathsInteractiveBadge => 'Interactif';
 
   @override
-  String get visualMathsPreviewBadge => 'Apercu';
+  String get visualMathsPreviewBadge => 'Aperçu';
 
   @override
   String get visualMathsComingSoonNote =>
@@ -8546,19 +8546,19 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get fractionBarsCaption1 =>
-      '1/2 est exactement la moitie de la barre entiere.';
+      '1/2 est exactement la moitié de la barre entière.';
 
   @override
   String get fractionBarsCaption2 =>
-      '2/4 couvre la meme longueur que 1/2 — des fractions equivalentes.';
+      '2/4 couvre la même longueur que 1/2 — des fractions équivalentes.';
 
   @override
   String get fractionBarsCaption3 =>
-      '3/4 est plus que la moitie, moins que le tout.';
+      '3/4 est plus que la moitié, moins que le tout.';
 
   @override
   String get fractionBarsCaption4 =>
-      '5/8 depasse tout juste la moitie de la barre entiere.';
+      '5/8 dépasse tout juste la moitié de la barre entière.';
 
   @override
   String get abacusCaption1 =>
@@ -8578,7 +8578,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get placeValueCaption2 =>
-      '6.4 se decompose en 6 unites et 4 dixiemes.';
+      '6.4 se décompose en 6 unités et 4 dixièmes.';
 
   @override
   String get placeValueCaption3 =>
@@ -8598,21 +8598,21 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get mathStudioRecallCardsSubtitle =>
-      'Entrainement rapide pour les faits a retenir';
+      'Entrainement rapide pour les faits à retenir';
 
   @override
   String get recallCardsHubTitle => 'Cartes memo';
 
   @override
   String get recallCardsHubSubtitle =>
-      'Entrainement court et cible pour les formules, le vocabulaire, les symboles et les idees qui les sous-tendent';
+      'Entrainement court et cible pour les formules, le vocabulaire, les symboles et les idées qui les sous-tendent';
 
   @override
   String get recallCardsQuickReviewTitle => 'Revision rapide de cinq cartes';
 
   @override
   String get recallCardsQuickReviewSubtitle =>
-      'Une courte selection quotidienne, choisie pour toi';
+      'Une courte sélection quotidienne, choisie pour toi';
 
   @override
   String get recallCardsReviewDueTitle => 'Revisions dues';
@@ -8627,7 +8627,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
       'Rien a reviser pour le moment — bravo';
 
   @override
-  String get recallCardsBrowseByTopicTitle => 'Parcourir par theme';
+  String get recallCardsBrowseByTopicTitle => 'Parcourir par thème';
 
   @override
   String get recallCardsBrowseByTypeTitle => 'Parcourir par type de carte';
@@ -8655,7 +8655,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get recallCardsSearchHint =>
-      'Rechercher des formules, des termes et des idees';
+      'Rechercher des formules, des termes et des idées';
 
   @override
   String get recallCardsBookmarksTitle => 'Favoris';
@@ -8720,7 +8720,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
   String get recallCardsExportAnswerSheet => 'Feuille de réponses';
 
   @override
-  String get recallCardsSessionComplete => 'Session terminee';
+  String get recallCardsSessionComplete => 'Session terminée';
 
   @override
   String get recallCardsSessionCompleteSubtitle =>
@@ -8741,7 +8741,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
   String get recallCardsStateReviewDue => 'Revision due';
 
   @override
-  String get recallCardsStateMastered => 'Maitrise';
+  String get recallCardsStateMastered => 'Maîtrisé';
 
   @override
   String get recallCardsTypeFormula => 'Formule';
@@ -8774,16 +8774,16 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
   String get recallCardsTopicRatioAndProportion => 'Rapports et proportions';
 
   @override
-  String get recallCardsTopicAlgebra => 'Algebre';
+  String get recallCardsTopicAlgebra => 'Algèbre';
 
   @override
-  String get recallCardsTopicGeometryAndMeasures => 'Geometrie et mesures';
+  String get recallCardsTopicGeometryAndMeasures => 'Géométrie et mesures';
 
   @override
   String get recallCardsTopicStatistics => 'Statistiques';
 
   @override
-  String get recallCardsTopicProbability => 'Probabilites';
+  String get recallCardsTopicProbability => 'Probabilités';
 
   @override
   String get mathStudioInteractiveLabsTitle => 'Laboratoires interactifs';
@@ -8830,7 +8830,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsFractionBuilderWhereUsed =>
-      'Partager la nourriture equitablement, lire une recette et mesurer des ingredients reposent tous sur des fractions d\'un tout.';
+      'Partager la nourriture équitablement, lire une recette et mesurer des ingrédients reposent tous sur des fractions d\'un tout.';
 
   @override
   String labsFractionBuilderPrompt(int numerator, int denominator) {
@@ -8847,15 +8847,15 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsAlgebraBalanceSubtitle =>
-      'Garde les deux plateaux egaux pour resoudre x';
+      'Garde les deux plateaux égaux pour résoudre x';
 
   @override
   String get labsAlgebraBalanceConcept =>
-      'Une equation reste vraie seulement si tu fais la meme chose des deux cotes. Simplifie etape par etape jusqu\'a isoler x.';
+      'Une équation reste vraie seulement si tu fais la même chose des deux côtés. Simplifie étape par étape jusqu\'à isoler x.';
 
   @override
   String get labsAlgebraBalanceWhereUsed =>
-      'Repartir d\'un total pour trouver une quantite inconnue utilise exactement ce principe d\'equilibre.';
+      'Repartir d\'un total pour trouver une quantité inconnue utilise exactement ce principe d\'équilibre.';
 
   @override
   String labsAlgebraBalanceEquationLabel(String equation) {
@@ -8870,7 +8870,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String labsAlgebraBalanceSolvedFeedback(int x) {
-    return 'Resolu ! x = $x';
+    return 'Résolu ! x = $x';
   }
 
   @override
@@ -8882,7 +8882,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsNumberLineExplorerConcept =>
-      'La position d\'un nombre sur une droite numerique correspond a sa valeur — y compris les nombres negatifs et les decimales.';
+      'La position d\'un nombre sur une droite numérique correspond à sa valeur — y compris les nombres négatifs et les décimales.';
 
   @override
   String get labsNumberLineExplorerWhereUsed =>
@@ -8902,11 +8902,11 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsFlightPathLabConcept =>
-      'Un cap (relevement) et une vitesse, maintenus pendant un temps fixe, determinent exactement ou tu arrives — cela combine les relevements avec vitesse, distance et temps.';
+      'Un cap (relèvement) et une vitesse, maintenus pendant un temps fixe, déterminent exactement où tu arrives — cela combine les relèvements avec vitesse, distance et temps.';
 
   @override
   String get labsFlightPathLabWhereUsed =>
-      'Les pilotes et les marins utilisent ensemble le relevement et la vitesse pour naviguer vers une destination.';
+      'Les pilotes et les marins utilisent ensemble le relèvement et la vitesse pour naviguer vers une destination.';
 
   @override
   String labsFlightPathLabPrompt(int bearing, int distance) {
@@ -8953,7 +8953,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsDataDetectiveWhereUsed =>
-      'Rapporter un salaire, un prix ou un score \'typique\' de facon equitable suppose de savoir quand la moyenne est trompeuse et la mediane un meilleur resume.';
+      'Rapporter un salaire, un prix ou un score \'typique\' de façon équitable suppose de savoir quand la moyenne est trompeuse et la médiane un meilleur résumé.';
 
   @override
   String get labsDataDetectiveAddValueButton => 'Ajouter une valeur typique';
@@ -9006,15 +9006,15 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsSpatialCubeLabFreePlayCaption =>
-      'Essaie: fais glisser le cube, ou utilise les boutons ci-dessous.';
+      'Essaie : fais glisser le cube, ou utilise les boutons ci-dessous.';
 
   @override
   String get labsSpatialCubeWhichFaceOppositeTitle =>
-      'Quelle face est opposee?';
+      'Quelle face est opposée ?';
 
   @override
   String get labsSpatialCubeWhichFaceOppositeSubtitle =>
-      'Predis la face opposee, puis verifie en tournant le cube';
+      'Prédis la face opposée, puis vérifie en tournant le cube';
 
   @override
   String get labsSpatialCubeRotateToMatchTitle =>
@@ -9029,7 +9029,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsSpatialCubeHiddenFaceSubtitle =>
-      'Trouve quelle etiquette se trouve sur une face que tu ne vois pas';
+      'Trouve quelle étiquette se trouve sur une face que tu ne vois pas';
 
   @override
   String get labsSpatialCubeNetExplorerTitle =>
@@ -9045,11 +9045,11 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsEarlyMathsPlaygroundSubtitle =>
-      'Activites calmes et ludiques pour compter, partager et decouvrir les premieres fractions, pour les jeunes apprenants';
+      'Activités calmes et ludiques pour compter, partager et découvrir les premières fractions, pour les jeunes apprenants';
 
   @override
   String get earlyMathsPlaygroundIntro =>
-      'Un espace calme et sans limite de temps ou les jeunes apprenants peuvent s\'exercer a compter, a partager et a decouvrir les premieres fractions — sans points, sans chronometre, sans pression.';
+      'Un espace calme et sans limite de temps où les jeunes apprenants peuvent s\'exercer à compter, à partager et à découvrir les premières fractions — sans points, sans chronomètre, sans pression.';
 
   @override
   String get feedTheHungryPandaTitle => 'Nourris le panda affame';
@@ -9059,14 +9059,183 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
       'Compte les pommes une par une pour nourrir le panda';
 
   @override
+  String get abacusPlayModeGuided => 'Guidé';
+
+  @override
+  String get abacusPlayModeFree => 'Exploration libre';
+
+  @override
+  String get abacusPlayFreeTitle => 'Exploration libre';
+
+  @override
+  String get abacusPlayFreeIntro =>
+      'Fais glisser les boules de l\'autre côté de la barre pour former n\'importe quel nombre jusqu\'à 999. Il n\'y a pas d\'objectif ici. Explore simplement.';
+
+  @override
+  String get abacusPlayHowTo =>
+      'Touche une boule ou fais-la glisser de l\'autre côté de la barre pour la compter. Touche une boule comptée pour la renvoyer.';
+
+  @override
+  String get abacusPlayReset => 'Réinitialiser';
+
+  @override
+  String get abacusPlayBuildTitle => 'Former un nombre';
+
+  @override
+  String get abacusPlayBuildTask =>
+      'Forme 34. Fais glisser 3 dizaines et 4 unités de l\'autre côté de la barre.';
+
+  @override
   String get abacusPlayBuildDone => 'Tu as formé 34 : 3 dizaines et 4 unités.';
+
+  @override
+  String get abacusPlayBreakTitle => 'Décomposer un nombre';
+
+  @override
+  String get abacusPlayBreakTask =>
+      'Voici 47. Fais glisser les 7 unités en arrière pour qu\'il ne reste que les dizaines.';
 
   @override
   String get abacusPlayBreakDone => '47 se décompose en 40 et 7.';
 
   @override
+  String get abacusPlayExchangeTitle =>
+      'Échanger dix unités contre une dizaine';
+
+  @override
+  String get abacusPlayExchangeTask =>
+      'Voici 29. Appuie sur +1 pour en ajouter un, et observe ce qui arrive aux unités.';
+
+  @override
   String get abacusPlayExchangeDone =>
       '10 unités échangées contre 1 dizaine, donc 29 + 1 = 30.';
+
+  @override
+  String get abacusPlayNoteTenOnes => '10 unités échangées contre 1 dizaine.';
+
+  @override
+  String get abacusPlayNoteTenTens =>
+      '10 dizaines échangées contre 1 centaine.';
+
+  @override
+  String get abacusPlayNoteTenOnesAndTens =>
+      '10 unités échangées contre 1 dizaine, et 10 dizaines contre 1 centaine.';
+
+  @override
+  String get abacusPlayNoteTenToOnes => '1 dizaine échangée contre 10 unités.';
+
+  @override
+  String get abacusPlayNoteHundredToTens =>
+      '1 centaine échangée contre 10 dizaines.';
+
+  @override
+  String get abacusPlayNoteHundredCascade =>
+      '1 centaine échangée contre 10 dizaines, et 1 dizaine contre 10 unités.';
+
+  @override
+  String get abacusPlayParentNote =>
+      'Pour les adultes : chaque tige porte jusqu\'à neuf boules. Le tableau des nombres montre le même nombre en chiffres, et les deux correspondent toujours. Dix boules sur une tige s\'échangent contre une boule sur la tige de gauche. Demande à ton enfant de dire ce qui a changé. C\'est une représentation concrète de la valeur de position, pas un test.';
+
+  @override
+  String get abacusBoardTitle => 'Tableau des nombres';
+
+  @override
+  String get abacusBoardZero => '0 : aucune boule comptée pour l\'instant';
+
+  @override
+  String get abacusBoardAddOne => 'Ajouter 1';
+
+  @override
+  String get abacusBoardSubtractOne => 'Enlever 1';
+
+  @override
+  String get abacusBoardAddTen => 'Ajouter 10';
+
+  @override
+  String get abacusBoardSubtractTen => 'Enlever 10';
+
+  @override
+  String get abacusSpokenZero => '0. Aucune boule n\'est encore comptée.';
+
+  @override
+  String abacusPlayRodLabel(String name) {
+    return 'Tige : $name';
+  }
+
+  @override
+  String abacusPlayRodValue(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count boules comptées',
+      one: '1 boule comptée',
+      zero: 'Aucune boule comptée',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String abacusPlayPartHundreds(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count centaines',
+      one: '1 centaine',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String abacusPlayPartTens(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count dizaines',
+      one: '1 dizaine',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String abacusPlayPartOnes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count unités',
+      one: '1 unité',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String abacusBoardEquationOne(int value, String a) {
+    return '$value = $a';
+  }
+
+  @override
+  String abacusBoardEquationTwo(int value, String a, String b) {
+    return '$value = $a + $b';
+  }
+
+  @override
+  String abacusBoardEquationThree(int value, String a, String b, String c) {
+    return '$value = $a + $b + $c';
+  }
+
+  @override
+  String abacusSpokenOne(int value, String a) {
+    return '$value, c\'est $a';
+  }
+
+  @override
+  String abacusSpokenTwo(int value, String a, String b) {
+    return '$value, c\'est $a et $b';
+  }
+
+  @override
+  String abacusSpokenThree(int value, String a, String b, String c) {
+    return '$value, c\'est $a, $b et $c';
+  }
 
   @override
   String feedPandaInstruction(int count) {
@@ -9172,7 +9341,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String labsSpatialCubeWhichFaceOppositeQuestion(String faceLabel) {
-    return 'Quelle face est opposee a $faceLabel?';
+    return 'Quelle face est opposée à $faceLabel ?';
   }
 
   @override
@@ -9180,7 +9349,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsSpatialCubeWhichFaceOppositeHintText =>
-      'Les faces opposees ne partagent jamais une arete — avant/arriere, dessus/dessous et gauche/droite sont toujours les trois paires.';
+      'Les faces opposées ne partagent jamais une arête — avant/arrière, dessus/dessous et gauche/droite sont toujours les trois paires.';
 
   @override
   String get labsSpatialCubeWhichFaceOppositeCorrect =>
@@ -9188,7 +9357,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsSpatialCubeWhichFaceOppositeIncorrect =>
-      'Presque. Regarde quelles faces partagent une arete.';
+      'Presque. Regarde quelles faces partagent une arête.';
 
   @override
   String get labsSpatialCubeWhichFaceOppositeWhereUsed =>
@@ -9196,7 +9365,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsSpatialCubeWhichFaceOppositeHelpWhatToDo =>
-      'Fais pivoter le cube si tu veux, puis choisis la face que tu penses etre opposee a celle indiquee.';
+      'Fais pivoter le cube si tu veux, puis choisis la face que tu penses être opposée à celle indiquée.';
 
   @override
   String get labsSpatialCubeWhichFaceOppositeHelpWhatToNotice =>
@@ -9239,7 +9408,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsSpatialCubeRotateToMatchHelpWhatToDo =>
-      'Fais glisser ton cube pour aligner ses faces avec la cible affichee a cote, puis teste ta rotation.';
+      'Fais glisser ton cube pour aligner ses faces avec la cible affichée à côté, puis teste ta rotation.';
 
   @override
   String get labsSpatialCubeRotateToMatchHelpWhatToNotice =>
@@ -9255,7 +9424,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String labsSpatialCubeHiddenFaceQuestion(String direction) {
-    return 'Quelle etiquette se trouve sur la face $direction?';
+    return 'Quelle étiquette se trouve sur la face $direction ?';
   }
 
   @override
@@ -9267,7 +9436,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsSpatialCubeHiddenFaceCorrect =>
-      'Bravo. Tu as correctement predit la face cachee.';
+      'Bravo. Tu as correctement prédit la face cachée.';
 
   @override
   String get labsSpatialCubeHiddenFaceIncorrect =>
@@ -9279,7 +9448,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsSpatialCubeHiddenFaceHelpWhatToDo =>
-      'Regarde les trois faces visibles, puis choisis l\'etiquette que tu penses se trouver sur la face cachee indiquee.';
+      'Regarde les trois faces visibles, puis choisis l\'étiquette que tu penses se trouver sur la face cachée indiquée.';
 
   @override
   String get labsSpatialCubeHiddenFaceHelpWhatToNotice =>
@@ -9295,7 +9464,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsSpatialCubeNetExplorerPredictPrompt =>
-      'Quels deux carres penses-tu finiront opposes l\'un a l\'autre?';
+      'Quels deux carrés penses-tu finiront opposés l\'un à l\'autre ?';
 
   @override
   String get labsSpatialCubeNetExplorerFoldButton => 'Plier';
@@ -9326,7 +9495,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsSpatialCubeNetExplorerHelpWhatItMeans =>
-      'Un patron est une forme 2D qui se plie le long de ses aretes en un solide 3D — le meme carre peut finir sur des faces tres differentes du cube selon la forme du patron.';
+      'Un patron est une forme 2D qui se plie le long de ses arêtes en un solide 3D — le même carré peut finir sur des faces très différentes du cube selon la forme du patron.';
 
   @override
   String get labsAircraftLandingLabTitle => 'Laboratoire d\'atterrissage';
@@ -9341,7 +9510,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsAircraftLandingLabFreePlayCaption =>
-      'Essaie: fais glisser les curseurs, puis appuie sur Tester l\'approche.';
+      'Essaie : fais glisser les curseurs, puis appuie sur Tester l\'approche.';
 
   @override
   String get labsAircraftLandingFindTheTimeTitle => 'Trouve le temps';
@@ -9374,12 +9543,12 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String labsAircraftLandingDescentAngleLabel(int degrees) {
-    return 'Angle de descente: $degrees°';
+    return 'Angle de descente : $degrees°';
   }
 
   @override
   String labsAircraftLandingAirspeedLabel(int metresPerSecond) {
-    return 'Vitesse: $metresPerSecond m/s';
+    return 'Vitesse : $metresPerSecond m/s';
   }
 
   @override
@@ -9393,12 +9562,12 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String labsAircraftLandingFindTheTimeSpeedLabel(int speedMps) {
-    return 'Vitesse: $speedMps m/s';
+    return 'Vitesse : $speedMps m/s';
   }
 
   @override
   String get labsAircraftLandingFindTheTimeQuestion =>
-      'Combien de temps faudra-t-il pour atteindre la piste?';
+      'Combien de temps faudra-t-il pour atteindre la piste ?';
 
   @override
   String get labsAircraftLandingFindTheTimeHintButton => 'Indice';
@@ -9445,7 +9614,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsAircraftLandingDescentLineMission =>
-      'Ajuste ton angle de descente jusqu\'a ce que ta ligne corresponde a la ligne cible en pointilles.';
+      'Ajuste ton angle de descente jusqu\'à ce que ta ligne corresponde à la ligne cible en pointillés.';
 
   @override
   String get labsAircraftLandingDescentLineWhereUsed =>
@@ -9457,11 +9626,11 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsAircraftLandingDescentLineIncorrect =>
-      'Pas encore. Compare a quel point ta ligne est raide par rapport a la ligne cible en pointilles.';
+      'Pas encore. Compare à quel point ta ligne est raide par rapport à la ligne cible en pointillés.';
 
   @override
   String get labsAircraftLandingDescentLineHelpWhatToDo =>
-      'Deplace le curseur d\'angle de descente jusqu\'a ce que ta ligne pleine se superpose a la ligne cible en pointilles, puis teste-la.';
+      'Déplace le curseur d\'angle de descente jusqu\'à ce que ta ligne pleine se superpose à la ligne cible en pointillés, puis teste-la.';
 
   @override
   String get labsAircraftLandingDescentLineHelpWhatToNotice =>
@@ -9469,7 +9638,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsAircraftLandingDescentLineHelpWhatItMeans =>
-      'L\'angle de descente est la pente de la ligne: variation d\'altitude divisee par la distance parcourue, ecrite y = mx + c avec un m negatif.';
+      'L\'angle de descente est la pente de la ligne : variation d\'altitude divisée par la distance parcourue, écrite y = mx + c avec un m négatif.';
 
   @override
   String get labsAircraftLandingGlidePathSafe =>
@@ -9481,15 +9650,15 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsAircraftLandingGlidePathTooShallow =>
-      'Trop plat — l\'avion etait encore en vol apres la piste.';
+      'Trop plat — l\'avion était encore en vol après la piste.';
 
   @override
   String get labsAircraftLandingGlidePathMission =>
-      'Choisis un angle et une vitesse, puis teste ton approche pour atterrir en toute securite sur la piste.';
+      'Choisis un angle et une vitesse, puis teste ton approche pour atterrir en toute sécurité sur la piste.';
 
   @override
   String get labsAircraftLandingGlidePathWhereUsed =>
-      'Chaque atterrissage reel equilibre un angle de descente sur avec la vitesse et la distance pour toucher le sol exactement au bon endroit.';
+      'Chaque atterrissage réel équilibre un angle de descente sur avec la vitesse et la distance pour toucher le sol exactement au bon endroit.';
 
   @override
   String labsAircraftLandingGlidePathTouchdownError(int metres) {
@@ -9506,21 +9675,21 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsAircraftLandingGlidePathHelpWhatItMeans =>
-      'tan(angle) = altitude / distance — c\'est exactement ce rapport qui fait qu\'une descente atterrit precisement sur la piste plutot que trop court ou trop long.';
+      'tan(angle) = altitude / distance — c\'est exactement ce rapport qui fait qu\'une descente atterrit précisément sur la piste plutôt que trop court ou trop long.';
 
   @override
   String labsAircraftLandingVectorHorizontalLabel(int metresPerSecond) {
-    return 'Vitesse horizontale: $metresPerSecond m/s';
+    return 'Vitesse horizontale : $metresPerSecond m/s';
   }
 
   @override
   String labsAircraftLandingVectorVerticalLabel(int metresPerSecond) {
-    return 'Vitesse verticale: $metresPerSecond m/s';
+    return 'Vitesse verticale : $metresPerSecond m/s';
   }
 
   @override
   String labsAircraftLandingVectorResultantLabel(int metresPerSecond) {
-    return 'Vitesse combinee (resultante): $metresPerSecond m/s';
+    return 'Vitesse combinée (résultante) : $metresPerSecond m/s';
   }
 
   @override
@@ -9529,7 +9698,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsAircraftLandingVectorApproachWhereUsed =>
-      'Combiner une vitesse horizontale et verticale en un seul vecteur resultant est exactement la facon dont une trajectoire de vol reelle, ou tout mouvement 2D, est decrite mathematiquement.';
+      'Combiner une vitesse horizontale et verticale en un seul vecteur résultant est exactement la façon dont une trajectoire de vol réelle, ou tout mouvement 2D, est décrite mathématiquement.';
 
   @override
   String get labsAircraftLandingVectorApproachCorrect =>
@@ -9549,7 +9718,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsAircraftLandingVectorApproachHelpWhatItMeans =>
-      'Toute vitesse peut etre decomposee en une composante horizontale et une composante verticale, puis recombinee avec le theoreme de Pythagore pour trouver la vitesse resultante.';
+      'Toute vitesse peut être décomposée en une composante horizontale et une composante verticale, puis recombinée avec le théorème de Pythagore pour trouver la vitesse résultante.';
 
   @override
   String get labsTryAgainButton => 'Réessayer';
@@ -9650,7 +9819,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String labsFlightPathLabTargetExplanation(int distance, String bearing) {
-    return 'Le repere jaune est ta cible. Il est a $distance km, sur un relevement de $bearing.';
+    return 'Le repère jaune est ta cible. Il est à $distance km, sur un relèvement de $bearing.';
   }
 
   @override
@@ -9715,7 +9884,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsDataDetectiveHelpWhatItMeans =>
-      'La moyenne utilise chaque valeur, donc une valeur extreme peut beaucoup la deplacer. La mediane ne depend que de la position centrale, donc elle bouge a peine.';
+      'La moyenne utilise chaque valeur, donc une valeur extrême peut beaucoup la déplacer. La médiane ne dépend que de la position centrale, donc elle bouge à peine.';
 
   @override
   String get labsDataDetectiveFirstUseStep1 =>
@@ -9731,7 +9900,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsAlgebraBalanceMission =>
-      'Garde les deux plateaux en equilibre jusqu\'a ce que x soit seul.';
+      'Garde les deux plateaux en équilibre jusqu\'à ce que x soit seul.';
 
   @override
   String labsAlgebraBalanceStep1RemoveButton(int value) {
@@ -9758,7 +9927,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsAlgebraBalanceHelpWhatItMeans =>
-      'Appliquer la meme operation aux deux cotes d\'une equation la garde en equilibre, ce qui permet de la simplifier en toute securite jusqu\'a x seul.';
+      'Appliquer la même opération aux deux côtés d\'une équation la garde en équilibre, ce qui permet de la simplifier en toute sécurité jusqu\'à x seul.';
 
   @override
   String get labsAlgebraBalanceFirstUseStep1 =>
@@ -9766,7 +9935,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsAlgebraBalanceFirstUseStep2 =>
-      'Utilise les boutons pour simplifier les deux cotes ensemble.';
+      'Utilise les boutons pour simplifier les deux côtés ensemble.';
 
   @override
   String get labsAlgebraBalanceFirstUseStep3 =>
@@ -9783,7 +9952,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String labsFractionBuilderSymbolicResult(int numerator, int denominator) {
-    return '$numerator/$denominator — $numerator part(s) egale(s) remplie(s) sur $denominator.';
+    return '$numerator/$denominator — $numerator part(s) égale(s) remplie(s) sur $denominator.';
   }
 
   @override
@@ -9792,7 +9961,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsFractionBuilderHelpWhatToNotice =>
-      'Observe que le denominateur est le nombre total de parts egales, et le numerateur combien sont remplies.';
+      'Observe que le dénominateur est le nombre total de parts égales, et le numérateur combien sont remplies.';
 
   @override
   String get labsFractionBuilderHelpWhatItMeans =>
@@ -9838,7 +10007,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsNumberLineExplorerHelpWhatToDo =>
-      'Fais glisser le point, ou utilise les boutons fleches, pour atteindre la valeur cible, puis appuie sur Verifier.';
+      'Fais glisser le point, ou utilise les boutons flèches, pour atteindre la valeur cible, puis appuie sur Vérifier.';
 
   @override
   String get labsNumberLineExplorerHelpWhatToNotice =>
@@ -9846,15 +10015,15 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsNumberLineExplorerHelpWhatItMeans =>
-      'Une droite numerique montre chaque nombre dans l\'ordre, dans les deux directions depuis zero, y compris les nombres negatifs et les decimales.';
+      'Une droite numérique montre chaque nombre dans l\'ordre, dans les deux directions depuis zéro, y compris les nombres négatifs et les décimales.';
 
   @override
   String get labsNumberLineExplorerFirstUseStep1 =>
-      'Regarde ou le point commence.';
+      'Regarde où le point commence.';
 
   @override
   String get labsNumberLineExplorerFirstUseStep2 =>
-      'Fais glisser le point, ou utilise les boutons fleches, vers la cible.';
+      'Fais glisser le point, ou utilise les boutons flèches, vers la cible.';
 
   @override
   String get labsNumberLineExplorerFirstUseStep3 =>
@@ -9939,7 +10108,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsFlightPathLabNarrationResultNearMissExplorer =>
-      'Tout près ! Essaie une vitesse ou une direction légèrement différente et teste à nouveau.';
+      'Tout près ! Essaie une vitesse ou une direction légèrement différente et teste à nouveau.';
 
   @override
   String get labsFlightPathLabNarrationResultNearMissBuilder =>
@@ -10163,7 +10332,7 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
 
   @override
   String get labsAlgebraBalanceNarrationCompletionNavigator =>
-      'Résolu : x est isolé par des opérations inverses appliquées aux deux côtés, préservant l\'égalité tout du long.';
+      'Résolu : x est isolé par des opérations inverses appliquées aux deux côtés, préservant l\'égalité tout du long.';
 
   @override
   String get labsAlgebraBalanceNarrationHintInactivityExplorer =>
@@ -10760,11 +10929,148 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
       'Réinitialise l\'introduction de l\'application pour refaire la configuration initiale.';
 
   @override
+  String get numberSenseLabTitle => 'Labo du sens du nombre';
+
+  @override
+  String get numberSenseModeGuided => 'Guidé';
+
+  @override
+  String get numberSenseModeFreeExplore => 'Exploration libre';
+
+  @override
+  String get numberSenseExampleEquivalenceTitle =>
+      'Former une fraction équivalente';
+
+  @override
+  String get numberSenseExampleEquivalenceTask =>
+      'Montre une demie avec des parts égales.';
+
+  @override
+  String get numberSenseExamplePlacementTitle => 'Placer une fraction';
+
+  @override
+  String get numberSenseExamplePlacementTask =>
+      'Place trois huitièmes sur la droite numérique.';
+
+  @override
+  String get numberSenseExampleComparisonTitle => 'Comparer des fractions';
+
+  @override
+  String get numberSenseExampleComparisonTask =>
+      'Choisis comment ces fractions se comparent.';
+
+  @override
+  String numberSenseTarget(String fraction) {
+    return 'Cible : $fraction';
+  }
+
+  @override
+  String get numberSenseCompareLessThan => 'Plus petit que';
+
+  @override
+  String get numberSenseCompareEqualTo => 'Égal à';
+
+  @override
+  String get numberSenseCompareGreaterThan => 'Plus grand que';
+
+  @override
+  String get numberSenseComplete => 'Tu l\'as trouvé.';
+
+  @override
+  String get numberSenseReset => 'Réinitialiser';
+
+  @override
+  String get numberSenseLabDescription =>
+      'Construire, placer et comparer des fractions unitaires.';
+
+  @override
   String get appearanceResetOnboardingButton => 'Réinitialiser l\'introduction';
+
+  @override
+  String get numberSenseFreeExploreInstruction =>
+      'Choisis un modèle, puis touche des parts égales ou touche/fais glisser un point pour explorer les fractions.';
+
+  @override
+  String get numberSenseClearExplore => 'Effacer';
+
+  @override
+  String get numberSenseScopeStatement =>
+      'Ce modèle tout-partie de départ ne prend en charge que 2, 3, 4, 6 ou 8 parts égales. Les centièmes sont pris en charge sur la droite de précision ; les autres dénominateurs non pris en charge nécessitent une droite de précision ou agrandie.';
+
+  @override
+  String get numberSenseWholePartModel => 'Barre tout-partie';
+
+  @override
+  String get numberSensePrecisionLine => 'Droite de précision';
+
+  @override
+  String get numberSenseExampleHundredthsTitle => 'Trouver un centième';
+
+  @override
+  String get numberSenseExampleHundredthsTask =>
+      'Utilise la droite numérique agrandie pour trouver un centième. Chaque pas vaut un centième.';
+
+  @override
+  String get numberSenseHundredthsExploreInstruction =>
+      'Choisis un centième de 0.00 à 0.10. Touche un point légendé ou fais glisser le long de la droite.';
 
   @override
   String get numberSenseHundredthsLineLabel =>
       'Droite numérique agrandie de 0.00 à 0.10, graduée en centièmes';
+
+  @override
+  String numberSenseHundredthsSelectionExplanation(
+      String fraction, String decimal, int count) {
+    return '$fraction signifie $decimal : $count parts égales sur 100.';
+  }
+
+  @override
+  String numberSenseHundredthsIncorrectFeedback(String decimal) {
+    return 'Tu as choisi $decimal. Un centième est la graduation qui suit 0.00 : choisis 0.01.';
+  }
+
+  @override
+  String get numberSenseHundredthsZeroExplanation =>
+      'Zéro est au début de la droite.';
+
+  @override
+  String get numberSenseHundredthsZeroGuidedFeedback =>
+      '0.00, c\'est zéro. Un centième est la première graduation à droite : 0.01.';
+
+  @override
+  String numberSenseGuidedWrongAdjacent(
+      String selected, String direction, String target) {
+    return 'Pas tout à fait. Tu as choisi $selected. Avance d\'une graduation vers la $direction pour atteindre $target.';
+  }
+
+  @override
+  String numberSenseGuidedWrongGeneral(String selected, String target) {
+    return 'Pas tout à fait. Tu as choisi $selected. La cible est $target. Modifie les parts égales coloriées pour montrer la quantité visée.';
+  }
+
+  @override
+  String numberSenseGuidedWrongPartition(String selected, String target) {
+    return 'Pas tout à fait. Tu as choisi $selected. La cible est $target. Choisis des parts égales qui permettent de montrer la fraction visée.';
+  }
+
+  @override
+  String numberSenseGuidedWrongEquivalenceWhole(
+      String selected, String target) {
+    return '$selected, c\'est un entier, pas $target. Colorie la moitié des parts égales.';
+  }
+
+  @override
+  String get numberSenseGuidedDirectionLeft => 'gauche';
+
+  @override
+  String get numberSenseGuidedDirectionRight => 'droite';
+
+  @override
+  String get numberSenseEqualPartsLabel => 'Parts égales';
+
+  @override
+  String get numberSenseCompareSharedLineLabel =>
+      'Droite numérique commune de zéro à un. Le cercle marque la fraction de gauche et le losange la fraction de droite.';
 
   @override
   String get numberSenseCompareLeftMarkerSemantics =>
@@ -10775,16 +11081,346 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
       'Repère sur la droite numérique pour trois quarts, 3/4';
 
   @override
+  String numberSenseComparisonCorrectResultDynamic(
+      String leftFraction, String relation, String rightFraction) {
+    return 'Correct : $leftFraction $relation $rightFraction.';
+  }
+
+  @override
+  String numberSenseComparisonIncorrectResultDynamic(
+      String leftFraction, String relationWords, String rightFraction) {
+    return 'Pas tout à fait. $leftFraction est $relationWords $rightFraction.';
+  }
+
+  @override
+  String numberSenseComparisonProofDynamic(
+      int leftNumerator,
+      int rightDenominator,
+      int leftProduct,
+      int rightNumerator,
+      int leftDenominator,
+      int rightProduct,
+      String relation,
+      String leftFraction,
+      String rightFraction) {
+    return '$leftNumerator × $rightDenominator = $leftProduct ; $rightNumerator × $leftDenominator = $rightProduct ; comme $leftProduct $relation $rightProduct, $leftFraction $relation $rightFraction.';
+  }
+
+  @override
+  String get numberSenseCompareLessThanWords => 'plus petit que';
+
+  @override
+  String get numberSenseCompareEqualWords => 'égal à';
+
+  @override
+  String get numberSenseCompareGreaterThanWords => 'plus grand que';
+
+  @override
+  String numberSenseCompareMarkerExplanation(
+      String fraction, String decimal, int numerator, int denominator) {
+    return '$fraction = $decimal – $numerator parts égales sur $denominator';
+  }
+
+  @override
   String get numberSenseComparisonCorrectLabel => 'Correct';
 
   @override
   String get numberSenseComparisonReviewLabel => 'Revoir la comparaison';
 
   @override
+  String numberSenseSkillProgress(int current, int total, String name) {
+    return 'Compétence $current sur $total : $name';
+  }
+
+  @override
+  String get numberSenseSkillPlaceFraction => 'Placer une fraction';
+
+  @override
+  String get numberSenseSkillMakeEquivalent =>
+      'Former une fraction équivalente';
+
+  @override
+  String get numberSenseSkillCompareFractions => 'Comparer des fractions';
+
+  @override
+  String get numberSenseSkillFindOneHundredth => 'Trouver un centième';
+
+  @override
+  String get numberSensePractiseThis => 'S\'entraîner';
+
+  @override
   String get numberSenseNextSkill => 'Compétence suivante';
 
   @override
+  String get numberSenseChooseSkill => 'Choisis une compétence';
+
+  @override
+  String get numberSenseChooseComparisonType =>
+      'Choisis un type de comparaison';
+
+  @override
   String get numberSenseSkillSheetClose => 'Fermer';
+
+  @override
+  String get numberSenseFocusSameDenominator => 'Même dénominateur';
+
+  @override
+  String get numberSenseFocusSameNumerator => 'Même numérateur';
+
+  @override
+  String get numberSenseFocusEquivalent => 'Fractions équivalentes';
+
+  @override
+  String get numberSenseFocusCompareToHalf => 'Comparer à une demie';
+
+  @override
+  String get numberSenseFocusMixed => 'Entraînement mixte';
+
+  @override
+  String numberSenseComparisonExplanationEquivalent(
+      String leftFraction, String rightFraction) {
+    return '$leftFraction a la même valeur que $rightFraction. Les deux sont au même point de la droite numérique.';
+  }
+
+  @override
+  String numberSenseComparisonExplanationSameDenominator(
+      String unit,
+      int largerCount,
+      int smallerCount,
+      String leftFraction,
+      String relation,
+      String rightFraction) {
+    return 'Les deux fractions sont en $unit. $largerCount $unit, c\'est plus que $smallerCount $unit, donc $leftFraction $relation $rightFraction.';
+  }
+
+  @override
+  String numberSenseComparisonExplanationSameNumerator(
+      int numerator,
+      String largerUnit,
+      String smallerUnit,
+      String largerFraction,
+      String relation,
+      String smallerFraction) {
+    return 'Les deux fractions montrent $numerator parts. $largerUnit : des parts plus grandes que les $smallerUnit, donc $largerFraction $relation $smallerFraction.';
+  }
+
+  @override
+  String numberSenseComparisonExplanationBenchmarkHalf(
+      String halfEquivalent,
+      String otherFraction,
+      String unit,
+      String direction,
+      String leftFraction,
+      String relation,
+      String rightFraction) {
+    return 'Une demie, c\'est $halfEquivalent. Comme $otherFraction vaut un $unit de $direction que $halfEquivalent, $leftFraction $relation $rightFraction.';
+  }
+
+  @override
+  String get numberSenseComparisonHalf => 'demi';
+
+  @override
+  String get numberSenseComparisonThird => 'tiers';
+
+  @override
+  String get numberSenseComparisonFourth => 'quart';
+
+  @override
+  String get numberSenseComparisonSixth => 'sixième';
+
+  @override
+  String get numberSenseComparisonEighth => 'huitième';
+
+  @override
+  String get numberSenseComparisonHalves => 'demis';
+
+  @override
+  String get numberSenseComparisonThirds => 'tiers';
+
+  @override
+  String get numberSenseComparisonFourths => 'quarts';
+
+  @override
+  String get numberSenseComparisonSixths => 'sixièmes';
+
+  @override
+  String get numberSenseComparisonEighths => 'huitièmes';
+
+  @override
+  String get numberSenseComparisonCapHalves => 'Demis';
+
+  @override
+  String get numberSenseComparisonCapThirds => 'Tiers';
+
+  @override
+  String get numberSenseComparisonCapFourths => 'Quarts';
+
+  @override
+  String get numberSenseComparisonCapSixths => 'Sixièmes';
+
+  @override
+  String get numberSenseComparisonCapEighths => 'Huitièmes';
+
+  @override
+  String get numberSenseComparisonMore => 'plus';
+
+  @override
+  String get numberSenseComparisonLess => 'moins';
+
+  @override
+  String get numberSenseAnotherExample => 'Un autre exemple';
+
+  @override
+  String get numberSenseExamplePlacementTaskHalf =>
+      'Place une demie sur la droite numérique.';
+
+  @override
+  String get numberSenseExamplePlacementTaskTwoThirds =>
+      'Place deux tiers sur la droite numérique.';
+
+  @override
+  String numberSenseExampleEquivalenceTaskParts(int count) {
+    return 'Montre une demie avec $count parts égales.';
+  }
+
+  @override
+  String numberSenseExampleHundredthsTitleCount(int count) {
+    return 'Trouver $count centièmes';
+  }
+
+  @override
+  String numberSenseExampleHundredthsTaskCount(int count) {
+    return 'Utilise la droite numérique agrandie pour trouver $count centièmes. Chaque pas vaut un centième.';
+  }
+
+  @override
+  String numberSenseHundredthsTargetEquationDynamic(
+      String fraction, String decimal) {
+    return '$fraction = $decimal';
+  }
+
+  @override
+  String numberSenseHundredthsIncorrectFeedbackTarget(
+      String decimal, int count, String target) {
+    return 'Tu as choisi $decimal. Compte $count graduations à droite de 0.00 pour atteindre $target.';
+  }
+
+  @override
+  String numberSenseHundredthsZeroGuidedFeedbackTarget(
+      int count, String target) {
+    return '0.00, c\'est zéro. Compte $count graduations vers la droite pour atteindre $target.';
+  }
+
+  @override
+  String get pandaPortionsTitle => 'Panda Portions';
+
+  @override
+  String get pandaPortionsSubtitle =>
+      'Partage une pomme équitablement et découvre les fractions.';
+
+  @override
+  String get pandaPortionsMenuIntro =>
+      'Choisis par où commencer. Tu peux changer de leçon à tout moment.';
+
+  @override
+  String get pandaPortionsGuidedPathTitle => 'Parcours guidé';
+
+  @override
+  String get pandaPortionsGuidedPathDescription =>
+      'Parts égales, puis moitiés, puis quarts – une étape à la fois.';
+
+  @override
+  String get pandaPortionsPractiseHalvesTitle => 'S\'entraîner aux moitiés';
+
+  @override
+  String get pandaPortionsPractiseHalvesDescription =>
+      'Partage une pomme en 2 parts égales.';
+
+  @override
+  String get pandaPortionsPractiseQuartersTitle => 'S\'entraîner aux quarts';
+
+  @override
+  String get pandaPortionsPractiseQuartersDescription =>
+      'Partage une pomme en 4 parts égales.';
+
+  @override
+  String pandaPortionsGuidedStep(int step, int total) {
+    return 'Parcours guidé · étape $step sur $total';
+  }
+
+  @override
+  String get pandaPortionsLessonEqualPartsTitle => 'Parts égales';
+
+  @override
+  String get pandaPortionsLessonEqualPartsPurpose =>
+      'Trouve la pomme partagée équitablement.';
+
+  @override
+  String get pandaPortionsLessonHalvesTitle => 'Moitiés';
+
+  @override
+  String get pandaPortionsLessonHalvesPurpose =>
+      'Donne au panda la moitié d\'une pomme.';
+
+  @override
+  String get pandaPortionsLessonQuartersTitle => 'Quarts';
+
+  @override
+  String get pandaPortionsLessonQuartersPurpose =>
+      'Donne au panda un quart de pomme.';
+
+  @override
+  String get pandaPortionsPromptEqualParts =>
+      'Quelle assiette montre une pomme partagée en parts égales ?';
+
+  @override
+  String get pandaPortionsPromptHalves => 'Donne une moitié au panda.';
+
+  @override
+  String get pandaPortionsPromptQuarters => 'Donne un quart au panda.';
+
+  @override
+  String get pandaPortionsTeachEqualParts =>
+      'Les fractions sont des parts égales d\'un tout.';
+
+  @override
+  String get pandaPortionsSuccessEqualParts =>
+      'Oui – toutes les parts de cette assiette ont la même taille.';
+
+  @override
+  String pandaPortionsSuccessFedPart(int parts, String fraction) {
+    return 'Tu as donné au panda 1 part égale sur $parts : $fraction.';
+  }
+
+  @override
+  String pandaPortionsSuccessAte(int parts, String fraction) {
+    return 'Le panda a mangé 1 part égale sur $parts. C\'est $fraction.';
+  }
+
+  @override
+  String pandaPortionsRemainingLeft(String fraction) {
+    return 'Il reste $fraction de la pomme.';
+  }
+
+  @override
+  String get pandaPortionsMisconceptionUnequal =>
+      'Ces parts ne sont pas égales, donc ce ne sont pas des moitiés ni des quarts.';
+
+  @override
+  String get pandaPortionsIncorrectSelection =>
+      'Essaie encore. Cherche une part égale de la pomme entière.';
+
+  @override
+  String get pandaPortionsHintEqualParts =>
+      'Dans un partage équitable, toutes les parts ont la même taille. Compare les parts de chaque assiette.';
+
+  @override
+  String get pandaPortionsHintHalves =>
+      'Les moitiés sont 2 parts égales. Les deux parts d\'une pomme entière ont la même taille.';
+
+  @override
+  String get pandaPortionsHintQuarters =>
+      'Les quarts sont 4 parts égales. Les 4 parts d\'une pomme entière ont la même taille.';
 
   @override
   String get pandaPortionsRetryEqualParts => 'Essayer un autre exemple';
@@ -10796,13 +11432,100 @@ class AppLocalizationsFrCh extends AppLocalizationsFr {
   String get pandaPortionsRetryQuarters => 'Essayer un autre quart';
 
   @override
+  String get pandaPortionsSuggestTryHalves =>
+      'Tu pourrais essayer les moitiés ensuite.';
+
+  @override
+  String get pandaPortionsSuggestTryQuarters =>
+      'Tu pourrais essayer les quarts ensuite.';
+
+  @override
+  String get pandaPortionsSuggestNewChallenge => 'Prêt pour un nouveau défi ?';
+
+  @override
   String get pandaPortionsWhatNext => 'Et maintenant ?';
 
   @override
   String get pandaPortionsNextLesson => 'Leçon suivante';
 
   @override
+  String get pandaPortionsKeepPractising => 'Continuer à s\'entraîner';
+
+  @override
+  String get pandaPortionsChooseLesson => 'Choisis une leçon';
+
+  @override
+  String get pandaPortionsResetApple => 'Réinitialiser la pomme';
+
+  @override
+  String get pandaPortionsShowHint => 'Montre-moi un indice';
+
+  @override
+  String get pandaPortionsHideHint => 'Masquer l\'indice';
+
+  @override
   String get pandaPortionsWholeApple => '1 pomme entière';
+
+  @override
+  String pandaPortionsPlateLabel(String plate) {
+    return 'Assiette $plate';
+  }
+
+  @override
+  String pandaPortionsPlateEqualSemantic(String plate, int parts) {
+    return 'Assiette $plate : une pomme coupée en $parts parts égales.';
+  }
+
+  @override
+  String pandaPortionsPlateUnequalSemantic(String plate, int parts) {
+    return 'Assiette $plate : une pomme coupée en $parts parts qui n\'ont pas la même taille.';
+  }
+
+  @override
+  String pandaPortionsPieceEqualSemantic(
+      String plate, int index, int parts, String fraction) {
+    return 'Assiette $plate, morceau $index sur $parts. Une part égale : $fraction de la pomme.';
+  }
+
+  @override
+  String pandaPortionsPieceUnequalSemantic(String plate, int index, int parts) {
+    return 'Assiette $plate, morceau $index sur $parts. Pas une part égale.';
+  }
+
+  @override
+  String pandaPortionsPlatePiecesSemantic(String plate, int parts) {
+    return 'Assiette $plate : une pomme coupée en $parts morceaux.';
+  }
+
+  @override
+  String pandaPortionsPlateLargerSmallerSemantic(String plate) {
+    return 'Assiette $plate : une pomme coupée en 2 morceaux, un plus grand et un plus petit.';
+  }
+
+  @override
+  String pandaPortionsPlateMixedSizesSemantic(String plate, int parts) {
+    return 'Assiette $plate : une pomme coupée en $parts morceaux, certains plus grands, d\'autres plus petits.';
+  }
+
+  @override
+  String pandaPortionsPieceSemantic(String plate, int index, int parts) {
+    return 'Assiette $plate, morceau $index sur $parts.';
+  }
+
+  @override
+  String get pandaPortionsPiecePicked =>
+      'Morceau choisi. Touche maintenant le panda pour le lui donner.';
+
+  @override
+  String get pandaPortionsFeedPanda => 'Donne le morceau au panda';
+
+  @override
+  String get pandaPortionsBowlEmpty => 'Le bol du panda est vide.';
+
+  @override
+  String pandaPortionsBowlHas(String fraction) {
+    return 'Le bol du panda contient $fraction de la pomme.';
+  }
 
   @override
   String pandaPortionsStripLabel(int fed, int parts) {
