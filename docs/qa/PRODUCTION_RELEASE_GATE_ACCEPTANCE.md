@@ -4,8 +4,11 @@
 |---|---|
 | Baseline | `e94b740` (`feature/math-intelligence-v2`, PR #9 merge: Swiss Phase 2) |
 | Branch / worktree | `release/production-gate-enforcement`, worktree `unified_math_tutor_production_release_gate` |
-| State | **Uncommitted. Awaiting scope and test review.** Not pushed, not merged. |
-| Production build result | **Blocked.** With the current translations the wrapper stops at the completeness and approval step and starts no Flutter build. |
+| State | **Engineering checkpoint committed at `610dc18`** (`build(release): enforce localisation checks before production build`). Submitted for engineering integration only; not merged. |
+| Tests | Wrapper tests 26 passed; approval-gate tests 22 passed |
+| Production build result | **Blocked.** Production validation blocks the current 754 pending drafts (de_CH 267, fr_CH 256, it_CH 231), and the untranslated-key deficit is 199 / 200 / 200. The wrapper stops at the completeness and approval step, and no Flutter build started. |
+| Enforcement | The wrapper is mandatory under the documented release workflow (`RELEASE_CHECKLIST.md`), but it can be bypassed by invoking `flutter build` directly. |
+| Public release | **NO-GO** |
 | Device work | None (no Pixel or ADB, no APK or AAB built or installed). |
 
 ## 1. Summary
