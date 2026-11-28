@@ -1,0 +1,679 @@
+﻿batch,key,decision_flags
+"1 P0 navigation, accessibility, onboarding",accessibilityQuietStudyModeSubtitle,
+"1 P0 navigation, accessibility, onboarding",accessibilityReadingSizeDefault,
+"1 P0 navigation, accessibility, onboarding",accessibilityReadingSizeLarge,
+"1 P0 navigation, accessibility, onboarding",accessibilityReadingSizeSmall,
+"1 P0 navigation, accessibility, onboarding",accessibilityReadingSizeSubtitle,
+"1 P0 navigation, accessibility, onboarding",accessibilityReduceMotionSubtitle,
+"1 P0 navigation, accessibility, onboarding",accessibilityReduceMotionTitle,
+"1 P0 navigation, accessibility, onboarding",accessibilitySettingsSubtitle,
+"1 P0 navigation, accessibility, onboarding",accessibilitySoundCuesSubtitle,
+"1 P0 navigation, accessibility, onboarding",accessibilitySoundCuesTitle,
+"1 P0 navigation, accessibility, onboarding",appearanceAccessibilityHeading,
+"1 P0 navigation, accessibility, onboarding",appearanceReadingSizeSub,
+"1 P0 navigation, accessibility, onboarding",appearanceReadingSizeTitle,
+"1 P0 navigation, accessibility, onboarding",appearanceResetOnboardingButton,
+"1 P0 navigation, accessibility, onboarding",appearanceResetOnboardingHeading,
+"1 P0 navigation, accessibility, onboarding",appearanceResetOnboardingSub,
+"1 P0 navigation, accessibility, onboarding",appearanceThemeDark,
+"1 P0 navigation, accessibility, onboarding",appearanceThemeLight,
+"1 P0 navigation, accessibility, onboarding",appearanceThemeSub,
+"1 P0 navigation, accessibility, onboarding",appearanceThemeSystem,
+"1 P0 navigation, accessibility, onboarding",appearanceThemeTitle,
+"1 P0 navigation, accessibility, onboarding",appearanceTouchTargetsSub,
+"1 P0 navigation, accessibility, onboarding",appearanceTouchTargetsTitle,
+"1 P0 navigation, accessibility, onboarding",appearanceTypographySub,
+"1 P0 navigation, accessibility, onboarding",appearanceTypographyTitle,
+"1 P0 navigation, accessibility, onboarding",commonCancel,
+"1 P0 navigation, accessibility, onboarding",earlyMathsLaneChooserLabel,
+"1 P0 navigation, accessibility, onboarding",feedPandaBasketSemanticLabel,
+"1 P0 navigation, accessibility, onboarding",feedPandaTapPandaHint,
+"1 P0 navigation, accessibility, onboarding",homeFormulaLibrarySubtitle,
+"1 P0 navigation, accessibility, onboarding",homeFormulaLibraryTitle,
+"1 P0 navigation, accessibility, onboarding",mathStudioRevealedLabel,
+"1 P0 navigation, accessibility, onboarding",navHideAction,
+"1 P0 navigation, accessibility, onboarding",navJourney,
+"1 P0 navigation, accessibility, onboarding",navMore,
+"1 P0 navigation, accessibility, onboarding",navShowAction,
+"1 P0 navigation, accessibility, onboarding",numberSenseCompareLeftMarkerSemantics,
+"1 P0 navigation, accessibility, onboarding",numberSenseCompareRightMarkerSemantics,
+"1 P0 navigation, accessibility, onboarding",numberSenseComparisonCorrectLabel,
+"1 P0 navigation, accessibility, onboarding",numberSenseComparisonReviewLabel,
+"1 P0 navigation, accessibility, onboarding",numberSenseHundredthsLineLabel,D-3 Decimal formatting
+"1 P0 navigation, accessibility, onboarding",onboardingDiscardBody,
+"1 P0 navigation, accessibility, onboarding",onboardingDiscardTitle,D-4 fr-CH punctuation
+"1 P0 navigation, accessibility, onboarding",onboardingFamilyActivityLengthLabel,
+"1 P0 navigation, accessibility, onboarding",onboardingFamilyActivityLengthLong,
+"1 P0 navigation, accessibility, onboarding",onboardingFamilyActivityLengthMedium,
+"1 P0 navigation, accessibility, onboarding",onboardingFamilyActivityLengthShort,
+"1 P0 navigation, accessibility, onboarding",onboardingFamilyAddAnotherLearner,
+"1 P0 navigation, accessibility, onboarding",onboardingFamilyAllieIntro,
+"1 P0 navigation, accessibility, onboarding",onboardingFamilyFinishButton,
+"1 P0 navigation, accessibility, onboarding",onboardingFamilyGoalBuildConfidence,
+"1 P0 navigation, accessibility, onboarding",onboardingFamilyGoalHomework,
+"1 P0 navigation, accessibility, onboarding",onboardingFamilyGoalMonitorProgress,
+"1 P0 navigation, accessibility, onboarding",onboardingFamilyGoalPractiseTogether,D-5 fr-CH 1990 reform spellings
+"1 P0 navigation, accessibility, onboarding",onboardingFamilyGoalPrepareExam,
+"1 P0 navigation, accessibility, onboarding",onboardingFamilyGoalSub,
+"1 P0 navigation, accessibility, onboarding",onboardingFamilyGoalSupportStruggling,
+"1 P0 navigation, accessibility, onboarding",onboardingFamilyGoalTitle,D-4 fr-CH punctuation
+"1 P0 navigation, accessibility, onboarding",onboardingFamilyGoalUnderstandMethods,
+"1 P0 navigation, accessibility, onboarding",onboardingFamilyLearnerContextSub,
+"1 P0 navigation, accessibility, onboarding",onboardingFamilyLearnerNamesLabel,
+"1 P0 navigation, accessibility, onboarding",onboardingFamilyLearnerNamesSub,
+"1 P0 navigation, accessibility, onboarding",onboardingFamilyNotificationsLabel,
+"1 P0 navigation, accessibility, onboarding",onboardingFamilyNotificationsSub,
+"1 P0 navigation, accessibility, onboarding",onboardingFamilyPreferencesSub,
+"1 P0 navigation, accessibility, onboarding",onboardingFamilyPreferencesTitle,
+"1 P0 navigation, accessibility, onboarding",onboardingFamilyRoleDetailSub,
+"1 P0 navigation, accessibility, onboarding",onboardingFamilyRoleDetailTitle,
+"1 P0 navigation, accessibility, onboarding",onboardingGoal1Label,
+"1 P0 navigation, accessibility, onboarding",onboardingGoal1Sub,D-5 fr-CH 1990 reform spellings
+"1 P0 navigation, accessibility, onboarding",onboardingGoal2Label,
+"1 P0 navigation, accessibility, onboarding",onboardingGoal2Sub,
+"1 P0 navigation, accessibility, onboarding",onboardingGoal3Label,
+"1 P0 navigation, accessibility, onboarding",onboardingGoal4Label,
+"1 P0 navigation, accessibility, onboarding",onboardingGoal4Sub,
+"1 P0 navigation, accessibility, onboarding",onboardingGuestMode,
+"1 P0 navigation, accessibility, onboarding",onboardingGuestModeSub,D-5 fr-CH 1990 reform spellings
+"1 P0 navigation, accessibility, onboarding",onboardingLearnerNameHint,
+"1 P0 navigation, accessibility, onboarding",onboardingSignIn,
+"1 P0 navigation, accessibility, onboarding",onboardingSignInPrompt,D-4 fr-CH punctuation
+"1 P0 navigation, accessibility, onboarding",onboardingTechBadge,
+"1 P0 navigation, accessibility, onboarding",onboardingTimeEstimateSeconds,
+"1 P0 navigation, accessibility, onboarding",pandaPortionsStripLabel,D-4 fr-CH punctuation; D-6 Panda Portions naming
+"1 P0 navigation, accessibility, onboarding",practiceSelectExamLabel,
+"1 P0 navigation, accessibility, onboarding",ratioFoundationsHideHint,
+"1 P0 navigation, accessibility, onboarding",ratioFoundationsShowHint,
+2 P0 parent-facing and curriculum terminology,earlyMathsEntryIntro,"G-1/G-2 GCSE, KS, A-Level, 11+, Oxford"
+2 P0 parent-facing and curriculum terminology,earlyMathsLaneKs1Title,"G-1/G-2 GCSE, KS, A-Level, 11+, Oxford"
+2 P0 parent-facing and curriculum terminology,earlyMathsLaneSwitchNote,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,earlyMathsParentCardSubtitle,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,earlyMathsParentCardTitle,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,entranceExamHubIntro,"G-1/G-2 GCSE, KS, A-Level, 11+, Oxford; D-5 fr-CH 1990 reform spellings"
+2 P0 parent-facing and curriculum terminology,entranceExamModeLockedBadge,
+2 P0 parent-facing and curriculum terminology,entranceExamModeLockedFullPaperReason,
+2 P0 parent-facing and curriculum terminology,entranceExamModePracticeBySkillTitle,D-5 fr-CH 1990 reform spellings
+2 P0 parent-facing and curriculum terminology,entranceExamModeScholarshipChallengeSub,
+2 P0 parent-facing and curriculum terminology,entranceExamModeTimedMockSub,
+2 P0 parent-facing and curriculum terminology,entranceExamModeUntimedPaperSub,
+2 P0 parent-facing and curriculum terminology,entranceExamModeUntimedPaperTitle,
+2 P0 parent-facing and curriculum terminology,entranceExamSessionCompleteTitle,D-5 fr-CH 1990 reform spellings
+2 P0 parent-facing and curriculum terminology,entranceExamSkillFractionsAndPercentages,
+2 P0 parent-facing and curriculum terminology,entranceExamSkillPickerTitle,
+2 P0 parent-facing and curriculum terminology,entranceExamSkillQuestionCountLabel,
+2 P0 parent-facing and curriculum terminology,entranceExamSkillRatioAndProportion,
+2 P0 parent-facing and curriculum terminology,examPacksCtaSubtitle,"G-1/G-2 GCSE, KS, A-Level, 11+, Oxford"
+2 P0 parent-facing and curriculum terminology,familyStudioConversationAllieMessage,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioHomeworkEmptySession,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioHomeworkGenerateButton,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioHomeworkHelpBuildConfidence,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioHomeworkHelpPractiseTogether,D-5 fr-CH 1990 reform spellings; D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioHomeworkHelpPrepareTomorrow,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioHomeworkHelpReviewMistakes,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioHomeworkHelpTypeLabel,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioHomeworkHelpUnderstandMethod,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioHomeworkTimeLabel,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioHomeworkTopicLabel,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioHubAllieMessage,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioHubOpeningPromise,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioHubSupportingCopy,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioLearningNoDataYet,D-5 fr-CH 1990 reform spellings; D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioLearningTopicSubtitle,D-5 fr-CH 1990 reform spellings; D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioPrimaryActionGuides,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioPrimaryActionHomework,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioPrimaryActionLearning,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioPrimaryActionStartActivity,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioProfileEntrySubtitle,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioProgressActivitiesCompleted,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioProgressAreasToRevisit,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioProgressNoDataYet,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioProgressRecentTopics,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioProgressSuggestedActivity,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioSectionConversationStartersSubtitle,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioSectionConversationStartersTitle,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioSectionCubeSpatialSubtitle,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioSectionCubeSpatialTitle,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioSectionExplainSubtitle,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioSectionExplainTitle,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioSectionFractionsRatioSubtitle,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioSectionFractionsRatioTitle,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioSectionHomeworkCompanionSubtitle,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioSectionHomeworkCompanionTitle,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioSectionLearningSubtitle,D-5 fr-CH 1990 reform spellings; D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioSectionLearningTitle,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioSectionMentalMathsSubtitle,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioSectionMentalMathsTitle,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioSectionProgressSubtitle,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioSectionProgressTitle,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioSectionTodaysActivitySubtitle,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioSectionTodaysActivityTitle,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioSectionTutorToolsSubtitle,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioSectionTutorToolsTitle,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioTodayStartButton,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioTutorAssignLabel,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioTutorAssignPractice,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioTutorAssignRecallCards,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioTutorChooseLearnerLabel,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioTutorCompletionLabel,D-8 Parent register; D-9 English source-copy defects
+2 P0 parent-facing and curriculum terminology,familyStudioTutorNotesHint,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,familyStudioTutorNotesLabel,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,helpTermsBody,D-2 Legal / Terms of Service; D-8 Parent register
+2 P0 parent-facing and curriculum terminology,homeWhatsNewBody,"G-1/G-2 GCSE, KS, A-Level, 11+, Oxford"
+2 P0 parent-facing and curriculum terminology,onboardingFamilyLearnerContextTitle,D-4 fr-CH punctuation; D-8 Parent register
+2 P0 parent-facing and curriculum terminology,onboardingFamilyPinLabel,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,onboardingFamilyPinSub,D-8 Parent register
+2 P0 parent-facing and curriculum terminology,onboardingGoal3Sub,"G-1/G-2 GCSE, KS, A-Level, 11+, Oxford; D-5 fr-CH 1990 reform spellings"
+2 P0 parent-facing and curriculum terminology,onboardingStage1Label,"G-1/G-2 GCSE, KS, A-Level, 11+, Oxford"
+2 P0 parent-facing and curriculum terminology,onboardingStage2Label,"G-1/G-2 GCSE, KS, A-Level, 11+, Oxford"
+2 P0 parent-facing and curriculum terminology,onboardingStage3Label,"G-1/G-2 GCSE, KS, A-Level, 11+, Oxford"
+2 P0 parent-facing and curriculum terminology,onboardingStage3Sub,"G-1/G-2 GCSE, KS, A-Level, 11+, Oxford"
+2 P0 parent-facing and curriculum terminology,onboardingStage4Label,"G-1/G-2 GCSE, KS, A-Level, 11+, Oxford"
+2 P0 parent-facing and curriculum terminology,practiceExamEntranceExamPrep,
+2 P0 parent-facing and curriculum terminology,practiceExamSimulatorSelectPrompt,
+2 P0 parent-facing and curriculum terminology,practiceExamSwissGymnasium,D-1 Swiss Gymnasium
+2 P0 parent-facing and curriculum terminology,topicsFilterGcse,"G-1/G-2 GCSE, KS, A-Level, 11+, Oxford"
+2 P0 parent-facing and curriculum terminology,topicsFilterOxfordTrack,"G-1/G-2 GCSE, KS, A-Level, 11+, Oxford"
+2 P0 parent-facing and curriculum terminology,topicsTrackGcseFoundation,"G-1/G-2 GCSE, KS, A-Level, 11+, Oxford"
+2 P0 parent-facing and curriculum terminology,topicsTrackGcseHigher,"G-1/G-2 GCSE, KS, A-Level, 11+, Oxford"
+2 P0 parent-facing and curriculum terminology,topicsTrackOxford,"G-1/G-2 GCSE, KS, A-Level, 11+, Oxford"
+2 P0 parent-facing and curriculum terminology,upgradeBenefit2Sub,"G-1/G-2 GCSE, KS, A-Level, 11+, Oxford; D-9 English source-copy defects"
+2 P0 parent-facing and curriculum terminology,upgradeBenefit2Title,"G-1/G-2 GCSE, KS, A-Level, 11+, Oxford"
+2b P0 other primary screens,abacusPlayBreakDone,
+2b P0 other primary screens,abacusPlayBuildDone,D-4 fr-CH punctuation
+2b P0 other primary screens,abacusPlayExchangeDone,
+2b P0 other primary screens,earlyMathsAbacusScope,
+2b P0 other primary screens,earlyMathsAbacusTitle,
+2b P0 other primary screens,earlyMathsActivitiesHeading,
+2b P0 other primary screens,earlyMathsLaneKs1Ages,
+2b P0 other primary screens,earlyMathsLaneNotSureSubtitle,
+2b P0 other primary screens,earlyMathsLaneNotSureTitle,
+2b P0 other primary screens,earlyMathsLanePlayAges,
+2b P0 other primary screens,earlyMathsLanePlayTitle,
+2b P0 other primary screens,earlyMathsNotSureBody,
+2b P0 other primary screens,earlyMathsNotSureHeading,
+2b P0 other primary screens,earlyMathsPandaScope,
+2b P0 other primary screens,earlyMathsParentHeading,
+2b P0 other primary screens,earlyMathsParentTitlesLine,
+2b P0 other primary screens,exploreInAtelierBadge,
+2b P0 other primary screens,exploreInAtelierSection,
+2b P0 other primary screens,feedPandaPandaSemanticFull,
+2b P0 other primary screens,feedPandaSelectedSuffix,
+2b P0 other primary screens,feedPandaWellDone,
+2b P0 other primary screens,footballStudioAndroidOnly,
+2b P0 other primary screens,footballStudioCheckAgain,
+2b P0 other primary screens,footballStudioCheckFailed,
+2b P0 other primary screens,footballStudioChecking,
+2b P0 other primary screens,footballStudioDescription,
+2b P0 other primary screens,footballStudioInstallNeeded,
+2b P0 other primary screens,footballStudioInstalled,
+2b P0 other primary screens,footballStudioLaunchFailed,
+2b P0 other primary screens,footballStudioOpen,
+2b P0 other primary screens,footballStudioOpening,
+2b P0 other primary screens,footballStudioProgressOwnership,D-9 English source-copy defects
+2b P0 other primary screens,footballStudioTryAgain,
+2b P0 other primary screens,footballStudioUnavailable,
+2b P0 other primary screens,interactiveStudiosTitle,
+2b P0 other primary screens,journeySubtitle,
+2b P0 other primary screens,journeyTeaserSubtitle,
+2b P0 other primary screens,journeyTitle,
+2b P0 other primary screens,labsDataDetectiveAddValueButton,
+2b P0 other primary screens,labsFractionBuilderFilledCount,
+2b P0 other primary screens,labsResetButton,
+2b P0 other primary screens,labsSpatialCubeNetExplorerNextNetButton,
+2b P0 other primary screens,labsSpatialCubeNetExplorerStepBackButton,
+2b P0 other primary screens,labsSpatialCubeNetExplorerStepForwardButton,
+2b P0 other primary screens,labsSpatialCubeRotateToMatchTestButton,
+2b P0 other primary screens,mathStudioBuildConfidenceSubtitle,D-5 fr-CH 1990 reform spellings
+2b P0 other primary screens,mathStudioDiscoveryEmptyCategory,
+2b P0 other primary screens,mathStudioDiscoverySubtitle,
+2b P0 other primary screens,mathStudioExportCombined,
+2b P0 other primary screens,mathStudioFollowUpCheckButton,
+2b P0 other primary screens,mathStudioMentalMathsSubtitle,
+2b P0 other primary screens,mathStudioRevealButton,
+2b P0 other primary screens,mathStudioSpatialIntelligenceSubtitle,
+2b P0 other primary screens,mathStudioSpatialIntelligenceTitle,
+2b P0 other primary screens,numberSenseNextSkill,
+2b P0 other primary screens,numberSenseSkillSheetClose,
+2b P0 other primary screens,pandaPortionsChoosePlate,D-6 Panda Portions naming
+2b P0 other primary screens,pandaPortionsNextLesson,D-6 Panda Portions naming
+2b P0 other primary screens,pandaPortionsRetryEqualParts,D-6 Panda Portions naming
+2b P0 other primary screens,pandaPortionsRetryHalves,D-6 Panda Portions naming
+2b P0 other primary screens,pandaPortionsRetryQuarters,D-6 Panda Portions naming
+2b P0 other primary screens,pandaPortionsStripFed,D-6 Panda Portions naming
+2b P0 other primary screens,pandaPortionsWhatNext,D-4 fr-CH punctuation; D-6 Panda Portions naming
+2b P0 other primary screens,pandaPortionsWholeApple,D-6 Panda Portions naming
+2b P0 other primary screens,practiceExitSessionBody,
+2b P0 other primary screens,practiceExitSessionTitle,D-4 fr-CH punctuation
+2b P0 other primary screens,practiceModeExamSimulatorSubFor,
+2b P0 other primary screens,practiceTopicDrillEmpty,
+2b P0 other primary screens,ratioFoundationsCompletionBody,
+2b P0 other primary screens,ratioFoundationsCompletionTitle,
+2b P0 other primary screens,ratioFoundationsContinue,
+2b P0 other primary screens,ratioFoundationsCorrect,D-4 fr-CH punctuation
+2b P0 other primary screens,ratioFoundationsFluencyProgress,D-7 Fluency terminology
+2b P0 other primary screens,ratioFoundationsHubCardReason,D-5 fr-CH 1990 reform spellings
+2b P0 other primary screens,ratioFoundationsHubCardTitle,D-4 fr-CH punctuation
+2b P0 other primary screens,ratioFoundationsIncorrect,
+2b P0 other primary screens,ratioFoundationsNextItem,
+2b P0 other primary screens,ratioFoundationsRungFluency,D-7 Fluency terminology
+2b P0 other primary screens,ratioFoundationsRungGuided,D-5 fr-CH 1990 reform spellings
+2b P0 other primary screens,ratioFoundationsRungRecognise,D-5 fr-CH 1990 reform spellings
+2b P0 other primary screens,ratioFoundationsScreenTitle,D-4 fr-CH punctuation
+2b P0 other primary screens,recallCardsClearFiltersButton,
+2b P0 other primary screens,recallTopicGeometryAndMeasures,
+2b P0 other primary screens,recallTopicNumber,
+2b P0 other primary screens,recallTopicProbability,
+2b P0 other primary screens,recallTopicRatioAndProportion,
+2b P0 other primary screens,recallTopicStatistics,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusBoardAddOne,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusBoardAddTen,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusBoardEquationOne,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusBoardEquationThree,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusBoardEquationTwo,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusBoardSubtractOne,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusBoardSubtractTen,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusBoardTitle,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusBoardZero,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusPlayBreakTask,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusPlayBreakTitle,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusPlayBuildTask,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusPlayBuildTitle,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusPlayExchangeTask,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusPlayExchangeTitle,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusPlayFreeIntro,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusPlayFreeTitle,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusPlayHowTo,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusPlayModeFree,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusPlayModeGuided,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusPlayNoteHundredCascade,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusPlayNoteHundredToTens,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusPlayNoteTenOnes,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusPlayNoteTenOnesAndTens,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusPlayNoteTenTens,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusPlayNoteTenToOnes,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusPlayParentNote,D-8 Parent register
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusPlayPartHundreds,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusPlayPartOnes,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusPlayPartTens,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusPlayReset,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusPlayRodLabel,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusPlayRodValue,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusSpokenOne,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusSpokenThree,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusSpokenTwo,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",abacusSpokenZero,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",buildConfidenceCompletionBody,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",earlyMathsPlaygroundIntro,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",feedPandaDropZoneLabel,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",feedPandaHasEnough,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",feedPandaHowManyLeft,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",feedPandaPandaSemanticReady,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",fractionBarsCaption2,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsAircraftLandingDescentLineHelpWhatToNotice,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsAircraftLandingFindTheTimeHelpWhatItMeans,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsAircraftLandingFindTheTimeHelpWhatToDo,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsAircraftLandingGlidePathHelpWhatItMeans,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsAircraftLandingGlidePathHelpWhatToDo,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsAircraftLandingGlidePathHelpWhatToNotice,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsAircraftLandingGlidePathMission,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsAircraftLandingGlidePathSubtitle,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsAircraftLandingLabFreePlayCaption,D-4 fr-CH punctuation
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsAircraftLandingLabIntro,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsAircraftLandingVectorApproachHelpWhatItMeans,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsAircraftLandingVectorApproachHelpWhatToDo,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsAircraftLandingVectorApproachHelpWhatToNotice,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsAlgebraBalanceConcept,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsAlgebraBalanceFirstUseStep2,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsAlgebraBalanceHelpWhatToNotice,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsAlgebraBalanceSolvedFeedback,D-4 fr-CH punctuation
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsAlgebraBalanceSubtitle,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsDataDetectiveConcept,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsDataDetectiveFirstUseStep2,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsDataDetectiveHelpWhatToDo,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsDataDetectiveHelpWhatToNotice,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsDataDetectiveNarrationCompletionBuilder,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsDataDetectiveNarrationCompletionExplorer,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsDataDetectiveNarrationCompletionNavigator,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsDataDetectiveNarrationIntro,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsDataDetectivePredictionPrompt,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsDataDetectiveSubtitle,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsEarlyMathsPlaygroundSubtitle,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsFlightPathLabConcept,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsFlightPathLabFirstUseStep2,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsFlightPathLabHeadingHelper,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsFlightPathLabHelpWhatItMeans,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsFlightPathLabHelpWhatToDo,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsFlightPathLabMission,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsFlightPathLabSpeedHelper,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsFractionBuilderConcept,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsFractionBuilderFirstUseStep1,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsFractionBuilderFirstUseStep2,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsFractionBuilderHelpWhatItMeans,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsFractionBuilderHelpWhatToDo,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsFractionBuilderHelpWhatToNotice,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsFractionBuilderSymbolicResult,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsFractionBuilderTapGuidance,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsNumberLineExplorerHelpWhatToDo,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsNumberLineExplorerNarrationCompletionNavigator,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsSpatialCubeHiddenFaceHelpWhatItMeans,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsSpatialCubeHiddenFaceHelpWhatToDo,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsSpatialCubeHiddenFaceIncorrect,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsSpatialCubeHiddenFaceWhereUsed,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsSpatialCubeLabFreePlayCaption,D-4 fr-CH punctuation
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsSpatialCubeLabIntro,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsSpatialCubeLabSubtitle,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsSpatialCubeNetExplorerHelpWhatToDo,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsSpatialCubeNetExplorerHelpWhatToNotice,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsSpatialCubeRotateToMatchHelpWhatToDo,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsSpatialCubeRotateToMatchHelpWhatToNotice,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsSpatialCubeRotateToMatchMission,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsSpatialCubeRotateToMatchSubtitle,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsSpatialCubeRotateToMatchYourCubeLabel,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsSpatialCubeWhichFaceOppositeHelpWhatItMeans,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsSpatialCubeWhichFaceOppositeHelpWhatToDo,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsSpatialCubeWhichFaceOppositeHelpWhatToNotice,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsSpatialCubeWhichFaceOppositeMission,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsSpatialCubeWhichFaceOppositeQuestion,D-4 fr-CH punctuation
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsSpatialCubeWhichFaceOppositeReveal,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsSpatialCubeWhichFaceOppositeSubtitle,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsSpatialCubeWhichFaceOppositeTitle,D-4 fr-CH punctuation
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",labsSpatialCubeWhichFaceOppositeWhereUsed,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",mathStudioMathMagicNumberTricksSubtitle,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",mathStudioRecallCardsSubtitle,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",mathStudioSpatialCubeNetsSubtitle,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",mathStudioSpatialLabsEntrySubtitle,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",mathStudioSpatialRotationsSubtitle,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",mathStudioSpatialTransformationsSubtitle,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",mentalMathsCategoryFractions,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseAnotherExample,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseChooseComparisonType,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseChooseSkill,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseClearExplore,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseCompareEqualTo,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseCompareEqualWords,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseCompareGreaterThan,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseCompareGreaterThanWords,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseCompareLessThan,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseCompareLessThanWords,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseCompareMarkerExplanation,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseCompareSharedLineLabel,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseComparisonCapEighths,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseComparisonCapFourths,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseComparisonCapHalves,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseComparisonCapSixths,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseComparisonCapThirds,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseComparisonCorrectResultDynamic,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseComparisonEighth,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseComparisonEighths,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseComparisonExplanationBenchmarkHalf,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseComparisonExplanationEquivalent,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseComparisonExplanationSameDenominator,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseComparisonExplanationSameNumerator,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseComparisonFourth,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseComparisonFourths,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseComparisonHalf,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseComparisonHalves,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseComparisonIncorrectResultDynamic,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseComparisonLess,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseComparisonMore,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseComparisonProofDynamic,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseComparisonSixth,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseComparisonSixths,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseComparisonThird,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseComparisonThirds,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseComplete,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseEqualPartsLabel,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseExampleComparisonTask,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseExampleComparisonTitle,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseExampleEquivalenceTask,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseExampleEquivalenceTaskParts,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseExampleEquivalenceTitle,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseExampleHundredthsTask,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseExampleHundredthsTaskCount,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseExampleHundredthsTitle,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseExampleHundredthsTitleCount,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseExamplePlacementTask,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseExamplePlacementTaskHalf,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseExamplePlacementTaskTwoThirds,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseExamplePlacementTitle,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseFocusCompareToHalf,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseFocusEquivalent,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseFocusMixed,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseFocusSameDenominator,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseFocusSameNumerator,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseFreeExploreInstruction,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseGuidedDirectionLeft,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseGuidedDirectionRight,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseGuidedWrongAdjacent,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseGuidedWrongEquivalenceWhole,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseGuidedWrongGeneral,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseGuidedWrongPartition,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseHundredthsExploreInstruction,D-3 Decimal formatting
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseHundredthsIncorrectFeedback,D-3 Decimal formatting
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseHundredthsIncorrectFeedbackTarget,D-3 Decimal formatting
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseHundredthsSelectionExplanation,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseHundredthsTargetEquationDynamic,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseHundredthsZeroExplanation,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseHundredthsZeroGuidedFeedback,D-3 Decimal formatting
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseHundredthsZeroGuidedFeedbackTarget,D-3 Decimal formatting
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseLabDescription,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseLabTitle,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseModeFreeExplore,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseModeGuided,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSensePractiseThis,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSensePrecisionLine,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseReset,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseScopeStatement,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseSkillCompareFractions,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseSkillFindOneHundredth,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseSkillMakeEquivalent,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseSkillPlaceFraction,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseSkillProgress,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseTarget,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",numberSenseWholePartModel,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsBowlEmpty,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsBowlHas,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsChooseLesson,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsFeedPanda,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsGuidedPathDescription,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsGuidedPathTitle,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsGuidedStep,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsHideHint,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsHintEqualParts,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsHintHalves,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsHintQuarters,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsIncorrectSelection,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsKeepPractising,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsLessonEqualPartsPurpose,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsLessonEqualPartsTitle,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsLessonHalvesPurpose,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsLessonHalvesTitle,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsLessonQuartersPurpose,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsLessonQuartersTitle,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsMenuIntro,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsMisconceptionUnequal,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsPieceEqualSemantic,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsPiecePicked,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsPieceSemantic,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsPieceUnequalSemantic,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsPlateEqualSemantic,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsPlateLabel,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsPlateLargerSmallerSemantic,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsPlateMixedSizesSemantic,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsPlatePiecesSemantic,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsPlateUnequalSemantic,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsPractiseHalvesDescription,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsPractiseHalvesTitle,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsPractiseQuartersDescription,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsPractiseQuartersTitle,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsPromptEqualParts,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsPromptHalves,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsPromptQuarters,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsRemainingLeft,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsResetApple,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsShowHint,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsSubtitle,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsSuccessAte,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsSuccessEqualParts,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsSuccessFedPart,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsSuggestNewChallenge,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsSuggestTryHalves,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsSuggestTryQuarters,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsTeachEqualParts,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",pandaPortionsTitle,D-6 Panda Portions naming
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",recallCardsHubSubtitle,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",recallCardsQuickReviewSubtitle,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",recallCardsQuickReviewTitle,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",recallCardsRelatedPracticeLabel,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",recallCardsSessionCompleteSubtitle,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",recallCardsTopicRatioAndProportion,
+"3 P1 Panda Portions and learning activities (proposals, not in ARB)",visualMathsAbacusSubtitle,
+4 Existing pronunciation-sensitive translations (not pending),feedPandaBowlSemanticLabel,
+4 Existing pronunciation-sensitive translations (not pending),feedPandaInstruction,
+4 Existing pronunciation-sensitive translations (not pending),feedPandaPandaSemanticReady,
+4 Existing pronunciation-sensitive translations (not pending),fractionBarsCaption1,
+4 Existing pronunciation-sensitive translations (not pending),fractionBarsCaption2,
+4 Existing pronunciation-sensitive translations (not pending),fractionBarsCaption3,
+4 Existing pronunciation-sensitive translations (not pending),fractionBarsCaption4,
+4 Existing pronunciation-sensitive translations (not pending),labsAircraftLandingAirspeedLabel,D-4 fr-CH punctuation
+4 Existing pronunciation-sensitive translations (not pending),labsAircraftLandingDescentAngleLabel,D-4 fr-CH punctuation
+4 Existing pronunciation-sensitive translations (not pending),labsAircraftLandingDescentLineHelpWhatItMeans,D-4 fr-CH punctuation
+4 Existing pronunciation-sensitive translations (not pending),labsAircraftLandingFindTheTimeHelpWhatItMeans,
+4 Existing pronunciation-sensitive translations (not pending),labsAircraftLandingFindTheTimeHintText,
+4 Existing pronunciation-sensitive translations (not pending),labsAircraftLandingFindTheTimeSpeedLabel,D-4 fr-CH punctuation
+4 Existing pronunciation-sensitive translations (not pending),labsAircraftLandingGlidePathHelpWhatItMeans,
+4 Existing pronunciation-sensitive translations (not pending),labsAircraftLandingVectorHorizontalLabel,D-4 fr-CH punctuation
+4 Existing pronunciation-sensitive translations (not pending),labsAircraftLandingVectorResultantLabel,D-4 fr-CH punctuation
+4 Existing pronunciation-sensitive translations (not pending),labsAircraftLandingVectorVerticalLabel,D-4 fr-CH punctuation
+4 Existing pronunciation-sensitive translations (not pending),labsAlgebraBalanceNarrationCompletionBuilder,
+4 Existing pronunciation-sensitive translations (not pending),labsAlgebraBalanceNarrationCompletionExplorer,
+4 Existing pronunciation-sensitive translations (not pending),labsAlgebraBalanceNarrationCompletionNavigator,D-4 fr-CH punctuation
+4 Existing pronunciation-sensitive translations (not pending),labsAlgebraBalanceNarrationHintInactivityBuilder,
+4 Existing pronunciation-sensitive translations (not pending),labsAlgebraBalanceNarrationHintInactivityExplorer,
+4 Existing pronunciation-sensitive translations (not pending),labsAlgebraBalanceNarrationHintInactivityNavigator,
+4 Existing pronunciation-sensitive translations (not pending),labsAlgebraBalanceNarrationHintNextStepBuilder,
+4 Existing pronunciation-sensitive translations (not pending),labsAlgebraBalanceNarrationHintNextStepExplorer,
+4 Existing pronunciation-sensitive translations (not pending),labsAlgebraBalanceNarrationHintNextStepNavigator,
+4 Existing pronunciation-sensitive translations (not pending),labsAlgebraBalanceNarrationIntro,
+4 Existing pronunciation-sensitive translations (not pending),labsAlgebraBalanceSolvedFeedback,D-4 fr-CH punctuation
+4 Existing pronunciation-sensitive translations (not pending),labsBinomialExplainABSquared,
+4 Existing pronunciation-sensitive translations (not pending),labsBinomialExplainACubed,
+4 Existing pronunciation-sensitive translations (not pending),labsBinomialExplainASquaredB,
+4 Existing pronunciation-sensitive translations (not pending),labsBinomialExplainBCubed,
+4 Existing pronunciation-sensitive translations (not pending),labsBinomialExplainNumeric,
+4 Existing pronunciation-sensitive translations (not pending),labsBinomialStep1,
+4 Existing pronunciation-sensitive translations (not pending),labsBinomialStep2,
+4 Existing pronunciation-sensitive translations (not pending),labsBinomialStep3,
+4 Existing pronunciation-sensitive translations (not pending),labsBinomialStep4,
+4 Existing pronunciation-sensitive translations (not pending),labsBinomialVolumeLabSubtitle,
+4 Existing pronunciation-sensitive translations (not pending),labsCreateAngleCompleteBody,
+4 Existing pronunciation-sensitive translations (not pending),labsCreateAngleCurrentReadout,
+4 Existing pronunciation-sensitive translations (not pending),labsCreateAngleExplain30,
+4 Existing pronunciation-sensitive translations (not pending),labsCreateAngleExplain45,
+4 Existing pronunciation-sensitive translations (not pending),labsCreateAngleExplain60,
+4 Existing pronunciation-sensitive translations (not pending),labsCreateAngleExplain90,
+4 Existing pronunciation-sensitive translations (not pending),labsCreateAngleMatched,
+4 Existing pronunciation-sensitive translations (not pending),labsCreateAngleNextTarget,
+4 Existing pronunciation-sensitive translations (not pending),labsCreateAngleTargetReadout,
+4 Existing pronunciation-sensitive translations (not pending),labsCreateAngleToleranceNote,
+4 Existing pronunciation-sensitive translations (not pending),labsCreateAngleTurnNarrower,
+4 Existing pronunciation-sensitive translations (not pending),labsCreateAngleTurnWider,
+4 Existing pronunciation-sensitive translations (not pending),labsDataDetectiveNarrationCompletionBuilder,
+4 Existing pronunciation-sensitive translations (not pending),labsDataDetectiveNarrationCompletionExplorer,
+4 Existing pronunciation-sensitive translations (not pending),labsDataDetectiveNarrationCompletionNavigator,
+4 Existing pronunciation-sensitive translations (not pending),labsDataDetectiveNarrationHintInactivityBuilder,
+4 Existing pronunciation-sensitive translations (not pending),labsDataDetectiveNarrationHintInactivityExplorer,
+4 Existing pronunciation-sensitive translations (not pending),labsDataDetectiveNarrationHintInactivityNavigator,
+4 Existing pronunciation-sensitive translations (not pending),labsDataDetectiveNarrationHintRepeatedBuilder,
+4 Existing pronunciation-sensitive translations (not pending),labsDataDetectiveNarrationHintRepeatedExplorer,
+4 Existing pronunciation-sensitive translations (not pending),labsDataDetectiveNarrationHintRepeatedNavigator,
+4 Existing pronunciation-sensitive translations (not pending),labsDataDetectiveNarrationIntro,
+4 Existing pronunciation-sensitive translations (not pending),labsDataDetectiveNarrationResultWrongBuilder,
+4 Existing pronunciation-sensitive translations (not pending),labsDataDetectiveNarrationResultWrongExplorer,
+4 Existing pronunciation-sensitive translations (not pending),labsDataDetectiveNarrationResultWrongNavigator,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabHeadingExplorerLabel,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabHeadingLabel,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabNarrationCompletionBuilder,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabNarrationCompletionExplorer,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabNarrationCompletionNavigator,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabNarrationHintInactivityBuilder,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabNarrationHintInactivityExplorer,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabNarrationHintInactivityNavigator,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabNarrationHintRepeatedBuilder,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabNarrationHintRepeatedExplorer,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabNarrationHintRepeatedNavigator,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabNarrationIntroBuilder,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabNarrationIntroExplorer,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabNarrationIntroNavigator,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabNarrationResultCorrectHeadingTooFarBuilder,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabNarrationResultCorrectHeadingTooFarExplorer,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabNarrationResultCorrectHeadingTooFarNavigator,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabNarrationResultCorrectHeadingTooShortBuilder,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabNarrationResultCorrectHeadingTooShortExplorer,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabNarrationResultCorrectHeadingTooShortNavigator,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabNarrationResultNearMissBuilder,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabNarrationResultNearMissExplorer,D-4 fr-CH punctuation
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabNarrationResultNearMissNavigator,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabNarrationResultWrongHeadingAndDistanceBuilder,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabNarrationResultWrongHeadingAndDistanceExplorer,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabNarrationResultWrongHeadingAndDistanceNavigator,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceBuilder,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceExplorer,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabNarrationResultWrongHeadingCorrectDistanceNavigator,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabPrompt,
+4 Existing pronunciation-sensitive translations (not pending),labsFlightPathLabSpeedLabel,
+4 Existing pronunciation-sensitive translations (not pending),labsFractionBuilderNarrationCompletionBuilder,
+4 Existing pronunciation-sensitive translations (not pending),labsFractionBuilderNarrationCompletionExplorer,
+4 Existing pronunciation-sensitive translations (not pending),labsFractionBuilderNarrationCompletionNavigator,
+4 Existing pronunciation-sensitive translations (not pending),labsFractionBuilderNarrationHintInactivityBuilder,
+4 Existing pronunciation-sensitive translations (not pending),labsFractionBuilderNarrationHintInactivityExplorer,
+4 Existing pronunciation-sensitive translations (not pending),labsFractionBuilderNarrationHintInactivityNavigator,
+4 Existing pronunciation-sensitive translations (not pending),labsFractionBuilderNarrationHintRepeatedBuilder,
+4 Existing pronunciation-sensitive translations (not pending),labsFractionBuilderNarrationHintRepeatedExplorer,
+4 Existing pronunciation-sensitive translations (not pending),labsFractionBuilderNarrationHintRepeatedNavigator,
+4 Existing pronunciation-sensitive translations (not pending),labsFractionBuilderNarrationIntro,
+4 Existing pronunciation-sensitive translations (not pending),labsFractionBuilderNarrationResultWrongBuilder,
+4 Existing pronunciation-sensitive translations (not pending),labsFractionBuilderNarrationResultWrongExplorer,
+4 Existing pronunciation-sensitive translations (not pending),labsFractionBuilderNarrationResultWrongNavigator,
+4 Existing pronunciation-sensitive translations (not pending),labsFractionsOfASetCollection,
+4 Existing pronunciation-sensitive translations (not pending),labsFractionsOfASetEighths,
+4 Existing pronunciation-sensitive translations (not pending),labsFractionsOfASetFbFindGeneric,
+4 Existing pronunciation-sensitive translations (not pending),labsFractionsOfASetFbOtherGroups,
+4 Existing pronunciation-sensitive translations (not pending),labsFractionsOfASetFifths,
+4 Existing pronunciation-sensitive translations (not pending),labsFractionsOfASetHalves,
+4 Existing pronunciation-sensitive translations (not pending),labsFractionsOfASetLeftToPlace,
+4 Existing pronunciation-sensitive translations (not pending),labsFractionsOfASetPromptTransfer,
+4 Existing pronunciation-sensitive translations (not pending),labsFractionsOfASetQuarters,
+4 Existing pronunciation-sensitive translations (not pending),labsFractionsOfASetRevealSteps,
+4 Existing pronunciation-sensitive translations (not pending),labsFractionsOfASetSixths,
+4 Existing pronunciation-sensitive translations (not pending),labsFractionsOfASetTakeCount,
+4 Existing pronunciation-sensitive translations (not pending),labsFractionsOfASetTenths,
+4 Existing pronunciation-sensitive translations (not pending),labsFractionsOfASetThirds,
+4 Existing pronunciation-sensitive translations (not pending),labsFractionsOfASetTray,
+4 Existing pronunciation-sensitive translations (not pending),labsNarrationOnOffLabel,
+4 Existing pronunciation-sensitive translations (not pending),labsNarrationReplayButton,
+4 Existing pronunciation-sensitive translations (not pending),labsNarrationSectionLabel,
+4 Existing pronunciation-sensitive translations (not pending),labsNarrationSpeedFaster,
+4 Existing pronunciation-sensitive translations (not pending),labsNarrationSpeedLabel,
+4 Existing pronunciation-sensitive translations (not pending),labsNarrationSpeedSlower,
+4 Existing pronunciation-sensitive translations (not pending),labsNarrationTextOnlyLabel,
+4 Existing pronunciation-sensitive translations (not pending),labsNumberLineExplorerNarrationCompletionBuilder,
+4 Existing pronunciation-sensitive translations (not pending),labsNumberLineExplorerNarrationCompletionExplorer,
+4 Existing pronunciation-sensitive translations (not pending),labsNumberLineExplorerNarrationCompletionNavigator,
+4 Existing pronunciation-sensitive translations (not pending),labsNumberLineExplorerNarrationHintInactivityBuilder,
+4 Existing pronunciation-sensitive translations (not pending),labsNumberLineExplorerNarrationHintInactivityExplorer,
+4 Existing pronunciation-sensitive translations (not pending),labsNumberLineExplorerNarrationHintInactivityNavigator,
+4 Existing pronunciation-sensitive translations (not pending),labsNumberLineExplorerNarrationHintRepeatedBuilder,
+4 Existing pronunciation-sensitive translations (not pending),labsNumberLineExplorerNarrationHintRepeatedExplorer,
+4 Existing pronunciation-sensitive translations (not pending),labsNumberLineExplorerNarrationHintRepeatedNavigator,
+4 Existing pronunciation-sensitive translations (not pending),labsNumberLineExplorerNarrationIntro,
+4 Existing pronunciation-sensitive translations (not pending),labsNumberLineExplorerNarrationResultCloseBuilder,
+4 Existing pronunciation-sensitive translations (not pending),labsNumberLineExplorerNarrationResultCloseExplorer,
+4 Existing pronunciation-sensitive translations (not pending),labsNumberLineExplorerNarrationResultCloseNavigator,
+4 Existing pronunciation-sensitive translations (not pending),labsNumberLineExplorerNarrationResultWrongBuilder,
+4 Existing pronunciation-sensitive translations (not pending),labsNumberLineExplorerNarrationResultWrongExplorer,
+4 Existing pronunciation-sensitive translations (not pending),labsNumberLineExplorerNarrationResultWrongNavigator,
+4 Existing pronunciation-sensitive translations (not pending),onboardingDisplayNameHint,
+4 Existing pronunciation-sensitive translations (not pending),profileDisplayNameDialogHint,
+4 Existing pronunciation-sensitive translations (not pending),quietStudyModeTooltip,

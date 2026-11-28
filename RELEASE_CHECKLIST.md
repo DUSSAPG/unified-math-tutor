@@ -112,7 +112,7 @@ py scripts\check_enabled_l10n.py --env prod   # coverage + approval
 - **Coverage fails separately:** the coverage half of `check_enabled_l10n.py` (template keys missing in de_CH, fr_CH and it_CH) fails on its own, in every `--env`. On 2026-11-27 that was 272 keys per Swiss locale, which predates AS-1.
 - **The gate checks evidence, not quality:** it verifies that records exist, are well formed and match the current text. It cannot verify that a review actually happened. Records must come from the reviewer and must never be fabricated.
 
-**Current state (2026-11-27).** The 99 AS-1 Swiss drafts (33 each in de_CH, fr_CH and it_CH) are pending, and no approval record exists. A production release is blocked.
+**Current state (2026-11-28, Swiss Phase 2).** 754 Swiss translations are pending linguistic review: de_CH 267, fr_CH 256 and it_CH 231 (the 33 AS-1 drafts per locale plus the Phase 2 P0 batch). All of them are listed in `docs/l10n_approvals/required_keys.json`. Zero translations are approved and no approval record exists, so the production approval gate blocks a release. The gate is manual: `flutter build` does not run it, so it applies only when the release commands above are run. The coverage half of `check_enabled_l10n.py` still fails with 199 (de_CH), 200 (fr_CH) and 200 (it_CH) missing template keys. Review packages: `docs/l10n_review/swiss_phase2/`.
 
 ## CH Translation Pipeline
 

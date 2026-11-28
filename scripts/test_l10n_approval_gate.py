@@ -232,21 +232,42 @@ class SyntheticGateTest(unittest.TestCase):
 
 
 class RepositoryGateTest(unittest.TestCase):
-    """The real repository: the AS-1 Swiss drafts are not approved."""
+    """The real repository: the Swiss drafts (AS-1 and Phase 2 P0) are not approved."""
 
-    def test_production_release_fails_with_the_99_as1_drafts(self) -> None:
-        result = gate.evaluate(REPO, "prod")
+    # AS-1 (33 per locale) + Swiss Phase 2 P0 drafts and corrections.
+    EXPECTED_PENDING = {"de_CH": 267, "fr_CH": 256, "it_CH": 231}
+
+    def _counts(self, pairs) -> dict[str, int]:
         counts: dict[str, int] = {}
-        for locale, _ in result.pending:
+        for locale, _ in pairs:
             counts[locale] = counts.get(locale, 0) + 1
-        self.assertEqual(counts, {"de_CH": 33, "fr_CH": 33, "it_CH": 33})
+        return counts
+
+    def test_production_release_fails_with_the_swiss_drafts(self) -> None:
+        result = gate.evaluate(REPO, "prod")
+        self.assertEqual(self._counts(result.pending), self.EXPECTED_PENDING)
         self.assertEqual(result.approved, [])
+        self.assertEqual(result.unapproved, [])
         self.assertTrue(result.blocking)
+
+    def test_every_required_key_is_still_pending(self) -> None:
+        required, _ = gate.load_required(gate.Paths(REPO))
+        pending = set(gate.evaluate(REPO, "prod").pending)
+        self.assertEqual(pending, {(l, k) for l, keys in required.items() for k in keys})
+
+    def test_the_33_as1_drafts_are_still_marked(self) -> None:
+        paths = gate.Paths(REPO)
+        for locale in ("de_CH", "fr_CH", "it_CH"):
+            arb = gate.load_arb(paths, locale)
+            as1 = [k for k, v in arb.items() if k.startswith("@") and isinstance(v, dict)
+                   and str(v.get("description", "")).startswith("AS-1 draft translation.")
+                   and gate.MARKER in str(v.get("description", ""))]
+            self.assertEqual(len(as1), 33, locale)
 
     def test_dev_and_uat_validation_remain_available(self) -> None:
         for env in ("dev", "uat"):
             result = gate.evaluate(REPO, env)
-            self.assertEqual(len(result.pending), 99, env)
+            self.assertEqual(self._counts(result.pending), self.EXPECTED_PENDING, env)
             self.assertFalse(result.blocking, env)
 
     def test_production_locales_match_locale_service(self) -> None:
@@ -259,8 +280,7 @@ class RepositoryGateTest(unittest.TestCase):
         pending = gate.evaluate(REPO, "prod").pending
         for locale, key in pending:
             self.assertIn(key, required.get(locale, []), f"{locale} {key}")
-        self.assertEqual({l: len(k) for l, k in required.items()},
-                         {"de_CH": 33, "fr_CH": 33, "it_CH": 33})
+        self.assertEqual({l: len(k) for l, k in required.items()}, self.EXPECTED_PENDING)
 
     def test_no_approval_records_exist(self) -> None:
         records = REPO / "docs" / "l10n_approvals" / "records"
