@@ -59,19 +59,42 @@ Run the combined readiness suite:
 .\scripts\release_readiness.ps1 -EnableChPacks
 ```
 
-Build the default production release for UK, US, and SG:
+### Production build: required entry point
+
+**Build every production release through `scripts/build_release.ps1`.** It is the required production-build entry point. Run the readiness suite above first; the wrapper does not replace it.
+
+Default production release for UK, US, and SG:
 
 ```powershell
-flutter build web --release --dart-define=ENV=prod
-flutter build appbundle --release --dart-define=ENV=prod
+.\scripts\build_release.ps1 -Environment prod -Target appbundle
+.\scripts\build_release.ps1 -Environment prod -Target web
 ```
 
-Build the CH release only after the strict CH content gate passes:
+CH release (adds the strict CH content gate and `ENABLE_CH_PACKS=true`):
 
 ```powershell
-flutter build web --release --dart-define=ENV=prod --dart-define=ENABLE_CH_PACKS=true
-flutter build appbundle --release --dart-define=ENV=prod --dart-define=ENABLE_CH_PACKS=true
+.\scripts\build_release.ps1 -Environment prod -Target appbundle -EnableChPacks
+.\scripts\build_release.ps1 -Environment prod -Target web -EnableChPacks
 ```
+
+The wrapper (`scripts/release_build_gate.py`) stops at the first failing step and builds only if every step passes:
+
+1. **Arguments:** `-Environment` accepts only `prod`, and `-Target` only `appbundle` or `web`. Anything else is rejected before any check runs.
+2. **Repository:** it must run from this repository with a clean working tree, including no untracked files. The commit SHA is recorded.
+3. **Locale configuration:** `LocaleService.productionLocales` must match the locales the completeness check covers (de_CH, fr_CH, it_CH plus English). Every production ARB, the template and `docs/l10n_approvals/required_keys.json` must exist and be valid.
+4. **Generated localisations:** it runs `flutter pub get` and `flutter gen-l10n`. The committed generated localisation files must be unchanged afterwards. Only the known side-effect files may change: `untranslated_messages.txt` and the plugin registrants under `linux/`, `macos/` and `windows/`.
+5. **Completeness and approval:** `py scripts\check_enabled_l10n.py --env prod`.
+6. **Linguistic approval:** `py scripts\l10n_approval_gate.py --env prod`.
+7. **Packs:** `dart run tools\validate_packs.dart`, or with `-EnableChPacks` the strict CH gate (`--enable-ch-packs` and `validate_content_quality.py --strict-ch`).
+8. **Build:** only then the approved command, `flutter build <target> --release --dart-define=ENV=prod`, plus `--dart-define=ENABLE_CH_PACKS=true` for the CH release.
+
+- **No bypass:** there is no force, skip or bypass option, and none may be added for production.
+- **No stale artefact:** the expected artefact (`build/app/outputs/bundle/release/app-release.aab` or `build/web`) is deleted before validation, so a blocked run never leaves a release artefact behind.
+- **Provenance:** every run, built or blocked, writes `build/release_provenance/<UTC>_<commit>_<target>_<status>.json`. It records the commit, branch, configuration, build command, toolchain versions, every check with its exit code, the untranslated counts, the approval-gate counts and the artefact SHA-256. It holds no credentials, environment variables or absolute paths. It is evidence of what was checked, not an approval.
+- **Exit codes:** 0 built; 1 blocked by a check (no build started); 2 invalid arguments; 3 build failed.
+- **After a run:** restore the side-effect files with `git checkout -- linux macos windows untranslated_messages.txt` before the next run, because the next run requires a clean tree.
+
+**Not protected:** running `flutter build` directly is still technically possible, and the wrapper cannot prevent it. Ordinary `flutter build` and `flutter run` never run these checks, and there is no CI. A production build made any other way is not an authorised production build under this checklist, even when it uses the same flags.
 
 Prepare store screenshot export folders:
 
@@ -81,22 +104,25 @@ Prepare store screenshot export folders:
 
 ## Linguistic approval gate
 
-Three separate decisions apply to UI translations. One never implies another:
+Four separate decisions apply. None implies another:
 
 | Stage | What it means | Who or what decides | Evidence |
 |---|---|---|---|
 | Engineering integration | The code, ARB structure, generated localisations and tests are correct, and the branch can merge | Code review and the host test suite | PR, test results, `docs/qa/*` reports |
 | Linguistic approval | A named reviewer has approved the exact text of a translation | A native or professional reviewer for that locale | An approval record in `docs/l10n_approvals/records/` |
-| Production-release authorisation | A build may ship to the public | The release owner, after the release commands pass with `--env prod` | This checklist |
+| Production build authorisation | A production artefact may be built from a specific commit | `scripts/build_release.ps1`, which builds only when every check passes with `--env prod` | The provenance record in `build/release_provenance/` |
+| Public release approval | A built artefact may ship to the public (store submission or deployment) | The release owner, after reviewing the provenance record and this checklist | This checklist and the release owner's decision |
 
-**How the gate works.** `scripts/l10n_approval_gate.py` runs inside `check_enabled_l10n.py`, and so inside `release_readiness.ps1`. For a production release (`--env prod`, the default) it fails if:
+A successful wrapper run authorises a build, not a public release. A merged PR approves no translation.
+
+**How the gate works.** `scripts/l10n_approval_gate.py` runs inside `check_enabled_l10n.py`, and so inside `release_readiness.ps1`. The production build wrapper `build_release.ps1` runs `check_enabled_l10n.py` and the gate again before every production build. For a production release (`--env prod`, the default) it fails if:
 
 - **a draft remains:** any production-locale ARB (the locales come from `LocaleService.productionLocales`) still has a `PENDING LINGUISTIC REVIEW` marker;
 - **an approval is missing or stale:** any key in `docs/l10n_approvals/required_keys.json` lacks a valid approval record for its current text. Removing a marker is never enough; editing an approved text needs a new review;
 - **a record is malformed:** any approval record is missing the reviewer, date, locale, ARB file, ARB hash or per-key outcome and text hash;
 - **the manifest is missing or malformed:** `required_keys.json` is absent, unreadable, has the wrong schema, lists no locales or names a non-production locale. The gate fails closed; it never treats a missing manifest as "nothing required".
 
-**Environments.** `--env dev` and `--env uat` report the same findings without failing. Ordinary `flutter run` and `flutter build` don't run the gate at all.
+**Environments.** `--env dev` and `--env uat` report the same findings without failing. The production build wrapper accepts only `prod`. Ordinary `flutter run` and `flutter build` don't run the gate at all.
 
 **Output.** The report lists locales, keys and record file names only, never translation text or reviewer identities. The record format is in `docs/l10n_approvals/README.md`.
 
@@ -108,11 +134,11 @@ py scripts\check_enabled_l10n.py --env prod   # coverage + approval
 
 **Limits.**
 
-- **It is manual:** the gate is part of the documented release procedure, not of `flutter build`. There is no CI, so it is enforced only when this checklist is followed.
+- **The wrapper is enforced by procedure, not by Flutter:** `build_release.ps1` is the required production-build entry point and runs the gate automatically before it builds. `flutter build` itself never runs the gate, and there is no CI, so a direct `flutter build` is not protected.
 - **Coverage fails separately:** the coverage half of `check_enabled_l10n.py` (template keys missing in de_CH, fr_CH and it_CH) fails on its own, in every `--env`. On 2026-11-27 that was 272 keys per Swiss locale, which predates AS-1.
 - **The gate checks evidence, not quality:** it verifies that records exist, are well formed and match the current text. It cannot verify that a review actually happened. Records must come from the reviewer and must never be fabricated.
 
-**Current state (2026-11-28, Swiss Phase 2).** 754 Swiss translations are pending linguistic review: de_CH 267, fr_CH 256 and it_CH 231 (the 33 AS-1 drafts per locale plus the Phase 2 P0 batch). All of them are listed in `docs/l10n_approvals/required_keys.json`. Zero translations are approved and no approval record exists, so the production approval gate blocks a release. The gate is manual: `flutter build` does not run it, so it applies only when the release commands above are run. The coverage half of `check_enabled_l10n.py` still fails with 199 (de_CH), 200 (fr_CH) and 200 (it_CH) missing template keys. Review packages: `docs/l10n_review/swiss_phase2/`.
+**Current state (2026-11-28, Swiss Phase 2).** 754 Swiss translations are pending linguistic review: de_CH 267, fr_CH 256 and it_CH 231 (the 33 AS-1 drafts per locale plus the Phase 2 P0 batch). All of them are listed in `docs/l10n_approvals/required_keys.json`. Zero translations are approved and no approval record exists, so the production approval gate blocks a release. The production build wrapper `build_release.ps1` runs the gate before building and therefore currently stops at the completeness and approval step without starting a build. `flutter build` run directly does not run the gate. The coverage half of `check_enabled_l10n.py` still fails with 199 (de_CH), 200 (fr_CH) and 200 (it_CH) missing template keys. Review packages: `docs/l10n_review/swiss_phase2/`.
 
 ## CH Translation Pipeline
 
