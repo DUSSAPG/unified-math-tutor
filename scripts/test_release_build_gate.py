@@ -430,7 +430,7 @@ class ReleaseBuildGateTest(unittest.TestCase):
 class CurrentRepositoryStateTest(unittest.TestCase):
     """The repository's current translations must block a production build.
 
-    Pinned to the Swiss Phase 2 state (754 pending, 199/200/200 untranslated),
+    Pinned to the Swiss Phase 3 state (1,470 pending, 26/27/27 untranslated),
     like EXPECTED_PENDING in test_l10n_approval_gate.py. Update it when
     approvals or translations land.
     """
@@ -451,10 +451,10 @@ class CurrentRepositoryStateTest(unittest.TestCase):
             r = fx.provenance()[-1]
             self.assertEqual(r["failed_step"], "completeness-and-approval")
             summary = next(c for c in r["checks"] if c["step"] == "completeness-and-approval")["summary"]
-            self.assertEqual(summary, {"de_CH": 199, "fr_CH": 200, "it_CH": 200})
+            self.assertEqual(summary, {"de_CH": 26, "fr_CH": 27, "it_CH": 27})
             self.assertEqual(r["approval_gate"]["pending_by_locale"],
-                             {"de_CH": 267, "fr_CH": 256, "it_CH": 231})
-            self.assertEqual(r["approval_gate"]["pending"], 754)
+                             {"de_CH": 530, "fr_CH": 508, "it_CH": 432})
+            self.assertEqual(r["approval_gate"]["pending"], 1470)
             self.assertEqual(r["approval_gate"]["approved"], 0)
 
 

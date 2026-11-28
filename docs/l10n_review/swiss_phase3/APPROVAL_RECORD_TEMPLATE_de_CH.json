@@ -1,0 +1,2661 @@
+{
+  "_template_notice": "TEMPLATE ONLY. Not an approval record. Copy it to docs/l10n_approvals/records/ only after a real review, fill in every <...> field and each entry's outcome and hash, and drop entries that were not reviewed. The gate rejects <...> placeholders. Covers every required key after Swiss Phase 3 (AS-1, Phase 2 P0, Phase 3 P1).",
+  "schema": "l10n-approval-record/v1",
+  "locale": "de_CH",
+  "reviewer": "<reviewer's name or approved reviewer reference>",
+  "review_date": "<YYYY-MM-DD>",
+  "arb_file": "lib/l10n/app_de_CH.arb",
+  "approved_arb_sha256": "<SHA-256 of the ARB file as reviewed>",
+  "entries": [
+    {
+      "key": "abacusBoardAddOne",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusBoardAddTen",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusBoardEquationOne",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusBoardEquationThree",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusBoardEquationTwo",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusBoardSubtractOne",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusBoardSubtractTen",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusBoardTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusBoardZero",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusPlayBreakDone",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusPlayBreakTask",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusPlayBreakTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusPlayBuildDone",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusPlayBuildTask",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusPlayBuildTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusPlayExchangeDone",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusPlayExchangeTask",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusPlayExchangeTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusPlayFreeIntro",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusPlayFreeTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusPlayHowTo",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusPlayModeFree",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusPlayModeGuided",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusPlayNoteHundredCascade",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusPlayNoteHundredToTens",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusPlayNoteTenOnes",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusPlayNoteTenOnesAndTens",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusPlayNoteTenTens",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusPlayNoteTenToOnes",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusPlayParentNote",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusPlayPartHundreds",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusPlayPartOnes",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusPlayPartTens",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusPlayReset",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusPlayRodLabel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusPlayRodValue",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusSpokenOne",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusSpokenThree",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusSpokenTwo",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "abacusSpokenZero",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "accessibilityQuietStudyModeSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "accessibilityReadingSizeDefault",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "accessibilityReadingSizeLarge",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "accessibilityReadingSizeSmall",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "accessibilityReadingSizeSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "accessibilityReduceMotionSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "accessibilityReduceMotionTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "accessibilitySettingsSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "accessibilitySoundCuesSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "accessibilitySoundCuesTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "appearanceAccessibilityHeading",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "appearanceReadingSizeSub",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "appearanceReadingSizeTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "appearanceResetOnboardingButton",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "appearanceResetOnboardingHeading",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "appearanceResetOnboardingSub",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "appearanceThemeDark",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "appearanceThemeLight",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "appearanceThemeSub",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "appearanceThemeSystem",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "appearanceThemeTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "appearanceTouchTargetsSub",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "appearanceTouchTargetsTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "appearanceTypographySub",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "appearanceTypographyTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "buildConfidenceCompletionBody",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "commonCancel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "earlyMathsAbacusScope",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "earlyMathsAbacusTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "earlyMathsActivitiesHeading",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "earlyMathsEntryIntro",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "earlyMathsLaneChooserLabel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "earlyMathsLaneKs1Ages",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "earlyMathsLaneKs1Title",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "earlyMathsLaneNotSureSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "earlyMathsLaneNotSureTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "earlyMathsLanePlayAges",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "earlyMathsLanePlayTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "earlyMathsLaneSwitchNote",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "earlyMathsNotSureBody",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "earlyMathsNotSureHeading",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "earlyMathsPandaScope",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "earlyMathsParentCardSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "earlyMathsParentCardTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "earlyMathsParentHeading",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "earlyMathsParentTitlesLine",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "earlyMathsPlaygroundIntro",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "entranceExamHubIntro",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "entranceExamModeLockedBadge",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "entranceExamModeLockedFullPaperReason",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "entranceExamModePracticeBySkillTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "entranceExamModeScholarshipChallengeSub",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "entranceExamModeTimedMockSub",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "entranceExamModeUntimedPaperSub",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "entranceExamModeUntimedPaperTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "entranceExamSessionCompleteTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "entranceExamSkillFractionsAndPercentages",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "entranceExamSkillPickerTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "entranceExamSkillQuestionCountLabel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "entranceExamSkillRatioAndProportion",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "examPacksCtaSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "exploreInAtelierBadge",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "exploreInAtelierSection",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioConversationAllieMessage",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioHomeworkEmptySession",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioHomeworkGenerateButton",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioHomeworkHelpBuildConfidence",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioHomeworkHelpPractiseTogether",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioHomeworkHelpPrepareTomorrow",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioHomeworkHelpReviewMistakes",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioHomeworkHelpTypeLabel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioHomeworkHelpUnderstandMethod",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioHomeworkTimeLabel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioHomeworkTopicLabel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioHubAllieMessage",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioHubOpeningPromise",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioHubSupportingCopy",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioLearningNoDataYet",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioLearningTopicSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioPrimaryActionGuides",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioPrimaryActionHomework",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioPrimaryActionLearning",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioPrimaryActionStartActivity",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioProfileEntrySubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioProgressActivitiesCompleted",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioProgressAreasToRevisit",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioProgressNoDataYet",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioProgressRecentTopics",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioProgressSuggestedActivity",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioSectionConversationStartersSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioSectionConversationStartersTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioSectionCubeSpatialSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioSectionCubeSpatialTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioSectionExplainSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioSectionExplainTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioSectionFractionsRatioSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioSectionFractionsRatioTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioSectionHomeworkCompanionSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioSectionHomeworkCompanionTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioSectionLearningSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioSectionLearningTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioSectionMentalMathsSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioSectionMentalMathsTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioSectionProgressSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioSectionProgressTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioSectionTodaysActivitySubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioSectionTodaysActivityTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioSectionTutorToolsSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioSectionTutorToolsTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioTodayStartButton",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioTutorAssignLabel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioTutorAssignPractice",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioTutorAssignRecallCards",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioTutorChooseLearnerLabel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioTutorCompletionLabel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioTutorNotesHint",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "familyStudioTutorNotesLabel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "feedPandaBasketSemanticLabel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "feedPandaDropZoneLabel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "feedPandaHasEnough",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "feedPandaHowManyLeft",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "feedPandaPandaSemanticFull",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "feedPandaPandaSemanticReady",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "feedPandaSelectedSuffix",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "feedPandaTapPandaHint",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "feedPandaWellDone",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "footballStudioAndroidOnly",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "footballStudioCheckAgain",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "footballStudioCheckFailed",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "footballStudioChecking",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "footballStudioDescription",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "footballStudioInstallNeeded",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "footballStudioInstalled",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "footballStudioLaunchFailed",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "footballStudioOpen",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "footballStudioOpening",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "footballStudioProgressOwnership",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "footballStudioTryAgain",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "footballStudioUnavailable",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "fractionBarsCaption2",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "helpTermsBody",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "homeFormulaLibrarySubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "homeFormulaLibraryTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "homeWhatsNewBody",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "interactiveStudiosTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "journeySubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "journeyTeaserSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "journeyTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsAircraftLandingDescentLineHelpWhatToNotice",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsAircraftLandingFindTheTimeHelpWhatItMeans",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsAircraftLandingFindTheTimeHelpWhatToDo",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsAircraftLandingGlidePathHelpWhatItMeans",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsAircraftLandingGlidePathHelpWhatToDo",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsAircraftLandingGlidePathHelpWhatToNotice",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsAircraftLandingGlidePathMission",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsAircraftLandingGlidePathSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsAircraftLandingLabFreePlayCaption",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsAircraftLandingLabIntro",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsAircraftLandingVectorApproachHelpWhatItMeans",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsAircraftLandingVectorApproachHelpWhatToDo",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsAircraftLandingVectorApproachHelpWhatToNotice",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsAlgebraBalanceConcept",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsAlgebraBalanceFirstUseStep2",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsAlgebraBalanceHelpWhatToNotice",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsAlgebraBalanceSolvedFeedback",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsAlgebraBalanceSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsDataDetectiveAddValueButton",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsDataDetectiveConcept",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsDataDetectiveFirstUseStep2",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsDataDetectiveHelpWhatToDo",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsDataDetectiveHelpWhatToNotice",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsDataDetectiveNarrationCompletionBuilder",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsDataDetectiveNarrationCompletionExplorer",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsDataDetectiveNarrationCompletionNavigator",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsDataDetectiveNarrationIntro",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsDataDetectivePredictionPrompt",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsDataDetectiveSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsEarlyMathsPlaygroundSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsFlightPathLabConcept",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsFlightPathLabFirstUseStep2",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsFlightPathLabHeadingHelper",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsFlightPathLabHelpWhatItMeans",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsFlightPathLabHelpWhatToDo",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsFlightPathLabMission",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsFlightPathLabSpeedHelper",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsFractionBuilderConcept",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsFractionBuilderFilledCount",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsFractionBuilderFirstUseStep1",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsFractionBuilderFirstUseStep2",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsFractionBuilderHelpWhatItMeans",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsFractionBuilderHelpWhatToDo",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsFractionBuilderHelpWhatToNotice",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsFractionBuilderSymbolicResult",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsFractionBuilderTapGuidance",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsNumberLineExplorerHelpWhatToDo",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsNumberLineExplorerNarrationCompletionNavigator",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsResetButton",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsSpatialCubeHiddenFaceHelpWhatItMeans",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsSpatialCubeHiddenFaceHelpWhatToDo",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsSpatialCubeHiddenFaceIncorrect",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsSpatialCubeHiddenFaceWhereUsed",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsSpatialCubeLabFreePlayCaption",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsSpatialCubeLabIntro",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsSpatialCubeLabSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsSpatialCubeNetExplorerHelpWhatToDo",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsSpatialCubeNetExplorerHelpWhatToNotice",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsSpatialCubeNetExplorerNextNetButton",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsSpatialCubeNetExplorerStepBackButton",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsSpatialCubeNetExplorerStepForwardButton",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsSpatialCubeRotateToMatchHelpWhatToDo",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsSpatialCubeRotateToMatchHelpWhatToNotice",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsSpatialCubeRotateToMatchMission",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsSpatialCubeRotateToMatchSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsSpatialCubeRotateToMatchTestButton",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsSpatialCubeRotateToMatchYourCubeLabel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsSpatialCubeWhichFaceOppositeHelpWhatItMeans",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsSpatialCubeWhichFaceOppositeHelpWhatToDo",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsSpatialCubeWhichFaceOppositeHelpWhatToNotice",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsSpatialCubeWhichFaceOppositeMission",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsSpatialCubeWhichFaceOppositeQuestion",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsSpatialCubeWhichFaceOppositeReveal",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsSpatialCubeWhichFaceOppositeSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsSpatialCubeWhichFaceOppositeTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "labsSpatialCubeWhichFaceOppositeWhereUsed",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "mathStudioBuildConfidenceSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "mathStudioDiscoveryEmptyCategory",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "mathStudioDiscoverySubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "mathStudioExportCombined",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "mathStudioFollowUpCheckButton",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "mathStudioMathMagicNumberTricksSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "mathStudioMentalMathsSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "mathStudioRecallCardsSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "mathStudioRevealButton",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "mathStudioRevealedLabel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "mathStudioSpatialCubeNetsSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "mathStudioSpatialIntelligenceSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "mathStudioSpatialIntelligenceTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "mathStudioSpatialLabsEntrySubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "mathStudioSpatialRotationsSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "mathStudioSpatialTransformationsSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "mentalMathsCategoryFractions",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "navHideAction",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "navJourney",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "navMore",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "navShowAction",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseAnotherExample",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseChooseComparisonType",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseChooseSkill",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseClearExplore",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseCompareEqualTo",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseCompareEqualWords",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseCompareGreaterThan",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseCompareGreaterThanWords",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseCompareLeftMarkerSemantics",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseCompareLessThan",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseCompareLessThanWords",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseCompareMarkerExplanation",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseCompareRightMarkerSemantics",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseCompareSharedLineLabel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseComparisonCapEighths",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseComparisonCapFourths",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseComparisonCapHalves",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseComparisonCapSixths",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseComparisonCapThirds",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseComparisonCorrectLabel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseComparisonCorrectResultDynamic",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseComparisonEighth",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseComparisonEighths",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseComparisonExplanationBenchmarkHalf",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseComparisonExplanationEquivalent",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseComparisonExplanationSameDenominator",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseComparisonExplanationSameNumerator",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseComparisonFourth",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseComparisonFourths",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseComparisonHalf",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseComparisonHalves",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseComparisonIncorrectResultDynamic",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseComparisonLess",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseComparisonMore",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseComparisonProofDynamic",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseComparisonReviewLabel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseComparisonSixth",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseComparisonSixths",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseComparisonThird",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseComparisonThirds",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseComplete",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseEqualPartsLabel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseExampleComparisonTask",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseExampleComparisonTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseExampleEquivalenceTask",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseExampleEquivalenceTaskParts",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseExampleEquivalenceTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseExampleHundredthsTask",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseExampleHundredthsTaskCount",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseExampleHundredthsTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseExampleHundredthsTitleCount",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseExamplePlacementTask",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseExamplePlacementTaskHalf",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseExamplePlacementTaskTwoThirds",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseExamplePlacementTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseFocusCompareToHalf",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseFocusEquivalent",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseFocusMixed",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseFocusSameDenominator",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseFocusSameNumerator",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseFreeExploreInstruction",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseGuidedDirectionLeft",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseGuidedDirectionRight",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseGuidedWrongAdjacent",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseGuidedWrongEquivalenceWhole",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseGuidedWrongGeneral",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseGuidedWrongPartition",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseHundredthsExploreInstruction",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseHundredthsIncorrectFeedback",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseHundredthsIncorrectFeedbackTarget",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseHundredthsLineLabel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseHundredthsSelectionExplanation",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseHundredthsTargetEquationDynamic",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseHundredthsZeroExplanation",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseHundredthsZeroGuidedFeedback",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseHundredthsZeroGuidedFeedbackTarget",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseLabDescription",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseLabTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseModeFreeExplore",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseModeGuided",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseNextSkill",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSensePractiseThis",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSensePrecisionLine",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseReset",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseScopeStatement",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseSkillCompareFractions",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseSkillFindOneHundredth",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseSkillMakeEquivalent",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseSkillPlaceFraction",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseSkillProgress",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseSkillSheetClose",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseTarget",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "numberSenseWholePartModel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingDiscardBody",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingDiscardTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingFamilyActivityLengthLabel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingFamilyActivityLengthLong",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingFamilyActivityLengthMedium",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingFamilyActivityLengthShort",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingFamilyAddAnotherLearner",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingFamilyAllieIntro",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingFamilyFinishButton",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingFamilyGoalBuildConfidence",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingFamilyGoalHomework",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingFamilyGoalMonitorProgress",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingFamilyGoalPractiseTogether",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingFamilyGoalPrepareExam",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingFamilyGoalSub",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingFamilyGoalSupportStruggling",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingFamilyGoalTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingFamilyGoalUnderstandMethods",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingFamilyLearnerContextSub",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingFamilyLearnerContextTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingFamilyLearnerNamesLabel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingFamilyLearnerNamesSub",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingFamilyNotificationsLabel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingFamilyNotificationsSub",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingFamilyPinLabel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingFamilyPinSub",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingFamilyPreferencesSub",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingFamilyPreferencesTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingFamilyRoleDetailSub",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingFamilyRoleDetailTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingGoal1Label",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingGoal1Sub",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingGoal2Label",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingGoal2Sub",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingGoal3Label",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingGoal3Sub",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingGoal4Label",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingGoal4Sub",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingGuestMode",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingGuestModeSub",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingLearnerNameHint",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingSignIn",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingSignInPrompt",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingStage1Label",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingStage2Label",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingStage3Label",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingStage3Sub",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingStage4Label",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingTechBadge",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "onboardingTimeEstimateSeconds",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsBowlEmpty",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsBowlHas",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsChooseLesson",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsChoosePlate",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsFeedPanda",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsGuidedPathDescription",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsGuidedPathTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsGuidedStep",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsHideHint",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsHintEqualParts",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsHintHalves",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsHintQuarters",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsIncorrectSelection",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsKeepPractising",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsLessonEqualPartsPurpose",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsLessonEqualPartsTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsLessonHalvesPurpose",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsLessonHalvesTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsLessonQuartersPurpose",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsLessonQuartersTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsMenuIntro",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsMisconceptionUnequal",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsNextLesson",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsPieceEqualSemantic",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsPiecePicked",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsPieceSemantic",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsPieceUnequalSemantic",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsPlateEqualSemantic",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsPlateLabel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsPlateLargerSmallerSemantic",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsPlateMixedSizesSemantic",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsPlatePiecesSemantic",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsPlateUnequalSemantic",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsPractiseHalvesDescription",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsPractiseHalvesTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsPractiseQuartersDescription",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsPractiseQuartersTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsPromptEqualParts",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsPromptHalves",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsPromptQuarters",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsRemainingLeft",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsResetApple",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsRetryEqualParts",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsRetryHalves",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsRetryQuarters",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsShowHint",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsStripFed",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsStripLabel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsSuccessAte",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsSuccessEqualParts",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsSuccessFedPart",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsSuggestNewChallenge",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsSuggestTryHalves",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsSuggestTryQuarters",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsTeachEqualParts",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsWhatNext",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "pandaPortionsWholeApple",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "practiceExamEntranceExamPrep",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "practiceExamSimulatorSelectPrompt",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "practiceExamSwissGymnasium",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "practiceExitSessionBody",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "practiceExitSessionTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "practiceModeExamSimulatorSubFor",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "practiceSelectExamLabel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "practiceTopicDrillEmpty",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "ratioFoundationsCompletionBody",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "ratioFoundationsCompletionTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "ratioFoundationsContinue",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "ratioFoundationsCorrect",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "ratioFoundationsFluencyProgress",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "ratioFoundationsHideHint",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "ratioFoundationsHubCardReason",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "ratioFoundationsHubCardTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "ratioFoundationsIncorrect",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "ratioFoundationsNextItem",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "ratioFoundationsRungFluency",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "ratioFoundationsRungGuided",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "ratioFoundationsRungRecognise",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "ratioFoundationsScreenTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "ratioFoundationsShowHint",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "recallCardsClearFiltersButton",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "recallCardsHubSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "recallCardsQuickReviewSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "recallCardsQuickReviewTitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "recallCardsRelatedPracticeLabel",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "recallCardsSessionCompleteSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "recallCardsTopicRatioAndProportion",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "recallTopicGeometryAndMeasures",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "recallTopicNumber",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "recallTopicProbability",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "recallTopicRatioAndProportion",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "recallTopicStatistics",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "topicsFilterGcse",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "topicsFilterOxfordTrack",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "topicsTrackGcseFoundation",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "topicsTrackGcseHigher",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "topicsTrackOxford",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "upgradeBenefit2Sub",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "upgradeBenefit2Title",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    },
+    {
+      "key": "visualMathsAbacusSubtitle",
+      "outcome": "<approved | approved_with_changes | rejected>",
+      "approved_text_sha256": "<SHA-256 of the approved UTF-8 text>"
+    }
+  ]
+}

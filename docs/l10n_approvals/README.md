@@ -8,7 +8,7 @@ There are **no approval records yet.** None may be created without a real review
 
 | File | Purpose |
 |---|---|
-| `required_keys.json` | Production-locale keys that need an approval record before a production release. Keys stay listed after their draft marker is removed. Currently these are the 33 AS-1 keys plus the Swiss Phase 2 P0 drafts and corrections: de_CH 267, fr_CH 256 and it_CH 231 keys (see `docs/qa/SWISS_L10N_PHASE2_ACCEPTANCE.md`). |
+| `required_keys.json` | Production-locale keys that need an approval record before a production release. Keys stay listed after their draft marker is removed. Currently these are the 33 AS-1 keys, the Swiss Phase 2 P0 drafts and corrections, and the Swiss Phase 3 P1 drafts and corrections: de_CH 530, fr_CH 508 and it_CH 432 keys (see `docs/qa/SWISS_L10N_PHASE2_ACCEPTANCE.md` and `docs/qa/SWISS_L10N_PHASE3_P1_ACCEPTANCE.md`). |
 | `SWISS_TERMINOLOGY_GUIDANCE.md` | Draft Swiss terminology conventions and open decisions (pending review). |
 | `records/*.json` | One approval record per review: one locale, one reviewer, one date. Created only by, or on behalf of, the reviewer. |
 

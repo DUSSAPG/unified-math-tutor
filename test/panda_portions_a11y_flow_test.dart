@@ -486,7 +486,7 @@ void main() {
           t.labsEarlyMathsPlaygroundSubtitle,
         ]) {
           expect(
-              RegExp(r'fraction|Brueche|frazioni', caseSensitive: false)
+              RegExp(r'fraction|Brüche|frazioni', caseSensitive: false)
                   .hasMatch(s),
               isTrue,
               reason: '$locale: $s');
